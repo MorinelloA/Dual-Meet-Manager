@@ -60,18 +60,18 @@
     <id>UMLUseCase</id>
     <coordinates>
       <x>154</x>
-      <y>497</y>
+      <y>539</y>
       <w>147</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>Enter Throwing Event Data</panel_attributes>
+    <panel_attributes>Enter Field Event Data</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
       <x>154</x>
-      <y>532</y>
+      <y>497</y>
       <w>147</w>
       <h>28</h>
     </coordinates>
@@ -86,7 +86,7 @@
       <w>161</w>
       <h>28</h>
     </coordinates>
-    <panel_attributes>Retrieve Throwing Event Data</panel_attributes>
+    <panel_attributes>Retrieve Field Event Data</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -194,18 +194,18 @@
       <x>77</x>
       <y>14</y>
       <w>630</w>
-      <h>588</h>
+      <h>651</h>
     </coordinates>
     <panel_attributes>lt=.
 System Boundary
 </panel_attributes>
-    <additional_attributes>10.0;820.0;10.0;20.0;880.0;20.0;880.0;810.0;10.0;820.0</additional_attributes>
+    <additional_attributes>10.0;910.0;10.0;20.0;880.0;20.0;880.0;910.0;10.0;910.0</additional_attributes>
   </element>
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>392</x>
-      <y>448</y>
+      <x>427</x>
+      <y>455</y>
       <w>133</w>
       <h>28</h>
     </coordinates>
@@ -216,8 +216,8 @@ System Boundary
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>392</x>
-      <y>490</y>
+      <x>427</x>
+      <y>511</y>
       <w>133</w>
       <h>28</h>
     </coordinates>
@@ -228,8 +228,8 @@ System Boundary
   <element>
     <id>UMLUseCase</id>
     <coordinates>
-      <x>392</x>
-      <y>525</y>
+      <x>427</x>
+      <y>567</y>
       <w>133</w>
       <h>28</h>
     </coordinates>
@@ -274,13 +274,13 @@ System Boundary
     <id>Relation</id>
     <coordinates>
       <x>322</x>
-      <y>455</y>
-      <w>84</w>
+      <y>462</y>
+      <w>119</w>
       <h>35</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;10.0;10.0;30.0</additional_attributes>
+    <additional_attributes>150.0;10.0;10.0;30.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
@@ -308,12 +308,12 @@ System Boundary
     <id>Relation</id>
     <coordinates>
       <x>56</x>
-      <y>126</y>
+      <y>133</y>
       <w>112</w>
-      <h>182</h>
+      <h>175</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
-    <additional_attributes>10.0;240.0;140.0;10.0</additional_attributes>
+    <additional_attributes>10.0;230.0;140.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -345,7 +345,7 @@ System Boundary
       <x>126</x>
       <y>441</y>
       <w>203</w>
-      <h>126</h>
+      <h>196</h>
     </coordinates>
     <panel_attributes>Entering Data
 </panel_attributes>
@@ -355,48 +355,71 @@ System Boundary
     <id>Relation</id>
     <coordinates>
       <x>322</x>
-      <y>490</y>
-      <w>84</w>
+      <y>511</y>
+      <w>119</w>
       <h>28</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>150.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>322</x>
-      <y>525</y>
-      <w>84</w>
-      <h>28</h>
+      <y>553</y>
+      <w>119</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=.&gt;
 &lt;&lt;extends&gt;&gt;</panel_attributes>
-    <additional_attributes>100.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>150.0;40.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>434</x>
-      <y>119</y>
-      <w>105</w>
-      <h>154</h>
+      <y>126</y>
+      <w>147</w>
+      <h>147</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;include&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;10.0;120.0;200.0</additional_attributes>
+    <additional_attributes>10.0;10.0;190.0;190.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
       <x>315</x>
-      <y>392</y>
+      <y>322</y>
       <w>168</w>
-      <h>63</h>
+      <h>133</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 &lt;&lt;include&gt;&gt;</panel_attributes>
-    <additional_attributes>10.0;70.0;220.0;10.0</additional_attributes>
+    <additional_attributes>10.0;170.0;220.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>133</x>
+      <y>602</y>
+      <w>189</w>
+      <h>28</h>
+    </coordinates>
+    <panel_attributes>Manually Assign Field Event Places</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>217</x>
+      <y>560</y>
+      <w>63</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+&lt;&lt;include&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
   </element>
 </diagram>
