@@ -11,5 +11,16 @@ namespace DualMeetManager.Domain
         public string athleteName { get; set; }
         public string schoolName { get; set; }
         public decimal performance { get; set; }
+
+        //Default Constructor
+        public Performance(){ }
+
+        //Parameterized Constructor
+        public Performance(string athleteName, string schoolName, decimal performance)
+        {
+            this.athleteName = athleteName;
+            this.schoolName = schoolName;
+            this.performance = performance;
+        }
     }
 }
