@@ -22,5 +22,34 @@ namespace DualMeetManager.Domain
             this.schoolName = schoolName;
             this.performance = performance;
         }
+
+        public override string ToString()
+        {
+            //This performance will be returned as raw data (seconds and inches)
+            string str = "Name: " + athleteName + ", " + schoolName + " - " + performance;
+            return str;
+        }
+
+        public override bool Equals(object obj)
+        {
+            Performance myPerf = obj as Performance;
+            if (myPerf == null) return false;
+            else if (myPerf.athleteName != athleteName) return false;
+            else if (myPerf.schoolName != schoolName) return false;
+            else if (myPerf.performance != performance) return false;
+            else return true;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hash = 17;
+                hash = hash * 23 + athleteName.GetHashCode();
+                hash = hash * 23 + schoolName.GetHashCode();
+                hash = hash * 23 + performance.GetHashCode();
+                return hash;
+            }
+        }
     }
 }

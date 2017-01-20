@@ -1,1 +1,2 @@
 h:\visual studio 2015\Projects\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.exe.config
+H:\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.exe.config
