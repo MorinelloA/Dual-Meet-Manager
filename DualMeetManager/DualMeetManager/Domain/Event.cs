@@ -38,7 +38,7 @@ namespace DualMeetManager.Domain
             Event myEvent = obj as Event;
             if (myEvent == null) return false;
             else if (myEvent.name != name) return false;
-            else if (myEvent.performances.SequenceEqual(performances)) return false;
+            else if (!myEvent.performances.SequenceEqual(performances)) return false;
             else return true;
         }
 

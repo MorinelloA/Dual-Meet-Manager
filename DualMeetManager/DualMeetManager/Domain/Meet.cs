@@ -79,11 +79,11 @@ namespace DualMeetManager.Domain
             if (myMeet == null) return false;
             else if (myMeet.location != location) return false;
             else if (myMeet.weatherConditions != weatherConditions) return false;
-            else if (myMeet.boySchoolNames.SequenceEqual(boySchoolNames)) return false;
-            else if (myMeet.girlSchoolNames.SequenceEqual(girlSchoolNames)) return false;
-            else if (myMeet.boySchoolAbbr.SequenceEqual(boySchoolAbbr)) return false;
-            else if (myMeet.girlSchoolAbbr.SequenceEqual(girlSchoolAbbr)) return false;
-            else if (myMeet.events.SequenceEqual(events)) return false;
+            else if (!myMeet.boySchoolNames.SequenceEqual(boySchoolNames)) return false;
+            else if (!myMeet.girlSchoolNames.SequenceEqual(girlSchoolNames)) return false;
+            else if (!myMeet.boySchoolAbbr.SequenceEqual(boySchoolAbbr)) return false;
+            else if (!myMeet.girlSchoolAbbr.SequenceEqual(girlSchoolAbbr)) return false;
+            else if (!myMeet.events.SequenceEqual(events)) return false;
 
             else return true;
         }
