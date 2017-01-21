@@ -53,6 +53,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Test\Domain\EventTest.cs" />
+    <Compile Include="Test\Domain\MeetTest.cs" />
     <Compile Include="Test\Domain\PerformanceTest.cs" />
   </ItemGroup>
   <ItemGroup>

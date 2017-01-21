@@ -49,43 +49,52 @@ namespace DualMeetManager.Domain
 
         public override string ToString()
         {
-            string str = "Date: " + String.Format("{0:MM/dd/yyyy}", dateOfMeet);
-            str += Environment.NewLine + "Location: " + location;
-            str += Environment.NewLine + "Weather Conditions: " + weatherConditions;
-            str += Environment.NewLine + "Teams:";
-            str += Environment.NewLine + "Boys:";
+            StringBuilder str = new StringBuilder();
+            str.Append("Date: " + String.Format("{0:MM/dd/yyyy}", dateOfMeet));
+            str.Append(Environment.NewLine + "Location: " + location);
+            str.Append(Environment.NewLine + "Weather Conditions: " + weatherConditions);
+            str.Append(Environment.NewLine + "Teams:");
+            str.Append(Environment.NewLine + "Boys:");
 
             for (int i = 0; i < boySchoolNames.Count; i++)
             {
-                str += Environment.NewLine + boySchoolNames[i] + " - " + boySchoolAbbr[i];
+                str.Append(Environment.NewLine + boySchoolNames[i] + " - " + boySchoolAbbr[i]);
             }
 
+            str.Append(Environment.NewLine + "Girls:");
             for (int i = 0; i < girlSchoolNames.Count; i++)
             {
-                str += Environment.NewLine + girlSchoolNames[i] + " - " + girlSchoolAbbr[i];
+                str.Append(Environment.NewLine + girlSchoolNames[i] + " - " + girlSchoolAbbr[i]);
             }
 
             foreach (Event i in events)
             {
-                str += Environment.NewLine + i.ToString();
+                str.Append(Environment.NewLine + i.ToString());
             }
 
-            return str;
+            return str.ToString();
         }
 
         public override bool Equals(object obj)
         {
             Meet myMeet = obj as Meet;
             if (myMeet == null) return false;
+            else if (!myMeet.dateOfMeet.Equals(dateOfMeet)) return false;
             else if (myMeet.location != location) return false;
             else if (myMeet.weatherConditions != weatherConditions) return false;
             else if (!myMeet.boySchoolNames.SequenceEqual(boySchoolNames)) return false;
             else if (!myMeet.girlSchoolNames.SequenceEqual(girlSchoolNames)) return false;
             else if (!myMeet.boySchoolAbbr.SequenceEqual(boySchoolAbbr)) return false;
             else if (!myMeet.girlSchoolAbbr.SequenceEqual(girlSchoolAbbr)) return false;
-            else if (!myMeet.events.SequenceEqual(events)) return false;
-
-            else return true;
+            //events could be null
+            else
+            {
+                if (myMeet.events == null && events == null) return true;
+                else if (myMeet.events == null && events != null) return false;
+                else if (myMeet.events != null && events == null) return false;
+                else if (!myMeet.events.SequenceEqual(events)) return false;
+                else return true;
+            }
         }
 
         public override int GetHashCode()
