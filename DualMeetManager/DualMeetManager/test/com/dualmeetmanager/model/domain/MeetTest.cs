@@ -14,13 +14,16 @@ namespace DualMeetManager.Test.Domain
         [TestCase]
         public void TestDefaultConstructor()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             Meet blankMeet = new Meet();
-            Assert.AreEqual(blankMeet != null, true);
+            Assert.AreEqual(blankMeet != null, true, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void TestParameterizedConstructor()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
             Performance myPerformance1 = new Performance("A", "AA", 1.1m);
@@ -85,12 +88,14 @@ namespace DualMeetManager.Test.Domain
             else if (!myMeetWithEvents.girlSchoolAbbr.SequenceEqual(girlsAbbr)) test = false;
             else if (!myMeetWithEvents.events.SequenceEqual(myEvents)) test = false;
 
-            Assert.True(test);
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void TestEqualsMethod()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
             Performance myPerformance1 = new Performance("A", "AA", 1.1m);
@@ -226,12 +231,14 @@ namespace DualMeetManager.Test.Domain
             else if (meet1.Equals(meet10)) test = false;
             else if (meet1.Equals(meet11)) test = false;
 
-            Assert.True(test);
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void TestToStringMethod()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             Performance myPerformance1 = new Performance("A", "AA", 1.1m);
             Performance myPerformance2 = new Performance("B", "BB", 2.2m);
             Performance myPerformance3 = new Performance("C", "CC", 3.3m);
@@ -290,12 +297,16 @@ namespace DualMeetManager.Test.Domain
                 "Name: " + "B" + ", " + "BB" + " - " + 2.2 + Environment.NewLine +
                 "Event: " + "Boy's 200" + Environment.NewLine +
                 "Name: " + "C" + ", " + "CC" + " - " + 3.3 + Environment.NewLine +
-                "Name: " + "D" + ", " + "DD" + " - " + 4.1);
+                "Name: " + "D" + ", " + "DD" + " - " + 4.1, 
+                GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void TestValidateMethod()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
             Performance myPerformance1 = new Performance("A", "AA", 1.1m);
@@ -425,28 +436,113 @@ namespace DualMeetManager.Test.Domain
             Meet invalidGirlsAbbr = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrD, myEventsA);
             Meet invalidEvents = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsB);
 
-            if (!validMeet.validate()) test = false;
-            else if (!validNoEventsMeet.validate()) test = false;
-            else if (invalidDateTime.validate()) test = false;
-            else if (invalidLocation1.validate()) test = false;
-            else if (invalidLocation2.validate()) test = false;
-            else if (invalidWeather1.validate()) test = false;
-            else if (invalidWeather2.validate()) test = false;
-            else if (dupBoysNameMeet.validate()) test = false;
-            else if (dupGirlsNameMeet.validate()) test = false;
-            else if (dupBoysAbbrMeet.validate()) test = false;
-            else if (dupGirlsAbbrMeet.validate()) test = false;
-            else if (mismatchBoysNames.validate()) test = false;
-            else if (mismatchGirlsNames.validate()) test = false;
-            else if (overBoysAbbrMeet.validate()) test = false;
-            else if (overGirlsAbbrMeet.validate()) test = false;
-            else if (invalidBoysName.validate()) test = false;
-            else if (invalidGirlsName.validate()) test = false;
-            else if (invalidBoysAbbr.validate()) test = false;
-            else if (invalidGirlsAbbr.validate()) test = false;
-            else if (invalidEvents.validate()) test = false;
+            if (!validMeet.validate())
+            {
+                test = false;
+                Console.WriteLine("validMeet failed");
+            }
+            else if (!validNoEventsMeet.validate())
+            {
+                test = false;
+                Console.WriteLine("validNoEventsMeet failed");
+            }
+            else if (invalidDateTime.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidDateTime was valid");
+            }
+            else if (invalidLocation1.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidLocation1 was valid");
+            }
+            else if (invalidLocation2.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidLocation2 was valid");
+            }
+            else if (invalidWeather1.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidWeather1 was valid");
+            }
+            else if (invalidWeather2.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidWeather2 was valid");
+            }
+            else if (dupBoysNameMeet.validate())
+            {
+                test = false;
+                Console.WriteLine("dupBoysNameMeet was valid");
+            }
+            else if (dupGirlsNameMeet.validate())
+            {
+                test = false;
+                Console.WriteLine("dupGirlsNameMeet was valid");
+            }
+            else if (dupBoysAbbrMeet.validate())
+            {
+                test = false;
+                Console.WriteLine("dupBoysAbbrMeet was valid");
+            }
+            else if (dupGirlsAbbrMeet.validate())
+            {
+                test = false;
+                Console.WriteLine("dupGirlsAbbrMeet was valid");
+            }
+            else if (mismatchBoysNames.validate())
+            {
+                test = false;
+                Console.WriteLine("mismatchBoysNames was valid");
+            }
+            else if (mismatchGirlsNames.validate())
+            {
+                test = false;
+                Console.WriteLine("mismatchGirlsNames was valid");
+            }
+            else if (overBoysAbbrMeet.validate())
+            {
+                test = false;
+                Console.WriteLine("overBoysAbbrMeet was valid");
+            }
+            else if (overGirlsAbbrMeet.validate())
+            {
+                test = false;
+                Console.WriteLine("overGirlsAbbrMeet was valid");
+            }
+            else if (invalidBoysName.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidBoysName was valid");
+            }
+            else if (invalidGirlsName.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidGirlsName was valid");
+            }
+            else if (invalidBoysAbbr.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidBoysAbbr was valid");
+            }
+            else if (invalidGirlsAbbr.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidGirlsAbbr was valid");
+            }
+            else if (invalidEvents.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidEvents was valid");
+            }
+            else
+            {
+                Console.WriteLine("TestValidateMethod Passed!");
+            }
 
-            Assert.True(test);
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
     }
 }

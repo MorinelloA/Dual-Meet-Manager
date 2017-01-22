@@ -14,13 +14,16 @@ namespace DualMeetManager.Test.Domain
         [TestCase]
         public void TestDefaultConstructor()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             Event blankEvent = new Event();
-            Assert.AreEqual(blankEvent != null, true);
+            Assert.AreEqual(blankEvent != null, true, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void TestParameterizedConstructor()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
             Performance myPerformance1 = new Performance("A", "AA", 1.1m);
@@ -37,12 +40,14 @@ namespace DualMeetManager.Test.Domain
             if (myEvent.name != "EVENT NAME") test = false;
             else if (!myEvent.performances.SequenceEqual(myPerformances)) test = false;
 
-            Assert.True(test);
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void TestEqualsMethod()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
             Performance myPerformance1 = new Performance("A", "AA", 1.1m);
@@ -68,12 +73,14 @@ namespace DualMeetManager.Test.Domain
             else if (myEvent1.Equals(myEvent3)) test = false;
             else if (myEvent1.Equals(myEvent4)) test = false;
 
-            Assert.True(test);
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void TestToStringMethod()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             Performance myPerformance1 = new Performance("A", "AA", 1.1m);
             Performance myPerformance2 = new Performance("B", "BB", 2.2m);
             Performance myPerformance3 = new Performance("C", "CC", 3.3m);
@@ -87,12 +94,14 @@ namespace DualMeetManager.Test.Domain
 
             string strEvent = myEvent.ToString();
 
-            Assert.AreEqual(strEvent, "Event: Boy's 100" + Environment.NewLine + "Name: A, AA - 1.1" + Environment.NewLine + "Name: B, BB - 2.2" + Environment.NewLine + "Name: C, CC - 3.3");
+            Assert.AreEqual(strEvent, "Event: Boy's 100" + Environment.NewLine + "Name: A, AA - 1.1" + Environment.NewLine + "Name: B, BB - 2.2" + Environment.NewLine + "Name: C, CC - 3.3", GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void TestValidateMethod()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
             Performance validPerf1 = new Performance("George Washington", "Washington High", 17.76m);
@@ -132,7 +141,8 @@ namespace DualMeetManager.Test.Domain
             else if (invalidName4.validate()) test = false;
             else if (invalidPerfEvent.validate()) test = false;
 
-            Assert.True(test);
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
     }
 }
