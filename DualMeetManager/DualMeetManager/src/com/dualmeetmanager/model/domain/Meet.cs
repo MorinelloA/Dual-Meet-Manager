@@ -47,6 +47,55 @@ namespace DualMeetManager.Domain
             this.events = events;
         }
 
+        public bool validate()
+        {
+            if (dateOfMeet == DateTime.MinValue) return false; //Invalid Date
+            else if (string.IsNullOrWhiteSpace(location)) return false; //No location given
+            else if (string.IsNullOrWhiteSpace(weatherConditions)) return false; //No Weather conditions given
+            else if (boySchoolNames == null && girlSchoolNames == null) return false; //No school names
+            else if (boySchoolAbbr == null && girlSchoolAbbr == null) return false; //No school abbr
+            else if (boySchoolNames.Count != boySchoolNames.Distinct().Count()) return false; //Duplicates Exist
+            else if (girlSchoolNames.Count != girlSchoolNames.Distinct().Count()) return false; //Duplicates Exist
+            else if (boySchoolAbbr.Count != boySchoolAbbr.Distinct().Count()) return false; //Duplicates Exist
+            else if (girlSchoolAbbr.Count != girlSchoolAbbr.Distinct().Count()) return false; //Duplicates Exist
+            else if (boySchoolNames.Count != boySchoolAbbr.Count) return false; //Names and Abbr aren't equal
+            else if (girlSchoolNames.Count != girlSchoolAbbr.Count) return false; //Names and Abbr aren't equal
+
+            foreach (string i in boySchoolNames)
+            {
+                if (string.IsNullOrWhiteSpace(i)) return false; //Empty name
+            }
+
+            foreach (string i in girlSchoolNames)
+            {
+                if (string.IsNullOrWhiteSpace(i)) return false; //Empty name
+            }
+
+            foreach (string i in boySchoolAbbr)
+            {
+                if (i.Length > 3) return false; //Abbreviations need to be limited to 3 characters
+                if (string.IsNullOrWhiteSpace(i)) return false; //Empty abbr
+            }
+
+            foreach (string i in girlSchoolAbbr)
+            {
+                if (i.Length > 3) return false; //Abbreviations need to be limited to 3 characters
+                if (string.IsNullOrWhiteSpace(i)) return false; //Empty abbr
+            }
+
+
+            
+            if(events != null) //This is allowed
+            {
+                foreach(Event i in events)
+                {
+                    if (!i.validate()) return false;
+                }
+            }
+
+            return true;
+        }
+
         public override string ToString()
         {
             StringBuilder str = new StringBuilder();

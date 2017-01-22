@@ -23,6 +23,14 @@ namespace DualMeetManager.Domain
             this.performance = performance;
         }
 
+        public bool validate()
+        {
+            if (string.IsNullOrWhiteSpace(athleteName)) return false; //Must have a name
+            else if (string.IsNullOrWhiteSpace(schoolName)) return false; //Must have a school
+            else if (performance <= 0) return false; //Valid time ordistance is positive
+            return true;
+        }
+
         public override string ToString()
         {
             //This performance will be returned as raw data (seconds and inches)

@@ -89,5 +89,50 @@ namespace DualMeetManager.Test.Domain
 
             Assert.AreEqual(strEvent, "Event: Boy's 100" + Environment.NewLine + "Name: A, AA - 1.1" + Environment.NewLine + "Name: B, BB - 2.2" + Environment.NewLine + "Name: C, CC - 3.3");
         }
+
+        [TestCase]
+        public void TestValidateMethod()
+        {
+            bool test = true;
+
+            Performance validPerf1 = new Performance("George Washington", "Washington High", 17.76m);
+            Performance validPerf2 = new Performance("Charlie Brown", "Peanuts U", 19.8m);
+            Performance validPerf3 = new Performance("Sally Brown", "Peanuts U", 18.5m);
+            Performance validPerf4 = new Performance("Superman", "Krypton", .01m);
+            Performance invalidPerf = new Performance(null, "Washington High", 17.76m);
+
+            List<Performance> valid = new List<Performance>();
+            valid.Add(validPerf1);
+            valid.Add(validPerf2);
+            valid.Add(validPerf3);
+            valid.Add(validPerf4);
+
+            List<Performance> invalid = new List<Performance>();
+            invalid.Add(validPerf1);
+            invalid.Add(validPerf2);
+            invalid.Add(validPerf3);
+            invalid.Add(validPerf4);
+            invalid.Add(invalidPerf);
+
+            Event validBlankEvent = new Event("Boy's 100");
+            Event validLoadedEvent = new Event("Boy's 100", valid);
+            Event validNullEvents = new Event("Boy's 100", null);
+            Event invalidName1 = new Event(null, valid);
+            Event invalidName2 = new Event(null);
+            Event invalidName3 = new Event("", valid);
+            Event invalidName4 = new Event("");
+            Event invalidPerfEvent = new Event("Boy's 100", invalid);
+
+            if (!validBlankEvent.validate()) test = false;
+            else if (!validLoadedEvent.validate()) test = false;
+            else if (!validNullEvents.validate()) test = false;
+            else if (invalidName1.validate()) test = false;
+            else if (invalidName2.validate()) test = false;
+            else if (invalidName3.validate()) test = false;
+            else if (invalidName4.validate()) test = false;
+            else if (invalidPerfEvent.validate()) test = false;
+
+            Assert.True(test);
+        }
     }
 }

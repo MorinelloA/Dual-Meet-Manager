@@ -64,5 +64,29 @@ namespace DualMeetManager.Test.Domain
 
             Assert.AreEqual(strPerf, "Name: George Washington, Washington High - 17.76");
         }
+
+        [TestCase]
+        public void TestValidateMethod()
+        {
+            bool test = true;
+
+            Performance validPerf = new Performance("George Washington", "Washington High", 17.76m);
+            Performance invalidName1 = new Performance(null, "Washington High", 17.76m);
+            Performance invalidName2 = new Performance("", "Washington High", 17.76m);
+            Performance invalidSchool1 = new Performance("George Washington", null, 17.76m);
+            Performance invalidSchool2 = new Performance("George Washington", "", 17.76m);
+            Performance invalidPerf1 = new Performance("George Washington", "Washington High", 0m);
+            Performance invalidPerf2 = new Performance("George Washington", "Washington High", -17.76m);
+
+            if (!validPerf.validate()) test = false;
+            else if (invalidName1.validate()) test = false;
+            else if (invalidName2.validate()) test = false;
+            else if (invalidSchool1.validate()) test = false;
+            else if (invalidSchool2.validate()) test = false;
+            else if (invalidPerf1.validate()) test = false;
+            else if (invalidPerf2.validate()) test = false;
+
+            Assert.True(test);
+        }
     }
 }

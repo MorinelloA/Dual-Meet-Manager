@@ -21,6 +21,24 @@ namespace DualMeetManager.Domain
             this.performances = performances;
         }
 
+        public Event(string name)
+        {
+            this.name = name;
+        }
+
+        public bool validate()
+        {
+            if (string.IsNullOrWhiteSpace(name)) return false; //name should not be blank
+            else if (performances != null) //An event could be null if not contested
+            {
+                foreach(Performance i in performances)
+                {
+                    if (!i.validate()) return false; //If a specific performance is not valid return false
+                }
+            }
+            return true;
+        }
+
         public override string ToString()
         {
             string str = "Event: " + name;

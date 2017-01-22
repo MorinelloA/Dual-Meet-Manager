@@ -292,5 +292,161 @@ namespace DualMeetManager.Test.Domain
                 "Name: " + "C" + ", " + "CC" + " - " + 3.3 + Environment.NewLine +
                 "Name: " + "D" + ", " + "DD" + " - " + 4.1);
         }
+
+        [TestCase]
+        public void TestValidateMethod()
+        {
+            bool test = true;
+
+            Performance myPerformance1 = new Performance("A", "AA", 1.1m);
+            Performance myPerformance2 = new Performance("B", "BB", 2.2m);
+            Performance myPerformance3 = new Performance("C", "CC", 3.3m);
+            Performance myPerformance4 = new Performance("D", "DD", 4.1m);
+
+            List<Performance> myPerformancesA = new List<Performance>();
+            myPerformancesA.Add(myPerformance1);
+            myPerformancesA.Add(myPerformance2);
+
+            List<Performance> myPerformancesB = new List<Performance>();
+            myPerformancesB.Add(myPerformance3);
+            myPerformancesB.Add(myPerformance4);
+
+            Event myEvent1 = new Event("Boy's 100", myPerformancesA);
+            Event myEvent2 = new Event("Boy's 200", myPerformancesB);
+            Event myEvent3 = new Event("", myPerformancesB);
+
+            List<Event> myEventsA = new List<Event>();
+            myEventsA.Add(myEvent1);
+            myEventsA.Add(myEvent2);
+
+            List<Event> myEventsB = new List<Event>();
+            myEventsB.Add(myEvent1);
+            myEventsB.Add(myEvent2);
+            myEventsB.Add(myEvent3);
+
+            List<string> boysNamesA = new List<string>();
+            List<string> boysAbbrA = new List<string>();
+            boysNamesA.Add("Baldwin");
+            boysAbbrA.Add("BLN");
+            boysNamesA.Add("Thomas Jefferson");
+            boysAbbrA.Add("TJ");
+            boysNamesA.Add("Washington HS");
+            boysAbbrA.Add("WHS");
+
+            List<string> dupBoysNames = new List<string>();
+            List<string> dupBoysAbbr = new List<string>();
+            dupBoysNames.Add("Baldwin");
+            dupBoysAbbr.Add("BLN");
+            dupBoysNames.Add("Thomas Jefferson");
+            dupBoysAbbr.Add("TJ");
+            dupBoysNames.Add("Baldwin");
+            dupBoysAbbr.Add("BLN");
+
+            List<string> boysNamesC = new List<string>();
+            List<string> boysAbbrC = new List<string>();
+            boysNamesC.Add("Baldwin");
+            boysAbbrC.Add("BLN");
+            boysNamesC.Add("Thomas Jefferson");
+            boysAbbrC.Add("TJ");
+            boysAbbrC.Add("WHS");
+
+            List<string> girlsNamesA = new List<string>();
+            List<string> girlsAbbrA = new List<string>();
+            girlsNamesA.Add("Plum");
+            girlsAbbrA.Add("PLM");
+            girlsNamesA.Add("Gateway");
+            girlsAbbrA.Add("GWY");
+            girlsNamesA.Add("Knoch");
+            girlsAbbrA.Add("KCH");
+
+            List<string> dupGirlsNames = new List<string>();
+            List<string> dupGirlsAbbr = new List<string>();
+            dupGirlsNames.Add("Plum");
+            dupGirlsAbbr.Add("PLM");
+            dupGirlsNames.Add("Gateway");
+            dupGirlsAbbr.Add("GWY");
+            dupGirlsNames.Add("Plum");
+            dupGirlsAbbr.Add("PLM");
+
+            List<string> girlsNamesC = new List<string>();
+            List<string> girlsAbbrC = new List<string>();
+            girlsNamesC.Add("Plum");
+            girlsAbbrC.Add("PLM");
+            girlsNamesC.Add("Gateway");
+            girlsAbbrC.Add("GWY");
+            girlsNamesC.Add("Knoch");
+
+            List<string> girlsNamesD = new List<string>();
+            List<string> girlsAbbrD = new List<string>();
+            girlsNamesD.Add("Plum");
+            girlsAbbrD.Add("PLM");
+            girlsNamesD.Add("");
+            girlsAbbrD.Add("GWY");
+            girlsNamesD.Add("Knoch");
+            girlsAbbrD.Add("");
+
+            List<string> boysNamesD = new List<string>();
+            List<string> boysAbbrD = new List<string>();
+            boysNamesD.Add("Plum");
+            boysAbbrD.Add("PLM");
+            boysNamesD.Add("");
+            boysAbbrD.Add("GWY");
+            boysNamesD.Add("Knoch");
+            boysAbbrD.Add("");
+
+            List<string> overBoysAbbr = new List<string>();
+            overBoysAbbr.Add("PLM");
+            overBoysAbbr.Add("GATE");
+            overBoysAbbr.Add("GWY");
+
+            List<string> overGirlsAbbr = new List<string>();
+            overGirlsAbbr.Add("PLM");
+            overGirlsAbbr.Add("GATE");
+            overGirlsAbbr.Add("GWY");
+
+            Meet validMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet validNoEventsMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA);
+            Meet invalidDateTime = new Meet(DateTime.MinValue, "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet invalidLocation1 = new Meet(new DateTime(2017, 04, 13), null, "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet invalidWeather1 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", null, boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet invalidLocation2 = new Meet(new DateTime(2017, 04, 13), "", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet invalidWeather2 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet dupBoysNameMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", dupBoysNames, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet dupGirlsNameMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, dupGirlsNames, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet dupBoysAbbrMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, dupBoysAbbr, girlsAbbrA, myEventsA);
+            Meet dupGirlsAbbrMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, dupGirlsAbbr, myEventsA);
+            Meet mismatchBoysNames = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesC, girlsNamesA, boysAbbrC, girlsAbbrA, myEventsA);
+            Meet mismatchGirlsNames = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesC, boysAbbrA, girlsAbbrC, myEventsA);
+            Meet overBoysAbbrMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, overBoysAbbr, girlsAbbrA, myEventsA);
+            Meet overGirlsAbbrMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, overGirlsAbbr, myEventsA);
+            Meet invalidBoysName = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesD, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet invalidGirlsName = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesD, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet invalidBoysAbbr = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrD, girlsAbbrA, myEventsA);
+            Meet invalidGirlsAbbr = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrD, myEventsA);
+            Meet invalidEvents = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsB);
+
+            if (!validMeet.validate()) test = false;
+            else if (!validNoEventsMeet.validate()) test = false;
+            else if (invalidDateTime.validate()) test = false;
+            else if (invalidLocation1.validate()) test = false;
+            else if (invalidLocation2.validate()) test = false;
+            else if (invalidWeather1.validate()) test = false;
+            else if (invalidWeather2.validate()) test = false;
+            else if (dupBoysNameMeet.validate()) test = false;
+            else if (dupGirlsNameMeet.validate()) test = false;
+            else if (dupBoysAbbrMeet.validate()) test = false;
+            else if (dupGirlsAbbrMeet.validate()) test = false;
+            else if (mismatchBoysNames.validate()) test = false;
+            else if (mismatchGirlsNames.validate()) test = false;
+            else if (overBoysAbbrMeet.validate()) test = false;
+            else if (overGirlsAbbrMeet.validate()) test = false;
+            else if (invalidBoysName.validate()) test = false;
+            else if (invalidGirlsName.validate()) test = false;
+            else if (invalidBoysAbbr.validate()) test = false;
+            else if (invalidGirlsAbbr.validate()) test = false;
+            else if (invalidEvents.validate()) test = false;
+
+            Assert.True(test);
+        }
     }
 }
