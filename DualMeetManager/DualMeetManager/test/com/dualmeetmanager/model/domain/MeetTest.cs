@@ -79,14 +79,46 @@ namespace DualMeetManager.Test.Domain
 
             Meet myMeetWithEvents = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNames, girlsNames, boysAbbr, girlsAbbr, myEvents);
 
-            if (myMeetWithEvents.dateOfMeet != new DateTime(2017, 04, 13)) test = false;
-            else if (myMeetWithEvents.location != "Baldwin HS") test = false;
-            else if (myMeetWithEvents.weatherConditions != "Windy") test = false;
-            else if (!myMeetWithEvents.boySchoolNames.SequenceEqual(boysNames)) test = false;
-            else if (!myMeetWithEvents.girlSchoolNames.SequenceEqual(girlsNames)) test = false;
-            else if (!myMeetWithEvents.boySchoolAbbr.SequenceEqual(boysAbbr)) test = false;
-            else if (!myMeetWithEvents.girlSchoolAbbr.SequenceEqual(girlsAbbr)) test = false;
-            else if (!myMeetWithEvents.events.SequenceEqual(myEvents)) test = false;
+            if (myMeetWithEvents.dateOfMeet != new DateTime(2017, 04, 13))
+            {
+                test = false;
+                Console.WriteLine("Invalid date");
+            }
+            else if (myMeetWithEvents.location != "Baldwin HS")
+            {
+                test = false;
+                Console.WriteLine("Invalid location");
+            }
+            else if (myMeetWithEvents.weatherConditions != "Windy")
+            {
+                test = false;
+                Console.WriteLine("Invalid weather conditions");
+            }
+            else if (!myMeetWithEvents.boySchoolNames.SequenceEqual(boysNames))
+            {
+                test = false;
+                Console.WriteLine("Invalid boy school names");
+            }
+            else if (!myMeetWithEvents.girlSchoolNames.SequenceEqual(girlsNames))
+            {
+                test = false;
+                Console.WriteLine("Invalid girl school names");
+            }
+            else if (!myMeetWithEvents.boySchoolAbbr.SequenceEqual(boysAbbr))
+            {
+                test = false;
+                Console.WriteLine("Invalid boy school abbr");
+            }
+            else if (!myMeetWithEvents.girlSchoolAbbr.SequenceEqual(girlsAbbr))
+            {
+                test = false;
+                Console.WriteLine("Invalid girl school abbr");
+            }
+            else if (!myMeetWithEvents.events.SequenceEqual(myEvents))
+            {
+                test = false;
+                Console.WriteLine("Invalid events");
+            }
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
@@ -220,16 +252,56 @@ namespace DualMeetManager.Test.Domain
             //No Results
             Meet meet11 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA);
 
-            if (!meet1.Equals(meet2)) test = false;
-            else if (meet1.Equals(meet3)) test = false;
-            else if (meet1.Equals(meet4)) test = false;
-            else if (meet1.Equals(meet5)) test = false;
-            else if (meet1.Equals(meet6)) test = false;
-            else if (meet1.Equals(meet7)) test = false;
-            else if (meet1.Equals(meet8)) test = false;
-            else if (meet1.Equals(meet9)) test = false;
-            else if (meet1.Equals(meet10)) test = false;
-            else if (meet1.Equals(meet11)) test = false;
+            if (!meet1.Equals(meet2))
+            {
+                test = false;
+                Console.WriteLine("meet1 does not equal meet2");
+            }
+            else if (meet1.Equals(meet3))
+            {
+                test = false;
+                Console.WriteLine("meet1 equals meet3");
+            }
+            else if (meet1.Equals(meet4))
+            {
+                test = false;
+                Console.WriteLine("meet1 equals meet4");
+            }
+            else if (meet1.Equals(meet5))
+            {
+                test = false;
+                Console.WriteLine("meet1 equals meet5");
+            }
+            else if (meet1.Equals(meet6))
+            {
+                test = false;
+                Console.WriteLine("meet1 equals meet6");
+            }
+            else if (meet1.Equals(meet7))
+            {
+                test = false;
+                Console.WriteLine("meet1 equals meet7");
+            }
+            else if (meet1.Equals(meet8))
+            {
+                test = false;
+                Console.WriteLine("meet1 equals meet8");
+            }
+            else if (meet1.Equals(meet9))
+            {
+                test = false;
+                Console.WriteLine("meet1 equals meet9");
+            }
+            else if (meet1.Equals(meet10))
+            {
+                test = false;
+                Console.WriteLine("meet1 equals meet10");
+            }
+            else if (meet1.Equals(meet11))
+            {
+                test = false;
+                Console.WriteLine("meet1 equals meet11");
+            }
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");

@@ -37,8 +37,21 @@ namespace DualMeetManager.Test.Domain
 
             Event myEvent = new Event("EVENT NAME", myPerformances);
 
-            if (myEvent.name != "EVENT NAME") test = false;
-            else if (!myEvent.performances.SequenceEqual(myPerformances)) test = false;
+            if (myEvent == null)
+            {
+                test = false;
+                Console.WriteLine("myEvent equals null");
+            }
+            else if (myEvent.name != "EVENT NAME")
+            {
+                test = false;
+                Console.WriteLine("name was not the correct value");
+            }
+            else if (!myEvent.performances.SequenceEqual(myPerformances))
+            {
+                test = false;
+                Console.WriteLine("performances are not correct");
+            }
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
@@ -69,9 +82,21 @@ namespace DualMeetManager.Test.Domain
             Event myEvent3 = new Event("Girl's 100", myPerformances);
             Event myEvent4 = new Event("Boy's 100", myPerformances2);
 
-            if (!myEvent1.Equals(myEvent2)) test = false;
-            else if (myEvent1.Equals(myEvent3)) test = false;
-            else if (myEvent1.Equals(myEvent4)) test = false;
+            if (!myEvent1.Equals(myEvent2))
+            {
+                test = false;
+                Console.WriteLine("myEvent1 does not equal myEvent2");
+            }
+            else if (myEvent1.Equals(myEvent3))
+            {
+                test = false;
+                Console.WriteLine("myEvent1 equals myEvent3");
+            }
+            else if (myEvent1.Equals(myEvent4))
+            {
+                test = false;
+                Console.WriteLine("myEvent1 equals myEvent4");
+            }
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
@@ -132,14 +157,46 @@ namespace DualMeetManager.Test.Domain
             Event invalidName4 = new Event("");
             Event invalidPerfEvent = new Event("Boy's 100", invalid);
 
-            if (!validBlankEvent.validate()) test = false;
-            else if (!validLoadedEvent.validate()) test = false;
-            else if (!validNullEvents.validate()) test = false;
-            else if (invalidName1.validate()) test = false;
-            else if (invalidName2.validate()) test = false;
-            else if (invalidName3.validate()) test = false;
-            else if (invalidName4.validate()) test = false;
-            else if (invalidPerfEvent.validate()) test = false;
+            if (!validBlankEvent.validate())
+            {
+                test = false;
+                Console.WriteLine("validBlankEvent was not valid");
+            }
+            else if (!validLoadedEvent.validate())
+            {
+                test = false;
+                Console.WriteLine("validLoadedEvent was not valid");
+            }
+            else if (!validNullEvents.validate())
+            {
+                test = false;
+                Console.WriteLine("validNullEvents was not valid");
+            }
+            else if (invalidName1.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidName1 was valid");
+            }
+            else if (invalidName2.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidName2 was valid");
+            }
+            else if (invalidName3.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidName3 was valid");
+            }
+            else if (invalidName4.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidName4 was valid");
+            }
+            else if (invalidPerfEvent.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidPerfEvent was valid");
+            }
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
