@@ -15,7 +15,7 @@ namespace DualMeetManager.Domain
         public List<string> girlSchoolNames { get; set; }
         public List<string> boySchoolAbbr { get; set; }
         public List<string> girlSchoolAbbr { get; set; }
-        public List<Event> events { get; set; }
+        public Dictionary<string, List<Performance>> performances { get; set; }
 
         //Default Constructor
         public Meet() { }
@@ -35,7 +35,7 @@ namespace DualMeetManager.Domain
 
         //Constructor used for an existing meet
         public Meet(DateTime dateOfMeet, string location, string weatherConditions, List<string> boySchoolNames,
-            List<string> girlSchoolNames, List<string> boySchoolAbbr, List<string> girlSchoolAbbr, List<Event> events)
+            List<string> girlSchoolNames, List<string> boySchoolAbbr, List<string> girlSchoolAbbr, Dictionary<string, List<Performance>> performances)
         {
             this.dateOfMeet = dateOfMeet;
             this.location = location;
@@ -44,7 +44,7 @@ namespace DualMeetManager.Domain
             this.girlSchoolNames = girlSchoolNames;
             this.boySchoolAbbr = boySchoolAbbr;
             this.girlSchoolAbbr = girlSchoolAbbr;
-            this.events = events;
+            this.performances = performances;
         }
 
         public bool validate()
@@ -83,13 +83,13 @@ namespace DualMeetManager.Domain
                 if (string.IsNullOrWhiteSpace(i)) return false; //Empty abbr
             }
 
-
-            
-            if(events != null) //This is allowed
+            if(performances != null) //This is allowed
             {
-                foreach(Event i in events)
+                //foreach(Event i in events)
+                foreach (KeyValuePair<string, List<Performance>> i in performances)
                 {
-                    if (!i.validate()) return false;
+                    foreach(Performance j in i.Value)
+                        if (!j.validate()) return false;
                 }
             }
 
@@ -116,9 +116,14 @@ namespace DualMeetManager.Domain
                 str.Append(Environment.NewLine + girlSchoolNames[i] + " - " + girlSchoolAbbr[i]);
             }
 
-            foreach (Event i in events)
+            //foreach (Performance i in performances)
+            foreach (KeyValuePair<string, List<Performance>> i in performances)
             {
-                str.Append(Environment.NewLine + i.ToString());
+                str.Append(Environment.NewLine + "Event: " + i.Key.ToString());
+                foreach (Performance j in i.Value)
+                {
+                    str.Append(Environment.NewLine + j.ToString());
+                }
             }
 
             return str.ToString();
@@ -138,10 +143,10 @@ namespace DualMeetManager.Domain
             //events could be null
             else
             {
-                if (myMeet.events == null && events == null) return true;
-                else if (myMeet.events == null && events != null) return false;
-                else if (myMeet.events != null && events == null) return false;
-                else if (!myMeet.events.SequenceEqual(events)) return false;
+                if (myMeet.performances == null && performances == null) return true;
+                else if (myMeet.performances == null && performances != null) return false;
+                else if (myMeet.performances != null && performances == null) return false;
+                else if (!myMeet.performances.SequenceEqual(performances)) return false;
                 else return true;
             }
         }
@@ -157,7 +162,7 @@ namespace DualMeetManager.Domain
                 hash = hash * 23 + girlSchoolNames.GetHashCode();
                 hash = hash * 23 + boySchoolAbbr.GetHashCode();
                 hash = hash * 23 + girlSchoolAbbr.GetHashCode();
-                hash = hash * 23 + events.GetHashCode();
+                hash = hash * 23 + performances.GetHashCode();
                 return hash;
             }
         }

@@ -47,12 +47,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="src\com\dualmeetmanager\model\domain\Event.cs" />
     <Compile Include="src\com\dualmeetmanager\model\domain\Meet.cs" />
     <Compile Include="src\com\dualmeetmanager\model\domain\Performance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="test\com\dualmeetmanager\model\domain\EventTest.cs" />
     <Compile Include="test\com\dualmeetmanager\model\domain\MeetTest.cs" />
     <Compile Include="test\com\dualmeetmanager\model\domain\PerformanceTest.cs" />
   </ItemGroup>

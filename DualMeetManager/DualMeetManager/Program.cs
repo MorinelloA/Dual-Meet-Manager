@@ -24,12 +24,10 @@ namespace DualMeetManager
             myPerformancesB.Add(myPerformance3);
             myPerformancesB.Add(myPerformance4);
 
-            Event myEvent1 = new Event("Boy's 100", myPerformancesA);
-            Event myEvent2 = new Event("Boy's 200", myPerformancesB);
+            Dictionary<string, List<Performance>> performances = new Dictionary<string, List<Performance>>();
 
-            List<Event> myEventsA = new List<Event>();
-            myEventsA.Add(myEvent1);
-            myEventsA.Add(myEvent2);
+            performances.Add("Boy's 100", myPerformancesA);
+            performances.Add("Boy's 200", myPerformancesB);
 
             List<string> boysNamesA = new List<string>();
             List<string> boysAbbrA = new List<string>();
@@ -49,7 +47,7 @@ namespace DualMeetManager
             girlsNamesA.Add("Knoch");
             girlsAbbrA.Add("KCH");
 
-            Meet myMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
+            Meet myMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, performances);
 
             string strMeet = myMeet.ToString();
             Console.WriteLine(strMeet);

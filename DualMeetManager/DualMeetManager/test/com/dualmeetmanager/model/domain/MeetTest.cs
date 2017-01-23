@@ -11,6 +11,7 @@ namespace DualMeetManager.Test.Domain
     [TestFixture]
     class MeetTest
     {
+        
         [TestCase]
         public void TestDefaultConstructor()
         {
@@ -43,11 +44,9 @@ namespace DualMeetManager.Test.Domain
             myPerformancesB.Add(myPerformance5);
             myPerformancesB.Add(myPerformance6);
 
-            Event myEvent1 = new Event("Boy's 100", myPerformancesA);
-            Event myEvent2 = new Event("Boy's 200", myPerformancesB);
-            List<Event> myEvents = new List<Event>();
-            myEvents.Add(myEvent1);
-            myEvents.Add(myEvent2);
+            Dictionary<string, List<Performance>> myPerformances = new Dictionary<string, List<Performance>>();
+            myPerformances.Add("Boy's 100", myPerformancesA);
+            myPerformances.Add("Boy's 200", myPerformancesB);
 
             List<string> boysNames = new List<string>();
             List<string> boysAbbr = new List<string>();
@@ -77,7 +76,7 @@ namespace DualMeetManager.Test.Domain
             else if (!myMeetNoEvents.boySchoolAbbr.SequenceEqual(boysAbbr)) test = false;
             else if (!myMeetNoEvents.girlSchoolAbbr.SequenceEqual(girlsAbbr)) test = false;
 
-            Meet myMeetWithEvents = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNames, girlsNames, boysAbbr, girlsAbbr, myEvents);
+            Meet myMeetWithEvents = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNames, girlsNames, boysAbbr, girlsAbbr, myPerformances);
 
             if (myMeetWithEvents.dateOfMeet != new DateTime(2017, 04, 13))
             {
@@ -114,10 +113,10 @@ namespace DualMeetManager.Test.Domain
                 test = false;
                 Console.WriteLine("Invalid girl school abbr");
             }
-            else if (!myMeetWithEvents.events.SequenceEqual(myEvents))
+            else if (!myMeetWithEvents.performances.SequenceEqual(myPerformances))
             {
                 test = false;
-                Console.WriteLine("Invalid events");
+                Console.WriteLine("Invalid performances");
             }
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
@@ -149,21 +148,17 @@ namespace DualMeetManager.Test.Domain
             myPerformancesC.Add(myPerformance5);
             myPerformancesC.Add(myPerformance6);
 
-            Event myEvent1 = new Event("Boy's 100", myPerformancesA);
-            Event myEvent2 = new Event("Boy's 200", myPerformancesB);
-            Event myEvent3 = new Event("Boy's 400", myPerformancesC);
+            Dictionary<string, List<Performance>> myEventsA = new Dictionary<string, List<Performance>>();
+            myEventsA.Add("Boy's 100", myPerformancesA);
+            myEventsA.Add("Boy's 200", myPerformancesB);
 
-            List<Event> myEventsA = new List<Event>();
-            myEventsA.Add(myEvent1);
-            myEventsA.Add(myEvent2);
+            Dictionary<string, List<Performance>> myEventsB = new Dictionary<string, List<Performance>>();
+            myEventsB.Add("Boy's 100", myPerformancesA);
+            myEventsB.Add("Boy's 200", myPerformancesB);
 
-            List<Event> myEventsB = new List<Event>();
-            myEventsB.Add(myEvent1);
-            myEventsB.Add(myEvent2);
-
-            List<Event> myEventsC = new List<Event>();
-            myEventsC.Add(myEvent2);
-            myEventsC.Add(myEvent3);
+            Dictionary<string, List<Performance>> myEventsC = new Dictionary<string, List<Performance>>();
+            myEventsC.Add("Boy's 100", myPerformancesB);
+            myEventsC.Add("Boy's 200", myPerformancesC);
 
             List<string> boysNamesA = new List<string>();
             List<string> boysAbbrA = new List<string>();
@@ -306,7 +301,7 @@ namespace DualMeetManager.Test.Domain
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
-
+        
         [TestCase]
         public void TestToStringMethod()
         {
@@ -324,12 +319,9 @@ namespace DualMeetManager.Test.Domain
             myPerformancesB.Add(myPerformance3);
             myPerformancesB.Add(myPerformance4);
 
-            Event myEvent1 = new Event("Boy's 100", myPerformancesA);
-            Event myEvent2 = new Event("Boy's 200", myPerformancesB);
-
-            List<Event> myEventsA = new List<Event>();
-            myEventsA.Add(myEvent1);
-            myEventsA.Add(myEvent2);
+            Dictionary<string, List<Performance>> myEventsA = new Dictionary<string, List<Performance>>();
+            myEventsA.Add("Boy's 100", myPerformancesA);
+            myEventsA.Add("Boy's 200", myPerformancesB);
 
             List<string> boysNamesA = new List<string>();
             List<string> boysAbbrA = new List<string>();
@@ -352,6 +344,30 @@ namespace DualMeetManager.Test.Domain
             Meet myMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
 
             string strMeet = myMeet.ToString();
+
+            Console.WriteLine("My string:" + Environment.NewLine + Environment.NewLine);
+            Console.WriteLine(strMeet + Environment.NewLine);
+
+            Console.WriteLine("Expecting:" + Environment.NewLine + Environment.NewLine);
+            Console.WriteLine("Date: 04/13/2017" + Environment.NewLine +
+                "Location: " + "Baldwin HS" + Environment.NewLine +
+                "Weather Conditions: " + "Windy" + Environment.NewLine +
+                "Teams:" + Environment.NewLine +
+                "Boys:" + Environment.NewLine +
+                "Baldwin - BLN" + Environment.NewLine +
+                "Thomas Jefferson - TJ" + Environment.NewLine +
+                "Washington HS - WHS" + Environment.NewLine +
+                "Girls:" + Environment.NewLine +
+                "Plum - PLM" + Environment.NewLine +
+                "Gateway - GWY" + Environment.NewLine +
+                "Knoch - KCH" + Environment.NewLine +
+                "Event: " + "Boy's 100" + Environment.NewLine +
+                "Name: " + "A" + ", " + "AA" + " - " + 1.1 + Environment.NewLine +
+                "Name: " + "B" + ", " + "BB" + " - " + 2.2 + Environment.NewLine +
+                "Event: " + "Boy's 200" + Environment.NewLine +
+                "Name: " + "C" + ", " + "CC" + " - " + 3.3 + Environment.NewLine +
+                "Name: " + "D" + ", " + "DD" + " - " + 4.1);
+
             Assert.AreEqual(strMeet, "Date: 04/13/2017" + Environment.NewLine +
                 "Location: " + "Baldwin HS" + Environment.NewLine +
                 "Weather Conditions: " + "Windy" + Environment.NewLine +
@@ -385,6 +401,7 @@ namespace DualMeetManager.Test.Domain
             Performance myPerformance2 = new Performance("B", "BB", 2.2m);
             Performance myPerformance3 = new Performance("C", "CC", 3.3m);
             Performance myPerformance4 = new Performance("D", "DD", 4.1m);
+            Performance myPerformance5 = new Performance("", "DD", 4.1m);
 
             List<Performance> myPerformancesA = new List<Performance>();
             myPerformancesA.Add(myPerformance1);
@@ -394,18 +411,17 @@ namespace DualMeetManager.Test.Domain
             myPerformancesB.Add(myPerformance3);
             myPerformancesB.Add(myPerformance4);
 
-            Event myEvent1 = new Event("Boy's 100", myPerformancesA);
-            Event myEvent2 = new Event("Boy's 200", myPerformancesB);
-            Event myEvent3 = new Event("", myPerformancesB);
+            List<Performance> myPerformancesC = new List<Performance>();
+            myPerformancesC.Add(myPerformance5);
 
-            List<Event> myEventsA = new List<Event>();
-            myEventsA.Add(myEvent1);
-            myEventsA.Add(myEvent2);
+            Dictionary<string, List<Performance>> myEventsA = new Dictionary<string, List<Performance>>();
+            myEventsA.Add("Boy's 100", myPerformancesA);
+            myEventsA.Add("Boy's 200", myPerformancesB);
 
-            List<Event> myEventsB = new List<Event>();
-            myEventsB.Add(myEvent1);
-            myEventsB.Add(myEvent2);
-            myEventsB.Add(myEvent3);
+            Dictionary<string, List<Performance>> myEventsB = new Dictionary<string, List<Performance>>();
+            myEventsB.Add("Boy's 100", myPerformancesA);
+            myEventsB.Add("Boy's 200", myPerformancesB);
+            myEventsB.Add("Boy's 400", myPerformancesC);
 
             List<string> boysNamesA = new List<string>();
             List<string> boysAbbrA = new List<string>();
