@@ -423,6 +423,10 @@ namespace DualMeetManager.Test.Domain
             myEventsB.Add("Boy's 200", myPerformancesB);
             myEventsB.Add("Boy's 400", myPerformancesC);
 
+            Dictionary<string, List<Performance>> myEventsC = new Dictionary<string, List<Performance>>();
+            myEventsC.Add("Boy's 100", myPerformancesA);
+            myEventsC.Add("200", myPerformancesB);
+
             List<string> boysNamesA = new List<string>();
             List<string> boysAbbrA = new List<string>();
             boysNamesA.Add("Baldwin");
@@ -502,7 +506,7 @@ namespace DualMeetManager.Test.Domain
             overGirlsAbbr.Add("PLM");
             overGirlsAbbr.Add("GATE");
             overGirlsAbbr.Add("GWY");
-
+            
             Meet validMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
             Meet validNoEventsMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA);
             Meet invalidDateTime = new Meet(DateTime.MinValue, "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsA);
@@ -522,8 +526,9 @@ namespace DualMeetManager.Test.Domain
             Meet invalidGirlsName = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesD, boysAbbrA, girlsAbbrA, myEventsA);
             Meet invalidBoysAbbr = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrD, girlsAbbrA, myEventsA);
             Meet invalidGirlsAbbr = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrD, myEventsA);
-            Meet invalidEvents = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsB);
-
+            Meet invalidPerformance = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsB);
+            Meet invalidEventName = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", boysNamesA, girlsNamesA, boysAbbrA, girlsAbbrA, myEventsC);
+            
             if (!validMeet.validate())
             {
                 test = false;
@@ -619,10 +624,15 @@ namespace DualMeetManager.Test.Domain
                 test = false;
                 Console.WriteLine("invalidGirlsAbbr was valid");
             }
-            else if (invalidEvents.validate())
+            else if (invalidPerformance.validate())
             {
                 test = false;
-                Console.WriteLine("invalidEvents was valid");
+                Console.WriteLine("invalidPerformance was valid");
+            }
+            else if (invalidEventName.validate())
+            {
+                test = false;
+                Console.WriteLine("invalidEventName was valid");
             }
             else
             {
