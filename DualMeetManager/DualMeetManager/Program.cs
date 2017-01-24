@@ -1,4 +1,4 @@
-﻿using DualMeetManager.Domain;
+﻿using DualMeetManager.src.com.dualmeetmanager.model.domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DualMeetManager.Domain
+namespace DualMeetManager.src.com.dualmeetmanager.model.domain
 {
     class Meet
     {
@@ -118,7 +118,11 @@ namespace DualMeetManager.Domain
             str.Append("Date: " + String.Format("{0:MM/dd/yyyy}", dateOfMeet));
             str.Append(Environment.NewLine + "Location: " + location);
             str.Append(Environment.NewLine + "Weather Conditions: " + weatherConditions);
+
+            //Replace the code below with Teams.ToString() method
+            /*
             str.Append(Environment.NewLine + "Teams:");
+            
             str.Append(Environment.NewLine + "Boys:");
 
             for (int i = 0; i < boySchoolNames.Count; i++)
@@ -130,7 +134,7 @@ namespace DualMeetManager.Domain
             for (int i = 0; i < girlSchoolNames.Count; i++)
             {
                 str.Append(Environment.NewLine + girlSchoolNames[i] + " - " + girlSchoolAbbr[i]);
-            }
+            }*/
 
             //foreach (Performance i in performances)
             foreach (KeyValuePair<string, List<Performance>> i in performances)
@@ -156,15 +160,11 @@ namespace DualMeetManager.Domain
             else if (!myMeet.girlSchoolNames.SequenceEqual(girlSchoolNames)) return false;
             else if (!myMeet.boySchoolAbbr.SequenceEqual(boySchoolAbbr)) return false;
             else if (!myMeet.girlSchoolAbbr.SequenceEqual(girlSchoolAbbr)) return false;
-            //events could be null
-            else
-            {
-                if (myMeet.performances == null && performances == null) return true;
-                else if (myMeet.performances == null && performances != null) return false;
-                else if (myMeet.performances != null && performances == null) return false;
-                else if (!myMeet.performances.SequenceEqual(performances)) return false;
-                else return true;
-            }
+            else if (myMeet.performances == null && performances == null) return true; //events could be null
+            else if (myMeet.performances == null && performances != null) return false;
+            else if (myMeet.performances != null && performances == null) return false;
+            else if (!myMeet.performances.OrderBy(r => r.Key).SequenceEqual(performances.OrderBy(r => r.Key))) return false;
+            else return true;
         }
 
         public override int GetHashCode()

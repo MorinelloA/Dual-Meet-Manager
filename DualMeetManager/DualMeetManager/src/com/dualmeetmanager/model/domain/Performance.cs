@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DualMeetManager.Domain
+//Update namespace
+namespace DualMeetManager.src.com.dualmeetmanager.model.domain
 {
     class Performance
     {

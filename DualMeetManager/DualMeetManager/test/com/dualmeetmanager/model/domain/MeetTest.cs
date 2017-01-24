@@ -1,4 +1,4 @@
-﻿using DualMeetManager.Domain;
+﻿using DualMeetManager.src.com.dualmeetmanager.model.domain;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DualMeetManager.Test.Domain
+namespace DualMeetManager.test.com.dualmeetmanager.model.domain
 {
     [TestFixture]
     class MeetTest
@@ -302,7 +302,7 @@ namespace DualMeetManager.Test.Domain
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
         
-        [TestCase]
+        //[TestCase]
         public void TestToStringMethod()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);

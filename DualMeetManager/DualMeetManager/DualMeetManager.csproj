@@ -51,8 +51,10 @@
     <Compile Include="src\com\dualmeetmanager\model\domain\Performance.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\com\dualmeetmanager\model\domain\Teams.cs" />
     <Compile Include="test\com\dualmeetmanager\model\domain\MeetTest.cs" />
     <Compile Include="test\com\dualmeetmanager\model\domain\PerformanceTest.cs" />
+    <Compile Include="test\com\dualmeetmanager\model\domain\TeamsTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
