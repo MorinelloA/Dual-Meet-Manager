@@ -12,7 +12,8 @@ namespace DualMeetManager.Domain
         public string location { get; set; }
         public string weatherConditions { get; set; }
         public Teams schoolNames { get; set; }
-        public Dictionary<string, List<Performance>> performances { get; set; }
+        //The Dictionary key Tuple is <Event Name, Heat # of that Event>
+        public Dictionary<Tuple<string, int>, List<Performance>> performances { get; set; }
 
         //Default Constructor
         public Meet() { }
@@ -27,7 +28,7 @@ namespace DualMeetManager.Domain
         }
 
         //Constructor used for an existing meet
-        public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames, Dictionary<string, List<Performance>> performances)
+        public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames, Dictionary<Tuple<string, int>, List<Performance>> performances)
         {
             this.dateOfMeet = dateOfMeet;
             this.location = location;
@@ -56,14 +57,14 @@ namespace DualMeetManager.Domain
                     "Girl's 800", "Girl's 1600", "Girl's 3200", "Girl's 4x100",
                     "Girl's 4x400", "Girl's 4x800", "Girl's LJ", "Girl's TJ", "Girl's HJ",
                     "Girl's PV", "Girl's ShotPut", "Girl's Discus", "Girl's Javelin"};
-                foreach (KeyValuePair<string, List<Performance>> i in performances)
+                foreach (KeyValuePair<Tuple<string, int>, List<Performance>> i in performances)
                 {
                     //If the key is not a valid event
-                    if (!validEvents.Any(i.Key.Contains)) return false;
+                    if (!validEvents.Any(i.Key.Item1.Contains)) return false;
                 }
 
                 //foreach(Event i in events)
-                foreach (KeyValuePair<string, List<Performance>> i in performances)
+                foreach (KeyValuePair<Tuple<string, int>, List<Performance>> i in performances)
                 {
                     foreach(Performance j in i.Value)
                         if (!j.validate()) return false;
@@ -99,9 +100,9 @@ namespace DualMeetManager.Domain
             }*/
 
             //foreach (Performance i in performances)
-            foreach (KeyValuePair<string, List<Performance>> i in performances)
+            foreach (KeyValuePair<Tuple<string, int>, List<Performance>> i in performances)
             {
-                str.Append(Environment.NewLine + "Event: " + i.Key.ToString());
+                str.Append(Environment.NewLine + "Event: " + i.Key.Item1.ToString());
                 foreach (Performance j in i.Value)
                 {
                     str.Append(Environment.NewLine + j.ToString());
