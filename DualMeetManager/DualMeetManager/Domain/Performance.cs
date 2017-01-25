@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 //Update namespace
-namespace DualMeetManager.src.com.dualmeetmanager.model.domain
+namespace DualMeetManager.Domain
 {
-    class Performance
+    public class Performance
     {
         public string athleteName { get; set; }
         public string schoolName { get; set; }

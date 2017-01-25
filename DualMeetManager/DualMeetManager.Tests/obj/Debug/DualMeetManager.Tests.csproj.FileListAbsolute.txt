@@ -1,0 +1,10 @@
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\obj\Debug\DualMeetManager.Tests.csprojResolveAssemblyReference.cache
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\bin\Debug\DualMeetManager.Tests.exe.config
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\bin\Debug\DualMeetManager.Tests.exe
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\bin\Debug\DualMeetManager.Tests.pdb
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\bin\Debug\DualMeetManager.exe
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\bin\Debug\nunit.framework.dll
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\bin\Debug\DualMeetManager.pdb
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\bin\Debug\nunit.framework.xml
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\obj\Debug\DualMeetManager.Tests.exe
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\obj\Debug\DualMeetManager.Tests.pdb

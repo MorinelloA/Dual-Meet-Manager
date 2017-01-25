@@ -1,4 +1,4 @@
-﻿using DualMeetManager.src.com.dualmeetmanager.model.domain;
+﻿using DualMeetManager.Domain;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DualMeetManager.test.com.dualmeetmanager.model.domain
+namespace DualMeetManager.Tests.Domain
 {
     [TestFixture]
     class TeamsTest

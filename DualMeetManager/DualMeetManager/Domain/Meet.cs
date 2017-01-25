@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DualMeetManager.src.com.dualmeetmanager.model.domain
+namespace DualMeetManager.Domain
 {
-    class Meet
+    public class Meet
     {
         public DateTime dateOfMeet { get; set; }
         public string location { get; set; }

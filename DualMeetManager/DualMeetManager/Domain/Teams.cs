@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DualMeetManager.src.com.dualmeetmanager.model.domain
+namespace DualMeetManager.Domain
 {
-    class Teams
+    public class Teams
     {
         public Dictionary<string, string> boySchoolNames { get; set; }
         public Dictionary<string, string> girlSchoolNames { get; set; }
