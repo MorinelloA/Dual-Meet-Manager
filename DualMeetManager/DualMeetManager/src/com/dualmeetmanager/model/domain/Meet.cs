@@ -11,39 +11,28 @@ namespace DualMeetManager.src.com.dualmeetmanager.model.domain
         public DateTime dateOfMeet { get; set; }
         public string location { get; set; }
         public string weatherConditions { get; set; }
-        public List<string> boySchoolNames { get; set; }
-        public List<string> girlSchoolNames { get; set; }
-        public List<string> boySchoolAbbr { get; set; }
-        public List<string> girlSchoolAbbr { get; set; }
+        public Teams schoolNames { get; set; }
         public Dictionary<string, List<Performance>> performances { get; set; }
 
         //Default Constructor
         public Meet() { }
 
         //Constructor used for a new meet
-        public Meet(DateTime dateOfMeet, string location, string weatherConditions, List<string> boySchoolNames,
-            List<string> girlSchoolNames, List<string> boySchoolAbbr, List<string> girlSchoolAbbr)
+        public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames)
         {
             this.dateOfMeet = dateOfMeet;
             this.location = location;
             this.weatherConditions = weatherConditions;
-            this.boySchoolNames = boySchoolNames;
-            this.girlSchoolNames = girlSchoolNames;
-            this.boySchoolAbbr = boySchoolAbbr;
-            this.girlSchoolAbbr = girlSchoolAbbr;
+            this.schoolNames = schoolNames;
         }
 
         //Constructor used for an existing meet
-        public Meet(DateTime dateOfMeet, string location, string weatherConditions, List<string> boySchoolNames,
-            List<string> girlSchoolNames, List<string> boySchoolAbbr, List<string> girlSchoolAbbr, Dictionary<string, List<Performance>> performances)
+        public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames, Dictionary<string, List<Performance>> performances)
         {
             this.dateOfMeet = dateOfMeet;
             this.location = location;
             this.weatherConditions = weatherConditions;
-            this.boySchoolNames = boySchoolNames;
-            this.girlSchoolNames = girlSchoolNames;
-            this.boySchoolAbbr = boySchoolAbbr;
-            this.girlSchoolAbbr = girlSchoolAbbr;
+            this.schoolNames = schoolNames;
             this.performances = performances;
         }
 
@@ -52,36 +41,8 @@ namespace DualMeetManager.src.com.dualmeetmanager.model.domain
             if (dateOfMeet == DateTime.MinValue) return false; //Invalid Date
             else if (string.IsNullOrWhiteSpace(location)) return false; //No location given
             else if (string.IsNullOrWhiteSpace(weatherConditions)) return false; //No Weather conditions given
-            else if (boySchoolNames == null && girlSchoolNames == null) return false; //No school names
-            else if (boySchoolAbbr == null && girlSchoolAbbr == null) return false; //No school abbr
-            else if (boySchoolNames.Count != boySchoolNames.Distinct().Count()) return false; //Duplicates Exist
-            else if (girlSchoolNames.Count != girlSchoolNames.Distinct().Count()) return false; //Duplicates Exist
-            else if (boySchoolAbbr.Count != boySchoolAbbr.Distinct().Count()) return false; //Duplicates Exist
-            else if (girlSchoolAbbr.Count != girlSchoolAbbr.Distinct().Count()) return false; //Duplicates Exist
-            else if (boySchoolNames.Count != boySchoolAbbr.Count) return false; //Names and Abbr aren't equal
-            else if (girlSchoolNames.Count != girlSchoolAbbr.Count) return false; //Names and Abbr aren't equal
-
-            foreach (string i in boySchoolNames)
-            {
-                if (string.IsNullOrWhiteSpace(i)) return false; //Empty name
-            }
-
-            foreach (string i in girlSchoolNames)
-            {
-                if (string.IsNullOrWhiteSpace(i)) return false; //Empty name
-            }
-
-            foreach (string i in boySchoolAbbr)
-            {
-                if (i.Length > 3) return false; //Abbreviations need to be limited to 3 characters
-                if (string.IsNullOrWhiteSpace(i)) return false; //Empty abbr
-            }
-
-            foreach (string i in girlSchoolAbbr)
-            {
-                if (i.Length > 3) return false; //Abbreviations need to be limited to 3 characters
-                if (string.IsNullOrWhiteSpace(i)) return false; //Empty abbr
-            }
+            else if (schoolNames == null) return false; //No school names
+            else if (!schoolNames.validate()) return false; //Invalid school names
 
             if (performances != null) //This is allowed
             {
@@ -120,6 +81,7 @@ namespace DualMeetManager.src.com.dualmeetmanager.model.domain
             str.Append(Environment.NewLine + "Weather Conditions: " + weatherConditions);
 
             //Replace the code below with Teams.ToString() method
+            str.Append(Environment.NewLine + schoolNames.ToString());
             /*
             str.Append(Environment.NewLine + "Teams:");
             
@@ -156,10 +118,7 @@ namespace DualMeetManager.src.com.dualmeetmanager.model.domain
             else if (!myMeet.dateOfMeet.Equals(dateOfMeet)) return false;
             else if (myMeet.location != location) return false;
             else if (myMeet.weatherConditions != weatherConditions) return false;
-            else if (!myMeet.boySchoolNames.SequenceEqual(boySchoolNames)) return false;
-            else if (!myMeet.girlSchoolNames.SequenceEqual(girlSchoolNames)) return false;
-            else if (!myMeet.boySchoolAbbr.SequenceEqual(boySchoolAbbr)) return false;
-            else if (!myMeet.girlSchoolAbbr.SequenceEqual(girlSchoolAbbr)) return false;
+            else if (!myMeet.schoolNames.Equals(schoolNames)) return false;
             else if (myMeet.performances == null && performances == null) return true; //events could be null
             else if (myMeet.performances == null && performances != null) return false;
             else if (myMeet.performances != null && performances == null) return false;
@@ -174,10 +133,7 @@ namespace DualMeetManager.src.com.dualmeetmanager.model.domain
                 int hash = 17;
                 hash = hash * 23 + location.GetHashCode();
                 hash = hash * 23 + weatherConditions.GetHashCode();
-                hash = hash * 23 + boySchoolNames.GetHashCode();
-                hash = hash * 23 + girlSchoolNames.GetHashCode();
-                hash = hash * 23 + boySchoolAbbr.GetHashCode();
-                hash = hash * 23 + girlSchoolAbbr.GetHashCode();
+                hash = hash * 23 + schoolNames.GetHashCode();
                 hash = hash * 23 + performances.GetHashCode();
                 return hash;
             }
