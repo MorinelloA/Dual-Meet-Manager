@@ -43,15 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\Event.cs" />
     <Compile Include="Domain\Meet.cs" />
     <Compile Include="Domain\Performance.cs" />
+    <Compile Include="Domain\Scoring\IndEvent.cs" />
+    <Compile Include="Domain\Scoring\OverallScore.cs" />
+    <Compile Include="Domain\Scoring\RelayEvent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Teams.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

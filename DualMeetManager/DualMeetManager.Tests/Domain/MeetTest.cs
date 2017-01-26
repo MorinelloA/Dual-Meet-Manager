@@ -44,9 +44,9 @@ namespace DualMeetManager.Tests.Domain
             myPerformancesB.Add(myPerformance5);
             myPerformancesB.Add(myPerformance6);
 
-            Dictionary<Tuple<string, int>, List<Performance>> myPerformances = new Dictionary<Tuple<string, int>, List<Performance>>();
-            myPerformances.Add(Tuple.Create("Boy's 100", 1), myPerformancesA);
-            myPerformances.Add(Tuple.Create("Boy's 200", 1), myPerformancesB);
+            Dictionary<string, List<Performance>> myPerformances = new Dictionary<string, List<Performance>>();
+            myPerformances.Add("Boy's 100", myPerformancesA);
+            myPerformances.Add("Boy's 200", myPerformancesB);
 
             Dictionary<string, string> boysNames = new Dictionary<string, string>();
             boysNames.Add("BLN", "Baldwin");
@@ -140,17 +140,17 @@ namespace DualMeetManager.Tests.Domain
             myPerformancesC.Add(myPerformance5);
             myPerformancesC.Add(myPerformance6);
 
-            Dictionary<Tuple<string, int>, List<Performance>> myEventsA = new Dictionary<Tuple<string, int>, List<Performance>>();
-            myEventsA.Add(Tuple.Create("Boy's 100", 1), myPerformancesA);
-            myEventsA.Add(Tuple.Create("Boy's 200", 1), myPerformancesB);
+            Dictionary<string, List<Performance>> myEventsA = new Dictionary<string, List<Performance>>();
+            myEventsA.Add("Boy's 100", myPerformancesA);
+            myEventsA.Add("Boy's 200", myPerformancesB);
 
-            Dictionary<Tuple<string, int>, List<Performance>> myEventsB = new Dictionary<Tuple<string, int>, List<Performance>>();
-            myEventsB.Add(Tuple.Create("Boy's 100", 1), myPerformancesA);
-            myEventsB.Add(Tuple.Create("Boy's 200", 1), myPerformancesB);
+            Dictionary<string, List<Performance>> myEventsB = new Dictionary<string, List<Performance>>();
+            myEventsB.Add("Boy's 100", myPerformancesA);
+            myEventsB.Add("Boy's 200", myPerformancesB);
 
-            Dictionary<Tuple<string, int>, List<Performance>> myEventsC = new Dictionary<Tuple<string, int>, List<Performance>>();
-            myEventsC.Add(Tuple.Create("Boy's 100", 1), myPerformancesB);
-            myEventsC.Add(Tuple.Create("Boy's 200", 1), myPerformancesC);
+            Dictionary<string, List<Performance>> myEventsC = new Dictionary<string, List<Performance>>();
+            myEventsC.Add("Boy's 100", myPerformancesB);
+            myEventsC.Add("Boy's 200", myPerformancesC);
 
             //Teams
             Dictionary<string, string> boysNamesA = new Dictionary<string, string>();
@@ -305,9 +305,9 @@ namespace DualMeetManager.Tests.Domain
             myPerformancesB.Add(myPerformance3);
             myPerformancesB.Add(myPerformance4);
 
-            Dictionary<Tuple<string, int>, List<Performance>> myEventsA = new Dictionary<Tuple<string, int>, List<Performance>>();
-            myEventsA.Add(Tuple.Create("Boy's 100", 1), myPerformancesA);
-            myEventsA.Add(Tuple.Create("Boy's 200", 1), myPerformancesB);
+            Dictionary<string, List<Performance>> myEventsA = new Dictionary<string, List<Performance>>();
+            myEventsA.Add("Boy's 100", myPerformancesA);
+            myEventsA.Add("Boy's 200", myPerformancesB);
 
             Dictionary<string, string> boysNamesA = new Dictionary<string, string>();
             boysNamesA.Add("BLN", "Baldwin");
@@ -395,18 +395,18 @@ namespace DualMeetManager.Tests.Domain
             myPerformancesC.Add(myPerformance5);
 
             //Events
-            Dictionary<Tuple<string, int>, List<Performance>> myEventsA = new Dictionary<Tuple<string, int>, List<Performance>>();
-            myEventsA.Add(Tuple.Create("Boy's 100", 1), myPerformancesA);
-            myEventsA.Add(Tuple.Create("Boy's 200", 1), myPerformancesB);
+            Dictionary<string, List<Performance>> myEventsA = new Dictionary<string, List<Performance>>();
+            myEventsA.Add("Boy's 100", myPerformancesA);
+            myEventsA.Add("Boy's 200", myPerformancesB);
 
-            Dictionary<Tuple<string, int>, List<Performance>> myEventsB = new Dictionary<Tuple<string, int>, List<Performance>>();
-            myEventsB.Add(Tuple.Create("Boy's 100", 1), myPerformancesA);
-            myEventsB.Add(Tuple.Create("Boy's 200", 1), myPerformancesB);
-            myEventsB.Add(Tuple.Create("Boy's 400", 1), myPerformancesC);
+            Dictionary<string, List<Performance>> myEventsB = new Dictionary<string, List<Performance>>();
+            myEventsB.Add("Boy's 100", myPerformancesA);
+            myEventsB.Add("Boy's 200", myPerformancesB);
+            myEventsB.Add("Boy's 400", myPerformancesC);
 
-            Dictionary<Tuple<string, int>, List<Performance>> myEventsC = new Dictionary<Tuple<string, int>, List<Performance>>();
-            myEventsC.Add(Tuple.Create("Boy's 100", 1), myPerformancesA);
-            myEventsC.Add(Tuple.Create("200", 1), myPerformancesB);
+            Dictionary<string, List<Performance>> myEventsC = new Dictionary<string, List<Performance>>();
+            myEventsC.Add("Boy's 100", myPerformancesA);
+            myEventsC.Add("200", myPerformancesB);
 
             //Team Names
             Dictionary<string, string> boysNamesA = new Dictionary<string, string>();

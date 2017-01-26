@@ -11,6 +11,7 @@ namespace DualMeetManager.Domain
     {
         public string athleteName { get; set; }
         public string schoolName { get; set; }
+        public int heatNum { get; set; }
         public decimal performance { get; set; }
 
         //Default Constructor
@@ -24,19 +25,30 @@ namespace DualMeetManager.Domain
             this.performance = performance;
         }
 
+        //Constructor with heatNum
+        public Performance(string athleteName, string schoolName, int heatNum, decimal performance) {
+            this.athleteName = athleteName;
+            this.schoolName = schoolName;
+            this.heatNum = heatNum;
+            this.performance = performance;
+        }
+
         public bool validate()
         {
             if (string.IsNullOrWhiteSpace(athleteName)) return false; //Must have a name
             else if (string.IsNullOrWhiteSpace(schoolName)) return false; //Must have a school
-            else if (performance <= 0) return false; //Valid time ordistance is positive
+            else if (performance <= 0) return false; //Valid time or distance is positive
             return true;
         }
 
         public override string ToString()
         {
             //This performance will be returned as raw data (seconds and inches)
-            string str = "Name: " + athleteName + ", " + schoolName + " - " + performance;
-            return str;
+
+            if (heatNum == 0)
+                return "Name: " + athleteName + ", " + schoolName + " - " + performance;
+            else
+                return "Name: " + athleteName + ", " + schoolName + " - Heat " + heatNum + " - " + performance;
         }
 
         public override bool Equals(object obj)
@@ -56,6 +68,7 @@ namespace DualMeetManager.Domain
                 int hash = 17;
                 hash = hash * 23 + athleteName.GetHashCode();
                 hash = hash * 23 + schoolName.GetHashCode();
+                hash = hash * 23 + heatNum.GetHashCode();
                 hash = hash * 23 + performance.GetHashCode();
                 return hash;
             }

@@ -47,7 +47,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Domain\EventTest.cs" />
     <Compile Include="Domain\MeetTest.cs" />
     <Compile Include="Domain\PerformanceTest.cs" />
     <Compile Include="Domain\TeamsTest.cs" />

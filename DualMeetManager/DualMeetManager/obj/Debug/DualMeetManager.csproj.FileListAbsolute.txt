@@ -3,6 +3,13 @@ H:\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\DualMeetMa
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.exe.config
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.exe
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.pdb
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\nunit.framework.dll
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\nunit.framework.xml
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.exe
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.pdb
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.csprojResolveAssemblyReference.cache
+C:\Users\laptop\Downloads\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.exe.config
+C:\Users\laptop\Downloads\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.exe
+C:\Users\laptop\Downloads\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.pdb
+C:\Users\laptop\Downloads\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.exe
+C:\Users\laptop\Downloads\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\Dual-Meet-Manager-9ac349f36a28ec9abbe2a0d6e36d3bf6d812f642\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.pdb
