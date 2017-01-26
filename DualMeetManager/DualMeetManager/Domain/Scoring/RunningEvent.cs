@@ -8,10 +8,9 @@ namespace DualMeetManager.Domain.Scoring
 {
     class RunningEvent
     {
-        //Teams
-        //Abbr, Full Name
-        Tuple<string, string> team1 { get; set; }
-        Tuple<string, string> team2 { get; set; }
+        //Team Abbr
+        string team1 { get; set; }
+        string team2 { get; set; }
 
         //Pts
         //Team1 pts, Team2 pts, athlete name, school name, performance
@@ -28,21 +27,14 @@ namespace DualMeetManager.Domain.Scoring
         public RunningEvent() { }
 
         //Constructor without points
-        public RunningEvent(Tuple<string, string> team1, Tuple<string, string> team2)
+        public RunningEvent(string team1, string team2)
         {
             this.team1 = team1;
             this.team2 = team2;
         }
 
-        //Constructor without points without using tuples in parameters
-        public RunningEvent(string team1Abbr, string team1Name, string team2Abbr, string team2Name)
-        {
-            team1 = Tuple.Create(team1Abbr, team1Name);
-            team2 = Tuple.Create(team2Abbr, team2Name);
-        }
-
         //Constructor with points
-        public RunningEvent(Tuple<string, string> team1, Tuple<string, string> team2, Tuple<decimal, decimal, string, string, string> firstPlacePts, Tuple<decimal, decimal, string, string, string> secondPlacePts, Tuple<decimal, decimal, string, string, string> thirdPlacePts, Tuple<decimal, decimal> totalPts)
+        public RunningEvent(string team1, string team2, Tuple<decimal, decimal, string, string, string> firstPlacePts, Tuple<decimal, decimal, string, string, string> secondPlacePts, Tuple<decimal, decimal, string, string, string> thirdPlacePts, Tuple<decimal, decimal> totalPts)
         {
             this.team1 = team1;
             this.team2 = team2;
@@ -50,6 +42,46 @@ namespace DualMeetManager.Domain.Scoring
             this.secondPlacePts = secondPlacePts;
             this.thirdPlacePts = thirdPlacePts;
             this.totalPts = totalPts;
+        }
+
+        public override string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("First Place: " + firstPlacePts.Item3 + " - " + firstPlacePts.Item4 + ": " + firstPlacePts.Item5);
+            sb.Append("First Place Pts: " + team1 + ": " + firstPlacePts.Item1 + " " + team2 + ": " + firstPlacePts.Item2);
+            sb.Append("Second Place: " + secondPlacePts.Item3 + " - " + secondPlacePts.Item4 + ": " + secondPlacePts.Item5);
+            sb.Append("Second Place Pts: " + team1 + ": " + secondPlacePts.Item1 + " " + team2 + ": " + secondPlacePts.Item2);
+            sb.Append("Third Place: " + thirdPlacePts.Item3 + " - " + thirdPlacePts.Item4 + ": " + thirdPlacePts.Item5);
+            sb.Append("Third Place Pts: " + team1 + ": " + thirdPlacePts.Item1 + " " + team2 + ": " + thirdPlacePts.Item2);
+            sb.Append("Total: " + team1 + ": " + totalPts.Item1 + " " + team2 + ": " + totalPts.Item2);
+            return base.ToString();
+        }
+
+        public override bool Equals(object obj)
+        {
+            RunningEvent myRunningEvent = obj as RunningEvent;
+            if (!myRunningEvent.team1.Equals(team1)) return false;
+            else if (!myRunningEvent.team2.Equals(team2)) return false;
+            else if (!myRunningEvent.firstPlacePts.Equals(firstPlacePts)) return false;
+            else if (!myRunningEvent.secondPlacePts.Equals(secondPlacePts)) return false;
+            else if (!myRunningEvent.thirdPlacePts.Equals(thirdPlacePts)) return false;
+            else if (!myRunningEvent.totalPts.Equals(totalPts)) return false;
+            return true;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked // Overflow is fine, just wrap
+            {
+                int hash = 17;
+                hash = hash * 23 + team1.GetHashCode();
+                hash = hash * 23 + team2.GetHashCode();
+                hash = hash * 23 + firstPlacePts.GetHashCode();
+                hash = hash * 23 + secondPlacePts.GetHashCode();
+                hash = hash * 23 + thirdPlacePts.GetHashCode();
+                hash = hash * 23 + totalPts.GetHashCode();
+                return hash;
+            }
         }
     }
 }

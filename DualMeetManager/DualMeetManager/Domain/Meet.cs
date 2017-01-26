@@ -80,25 +80,8 @@ namespace DualMeetManager.Domain
             str.Append(Environment.NewLine + "Location: " + location);
             str.Append(Environment.NewLine + "Weather Conditions: " + weatherConditions);
 
-            //Replace the code below with Teams.ToString() method
             str.Append(Environment.NewLine + schoolNames.ToString());
-            /*
-            str.Append(Environment.NewLine + "Teams:");
-            
-            str.Append(Environment.NewLine + "Boys:");
 
-            for (int i = 0; i < boySchoolNames.Count; i++)
-            {
-                str.Append(Environment.NewLine + boySchoolNames[i] + " - " + boySchoolAbbr[i]);
-            }
-
-            str.Append(Environment.NewLine + "Girls:");
-            for (int i = 0; i < girlSchoolNames.Count; i++)
-            {
-                str.Append(Environment.NewLine + girlSchoolNames[i] + " - " + girlSchoolAbbr[i]);
-            }*/
-
-            //foreach (Performance i in performances)
             foreach (KeyValuePair<string, List<Performance>> i in performances)
             {
                 str.Append(Environment.NewLine + "Event: " + i.Key.ToString());
