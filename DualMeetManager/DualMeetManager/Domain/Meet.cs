@@ -132,12 +132,47 @@ namespace DualMeetManager.Domain
             unchecked // Overflow is fine, just wrap
             {
                 int hash = 17;
+                hash = hash * 23 + dateOfMeet.GetHashCode();
                 hash = hash * 23 + location.GetHashCode();
                 hash = hash * 23 + weatherConditions.GetHashCode();
                 hash = hash * 23 + schoolNames.GetHashCode();
                 hash = hash * 23 + performances.GetHashCode();
                 return hash;
             }
+        }
+
+        public bool AddPerformance(string eventName, int heatNumber, List<Performance> pta)
+        {
+            string name = "";
+            int heat = 0;
+            foreach (KeyValuePair<Tuple<string, int>, List<Performance>> p in performances) //Goes through every event/heat combo
+            {
+                if(p.Key.Item1 == eventName) //Checks for event
+                {
+                    name = p.Key.Item1;
+                    if (p.Key.Item2 == heatNumber) //Check if heat # exists
+                    {                        
+                        heat = p.Key.Item2;
+                        break;
+                    }
+                }
+            }
+            if(!string.IsNullOrWhiteSpace(name)) //Event already exists
+            {
+                if(heat != 0) //Heat already exists
+                {
+                    performances[Tuple.Create(name, heat)] = pta; 
+                }
+                else //New heat
+                {
+                    performances[Tuple.Create(name, heatNumber)] = pta;
+                }
+            }
+            else //Event is new
+            {
+                performances[Tuple.Create(eventName, heatNumber)] = pta;
+            }
+            return true;
         }
     }
 }

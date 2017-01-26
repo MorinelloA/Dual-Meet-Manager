@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Domain\Event.cs" />
     <Compile Include="Domain\Meet.cs" />
     <Compile Include="Domain\Performance.cs" />
     <Compile Include="Program.cs" />
