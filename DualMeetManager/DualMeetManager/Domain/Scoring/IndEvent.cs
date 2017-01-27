@@ -9,28 +9,40 @@ namespace DualMeetManager.Domain.Scoring
     public class IndEvent
     {
         //Team Abbr
-        string team1 { get; set; }
-        string team2 { get; set; }
+        public string team1 { get; set; }
+        public string team2 { get; set; }
 
         //Pts
         //Team1 pts, Team2 pts, athlete name, school name, performance
         //Note: performance is a string because it could be in minutes and seconds (ex: 4:25)
-        Tuple<decimal, decimal, string, string, string> firstPlacePts { get; set; }
-        Tuple<decimal, decimal, string, string, string> secondPlacePts { get; set; }
-        Tuple<decimal, decimal, string, string, string> thirdPlacePts { get; set; }
+        public Tuple<decimal, decimal, string, string, string> firstPlacePts { get; set; }
+        public Tuple<decimal, decimal, string, string, string> secondPlacePts { get; set; }
+        public Tuple<decimal, decimal, string, string, string> thirdPlacePts { get; set; }
 
         //Total
         //Team1 total, Team2 total
-        Tuple<decimal, decimal> totalPts { get; set; }
+        public Tuple<decimal, decimal> totalPts { get; set; }
 
         //Default Constructor
-        public IndEvent() { }
+        public IndEvent()
+        {
+            this.team1 = "";
+            this.team2 = "";
+            this.firstPlacePts = Tuple.Create(0.0m, 0.0m, "", "", "");
+            this.secondPlacePts = Tuple.Create(0.0m, 0.0m, "", "", "");
+            this.thirdPlacePts = Tuple.Create(0.0m, 0.0m, "", "", "");
+            this.totalPts = Tuple.Create(0.0m, 0.0m);
+        }
 
         //Constructor without points
         public IndEvent(string team1, string team2)
         {
             this.team1 = team1;
             this.team2 = team2;
+            this.firstPlacePts = Tuple.Create(0.0m, 0.0m, "", "", "");
+            this.secondPlacePts = Tuple.Create(0.0m, 0.0m, "", "", "");
+            this.thirdPlacePts = Tuple.Create(0.0m, 0.0m, "", "", "");
+            this.totalPts = Tuple.Create(0.0m, 0.0m);
         }
 
         //Constructor with points
@@ -60,7 +72,12 @@ namespace DualMeetManager.Domain.Scoring
         public override bool Equals(object obj)
         {
             IndEvent myIndEvent = obj as IndEvent;
-            if (!myIndEvent.team1.Equals(team1)) return false;
+            if (myIndEvent == null) return false;
+            if (this == null) return false;
+            if (myIndEvent == null && this == null) return true;
+            else if (myIndEvent != null && this == null) return false;
+            else if (myIndEvent == null && this != null) return false;
+            else if (!myIndEvent.team1.Equals(team1)) return false;
             else if (!myIndEvent.team2.Equals(team2)) return false;
             else if (!myIndEvent.firstPlacePts.Equals(firstPlacePts)) return false;
             else if (!myIndEvent.secondPlacePts.Equals(secondPlacePts)) return false;
