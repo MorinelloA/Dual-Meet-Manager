@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Domain.Scoring
 {
-    class OverallScore
+    public class OverallScore
     {
         //Teams
         //Abbr, Full Name, OverallPts

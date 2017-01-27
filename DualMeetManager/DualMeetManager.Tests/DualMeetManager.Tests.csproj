@@ -49,6 +49,10 @@
   <ItemGroup>
     <Compile Include="Domain\MeetTest.cs" />
     <Compile Include="Domain\PerformanceTest.cs" />
+    <Compile Include="Domain\Scoring\FieldEventTest.cs" />
+    <Compile Include="Domain\Scoring\OverallScoreTest.cs" />
+    <Compile Include="Domain\Scoring\RelayEventTest.cs" />
+    <Compile Include="Domain\Scoring\RunningEventTest.cs" />
     <Compile Include="Domain\TeamsTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DualMeetManager.Domain.Scoring
+namespace DualMeetManager.Tests.Domain.Scoring
 {
-    public class RunningEvent: IndEvent
+    class FieldEventTest
     {
-        
     }
 }
