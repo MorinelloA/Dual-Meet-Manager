@@ -70,6 +70,7 @@ namespace DualMeetManager.Domain.Scoring
 
         //A validate method is not useful for this class
         //An object may very well be null
+        //Also, because of ties, point values may be something other than the typical 5, 3, or 1
         /*public bool validate()
         {
             return true;

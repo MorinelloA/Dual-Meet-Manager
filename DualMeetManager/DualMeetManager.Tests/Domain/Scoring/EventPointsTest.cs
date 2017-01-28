@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Tests.Domain.Scoring
 {
-    class RunningEventTest
+    /// <summary>
+    /// Tests for the EventPoints class
+    /// </summary>
+    class EventPointsTest
     {
     }
 }

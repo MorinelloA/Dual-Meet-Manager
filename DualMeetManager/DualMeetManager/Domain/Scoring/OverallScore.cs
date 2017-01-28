@@ -14,20 +14,18 @@ namespace DualMeetManager.Domain.Scoring
         Tuple<string, string, decimal> team2 { get; set; }
 
         //Event name, List of points
-        Dictionary<string, List<RunningEvent>> runningEvents;
-        Dictionary<string, List<FieldEvent>> fieldEvents;
+        Dictionary<string, List<IndEvent>> indEvents;
         Dictionary<string, List<RelayEvent>> relayEvents;
 
         //Defult Constructor
         public OverallScore(){}
 
         //Parameterized Constructor
-        public OverallScore(Tuple<string, string, decimal> team1, Tuple<string, string, decimal> team2, Dictionary<string, List<RunningEvent>> runningEvents, Dictionary<string, List<FieldEvent>> fieldEvents, Dictionary<string, List<RelayEvent>> relayEvents)
+        public OverallScore(Tuple<string, string, decimal> team1, Tuple<string, string, decimal> team2, Dictionary<string, List<IndEvent>> indEvents, Dictionary<string, List<RelayEvent>> relayEvents)
         {
             this.team1 = team1;
             this.team2 = team2;
-            this.runningEvents = runningEvents;
-            this.fieldEvents = fieldEvents;
+            this.indEvents = indEvents;
             this.relayEvents = relayEvents;
         }
 
@@ -39,8 +37,7 @@ namespace DualMeetManager.Domain.Scoring
             OverallScore myOverallScore = obj as OverallScore;
             if (myOverallScore.team1.Equals(team1)) return false;
             else if (myOverallScore.team2.Equals(team2)) return false;
-            else if (!myOverallScore.runningEvents.OrderBy(r => r.Key).SequenceEqual(runningEvents.OrderBy(r => r.Key))) return false;
-            else if (!myOverallScore.fieldEvents.OrderBy(r => r.Key).SequenceEqual(fieldEvents.OrderBy(r => r.Key))) return false;
+            else if (!myOverallScore.indEvents.OrderBy(r => r.Key).SequenceEqual(indEvents.OrderBy(r => r.Key))) return false;
             else if (!myOverallScore.relayEvents.OrderBy(r => r.Key).SequenceEqual(relayEvents.OrderBy(r => r.Key))) return false;
             return true;
         }
@@ -51,11 +48,7 @@ namespace DualMeetManager.Domain.Scoring
             sb.Append(team1.Item2 + " - " + team1.Item1 + ": " + team1.Item3 + Environment.NewLine);
             sb.Append(team2.Item2 + " - " + team2.Item1 + ": " + team2.Item3 + Environment.NewLine + Environment.NewLine);
 
-            foreach (KeyValuePair<string, List<RunningEvent>> i in runningEvents)
-            {
-                sb.Append(i.ToString());
-            }
-            foreach (KeyValuePair<string, List<FieldEvent>> i in fieldEvents)
+            foreach (KeyValuePair<string, List<IndEvent>> i in indEvents)
             {
                 sb.Append(i.ToString());
             }
@@ -73,13 +66,10 @@ namespace DualMeetManager.Domain.Scoring
                 int hash = 17;
                 hash = hash * 23 + team1.GetHashCode();
                 hash = hash * 23 + team2.GetHashCode();
-                hash = hash * 23 + runningEvents.GetHashCode();
-                hash = hash * 23 + fieldEvents.GetHashCode();
+                hash = hash * 23 + indEvents.GetHashCode();
                 hash = hash * 23 + relayEvents.GetHashCode();
                 return hash;
             }
         }
-
-        
     }
 }

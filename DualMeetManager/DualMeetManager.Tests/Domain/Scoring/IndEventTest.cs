@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Tests.Domain.Scoring
 {
+    /// <summary>
+    /// Tests for the IndEvent class
+    /// </summary>
     [TestFixture]
     class IndEventTest
     {
@@ -26,7 +29,7 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
-            IndEvent myIndEvent = new IndEvent("PLM", "GWY", Tuple.Create(5.0m, 0.0m, "P1", "PLM", "11.3"), Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent myIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
 
             if (myIndEvent == null)
             {
@@ -43,17 +46,17 @@ namespace DualMeetManager.Tests.Domain.Scoring
                 test = false;
                 Console.WriteLine("team2 does not have the correct value");
             }
-            if (!myIndEvent.firstPlacePts.Equals(Tuple.Create(5.0m, 0.0m, "P1", "PLM", "11.3")))
+            if (!myIndEvent.points[0].Equals(new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3")))
             {
                 test = false;
                 Console.WriteLine("firstPlacePts does not have the correct value");
             }
-            if (!myIndEvent.secondPlacePts.Equals(Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.4")))
+            if (!myIndEvent.points[1].Equals(new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4")))
             {
                 test = false;
                 Console.WriteLine("secondPlacePts does not have the correct value");
             }
-            if (!myIndEvent.thirdPlacePts.Equals(Tuple.Create(0.0m, 1.0m, "G1", "GWY", "11.5")))
+            if (!myIndEvent.points[2].Equals(new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5")))
             {
                 test = false;
                 Console.WriteLine("thirdPlacePts does not have the correct value");
@@ -73,15 +76,15 @@ namespace DualMeetManager.Tests.Domain.Scoring
         {
             bool test = true;
 
-            IndEvent controlIndEvent = new IndEvent("PLM", "GWY", Tuple.Create(5.0m, 0.0m, "P1", "PLM", "11.3"), Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent controlIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
 
-            IndEvent equalIndEvent = new IndEvent("PLM", "GWY", Tuple.Create(5.0m, 0.0m, "P1", "PLM", "11.3"), Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffTeam1 = new IndEvent("WH", "GWY", Tuple.Create(5.0m, 0.0m, "P1", "PLM", "11.3"), Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffTeam2 = new IndEvent("PLM", "WH", Tuple.Create(5.0m, 0.0m, "P1", "PLM", "11.3"), Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffFirstPlacePts = new IndEvent("PLM", "GWY", Tuple.Create(5.0m, 0.0m, "P4", "PLM", "11.3"), Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffSecondPlacePts = new IndEvent("PLM", "GWY", Tuple.Create(5.0m, 0.0m, "P1", "PLM", "11.3"), Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.45"), Tuple.Create(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffThirdPlacePts = new IndEvent("PLM", "GWY", Tuple.Create(5.0m, 0.0m, "P1", "PLM", "11.3"), Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(0.0m, 1.1m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffTotalPts = new IndEvent("PLM", "GWY", Tuple.Create(5.0m, 0.0m, "P1", "PLM", "11.3"), Tuple.Create(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(9.0m, 0.0m));
+            IndEvent equalIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent diffTeam1 = new IndEvent("WH", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent diffTeam2 = new IndEvent("PLM", "WH", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent diffFirstPlacePts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P4", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent diffSecondPlacePts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.45"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent diffThirdPlacePts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.1m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent diffTotalPts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(9.0m, 0.0m));
             IndEvent nullIndEvent = new IndEvent();
 
             if(!controlIndEvent.Equals(equalIndEvent))
