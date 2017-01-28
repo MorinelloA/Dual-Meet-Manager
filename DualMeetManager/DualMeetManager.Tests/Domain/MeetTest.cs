@@ -3,15 +3,18 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DualMeetManager.Tests.Domain
 {
+    /// <summary>
+    /// Tests for the Meet class
+    /// </summary>
     [TestFixture]
     class MeetTest
     {
-        
+        /// <summary>
+        /// Tests the default constructor
+        /// </summary>
         [TestCase]
         public void TestDefaultConstructor()
         {
@@ -21,6 +24,10 @@ namespace DualMeetManager.Tests.Domain
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests a parameterized constructor
+        /// </summary>
+        /// <remarks>Each attribute is tested individually for accuracy</remarks>
         [TestCase]
         public void TestParameterizedConstructor()
         {
@@ -115,6 +122,10 @@ namespace DualMeetManager.Tests.Domain
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests the Equals method
+        /// </summary>
+        /// <remarks>Each attribute is tested individually for accuracy</remarks>
         [TestCase]
         public void TestEqualsMethod()
         {
@@ -288,6 +299,9 @@ namespace DualMeetManager.Tests.Domain
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
         
+        /// <summary>
+        /// Tests accuracy of the ToString method
+        /// </summary>
         [TestCase]
         public void TestToStringMethod()
         {
@@ -371,6 +385,10 @@ namespace DualMeetManager.Tests.Domain
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests accuracy of the validate method
+        /// </summary>
+        /// <remarks>Each possibility of an invalid meet is tested</remarks>
         [TestCase]
         public void TestValidateMethod()
         {
