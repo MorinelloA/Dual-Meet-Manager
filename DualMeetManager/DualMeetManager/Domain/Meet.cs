@@ -2,22 +2,34 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DualMeetManager.Domain
 {
+    /// <summary>Holds all information relevant to a track meet's data</summary>
+    /// <remarks>Does not hold information scoring information, that is done in seperate classes</remarks>
     public class Meet
     {
         public DateTime dateOfMeet { get; set; }
         public string location { get; set; }
         public string weatherConditions { get; set; }
         public Teams schoolNames { get; set; }
+        
+        //The string in this dictionary is the event name
         public Dictionary<string, List<Performance>> performances { get; set; }
 
-        //Default Constructor
+        /// <summary>
+        /// Default Constructor for Meet
+        /// </summary>
         public Meet() { }
 
-        //Constructor used for a new meet
+        /// <summary>
+        /// Constructor used for a new meet
+        /// </summary>
+        /// <param name="dateOfMeet">Date for the meet</param>
+        /// <param name="location">Where the meet took place</param>
+        /// <param name="weatherConditions">What the weather conditions were like</param>
+        /// <param name="schoolNames">Schools competing</param>
+        /// <remarks>As this is for a new meet, performances will be added in later</remarks>
         public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames)
         {
             this.dateOfMeet = dateOfMeet;
@@ -26,7 +38,14 @@ namespace DualMeetManager.Domain
             this.schoolNames = schoolNames;
         }
 
-        //Constructor used for an existing meet
+        /// <summary>
+        /// Constructor used for an existing meet
+        /// </summary>
+        /// <param name="dateOfMeet">Date for the meet</param>
+        /// <param name="location">Where the meet took place</param>
+        /// <param name="weatherConditions">What the weather conditions were like</param>
+        /// <param name="schoolNames">Schools competing</param>
+        /// <param name="performances">List of performances for every event and competitor</param>
         public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames, Dictionary<string, List<Performance>> performances)
         {
             this.dateOfMeet = dateOfMeet;
@@ -36,6 +55,10 @@ namespace DualMeetManager.Domain
             this.performances = performances;
         }
 
+        /// <summary>
+        /// Method to make sure all data in the Meet class is valid
+        /// </summary>
+        /// <returns>true if it is a valid Meet, false if not</returns>
         public bool validate()
         {
             if (dateOfMeet == DateTime.MinValue) return false; //Invalid Date
@@ -73,6 +96,10 @@ namespace DualMeetManager.Domain
             return true;
         }
 
+        /// <summary>
+        /// Prints out all the information regarding the meet
+        /// </summary>
+        /// <returns>A string with all Meet information</returns>
         public override string ToString()
         {
             StringBuilder str = new StringBuilder();
@@ -94,6 +121,11 @@ namespace DualMeetManager.Domain
             return str.ToString();
         }
 
+        /// <summary>
+        /// Tests whether or not two Meet objects are equal to one another
+        /// </summary>
+        /// <param name="obj">obj being tested</param>
+        /// <returns>True if the Meet objects are equal, false if they are not</returns>
         public override bool Equals(object obj)
         {
             Meet myMeet = obj as Meet;
@@ -109,6 +141,10 @@ namespace DualMeetManager.Domain
             else return true;
         }
 
+        /// <summary>
+        /// Hashcode override
+        /// </summary>
+        /// <returns>The object's Hashcode</returns>
         public override int GetHashCode()
         {
             unchecked // Overflow is fine, just wrap
@@ -123,6 +159,12 @@ namespace DualMeetManager.Domain
             }
         }
 
+        /// <summary>
+        /// Adds or Overrides a list of performances to a particular event
+        /// </summary>
+        /// <param name="eventName">Event that is being contested</param>
+        /// <param name="pta">Performances to add</param>
+        /// <remarks>THIS METHOD IS OUT OF PLACE. BELONGS IN SERVICE LAYER</remarks>
         public void AddPerformance(string eventName, List<Performance> pta)
         {
             if(performances.ContainsKey(eventName)) //contains event, override

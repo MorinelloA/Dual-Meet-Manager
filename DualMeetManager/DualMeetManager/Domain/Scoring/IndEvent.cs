@@ -72,8 +72,6 @@ namespace DualMeetManager.Domain.Scoring
         public override bool Equals(object obj)
         {
             IndEvent myIndEvent = obj as IndEvent;
-            if (myIndEvent == null) return false;
-            if (this == null) return false;
             if (myIndEvent == null && this == null) return true;
             else if (myIndEvent != null && this == null) return false;
             else if (myIndEvent == null && this != null) return false;

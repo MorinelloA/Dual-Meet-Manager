@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-//Update namespace
 namespace DualMeetManager.Domain
 {
+    /// <summary>
+    /// Class used to store one single performance for a particular event
+    /// </summary>
+    /// <remarks>You will typically see this used in a List or Dictionary</remarks>
     public class Performance
     {
         public string athleteName { get; set; }
@@ -14,10 +17,19 @@ namespace DualMeetManager.Domain
         public int heatNum { get; set; }
         public decimal performance { get; set; }
 
-        //Default Constructor
+        
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public Performance(){ }
 
-        //Parameterized Constructor
+        /// <summary>
+        /// Parameterized Constructor
+        /// </summary>
+        /// <param name="athleteName">The athletes name</param>
+        /// <param name="schoolName">The school the athlete is from (Abbr)</param>
+        /// <param name="performance">The athlete's performance</param>
+        /// <remarks>The performance will be raw data. This means that timed events will be in all seconds, as field events will be in all inches</remarks>
         public Performance(string athleteName, string schoolName, decimal performance)
         {
             this.athleteName = athleteName;
@@ -25,7 +37,14 @@ namespace DualMeetManager.Domain
             this.performance = performance;
         }
 
-        //Constructor with heatNum
+        /// <summary>
+        /// Parameterized constructor with heatNum. Used for running events
+        /// </summary>
+        /// <param name="athleteName">The athletes name</param>
+        /// <param name="schoolName">The school the athlete is from (Abbr)</param>
+        /// <param name="heatNum">Heat number the performance took place in</param>
+        /// <param name="performance">The athlete's performance</param>
+        /// <remarks>The performance will be raw data. This means that timed events will be in all seconds, as field events will be in all inches</remarks>
         public Performance(string athleteName, string schoolName, int heatNum, decimal performance) {
             this.athleteName = athleteName;
             this.schoolName = schoolName;
@@ -33,6 +52,10 @@ namespace DualMeetManager.Domain
             this.performance = performance;
         }
 
+        /// <summary>
+        /// Method to make sure all data in the Performance class is valid
+        /// </summary>
+        /// <returns>true if it is a valid Performance object, false if not</returns>
         public bool validate()
         {
             if (string.IsNullOrWhiteSpace(athleteName)) return false; //Must have a name
@@ -41,6 +64,10 @@ namespace DualMeetManager.Domain
             return true;
         }
 
+        /// <summary>
+        /// Prints out all the information regarding the Performance object
+        /// </summary>
+        /// <returns>A string with all Performance information</returns>
         public override string ToString()
         {
             //This performance will be returned as raw data (seconds and inches)
@@ -51,6 +78,11 @@ namespace DualMeetManager.Domain
                 return "Name: " + athleteName + ", " + schoolName + " - Heat " + heatNum + " - " + performance;
         }
 
+        /// <summary>
+        /// Tests whether or not two Performance objects are equal to one another
+        /// </summary>
+        /// <param name="obj">obj being tested</param>
+        /// <returns>true if the Performance objects are equal, false if they are not</returns>
         public override bool Equals(object obj)
         {
             Performance myPerf = obj as Performance;
@@ -61,6 +93,10 @@ namespace DualMeetManager.Domain
             else return true;
         }
 
+        /// <summary>
+        /// Hashcode override
+        /// </summary>
+        /// <returns>The object's Hashcode</returns>
         public override int GetHashCode()
         {
             unchecked // Overflow is fine, just wrap

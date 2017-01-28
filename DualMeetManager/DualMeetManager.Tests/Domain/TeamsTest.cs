@@ -43,22 +43,22 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("myTeams is null");
             }
-            else if (myTeams.boySchoolNames == null)
+            if (myTeams.boySchoolNames == null)
             {
                 test = false;
                 Console.WriteLine("boySchoolNames is null");
             }
-            else if (myTeams.girlSchoolNames == null)
+            if (myTeams.girlSchoolNames == null)
             {
                 test = false;
                 Console.WriteLine("girlSchoolNames is null");
             }
-            else if (!myTeams.boySchoolNames.OrderBy(r => r.Key).SequenceEqual(boys.OrderBy(r => r.Key)))
+            if (!myTeams.boySchoolNames.OrderBy(r => r.Key).SequenceEqual(boys.OrderBy(r => r.Key)))
             {
                 test = false;
                 Console.WriteLine("boySchoolNames does not have the correct value");
             }
-            else if (!myTeams.girlSchoolNames.OrderBy(r => r.Key).SequenceEqual(girls.OrderBy(r => r.Key)))
+            if (!myTeams.girlSchoolNames.OrderBy(r => r.Key).SequenceEqual(girls.OrderBy(r => r.Key)))
             {
                 test = false;
                 Console.WriteLine("girlSchoolNames does not have the correct value");
@@ -149,37 +149,37 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("equalBoys was not equal to the control");
             }
-            else if (!equalGirls.Equals(controlTeams))
+            if (!equalGirls.Equals(controlTeams))
             {
                 test = false;
                 Console.WriteLine("equalGirls was not equal to the control");
             }
-            else if (!unorderedBoys.Equals(controlTeams))
+            if (!unorderedBoys.Equals(controlTeams))
             {
                 test = false;
                 Console.WriteLine("unorderedBoys was not equal to the control");
             }
-            else if (!unorderedGirls.Equals(controlTeams))
+            if (!unorderedGirls.Equals(controlTeams))
             {
                 test = false;
                 Console.WriteLine("unorederedGirls was not equal to the control");
             }
-            else if (incorrectBoysKey.Equals(controlTeams))
+            if (incorrectBoysKey.Equals(controlTeams))
             {
                 test = false;
                 Console.WriteLine("incorrectBoysKey was equal to the control");
             }
-            else if (incorrectGirlsKey.Equals(controlTeams))
+            if (incorrectGirlsKey.Equals(controlTeams))
             {
                 test = false;
                 Console.WriteLine("incorrectGirlsKey was equal to the control");
             }
-            else if (incorrectBoysValue.Equals(controlTeams))
+            if (incorrectBoysValue.Equals(controlTeams))
             {
                 test = false;
                 Console.WriteLine("incorrectBoysValue was equal to the control");
             }
-            else if (incorrectGirlsValue.Equals(controlTeams))
+            if (incorrectGirlsValue.Equals(controlTeams))
             {
                 test = false;
                 Console.WriteLine("incorrectGirlsValue was equal to the control");
@@ -317,42 +317,42 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("validTeams did not validate");
             }
-            else if (blankBoysKey.validate())
+            if (blankBoysKey.validate())
             {
                 test = false;
                 Console.WriteLine("blankBoysKey validated");
             }
-            else if (blankBoysValue.validate())
+            if (blankBoysValue.validate())
             {
                 test = false;
                 Console.WriteLine("blankBoysValue validated");
             }
-            else if (dupBoysValue.validate())
+            if (dupBoysValue.validate())
             {
                 test = false;
                 Console.WriteLine("dupBoysValue validated");
             }
-            else if (longBoysKey.validate())
+            if (longBoysKey.validate())
             {
                 test = false;
                 Console.WriteLine("longBoyKey validated");
             }
-            else if (blankGirlsKey.validate())
+            if (blankGirlsKey.validate())
             {
                 test = false;
                 Console.WriteLine("blankGirlsKey validated");
             }
-            else if (blankGirlsValue.validate())
+            if (blankGirlsValue.validate())
             {
                 test = false;
                 Console.WriteLine("blankGirlsValue validated");
             }
-            else if (dupGirlsValue.validate())
+            if (dupGirlsValue.validate())
             {
                 test = false;
                 Console.WriteLine("dupGirlsValue validated");
             }
-            else if (longGirlsKey.validate())
+            if (longGirlsKey.validate())
             {
                 test = false;
                 Console.WriteLine("longGirlKey validated");

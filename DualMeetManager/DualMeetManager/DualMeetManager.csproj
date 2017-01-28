@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Domain\Meet.cs" />
     <Compile Include="Domain\Performance.cs" />
+    <Compile Include="Domain\Scoring\EventPoints.cs" />
     <Compile Include="Domain\Scoring\FieldEvent.cs" />
     <Compile Include="Domain\Scoring\IndEvent.cs" />
     <Compile Include="Domain\Scoring\RunningEvent.cs" />

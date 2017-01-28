@@ -67,17 +67,17 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("myMeetNoEvents - Invalid date");
             }
-            else if (myMeetNoEvents.location != "Baldwin HS")
+            if (myMeetNoEvents.location != "Baldwin HS")
             {
                 test = false;
                 Console.WriteLine("myMeetNoEvents - Invalid location");
             }
-            else if (myMeetNoEvents.weatherConditions != "Windy")
+            if (myMeetNoEvents.weatherConditions != "Windy")
             {
                 test = false;
                 Console.WriteLine("myMeetNoEvents - Invalid weather conditions");
             }
-            else if (!myMeetNoEvents.schoolNames.Equals(teams))
+            if (!myMeetNoEvents.schoolNames.Equals(teams))
             {
                 test = false;
                 Console.WriteLine("myMeetNoEvents - Invalid Teams object");
@@ -90,22 +90,22 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("myMeetWithEvents - Invalid date");
             }
-            else if (myMeetWithEvents.location != "Baldwin HS")
+            if (myMeetWithEvents.location != "Baldwin HS")
             {
                 test = false;
                 Console.WriteLine("myMeetWithEvents - Invalid location");
             }
-            else if (myMeetWithEvents.weatherConditions != "Windy")
+            if (myMeetWithEvents.weatherConditions != "Windy")
             {
                 test = false;
                 Console.WriteLine("myMeetWithEvents - Invalid weather conditions");
             }
-            else if (!myMeetWithEvents.schoolNames.Equals(teams))
+            if (!myMeetWithEvents.schoolNames.Equals(teams))
             {
                 test = false;
                 Console.WriteLine("myMeetWithEvents - Invalid Teams object");
             }
-            else if (!myMeetWithEvents.performances.SequenceEqual(myPerformances))
+            if (!myMeetWithEvents.performances.SequenceEqual(myPerformances))
             {
                 test = false;
                 Console.WriteLine("Invalid performances");
@@ -238,47 +238,47 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("meet1 does not equal meet2");
             }
-            else if (meet1.Equals(meet3))
+            if (meet1.Equals(meet3))
             {
                 test = false;
                 Console.WriteLine("meet1 equals meet3");
             }
-            else if (meet1.Equals(meet4))
+            if (meet1.Equals(meet4))
             {
                 test = false;
                 Console.WriteLine("meet1 equals meet4");
             }
-            else if (meet1.Equals(meet5))
+            if (meet1.Equals(meet5))
             {
                 test = false;
                 Console.WriteLine("meet1 equals meet5");
             }
-            else if (meet1.Equals(meet6))
+            if (meet1.Equals(meet6))
             {
                 test = false;
                 Console.WriteLine("meet1 equals meet6");
             }
-            else if (meet1.Equals(meet7))
+            if (meet1.Equals(meet7))
             {
                 test = false;
                 Console.WriteLine("meet1 equals meet7");
             }
-            else if (meet1.Equals(meet8))
+            if (meet1.Equals(meet8))
             {
                 test = false;
                 Console.WriteLine("meet1 equals meet8");
             }
-            else if (meet1.Equals(meet9))
+            if (meet1.Equals(meet9))
             {
                 test = false;
                 Console.WriteLine("meet1 equals meet9");
             }
-            else if (meet1.Equals(meet10))
+            if (meet1.Equals(meet10))
             {
                 test = false;
                 Console.WriteLine("meet1 equals meet10");
             }
-            else if (meet1.Equals(meet11))
+            if (meet1.Equals(meet11))
             {
                 test = false;
                 Console.WriteLine("meet1 equals meet11");
@@ -473,72 +473,72 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("validMeet failed");
             }
-            else if (!validNoEventsMeet.validate())
+            if (!validNoEventsMeet.validate())
             {
                 test = false;
                 Console.WriteLine("validNoEventsMeet failed");
             }
-            else if (invalidDateTime.validate())
+            if (invalidDateTime.validate())
             {
                 test = false;
                 Console.WriteLine("invalidDateTime was valid");
             }
-            else if (invalidLocation1.validate())
+            if (invalidLocation1.validate())
             {
                 test = false;
                 Console.WriteLine("invalidLocation1 was valid");
             }
-            else if (invalidLocation2.validate())
+            if (invalidLocation2.validate())
             {
                 test = false;
                 Console.WriteLine("invalidLocation2 was valid");
             }
-            else if (invalidWeather1.validate())
+            if (invalidWeather1.validate())
             {
                 test = false;
                 Console.WriteLine("invalidWeather1 was valid");
             }
-            else if (invalidWeather2.validate())
+            if (invalidWeather2.validate())
             {
                 test = false;
                 Console.WriteLine("invalidWeather2 was valid");
             }
-            else if (dupBoysNameMeet.validate())
+            if (dupBoysNameMeet.validate())
             {
                 test = false;
                 Console.WriteLine("dupBoysNameMeet was valid");
             }
-            else if (dupGirlsNameMeet.validate())
+            if (dupGirlsNameMeet.validate())
             {
                 test = false;
                 Console.WriteLine("dupGirlsNameMeet was valid");
             }
-            else if (overBoysAbbrMeet.validate())
+            if (overBoysAbbrMeet.validate())
             {
                 test = false;
                 Console.WriteLine("overBoysAbbrMeet was valid");
             }
-            else if (overGirlsAbbrMeet.validate())
+            if (overGirlsAbbrMeet.validate())
             {
                 test = false;
                 Console.WriteLine("overGirlsAbbrMeet was valid");
             }
-            else if (invalidBoysName.validate())
+            if (invalidBoysName.validate())
             {
                 test = false;
                 Console.WriteLine("invalidBoysName was valid");
             }
-            else if (invalidGirlsName.validate())
+            if (invalidGirlsName.validate())
             {
                 test = false;
                 Console.WriteLine("invalidGirlsName was valid");
             }
-            else if (invalidPerformance.validate())
+            if (invalidPerformance.validate())
             {
                 test = false;
                 Console.WriteLine("invalidPerformance was valid");
             }
-            else if (invalidEventName.validate())
+            if (invalidEventName.validate())
             {
                 test = false;
                 Console.WriteLine("invalidEventName was valid");

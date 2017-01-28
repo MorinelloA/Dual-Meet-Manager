@@ -32,17 +32,17 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("myPerformance is null");
             }
-            else if (myPerformance.athleteName != "NAME")
+            if (myPerformance.athleteName != "NAME")
             {
                 test = false;
                 Console.WriteLine("athleteName does not have the correct value");
             }
-            else if (myPerformance.schoolName != "SCHOOL")
+            if (myPerformance.schoolName != "SCHOOL")
             {
                 test = false;
                 Console.WriteLine("schoolName does not have the correct value");
             }
-            else if (myPerformance.performance != 10.1m)
+            if (myPerformance.performance != 10.1m)
             {
                 test = false;
                 Console.WriteLine("performance does not have the correct value");
@@ -54,17 +54,17 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("myPerformance2 is null");
             }
-            else if (myPerformance2.athleteName != "John Smith")
+            if (myPerformance2.athleteName != "John Smith")
             {
                 test = false;
                 Console.WriteLine("athleteName does not have the correct value");
             }
-            else if (myPerformance2.schoolName != "Lincoln High")
+            if (myPerformance2.schoolName != "Lincoln High")
             {
                 test = false;
                 Console.WriteLine("schoolName does not have the correct value");
             }
-            else if (myPerformance2.performance != 11.569m)
+            if (myPerformance2.performance != 11.569m)
             {
                 test = false;
                 Console.WriteLine("performance does not have the correct value");
@@ -91,17 +91,17 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("perf1 and perf2 are not equal");
             }
-            else if (perf1.Equals(perf3))
+            if (perf1.Equals(perf3))
             {
                 test = false;
                 Console.WriteLine("perf1 equals perf3");
             }
-            else if (perf1.Equals(perf4))
+            if (perf1.Equals(perf4))
             {
                 test = false;
                 Console.WriteLine("perf1 equals perf4");
             }
-            else if (perf1.Equals(perf5))
+            if (perf1.Equals(perf5))
             {
                 test = false;
                 Console.WriteLine("perf1 equals perf5");
@@ -141,32 +141,32 @@ namespace DualMeetManager.Tests.Domain
                 test = false;
                 Console.WriteLine("validPerf did not validate");
             }
-            else if (invalidName1.validate())
+            if (invalidName1.validate())
             {
                 test = false;
                 Console.WriteLine("invalidName1 validated");
             }
-            else if (invalidName2.validate())
+            if (invalidName2.validate())
             {
                 test = false;
                 Console.WriteLine("invalidName2 validated");
             }
-            else if (invalidSchool1.validate())
+            if (invalidSchool1.validate())
             {
                 test = false;
                 Console.WriteLine("invalidSchool1 validated");
             }
-            else if (invalidSchool2.validate())
+            if (invalidSchool2.validate())
             {
                 test = false;
                 Console.WriteLine("invalidSchool2 validated");
             }
-            else if (invalidPerf1.validate())
+            if (invalidPerf1.validate())
             {
                 test = false;
                 Console.WriteLine("invalidPerf1 validated");
             }
-            else if (invalidPerf2.validate())
+            if (invalidPerf2.validate())
             {
                 test = false;
                 Console.WriteLine("invalidPerf2 validated");
