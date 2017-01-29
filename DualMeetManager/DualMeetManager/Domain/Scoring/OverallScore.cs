@@ -10,12 +10,12 @@ namespace DualMeetManager.Domain.Scoring
     {
         //Teams
         //Abbr, Full Name, OverallPts
-        Tuple<string, string, decimal> team1 { get; set; }
-        Tuple<string, string, decimal> team2 { get; set; }
+        public Tuple<string, string, decimal> team1 { get; private set; }
+        public Tuple<string, string, decimal> team2 { get; private set; }
 
         //Event name, List of points
-        Dictionary<string, List<IndEvent>> indEvents;
-        Dictionary<string, List<RelayEvent>> relayEvents;
+        public Dictionary<string, List<IndEvent>> indEvents { get; private set; }
+        public Dictionary<string, List<RelayEvent>> relayEvents { get; private set; }
 
         //Defult Constructor
         public OverallScore(){}

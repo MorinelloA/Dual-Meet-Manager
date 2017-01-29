@@ -8,8 +8,8 @@ namespace DualMeetManager.Domain.Scoring
 {
     public class RelayEvent
     {
-        string team1 { get; set; }
-        string team2 { get; set; }
+        public string team1 { get; private set; }
+        public string team2 { get; private set; }
 
         //Having points assigned for relays seems redundant since the winning relay gets 5pts, and the loser gets 0.
         //However, if rules were ever to change, the code would be much easier to update this way.
@@ -17,42 +17,54 @@ namespace DualMeetManager.Domain.Scoring
         //Pts
         //Team1 pts, Team2 pts, school abbr, performance
         //Note: performance is a string because it could be in minutes and seconds (ex: 4:25)
-        Tuple<decimal, decimal, string, string> firstPlacePts { get; set; }
-        Tuple<decimal, decimal, string, string> secondPlacePts { get; set; }
-        Tuple<int, int> totalPts { get; set; }
+        //public Tuple<decimal, decimal, string, string> firstPlacePts { get; private set; }
+        //public Tuple<decimal, decimal, string, string> secondPlacePts { get; private set; }
+        public Tuple<decimal, decimal> totalPts { get; private set; }
+
+        //index 0 for 1st place, 1 for 2nd place
+        public EventPoints[] points { get; private set; }
 
         //Default Constructor
-        public RelayEvent() { }
+        public RelayEvent()
+        {
+            points = new EventPoints[2];
+            this.team1 = "";
+            this.team2 = "";
+            this.points[0] = new EventPoints(0.0m, 0.0m, "", "", "");
+            this.points[1] = new EventPoints(0.0m, 0.0m, "", "", "");
+            this.totalPts = Tuple.Create(0.0m, 0.0m);
+        }
 
         //Parameterized Constructor
-        public RelayEvent(string team1, string team2, Tuple<decimal, decimal, string, string> firstPlacePts, Tuple<decimal, decimal, string, string> secondPlacePts, Tuple<int, int> totalPts)
+        public RelayEvent(string team1, string team2, EventPoints firstPlacePts, EventPoints secondPlacePts, Tuple<decimal, decimal> totalPts)
         {
+            points = new EventPoints[2];
             this.team1 = team1;
             this.team2 = team2;
-            this.firstPlacePts = firstPlacePts;
-            this.secondPlacePts = secondPlacePts;
+            points[0] = firstPlacePts;
+            points[1] = secondPlacePts;
             this.totalPts = totalPts;
         }
 
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            sb.Append("First Place: " + firstPlacePts.Item3 + ": " + firstPlacePts.Item4);
-            sb.Append("First Place Pts: " + team1 + ": " + firstPlacePts.Item1 + " " + team2 + ": " + firstPlacePts.Item2);
-            sb.Append("Second Place: " + secondPlacePts.Item3 + ": " + secondPlacePts.Item4);
-            sb.Append("Second Place Pts: " + team1 + ": " + secondPlacePts.Item1 + " " + team2 + ": " + secondPlacePts.Item2);
+            sb.Append("First Place: " + points[0].athleteName + " - " + points[0].schoolName + ": " + points[0].performance);
+            sb.Append("First Place Pts: " + team1 + ": " + points[0].team1Pts + " " + team2 + ": " + points[0].team2Pts);
+            sb.Append("Second Place: " + points[1].athleteName + " - " + points[1].schoolName + ": " + points[1].performance);
+            sb.Append("Second Place Pts: " + team1 + ": " + points[1].team1Pts + " " + team2 + ": " + points[1].team2Pts);
             sb.Append("Total: " + team1 + ": " + totalPts.Item1 + " " + team2 + ": " + totalPts.Item2);
-            return base.ToString();
+            return sb.ToString();
         }
 
         public override bool Equals(object obj)
         {
-            RelayEvent myIndEvent = obj as RelayEvent;
-            if (!myIndEvent.team1.Equals(team1)) return false;
-            else if (!myIndEvent.team2.Equals(team2)) return false;
-            else if (!myIndEvent.firstPlacePts.Equals(firstPlacePts)) return false;
-            else if (!myIndEvent.secondPlacePts.Equals(secondPlacePts)) return false;
-            else if (!myIndEvent.totalPts.Equals(totalPts)) return false;
+            RelayEvent myRelayEvent = obj as RelayEvent;
+            if (!myRelayEvent.team1.Equals(team1)) return false;
+            else if (!myRelayEvent.team2.Equals(team2)) return false;
+            else if (!myRelayEvent.points[0].Equals(points[0])) return false;
+            else if (!myRelayEvent.points[1].Equals(points[1])) return false;
+            else if (!myRelayEvent.totalPts.Equals(totalPts)) return false;
             return true;
         }
 
@@ -63,8 +75,8 @@ namespace DualMeetManager.Domain.Scoring
                 int hash = 17;
                 hash = hash * 23 + team1.GetHashCode();
                 hash = hash * 23 + team2.GetHashCode();
-                hash = hash * 23 + firstPlacePts.GetHashCode();
-                hash = hash * 23 + secondPlacePts.GetHashCode();
+                hash = hash * 23 + points[0].GetHashCode();
+                hash = hash * 23 + points[1].GetHashCode();
                 hash = hash * 23 + totalPts.GetHashCode();
                 return hash;
             }

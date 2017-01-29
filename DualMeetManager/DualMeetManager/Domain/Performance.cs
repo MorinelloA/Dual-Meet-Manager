@@ -12,12 +12,11 @@ namespace DualMeetManager.Domain
     /// <remarks>You will typically see this used in a List or Dictionary</remarks>
     public class Performance
     {
-        public string athleteName { get; set; }
-        public string schoolName { get; set; }
-        public int heatNum { get; set; }
-        public decimal performance { get; set; }
+        public string athleteName { get; private set; }
+        public string schoolName { get; private set; }
+        public int heatNum { get; private set; }
+        public decimal performance { get; private set; }
 
-        
         /// <summary>
         /// Default Constructor
         /// </summary>

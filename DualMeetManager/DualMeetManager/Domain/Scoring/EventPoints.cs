@@ -6,20 +6,32 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Domain.Scoring
 {
+    /// <summary>
+    /// Class used to store specfic place information for an event. 1st, 2nd, or 3rd
+    /// </summary>
     public class EventPoints
     {
         //Team1 pts, Team2 pts, athlete name, school name, performance
-        public decimal team1Pts { get; set; }
-        public decimal team2Pts { get; set; }
-        public string athleteName { get; set; }
-        public string schoolName { get; set; }
+        public decimal team1Pts { get; private set; }
+        public decimal team2Pts { get; private set; }
+        public string athleteName { get; private set; }
+        public string schoolName { get; private set; }
         //Note: performance is a string because it could be in minutes and seconds (ex: 4:25)
-        public string performance { get; set; }
-        
-        //Default Constructor
+        public string performance { get; private set; }
+
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
         public EventPoints() { }
 
-        //Parameterized Constructor
+        /// <summary>
+        /// Parameterized Constructor
+        /// </summary>
+        /// <param name="team1Pts">Amount of points team1 scored</param>
+        /// <param name="team2Pts">Amount of points team2 scored</param>
+        /// <param name="athleteName">The athlete's name</param>
+        /// <param name="schoolName">The school name</param>
+        /// <param name="performance">The performance, as a string. At this point, the raw data should have been converted</param>
         public EventPoints(decimal team1Pts, decimal team2Pts, string athleteName, string schoolName, string performance)
         {
             this.team1Pts = team1Pts;
@@ -29,6 +41,10 @@ namespace DualMeetManager.Domain.Scoring
             this.performance = performance;
         }
 
+        /// <summary>
+        /// Prints out all the information regarding the EventPoints object
+        /// </summary>
+        /// <returns>A string with all EventPoints information</returns>
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
@@ -40,6 +56,11 @@ namespace DualMeetManager.Domain.Scoring
             return sb.ToString();
         }
 
+        /// <summary>
+        /// Tests whether or not two EventPoints objects are equal to one another
+        /// </summary>
+        /// <param name="obj">obj being tested</param>
+        /// <returns>True if the EventPoints objects are equal, false if they are not</returns>
         public override bool Equals(object obj)
         {
             EventPoints myEventPoints = obj as EventPoints;
@@ -54,6 +75,10 @@ namespace DualMeetManager.Domain.Scoring
             return true;
         }
 
+        /// <summary>
+        /// Hashcode override
+        /// </summary>
+        /// <returns>The object's Hashcode</returns>
         public override int GetHashCode()
         {
             unchecked // Overflow is fine, just wrap

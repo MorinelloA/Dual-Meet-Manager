@@ -12,8 +12,8 @@ namespace DualMeetManager.Domain
     {
         //Key is a three letter Abbr, Value is the full name
         //The Abbr is used for printout where full names could compromise the document
-        public Dictionary<string, string> boySchoolNames { get; set; }
-        public Dictionary<string, string> girlSchoolNames { get; set; }
+        public Dictionary<string, string> boySchoolNames { get; private set; }
+        public Dictionary<string, string> girlSchoolNames { get; private set; }
 
         /// <summary>
         /// Default Constructor for Teams

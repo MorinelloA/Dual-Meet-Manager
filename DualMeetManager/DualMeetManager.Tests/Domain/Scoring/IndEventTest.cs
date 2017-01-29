@@ -1,10 +1,6 @@
 ﻿using DualMeetManager.Domain.Scoring;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DualMeetManager.Tests.Domain.Scoring
 {
@@ -14,6 +10,9 @@ namespace DualMeetManager.Tests.Domain.Scoring
     [TestFixture]
     class IndEventTest
     {
+        /// <summary>
+        /// Tests the default constructor
+        /// </summary>
         [TestCase]
         public void TestDefaultConstructor()
         {
@@ -23,6 +22,10 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests parameterized constructor
+        /// </summary>
+        /// <remarks>Each attribute is tested individually for accuracy</remarks>
         [TestCase]
         public void TestParameterizedConstructor()
         {
@@ -71,9 +74,14 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests the Equals method
+        /// </summary>
+        /// <remarks>Each attribute is tested individually for accuracy</remarks>
         [TestCase]
         public void TestEqualsMethod()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
             IndEvent controlIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
@@ -132,16 +140,166 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests accuracy of the ToString method
+        /// </summary>
         [TestCase]
         public void TestToStringMethod()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+            IndEvent myIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+
+            //There will be a rounding error caused by decimals. Need method for formatting.
+            string strIndEvent = myIndEvent.ToString();
+
+            Console.WriteLine("My string:" + Environment.NewLine + Environment.NewLine);
+            Console.WriteLine(strIndEvent + Environment.NewLine);
+
+            Console.WriteLine("Expecting:" + Environment.NewLine + Environment.NewLine);
+            Console.WriteLine("First Place: P1 - PLM: 11.3" + Environment.NewLine +
+                "First Place Pts: PLM: 5 GWY: 0" + Environment.NewLine +
+                "Second Place: P2 - PLM: 11.4" + Environment.NewLine +
+                "Second Place Pts: PLM: 3 GWY: 0" + Environment.NewLine +
+                "Third Place: G1 - GWY: 11.5" + Environment.NewLine +
+                "Third Place Pts: PLM: 0 GWY: 1" + Environment.NewLine +
+                "Total: PLM: 8 GWY: 1");
+
+            Assert.AreEqual(strIndEvent, "First Place: P1 - PLM: 11.3" + Environment.NewLine +
+                "First Place Pts: PLM: 5 GWY: 0" + Environment.NewLine +
+                "Second Place: P2 - PLM: 11.4" + Environment.NewLine +
+                "Second Place Pts: PLM: 3 GWY: 0" + Environment.NewLine +
+                "Third Place: G1 - GWY: 11.5" + Environment.NewLine +
+                "Third Place Pts: PLM: 0 GWY: 1" + Environment.NewLine +
+                "Total: PLM: 8 GWY: 1",
+                GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests accuracy of the validate method
+        /// </summary>
+        /// <remarks>Each possibility of an invalid IndEvent is tested</remarks>
         [TestCase]
         public void TestValidateMethod()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+            bool test = true;
+            IndEvent control = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
+
+            IndEvent team1PtsDontMatch = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(7.0m, 1.0m));
+            IndEvent team2PtsDontMatch = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 0.0m));
+            IndEvent totalAbove9 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 3.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 3.0m));
+            IndEvent noNameTeam1 = new IndEvent("", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent noNameTeam2 = new IndEvent("TM1", "", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent nullNameTeam1 = new IndEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(3.0m, 1.0m));
+            IndEvent nullNameTeam2 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(5.0m, 1.0m));
+            IndEvent nullNameTeam3 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 0.0m, "", "TM2", "11.5"), Tuple.Create(8.0m, 0.0m));
+            IndEvent noNameWithPtsTeam1 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "", "", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent noNameWithPtsTeam2 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "", "", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent noNameWithPtsTeam3 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "", "", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent nameWithNoPtsTeam1 = new IndEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(3.0m, 1.0m));
+            IndEvent nameWithNoPtsTeam2 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(5.0m, 1.0m));
+            IndEvent nameWithNoPtsTeam3 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 0.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 0.0m));
+
+            if(!control.validate())
+            {
+                test = false;
+                Console.WriteLine("control was invalid");
+            }
+            if(team1PtsDontMatch.validate())
+            {
+                test = false;
+                Console.WriteLine("team1PtsDontMatch was valid");
+            }
+            if (team2PtsDontMatch.validate())
+            {
+                test = false;
+                Console.WriteLine("team2PtsDontMatch was valid");
+            }
+            if (totalAbove9.validate())
+            {
+                test = false;
+                Console.WriteLine("totalAbove9 was valid");
+            }
+            if (noNameTeam1.validate())
+            {
+                test = false;
+                Console.WriteLine("noNameTeam1 was valid");
+            }
+            if (noNameTeam2.validate())
+            {
+                test = false;
+                Console.WriteLine("noNameTeam2 was valid");
+            }
+            if (nullNameTeam1.validate())
+            {
+                test = false;
+                Console.WriteLine("nullNameTeam1 was valid");
+            }
+            if (nullNameTeam2.validate())
+            {
+                test = false;
+                Console.WriteLine("nullNameTeam2 was valid");
+            }
+            if (nullNameTeam3.validate())
+            {
+                test = false;
+                Console.WriteLine("nullNameTeam3 was valid");
+            }
+            if (noNameWithPtsTeam1.validate())
+            {
+                test = false;
+                Console.WriteLine("noNameWithPtsTeam1 was valid");
+            }
+            if (noNameWithPtsTeam2.validate())
+            {
+                test = false;
+                Console.WriteLine("noNameWithPtsTeam2 was valid");
+            }
+            if (noNameWithPtsTeam3.validate())
+            {
+                test = false;
+                Console.WriteLine("noNameWithPtsTeam3 was valid");
+            }
+            if (nameWithNoPtsTeam1.validate())
+            {
+                test = false;
+                Console.WriteLine("nameWithNoPtsTeam1 was valid");
+            }
+            if (nameWithNoPtsTeam2.validate())
+            {
+                test = false;
+                Console.WriteLine("nameWithNoPtsTeam2 was valid");
+            }
+            if (nameWithNoPtsTeam3.validate())
+            {
+                test = false;
+                Console.WriteLine("nameWithNoPtsTeam3 was valid");
+            }
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        /// <summary>
+        /// Tests that both parameterized constructors will equal each other
+        /// </summary>
+        [TestCase]
+        public void TestParameterizedConstructorsAreEqual()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            IndEvent indEvent1 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
+            Console.WriteLine(1);
+            EventPoints[] eventPoints = { new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5") };
+            Console.WriteLine(2);
+            IndEvent indEvent2 = new IndEvent("TM1", "TM2", eventPoints, Tuple.Create(8.0m, 1.0m));
+            Console.WriteLine(3);
+            Assert.AreEqual(indEvent1, indEvent2, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
     }
 }

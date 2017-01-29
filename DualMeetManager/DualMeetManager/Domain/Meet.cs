@@ -9,13 +9,13 @@ namespace DualMeetManager.Domain
     /// <remarks>Does not hold information scoring information, that is done in seperate classes</remarks>
     public class Meet
     {
-        public DateTime dateOfMeet { get; set; }
-        public string location { get; set; }
-        public string weatherConditions { get; set; }
-        public Teams schoolNames { get; set; }
+        public DateTime dateOfMeet { get; private set; }
+        public string location { get; private set; }
+        public string weatherConditions { get; private set; }
+        public Teams schoolNames { get; private set; }
         
         //The string in this dictionary is the event name
-        public Dictionary<string, List<Performance>> performances { get; set; }
+        public Dictionary<string, List<Performance>> performances { get; private set; }
 
         /// <summary>
         /// Default Constructor for Meet
