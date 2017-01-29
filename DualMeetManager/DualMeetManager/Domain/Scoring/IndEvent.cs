@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DualMeetManager.Domain.Scoring
 {
@@ -38,12 +35,12 @@ namespace DualMeetManager.Domain.Scoring
         public IndEvent()
         {
             points = new EventPoints[3];
-            this.team1 = "";
-            this.team2 = "";
-            this.points[0] = new EventPoints(0.0m, 0.0m, "", "", "");
-            this.points[1] = new EventPoints(0.0m, 0.0m, "", "", "");
-            this.points[2] = new EventPoints(0.0m, 0.0m, "", "", "");
-            this.totalPts = Tuple.Create(0.0m, 0.0m);
+            team1 = "";
+            team2 = "";
+            points[0] = new EventPoints(0.0m, 0.0m, "", "", "");
+            points[1] = new EventPoints(0.0m, 0.0m, "", "", "");
+            points[2] = new EventPoints(0.0m, 0.0m, "", "", "");
+            totalPts = Tuple.Create(0.0m, 0.0m);
         }
 
         /// <summary>
@@ -104,7 +101,6 @@ namespace DualMeetManager.Domain.Scoring
         /// <returns>A string with all IndEvent information</returns>
         public override string ToString()
         {
-            string.Format("{0:0.##}", 256.583);
             StringBuilder sb = new StringBuilder();
             sb.Append("First Place: " + points[0].athleteName + " - " + points[0].schoolName + ": " + points[0].performance + Environment.NewLine);
             sb.Append("First Place Pts: " + team1 + ": " + string.Format("{0:0.##}", points[0].team1Pts) + " " + team2 + ": " + string.Format("{0:0.##}", points[0].team2Pts) + Environment.NewLine);
@@ -117,7 +113,7 @@ namespace DualMeetManager.Domain.Scoring
         }
 
         /// <summary>
-        /// Tests whether or not two IndEvent objects are equal to one another
+        /// Checkes whether or not two IndEvent objects are equal to one another
         /// </summary>
         /// <param name="obj">obj being tested</param>
         /// <returns>True if the IndEvent objects are equal, false if they are not</returns>
@@ -156,7 +152,7 @@ namespace DualMeetManager.Domain.Scoring
         }
 
         /// <summary>
-        /// Method to make sure all data in the IndEvent class is valid
+        /// Method to make sure all data in the IndEvent object is valid
         /// </summary>
         /// <returns>true if it is a valid IndEvent, false if not</returns>
         public bool validate()

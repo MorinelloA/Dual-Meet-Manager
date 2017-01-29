@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DualMeetManager.Domain.Scoring
 {
@@ -51,8 +48,8 @@ namespace DualMeetManager.Domain.Scoring
             sb.Append("Athlete: " + athleteName + Environment.NewLine);
             sb.Append("School: " + schoolName + Environment.NewLine);
             sb.Append("Performance: " + performance + Environment.NewLine);
-            sb.Append("Team 1 Points: " + team1Pts + Environment.NewLine);
-            sb.Append("Team 2 Points: " + team2Pts);
+            sb.Append("Team 1 Points: " + string.Format("{0:0.##}", team1Pts) + Environment.NewLine);
+            sb.Append("Team 2 Points: " + string.Format("{0:0.##}", team2Pts));
             return sb.ToString();
         }
 

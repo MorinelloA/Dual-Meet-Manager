@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace DualMeetManager.Domain
+﻿namespace DualMeetManager.Domain
 {
     /// <summary>
     /// Class used to store one single performance for a particular event

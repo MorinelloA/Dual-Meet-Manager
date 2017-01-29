@@ -150,7 +150,6 @@ namespace DualMeetManager.Tests.Domain.Scoring
 
             IndEvent myIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
 
-            //There will be a rounding error caused by decimals. Need method for formatting.
             string strIndEvent = myIndEvent.ToString();
 
             Console.WriteLine("My string:" + Environment.NewLine + Environment.NewLine);

@@ -388,7 +388,7 @@ namespace DualMeetManager.Tests.Domain
         /// <summary>
         /// Tests accuracy of the validate method
         /// </summary>
-        /// <remarks>Each possibility of an invalid meet is tested</remarks>
+        /// <remarks>Each possibility of an invalid Meet is tested</remarks>
         [TestCase]
         public void TestValidateMethod()
         {

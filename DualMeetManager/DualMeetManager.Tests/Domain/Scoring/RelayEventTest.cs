@@ -1,10 +1,6 @@
 ﻿using DualMeetManager.Domain.Scoring;
 using NUnit.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DualMeetManager.Tests.Domain.Scoring
 {
@@ -14,6 +10,9 @@ namespace DualMeetManager.Tests.Domain.Scoring
     [TestFixture]
     class RelayEventTest
     {
+        /// <summary>
+        /// Tests the Default Constructor
+        /// </summary>
         [TestCase]
         public void TestDefaultConstructor()
         {
@@ -23,13 +22,16 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests the parameterized Constructor
+        /// </summary>
+        /// <remarks>Each attribute is tested individually for accuracy</remarks>
         [TestCase]
         public void TestParameterizedConstructor()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
-            //public RelayEvent(string team1, string team2, EventPoints firstPlacePts, EventPoints secondPlacePts, Tuple<decimal, decimal> totalPts)
             RelayEvent myRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), Tuple.Create(5.0m, 0.0m));
 
             if (myRelayEvent == null)
@@ -67,6 +69,10 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed"); 
         }
 
+        /// <summary>
+        /// Tests the Equals method
+        /// </summary>
+        /// <remarks>Each attribute is tested individually for accuracy</remarks>
         [TestCase]
         public void TestEqualsMethod()
         {
@@ -123,16 +129,119 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests accuracy of the ToString method
+        /// </summary>
         [TestCase]
         public void TestToStringMethod()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            RelayEvent myRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), Tuple.Create(5.0m, 0.0m));
+
+            string strRelayEvent = myRelayEvent.ToString();
+
+            Console.WriteLine("My string:" + Environment.NewLine + Environment.NewLine);
+            Console.WriteLine(strRelayEvent + Environment.NewLine);
+
+            Console.WriteLine("Expecting:" + Environment.NewLine + Environment.NewLine);
+            Console.WriteLine("First Place: A - PLM: 11.3" + Environment.NewLine +
+                "First Place Pts: PLM: 5 GWY: 0" + Environment.NewLine +
+                "Second Place: A - GWY: 11.4" + Environment.NewLine +
+                "Second Place Pts: PLM: 0 GWY: 0" + Environment.NewLine +
+                "Total: PLM: 5 GWY: 0");
+
+            Assert.AreEqual(strRelayEvent, "First Place: A - PLM: 11.3" + Environment.NewLine +
+                "First Place Pts: PLM: 5 GWY: 0" + Environment.NewLine +
+                "Second Place: A - GWY: 11.4" + Environment.NewLine +
+                "Second Place Pts: PLM: 0 GWY: 0" + Environment.NewLine +
+                "Total: PLM: 5 GWY: 0",
+                GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
+        /// <summary>
+        /// Tests accuracy of the validate method
+        /// </summary>
+        /// <remarks>Each possibility of an invalid RelayEvent is tested</remarks>
         [TestCase]
         public void TestValidateMethod()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            bool test = true;
+            RelayEvent control = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
+
+            RelayEvent team1PtsDontMatch = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(4.0m, 0.0m));
+            RelayEvent team2PtsDontMatch = new RelayEvent("TM1", "TM2", new EventPoints(4.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(4.0m, 1.0m));
+            RelayEvent totalAbove5 = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 1.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 1.0m));
+            RelayEvent noNameTeam1 = new RelayEvent("", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent noNameTeam2 = new RelayEvent("TM1", "", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent nullNameTeam1 = new RelayEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(0.0m, 0.0m));
+            RelayEvent nullNameTeam2 = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent noNameWithPtsTeam1 = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "", "", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent nameWithNoPtsTeam1 = new RelayEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(0.0m, 0.0m));
+            RelayEvent secondPlaceHasPts = new RelayEvent("TM1", "TM2", new EventPoints(4.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 1.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(4.0m, 1.0m));
+
+            if (!control.validate())
+            {
+                test = false;
+                Console.WriteLine("control was invalid");
+            }
+            if (team1PtsDontMatch.validate())
+            {
+                test = false;
+                Console.WriteLine("team1PtsDontMatch was valid");
+            }
+            if (team2PtsDontMatch.validate())
+            {
+                test = false;
+                Console.WriteLine("team2PtsDontMatch was valid");
+            }
+            if (totalAbove5.validate())
+            {
+                test = false;
+                Console.WriteLine("totalAbove5 was valid");
+            }
+            if (noNameTeam1.validate())
+            {
+                test = false;
+                Console.WriteLine("noNameTeam1 was valid");
+            }
+            if (noNameTeam2.validate())
+            {
+                test = false;
+                Console.WriteLine("noNameTeam2 was valid");
+            }
+            if (nullNameTeam1.validate())
+            {
+                test = false;
+                Console.WriteLine("nullNameTeam1 was valid");
+            }
+            if (nullNameTeam2.validate())
+            {
+                test = false;
+                Console.WriteLine("nullNameTeam2 was valid");
+            }
+            if (noNameWithPtsTeam1.validate())
+            {
+                test = false;
+                Console.WriteLine("noNameWithPtsTeam1 was valid");
+            }
+            if (nameWithNoPtsTeam1.validate())
+            {
+                test = false;
+                Console.WriteLine("nameWithNoPtsTeam1 was valid");
+            }
+            if (secondPlaceHasPts.validate())
+            {
+                test = false;
+                Console.WriteLine("secondPlaceHasPts was valid");
+            }
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
     }
 }
