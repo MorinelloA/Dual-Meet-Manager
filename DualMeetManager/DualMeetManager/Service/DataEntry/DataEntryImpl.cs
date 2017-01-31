@@ -1,31 +1,15 @@
-﻿using DualMeetManager.Domain.Scoring;
-using DualMeetManager.Service.DataEntry;
+﻿using DualMeetManager.Domain;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DualMeetManager
+namespace DualMeetManager.Service.DataEntry
 {
-    class Program
+    public class DataEntryImpl : IDataEntry
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine(ConvertToTimedData(30.1111m));
-            Console.WriteLine(ConvertToTimedData(59.1111m));
-            Console.WriteLine(ConvertToTimedData(60.1111m));
-            Console.WriteLine(ConvertToTimedData(61.1111m));
-            Console.WriteLine(ConvertToTimedData(70.1111m));
-
-            Console.WriteLine(ConvertFromTimedData("10"));
-            Console.WriteLine(ConvertFromTimedData("2:10"));
-            Console.WriteLine(ConvertFromTimedData("0"));
-            Console.WriteLine(ConvertFromTimedData("1:00"));
-            Console.WriteLine(ConvertFromTimedData("1:01"));
-        }
-
-        public static string ConvertToTimedData(decimal perf)
+        public string ConvertToTimedData(decimal perf)
         {
             if (perf == 0m) return "";
             decimal TS, TM;
@@ -33,18 +17,18 @@ namespace DualMeetManager
             TM = 0;
             while (TS >= 60)
             {
-                TM = TM + 1;
-                TS = Math.Round(TS - 60, 3);
+                TM += 1;
+                TS -= 60;
             }
             if (TM >= 1)
             {
                 if (TS >= 10)
                 {
-                    return (TM + ":" + TS);
+                    return(TM + ":" + TS);
                 }
                 else
                 {
-                    return (TM + ":0" + TS);
+                    return(TM + ":0" + TS);
                 }
             }
             else
@@ -53,7 +37,13 @@ namespace DualMeetManager
             }
         }
 
-        public static decimal ConvertFromTimedData(string perf)
+        /// <summary>
+        /// Converts minutes and seconds (Ex: 2:15) in raw seconds (135)
+        /// </summary>
+        /// <param name="perf">String as minutes:seconds</param>
+        /// <returns>raw data as total seconds</returns>
+        /// <remarks>Needs further error handling for null or invalid strings</remarks>
+        public decimal ConvertFromTimedData(string perf)
         {
             int divider = 0;
             for (int x = 0; x < perf.Length; x++)
@@ -73,7 +63,13 @@ namespace DualMeetManager
                 }
             }
             else
-                return (Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
+                return(Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
         }
+
+        public string ConvertToLengthData(decimal perf) { return ""; }
+        public decimal ConvertFromLengthData(string perf) { return 0m; }
+
+        public IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd) { return null; }
+        public IDictionary<string, List<Performance>> DeleteEvent(string Event) { return null; }
     }
 }

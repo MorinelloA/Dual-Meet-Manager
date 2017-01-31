@@ -52,6 +52,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Teams.cs" />
+    <Compile Include="Service\DataEntry\DataEntryImpl.cs" />
+    <Compile Include="Service\DataEntry\IDataEntry.cs" />
+    <Compile Include="Service\Printout\IPrintout.cs" />
+    <Compile Include="Service\Saving\ISaving.cs" />
+    <Compile Include="Service\Scoring\IScoring.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

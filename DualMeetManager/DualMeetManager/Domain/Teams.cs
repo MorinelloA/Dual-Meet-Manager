@@ -12,8 +12,8 @@ namespace DualMeetManager.Domain
     {
         //Key is a three letter Abbr, Value is the full name
         //The Abbr is used for printout where full names could compromise the document
-        public Dictionary<string, string> boySchoolNames { get; private set; }
-        public Dictionary<string, string> girlSchoolNames { get; private set; }
+        public IDictionary<string, string> boySchoolNames { get; private set; }
+        public IDictionary<string, string> girlSchoolNames { get; private set; }
 
         /// <summary>
         /// Default Constructor for Teams
@@ -25,7 +25,7 @@ namespace DualMeetManager.Domain
         /// </summary>
         /// <param name="boySchoolNames">Dictionary of Boy's Team Abbr and Full names</param>
         /// <param name="girlSchoolNames">Dictionary of Girl's Team Abbr and Full names</param>
-        public Teams(Dictionary<string, string> boySchoolNames, Dictionary<string, string> girlSchoolNames)
+        public Teams(IDictionary<string, string> boySchoolNames, IDictionary<string, string> girlSchoolNames)
         {
             this.boySchoolNames = boySchoolNames;
             this.girlSchoolNames = girlSchoolNames;

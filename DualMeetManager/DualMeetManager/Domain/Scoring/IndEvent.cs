@@ -14,14 +14,6 @@ namespace DualMeetManager.Domain.Scoring
         public string team1 { get; private set; }
         public string team2 { get; private set; }
 
-        //Pts
-        //Team1 pts, Team2 pts, athlete name, school name, performance
-        //Note: performance is a string because it could be in minutes and seconds (ex: 4:25)
-        //These need deleted, replaced with an array of EventPoints
-        //public Tuple<decimal, decimal, string, string, string> firstPlacePts { get; set; }
-        //public Tuple<decimal, decimal, string, string, string> secondPlacePts { get; set; }
-        //public Tuple<decimal, decimal, string, string, string> thirdPlacePts { get; set; }
-
         //index 0 for 1st place, 1 for 2nd place, 2 for 3rd place
         public EventPoints[] points { get; private set; }
 

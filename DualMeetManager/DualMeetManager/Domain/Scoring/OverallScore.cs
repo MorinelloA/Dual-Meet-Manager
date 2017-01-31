@@ -16,8 +16,8 @@ namespace DualMeetManager.Domain.Scoring
         public Tuple<string, string, decimal> team2 { get; private set; }
 
         //Event name, List of points
-        public Dictionary<string, IndEvent> indEvents { get; private set; }
-        public Dictionary<string, RelayEvent> relayEvents { get; private set; }
+        public IDictionary<string, IndEvent> indEvents { get; private set; }
+        public IDictionary<string, RelayEvent> relayEvents { get; private set; }
 
         /// <summary>
         /// Default Constructor
@@ -31,7 +31,7 @@ namespace DualMeetManager.Domain.Scoring
         /// <param name="team2">Team 1 Tuple (Abbr, Full Name, Total Pts)</param>
         /// <param name="indEvents">Dictionary with every individual event. Places 1st through 3rd</param>
         /// <param name="relayEvents">Dictionary with every relay event. Places 1st and 2nd</param>
-        public OverallScore(Tuple<string, string, decimal> team1, Tuple<string, string, decimal> team2, Dictionary<string, IndEvent> indEvents, Dictionary<string, RelayEvent> relayEvents)
+        public OverallScore(Tuple<string, string, decimal> team1, Tuple<string, string, decimal> team2, IDictionary<string, IndEvent> indEvents, Dictionary<string, RelayEvent> relayEvents)
         {
             this.team1 = team1;
             this.team2 = team2;

@@ -15,7 +15,7 @@ namespace DualMeetManager.Domain
         public Teams schoolNames { get; private set; }
         
         //The string in this dictionary is the event name
-        public Dictionary<string, List<Performance>> performances { get; private set; }
+        public IDictionary<string, List<Performance>> performances { get; private set; }
 
         /// <summary>
         /// Default Constructor for Meet
@@ -46,7 +46,7 @@ namespace DualMeetManager.Domain
         /// <param name="weatherConditions">What the weather conditions were like</param>
         /// <param name="schoolNames">Schools competing</param>
         /// <param name="performances">List of performances for every event and competitor</param>
-        public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames, Dictionary<string, List<Performance>> performances)
+        public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames, IDictionary<string, List<Performance>> performances)
         {
             this.dateOfMeet = dateOfMeet;
             this.location = location;
