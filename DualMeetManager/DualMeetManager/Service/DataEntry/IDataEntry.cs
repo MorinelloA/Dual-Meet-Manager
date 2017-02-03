@@ -18,6 +18,6 @@ namespace DualMeetManager.Service.DataEntry
         //IDictionary<string, List<Performance>> is the same as Meet.performances
         //Ex: <MEET NAME>.performances = AddPerformanceToEvent(NEW DICTIONARY) 
         IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd);
-        IDictionary<string, List<Performance>> DeleteEvent(string Event);
+        IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd);
     }
 }

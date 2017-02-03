@@ -32,7 +32,7 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
-            IndEvent myIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent myIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
 
             if (myIndEvent == null)
             {
@@ -64,10 +64,15 @@ namespace DualMeetManager.Tests.Domain.Scoring
                 test = false;
                 Console.WriteLine("thirdPlacePts does not have the correct value");
             }
-            if(!myIndEvent.totalPts.Equals(Tuple.Create(8.0m, 1.0m)))
+            if(myIndEvent.team1Total != 8.0m)
             {
                 test = false;
-                Console.WriteLine("totalPts does not have the correct value");
+                Console.WriteLine("team1Total does not have the correct value");
+            }
+            if (myIndEvent.team2Total != 1.0m)
+            {
+                test = false;
+                Console.WriteLine("team2Total does not have the correct value");
             }
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
@@ -84,15 +89,15 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
-            IndEvent controlIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent controlIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
 
-            IndEvent equalIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffTeam1 = new IndEvent("WH", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffTeam2 = new IndEvent("PLM", "WH", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffFirstPlacePts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P4", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffSecondPlacePts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.45"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffThirdPlacePts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.1m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent diffTotalPts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(9.0m, 0.0m));
+            IndEvent equalIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
+            IndEvent diffTeam1 = new IndEvent("WH", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
+            IndEvent diffTeam2 = new IndEvent("PLM", "WH", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
+            IndEvent diffFirstPlacePts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P4", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
+            IndEvent diffSecondPlacePts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.45"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
+            IndEvent diffThirdPlacePts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.1m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
+            IndEvent diffTotalPts = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 9.0m, 0.0m);
             IndEvent nullIndEvent = new IndEvent();
 
             if(!controlIndEvent.Equals(equalIndEvent))
@@ -148,7 +153,7 @@ namespace DualMeetManager.Tests.Domain.Scoring
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            IndEvent myIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent myIndEvent = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
 
             string strIndEvent = myIndEvent.ToString();
 
@@ -186,22 +191,22 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool test = true;
-            IndEvent control = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent control = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 8.0m, 1.0m);
 
-            IndEvent team1PtsDontMatch = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(7.0m, 1.0m));
-            IndEvent team2PtsDontMatch = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 0.0m));
-            IndEvent totalAbove9 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 3.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 3.0m));
-            IndEvent noNameTeam1 = new IndEvent("", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent noNameTeam2 = new IndEvent("TM1", "", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent nullNameTeam1 = new IndEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(3.0m, 1.0m));
-            IndEvent nullNameTeam2 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(5.0m, 1.0m));
-            IndEvent nullNameTeam3 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 0.0m, "", "TM2", "11.5"), Tuple.Create(8.0m, 0.0m));
-            IndEvent noNameWithPtsTeam1 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "", "", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent noNameWithPtsTeam2 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "", "", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent noNameWithPtsTeam3 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "", "", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent nameWithNoPtsTeam1 = new IndEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(3.0m, 1.0m));
-            IndEvent nameWithNoPtsTeam2 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(5.0m, 1.0m));
-            IndEvent nameWithNoPtsTeam3 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 0.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 0.0m));
+            IndEvent team1PtsDontMatch = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 7.0m, 1.0m);
+            IndEvent team2PtsDontMatch = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 8.0m, 0.0m);
+            IndEvent totalAbove9 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 3.0m, "Athlete3", "TM2", "11.5"), 8.0m, 3.0m);
+            IndEvent noNameTeam1 = new IndEvent("", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 8.0m, 1.0m);
+            IndEvent noNameTeam2 = new IndEvent("TM1", "", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 8.0m, 1.0m);
+            IndEvent nullNameTeam1 = new IndEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 3.0m, 1.0m);
+            IndEvent nullNameTeam2 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 5.0m, 1.0m);
+            IndEvent nullNameTeam3 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 0.0m, "", "TM2", "11.5"), 8.0m, 0.0m);
+            IndEvent noNameWithPtsTeam1 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "", "", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 8.0m, 1.0m);
+            IndEvent noNameWithPtsTeam2 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "", "", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 8.0m, 1.0m);
+            IndEvent noNameWithPtsTeam3 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "", "", "11.5"), 8.0m, 1.0m);
+            IndEvent nameWithNoPtsTeam1 = new IndEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 3.0m, 1.0m);
+            IndEvent nameWithNoPtsTeam2 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 5.0m, 1.0m);
+            IndEvent nameWithNoPtsTeam3 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 0.0m, "Athlete3", "TM2", "11.5"), 8.0m, 0.0m);
 
             if(!control.validate())
             {
@@ -291,11 +296,11 @@ namespace DualMeetManager.Tests.Domain.Scoring
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            IndEvent indEvent1 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), Tuple.Create(8.0m, 1.0m));
+            IndEvent indEvent1 = new IndEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5"), 8.0m, 1.0m);
             Console.WriteLine(1);
             EventPoints[] eventPoints = { new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(3.0m, 0.0m, "Athlete2", "TM1", "11.4"), new EventPoints(0.0m, 1.0m, "Athlete3", "TM2", "11.5") };
             Console.WriteLine(2);
-            IndEvent indEvent2 = new IndEvent("TM1", "TM2", eventPoints, Tuple.Create(8.0m, 1.0m));
+            IndEvent indEvent2 = new IndEvent("TM1", "TM2", eventPoints, 8.0m, 1.0m);
             Console.WriteLine(3);
             Assert.AreEqual(indEvent1, indEvent2, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");

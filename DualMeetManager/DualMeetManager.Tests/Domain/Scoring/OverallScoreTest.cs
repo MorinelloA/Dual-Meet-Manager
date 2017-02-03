@@ -33,8 +33,8 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
-            IndEvent indEvent1 = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent indEvent2 = new IndEvent("PLM", "GWY", new EventPoints(0.0m, 5.0m, "P5", "PLM", "11.2"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(3.0m, 6.0m));
+            IndEvent indEvent1 = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
+            IndEvent indEvent2 = new IndEvent("PLM", "GWY", new EventPoints(0.0m, 5.0m, "P5", "PLM", "11.2"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 3.0m, 6.0m);
             Dictionary<string, IndEvent> indEvents = new Dictionary<string, IndEvent>();
             indEvents.Add("Boy's 100", indEvent1);
             indEvents.Add("Boy's 200", indEvent2);
@@ -45,7 +45,7 @@ namespace DualMeetManager.Tests.Domain.Scoring
             relayEvents.Add("Boy's 4x100", relayEvent1);
             relayEvents.Add("Boy's 4x400", relayEvent2);
 
-            OverallScore myOverallScore = new OverallScore(Tuple.Create("PLM", "Plum", 10.0m), Tuple.Create("GWY", "Gateway", 6.0m), indEvents, relayEvents);
+            OverallScore myOverallScore = new OverallScore(Tuple.Create("PLM", "Plum"), Tuple.Create("GWY", "Gateway"), indEvents, relayEvents);
 
             if (myOverallScore == null)
             {
@@ -87,9 +87,9 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
-            IndEvent indEvent1 = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent indEvent2 = new IndEvent("PLM", "GWY", new EventPoints(0.0m, 5.0m, "P5", "PLM", "11.2"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(3.0m, 6.0m));
-            IndEvent indEvent3 = new IndEvent("PLM", "GWY", new EventPoints(0.0m, 5.0m, "P7", "PLM", "11.2"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(3.0m, 6.0m));
+            IndEvent indEvent1 = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
+            IndEvent indEvent2 = new IndEvent("PLM", "GWY", new EventPoints(0.0m, 5.0m, "P5", "PLM", "11.2"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 3.0m, 6.0m);
+            IndEvent indEvent3 = new IndEvent("PLM", "GWY", new EventPoints(0.0m, 5.0m, "P7", "PLM", "11.2"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 3.0m, 6.0m);
 
             Dictionary<string, IndEvent> indEventsA = new Dictionary<string, IndEvent>();
             indEventsA.Add("Boy's 100", indEvent1);
@@ -111,13 +111,13 @@ namespace DualMeetManager.Tests.Domain.Scoring
             relayEventsB.Add("Boy's 4x100", relayEvent1);
             relayEventsB.Add("Boy's 4x400", relayEvent3);
 
-            OverallScore control = new OverallScore(Tuple.Create("PLM", "Plum", 10.0m), Tuple.Create("GWY", "Gateway", 6.0m), indEventsA, relayEventsA);
+            OverallScore control = new OverallScore(Tuple.Create("PLM", "Plum"), Tuple.Create("GWY", "Gateway"), indEventsA, relayEventsA);
 
-            OverallScore equal = new OverallScore(Tuple.Create("PLM", "Plum", 10.0m), Tuple.Create("GWY", "Gateway", 6.0m), indEventsA, relayEventsA);
-            OverallScore diffTeam1 = new OverallScore(Tuple.Create("PLM", "Plum", 9.0m), Tuple.Create("GWY", "Gateway", 6.0m), indEventsA, relayEventsA);
-            OverallScore diffTeam2 = new OverallScore(Tuple.Create("PLM", "Plum", 10.0m), Tuple.Create("GWY", "Gate HS", 6.0m), indEventsA, relayEventsA);
-            OverallScore diffIndEvents = new OverallScore(Tuple.Create("PLM", "Plum", 10.0m), Tuple.Create("GWY", "Gateway", 6.0m), indEventsB, relayEventsA);
-            OverallScore diffRelayEvents = new OverallScore(Tuple.Create("PLM", "Plum", 10.0m), Tuple.Create("GWY", "Gateway", 6.0m), indEventsA, relayEventsB);
+            OverallScore equal = new OverallScore(Tuple.Create("PLM", "Plum"), Tuple.Create("GWY", "Gateway"), indEventsA, relayEventsA);
+            OverallScore diffTeam1 = new OverallScore(Tuple.Create("PLU", "Plum"), Tuple.Create("GWY", "Gateway"), indEventsA, relayEventsA);
+            OverallScore diffTeam2 = new OverallScore(Tuple.Create("PLM", "Plum"), Tuple.Create("GWY", "Gate HS"), indEventsA, relayEventsA);
+            OverallScore diffIndEvents = new OverallScore(Tuple.Create("PLM", "Plum"), Tuple.Create("GWY", "Gateway"), indEventsB, relayEventsA);
+            OverallScore diffRelayEvents = new OverallScore(Tuple.Create("PLM", "Plum"), Tuple.Create("GWY", "Gateway"), indEventsA, relayEventsB);
 
             if (!control.Equals(equal))
             {
@@ -157,8 +157,8 @@ namespace DualMeetManager.Tests.Domain.Scoring
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            IndEvent indEvent1 = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(8.0m, 1.0m));
-            IndEvent indEvent2 = new IndEvent("PLM", "GWY", new EventPoints(0.0m, 5.0m, "P5", "PLM", "11.2"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), Tuple.Create(3.0m, 6.0m));
+            IndEvent indEvent1 = new IndEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 8.0m, 1.0m);
+            IndEvent indEvent2 = new IndEvent("PLM", "GWY", new EventPoints(0.0m, 5.0m, "P5", "PLM", "11.2"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), new EventPoints(0.0m, 1.0m, "G1", "GWY", "11.5"), 3.0m, 6.0m);
 
             Dictionary<string, IndEvent> indEventsA = new Dictionary<string, IndEvent>();
             indEventsA.Add("Boy's 100", indEvent1);
@@ -171,7 +171,7 @@ namespace DualMeetManager.Tests.Domain.Scoring
             relayEventsA.Add("Boy's 4x100", relayEvent1);
             relayEventsA.Add("Boy's 4x400", relayEvent2);
 
-            OverallScore myOverallScore = new OverallScore(Tuple.Create("PLM", "Plum", 10.0m), Tuple.Create("GWY", "Gateway", 6.0m), indEventsA, relayEventsA);
+            OverallScore myOverallScore = new OverallScore(Tuple.Create("PLM", "Plum"), Tuple.Create("GWY", "Gateway"), indEventsA, relayEventsA, 10.0m, 6.0m);
 
             string strOverallScore = myOverallScore.ToString();
 

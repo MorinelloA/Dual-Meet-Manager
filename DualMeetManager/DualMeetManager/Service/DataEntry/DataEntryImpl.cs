@@ -66,10 +66,91 @@ namespace DualMeetManager.Service.DataEntry
                 return(Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
         }
 
-        public string ConvertToLengthData(decimal perf) { return ""; }
-        public decimal ConvertFromLengthData(string perf) { return 0m; }
+        public string ConvertToLengthData(decimal perf)
+        {
+            if (perf == 0m) return "";
+            decimal TS, TM;
+            TS = Math.Round(perf, 3);
+            TM = 0;
+            while (TS >= 12)
+            {
+                TM += 1;
+                TS -= 12;
+            }
+            if (TM >= 1)
+            {
+                if (TS >= 12)
+                {
+                    return (TM + "-" + TS);
+                }
+                else
+                {
+                    return (TM + "-0" + TS);
+                }
+            }
+            else
+            {
+                return (TS.ToString());
+            }
+        }
 
-        public IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd) { return null; }
-        public IDictionary<string, List<Performance>> DeleteEvent(string Event) { return null; }
+        /// <summary>
+        /// Converts feet and inches (Ex: 18-2.5) in raw inches (218.5)
+        /// </summary>
+        /// <param name="perf">String as feet-inches</param>
+        /// <returns>raw data as total inches</returns>
+        /// <remarks>Needs further error handling for null or invalid strings</remarks>
+        public decimal ConvertFromLengthData(string perf)
+        {
+            int divider = 0;
+            for (int x = 0; x < perf.Length; x++)
+            {
+                if (perf[x] == '-')
+                    divider = x;
+            }
+            if (divider != 0)
+            {
+                if (perf.Length > divider + 1)
+                {
+                    return (Math.Round(Convert.ToDecimal(perf.Substring(0, divider)) * 12 + Convert.ToDecimal(perf.Substring((divider + 1), ((perf.Length) - (divider + 1)))), 3));
+                }
+                else
+                {
+                    return (Math.Round(Convert.ToDecimal(perf.Substring(0, perf.Length - 1)) * 12, 3));
+                }
+            }
+            else
+                return (Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
+        }
+
+        public IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd)
+        {
+            List<Performance> newPerfList = new List<Performance>();
+            //This method is for adding a single performance, not a List
+
+            if (perfList.ContainsKey(eventName))
+            {
+                //myDictionary[myKey] = myNewValue;
+                //This is what I want to do, but the snytax is not correct
+                //perfList.eventName.perflist.Add(perfToAdd);
+
+                newPerfList = perfList[eventName];
+                newPerfList.Add(perfToAdd);
+                perfList[eventName] = newPerfList;
+            }
+            else
+            {
+                newPerfList.Add(perfToAdd);
+                perfList.Add(eventName, newPerfList);
+            }
+
+            return perfList;
+        }
+
+        public IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd)
+        {
+            perfList[eventName] = perfsToAdd;
+            return perfList;
+        }
     }
 }

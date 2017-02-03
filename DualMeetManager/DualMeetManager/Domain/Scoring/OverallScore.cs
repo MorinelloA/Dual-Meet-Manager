@@ -12,8 +12,16 @@ namespace DualMeetManager.Domain.Scoring
     {
         //Teams
         //Abbr, Full Name, OverallPts
-        public Tuple<string, string, decimal> team1 { get; private set; }
-        public Tuple<string, string, decimal> team2 { get; private set; }
+
+        //Score cannot be changed here as Tuples are Read-Only
+        //public Tuple<string, string, decimal> team1 { get; private set; }
+        //public Tuple<string, string, decimal> team2 { get; private set; }
+
+        public Tuple<string, string> team1 { get; private set; }
+        public Tuple<string, string> team2 { get; private set; }
+
+        public decimal team1Points { get; set; }
+        public decimal team2Points { get; set; }
 
         //Event name, List of points
         public IDictionary<string, IndEvent> indEvents { get; private set; }
@@ -27,16 +35,35 @@ namespace DualMeetManager.Domain.Scoring
         /// <summary>
         /// Parameterized Constructor
         /// </summary>
-        /// <param name="team1">Team 1 Tuple (Abbr, Full Name, Total Pts)</param>
-        /// <param name="team2">Team 1 Tuple (Abbr, Full Name, Total Pts)</param>
+        /// <param name="team1">Team 1 Tuple (Abbr, Full Name)</param>
+        /// <param name="team2">Team 2 Tuple (Abbr, Full Name)</param>
         /// <param name="indEvents">Dictionary with every individual event. Places 1st through 3rd</param>
         /// <param name="relayEvents">Dictionary with every relay event. Places 1st and 2nd</param>
-        public OverallScore(Tuple<string, string, decimal> team1, Tuple<string, string, decimal> team2, IDictionary<string, IndEvent> indEvents, Dictionary<string, RelayEvent> relayEvents)
+        public OverallScore(Tuple<string, string> team1, Tuple<string, string> team2, IDictionary<string, IndEvent> indEvents, Dictionary<string, RelayEvent> relayEvents)
         {
             this.team1 = team1;
             this.team2 = team2;
             this.indEvents = indEvents;
             this.relayEvents = relayEvents;
+        }
+
+        /// <summary>
+        /// Parameterized Constructor with Points
+        /// </summary>
+        /// <param name="team1">Team 1 Tuple (Abbr, Full Name)</param>
+        /// <param name="team2">Team 2 Tuple (Abbr, Full Name)</param>
+        /// <param name="indEvents">Dictionary with every individual event. Places 1st through 3rd</param>
+        /// <param name="relayEvents">Dictionary with every relay event. Places 1st and 2nd</param>
+        /// <param name="team1Points">Total Points for Team1</param>
+        /// <param name="team2Points">Total Points for Team2</param>
+        public OverallScore(Tuple<string, string> team1, Tuple<string, string> team2, IDictionary<string, IndEvent> indEvents, Dictionary<string, RelayEvent> relayEvents, decimal team1Points, decimal team2Points)
+        {
+            this.team1 = team1;
+            this.team2 = team2;
+            this.indEvents = indEvents;
+            this.relayEvents = relayEvents;
+            this.team1Points = team1Points;
+            this.team2Points = team2Points;
         }
 
         /// <summary>
@@ -64,8 +91,8 @@ namespace DualMeetManager.Domain.Scoring
         public override string ToString()
         { 
             StringBuilder sb = new StringBuilder();
-            sb.Append(team1.Item2 + " - " + team1.Item1 + ": " + team1.Item3 + Environment.NewLine);
-            sb.Append(team2.Item2 + " - " + team2.Item1 + ": " + team2.Item3 + Environment.NewLine + Environment.NewLine);
+            sb.Append(team1.Item2 + " - " + team1.Item1 + ": " + team1Points + Environment.NewLine);
+            sb.Append(team2.Item2 + " - " + team2.Item1 + ": " + team2Points + Environment.NewLine + Environment.NewLine);
 
             foreach (KeyValuePair<string, IndEvent> i in indEvents)
             {
@@ -91,6 +118,8 @@ namespace DualMeetManager.Domain.Scoring
                 int hash = 17;
                 hash = hash * 23 + team1.GetHashCode();
                 hash = hash * 23 + team2.GetHashCode();
+                hash = hash * 23 + team1Points.GetHashCode();
+                hash = hash * 23 + team2Points.GetHashCode();
                 hash = hash * 23 + indEvents.GetHashCode();
                 hash = hash * 23 + relayEvents.GetHashCode();
                 return hash;

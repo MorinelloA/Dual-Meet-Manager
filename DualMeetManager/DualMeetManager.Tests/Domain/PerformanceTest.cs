@@ -10,6 +10,7 @@ namespace DualMeetManager.Tests.Domain
     [TestFixture]
     class PerformanceTest
     {
+
         /// <summary>
         /// Tests the Default Constructor
         /// </summary>

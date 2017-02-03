@@ -57,6 +57,7 @@
     <Compile Include="Service\Printout\IPrintout.cs" />
     <Compile Include="Service\Saving\ISaving.cs" />
     <Compile Include="Service\Scoring\IScoring.cs" />
+    <Compile Include="Service\Scoring\ScoringImpl.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

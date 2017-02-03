@@ -19,7 +19,8 @@ namespace DualMeetManager.Domain.Scoring
 
         //Total
         //Team1 total, Team2 total
-        public Tuple<decimal, decimal> totalPts { get; private set; }
+        public decimal team1Total { get; set; }
+        public decimal team2Total { get; set; }
 
         /// <summary>
         /// Default Constructor
@@ -32,7 +33,8 @@ namespace DualMeetManager.Domain.Scoring
             points[0] = new EventPoints(0.0m, 0.0m, "", "", "");
             points[1] = new EventPoints(0.0m, 0.0m, "", "", "");
             points[2] = new EventPoints(0.0m, 0.0m, "", "", "");
-            totalPts = Tuple.Create(0.0m, 0.0m);
+            team1Total = 0.0m;
+            team2Total = 0.0m;
         }
 
         /// <summary>
@@ -48,7 +50,9 @@ namespace DualMeetManager.Domain.Scoring
             this.points[0] = new EventPoints(0.0m, 0.0m, "", "", "");
             this.points[1] = new EventPoints(0.0m, 0.0m, "", "", "");
             this.points[2] = new EventPoints(0.0m, 0.0m, "", "", "");
-            this.totalPts = Tuple.Create(0.0m, 0.0m);
+            this.team1Total = 0.0m;
+            this.team2Total = 0.0m;
+
         }
 
         /// <summary>
@@ -59,8 +63,9 @@ namespace DualMeetManager.Domain.Scoring
         /// <param name="firstPlacePts">Data for first place</param>
         /// <param name="secondPlacePts">Data for second place</param>
         /// <param name="thirdPlacePts">Data for third place</param>
-        /// <param name="totalPts">Total points for this event by both teams</param>
-        public IndEvent(string team1, string team2, EventPoints firstPlacePts, EventPoints secondPlacePts, EventPoints thirdPlacePts, Tuple<decimal, decimal> totalPts)
+        /// <param name="team1Total">Total points for this event by team1</param>
+        /// <param name="team2Total">Total points for this event by team2</param>
+        public IndEvent(string team1, string team2, EventPoints firstPlacePts, EventPoints secondPlacePts, EventPoints thirdPlacePts, decimal team1Total, decimal team2Total)
         {
             points = new EventPoints[3];
             this.team1 = team1;
@@ -68,7 +73,8 @@ namespace DualMeetManager.Domain.Scoring
             points[0] = firstPlacePts;
             points[1] = secondPlacePts;
             points[2] = thirdPlacePts;
-            this.totalPts = totalPts;
+            this.team1Total = team1Total;
+            this.team2Total = team2Total;
         }
 
         /// <summary>
@@ -78,13 +84,14 @@ namespace DualMeetManager.Domain.Scoring
         /// <param name="team2">Abbr of Team2</param>
         /// <param name="points">Array with points</param>
         /// <param name="totalPts">Total points for this event by both teams</param>
-        public IndEvent(string team1, string team2, EventPoints[] points, Tuple<decimal, decimal> totalPts)
+        public IndEvent(string team1, string team2, EventPoints[] points, decimal team1Total, decimal team2Total)
         {
             this.points = new EventPoints[3];
             this.team1 = team1;
             this.team2 = team2;
             this.points = points;
-            this.totalPts = totalPts;
+            this.team1Total = team1Total;
+            this.team2Total = team2Total;
         }
 
         /// <summary>
@@ -100,7 +107,7 @@ namespace DualMeetManager.Domain.Scoring
             sb.Append("Second Place Pts: " + team1 + ": " + string.Format("{0:0.##}", points[1].team1Pts) + " " + team2 + ": " + string.Format("{0:0.##}", points[1].team2Pts) + Environment.NewLine);
             sb.Append("Third Place: " + points[2].athleteName + " - " + points[2].schoolName + ": " + points[2].performance + Environment.NewLine);
             sb.Append("Third Place Pts: " + team1 + ": " + string.Format("{0:0.##}", points[2].team1Pts) + " " + team2 + ": " + string.Format("{0:0.##}", points[2].team2Pts) + Environment.NewLine);
-            sb.Append("Total: " + team1 + ": " + string.Format("{0:0.##}", totalPts.Item1) + " " + team2 + ": " + string.Format("{0:0.##}", totalPts.Item2));
+            sb.Append("Total: " + team1 + ": " + string.Format("{0:0.##}", team1Total) + " " + team2 + ": " + string.Format("{0:0.##}", team2Total));
             return sb.ToString();
         }
 
@@ -120,7 +127,8 @@ namespace DualMeetManager.Domain.Scoring
             else if (!myIndEvent.points[0].Equals(points[0])) return false;
             else if (!myIndEvent.points[1].Equals(points[1])) return false;
             else if (!myIndEvent.points[2].Equals(points[2])) return false;
-            else if (!myIndEvent.totalPts.Equals(totalPts)) return false;
+            else if (myIndEvent.team1Total != team1Total) return false;
+            else if (myIndEvent.team2Total != team2Total) return false;
             return true;
         }
 
@@ -138,7 +146,8 @@ namespace DualMeetManager.Domain.Scoring
                 hash = hash * 23 + points[0].GetHashCode();
                 hash = hash * 23 + points[1].GetHashCode();
                 hash = hash * 23 + points[2].GetHashCode();
-                hash = hash * 23 + totalPts.GetHashCode();
+                hash = hash * 23 + team1Total.GetHashCode();
+                hash = hash * 23 + team2Total.GetHashCode();
                 return hash;
             }
         }
@@ -149,10 +158,11 @@ namespace DualMeetManager.Domain.Scoring
         /// <returns>true if it is a valid IndEvent, false if not</returns>
         public bool validate()
         {
-            if (points[0].team1Pts + points[1].team1Pts + points[2].team1Pts != totalPts.Item1) return false; //Team1 points don't match
-            else if (points[0].team2Pts + points[1].team2Pts + points[2].team2Pts != totalPts.Item2) return false; //Team2 points don't match
+            //Following 2 lines could be true if total aren't calculated yet
+            if (points[0].team1Pts + points[1].team1Pts + points[2].team1Pts != team1Total) return false; //Team1 points don't match
+            else if (points[0].team2Pts + points[1].team2Pts + points[2].team2Pts != team2Total) return false; //Team2 points don't match
             else if (points[0].team1Pts + points[1].team1Pts + points[2].team1Pts + points[0].team2Pts + points[1].team2Pts + points[2].team2Pts > 9) return false; //Check if an event is awarding more than 9 points
-            else if (totalPts.Item1 + totalPts.Item2 > 9) return false; //Redundant if statement
+            else if (team1Total + team2Total > 9) return false; //Redundant if statement
             else if (string.IsNullOrWhiteSpace(team1)) return false; //team1 must have a name
             else if (string.IsNullOrWhiteSpace(team2)) return false; //team2 must have a name
             else if ((string.IsNullOrWhiteSpace(points[0].athleteName) && !string.IsNullOrWhiteSpace(points[0].schoolName)) || (!string.IsNullOrWhiteSpace(points[0].athleteName) && string.IsNullOrWhiteSpace(points[0].schoolName))) return false; //If name or school are null, the other must be null as well
