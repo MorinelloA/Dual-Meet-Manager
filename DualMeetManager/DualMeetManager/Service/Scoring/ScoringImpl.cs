@@ -47,18 +47,20 @@ namespace DualMeetManager.Service.Scoring
             IndEvent tempIndEvent = new IndEvent();
             RelayEvent tempRelayEvent = new RelayEvent();
 
-            //Do this for every event
-            scores.indEvents.TryGetValue(gender + "'s 100", out tempIndEvent);
-            if(!tempIndEvent.Equals(null))
+            string[] validIndEvents = {"100", "200", "400","800", "1600", "3200",
+                "LJ", "TJ", "HJ", "PV", "ShotPut", "Discus", "Javelin"};
+
+            for (int i = 0; i < validIndEvents.Length; i++)
             {
-                totalPointsTeam1 += tempIndEvent.team1Total;
-                totalPointsTeam2 += tempIndEvent.team2Total;
+                scores.indEvents.TryGetValue(gender + "'s " + validIndEvents[i], out tempIndEvent);
+                if (!tempIndEvent.Equals(null))
+                {
+                    totalPointsTeam1 += tempIndEvent.team1Total;
+                    totalPointsTeam2 += tempIndEvent.team2Total;
+                }
             }
 
-            //THIS SECTION SHOULD HAVE EVERY EVENT HANDLED
-            //
-            //
-            //
+            //DO THE SAME FOR RELAY EVENTS
 
             scores.team1Points = totalPointsTeam1;
             scores.team2Points = totalPointsTeam2;

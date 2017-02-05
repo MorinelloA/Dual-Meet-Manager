@@ -7,6 +7,7 @@ namespace DualMeetManager.Domain
 {
     /// <summary>Holds all information relevant to a track meet's data</summary>
     /// <remarks>Does not hold information scoring information, that is done in seperate classes</remarks>
+    [Serializable]
     public class Meet
     {
         public DateTime dateOfMeet { get; private set; }
@@ -15,7 +16,7 @@ namespace DualMeetManager.Domain
         public Teams schoolNames { get; private set; }
         
         //The string in this dictionary is the event name
-        public IDictionary<string, List<Performance>> performances { get; private set; }
+        public Dictionary<string, List<Performance>> performances { get; private set; }
 
         /// <summary>
         /// Default Constructor for Meet
@@ -46,7 +47,7 @@ namespace DualMeetManager.Domain
         /// <param name="weatherConditions">What the weather conditions were like</param>
         /// <param name="schoolNames">Schools competing</param>
         /// <param name="performances">List of performances for every event and competitor</param>
-        public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames, IDictionary<string, List<Performance>> performances)
+        public Meet(DateTime dateOfMeet, string location, string weatherConditions, Teams schoolNames, Dictionary<string, List<Performance>> performances)
         {
             this.dateOfMeet = dateOfMeet;
             this.location = location;

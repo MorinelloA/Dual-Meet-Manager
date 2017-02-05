@@ -33,6 +33,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -55,7 +59,11 @@
     <Compile Include="Service\DataEntry\DataEntryImpl.cs" />
     <Compile Include="Service\DataEntry\IDataEntry.cs" />
     <Compile Include="Service\Printout\IPrintout.cs" />
+    <Compile Include="Service\Printout\PrintoutImpl.cs" />
+    <Compile Include="Service\Retrieving\IRetrieve.cs" />
+    <Compile Include="Service\Retrieving\RetrieveImpl.cs" />
     <Compile Include="Service\Saving\ISaving.cs" />
+    <Compile Include="Service\Saving\SavingImpl.cs" />
     <Compile Include="Service\Scoring\IScoring.cs" />
     <Compile Include="Service\Scoring\ScoringImpl.cs" />
   </ItemGroup>

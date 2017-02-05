@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DualMeetManager.Domain;
+using DualMeetManager.Domain.Scoring;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,15 +8,15 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Service.Printout
 {
-    interface IPrintout
+    public interface IPrintout
     {
         //Methods need Parameters
-        void CreateIndEventPDF();
-        void CreateTeamPerfPDF();
-        void CreateMeetResultsPDF();
+        bool CreateIndEventPDF(string eventName, List<Performance> performances);
+        bool CreateTeamPerfPDF(string teamAbbr, Meet meetToPrint);
+        bool CreateMeetResultsPDF(OverallScore scoreToPrint);
 
-        void CreateIndEventDoc();
-        void CreateTeamPerfDoc();
-        void CreateMeetResultsDoc();
+        bool CreateIndEventDoc(string eventName, List<Performance> performances);
+        bool CreateTeamPerfDoc(string teamAbbr, Meet meetToPrint);
+        bool CreateMeetResultsDoc(OverallScore scoreToPrint);
     }
 }

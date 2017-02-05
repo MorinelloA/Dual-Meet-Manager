@@ -1,9 +1,12 @@
-﻿namespace DualMeetManager.Domain
+﻿using System;
+
+namespace DualMeetManager.Domain
 {
     /// <summary>
     /// Class used to store one single performance for a particular event
     /// </summary>
     /// <remarks>You will typically see this used in a List or Dictionary</remarks>
+    [Serializable]
     public class Performance
     {
         public string athleteName { get; private set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,12 +9,13 @@ namespace DualMeetManager.Domain
     /// <summary>
     /// Contains information specific to Boy and Girl teams competing in the meet
     /// </summary>
+    [Serializable]
     public class Teams
     {
         //Key is a three letter Abbr, Value is the full name
         //The Abbr is used for printout where full names could compromise the document
-        public IDictionary<string, string> boySchoolNames { get; private set; }
-        public IDictionary<string, string> girlSchoolNames { get; private set; }
+        public Dictionary<string, string> boySchoolNames { get; private set; }
+        public Dictionary<string, string> girlSchoolNames { get; private set; }
 
         /// <summary>
         /// Default Constructor for Teams
@@ -25,7 +27,7 @@ namespace DualMeetManager.Domain
         /// </summary>
         /// <param name="boySchoolNames">Dictionary of Boy's Team Abbr and Full names</param>
         /// <param name="girlSchoolNames">Dictionary of Girl's Team Abbr and Full names</param>
-        public Teams(IDictionary<string, string> boySchoolNames, IDictionary<string, string> girlSchoolNames)
+        public Teams(Dictionary<string, string> boySchoolNames, Dictionary<string, string> girlSchoolNames)
         {
             this.boySchoolNames = boySchoolNames;
             this.girlSchoolNames = girlSchoolNames;
@@ -91,14 +93,14 @@ namespace DualMeetManager.Domain
         /// <returns>True if the Teams objects are equal, false if they are not</returns>
         public override bool Equals(object obj)
         {
-            Teams myTeams = obj as Teams;
+            /*Teams myTeams = obj as Teams;
             if (myTeams.boySchoolNames == null && boySchoolNames != null) return false;
             else if (myTeams.boySchoolNames != null && boySchoolNames == null) return false;
             else if (myTeams.girlSchoolNames == null && girlSchoolNames != null) return false;
             else if (myTeams.girlSchoolNames != null && girlSchoolNames == null) return false;
             else if (myTeams.boySchoolNames == null && boySchoolNames == null && myTeams.girlSchoolNames == null && girlSchoolNames == null) return true;
             else if (!myTeams.boySchoolNames.OrderBy(r => r.Key).SequenceEqual(boySchoolNames.OrderBy(r => r.Key))) return false;
-            else if (!myTeams.girlSchoolNames.OrderBy(r => r.Key).SequenceEqual(girlSchoolNames.OrderBy(r => r.Key))) return false;
+            else if (!myTeams.girlSchoolNames.OrderBy(r => r.Key).SequenceEqual(girlSchoolNames.OrderBy(r => r.Key))) return false;*/
             return true;
         }
 
