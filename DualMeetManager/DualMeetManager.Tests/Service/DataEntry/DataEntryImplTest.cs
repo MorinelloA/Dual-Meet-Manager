@@ -15,7 +15,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
         public void TestConvertToTimedData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            DataEntryImpl DEI = new DataEntryImpl();
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
             bool test = true;
 
             if(DEI.ConvertToTimedData(59.1m) != "59.1")
@@ -62,7 +62,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
         public void TestConvertFromTimedData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            DataEntryImpl DEI = new DataEntryImpl();
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
             bool test = true;
 
             if(DEI.ConvertFromTimedData("1:01") != 61m)
@@ -114,7 +114,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
         public void TestConvertToLengthData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            DataEntryImpl DEI = new DataEntryImpl();
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
             bool test = true;
 
             if (DEI.ConvertToLengthData(13m) != "1-01")
@@ -156,7 +156,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
         public void TestConvertFromLengthData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            DataEntryImpl DEI = new DataEntryImpl();
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
             bool test = true;
 
             if (DEI.ConvertFromLengthData("1-01") != 13m)

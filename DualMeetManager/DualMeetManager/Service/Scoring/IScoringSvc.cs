@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Service.Scoring
 {
-    interface IScoring
+    public interface IScoringSvc
     {
         /*Calculate Running Event
 	    Calculate Field Event

@@ -49,10 +49,10 @@ namespace DualMeetManager
 
             Meet myMeetWithEvents = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, myPerformances);
 
-            SavingImpl test = new SavingImpl();
+            SavingSvcImpl test = new SavingSvcImpl();
             bool myBool = test.saveMeet("important.txt", myMeetWithEvents);
 
-            SavingImpl test2 = new SavingImpl();
+            SavingSvcImpl test2 = new SavingSvcImpl();
             Meet myNewMeet = test2.openMeet("important.txt");
 
             Console.WriteLine(myNewMeet.ToString());

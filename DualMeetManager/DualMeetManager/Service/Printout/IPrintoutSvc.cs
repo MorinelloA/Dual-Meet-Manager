@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Service.Printout
 {
-    public interface IPrintout
+    public interface IPrintoutSvc
     {
         //Methods need Parameters
         bool CreateIndEventPDF(string eventName, List<Performance> performances);

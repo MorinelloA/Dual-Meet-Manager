@@ -11,7 +11,7 @@ using Newtonsoft.Json;
 
 namespace DualMeetManager.Service.Saving
 {
-    public class SavingImpl : ISaving
+    public class SavingSvcImpl : ISavingSvc
     {
         public bool saveMeet(string filePath, Meet meetToSave)
         {

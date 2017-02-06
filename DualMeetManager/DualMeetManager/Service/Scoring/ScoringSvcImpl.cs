@@ -8,7 +8,7 @@ using DualMeetManager.Domain.Scoring;
 
 namespace DualMeetManager.Service.Scoring
 {
-    class ScoringImpl : IScoring
+    class ScoringSvcImpl : IScoringSvc
     {
         public OverallScore AddIndEvent(IndEvent eventToAdd)
         {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Service.Saving
 {
-    public interface ISaving
+    public interface ISavingSvc
     {
         bool saveMeet(string filePath, Meet meetToSave);
         Meet openMeet(string fileName);

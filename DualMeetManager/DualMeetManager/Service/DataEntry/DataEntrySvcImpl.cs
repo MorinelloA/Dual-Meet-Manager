@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Service.DataEntry
 {
-    public class DataEntryImpl : IDataEntry
+    public class DataEntrySvcImpl : IDataEntrySvc
     {
         public string ConvertToTimedData(decimal perf)
         {

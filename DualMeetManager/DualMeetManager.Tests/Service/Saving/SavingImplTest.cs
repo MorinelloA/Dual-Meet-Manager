@@ -76,7 +76,7 @@ namespace DualMeetManager.Tests.Service.Saving
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            SavingImpl savingImplObject = new SavingImpl();
+            SavingSvcImpl savingImplObject = new SavingSvcImpl();
             bool test = savingImplObject.saveMeet(testFileName, testMeet);
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
@@ -88,7 +88,7 @@ namespace DualMeetManager.Tests.Service.Saving
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            SavingImpl savingImplObject = new SavingImpl();
+            SavingSvcImpl savingImplObject = new SavingSvcImpl();
             Meet openedMeet = savingImplObject.openMeet(testFileName);
             Console.WriteLine("Opened Meet:");
             Console.WriteLine(openedMeet.ToString());

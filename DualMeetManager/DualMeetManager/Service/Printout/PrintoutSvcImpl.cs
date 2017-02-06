@@ -8,7 +8,7 @@ using DualMeetManager.Domain.Scoring;
 
 namespace DualMeetManager.Service.Printout
 {
-    public class PrintoutImpl : IPrintout
+    public class PrintoutSvcImpl : IPrintoutSvc
     {
         public bool CreateIndEventDoc(string eventName, List<Performance> performances)
         {
