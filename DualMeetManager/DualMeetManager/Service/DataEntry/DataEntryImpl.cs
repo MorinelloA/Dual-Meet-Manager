@@ -24,11 +24,11 @@ namespace DualMeetManager.Service.DataEntry
             {
                 if (TS >= 10)
                 {
-                    return(TM + ":" + TS);
+                    return(TM + ":" + TS.ToString("0.###"));
                 }
                 else
                 {
-                    return(TM + ":0" + TS);
+                    return(TM + ":0" + TS.ToString("0.###"));
                 }
             }
             else

@@ -14,7 +14,6 @@ namespace DualMeetManager
     {
         static void Main(string[] args)
         {
-
             Performance myPerformance1 = new Performance("A", "AA", 1.1m);
             Performance myPerformance2 = new Performance("B", "BB", 2.2m);
             Performance myPerformance3 = new Performance("C", "CC", 3.3m);
