@@ -109,5 +109,47 @@ namespace DualMeetManager.Tests.Service.DataEntry
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
+
+        [Test]
+        public void TestConvertToLengthData()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            DataEntryImpl DEI = new DataEntryImpl();
+            bool test = true;
+
+            if (DEI.ConvertToLengthData(13m) != "1-01")
+            {
+                Console.WriteLine("13m was not correct, returned " + DEI.ConvertToLengthData(13m));
+                test = false;
+            }
+            if (DEI.ConvertToLengthData(11m) != "11")
+            {
+                Console.WriteLine("11m was not correct, returned " + DEI.ConvertToLengthData(11m));
+                test = false;
+            }
+            if (DEI.ConvertToLengthData(35m) != "2-11")
+            {
+                Console.WriteLine("35m was not correct, returned " + DEI.ConvertToLengthData(35m));
+                test = false;
+            }
+            if (DEI.ConvertToLengthData(36.1m) != "3-00.1")
+            {
+                Console.WriteLine("36.1m was not correct, returned " + DEI.ConvertToLengthData(36.1m));
+                test = false;
+            }
+            if (DEI.ConvertToLengthData(46m) != "3-10")
+            {
+                Console.WriteLine("46m was not correct, returned " + DEI.ConvertToLengthData(46m));
+                test = false;
+            }
+            if (DEI.ConvertToLengthData(36.001m) != "3-00.001")
+            {
+                Console.WriteLine("36.001m was not correct, returned " + DEI.ConvertToLengthData(36.001m));
+                test = false;
+            }
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
     }
 }

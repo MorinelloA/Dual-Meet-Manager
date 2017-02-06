@@ -79,13 +79,13 @@ namespace DualMeetManager.Service.DataEntry
             }
             if (TM >= 1)
             {
-                if (TS >= 12)
+                if (TS >= 10)
                 {
-                    return (TM + "-" + TS);
+                    return (TM + "-" + TS.ToString("0.###"));
                 }
                 else
                 {
-                    return (TM + "-0" + TS);
+                    return (TM + "-0" + TS.ToString("0.###"));
                 }
             }
             else
