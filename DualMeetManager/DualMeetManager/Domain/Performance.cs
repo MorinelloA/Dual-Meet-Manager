@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace DualMeetManager.Domain
 {
@@ -9,9 +10,13 @@ namespace DualMeetManager.Domain
     [Serializable]
     public class Performance
     {
+        [JsonProperty(PropertyName = "athleteName")]
         public string athleteName { get; private set; }
+        [JsonProperty(PropertyName = "schoolName")]
         public string schoolName { get; private set; }
+        [JsonProperty(PropertyName = "heatNum")]
         public int heatNum { get; private set; }
+        [JsonProperty(PropertyName = "performance")]
         public decimal performance { get; private set; }
 
         /// <summary>
@@ -85,6 +90,7 @@ namespace DualMeetManager.Domain
             if (myPerf == null) return false;
             else if (myPerf.athleteName != athleteName) return false;
             else if (myPerf.schoolName != schoolName) return false;
+            else if (myPerf.heatNum != heatNum) return false;
             else if (myPerf.performance != performance) return false;
             else return true;
         }

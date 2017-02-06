@@ -52,6 +52,14 @@ namespace DualMeetManager
 
             SavingImpl test = new SavingImpl();
             bool myBool = test.saveMeet("important.txt", myMeetWithEvents);
+
+            SavingImpl test2 = new SavingImpl();
+            Meet myNewMeet = test2.openMeet("important.txt");
+
+            Console.WriteLine(myNewMeet.ToString());
+
+            Meet nullMeet = new Meet();
+            Console.WriteLine(nullMeet.ToString());
         }
     }
 }

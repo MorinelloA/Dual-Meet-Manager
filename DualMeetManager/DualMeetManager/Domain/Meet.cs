@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,17 @@ namespace DualMeetManager.Domain
     [Serializable]
     public class Meet
     {
+        [JsonProperty(PropertyName = "dateOfMeet")]
         public DateTime dateOfMeet { get; private set; }
+        [JsonProperty(PropertyName = "location")]
         public string location { get; private set; }
+        [JsonProperty(PropertyName = "weatherConditions")]
         public string weatherConditions { get; private set; }
+        [JsonProperty(PropertyName = "schoolNames")]
         public Teams schoolNames { get; private set; }
-        
+
         //The string in this dictionary is the event name
+        [JsonProperty(PropertyName = "performances")]
         public Dictionary<string, List<Performance>> performances { get; private set; }
 
         /// <summary>
@@ -108,14 +114,18 @@ namespace DualMeetManager.Domain
             str.Append(Environment.NewLine + "Location: " + location);
             str.Append(Environment.NewLine + "Weather Conditions: " + weatherConditions);
 
-            str.Append(Environment.NewLine + schoolNames.ToString());
+            if(schoolNames != null)
+                str.Append(Environment.NewLine + schoolNames.ToString());
 
-            foreach (KeyValuePair<string, List<Performance>> i in performances)
+            if (performances != null)
             {
-                str.Append(Environment.NewLine + "Event: " + i.Key.ToString());
-                foreach (Performance j in i.Value)
+                foreach (KeyValuePair<string, List<Performance>> i in performances)
                 {
-                    str.Append(Environment.NewLine + j.ToString());
+                    str.Append(Environment.NewLine + "Event: " + i.Key.ToString());
+                    foreach (Performance j in i.Value)
+                    {
+                        str.Append(Environment.NewLine + j.ToString());
+                    }
                 }
             }
 
@@ -138,8 +148,34 @@ namespace DualMeetManager.Domain
             else if (myMeet.performances == null && performances == null) return true; //events could be null
             else if (myMeet.performances == null && performances != null) return false;
             else if (myMeet.performances != null && performances == null) return false;
-            else if (!myMeet.performances.OrderBy(r => r.Key).SequenceEqual(performances.OrderBy(r => r.Key))) return false;
-            else return true;
+            //else if (!myMeet.performances.OrderBy(r => r.Key).SequenceEqual(performances.OrderBy(r => r.Key))) return false;
+
+            if (myMeet.performances.Count == performances.Count) // Require equal count.
+            {
+                foreach (var pair in myMeet.performances)
+                {
+                    List<Performance> value;
+                    if (performances.TryGetValue(pair.Key, out value))
+                    {
+                        // Require value be equal.
+                        if (!value.OrderBy(r => r.performance).SequenceEqual(pair.Value.OrderBy(r => r.performance)))
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        // Require key be present.
+                        return false;
+                    }
+                }
+            }
+            else
+            {
+                return false;
+            }
+            //
+            return true;
         }
 
         /// <summary>

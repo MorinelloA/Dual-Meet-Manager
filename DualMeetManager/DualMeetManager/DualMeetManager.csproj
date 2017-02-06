@@ -60,8 +60,6 @@
     <Compile Include="Service\DataEntry\IDataEntry.cs" />
     <Compile Include="Service\Printout\IPrintout.cs" />
     <Compile Include="Service\Printout\PrintoutImpl.cs" />
-    <Compile Include="Service\Retrieving\IRetrieve.cs" />
-    <Compile Include="Service\Retrieving\RetrieveImpl.cs" />
     <Compile Include="Service\Saving\ISaving.cs" />
     <Compile Include="Service\Saving\SavingImpl.cs" />
     <Compile Include="Service\Scoring\IScoring.cs" />

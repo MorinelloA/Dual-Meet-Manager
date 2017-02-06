@@ -14,7 +14,9 @@ namespace DualMeetManager.Domain
     {
         //Key is a three letter Abbr, Value is the full name
         //The Abbr is used for printout where full names could compromise the document
+        [JsonProperty(PropertyName = "boySchoolNames")]
         public Dictionary<string, string> boySchoolNames { get; private set; }
+        [JsonProperty(PropertyName = "girlSchoolNames")]
         public Dictionary<string, string> girlSchoolNames { get; private set; }
 
         /// <summary>
@@ -72,17 +74,22 @@ namespace DualMeetManager.Domain
 
             sb.Append("Teams:");
             sb.Append(Environment.NewLine + "Boys:");
-            foreach (KeyValuePair<string, string> i in boySchoolNames)
+            if(boySchoolNames != null)
             {
-                sb.Append(Environment.NewLine + i.Value + " - " + i.Key);
+                foreach (KeyValuePair<string, string> i in boySchoolNames)
+                {
+                    sb.Append(Environment.NewLine + i.Value + " - " + i.Key);
+                }
             }
 
             sb.Append(Environment.NewLine + "Girls:");
-            foreach (KeyValuePair<string, string> i in girlSchoolNames)
+            if (girlSchoolNames != null)
             {
-                sb.Append(Environment.NewLine + i.Value + " - " + i.Key);
+                foreach (KeyValuePair<string, string> i in girlSchoolNames)
+                {
+                    sb.Append(Environment.NewLine + i.Value + " - " + i.Key);
+                }
             }
-
             return sb.ToString();
         }
 
@@ -93,14 +100,15 @@ namespace DualMeetManager.Domain
         /// <returns>True if the Teams objects are equal, false if they are not</returns>
         public override bool Equals(object obj)
         {
-            /*Teams myTeams = obj as Teams;
-            if (myTeams.boySchoolNames == null && boySchoolNames != null) return false;
+            Teams myTeams = obj as Teams;
+            if (myTeams == null) return false;
+            else if (myTeams.boySchoolNames == null && boySchoolNames != null) return false;
             else if (myTeams.boySchoolNames != null && boySchoolNames == null) return false;
             else if (myTeams.girlSchoolNames == null && girlSchoolNames != null) return false;
             else if (myTeams.girlSchoolNames != null && girlSchoolNames == null) return false;
             else if (myTeams.boySchoolNames == null && boySchoolNames == null && myTeams.girlSchoolNames == null && girlSchoolNames == null) return true;
             else if (!myTeams.boySchoolNames.OrderBy(r => r.Key).SequenceEqual(boySchoolNames.OrderBy(r => r.Key))) return false;
-            else if (!myTeams.girlSchoolNames.OrderBy(r => r.Key).SequenceEqual(girlSchoolNames.OrderBy(r => r.Key))) return false;*/
+            else if (!myTeams.girlSchoolNames.OrderBy(r => r.Key).SequenceEqual(girlSchoolNames.OrderBy(r => r.Key))) return false;
             return true;
         }
 

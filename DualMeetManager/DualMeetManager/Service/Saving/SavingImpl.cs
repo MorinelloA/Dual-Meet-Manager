@@ -15,6 +15,7 @@ namespace DualMeetManager.Service.Saving
     {
         public bool saveMeet(string filePath, Meet meetToSave)
         {
+            bool didSave = true;
             TextWriter writer = null;
             try
             {
@@ -27,13 +28,44 @@ namespace DualMeetManager.Service.Saving
                 writer = new StreamWriter(filePath, false);
                 writer.Write(jsonData);
             }
+            catch(Exception e)
+            {
+                Console.WriteLine(e);
+                //If there is an exception above, the file did not save properly.
+                didSave = false;
+            }
             finally
             {
                 if (writer != null)
                     writer.Close();
             }
             
-            return true;
+            return didSave;
+        }
+
+        public Meet openMeet(string fileName)
+        {
+            Meet myMeet;
+            try
+            {   // Open the text file using a stream reader.
+                using (StreamReader sr = new StreamReader(fileName))
+                {
+                    // Read the stream to a string, and write the string to the console.
+                    string line = sr.ReadToEnd();
+                    //Console.WriteLine(line);
+
+                    myMeet = JsonConvert.DeserializeObject<Meet>(line);
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("The file could not be read:");
+                Console.WriteLine(e.Message);
+                return null;
+            }
+            Console.WriteLine("Leaving openMeet");
+            //Console.WriteLine(myMeet.ToString());
+            return myMeet;
         }
     }
 }

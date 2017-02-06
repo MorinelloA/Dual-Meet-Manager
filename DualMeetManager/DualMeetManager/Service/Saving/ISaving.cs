@@ -9,6 +9,7 @@ namespace DualMeetManager.Service.Saving
 {
     public interface ISaving
     {
-        bool saveMeet(string filePath, Meet meetToSave);   
+        bool saveMeet(string filePath, Meet meetToSave);
+        Meet openMeet(string fileName);
     }
 }
