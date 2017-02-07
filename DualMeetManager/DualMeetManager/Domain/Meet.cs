@@ -22,7 +22,7 @@ namespace DualMeetManager.Domain
 
         //The string in this dictionary is the event name
         [JsonProperty(PropertyName = "performances")]
-        public Dictionary<string, List<Performance>> performances { get; private set; }
+        public Dictionary<string, List<Performance>> performances { get; set; }
 
         /// <summary>
         /// Default Constructor for Meet

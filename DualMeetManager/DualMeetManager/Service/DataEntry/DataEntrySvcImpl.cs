@@ -137,7 +137,7 @@ namespace DualMeetManager.Service.DataEntry
         /// <param name="eventName">Event to add to the current dictionary</param>
         /// <param name="perfToAdd">Performance to add to the current dictionary</param>
         /// <returns>Updated Dictionary</returns>
-        public IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd)
+        public Dictionary<string, List<Performance>> AddPerformanceToEvent(Dictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd)
         {
             List<Performance> newPerfList = new List<Performance>();
             //This method is for adding a single performance, not a List
@@ -168,7 +168,7 @@ namespace DualMeetManager.Service.DataEntry
         /// <param name="eventName">Event to add to the current dictionary</param>
         /// <param name="perfsToAdd">Performances to add to the current dictionary</param>
         /// <returns>Updated Dictionary</returns>
-        public IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd)
+        public Dictionary<string, List<Performance>> AddPerformanceToEvent(Dictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd)
         {
             perfList[eventName] = perfsToAdd;
             return perfList;

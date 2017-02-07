@@ -1,4 +1,5 @@
-﻿using DualMeetManager.Service.DataEntry;
+﻿using DualMeetManager.Domain;
+using DualMeetManager.Service.DataEntry;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
@@ -189,6 +190,157 @@ namespace DualMeetManager.Tests.Service.DataEntry
                 Console.WriteLine("3-00.001 was not correct, returned " + DEI.ConvertFromLengthData("3-00.001"));
                 test = false;
             }
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [Test]
+        public void TestAddIndividualPerformance()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            Dictionary<string, string> boysNames = new Dictionary<string, string>();
+            boysNames.Add("BLN", "Baldwin");
+            boysNames.Add("TJ", "Thomas Jefferson");
+            boysNames.Add("WHS", "Washington HS");
+
+            Dictionary<string, string> girlsNames = new Dictionary<string, string>();
+            girlsNames.Add("PLM", "Plum");
+            girlsNames.Add("GWY", "Gateway");
+            girlsNames.Add("KCH", "Knoch");
+
+            Teams teams = new Teams(boysNames, girlsNames);
+
+            Performance myPerformance1 = new Performance("A", "AA", 1.1m);
+            Performance myPerformance2 = new Performance("B", "BB", 2.2m);
+            Performance myPerformance3 = new Performance("C", "CC", 3.3m);
+            Performance myPerformance4 = new Performance("D", "AA", 4.1m);
+            Performance myPerformance5 = new Performance("E", "BB", 5.2m);
+            Performance myPerformance6 = new Performance("F", "CC", 6.3m);
+            Performance myPerformance7 = new Performance("G", "DD", 4.4m);
+
+            List<Performance> myPerformancesA = new List<Performance>();
+            myPerformancesA.Add(myPerformance1);
+            myPerformancesA.Add(myPerformance2);
+            myPerformancesA.Add(myPerformance3);
+
+            List<Performance> myPerformancesB = new List<Performance>();
+            myPerformancesB.Add(myPerformance4);
+            myPerformancesB.Add(myPerformance5);
+            myPerformancesB.Add(myPerformance6);
+
+            List<Performance> myPerformancesC = new List<Performance>();
+            myPerformancesC.Add(myPerformance4);
+            myPerformancesC.Add(myPerformance5);
+            myPerformancesC.Add(myPerformance6);
+            myPerformancesC.Add(myPerformance7);
+
+            Dictionary<string, List<Performance>> originalList = new Dictionary<string, List<Performance>>();
+            originalList.Add("Boy's 100", myPerformancesA);
+            originalList.Add("Boy's 200", myPerformancesB);
+
+            Dictionary<string, List<Performance>> newComparableList = new Dictionary<string, List<Performance>>();
+            newComparableList.Add("Boy's 100", myPerformancesA);
+            newComparableList.Add("Boy's 200", myPerformancesC);
+
+            Meet meet1 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, originalList);
+            Meet meet2 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, newComparableList);
+
+            DataEntrySvcImpl DESI = new DataEntrySvcImpl();
+
+            meet1.performances = DESI.AddPerformanceToEvent(meet1.performances, "Boy's 200", myPerformance7);
+
+            //if (!myTeams.boySchoolNames.OrderBy(r => r.Key).SequenceEqual(boys.OrderBy(r => r.Key)))
+            Console.WriteLine("originalList:");
+            foreach (KeyValuePair<string, List<Performance>> kvp in originalList)
+            {
+                foreach(Performance i in kvp.Value)
+                    Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, i.ToString());
+            }
+            Console.WriteLine("\nnewComparableList:");
+            foreach (KeyValuePair<string, List<Performance>> kvp in newComparableList)
+            {
+                foreach (Performance i in kvp.Value)
+                    Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, i.ToString());
+            }
+
+
+            bool test = meet1.Equals(meet2);
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [Test]
+        public void TestAddNewIndividualPerformance()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            Dictionary<string, string> boysNames = new Dictionary<string, string>();
+            boysNames.Add("BLN", "Baldwin");
+            boysNames.Add("TJ", "Thomas Jefferson");
+            boysNames.Add("WHS", "Washington HS");
+
+            Dictionary<string, string> girlsNames = new Dictionary<string, string>();
+            girlsNames.Add("PLM", "Plum");
+            girlsNames.Add("GWY", "Gateway");
+            girlsNames.Add("KCH", "Knoch");
+
+            Teams teams = new Teams(boysNames, girlsNames);
+
+            Performance myPerformance1 = new Performance("A", "AA", 1.1m);
+            Performance myPerformance2 = new Performance("B", "BB", 2.2m);
+            Performance myPerformance3 = new Performance("C", "CC", 3.3m);
+            Performance myPerformance4 = new Performance("D", "AA", 4.1m);
+            Performance myPerformance5 = new Performance("E", "BB", 5.2m);
+            Performance myPerformance6 = new Performance("F", "CC", 6.3m);
+            Performance myPerformance7 = new Performance("G", "DD", 4.4m);
+
+            List<Performance> myPerformancesA = new List<Performance>();
+            myPerformancesA.Add(myPerformance1);
+            myPerformancesA.Add(myPerformance2);
+            myPerformancesA.Add(myPerformance3);
+
+            List<Performance> myPerformancesB = new List<Performance>();
+            myPerformancesB.Add(myPerformance4);
+            myPerformancesB.Add(myPerformance5);
+            myPerformancesB.Add(myPerformance6);
+
+            List<Performance> myPerformancesC = new List<Performance>();
+            myPerformancesC.Add(myPerformance7);
+
+            Dictionary<string, List<Performance>> originalList = new Dictionary<string, List<Performance>>();
+            originalList.Add("Boy's 100", myPerformancesA);
+            originalList.Add("Boy's 200", myPerformancesB);
+
+            Dictionary<string, List<Performance>> newComparableList = new Dictionary<string, List<Performance>>();
+            newComparableList.Add("Boy's 100", myPerformancesA);
+            newComparableList.Add("Boy's 200", myPerformancesB);
+            newComparableList.Add("Boy's 400", myPerformancesC);
+
+            Meet meet1 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, originalList);
+            Meet meet2 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, newComparableList);
+
+            DataEntrySvcImpl DESI = new DataEntrySvcImpl();
+
+            meet1.performances = DESI.AddPerformanceToEvent(meet1.performances, "Boy's 400", myPerformance7);
+
+            Console.WriteLine("originalList:");
+            foreach (KeyValuePair<string, List<Performance>> kvp in originalList)
+            {
+                foreach (Performance i in kvp.Value)
+                    Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, i.ToString());
+            }
+            Console.WriteLine("\nnewComparableList:");
+            foreach (KeyValuePair<string, List<Performance>> kvp in newComparableList)
+            {
+                foreach (Performance i in kvp.Value)
+                    Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, i.ToString());
+            }
+
+
+            bool test = meet1.Equals(meet2);
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");

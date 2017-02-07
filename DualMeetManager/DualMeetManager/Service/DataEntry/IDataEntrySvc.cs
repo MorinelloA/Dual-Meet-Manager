@@ -46,7 +46,7 @@ namespace DualMeetManager.Service.DataEntry
         /// <param name="eventName">Event to add to the current dictionary</param>
         /// <param name="perfToAdd">Performance to add to the current dictionary</param>
         /// <returns>Updated Dictionary</returns>
-        IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd);
+        Dictionary<string, List<Performance>> AddPerformanceToEvent(Dictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd);
 
         /// <summary>
         /// Interface for adding a list of performances to a Dictionary of events, performances
@@ -55,6 +55,6 @@ namespace DualMeetManager.Service.DataEntry
         /// <param name="eventName">Event to add to the current dictionary</param>
         /// <param name="perfsToAdd">Performances to add to the current dictionary</param>
         /// <returns>Updated Dictionary</returns>
-        IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd);
+        Dictionary<string, List<Performance>> AddPerformanceToEvent(Dictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd);
     }
 }
