@@ -10,38 +10,68 @@ namespace DualMeetManager.Service.Scoring
 {
     class ScoringSvcImpl : IScoringSvc
     {
-        public OverallScore AddIndEvent(IndEvent eventToAdd)
+        /// <summary>
+        /// Implementation for adding an indEvent to an OverallScore object
+        /// </summary>
+        /// <param name="scores">Overall scores</param>
+        /// <param name="eventName">Name of the event being added</param>
+        /// <param name="eventToAdd">Data for the event being added</param>
+        /// <returns>OverallScore with the event added</returns>
+        public OverallScore AddIndEvent(OverallScore scores, string eventName, IndEvent eventToAdd)
         {
             throw new NotImplementedException();
         }
 
-        public OverallScore AddRelayEvent(RelayEvent eventToAdd)
+        /// <summary>
+        /// Implementation for adding a relayEvent to an OverallScore object
+        /// </summary>
+        /// <param name="scores">Overall scores</param>
+        /// <param name="eventName">Name of the event being added</param>
+        /// <param name="eventToAdd">Data for the event being added</param>
+        /// <returns>OverallScore with the event added</returns>
+        public OverallScore AddRelayEvent(OverallScore scores, string eventName, RelayEvent eventToAdd)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Implementation for calculating points (1st, 2nd, and 3rd) for an individual field event
+        /// </summary>
+        /// <param name="perf">Complete list of performances for a particular field event</param>
+        /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
         public IndEvent CalculateFieldEvent(List<Performance> perf)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Implementation for calculating points (1st, and 2nd) for a relay event
+        /// </summary>
+        /// <param name="perf"></param>
+        /// <returns>RelayEvent, which holds all information ragarding this event's points</returns>
         public RelayEvent CalculateRelayEvent(List<Performance> perf)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Interface for calculating points (1st, 2nd, and 3rd) for an individual running event
+        /// </summary>
+        /// <param name="perf">Complete list of performances for a particular running event</param>
+        /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
         public IndEvent CalculateRunningEvent(List<Performance> perf)
         {
             throw new NotImplementedException();
         }
 
+        /// <summary>
+        /// Interface for calculating The overall score of a meet
+        /// </summary>
+        /// <param name="scores">Overall scores</param>
+        /// <param name="gender">string to hold what gender the meet is, boy's or girl's</param>
+        /// <returns>OverallScore object that holds accurate overall score points</returns>
         public OverallScore CalculateTotal(OverallScore scores, string gender)
         {
-            //throw new NotImplementedException();
-
-            //string test;
-            //test1.TryGetValue("t1", out test);
-
             decimal totalPointsTeam1 = 0;
             decimal totalPointsTeam2 = 0;
             IndEvent tempIndEvent = new IndEvent();

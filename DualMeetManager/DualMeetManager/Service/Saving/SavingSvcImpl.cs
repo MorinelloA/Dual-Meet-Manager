@@ -13,6 +13,12 @@ namespace DualMeetManager.Service.Saving
 {
     public class SavingSvcImpl : ISavingSvc
     {
+        /// <summary>
+        /// Implementation for saving a Meet object as a JSON object
+        /// </summary>
+        /// <param name="filePath">filename for the Meet</param>
+        /// <param name="meetToSave">Meet object to save</param>
+        /// <returns>boolean that tells the user whether or not the Meet was succcessfully saved or not</returns>
         public bool saveMeet(string filePath, Meet meetToSave)
         {
             bool didSave = true;
@@ -43,6 +49,11 @@ namespace DualMeetManager.Service.Saving
             return didSave;
         }
 
+        /// <summary>
+        /// Implementation for opening a saved Meet object JSON file
+        /// </summary>
+        /// <param name="fileName">filename for the Meet to be open</param>
+        /// <returns>Opened Meet</returns>
         public Meet openMeet(string fileName)
         {
             Meet myMeet;

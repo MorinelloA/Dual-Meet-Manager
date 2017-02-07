@@ -1,14 +1,16 @@
 ﻿using DualMeetManager.Domain;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DualMeetManager.Service.DataEntry
 {
     public class DataEntrySvcImpl : IDataEntrySvc
     {
+        /// <summary>
+        /// Implementation for converting raw seconds into a formatted time
+        /// </summary>
+        /// <param name="perf">raw seconds</param>
+        /// <returns>formatted time</returns>
         public string ConvertToTimedData(decimal perf)
         {
             if (perf == 0m) return "";
@@ -66,6 +68,11 @@ namespace DualMeetManager.Service.DataEntry
                 return(Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
         }
 
+        /// <summary>
+        /// Implementation for converting raw inches into a formatted length
+        /// </summary>
+        /// <param name="perf">raw inches</param>
+        /// <returns>formated length</returns>
         public string ConvertToLengthData(decimal perf)
         {
             if (perf == 0m) return "";
@@ -123,6 +130,13 @@ namespace DualMeetManager.Service.DataEntry
                 return (Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
         }
 
+        /// <summary>
+        /// Implementation for adding a single event performances to a Dictionary of events, performances
+        /// </summary>
+        /// <param name="perfList">Current dictionary</param>
+        /// <param name="eventName">Event to add to the current dictionary</param>
+        /// <param name="perfToAdd">Performance to add to the current dictionary</param>
+        /// <returns>Updated Dictionary</returns>
         public IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd)
         {
             List<Performance> newPerfList = new List<Performance>();
@@ -147,6 +161,13 @@ namespace DualMeetManager.Service.DataEntry
             return perfList;
         }
 
+        /// <summary>
+        /// Implementation for adding a list of performances to a Dictionary of events, performances
+        /// </summary>
+        /// <param name="perfList">Current dictionary</param>
+        /// <param name="eventName">Event to add to the current dictionary</param>
+        /// <param name="perfsToAdd">Performances to add to the current dictionary</param>
+        /// <returns>Updated Dictionary</returns>
         public IDictionary<string, List<Performance>> AddPerformanceToEvent(IDictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd)
         {
             perfList[eventName] = perfsToAdd;
