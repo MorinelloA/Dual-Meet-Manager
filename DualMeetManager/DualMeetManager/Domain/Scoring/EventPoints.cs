@@ -9,12 +9,12 @@ namespace DualMeetManager.Domain.Scoring
     public class EventPoints
     {
         //Team1 pts, Team2 pts, athlete name, school name, performance
-        public decimal team1Pts { get; private set; }
-        public decimal team2Pts { get; private set; }
-        public string athleteName { get; private set; }
-        public string schoolName { get; private set; }
+        public decimal team1Pts { get; set; }
+        public decimal team2Pts { get; set; }
+        public string athleteName { get; set; }
+        public string schoolName { get; set; }
         //Note: performance is a string because it could be in minutes and seconds (ex: 4:25)
-        public string performance { get; private set; }
+        public string performance { get; set; }
 
         /// <summary>
         /// Default Constructor

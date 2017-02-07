@@ -11,11 +11,11 @@ namespace DualMeetManager.Domain.Scoring
     public class IndEvent
     {
         //Team Abbr
-        public string team1 { get; private set; }
-        public string team2 { get; private set; }
+        public string team1 { get; set; }
+        public string team2 { get; set; }
 
         //index 0 for 1st place, 1 for 2nd place, 2 for 3rd place
-        public EventPoints[] points { get; private set; }
+        public EventPoints[] points { get; set; }
 
         //Total
         //Team1 total, Team2 total

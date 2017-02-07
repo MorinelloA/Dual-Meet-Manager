@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DualMeetManager.Domain;
 using DualMeetManager.Domain.Scoring;
+using DualMeetManager.Service.DataEntry;
 
 namespace DualMeetManager.Service.Scoring
 {
@@ -86,12 +87,17 @@ namespace DualMeetManager.Service.Scoring
             //
             //gather info for 1st 2nd and 3rd
             //
+            IndEvent eventToReturn = new IndEvent();
+            eventToReturn.team1 = team1Abbr;
+            eventToReturn.team2 = team2Abbr;
 
             List<int> firstPlaceHeats = new List<int>();
             List<int> secondPlaceHeats = new List<int>();
             List<int> thirdPlaceHeats = new List<int>();
 
-            decimal firstPlacePerf, secondPlacePerf, thirdPlacePerf;
+            decimal firstPlacePerf = 0;
+            decimal secondPlacePerf = 0;
+            decimal thirdPlacePerf = 0;
 
             //First place performance
             if (teams1and2.Count > 0)
@@ -174,13 +180,161 @@ namespace DualMeetManager.Service.Scoring
                         }
                     }
                 }
+
+                
+            }
+            else //No performances for either team. Uncontested Event
+            {
+                //null object needs created here
             }
 
-            
+
 
             //
             //Populate IndEvent object
             //
+
+            //Use this to convert into strings for EventPoints objects 
+            DataEntrySvcImpl DESI = new DataEntrySvcImpl();
+
+            EventPoints firstEventPoints = new EventPoints();
+            EventPoints secondEventPoints = new EventPoints();
+            EventPoints thirdEventPoints = new EventPoints();
+
+            //first place EventPoints
+            if (firstPlacePerf != 0)
+            {
+                firstEventPoints.performance = DESI.ConvertToTimedData(firstPlacePerf);
+                if (firstPlaceHeats.Count > 1)
+                {
+                    firstEventPoints.athleteName = "TIE";
+                    firstEventPoints.schoolName = "TIE";
+                    //Calculate Tie info
+                }
+                else
+                {
+                    //Populate regular non-tie info
+                    firstEventPoints.athleteName = teams1and2[0].athleteName;
+                    firstEventPoints.schoolName = teams1and2[0].schoolName;
+                    if (firstEventPoints.schoolName == team1Abbr)
+                    {
+                        firstEventPoints.team1Pts = 5;
+                        firstEventPoints.team2Pts = 0;
+                    }
+                    else if(firstEventPoints.schoolName == team2Abbr)
+                    {
+                        firstEventPoints.team1Pts = 0;
+                        firstEventPoints.team2Pts = 5;
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR! First Place Points being assigned to an incorrect team name");
+                    }
+                } 
+            }
+            else
+            {
+                firstEventPoints.performance = "";
+                firstEventPoints.athleteName = "";
+                firstEventPoints.schoolName = "";
+                firstEventPoints.team1Pts = 0;
+                firstEventPoints.team2Pts = 0;
+            }
+
+            //secondplace EventPoints
+            if (secondPlacePerf != 0)
+            {
+                secondEventPoints.performance = DESI.ConvertToTimedData(secondPlacePerf);
+                if (secondPlaceHeats.Count > 1)
+                {
+                    secondEventPoints.athleteName = "TIE";
+                    secondEventPoints.schoolName = "TIE";
+                    //Calculate Tie info
+                }
+                else
+                {
+                    //Populate regular non-tie info
+                    for(int i = 1; i < teams1and2.Count; i++)
+                    {
+                        if(teams1and2[i].performance == secondPlacePerf)
+                        {
+                            secondEventPoints.athleteName = teams1and2[i].athleteName;
+                            secondEventPoints.schoolName = teams1and2[i].schoolName;
+                        }
+                    }
+                    
+                    if (secondEventPoints.schoolName == team1Abbr)
+                    {
+                        secondEventPoints.team1Pts = 3;
+                        secondEventPoints.team2Pts = 0;
+                    }
+                    else if (secondEventPoints.schoolName == team2Abbr)
+                    {
+                        secondEventPoints.team1Pts = 0;
+                        secondEventPoints.team2Pts = 3;
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR! Second Place Points being assigned to an incorrect team name");
+                    }
+                }
+            }
+            else
+            {
+                secondEventPoints.performance = "";
+                secondEventPoints.athleteName = "";
+                secondEventPoints.schoolName = "";
+                secondEventPoints.team1Pts = 0;
+                secondEventPoints.team2Pts = 0;
+            }
+
+            //thirdplace EventPoints
+            if (thirdPlacePerf != 0)
+            {
+                thirdEventPoints.performance = DESI.ConvertToTimedData(thirdPlacePerf);
+                if (thirdPlaceHeats.Count > 1)
+                {
+                    thirdEventPoints.athleteName = "TIE";
+                    thirdEventPoints.schoolName = "TIE";
+                    //Calculate Tie info
+                }
+                else
+                {
+                    //Populate regular non-tie info
+                    for (int i = 1; i < teams1and2.Count; i++)
+                    {
+                        if (teams1and2[i].performance == thirdPlacePerf)
+                        {
+                            thirdEventPoints.athleteName = teams1and2[i].athleteName;
+                            thirdEventPoints.schoolName = teams1and2[i].schoolName;
+                        }
+                    }
+
+                    if (thirdEventPoints.schoolName == team1Abbr)
+                    {
+                        thirdEventPoints.team1Pts = 1;
+                        thirdEventPoints.team2Pts = 0;
+                    }
+                    else if (thirdEventPoints.schoolName == team2Abbr)
+                    {
+                        thirdEventPoints.team1Pts = 0;
+                        thirdEventPoints.team2Pts = 1;
+                    }
+                    else
+                    {
+                        Console.WriteLine("ERROR! Third Place Points being assigned to an incorrect team name");
+                    }
+                }
+            }
+            else
+            {
+                thirdEventPoints.performance = "";
+                thirdEventPoints.athleteName = "";
+                thirdEventPoints.schoolName = "";
+                thirdEventPoints.team1Pts = 0;
+                thirdEventPoints.team2Pts = 0;
+            }
+
 
             //
             //return IndEvent Object
