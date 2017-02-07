@@ -9,23 +9,29 @@ namespace DualMeetManager.Service.Scoring
         /// <summary>
         /// Interface for calculating points (1st, 2nd, and 3rd) for an individual running event
         /// </summary>
+        /// <param name="team1Abbr">Abbr for team 1</param>
+        /// <param name="team2Abbr">Abbr for team 2</param>
         /// <param name="perf">Complete list of performances for a particular running event</param>
         /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
-        IndEvent CalculateRunningEvent(List<Performance> perf);
+        IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf);
 
         /// <summary>
         /// Interface for calculating points (1st, 2nd, and 3rd) for an individual field event
         /// </summary>
+        /// <param name="team1Abbr">Abbr for team 1</param>
+        /// <param name="team2Abbr">Abbr for team 2</param>
         /// <param name="perf">Complete list of performances for a particular field event</param>
         /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
-        IndEvent CalculateFieldEvent(List<Performance> perf);
+        IndEvent CalculateFieldEvent(string team1Abbr, string team2Abbr, List<Performance> perf);
 
         /// <summary>
         /// Interface for calculating points (1st, and 2nd) for a relay event
         /// </summary>
+        /// <param name="team1Abbr">Abbr for team 1</param>
+        /// <param name="team2Abbr">Abbr for team 2</param>
         /// <param name="perf"></param>
         /// <returns>RelayEvent, which holds all information ragarding this event's points</returns>
-        RelayEvent CalculateRelayEvent(List<Performance> perf);
+        RelayEvent CalculateRelayEvent(string team1Abbr, string team2Abbr, List<Performance> perf);
 
         /// <summary>
         /// Interface for calculating The overall score of a meet

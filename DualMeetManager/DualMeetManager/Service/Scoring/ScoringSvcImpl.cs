@@ -37,9 +37,11 @@ namespace DualMeetManager.Service.Scoring
         /// <summary>
         /// Implementation for calculating points (1st, 2nd, and 3rd) for an individual field event
         /// </summary>
+        /// <param name="team1Abbr">Abbr for team 1</param>
+        /// <param name="team2Abbr">Abbr for team 2</param>
         /// <param name="perf">Complete list of performances for a particular field event</param>
         /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
-        public IndEvent CalculateFieldEvent(List<Performance> perf)
+        public IndEvent CalculateFieldEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
         {
             throw new NotImplementedException();
         }
@@ -47,9 +49,11 @@ namespace DualMeetManager.Service.Scoring
         /// <summary>
         /// Implementation for calculating points (1st, and 2nd) for a relay event
         /// </summary>
+        /// <param name="team1Abbr">Abbr for team 1</param>
+        /// <param name="team2Abbr">Abbr for team 2</param>
         /// <param name="perf"></param>
         /// <returns>RelayEvent, which holds all information ragarding this event's points</returns>
-        public RelayEvent CalculateRelayEvent(List<Performance> perf)
+        public RelayEvent CalculateRelayEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
         {
             throw new NotImplementedException();
         }
@@ -57,11 +61,132 @@ namespace DualMeetManager.Service.Scoring
         /// <summary>
         /// Interface for calculating points (1st, 2nd, and 3rd) for an individual running event
         /// </summary>
+        /// <param name="team1Abbr">Abbr for team 1</param>
+        /// <param name="team2Abbr">Abbr for team 2</param>
         /// <param name="perf">Complete list of performances for a particular running event</param>
         /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
-        public IndEvent CalculateRunningEvent(List<Performance> perf)
+        public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
         {
-            throw new NotImplementedException();
+            //
+            //gather performances from only teams 1 and 2
+            //
+            List<Performance> teams1and2 = new List<Performance>();
+            foreach(Performance i in perf) //Iterate through entire list of performances
+            {
+                if (i.schoolName == team1Abbr || i.schoolName == team2Abbr) //check if the performance is for Team 1 or 2
+                {
+                    teams1and2.Add(i); //Add performance to working List
+                }
+            }
+            //
+            //sort performances from best to worst
+            //
+            teams1and2 = teams1and2.OrderBy(o => o.performance).ToList();
+
+            //
+            //gather info for 1st 2nd and 3rd
+            //
+
+            List<int> firstPlaceHeats = new List<int>();
+            List<int> secondPlaceHeats = new List<int>();
+            List<int> thirdPlaceHeats = new List<int>();
+
+            decimal firstPlacePerf, secondPlacePerf, thirdPlacePerf;
+
+            //First place performance
+            if (teams1and2.Count > 0)
+            {
+                firstPlacePerf = teams1and2[0].performance;
+                firstPlaceHeats.Add(teams1and2[0].heatNum);
+
+                for (int i = 1; i < teams1and2.Count; i++)
+                {
+                    if (teams1and2[i].performance == firstPlacePerf)
+                    {
+                        //check heatnum
+                        if (firstPlaceHeats.Contains(teams1and2[i].heatNum)) //check if it is already a 2nd item
+                        {
+                            if (secondPlaceHeats.Contains(teams1and2[i].heatNum)) //check if it is already a 3rd item
+                            {
+                                if (!thirdPlaceHeats.Contains(teams1and2[i].heatNum))
+                                {
+                                    thirdPlaceHeats.Add(teams1and2[i].heatNum);
+                                    thirdPlacePerf = teams1and2[0].performance;
+                                }
+                            }
+                            else
+                            {
+                                secondPlaceHeats.Add(teams1and2[i].heatNum);
+                                secondPlacePerf = teams1and2[0].performance;
+                            }
+                        }
+                        else
+                        {
+                            firstPlaceHeats.Add(teams1and2[i].heatNum);
+                        }
+                    }
+                }
+
+                //Check if second place was not already found and at least 2 performances
+                if(secondPlaceHeats.Count > 0 && teams1and2.Count > 1)
+                {
+                    secondPlacePerf = teams1and2[1].performance;
+                    secondPlaceHeats.Add(teams1and2[1].heatNum);
+
+                    for (int i = 2; i < teams1and2.Count; i++)
+                    {
+                        if (teams1and2[i].performance == secondPlacePerf)
+                        {
+                            //check heatnum
+                            if (secondPlaceHeats.Contains(teams1and2[i].heatNum)) //check if it is already a 3rd item
+                            {
+                                if (!thirdPlaceHeats.Contains(teams1and2[i].heatNum))
+                                {
+                                    thirdPlaceHeats.Add(teams1and2[i].heatNum);
+                                    thirdPlacePerf = teams1and2[0].performance;
+                                }
+                            }
+                            else
+                            {
+                                secondPlaceHeats.Add(teams1and2[i].heatNum);
+                                secondPlacePerf = teams1and2[0].performance;
+                            }                        
+                        }
+                    }
+                }
+
+                //Check if third place was not already found and at least 3 performances
+                if (thirdPlaceHeats.Count > 0 && teams1and2.Count > 2)
+                {
+                    thirdPlacePerf = teams1and2[2].performance;
+                    thirdPlaceHeats.Add(teams1and2[2].heatNum);
+
+                    for (int i = 3; i < teams1and2.Count; i++)
+                    {
+                        if (teams1and2[i].performance == thirdPlacePerf)
+                        {
+                            //check heatnum
+                            if (!thirdPlaceHeats.Contains(teams1and2[i].heatNum))
+                            {
+                                thirdPlaceHeats.Add(teams1and2[i].heatNum);
+                                thirdPlacePerf = teams1and2[0].performance;
+                            }
+                        }
+                    }
+                }
+            }
+
+            
+
+            //
+            //Populate IndEvent object
+            //
+
+            //
+            //return IndEvent Object
+            //
+
+            return null;
         }
 
         /// <summary>

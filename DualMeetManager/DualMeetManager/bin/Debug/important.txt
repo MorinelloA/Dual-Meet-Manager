@@ -1,0 +1,59 @@
+{
+  "dateOfMeet": "2017-04-13T00:00:00",
+  "location": "Baldwin HS",
+  "weatherConditions": "Windy",
+  "schoolNames": {
+    "boySchoolNames": {
+      "BLN": "Baldwin",
+      "TJ": "Thomas Jefferson",
+      "WHS": "Washington HS"
+    },
+    "girlSchoolNames": {
+      "PLM": "Plum",
+      "GWY": "Gateway",
+      "KCH": "Knoch"
+    }
+  },
+  "performances": {
+    "Boy's 100": [
+      {
+        "athleteName": "A",
+        "schoolName": "AA",
+        "heatNum": 0,
+        "performance": 1.1
+      },
+      {
+        "athleteName": "B",
+        "schoolName": "BB",
+        "heatNum": 0,
+        "performance": 2.2
+      },
+      {
+        "athleteName": "C",
+        "schoolName": "CC",
+        "heatNum": 0,
+        "performance": 3.3
+      }
+    ],
+    "Boy's 200": [
+      {
+        "athleteName": "D",
+        "schoolName": "AA",
+        "heatNum": 0,
+        "performance": 4.1
+      },
+      {
+        "athleteName": "E",
+        "schoolName": "BB",
+        "heatNum": 0,
+        "performance": 5.2
+      },
+      {
+        "athleteName": "F",
+        "schoolName": "CC",
+        "heatNum": 0,
+        "performance": 6.3
+      }
+    ]
+  }
+}
