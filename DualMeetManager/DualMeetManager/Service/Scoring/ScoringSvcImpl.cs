@@ -9,7 +9,7 @@ using DualMeetManager.Service.DataEntry;
 
 namespace DualMeetManager.Service.Scoring
 {
-    class ScoringSvcImpl : IScoringSvc
+    public class ScoringSvcImpl : IScoringSvc
     {
         /// <summary>
         /// Implementation for adding an indEvent to an OverallScore object
@@ -163,7 +163,8 @@ namespace DualMeetManager.Service.Scoring
                 }
 
                 //Check if second place was not already found, at least 2 performances, and not more than one firstPlace
-                if(secondPlaceHeats.Count > 0 && teams1and2.Count > 1)
+                //May be wrong
+                if (!(secondPlaceHeats.Count > 0 && teams1and2.Count > 1))
                 {
                     secondPlacePerf = teams1and2[1].performance;
                     secondPlaceHeats.Add(teams1and2[1].heatNum);
@@ -189,9 +190,14 @@ namespace DualMeetManager.Service.Scoring
                         }
                     }
                 }
+                else
+                {
+                    //This means that there were either 2 or more firsts, or second place was already found (same time + same heat)
+                }
 
                 //Check if third place was not already found and at least 3 performances
-                if (thirdPlaceHeats.Count > 0 && teams1and2.Count > 2)
+                //May be wrong
+                if (!(thirdPlaceHeats.Count > 0 && teams1and2.Count > 2))
                 {
                     thirdPlacePerf = teams1and2[2].performance;
                     thirdPlaceHeats.Add(teams1and2[2].heatNum);
@@ -208,6 +214,10 @@ namespace DualMeetManager.Service.Scoring
                             }
                         }
                     }
+                }
+                else
+                {
+                    //Third place should not be calculated because of ties with 1st and/or 2nd
                 }
 
                 
