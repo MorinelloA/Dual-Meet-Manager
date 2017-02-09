@@ -56,8 +56,8 @@
     <Compile Include="Domain\TeamsTest.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service\DataEntry\DataEntryImplTest.cs" />
-    <Compile Include="Service\Saving\SavingImplTest.cs" />
+    <Compile Include="Service\DataEntry\DataEntrySvcImplTest.cs" />
+    <Compile Include="Service\Saving\SavingJsonSvcImplTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -74,7 +74,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Service\Printout\" />
-    <Folder Include="Service\Retrieving\" />
     <Folder Include="Service\Scoring\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

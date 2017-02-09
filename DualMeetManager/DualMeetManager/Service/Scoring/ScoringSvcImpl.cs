@@ -133,7 +133,36 @@ namespace DualMeetManager.Service.Scoring
                     }
                 }
 
-                //Check if second place was not already found and at least 2 performances
+                //Check if 3 or more firsts
+                //Should have no 2nds or 3rds
+                if(firstPlaceHeats.Count >= 3)
+                {
+                    secondPlaceHeats.Clear();
+                    thirdPlaceHeats.Clear();
+                    secondPlacePerf = 0;
+                    thirdPlacePerf = 0;
+                }
+
+                //Check if 2 firsts
+                //Should have no 2nd, its should become third
+                if(firstPlaceHeats.Count == 2)
+                {
+                    thirdPlaceHeats.Clear();
+                    thirdPlaceHeats.AddRange(secondPlaceHeats);
+                    secondPlaceHeats.Clear();
+                    thirdPlacePerf = secondPlacePerf;
+                    secondPlacePerf = 0;
+                }
+
+                //Check if 2 or more seconds
+                //Should have no 3rds
+                if(secondPlaceHeats.Count >= 2)
+                {
+                    thirdPlaceHeats.Clear();
+                    thirdPlacePerf = 0;
+                }
+
+                //Check if second place was not already found, at least 2 performances, and not more than one firstPlace
                 if(secondPlaceHeats.Count > 0 && teams1and2.Count > 1)
                 {
                     secondPlacePerf = teams1and2[1].performance;
@@ -335,12 +364,18 @@ namespace DualMeetManager.Service.Scoring
                 thirdEventPoints.team2Pts = 0;
             }
 
+            //Populate points totals
+            eventToReturn.points[0] = firstEventPoints;
+            eventToReturn.points[1] = secondEventPoints;
+            eventToReturn.points[2] = thirdEventPoints;
+            eventToReturn.team1Total = firstEventPoints.team1Pts + secondEventPoints.team1Pts + thirdEventPoints.team1Pts;
+            eventToReturn.team2Total = firstEventPoints.team2Pts + secondEventPoints.team2Pts + thirdEventPoints.team2Pts;
 
             //
             //return IndEvent Object
             //
 
-            return null;
+            return eventToReturn;
         }
 
         /// <summary>

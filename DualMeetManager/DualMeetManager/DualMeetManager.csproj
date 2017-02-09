@@ -59,10 +59,12 @@
     <Compile Include="Service\DataEntry\DataEntrySvcImpl.cs" />
     <Compile Include="Service\DataEntry\IDataEntrySvc.cs" />
     <Compile Include="Service\Factory.cs" />
-    <Compile Include="Service\Printout\IPrintoutSvc.cs" />
-    <Compile Include="Service\Printout\PrintoutSvcImpl.cs" />
+    <Compile Include="Service\Printout\IPrintoutDocSvc.cs" />
+    <Compile Include="Service\Printout\IPrintoutPDFSvc.cs" />
+    <Compile Include="Service\Printout\PrintoutDocXSvcImpl.cs" />
+    <Compile Include="Service\Printout\PrintoutPDFSharpSvcImpl.cs" />
     <Compile Include="Service\Saving\ISavingSvc.cs" />
-    <Compile Include="Service\Saving\SavingSvcImpl.cs" />
+    <Compile Include="Service\Saving\SavingJsonSvcImpl.cs" />
     <Compile Include="Service\Scoring\IScoringSvc.cs" />
     <Compile Include="Service\Scoring\ScoringSvcImpl.cs" />
   </ItemGroup>

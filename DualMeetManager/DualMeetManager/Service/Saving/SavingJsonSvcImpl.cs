@@ -1,17 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using DualMeetManager.Domain;
 using System.IO;
-//using System.Xml.Serialization;
-using System.Runtime.Serialization;
 using Newtonsoft.Json;
 
 namespace DualMeetManager.Service.Saving
 {
-    public class SavingSvcImpl : ISavingSvc
+    /// <summary>
+    /// Implementation for saving objects as Json files
+    /// </summary>
+    public class SavingJsonSvcImpl : ISavingSvc
     {
         /// <summary>
         /// Implementation for saving a Meet object as a JSON object

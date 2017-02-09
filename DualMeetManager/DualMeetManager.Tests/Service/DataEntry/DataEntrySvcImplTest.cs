@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace DualMeetManager.Tests.Service.DataEntry
 {
     [TestFixture]
-    public class DataEntryImplTest
+    public class DataEntrySvcImplTest
     {
         [Test]
         public void TestConvertToTimedData()

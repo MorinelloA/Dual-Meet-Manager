@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 namespace DualMeetManager.Tests.Service.Saving
 {
     [TestFixture]
-    public class SavingImplTest
+    public class SavingJsonSvcImplTest
     {
         const string testFileName = "TESTFILETEST.txt";
         Meet testMeet;
@@ -55,11 +55,11 @@ namespace DualMeetManager.Tests.Service.Saving
             testMeet = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, myPerformances);
         }
 
-        [OneTimeTearDown]
-        public void deleteTestFile()
+        [OneTimeSetUp]
+        public void deleteTestFileStart()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            /*if (File.Exists(testFileName))
+            if (File.Exists(testFileName))
             {
                 Console.WriteLine(testFileName + " found, deleting now");
                 File.Delete(testFileName);
@@ -67,28 +67,44 @@ namespace DualMeetManager.Tests.Service.Saving
             else
             {
                 Console.WriteLine(testFileName + " not found");
-            }*/
+            }
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
-        [Test]
+        [OneTimeTearDown]
+        public void deleteTestFileEnd()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            if (File.Exists(testFileName))
+            {
+                Console.WriteLine(testFileName + " found, deleting now");
+                File.Delete(testFileName);
+            }
+            else
+            {
+                Console.WriteLine(testFileName + " not found");
+            }
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+        }
+
+        [Test, Order(1)]
         public void TestMeetSaves()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            SavingSvcImpl savingImplObject = new SavingSvcImpl();
+            SavingJsonSvcImpl savingImplObject = new SavingJsonSvcImpl();
             bool test = savingImplObject.saveMeet(testFileName, testMeet);
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
-        [Test]
+        [Test, Order(2)]
         public void TestMeetOpens()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            SavingSvcImpl savingImplObject = new SavingSvcImpl();
+            SavingJsonSvcImpl savingImplObject = new SavingJsonSvcImpl();
             Meet openedMeet = savingImplObject.openMeet(testFileName);
             Console.WriteLine("Opened Meet:");
             Console.WriteLine(openedMeet.ToString());

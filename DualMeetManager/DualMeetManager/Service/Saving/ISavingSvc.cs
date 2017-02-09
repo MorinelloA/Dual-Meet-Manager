@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Service.Saving
 {
+    /// <summary>
+    /// Interface for saving objects
+    /// </summary>
     public interface ISavingSvc
     {
         /// <summary>
