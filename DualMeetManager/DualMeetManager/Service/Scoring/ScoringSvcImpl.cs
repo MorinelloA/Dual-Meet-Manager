@@ -163,8 +163,7 @@ namespace DualMeetManager.Service.Scoring
                 }
 
                 //Check if second place was not already found, at least 2 performances, and not more than one firstPlace
-                //May be wrong
-                if (!(secondPlaceHeats.Count > 0 && teams1and2.Count > 1))
+                if (!(secondPlaceHeats.Count > 0 || teams1and2.Count <= 1))
                 {
                     secondPlacePerf = teams1and2[1].performance;
                     secondPlaceHeats.Add(teams1and2[1].heatNum);
@@ -196,8 +195,7 @@ namespace DualMeetManager.Service.Scoring
                 }
 
                 //Check if third place was not already found and at least 3 performances
-                //May be wrong
-                if (!(thirdPlaceHeats.Count > 0 && teams1and2.Count > 2))
+                if (!(thirdPlaceHeats.Count > 0 || teams1and2.Count <= 2))
                 {
                     thirdPlacePerf = teams1and2[2].performance;
                     thirdPlaceHeats.Add(teams1and2[2].heatNum);
@@ -224,10 +222,10 @@ namespace DualMeetManager.Service.Scoring
             }
             else //No performances for either team. Uncontested Event
             {
-                //null object needs created here
+                //null object. needs created here
+                eventToReturn = new IndEvent();
+                return eventToReturn;
             }
-
-
 
             //
             //Populate IndEvent object

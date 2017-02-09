@@ -19,7 +19,13 @@ namespace DualMeetManager.Domain.Scoring
         /// <summary>
         /// Default Constructor
         /// </summary>
-        public EventPoints() { }
+        public EventPoints() {
+            team1Pts = 0;
+            team2Pts = 0;
+            athleteName = "";
+            schoolName = "";
+            performance = "";
+        }
 
         /// <summary>
         /// Parameterized Constructor
