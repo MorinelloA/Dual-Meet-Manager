@@ -37,6 +37,13 @@ namespace DualMeetManager.Tests.Service.Scoring
             perfs.Add(new Performance("Plum Athlete #3", "PLM", 1, 10.7m));
             perfs.Add(new Performance("Gateway Athlete #3", "GWY", 1, 10.95m));
 
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach(Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
             ScoringSvcImpl SSI = new ScoringSvcImpl();
 
             IndEvent eventToTest = new IndEvent();
@@ -80,6 +87,13 @@ namespace DualMeetManager.Tests.Service.Scoring
             perfs.Add(new Performance("Plum Athlete #3", "PLM", 1, 10.53m));
             perfs.Add(new Performance("Gateway Athlete #3", "GWY", 1, 10.50m));
 
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
             ScoringSvcImpl SSI = new ScoringSvcImpl();
 
             IndEvent eventToTest = new IndEvent();
@@ -116,6 +130,13 @@ namespace DualMeetManager.Tests.Service.Scoring
             //public Performance(string athleteName, string schoolName, decimal performance)
             perfs.Add(new Performance("Plum Athlete #1", "PLM", 1, 10.5m));
 
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
             ScoringSvcImpl SSI = new ScoringSvcImpl();
 
             IndEvent eventToTest = new IndEvent();
@@ -151,6 +172,13 @@ namespace DualMeetManager.Tests.Service.Scoring
             //public Performance(string athleteName, string schoolName, decimal performance)
             perfs.Add(new Performance("Plum Athlete #1", "PLM", 1, 10.5m));
             perfs.Add(new Performance("Gateway Athlete #1", "GWY", 1, 10.7m));
+
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
 
             ScoringSvcImpl SSI = new ScoringSvcImpl();
 
@@ -192,6 +220,13 @@ namespace DualMeetManager.Tests.Service.Scoring
             perfs.Add(new Performance("Plum Athlete #3", "PLM", 1, 12.5m));
             perfs.Add(new Performance("Gateway Athlete #3", "GWY", 1, 13.7m));
 
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
             ScoringSvcImpl SSI = new ScoringSvcImpl();
 
             IndEvent eventToTest = new IndEvent();
@@ -232,6 +267,13 @@ namespace DualMeetManager.Tests.Service.Scoring
             perfs.Add(new Performance("Plum Athlete #3", "PLM", 1, 10.9m));
             perfs.Add(new Performance("Gateway Athlete #3", "GWY", 1, 17.9m));
 
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
             ScoringSvcImpl SSI = new ScoringSvcImpl();
 
             IndEvent eventToTest = new IndEvent();
@@ -257,19 +299,147 @@ namespace DualMeetManager.Tests.Service.Scoring
         [TestCase]
         public void TwoWayTieForFirst()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+            //public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+            string team1 = "PLM";
+            string team2 = "GWY";
+            List<Performance> perfs = new List<Performance>();
+
+            //public Performance(string athleteName, string schoolName, decimal performance)
+            perfs.Add(new Performance("Plum Athlete #1", "PLM", 1, 10.1m));
+            perfs.Add(new Performance("Gateway Athlete #1", "GWY", 1, 10.2m));
+            perfs.Add(new Performance("Plum Athlete #2", "PLM", 1, 10.3m));
+            perfs.Add(new Performance("Gateway Athlete #2", "GWY", 2, 10.4m));
+            perfs.Add(new Performance("Plum Athlete #3", "PLM", 2, 10.5m));
+            perfs.Add(new Performance("Gateway Athlete #3", "GWY", 2, 10.1m));
+
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
+            ScoringSvcImpl SSI = new ScoringSvcImpl();
+
+            IndEvent eventToTest = new IndEvent();
+            eventToTest = SSI.CalculateRunningEvent(team1, team2, perfs);
+
+            bool test = true;
+
+            if (eventToTest.team1Total != 4)
+            {
+                test = false;
+                Console.WriteLine("Team 1 Total does not equal 4 - It equals " + eventToTest.team1Total);
+            }
+            if (eventToTest.team2Total != 5)
+            {
+                test = false;
+                Console.WriteLine("Team 2 Total does not equal 5 - It equals " + eventToTest.team2Total);
+                Console.WriteLine("Team 2 First Place Points - " + eventToTest.points[0].team2Pts);
+                Console.WriteLine("Team 2 Second Place Points - " + eventToTest.points[1].team2Pts);
+                Console.WriteLine("Team 2 Third Place Points - " + eventToTest.points[2].team2Pts);
+            }
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void ThreeWayTieForFirst()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+            //public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+            string team1 = "PLM";
+            string team2 = "GWY";
+            List<Performance> perfs = new List<Performance>();
+
+            //public Performance(string athleteName, string schoolName, decimal performance)
+            perfs.Add(new Performance("Plum Athlete #1", "PLM", 1, 10.1m));
+            perfs.Add(new Performance("Gateway Athlete #1", "GWY", 1, 10.2m));
+            perfs.Add(new Performance("Plum Athlete #2", "PLM", 2, 10.1m));
+            perfs.Add(new Performance("Gateway Athlete #2", "GWY", 2, 10.4m));
+            perfs.Add(new Performance("Plum Athlete #3", "PLM", 3, 10.5m));
+            perfs.Add(new Performance("Gateway Athlete #3", "GWY", 3, 10.1m));
+
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
+            ScoringSvcImpl SSI = new ScoringSvcImpl();
+
+            IndEvent eventToTest = new IndEvent();
+            eventToTest = SSI.CalculateRunningEvent(team1, team2, perfs);
+
+            bool test = true;
+
+            if (eventToTest.team1Total != 6)
+            {
+                test = false;
+                Console.WriteLine("Team 1 Total does not equal 6 - It equals " + eventToTest.team1Total);
+            }
+            if (eventToTest.team2Total != 3)
+            {
+                test = false;
+                Console.WriteLine("Team 2 Total does not equal 3 - It equals " + eventToTest.team2Total);
+            }
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]
         public void FourWayTieForFirst()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
+            //public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+            string team1 = "PLM";
+            string team2 = "GWY";
+            List<Performance> perfs = new List<Performance>();
+
+            //public Performance(string athleteName, string schoolName, decimal performance)
+            perfs.Add(new Performance("Plum Athlete #1", "PLM", 1, 10.1m));
+            perfs.Add(new Performance("Gateway Athlete #1", "GWY", 1, 10.2m));
+            perfs.Add(new Performance("Plum Athlete #2", "PLM", 2, 10.1m));
+            perfs.Add(new Performance("Gateway Athlete #2", "GWY", 2, 10.4m));
+            perfs.Add(new Performance("Plum Athlete #3", "PLM", 3, 10.5m));
+            perfs.Add(new Performance("Gateway Athlete #3", "GWY", 3, 10.1m));
+            perfs.Add(new Performance("Plum Athlete #3", "PLM", 4, 10.1m));
+            perfs.Add(new Performance("Gateway Athlete #3", "GWY", 4, 10.15m));
+
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
+            ScoringSvcImpl SSI = new ScoringSvcImpl();
+
+            IndEvent eventToTest = new IndEvent();
+            eventToTest = SSI.CalculateRunningEvent(team1, team2, perfs);
+
+            bool test = true;
+
+            if (eventToTest.team1Total != (9.0m / 4.0m) * 3)
+            {
+                test = false;
+                Console.WriteLine("Team 1 Total does not equal " + ((9.0m / 4.0m) * 3) + " - It equals " + eventToTest.team1Total);
+            }
+            if (eventToTest.team2Total != (9.0m / 4.0m))
+            {
+                test = false;
+                Console.WriteLine("Team 2 Total does not equal " + (9.0m / 4.0m) + " - It equals " + eventToTest.team2Total);
+            }
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 
         [TestCase]

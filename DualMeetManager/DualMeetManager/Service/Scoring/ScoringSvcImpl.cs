@@ -68,6 +68,7 @@ namespace DualMeetManager.Service.Scoring
         /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
         public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //
             //gather performances from only teams 1 and 2
             //
@@ -223,9 +224,44 @@ namespace DualMeetManager.Service.Scoring
             else //No performances for either team. Uncontested Event
             {
                 //null object. needs created here
+                Console.WriteLine("No performances for this event. Returning null IndEvent");
                 eventToReturn = new IndEvent();
+                Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return eventToReturn;
             }
+
+
+            //Check for redundancy, or in wrong place.
+            //This code is also above. MAY be needed again.
+            //Check if 3 or more firsts
+            //Should have no 2nds or 3rds
+            if (firstPlaceHeats.Count >= 3)
+            {
+                secondPlaceHeats.Clear();
+                thirdPlaceHeats.Clear();
+                secondPlacePerf = 0;
+                thirdPlacePerf = 0;
+            }
+
+            //Check if 2 firsts
+            //Should have no 2nd, its should become third
+            if (firstPlaceHeats.Count == 2)
+            {
+                thirdPlaceHeats.Clear();
+                thirdPlaceHeats.AddRange(secondPlaceHeats);
+                secondPlaceHeats.Clear();
+                thirdPlacePerf = secondPlacePerf;
+                secondPlacePerf = 0;
+            }
+
+            //Check if 2 or more seconds
+            //Should have no 3rds
+            if (secondPlaceHeats.Count >= 2)
+            {
+                thirdPlaceHeats.Clear();
+                thirdPlacePerf = 0;
+            }
+            //End code check
 
             //
             //Populate IndEvent object
@@ -244,9 +280,33 @@ namespace DualMeetManager.Service.Scoring
                 firstEventPoints.performance = DESI.ConvertToTimedData(firstPlacePerf);
                 if (firstPlaceHeats.Count > 1)
                 {
+                    Console.WriteLine(firstPlaceHeats.Count + "-Way Tie for 1st");
                     firstEventPoints.athleteName = "TIE";
                     firstEventPoints.schoolName = "TIE";
                     //Calculate Tie info
+
+                    //Two-Way Tie
+                    if(firstPlaceHeats.Count == 2)
+                    {
+                        foreach(Performance p in teams1and2)
+                        {
+                            if(p.performance == firstPlacePerf && firstPlaceHeats.Contains(p.heatNum))
+                            {
+                                if(p.schoolName == team1Abbr)
+                                {
+                                    firstEventPoints.team1Pts += 4; 
+                                }
+                                else if(p.schoolName == team2Abbr)
+                                {
+                                    firstEventPoints.team2Pts += 4;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("ERROR! This code should be unreachable!");
+                                }
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -382,7 +442,7 @@ namespace DualMeetManager.Service.Scoring
             //
             //return IndEvent Object
             //
-
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return eventToReturn;
         }
 
