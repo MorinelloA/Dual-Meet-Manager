@@ -24,8 +24,8 @@ namespace DualMeetManager.Domain.Scoring
         public decimal team2Points { get; set; }
 
         //Event name, List of points
-        public IDictionary<string, IndEvent> indEvents { get; private set; }
-        public IDictionary<string, RelayEvent> relayEvents { get; private set; }
+        public IDictionary<string, IndEvent> indEvents { get; set; }
+        public IDictionary<string, RelayEvent> relayEvents { get; set; }
 
         /// <summary>
         /// Default Constructor

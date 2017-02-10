@@ -497,9 +497,10 @@ namespace DualMeetManager.Service.Scoring
         /// <param name="eventName">Name of the event being added</param>
         /// <param name="eventToAdd">Data for the event being added</param>
         /// <returns>OverallScore with the event added</returns>
-        public OverallScore AddIndEvent(OverallScore scores, string eventName, IndEvent eventToAdd)
+        public OverallScore AddEvent(OverallScore scores, string eventName, IndEvent eventToAdd)
         {
-            throw new NotImplementedException();
+            scores.indEvents[eventName] = eventToAdd;
+            return scores;
         }
 
         /// <summary>
@@ -509,9 +510,10 @@ namespace DualMeetManager.Service.Scoring
         /// <param name="eventName">Name of the event being added</param>
         /// <param name="eventToAdd">Data for the event being added</param>
         /// <returns>OverallScore with the event added</returns>
-        public OverallScore AddRelayEvent(OverallScore scores, string eventName, RelayEvent eventToAdd)
+        public OverallScore AddEvent(OverallScore scores, string eventName, RelayEvent eventToAdd)
         {
-            throw new NotImplementedException();
+            scores.relayEvents[eventName] = eventToAdd;
+            return scores;
         }
 
         /// <summary>

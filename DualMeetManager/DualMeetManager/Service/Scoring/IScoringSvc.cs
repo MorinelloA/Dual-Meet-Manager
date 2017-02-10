@@ -48,7 +48,7 @@ namespace DualMeetManager.Service.Scoring
         /// <param name="eventName">Name of the event being added</param>
         /// <param name="eventToAdd">Data for the event being added</param>
         /// <returns>OverallScore with the event added</returns>
-        OverallScore AddIndEvent(OverallScore scores, string eventName, IndEvent eventToAdd);
+        OverallScore AddEvent(OverallScore scores, string eventName, IndEvent eventToAdd);
 
         /// <summary>
         /// Interface for adding a relayEvent to an OverallScore object
@@ -57,6 +57,6 @@ namespace DualMeetManager.Service.Scoring
         /// <param name="eventName">Name of the event being added</param>
         /// <param name="eventToAdd">Data for the event being added</param>
         /// <returns>OverallScore with the event added</returns>
-        OverallScore AddRelayEvent(OverallScore scores, string eventName, RelayEvent eventToAdd);
+        OverallScore AddEvent(OverallScore scores, string eventName, RelayEvent eventToAdd);
     }
 }
