@@ -267,6 +267,30 @@ namespace DualMeetManager.Service.Scoring
             //Populate IndEvent object
             //
 
+            //Algorithm used to resort list if multiple same performances in same and different heats
+            //Assumes list was originally organized by heats
+            bool stopLoop = false;
+            do
+            {
+                stopLoop = false;
+                for (int i = 1; i < teams1and2.Count - 1; i++)
+                {
+                    if (teams1and2[i - 1].performance == teams1and2[i].performance && teams1and2[i - 1].heatNum == teams1and2[i].heatNum && teams1and2[i].performance == teams1and2[i + 1].performance && teams1and2[i].heatNum != teams1and2[i + 1].heatNum)
+                    {
+                        Performance temp = teams1and2[i];
+                        teams1and2[i] = teams1and2[i + 1];
+                        teams1and2[i + 1] = temp;
+                        stopLoop = true;
+                    }
+                }
+            } while (stopLoop);
+
+            //ints used if dividing by them near the end of the method
+            //Avoids Divide by zero errors because the ints in the Lists are about to be removed
+            int numFirstPlaces = firstPlaceHeats.Count;
+            int numSecondPlaces = secondPlaceHeats.Count;
+            int numThirdPlaces = thirdPlaceHeats.Count;
+
             //Use this to convert into strings for EventPoints objects 
             DataEntrySvcImpl DESI = new DataEntrySvcImpl();
 
@@ -280,7 +304,7 @@ namespace DualMeetManager.Service.Scoring
                 firstEventPoints.performance = DESI.ConvertToTimedData(firstPlacePerf);
                 if (firstPlaceHeats.Count > 1)
                 {
-                    Console.WriteLine(firstPlaceHeats.Count + "-Way Tie for 1st");
+                    Console.WriteLine(numFirstPlaces + "-Way Tie for 1st");
                     firstEventPoints.athleteName = "TIE";
                     firstEventPoints.schoolName = "TIE";
                     //Calculate Tie info
@@ -292,6 +316,10 @@ namespace DualMeetManager.Service.Scoring
                         {
                             if(p.performance == firstPlacePerf && firstPlaceHeats.Contains(p.heatNum))
                             {
+                                //test taking out p.heatNum here
+                                //Not sure if this is correct
+                                firstPlaceHeats.Remove(p.heatNum);
+
                                 if(p.schoolName == team1Abbr)
                                 {
                                     firstEventPoints.team1Pts += 4; 
@@ -314,13 +342,17 @@ namespace DualMeetManager.Service.Scoring
                         {
                             if (p.performance == firstPlacePerf && firstPlaceHeats.Contains(p.heatNum))
                             {
+                                //test taking out p.heatNum here
+                                //Not sure if this is correct
+                                firstPlaceHeats.Remove(p.heatNum);
+
                                 if (p.schoolName == team1Abbr)
                                 {
-                                    firstEventPoints.team1Pts += (9.0m / firstPlaceHeats.Count);
+                                    firstEventPoints.team1Pts += (9.0m / numFirstPlaces);
                                 }
                                 else if (p.schoolName == team2Abbr)
                                 {
-                                    firstEventPoints.team2Pts += (9.0m / firstPlaceHeats.Count);
+                                    firstEventPoints.team2Pts += (9.0m / numFirstPlaces);
                                 }
                                 else
                                 {
@@ -366,7 +398,7 @@ namespace DualMeetManager.Service.Scoring
                 secondEventPoints.performance = DESI.ConvertToTimedData(secondPlacePerf);
                 if (secondPlaceHeats.Count > 1)
                 {
-                    Console.WriteLine(firstPlaceHeats.Count + "-Way Tie for 1st");
+                    Console.WriteLine(numSecondPlaces + "-Way Tie for 2nd");
                     secondEventPoints.athleteName = "TIE";
                     secondEventPoints.schoolName = "TIE";
                     //Calculate Tie info
@@ -374,13 +406,17 @@ namespace DualMeetManager.Service.Scoring
                     {
                         if (p.performance == secondPlacePerf && secondPlaceHeats.Contains(p.heatNum))
                         {
+                            //test taking out p.heatNum here
+                            //Not sure if this is correct
+                            secondPlaceHeats.Remove(p.heatNum);
+
                             if (p.schoolName == team1Abbr)
                             {
-                                secondEventPoints.team1Pts += (4.0m / secondPlaceHeats.Count);
+                                secondEventPoints.team1Pts += (4.0m / numSecondPlaces);
                             }
                             else if (p.schoolName == team2Abbr)
                             {
-                                secondEventPoints.team2Pts += (4.0m / secondPlaceHeats.Count);
+                                secondEventPoints.team2Pts += (4.0m / numSecondPlaces);
                             }
                             else
                             {
@@ -428,11 +464,12 @@ namespace DualMeetManager.Service.Scoring
             }
 
             //thirdplace EventPoints
-            if (thirdPlacePerf != 0)
+            if (thirdPlacePerf != 0 && numFirstPlaces + numSecondPlaces < 3)
             {
                 thirdEventPoints.performance = DESI.ConvertToTimedData(thirdPlacePerf);
                 if (thirdPlaceHeats.Count > 1)
                 {
+                    Console.WriteLine(numThirdPlaces + "-Way Tie for 3rd");
                     thirdEventPoints.athleteName = "TIE";
                     thirdEventPoints.schoolName = "TIE";
                     //Calculate Tie info
@@ -440,13 +477,17 @@ namespace DualMeetManager.Service.Scoring
                     {
                         if (p.performance == thirdPlacePerf && thirdPlaceHeats.Contains(p.heatNum))
                         {
+                            //test taking out p.heatNum here
+                            //Not sure if this is correct
+                            thirdPlaceHeats.Remove(p.heatNum);
+
                             if (p.schoolName == team1Abbr)
                             {
-                                thirdEventPoints.team1Pts += (1.0m / thirdPlaceHeats.Count);
+                                thirdEventPoints.team1Pts += (1.0m / numThirdPlaces);
                             }
                             else if (p.schoolName == team2Abbr)
                             {
-                                thirdEventPoints.team2Pts += (1.0m / thirdPlaceHeats.Count);
+                                thirdEventPoints.team2Pts += (1.0m / numThirdPlaces);
                             }
                             else
                             {
@@ -461,6 +502,7 @@ namespace DualMeetManager.Service.Scoring
                     for (int i = 2; i < teams1and2.Count; i++)
                     {
                         if (teams1and2[i].performance == thirdPlacePerf)
+                        //if (teams1and2[i].performance == thirdPlacePerf && thirdPlaceHeats.Contains(teams1and2[i].heatNum)) //Changed
                         {
                             thirdEventPoints.athleteName = teams1and2[i].athleteName;
                             thirdEventPoints.schoolName = teams1and2[i].schoolName;
