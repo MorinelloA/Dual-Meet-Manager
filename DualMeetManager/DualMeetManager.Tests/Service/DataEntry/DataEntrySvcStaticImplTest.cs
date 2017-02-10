@@ -322,7 +322,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
 
             DataEntrySvcImpl DESI = new DataEntrySvcImpl();
 
-            meet1.performances = meet1.performances.AddPerformanceToEvent("Boy's 400", myPerformance7);
+            meet1.performances = meet1.performances.AddPerformanceToEvent("Boy's 400", myPerformancesC);
 
             Console.WriteLine("originalList:");
             foreach (KeyValuePair<string, List<Performance>> kvp in originalList)

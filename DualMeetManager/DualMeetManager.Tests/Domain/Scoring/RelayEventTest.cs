@@ -32,7 +32,7 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
-            RelayEvent myRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent myRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), 5.0m, 0.0m);
 
             if (myRelayEvent == null)
             {
@@ -59,10 +59,15 @@ namespace DualMeetManager.Tests.Domain.Scoring
                 test = false;
                 Console.WriteLine("secondPlacePts does not have the correct value");
             }
-            if (!myRelayEvent.totalPts.Equals(Tuple.Create(5.0m, 0.0m)))
+            if(myRelayEvent.team1Total != 5.0m)
             {
                 test = false;
-                Console.WriteLine("totalPts does not have the correct value");
+                Console.WriteLine("team1Total does not have the correct value");
+            }
+            if (myRelayEvent.team2Total != 0.0m)
+            {
+                test = false;
+                Console.WriteLine("team2Total does not have the correct value");
             }
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
@@ -79,14 +84,14 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             bool test = true;
 
-            RelayEvent controlRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(8.0m, 1.0m));
+            RelayEvent controlRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), 8.0m, 1.0m);
 
-            RelayEvent equalRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(8.0m, 1.0m));
-            RelayEvent diffTeam1 = new RelayEvent("WH", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(8.0m, 1.0m));
-            RelayEvent diffTeam2 = new RelayEvent("PLM", "WH", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(8.0m, 1.0m));
-            RelayEvent diffFirstPlacePts = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P4", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(8.0m, 1.0m));
-            RelayEvent diffSecondPlacePts = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.45"), Tuple.Create(8.0m, 1.0m));
-            RelayEvent diffTotalPts = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), Tuple.Create(9.0m, 0.0m));
+            RelayEvent equalRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), 8.0m, 1.0m);
+            RelayEvent diffTeam1 = new RelayEvent("WH", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), 8.0m, 1.0m);
+            RelayEvent diffTeam2 = new RelayEvent("PLM", "WH", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), 8.0m, 1.0m);
+            RelayEvent diffFirstPlacePts = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P4", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), 8.0m, 1.0m);
+            RelayEvent diffSecondPlacePts = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.45"), 8.0m, 1.0m);
+            RelayEvent diffTotalPts = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "P1", "PLM", "11.3"), new EventPoints(3.0m, 0.0m, "P2", "PLM", "11.4"), 9.0m, 0.0m);
             RelayEvent nullRelayEvent = new RelayEvent();
 
             if (!controlRelayEvent.Equals(equalRelayEvent))
@@ -137,7 +142,7 @@ namespace DualMeetManager.Tests.Domain.Scoring
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
-            RelayEvent myRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent myRelayEvent = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), 5.0m, 0.0m);
 
             string strRelayEvent = myRelayEvent.ToString();
 
@@ -171,18 +176,18 @@ namespace DualMeetManager.Tests.Domain.Scoring
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             bool test = true;
-            RelayEvent control = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent control = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), 5.0m, 0.0m);
 
-            RelayEvent team1PtsDontMatch = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(4.0m, 0.0m));
-            RelayEvent team2PtsDontMatch = new RelayEvent("TM1", "TM2", new EventPoints(4.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(4.0m, 1.0m));
-            RelayEvent totalAbove5 = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 1.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 1.0m));
-            RelayEvent noNameTeam1 = new RelayEvent("", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
-            RelayEvent noNameTeam2 = new RelayEvent("TM1", "", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
-            RelayEvent nullNameTeam1 = new RelayEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(0.0m, 0.0m));
-            RelayEvent nullNameTeam2 = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
-            RelayEvent noNameWithPtsTeam1 = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "", "", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(5.0m, 0.0m));
-            RelayEvent nameWithNoPtsTeam1 = new RelayEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(0.0m, 0.0m));
-            RelayEvent secondPlaceHasPts = new RelayEvent("TM1", "TM2", new EventPoints(4.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 1.0m, "Athlete2", "TM1", "11.4"), Tuple.Create(4.0m, 1.0m));
+            RelayEvent team1PtsDontMatch = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), 4.0m, 0.0m);
+            RelayEvent team2PtsDontMatch = new RelayEvent("TM1", "TM2", new EventPoints(4.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), 4.0m, 1.0m);
+            RelayEvent totalAbove5 = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 1.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), 5.0m, 1.0m);
+            RelayEvent noNameTeam1 = new RelayEvent("", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), 5.0m, 0.0m);
+            RelayEvent noNameTeam2 = new RelayEvent("TM1", "", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), 5.0m, 0.0m);
+            RelayEvent nullNameTeam1 = new RelayEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), 0.0m, 0.0m);
+            RelayEvent nullNameTeam2 = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "", "TM1", "11.4"), 5.0m, 0.0m);
+            RelayEvent noNameWithPtsTeam1 = new RelayEvent("TM1", "TM2", new EventPoints(5.0m, 0.0m, "", "", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), 5.0m, 0.0m);
+            RelayEvent nameWithNoPtsTeam1 = new RelayEvent("TM1", "TM2", new EventPoints(0.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 0.0m, "Athlete2", "TM1", "11.4"), 0.0m, 0.0m);
+            RelayEvent secondPlaceHasPts = new RelayEvent("TM1", "TM2", new EventPoints(4.0m, 0.0m, "Athlete1", "TM1", "11.3"), new EventPoints(0.0m, 1.0m, "Athlete2", "TM1", "11.4"), 4.0m, 1.0m);
 
             if (!control.validate())
             {

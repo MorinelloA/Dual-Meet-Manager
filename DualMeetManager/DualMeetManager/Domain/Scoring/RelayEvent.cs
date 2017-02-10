@@ -10,15 +10,18 @@ namespace DualMeetManager.Domain.Scoring
     /// </summary>
     public class RelayEvent
     {
-        public string team1 { get; private set; }
-        public string team2 { get; private set; }
+        public string team1 { get; set; }
+        public string team2 { get; set; }
 
         //Having points assigned for relays seems redundant since the winning relay gets 5pts, and the loser gets 0.
         //However, if rules were ever to change, the code would be much easier to update this way.
         //index 0 for 1st place, 1 for 2nd place
-        public EventPoints[] points { get; private set; }
+        public EventPoints[] points { get; set; }
 
-        public Tuple<decimal, decimal> totalPts { get; private set; }
+        //Total
+        //Team1 total, Team2 total
+        public decimal team1Total { get; set; }
+        public decimal team2Total { get; set; }
 
         /// <summary>
         /// Default Constructor
@@ -30,7 +33,8 @@ namespace DualMeetManager.Domain.Scoring
             team2 = "";
             points[0] = new EventPoints(0.0m, 0.0m, "", "", "");
             points[1] = new EventPoints(0.0m, 0.0m, "", "", "");
-            totalPts = Tuple.Create(0.0m, 0.0m);
+            team1Total = 0;
+            team2Total = 0;
         }
 
         /// <summary>
@@ -41,14 +45,15 @@ namespace DualMeetManager.Domain.Scoring
         /// <param name="firstPlacePts">Data for 1st place</param>
         /// <param name="secondPlacePts">Data for 2nd place</param>
         /// <param name="totalPts">Total points for this event by both teams</param>
-        public RelayEvent(string team1, string team2, EventPoints firstPlacePts, EventPoints secondPlacePts, Tuple<decimal, decimal> totalPts)
+        public RelayEvent(string team1, string team2, EventPoints firstPlacePts, EventPoints secondPlacePts, decimal team1Total, decimal team2Total)
         {
             points = new EventPoints[2];
             this.team1 = team1;
             this.team2 = team2;
             points[0] = firstPlacePts;
             points[1] = secondPlacePts;
-            this.totalPts = totalPts;
+            this.team1Total = team1Total;
+            this.team2Total = team2Total;
         }
 
         /// <summary>
@@ -62,7 +67,7 @@ namespace DualMeetManager.Domain.Scoring
             sb.Append("First Place Pts: " + team1 + ": " + string.Format("{0:0.##}", points[0].team1Pts) + " " + team2 + ": " + string.Format("{0:0.##}", points[0].team2Pts) + Environment.NewLine);
             sb.Append("Second Place: " + points[1].athleteName + " - " + points[1].schoolName + ": " + points[1].performance + Environment.NewLine);
             sb.Append("Second Place Pts: " + team1 + ": " + string.Format("{0:0.##}", points[1].team1Pts) + " " + team2 + ": " + string.Format("{0:0.##}", points[1].team2Pts) + Environment.NewLine);
-            sb.Append("Total: " + team1 + ": " + string.Format("{0:0.##}", totalPts.Item1) + " " + team2 + ": " + string.Format("{0:0.##}", totalPts.Item2));
+            sb.Append("Total: " + team1 + ": " + string.Format("{0:0.##}", team1Total) + " " + team2 + ": " + string.Format("{0:0.##}", team2Total));
             return sb.ToString();
         }
 
@@ -78,7 +83,8 @@ namespace DualMeetManager.Domain.Scoring
             else if (!myRelayEvent.team2.Equals(team2)) return false;
             else if (!myRelayEvent.points[0].Equals(points[0])) return false;
             else if (!myRelayEvent.points[1].Equals(points[1])) return false;
-            else if (!myRelayEvent.totalPts.Equals(totalPts)) return false;
+            else if (myRelayEvent.team1Total != team1Total) return false;
+            else if (myRelayEvent.team2Total != team2Total) return false;
             return true;
         }
 
@@ -95,7 +101,8 @@ namespace DualMeetManager.Domain.Scoring
                 hash = hash * 23 + team2.GetHashCode();
                 hash = hash * 23 + points[0].GetHashCode();
                 hash = hash * 23 + points[1].GetHashCode();
-                hash = hash * 23 + totalPts.GetHashCode();
+                hash = hash * 23 + team1Total.GetHashCode();
+                hash = hash * 23 + team2Total.GetHashCode();
                 return hash;
             }
         }
@@ -106,10 +113,10 @@ namespace DualMeetManager.Domain.Scoring
         /// <returns>true if it is a valid RelayEvent, false if not</returns>
         public bool validate()
         {
-            if (points[0].team1Pts + points[1].team1Pts != totalPts.Item1) return false; //Team1 points don't match
-            else if (points[0].team2Pts + points[1].team2Pts != totalPts.Item2) return false; //Team2 points don't match
+            if (points[0].team1Pts + points[1].team1Pts != team1Total) return false; //Team1 points don't match
+            else if (points[0].team2Pts + points[1].team2Pts != team2Total) return false; //Team2 points don't match
             else if (points[0].team1Pts + points[1].team1Pts + +points[0].team2Pts + points[1].team2Pts > 5) return false; //Check if an event is awarding more than 9 points
-            else if (totalPts.Item1 + totalPts.Item2 > 5) return false; //Redundant if statement
+            else if (team1Total + team2Total > 5) return false; //Redundant if statement
             else if (string.IsNullOrWhiteSpace(team1)) return false; //team1 must have a name
             else if (string.IsNullOrWhiteSpace(team2)) return false; //team2 must have a name
             else if ((string.IsNullOrWhiteSpace(points[0].athleteName) && !string.IsNullOrWhiteSpace(points[0].schoolName)) || (!string.IsNullOrWhiteSpace(points[0].athleteName) && string.IsNullOrWhiteSpace(points[0].schoolName))) return false; //If name or school are null, the other must be null as well

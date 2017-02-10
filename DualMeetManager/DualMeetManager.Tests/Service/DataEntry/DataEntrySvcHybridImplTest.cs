@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 namespace DualMeetManager.Tests.Service.DataEntry
 {
     [TestFixture]
-    public class DataEntrySvcImplTest
+    public class DataEntrySvcHybridImplTest
     {
         [Test]
         public void TestConvertToTimedData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            DataEntrySvcHybridImpl DEI = new DataEntrySvcHybridImpl();
             bool test = true;
 
-            if(DEI.ConvertToTimedData(59.1m) != "59.1")
+            if (DEI.ConvertToTimedData(59.1m) != "59.1")
             {
                 Console.WriteLine("59.1m was not correct");
                 test = false;
@@ -63,10 +63,10 @@ namespace DualMeetManager.Tests.Service.DataEntry
         public void TestConvertFromTimedData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            DataEntrySvcHybridImpl DEI = new DataEntrySvcHybridImpl();
             bool test = true;
 
-            if(DEI.ConvertFromTimedData("1:01") != 61m)
+            if (DEI.ConvertFromTimedData("1:01") != 61m)
             {
                 Console.WriteLine("1:01 was not correct, returned " + DEI.ConvertFromTimedData("1:01"));
                 test = false;
@@ -115,7 +115,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
         public void TestConvertToLengthData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            DataEntrySvcHybridImpl DEI = new DataEntrySvcHybridImpl();
             bool test = true;
 
             if (DEI.ConvertToLengthData(13m) != "1-01")
@@ -157,7 +157,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
         public void TestConvertFromLengthData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            DataEntrySvcHybridImpl DEI = new DataEntrySvcHybridImpl();
             bool test = true;
 
             if (DEI.ConvertFromLengthData("1-01") != 13m)
@@ -247,7 +247,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
             Meet meet1 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, originalList);
             Meet meet2 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, newComparableList);
 
-            DataEntrySvcImpl DESI = new DataEntrySvcImpl();
+            DataEntrySvcHybridImpl DESI = new DataEntrySvcHybridImpl();
 
             meet1.performances = DESI.AddPerformanceToEvent(meet1.performances, "Boy's 200", myPerformance7);
 
@@ -255,7 +255,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
             Console.WriteLine("originalList:");
             foreach (KeyValuePair<string, List<Performance>> kvp in originalList)
             {
-                foreach(Performance i in kvp.Value)
+                foreach (Performance i in kvp.Value)
                     Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, i.ToString());
             }
             Console.WriteLine("\nnewComparableList:");
@@ -322,7 +322,7 @@ namespace DualMeetManager.Tests.Service.DataEntry
             Meet meet1 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, originalList);
             Meet meet2 = new Meet(new DateTime(2017, 04, 13), "Baldwin HS", "Windy", teams, newComparableList);
 
-            DataEntrySvcImpl DESI = new DataEntrySvcImpl();
+            DataEntrySvcHybridImpl DESI = new DataEntrySvcHybridImpl();
 
             meet1.performances = DESI.AddPerformanceToEvent(meet1.performances, "Boy's 400", myPerformancesC);
 

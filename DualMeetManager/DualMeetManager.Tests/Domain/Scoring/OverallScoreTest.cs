@@ -39,8 +39,8 @@ namespace DualMeetManager.Tests.Domain.Scoring
             indEvents.Add("Boy's 100", indEvent1);
             indEvents.Add("Boy's 200", indEvent2);
 
-            RelayEvent relayEvent1 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), Tuple.Create(5.0m, 0.0m));
-            RelayEvent relayEvent2 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "400"), new EventPoints(0.0m, 0.0m, "A", "GWY", "500"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent relayEvent1 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), 5.0m, 0.0m);
+            RelayEvent relayEvent2 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "400"), new EventPoints(0.0m, 0.0m, "A", "GWY", "500"), 5.0m, 0.0m);
             Dictionary<string, RelayEvent> relayEvents = new Dictionary<string, RelayEvent>();
             relayEvents.Add("Boy's 4x100", relayEvent1);
             relayEvents.Add("Boy's 4x400", relayEvent2);
@@ -99,9 +99,9 @@ namespace DualMeetManager.Tests.Domain.Scoring
             indEventsB.Add("Boy's 100", indEvent1);
             indEventsB.Add("Boy's 200", indEvent3);
 
-            RelayEvent relayEvent1 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), Tuple.Create(5.0m, 0.0m));
-            RelayEvent relayEvent2 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "400"), new EventPoints(0.0m, 0.0m, "A", "GWY", "500"), Tuple.Create(5.0m, 0.0m));
-            RelayEvent relayEvent3 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "450"), new EventPoints(0.0m, 0.0m, "A", "GWY", "500"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent relayEvent1 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), 5.0m, 0.0m);
+            RelayEvent relayEvent2 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "400"), new EventPoints(0.0m, 0.0m, "A", "GWY", "500"), 5.0m, 0.0m);
+            RelayEvent relayEvent3 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "450"), new EventPoints(0.0m, 0.0m, "A", "GWY", "500"), 5.0m, 0.0m);
 
             Dictionary<string, RelayEvent> relayEventsA = new Dictionary<string, RelayEvent>();
             relayEventsA.Add("Boy's 4x100", relayEvent1);
@@ -164,8 +164,8 @@ namespace DualMeetManager.Tests.Domain.Scoring
             indEventsA.Add("Boy's 100", indEvent1);
             indEventsA.Add("Boy's 200", indEvent2);
 
-            RelayEvent relayEvent1 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), Tuple.Create(5.0m, 0.0m));
-            RelayEvent relayEvent2 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "400"), new EventPoints(0.0m, 0.0m, "A", "GWY", "500"), Tuple.Create(5.0m, 0.0m));
+            RelayEvent relayEvent1 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "11.3"), new EventPoints(0.0m, 0.0m, "A", "GWY", "11.4"), 5.0m, 0.0m);
+            RelayEvent relayEvent2 = new RelayEvent("PLM", "GWY", new EventPoints(5.0m, 0.0m, "A", "PLM", "400"), new EventPoints(0.0m, 0.0m, "A", "GWY", "500"), 5.0m, 0.0m);
             
             Dictionary<string, RelayEvent> relayEventsA = new Dictionary<string, RelayEvent>();
             relayEventsA.Add("Boy's 4x100", relayEvent1);

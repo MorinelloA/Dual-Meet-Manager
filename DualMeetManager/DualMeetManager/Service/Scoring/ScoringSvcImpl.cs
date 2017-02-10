@@ -6,88 +6,25 @@ using System.Threading.Tasks;
 using DualMeetManager.Domain;
 using DualMeetManager.Domain.Scoring;
 using DualMeetManager.Service.DataEntry;
+using System.Reflection;
 
 namespace DualMeetManager.Service.Scoring
 {
     /// <summary>
-    /// Implentation for scoring all Meet data
+    /// Implementation for scoring all Meet data
     /// </summary>
     public class ScoringSvcImpl : IScoringSvc
     {
         /// <summary>
-        /// Implementation for adding an indEvent to an OverallScore object
+        /// Helper Method for Calculating Individual Event (Not Relay)
         /// </summary>
-        /// <param name="scores">Overall scores</param>
-        /// <param name="eventName">Name of the event being added</param>
-        /// <param name="eventToAdd">Data for the event being added</param>
-        /// <returns>OverallScore with the event added</returns>
-        public OverallScore AddIndEvent(OverallScore scores, string eventName, IndEvent eventToAdd)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Implementation for adding a relayEvent to an OverallScore object
-        /// </summary>
-        /// <param name="scores">Overall scores</param>
-        /// <param name="eventName">Name of the event being added</param>
-        /// <param name="eventToAdd">Data for the event being added</param>
-        /// <returns>OverallScore with the event added</returns>
-        public OverallScore AddRelayEvent(OverallScore scores, string eventName, RelayEvent eventToAdd)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Implementation for calculating points (1st, 2nd, and 3rd) for an individual field event
-        /// </summary>
-        /// <param name="team1Abbr">Abbr for team 1</param>
-        /// <param name="team2Abbr">Abbr for team 2</param>
-        /// <param name="perf">Complete list of performances for a particular field event</param>
+        /// <param name="team1Abbr">Abbreviation for Team #1</param>
+        /// <param name="team2Abbr">Abbreviation for Team #2</param>
+        /// <param name="teams1and2">Sorted List (Ascending or Descending, depending on event) of Performances for Teams 1 & 2</param>
         /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
-        public IndEvent CalculateFieldEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+        /// <remarks>Does NOT include a way to determine Ties for Field Events. This must be implemented later by another Method</remarks>
+        public static IndEvent CalculateIndEventInOrder(string team1Abbr, string team2Abbr, List<Performance> teams1and2)
         {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Implementation for calculating points (1st, and 2nd) for a relay event
-        /// </summary>
-        /// <param name="team1Abbr">Abbr for team 1</param>
-        /// <param name="team2Abbr">Abbr for team 2</param>
-        /// <param name="perf"></param>
-        /// <returns>RelayEvent, which holds all information ragarding this event's points</returns>
-        public RelayEvent CalculateRelayEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Interface for calculating points (1st, 2nd, and 3rd) for an individual running event
-        /// </summary>
-        /// <param name="team1Abbr">Abbr for team 1</param>
-        /// <param name="team2Abbr">Abbr for team 2</param>
-        /// <param name="perf">Complete list of performances for a particular running event</param>
-        /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
-        public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
-        {
-            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //
-            //gather performances from only teams 1 and 2
-            //
-            List<Performance> teams1and2 = new List<Performance>();
-            foreach(Performance i in perf) //Iterate through entire list of performances
-            {
-                if (i.schoolName == team1Abbr || i.schoolName == team2Abbr) //check if the performance is for Team 1 or 2
-                {
-                    teams1and2.Add(i); //Add performance to working List
-                }
-            }
-            //
-            //sort performances from best to worst
-            //
-            teams1and2 = teams1and2.OrderBy(o => o.performance).ToList();
-
             //
             //gather info for 1st 2nd and 3rd
             //
@@ -139,7 +76,7 @@ namespace DualMeetManager.Service.Scoring
 
                 //Check if 3 or more firsts
                 //Should have no 2nds or 3rds
-                if(firstPlaceHeats.Count >= 3)
+                if (firstPlaceHeats.Count >= 3)
                 {
                     secondPlaceHeats.Clear();
                     thirdPlaceHeats.Clear();
@@ -149,7 +86,7 @@ namespace DualMeetManager.Service.Scoring
 
                 //Check if 2 firsts
                 //Should have no 2nd, its should become third
-                if(firstPlaceHeats.Count == 2)
+                if (firstPlaceHeats.Count == 2)
                 {
                     thirdPlaceHeats.Clear();
                     thirdPlaceHeats.AddRange(secondPlaceHeats);
@@ -160,7 +97,7 @@ namespace DualMeetManager.Service.Scoring
 
                 //Check if 2 or more seconds
                 //Should have no 3rds
-                if(secondPlaceHeats.Count >= 2)
+                if (secondPlaceHeats.Count >= 2)
                 {
                     thirdPlaceHeats.Clear();
                     thirdPlacePerf = 0;
@@ -189,7 +126,7 @@ namespace DualMeetManager.Service.Scoring
                             {
                                 secondPlaceHeats.Add(teams1and2[i].heatNum);
                                 secondPlacePerf = teams1and2[i].performance;
-                            }                        
+                            }
                         }
                     }
                 }
@@ -222,14 +159,15 @@ namespace DualMeetManager.Service.Scoring
                     //Third place should not be calculated because of ties with 1st and/or 2nd
                 }
 
-                
+
             }
             else //No performances for either team. Uncontested Event
             {
                 //null object. needs created here
                 Console.WriteLine("No performances for this event. Returning null IndEvent");
                 eventToReturn = new IndEvent();
-                Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                //Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                Console.WriteLine("Leaving " + MethodBase.GetCurrentMethod().DeclaringType + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return eventToReturn;
             }
 
@@ -313,21 +251,21 @@ namespace DualMeetManager.Service.Scoring
                     //Calculate Tie info
 
                     //Two-Way Tie
-                    if(firstPlaceHeats.Count == 2)
+                    if (firstPlaceHeats.Count == 2)
                     {
-                        foreach(Performance p in teams1and2)
+                        foreach (Performance p in teams1and2)
                         {
-                            if(p.performance == firstPlacePerf && firstPlaceHeats.Contains(p.heatNum))
+                            if (p.performance == firstPlacePerf && firstPlaceHeats.Contains(p.heatNum))
                             {
                                 //test taking out p.heatNum here
                                 //Not sure if this is correct
                                 firstPlaceHeats.Remove(p.heatNum);
 
-                                if(p.schoolName == team1Abbr)
+                                if (p.schoolName == team1Abbr)
                                 {
-                                    firstEventPoints.team1Pts += 4; 
+                                    firstEventPoints.team1Pts += 4;
                                 }
-                                else if(p.schoolName == team2Abbr)
+                                else if (p.schoolName == team2Abbr)
                                 {
                                     firstEventPoints.team2Pts += 4;
                                 }
@@ -375,7 +313,7 @@ namespace DualMeetManager.Service.Scoring
                         firstEventPoints.team1Pts = 5;
                         firstEventPoints.team2Pts = 0;
                     }
-                    else if(firstEventPoints.schoolName == team2Abbr)
+                    else if (firstEventPoints.schoolName == team2Abbr)
                     {
                         firstEventPoints.team1Pts = 0;
                         firstEventPoints.team2Pts = 5;
@@ -384,7 +322,7 @@ namespace DualMeetManager.Service.Scoring
                     {
                         Console.WriteLine("ERROR! First Place Points being assigned to an incorrect team name");
                     }
-                } 
+                }
             }
             else
             {
@@ -431,16 +369,16 @@ namespace DualMeetManager.Service.Scoring
                 else
                 {
                     //Populate regular non-tie info
-                    for(int i = 1; i < teams1and2.Count; i++)
+                    for (int i = 1; i < teams1and2.Count; i++)
                     {
-                        if(teams1and2[i].performance == secondPlacePerf)
+                        if (teams1and2[i].performance == secondPlacePerf)
                         {
                             secondEventPoints.athleteName = teams1and2[i].athleteName;
                             secondEventPoints.schoolName = teams1and2[i].schoolName;
                             break; //break added, same perf same heat error without
                         }
                     }
-                    
+
                     if (secondEventPoints.schoolName == team1Abbr)
                     {
                         secondEventPoints.team1Pts = 3;
@@ -548,8 +486,124 @@ namespace DualMeetManager.Service.Scoring
             //
             //return IndEvent Object
             //
-            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            Console.WriteLine("Leaving " + MethodBase.GetCurrentMethod().DeclaringType + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return eventToReturn;
+        }
+
+        /// <summary>
+        /// Implementation for adding an indEvent to an OverallScore object
+        /// </summary>
+        /// <param name="scores">Overall scores</param>
+        /// <param name="eventName">Name of the event being added</param>
+        /// <param name="eventToAdd">Data for the event being added</param>
+        /// <returns>OverallScore with the event added</returns>
+        public OverallScore AddIndEvent(OverallScore scores, string eventName, IndEvent eventToAdd)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Implementation for adding a relayEvent to an OverallScore object
+        /// </summary>
+        /// <param name="scores">Overall scores</param>
+        /// <param name="eventName">Name of the event being added</param>
+        /// <param name="eventToAdd">Data for the event being added</param>
+        /// <returns>OverallScore with the event added</returns>
+        public OverallScore AddRelayEvent(OverallScore scores, string eventName, RelayEvent eventToAdd)
+        {
+            throw new NotImplementedException();
+        }
+
+        /// <summary>
+        /// Implementation for calculating points (1st, 2nd, and 3rd) for an individual field event
+        /// </summary>
+        /// <param name="team1Abbr">Abbr for team 1</param>
+        /// <param name="team2Abbr">Abbr for team 2</param>
+        /// <param name="perf">Complete list of performances for a particular field event</param>
+        /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
+        public IndEvent CalculateFieldEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            //
+            //gather performances from only teams 1 and 2
+            //
+            List<Performance> teams1and2 = new List<Performance>();
+            foreach (Performance i in perf) //Iterate through entire list of performances
+            {
+                if (i.schoolName == team1Abbr || i.schoolName == team2Abbr) //check if the performance is for Team 1 or 2
+                {
+                    teams1and2.Add(i); //Add performance to working List
+                }
+            }
+            //
+            //sort performances from best to worst
+            //
+            teams1and2 = teams1and2.OrderByDescending(o => o.performance).ToList();
+
+            return CalculateIndEventInOrder(team1Abbr, team2Abbr, teams1and2);
+        }
+
+        /// <summary>
+        /// Implementation for calculating points (1st, and 2nd) for a relay event
+        /// </summary>
+        /// <param name="team1Abbr">Abbr for team 1</param>
+        /// <param name="team2Abbr">Abbr for team 2</param>
+        /// <param name="perf"></param>
+        /// <returns>RelayEvent, which holds all information ragarding this event's points</returns>
+        public RelayEvent CalculateRelayEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            //
+            //gather performances from only teams 1 and 2
+            //
+            List<Performance> teams1and2 = new List<Performance>();
+            foreach (Performance i in perf) //Iterate through entire list of performances
+            {
+                if (i.schoolName == team1Abbr || i.schoolName == team2Abbr) //check if the performance is for Team 1 or 2
+                {
+                    teams1and2.Add(i); //Add performance to working List
+                }
+            }
+            //
+            //sort performances from best to worst
+            //
+            teams1and2 = teams1and2.OrderBy(o => o.performance).ToList();
+
+            RelayEvent eventToReturn = new RelayEvent();
+            eventToReturn.team1 = team1Abbr;
+            eventToReturn.team2 = team2Abbr;
+
+            //Take Out
+            return null;
+        }
+
+        /// <summary>
+        /// Interface for calculating points (1st, 2nd, and 3rd) for an individual running event
+        /// </summary>
+        /// <param name="team1Abbr">Abbr for team 1</param>
+        /// <param name="team2Abbr">Abbr for team 2</param>
+        /// <param name="perf">Complete list of performances for a particular running event</param>
+        /// <returns>IndEvent, which holds all information ragarding this event's points</returns>
+        public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            //
+            //gather performances from only teams 1 and 2
+            //
+            List<Performance> teams1and2 = new List<Performance>();
+            foreach(Performance i in perf) //Iterate through entire list of performances
+            {
+                if (i.schoolName == team1Abbr || i.schoolName == team2Abbr) //check if the performance is for Team 1 or 2
+                {
+                    teams1and2.Add(i); //Add performance to working List
+                }
+            }
+            //
+            //sort performances from best to worst
+            //
+            teams1and2 = teams1and2.OrderBy(o => o.performance).ToList();
+
+            return CalculateIndEventInOrder(team1Abbr, team2Abbr, teams1and2);
         }
 
         /// <summary>
