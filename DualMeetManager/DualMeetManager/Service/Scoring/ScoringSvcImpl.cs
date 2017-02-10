@@ -179,13 +179,13 @@ namespace DualMeetManager.Service.Scoring
                                 if (!thirdPlaceHeats.Contains(teams1and2[i].heatNum))
                                 {
                                     thirdPlaceHeats.Add(teams1and2[i].heatNum);
-                                    thirdPlacePerf = teams1and2[0].performance;
+                                    thirdPlacePerf = teams1and2[i].performance;
                                 }
                             }
                             else
                             {
                                 secondPlaceHeats.Add(teams1and2[i].heatNum);
-                                secondPlacePerf = teams1and2[0].performance;
+                                secondPlacePerf = teams1and2[i].performance;
                             }                        
                         }
                     }
@@ -209,7 +209,7 @@ namespace DualMeetManager.Service.Scoring
                             if (!thirdPlaceHeats.Contains(teams1and2[i].heatNum))
                             {
                                 thirdPlaceHeats.Add(teams1and2[i].heatNum);
-                                thirdPlacePerf = teams1and2[0].performance;
+                                thirdPlacePerf = teams1and2[i].performance;
                             }
                         }
                     }
@@ -366,9 +366,28 @@ namespace DualMeetManager.Service.Scoring
                 secondEventPoints.performance = DESI.ConvertToTimedData(secondPlacePerf);
                 if (secondPlaceHeats.Count > 1)
                 {
+                    Console.WriteLine(firstPlaceHeats.Count + "-Way Tie for 1st");
                     secondEventPoints.athleteName = "TIE";
                     secondEventPoints.schoolName = "TIE";
                     //Calculate Tie info
+                    foreach (Performance p in teams1and2)
+                    {
+                        if (p.performance == secondPlacePerf && secondPlaceHeats.Contains(p.heatNum))
+                        {
+                            if (p.schoolName == team1Abbr)
+                            {
+                                secondEventPoints.team1Pts += (4.0m / secondPlaceHeats.Count);
+                            }
+                            else if (p.schoolName == team2Abbr)
+                            {
+                                secondEventPoints.team2Pts += (4.0m / secondPlaceHeats.Count);
+                            }
+                            else
+                            {
+                                Console.WriteLine("ERROR! This code should be unreachable!");
+                            }
+                        }
+                    }
                 }
                 else
                 {
@@ -379,6 +398,7 @@ namespace DualMeetManager.Service.Scoring
                         {
                             secondEventPoints.athleteName = teams1and2[i].athleteName;
                             secondEventPoints.schoolName = teams1and2[i].schoolName;
+                            break; //break added, same perf same heat error without
                         }
                     }
                     
@@ -416,16 +436,35 @@ namespace DualMeetManager.Service.Scoring
                     thirdEventPoints.athleteName = "TIE";
                     thirdEventPoints.schoolName = "TIE";
                     //Calculate Tie info
+                    foreach (Performance p in teams1and2)
+                    {
+                        if (p.performance == thirdPlacePerf && thirdPlaceHeats.Contains(p.heatNum))
+                        {
+                            if (p.schoolName == team1Abbr)
+                            {
+                                thirdEventPoints.team1Pts += (1.0m / thirdPlaceHeats.Count);
+                            }
+                            else if (p.schoolName == team2Abbr)
+                            {
+                                thirdEventPoints.team2Pts += (1.0m / thirdPlaceHeats.Count);
+                            }
+                            else
+                            {
+                                Console.WriteLine("ERROR! This code should be unreachable!");
+                            }
+                        }
+                    }
                 }
                 else
                 {
                     //Populate regular non-tie info
-                    for (int i = 1; i < teams1and2.Count; i++)
+                    for (int i = 2; i < teams1and2.Count; i++)
                     {
                         if (teams1and2[i].performance == thirdPlacePerf)
                         {
                             thirdEventPoints.athleteName = teams1and2[i].athleteName;
                             thirdEventPoints.schoolName = teams1and2[i].schoolName;
+                            break; //break added, same perf same heat error without
                         }
                     }
 
