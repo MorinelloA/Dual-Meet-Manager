@@ -1355,6 +1355,67 @@ namespace DualMeetManager.Tests.Service.Scoring
         }
 
         [TestCase]
+        public void TestFourSameThirdPerfThreeHeats()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            //public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+            string team1 = "PLM";
+            string team2 = "GWY";
+            List<Performance> perfs = new List<Performance>();
+
+            //public Performance(string athleteName, string schoolName, decimal performance)
+            perfs.Add(new Performance("Plum Athlete #1", "PLM", 1, 10.1m));
+            perfs.Add(new Performance("Gateway Athlete #1", "GWY", 1, 10.2m));
+            perfs.Add(new Performance("Plum Athlete #2", "PLM", 1, 10.3m));
+            perfs.Add(new Performance("Gateway Athlete #2", "GWY", 2, 10.3m));
+            perfs.Add(new Performance("Plum Athlete #3", "PLM", 2, 10.3m));
+            perfs.Add(new Performance("Gateway Athlete #3", "GWY", 2, 10.33m));
+            perfs.Add(new Performance("Plum Athlete #4", "GWY", 3, 10.3m));
+            perfs.Add(new Performance("Plum Athlete #5", "PLM", 3, 10.6m));
+            perfs.Add(new Performance("Gateway Athlete #4", "GWY", 3, 10.7m));
+
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
+            ScoringSvcImpl SSI = new ScoringSvcImpl();
+
+            IndEvent eventToTest = new IndEvent();
+            eventToTest = SSI.CalculateRunningEvent(team1, team2, perfs);
+
+            bool test = true;
+
+            if (Math.Round(eventToTest.team1Total, 4) != Math.Round(5m + (1.0m/3.0m), 4))
+            {
+                test = false;
+                Console.WriteLine("Team 1 Total does not equal " + (5m + (1.0m / 3.0m)) + " - It equals " + eventToTest.team1Total);
+                Console.WriteLine("Team 1 First Place Points - " + eventToTest.points[0].team1Pts);
+                Console.WriteLine("Team 1 Second Place Points - " + eventToTest.points[1].team1Pts);
+                Console.WriteLine("Team 1 Third Place Points - " + eventToTest.points[2].team1Pts);
+            }
+            if (Math.Round(eventToTest.team2Total, 4) != Math.Round(3m + (2.0m/3.0m), 4))
+            {
+                test = false;
+                Console.WriteLine("Team 2 Total does not equal " + (3m + (2.0m / 3.0m)) + " - It equals " + eventToTest.team2Total);
+                Console.WriteLine("Team 2 First Place Points - " + eventToTest.points[0].team2Pts);
+                Console.WriteLine("Team 2 Second Place Points - " + eventToTest.points[1].team2Pts);
+                Console.WriteLine("Team 2 Third Place Points - " + eventToTest.points[2].team2Pts);
+            }
+
+            if (!test)
+            {
+                Console.WriteLine("Complete EventTest for Error Logging:");
+                Console.WriteLine(eventToTest.ToString());
+            }
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [TestCase]
         public void TestNoPerformances()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
