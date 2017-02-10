@@ -4,14 +4,14 @@ using System.Collections.Generic;
 
 namespace DualMeetManager.Service.DataEntry
 {
-    public class DataEntrySvcImpl : IDataEntrySvc
+    public static class DataEntrySvcStaticImpl
     {
         /// <summary>
         /// Implementation for converting raw seconds into a formatted time
         /// </summary>
         /// <param name="perf">raw seconds</param>
         /// <returns>formatted time</returns>
-        public string ConvertToTimedData(decimal perf)
+        public static string ConvertToTimedData(decimal perf)
         {
             if (perf == 0m) return "";
             decimal TS, TM;
@@ -26,11 +26,11 @@ namespace DualMeetManager.Service.DataEntry
             {
                 if (TS >= 10)
                 {
-                    return(TM + ":" + TS.ToString("0.###"));
+                    return (TM + ":" + TS.ToString("0.###"));
                 }
                 else
                 {
-                    return(TM + ":0" + TS.ToString("0.###"));
+                    return (TM + ":0" + TS.ToString("0.###"));
                 }
             }
             else
@@ -45,7 +45,7 @@ namespace DualMeetManager.Service.DataEntry
         /// <param name="perf">String as minutes:seconds</param>
         /// <returns>raw data as total seconds</returns>
         /// <remarks>Needs further error handling for null or invalid strings</remarks>
-        public decimal ConvertFromTimedData(string perf)
+        public static decimal ConvertFromTimedData(string perf)
         {
             int divider = 0;
             for (int x = 0; x < perf.Length; x++)
@@ -65,7 +65,7 @@ namespace DualMeetManager.Service.DataEntry
                 }
             }
             else
-                return(Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
+                return (Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
         }
 
         /// <summary>
@@ -73,7 +73,7 @@ namespace DualMeetManager.Service.DataEntry
         /// </summary>
         /// <param name="perf">raw inches</param>
         /// <returns>formated length</returns>
-        public string ConvertToLengthData(decimal perf)
+        public static string ConvertToLengthData(decimal perf)
         {
             if (perf == 0m) return "";
             decimal TS, TM;
@@ -107,7 +107,7 @@ namespace DualMeetManager.Service.DataEntry
         /// <param name="perf">String as feet-inches</param>
         /// <returns>raw data as total inches</returns>
         /// <remarks>Needs further error handling for null or invalid strings</remarks>
-        public decimal ConvertFromLengthData(string perf)
+        public static decimal ConvertFromLengthData(string perf)
         {
             int divider = 0;
             for (int x = 0; x < perf.Length; x++)
@@ -137,7 +137,7 @@ namespace DualMeetManager.Service.DataEntry
         /// <param name="eventName">Event to add to the current dictionary</param>
         /// <param name="perfToAdd">Performance to add to the current dictionary</param>
         /// <returns>Updated Dictionary</returns>
-        public Dictionary<string, List<Performance>> AddPerformanceToEvent(Dictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd)
+        public static Dictionary<string, List<Performance>> AddPerformanceToEvent(this Dictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd)
         {
             List<Performance> newPerfList = new List<Performance>();
             //This method is for adding a single performance, not a List
@@ -168,18 +168,11 @@ namespace DualMeetManager.Service.DataEntry
         /// <param name="eventName">Event to add to the current dictionary</param>
         /// <param name="perfsToAdd">Performances to add to the current dictionary</param>
         /// <returns>Updated Dictionary</returns>
-        public Dictionary<string, List<Performance>> AddPerformanceToEvent(Dictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd)
+        public static Dictionary<string, List<Performance>> AddPerformanceToEvent(this Dictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd)
         {
             perfList[eventName] = perfsToAdd;
             return perfList;
         }
 
-        //Extension Method
-        
-        /*public Dictionary<string, List<Performance>> AddPerformanceToEvent(this Dictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd)
-        {
-            perfList[eventName] = perfsToAdd;
-            return perfList;
-        }*/
     }
 }

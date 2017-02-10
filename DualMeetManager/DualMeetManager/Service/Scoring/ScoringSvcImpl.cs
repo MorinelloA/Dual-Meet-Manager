@@ -9,6 +9,9 @@ using DualMeetManager.Service.DataEntry;
 
 namespace DualMeetManager.Service.Scoring
 {
+    /// <summary>
+    /// Implentation for scoring all Meet data
+    /// </summary>
     public class ScoringSvcImpl : IScoringSvc
     {
         /// <summary>

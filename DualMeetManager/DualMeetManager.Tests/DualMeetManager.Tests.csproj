@@ -57,6 +57,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\DataEntry\DataEntrySvcImplTest.cs" />
+    <Compile Include="Service\DataEntry\DataEntrySvcStaticImplTest.cs" />
     <Compile Include="Service\Saving\SavingJsonSvcImplTest.cs" />
     <Compile Include="Service\Scoring\ScoringServiceImplRunningEventTest.cs" />
   </ItemGroup>

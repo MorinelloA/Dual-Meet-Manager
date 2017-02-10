@@ -57,6 +57,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Domain\Teams.cs" />
     <Compile Include="Service\DataEntry\DataEntrySvcImpl.cs" />
+    <Compile Include="Service\DataEntry\DataEntrySvcStaticImpl.cs" />
     <Compile Include="Service\DataEntry\IDataEntrySvc.cs" />
     <Compile Include="Service\Factory.cs" />
     <Compile Include="Service\Printout\IPrintoutDocSvc.cs" />
