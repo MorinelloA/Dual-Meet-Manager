@@ -297,7 +297,7 @@ namespace DualMeetManager.Tests.Service.Scoring
         }
 
         [TestCase]
-        public void TwoWayTieForFirst()
+        public void TwoWayTieForFirst5To4()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -308,9 +308,109 @@ namespace DualMeetManager.Tests.Service.Scoring
 
             //public Performance(string athleteName, string schoolName, decimal performance)
             perfs.Add(new Performance("Plum Athlete #1", "PLM", 1, 10.1m));
-            perfs.Add(new Performance("Gateway Athlete #1", "GWY", 1, 10.2m));
+            perfs.Add(new Performance("Gateway Athlete #1", "GWY", 1, 10.82m));
             perfs.Add(new Performance("Plum Athlete #2", "PLM", 1, 10.3m));
             perfs.Add(new Performance("Gateway Athlete #2", "GWY", 2, 10.4m));
+            perfs.Add(new Performance("Plum Athlete #3", "PLM", 2, 10.5m));
+            perfs.Add(new Performance("Gateway Athlete #3", "GWY", 2, 10.1m));
+
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
+            ScoringSvcImpl SSI = new ScoringSvcImpl();
+
+            IndEvent eventToTest = new IndEvent();
+            eventToTest = SSI.CalculateRunningEvent(team1, team2, perfs);
+
+            bool test = true;
+
+            if (eventToTest.team1Total != 5)
+            {
+                test = false;
+                Console.WriteLine("Team 1 Total does not equal 5 - It equals " + eventToTest.team1Total);
+            }
+            if (eventToTest.team2Total != 4)
+            {
+                test = false;
+                Console.WriteLine("Team 2 Total does not equal 4 - It equals " + eventToTest.team2Total);
+                Console.WriteLine("Team 2 First Place Points - " + eventToTest.points[0].team2Pts);
+                Console.WriteLine("Team 2 Second Place Points - " + eventToTest.points[1].team2Pts);
+                Console.WriteLine("Team 2 Third Place Points - " + eventToTest.points[2].team2Pts);
+            }
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [TestCase, Order(1)]
+        public void TwoWayTieForFirst1To8()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            //public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+            string team1 = "PLM";
+            string team2 = "GWY";
+            List<Performance> perfs = new List<Performance>();
+
+            //public Performance(string athleteName, string schoolName, decimal performance)
+            perfs.Add(new Performance("Plum Athlete #1", "PLM", 1, 10.2m));
+            perfs.Add(new Performance("Gateway Athlete #1", "GWY", 1, 10.1m));
+            perfs.Add(new Performance("Plum Athlete #2", "PLM", 1, 10.3m));
+            perfs.Add(new Performance("Gateway Athlete #2", "GWY", 2, 10.4m));
+            perfs.Add(new Performance("Plum Athlete #3", "PLM", 2, 10.5m));
+            perfs.Add(new Performance("Gateway Athlete #3", "GWY", 2, 10.1m));
+
+            //Log performances
+            Console.WriteLine("Performances:");
+            foreach (Performance i in perfs)
+            {
+                Console.WriteLine(i.ToString());
+            }
+
+            ScoringSvcImpl SSI = new ScoringSvcImpl();
+
+            IndEvent eventToTest = new IndEvent();
+            eventToTest = SSI.CalculateRunningEvent(team1, team2, perfs);
+
+            bool test = true;
+
+            if (eventToTest.team1Total != 1)
+            {
+                test = false;
+                Console.WriteLine("Team 1 Total does not equal 1 - It equals " + eventToTest.team1Total);
+            }
+            if (eventToTest.team2Total != 8)
+            {
+                test = false;
+                Console.WriteLine("Team 2 Total does not equal 8 - It equals " + eventToTest.team2Total);
+                Console.WriteLine("Team 2 First Place Points - " + eventToTest.points[0].team2Pts);
+                Console.WriteLine("Team 2 Second Place Points - " + eventToTest.points[1].team2Pts);
+                Console.WriteLine("Team 2 Third Place Points - " + eventToTest.points[2].team2Pts);
+            }
+
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [TestCase]
+        public void TwoWayTieForFirst4To5()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            //public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+            string team1 = "PLM";
+            string team2 = "GWY";
+            List<Performance> perfs = new List<Performance>();
+
+            //public Performance(string athleteName, string schoolName, decimal performance)
+            perfs.Add(new Performance("Plum Athlete #1", "PLM", 1, 10.1m));
+            perfs.Add(new Performance("Gateway Athlete #1", "GWY", 1, 10.62m));
+            perfs.Add(new Performance("Plum Athlete #2", "PLM", 1, 10.3m));
+            perfs.Add(new Performance("Gateway Athlete #2", "GWY", 2, 10.24m));
             perfs.Add(new Performance("Plum Athlete #3", "PLM", 2, 10.5m));
             perfs.Add(new Performance("Gateway Athlete #3", "GWY", 2, 10.1m));
 

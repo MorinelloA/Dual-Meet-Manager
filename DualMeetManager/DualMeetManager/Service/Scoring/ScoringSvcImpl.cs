@@ -164,7 +164,7 @@ namespace DualMeetManager.Service.Scoring
                 }
 
                 //Check if second place was not already found, at least 2 performances, and not more than one firstPlace
-                if (!(secondPlaceHeats.Count > 0 || teams1and2.Count <= 1))
+                if (!(secondPlaceHeats.Count > 0 || teams1and2.Count <= 1 || firstPlaceHeats.Count > 1))
                 {
                     secondPlacePerf = teams1and2[1].performance;
                     secondPlaceHeats.Add(teams1and2[1].heatNum);
@@ -196,7 +196,7 @@ namespace DualMeetManager.Service.Scoring
                 }
 
                 //Check if third place was not already found and at least 3 performances
-                if (!(thirdPlaceHeats.Count > 0 || teams1and2.Count <= 2))
+                if (!(thirdPlaceHeats.Count > 0 || teams1and2.Count <= 2 || secondPlaceHeats.Count + firstPlaceHeats.Count > 2))
                 {
                     thirdPlacePerf = teams1and2[2].performance;
                     thirdPlaceHeats.Add(teams1and2[2].heatNum);
@@ -235,7 +235,7 @@ namespace DualMeetManager.Service.Scoring
             //This code is also above. MAY be needed again.
             //Check if 3 or more firsts
             //Should have no 2nds or 3rds
-            if (firstPlaceHeats.Count >= 3)
+            /*if (firstPlaceHeats.Count >= 3)
             {
                 secondPlaceHeats.Clear();
                 thirdPlaceHeats.Clear();
@@ -260,7 +260,7 @@ namespace DualMeetManager.Service.Scoring
             {
                 thirdPlaceHeats.Clear();
                 thirdPlacePerf = 0;
-            }
+            }*/
             //End code check
 
             //
@@ -299,6 +299,28 @@ namespace DualMeetManager.Service.Scoring
                                 else if(p.schoolName == team2Abbr)
                                 {
                                     firstEventPoints.team2Pts += 4;
+                                }
+                                else
+                                {
+                                    Console.WriteLine("ERROR! This code should be unreachable!");
+                                }
+                            }
+                        }
+                    }
+                    //More than Two-Way Tie
+                    else if (firstPlaceHeats.Count >= 2)
+                    {
+                        foreach (Performance p in teams1and2)
+                        {
+                            if (p.performance == firstPlacePerf && firstPlaceHeats.Contains(p.heatNum))
+                            {
+                                if (p.schoolName == team1Abbr)
+                                {
+                                    firstEventPoints.team1Pts += (9.0m / firstPlaceHeats.Count);
+                                }
+                                else if (p.schoolName == team2Abbr)
+                                {
+                                    firstEventPoints.team2Pts += (9.0m / firstPlaceHeats.Count);
                                 }
                                 else
                                 {
