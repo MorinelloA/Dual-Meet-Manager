@@ -559,7 +559,8 @@ namespace DualMeetManager.Service.Scoring
             List<Performance> teams1and2 = new List<Performance>();
             foreach (Performance i in perf) //Iterate through entire list of performances
             {
-                if (i.schoolName == team1Abbr || i.schoolName == team2Abbr) //check if the performance is for Team 1 or 2
+                //A name stands for A relays. Only A relays count towards points. B and above are scrimmage relays 
+                if ((i.schoolName == team1Abbr && i.athleteName == "A")|| (i.schoolName == team2Abbr && i.athleteName == "A")) //check if the performance is for Team 1 or 2
                 {
                     teams1and2.Add(i); //Add performance to working List
                 }
@@ -573,8 +574,54 @@ namespace DualMeetManager.Service.Scoring
             eventToReturn.team1 = team1Abbr;
             eventToReturn.team2 = team2Abbr;
 
-            //Take Out
-            return null;
+            EventPoints[] points = new EventPoints[2];
+
+            //Use this to convert into strings for EventPoints objects 
+            DataEntrySvcImpl DESI = new DataEntrySvcImpl();
+
+            //First Place
+            if (teams1and2.Count > 0)
+            {
+                if (teams1and2[0].schoolName == team1Abbr)
+                {
+                    points[0] = new EventPoints(5.0m, 0.0m, teams1and2[0].athleteName, teams1and2[0].schoolName, DESI.ConvertToTimedData(teams1and2[0].performance));
+                }
+                else if (teams1and2[0].schoolName == team2Abbr)
+                {
+                    points[0] = new EventPoints(0.0m, 5.0m, teams1and2[0].athleteName, teams1and2[0].schoolName, DESI.ConvertToTimedData(teams1and2[0].performance));
+                }
+                else
+                {
+                    Console.WriteLine("ERROR! This code should be unreachable!");
+                }
+            }
+
+            //Second Place
+            if (teams1and2.Count > 1)
+            {
+                if (teams1and2[1].schoolName == team1Abbr)
+                {
+                    points[1] = new EventPoints(0.0m, 0.0m, teams1and2[1].athleteName, teams1and2[1].schoolName, DESI.ConvertToTimedData(teams1and2[1].performance));
+                }
+                else if (teams1and2[1].schoolName == team2Abbr)
+                {
+                    points[1] = new EventPoints(0.0m, 0.0m, teams1and2[1].athleteName, teams1and2[1].schoolName, DESI.ConvertToTimedData(teams1and2[1].performance));
+                }
+                else
+                {
+                    Console.WriteLine("ERROR! This code should be unreachable!");
+                }
+            }
+
+            //Add Points data to returning object
+            eventToReturn.points = points;
+
+            //Calculate Totals
+            eventToReturn.team1Total = points[0].team1Pts + points[1].team1Pts;
+            eventToReturn.team2Total = points[0].team2Pts + points[1].team2Pts;
+            
+            //return object
+            return eventToReturn;
         }
 
         /// <summary>
