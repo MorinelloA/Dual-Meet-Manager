@@ -17,9 +17,14 @@ namespace DualMeetManager.Service
             return new DataEntrySvcImpl();
         }
 
-        public IPrintoutDocSvc GetPrintoutSvc()
+        public IPrintoutDocSvc GetPrintoutDocSvc()
         {
             return new PrintoutDocXSvcImpl();
+        }
+
+        public IPrintoutPDFSvc GetPrintoutPDFSvc()
+        {
+            return new PrintoutPDFSharpSvcImpl();
         }
 
         public ISavingSvc GetSavingSvc()
