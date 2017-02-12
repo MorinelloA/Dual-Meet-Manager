@@ -31,10 +31,16 @@ namespace DualMeetManager.Service.Saving
                 writer = new StreamWriter(filePath, false);
                 writer.Write(jsonData);
             }
-            catch(Exception e)
+            catch (IOException ioe)
             {
-                Console.WriteLine(e);
-                //If there is an exception above, the file did not save properly.
+                Console.WriteLine(ioe.ToString());
+                Console.Write(ioe.StackTrace);
+                didSave = false;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+                Console.Write(e.StackTrace);
                 didSave = false;
             }
             finally
@@ -65,10 +71,22 @@ namespace DualMeetManager.Service.Saving
                     myMeet = JsonConvert.DeserializeObject<Meet>(line);
                 }
             }
+            catch (FileNotFoundException fnfe)
+            {
+                Console.WriteLine(fnfe.ToString());
+                Console.Write(fnfe.StackTrace);
+                return null;
+            }
+            catch (IOException ioe)
+            {
+                Console.WriteLine(ioe.ToString());
+                Console.Write(ioe.StackTrace);
+                return null;
+            }
             catch (Exception e)
             {
-                Console.WriteLine("The file could not be read:");
-                Console.WriteLine(e.Message);
+                Console.WriteLine(e.ToString());
+                Console.Write(e.StackTrace);
                 return null;
             }
             Console.WriteLine("Leaving openMeet");

@@ -1,6 +1,8 @@
-﻿using DualMeetManager.Domain;
+﻿using DualMeetManager.Business.Exceptions;
+using DualMeetManager.Domain;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace DualMeetManager.Service.DataEntry
 {
@@ -26,11 +28,11 @@ namespace DualMeetManager.Service.DataEntry
             {
                 if (TS >= 10)
                 {
-                    return(TM + ":" + TS.ToString("0.###"));
+                    return (TM + ":" + TS.ToString("0.###"));
                 }
                 else
                 {
-                    return(TM + ":0" + TS.ToString("0.###"));
+                    return (TM + ":0" + TS.ToString("0.###"));
                 }
             }
             else
@@ -47,25 +49,48 @@ namespace DualMeetManager.Service.DataEntry
         /// <remarks>Needs further error handling for null or invalid strings</remarks>
         public decimal ConvertFromTimedData(string perf)
         {
-            int divider = 0;
-            for (int x = 0; x < perf.Length; x++)
+            try
             {
-                if (perf[x] == ':')
-                    divider = x;
-            }
-            if (divider != 0)
-            {
-                if (perf.Length > divider + 1)
+                if (!perf.All(c => char.IsDigit(c) || c == ':'))
                 {
-                    return (Math.Round(Convert.ToDecimal(perf.Substring(0, divider)) * 60 + Convert.ToDecimal(perf.Substring((divider + 1), ((perf.Length) - (divider + 1)))), 3));
+                    throw new InvalidPerformanceException("Invalid Symbol used. Non-Digit or : found");
+                }
+                else if (perf.IndexOf(':') != perf.LastIndexOf(':'))
+                {
+                    throw new InvalidPerformanceException("More than 1 : found");
+                }
+                int divider = 0;
+                for (int x = 0; x < perf.Length; x++)
+                {
+                    if (perf[x] == ':')
+                        divider = x;
+                }
+                if (divider != 0)
+                {
+                    if (perf.Length > divider + 1)
+                    {
+                        return (Math.Round(Convert.ToDecimal(perf.Substring(0, divider)) * 60 + Convert.ToDecimal(perf.Substring((divider + 1), ((perf.Length) - (divider + 1)))), 3));
+                    }
+                    else
+                    {
+                        return (Math.Round(Convert.ToDecimal(perf.Substring(0, perf.Length - 1)) * 60, 3));
+                    }
                 }
                 else
-                {
-                    return (Math.Round(Convert.ToDecimal(perf.Substring(0, perf.Length - 1)) * 60, 3));
-                }
+                    return (Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
             }
-            else
-                return(Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
+            catch (InvalidPerformanceException ipe)
+            {
+                Console.WriteLine(ipe.ToString());
+                Console.Write(ipe.StackTrace);
+                return 0m;
+            }
+            catch (IndexOutOfRangeException ioore)
+            {
+                Console.WriteLine(ioore.ToString());
+                Console.Write(ioore.StackTrace);
+                return 0m;
+            }
         }
 
         /// <summary>
@@ -109,25 +134,48 @@ namespace DualMeetManager.Service.DataEntry
         /// <remarks>Needs further error handling for null or invalid strings</remarks>
         public decimal ConvertFromLengthData(string perf)
         {
-            int divider = 0;
-            for (int x = 0; x < perf.Length; x++)
+            try
             {
-                if (perf[x] == '-')
-                    divider = x;
-            }
-            if (divider != 0)
-            {
-                if (perf.Length > divider + 1)
+                if (!perf.All(c => char.IsDigit(c) || c == '-'))
                 {
-                    return (Math.Round(Convert.ToDecimal(perf.Substring(0, divider)) * 12 + Convert.ToDecimal(perf.Substring((divider + 1), ((perf.Length) - (divider + 1)))), 3));
+                    throw new InvalidPerformanceException("Invalid Symbol used. Non-Digit or : found");
+                }
+                else if (perf.IndexOf('-') != perf.LastIndexOf('-'))
+                {
+                    throw new InvalidPerformanceException("More than 1 - found");
+                }
+                int divider = 0;
+                for (int x = 0; x < perf.Length; x++)
+                {
+                    if (perf[x] == '-')
+                        divider = x;
+                }
+                if (divider != 0)
+                {
+                    if (perf.Length > divider + 1)
+                    {
+                        return (Math.Round(Convert.ToDecimal(perf.Substring(0, divider)) * 12 + Convert.ToDecimal(perf.Substring((divider + 1), ((perf.Length) - (divider + 1)))), 3));
+                    }
+                    else
+                    {
+                        return (Math.Round(Convert.ToDecimal(perf.Substring(0, perf.Length - 1)) * 12, 3));
+                    }
                 }
                 else
-                {
-                    return (Math.Round(Convert.ToDecimal(perf.Substring(0, perf.Length - 1)) * 12, 3));
-                }
+                    return (Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
             }
-            else
-                return (Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
+            catch (InvalidPerformanceException ipe)
+            {
+                Console.WriteLine(ipe.ToString());
+                Console.Write(ipe.StackTrace);
+                return 0m;
+            }
+            catch (IndexOutOfRangeException ioore)
+            {
+                Console.WriteLine(ioore.ToString());
+                Console.Write(ioore.StackTrace);
+                return 0m;
+            }
         }
 
         /// <summary>

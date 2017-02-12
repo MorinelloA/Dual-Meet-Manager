@@ -48,6 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\Exceptions\InvalidPerformanceException.cs" />
+    <Compile Include="Business\Exceptions\MeetNotFoundException.cs" />
+    <Compile Include="Business\Exceptions\TeamNotFoundException.cs" />
     <Compile Include="Domain\Meet.cs" />
     <Compile Include="Domain\Performance.cs" />
     <Compile Include="Domain\Scoring\EventPoints.cs" />
@@ -79,9 +82,7 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Business\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

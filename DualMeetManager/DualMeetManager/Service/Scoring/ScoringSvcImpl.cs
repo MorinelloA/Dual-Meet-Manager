@@ -7,6 +7,7 @@ using DualMeetManager.Domain;
 using DualMeetManager.Domain.Scoring;
 using DualMeetManager.Service.DataEntry;
 using System.Reflection;
+using DualMeetManager.Business.Exceptions;
 
 namespace DualMeetManager.Service.Scoring
 {
@@ -272,6 +273,7 @@ namespace DualMeetManager.Service.Scoring
                                 else
                                 {
                                     Console.WriteLine("ERROR! This code should be unreachable!");
+                                    throw new TeamNotFoundException(p.schoolName + " does not equal " + team1Abbr + " or " + team2Abbr);
                                 }
                             }
                         }
@@ -298,6 +300,7 @@ namespace DualMeetManager.Service.Scoring
                                 else
                                 {
                                     Console.WriteLine("ERROR! This code should be unreachable!");
+                                    throw new TeamNotFoundException(p.schoolName + " does not equal " + team1Abbr + " or " + team2Abbr);
                                 }
                             }
                         }
@@ -320,7 +323,8 @@ namespace DualMeetManager.Service.Scoring
                     }
                     else
                     {
-                        Console.WriteLine("ERROR! First Place Points being assigned to an incorrect team name");
+                        Console.WriteLine("ERROR! This code should be unreachable!");
+                        throw new TeamNotFoundException(firstEventPoints.schoolName + " does not equal " + team1Abbr + " or " + team2Abbr);
                     }
                 }
             }
@@ -362,6 +366,7 @@ namespace DualMeetManager.Service.Scoring
                             else
                             {
                                 Console.WriteLine("ERROR! This code should be unreachable!");
+                                throw new TeamNotFoundException(p.schoolName + " does not equal " + team1Abbr + " or " + team2Abbr);
                             }
                         }
                     }
@@ -392,6 +397,7 @@ namespace DualMeetManager.Service.Scoring
                     else
                     {
                         Console.WriteLine("ERROR! Second Place Points being assigned to an incorrect team name");
+                        throw new TeamNotFoundException(secondEventPoints.schoolName + " does not equal " + team1Abbr + " or " + team2Abbr);
                     }
                 }
             }
@@ -433,6 +439,7 @@ namespace DualMeetManager.Service.Scoring
                             else
                             {
                                 Console.WriteLine("ERROR! This code should be unreachable!");
+                                throw new TeamNotFoundException(p.schoolName + " does not equal " + team1Abbr + " or " + team2Abbr);
                             }
                         }
                     }
@@ -464,6 +471,7 @@ namespace DualMeetManager.Service.Scoring
                     else
                     {
                         Console.WriteLine("ERROR! Third Place Points being assigned to an incorrect team name");
+                        throw new TeamNotFoundException(thirdEventPoints.schoolName + " does not equal " + team1Abbr + " or " + team2Abbr);
                     }
                 }
             }
@@ -595,6 +603,7 @@ namespace DualMeetManager.Service.Scoring
                 else
                 {
                     Console.WriteLine("ERROR! This code should be unreachable!");
+                    throw new TeamNotFoundException(teams1and2[0].schoolName + " does not equal " + team1Abbr + " or " + team2Abbr);
                 }
             }
 
@@ -612,6 +621,7 @@ namespace DualMeetManager.Service.Scoring
                 else
                 {
                     Console.WriteLine("ERROR! This code should be unreachable!");
+                    throw new TeamNotFoundException(teams1and2[1].schoolName + " does not equal " + team1Abbr + " or " + team2Abbr);
                 }
             }
 
@@ -627,7 +637,7 @@ namespace DualMeetManager.Service.Scoring
         }
 
         /// <summary>
-        /// Interface for calculating points (1st, 2nd, and 3rd) for an individual running event
+        /// Implementation for calculating points (1st, 2nd, and 3rd) for an individual running event
         /// </summary>
         /// <param name="team1Abbr">Abbr for team 1</param>
         /// <param name="team2Abbr">Abbr for team 2</param>
