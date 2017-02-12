@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DualMeetManager.Service.Printout
 {
-    public interface IPrintoutDocSvc
+    public interface IPrintoutDocSvc : IService
     {
         /// <summary>
         /// Interface for creating a doc of individual event performances

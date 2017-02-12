@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace DualMeetManager.Service.Scoring
 {
-    public interface IScoringSvc
+    public interface IScoringSvc : IService
     {
         /// <summary>
         /// Interface for calculating points (1st, 2nd, and 3rd) for an individual running event

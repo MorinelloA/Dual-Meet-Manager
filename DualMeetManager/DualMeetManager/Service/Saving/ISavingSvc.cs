@@ -10,7 +10,7 @@ namespace DualMeetManager.Service.Saving
     /// <summary>
     /// Interface for saving objects
     /// </summary>
-    public interface ISavingSvc
+    public interface ISavingSvc : IService
     {
         /// <summary>
         /// Interface for saving a Meet object

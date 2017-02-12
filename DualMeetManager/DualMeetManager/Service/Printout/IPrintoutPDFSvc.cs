@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Service.Printout
 {
-    public interface IPrintoutPDFSvc
+    public interface IPrintoutPDFSvc : IService
     {
         /// <summary>
         /// Interface for creating a PDF of individual event performances

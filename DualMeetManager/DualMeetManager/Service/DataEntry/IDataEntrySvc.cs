@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Service.DataEntry
 {
-    public interface IDataEntrySvc
+    public interface IDataEntrySvc : IService
     {
         /// <summary>
         /// Interface for converting raw seconds into a formatted time
