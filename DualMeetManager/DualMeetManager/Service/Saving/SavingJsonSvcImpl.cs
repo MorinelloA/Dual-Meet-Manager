@@ -33,12 +33,26 @@ namespace DualMeetManager.Service.Saving
             }
             catch (IOException ioe)
             {
+                Console.WriteLine("Error: file not found - " + filePath);
                 Console.WriteLine(ioe.ToString());
                 Console.Write(ioe.StackTrace);
                 didSave = false;
             }
+            catch (JsonWriterException jwe)
+            {
+                Console.WriteLine("Error: JsonWriterException - " + filePath);
+                Console.WriteLine(jwe.ToString());
+                Console.Write(jwe.StackTrace);
+            }
+            catch (JsonSerializationException jse)
+            {
+                Console.WriteLine("Error: JsonSerializationException - " + filePath);
+                Console.WriteLine(jse.ToString());
+                Console.Write(jse.StackTrace);
+            }
             catch (Exception e)
             {
+                Console.WriteLine("Error: Undefined - " + filePath);
                 Console.WriteLine(e.ToString());
                 Console.Write(e.StackTrace);
                 didSave = false;
@@ -81,6 +95,20 @@ namespace DualMeetManager.Service.Saving
             {
                 Console.WriteLine(ioe.ToString());
                 Console.Write(ioe.StackTrace);
+                return null;
+            }
+            catch (JsonReaderException jre)
+            {
+                Console.WriteLine("Error: JsonReaderException");
+                Console.WriteLine(jre.ToString());
+                Console.Write(jre.StackTrace);
+                return null;
+            }
+            catch (JsonSerializationException jse)
+            {
+                Console.WriteLine("Error: JsonSerializationException");
+                Console.WriteLine(jse.ToString());
+                Console.Write(jse.StackTrace);
                 return null;
             }
             catch (Exception e)

@@ -111,5 +111,17 @@ namespace DualMeetManager.Tests.Business
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
+
+        [Test]
+        public void TestOpenInvalidFileMeetMgr()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            MeetMgr mMgr = new MeetMgr();
+            Meet openedMeet = mMgr.openMeet("zyxw.1234");
+            bool test = openedMeet == null;
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
     }
 }

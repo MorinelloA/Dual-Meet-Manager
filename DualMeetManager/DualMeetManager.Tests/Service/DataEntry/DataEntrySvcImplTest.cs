@@ -1,4 +1,5 @@
-﻿using DualMeetManager.Domain;
+﻿using DualMeetManager.Business.Exceptions;
+using DualMeetManager.Domain;
 using DualMeetManager.Service.DataEntry;
 using NUnit.Framework;
 using System;
@@ -192,6 +193,60 @@ namespace DualMeetManager.Tests.Service.DataEntry
             }
 
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [Test]
+        public void TestInvalidLengthDataTwoDashesEvent()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            Assert.Catch<InvalidPerformanceException>(() => DEI.ConvertFromLengthData("3--0.1"));
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [Test]
+        public void TestInvalidLengthDataTwoDecimalst()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            Assert.Catch<InvalidPerformanceException>(() => DEI.ConvertFromLengthData("3-0..1"));
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [Test]
+        public void TestInvalidLengthDataInvalidCharacter()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            Assert.Catch<InvalidPerformanceException>(() => DEI.ConvertFromLengthData("3-o.1"));
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [Test]
+        public void TestInvalidTimedDataTwoColins()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            Assert.Catch<InvalidPerformanceException>(() => DEI.ConvertFromLengthData("3:0:01"));
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [Test]
+        public void TestInvalidTimedDataTwoDecimals()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            Assert.Catch<InvalidPerformanceException>(() => DEI.ConvertFromLengthData("60..1"));
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
+
+        [Test]
+        public void TestInvalidTimedDataInvalidCharacter()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            DataEntrySvcImpl DEI = new DataEntrySvcImpl();
+            Assert.Catch<InvalidPerformanceException>(() => DEI.ConvertFromLengthData("6o.1"));
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
 

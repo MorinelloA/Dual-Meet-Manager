@@ -114,5 +114,18 @@ namespace DualMeetManager.Tests.Service.Saving
             Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
             Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
         }
+
+        [Test]
+        public void TestOpenMeetInvalidFile()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            SavingJsonSvcImpl savingImplObject = new SavingJsonSvcImpl();
+            Meet openedMeet = new Meet();
+            openedMeet = savingImplObject.openMeet("abcdefghijklmnopqrstuvwxyz.1234567890");
+            bool test = openedMeet == null;
+            Assert.True(test, GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Failed");
+            Console.WriteLine(GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name + " Passed");
+        }
     }
 }

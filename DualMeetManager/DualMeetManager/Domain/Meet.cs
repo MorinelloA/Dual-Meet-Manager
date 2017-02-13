@@ -109,27 +109,34 @@ namespace DualMeetManager.Domain
         /// <returns>A string with all Meet information</returns>
         public override string ToString()
         {
-            StringBuilder str = new StringBuilder();
-            str.Append("Date: " + String.Format("{0:MM/dd/yyyy}", dateOfMeet));
-            str.Append(Environment.NewLine + "Location: " + location);
-            str.Append(Environment.NewLine + "Weather Conditions: " + weatherConditions);
-
-            if(schoolNames != null)
-                str.Append(Environment.NewLine + schoolNames.ToString());
-
-            if (performances != null)
+            if (this == null)
             {
-                foreach (KeyValuePair<string, List<Performance>> i in performances)
+                return "Meet is empty";
+            }
+            else
+            {
+                StringBuilder str = new StringBuilder();
+                str.Append("Date: " + String.Format("{0:MM/dd/yyyy}", dateOfMeet));
+                str.Append(Environment.NewLine + "Location: " + location);
+                str.Append(Environment.NewLine + "Weather Conditions: " + weatherConditions);
+
+                if (schoolNames != null)
+                    str.Append(Environment.NewLine + schoolNames.ToString());
+
+                if (performances != null)
                 {
-                    str.Append(Environment.NewLine + "Event: " + i.Key.ToString());
-                    foreach (Performance j in i.Value)
+                    foreach (KeyValuePair<string, List<Performance>> i in performances)
                     {
-                        str.Append(Environment.NewLine + j.ToString());
+                        str.Append(Environment.NewLine + "Event: " + i.Key.ToString());
+                        foreach (Performance j in i.Value)
+                        {
+                            str.Append(Environment.NewLine + j.ToString());
+                        }
                     }
                 }
-            }
 
-            return str.ToString();
+                return str.ToString();
+            }
         }
 
         /// <summary>
