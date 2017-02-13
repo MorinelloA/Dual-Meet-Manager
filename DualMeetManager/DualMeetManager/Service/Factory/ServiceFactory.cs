@@ -3,7 +3,7 @@ using System.Collections.Specialized;
 using System.Configuration;
 //using IService = DualMeetManager.Service.IService;
 
-namespace DualMeetManager.Service
+namespace DualMeetManager.Service.Factory
 {
     /// <summary>
     /// Service Factory

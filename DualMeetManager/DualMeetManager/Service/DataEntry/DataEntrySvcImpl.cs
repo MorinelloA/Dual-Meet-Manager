@@ -51,13 +51,17 @@ namespace DualMeetManager.Service.DataEntry
         {
             try
             {
-                if (!perf.All(c => char.IsDigit(c) || c == ':'))
+                if (!perf.All(c => char.IsDigit(c) || c == ':' || c == '.'))
                 {
                     throw new InvalidPerformanceException("Invalid Symbol used. Non-Digit or : found");
                 }
                 else if (perf.IndexOf(':') != perf.LastIndexOf(':'))
                 {
                     throw new InvalidPerformanceException("More than 1 : found");
+                }
+                else if (perf.IndexOf('.') != perf.LastIndexOf('.'))
+                {
+                    throw new InvalidPerformanceException("More than 1 . found");
                 }
                 int divider = 0;
                 for (int x = 0; x < perf.Length; x++)
@@ -136,13 +140,17 @@ namespace DualMeetManager.Service.DataEntry
         {
             try
             {
-                if (!perf.All(c => char.IsDigit(c) || c == '-'))
+                if (!perf.All(c => char.IsDigit(c) || c == '-' || c == '.'))
                 {
-                    throw new InvalidPerformanceException("Invalid Symbol used. Non-Digit or : found");
+                    throw new InvalidPerformanceException("Invalid Symbol used. Non-Digit or - found");
                 }
                 else if (perf.IndexOf('-') != perf.LastIndexOf('-'))
                 {
                     throw new InvalidPerformanceException("More than 1 - found");
+                }
+                else if (perf.IndexOf('.') != perf.LastIndexOf('.'))
+                {
+                    throw new InvalidPerformanceException("More than 1 . found");
                 }
                 int divider = 0;
                 for (int x = 0; x < perf.Length; x++)

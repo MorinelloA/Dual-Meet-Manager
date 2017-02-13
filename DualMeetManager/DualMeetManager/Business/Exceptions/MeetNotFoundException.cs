@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace DualMeetManager.Business.Exceptions
 {
-    class MeetNotFoundException
+    public class MeetNotFoundException : Exception
     {
+        public MeetNotFoundException(string s) : base(s)
+        {
+        }
     }
 }

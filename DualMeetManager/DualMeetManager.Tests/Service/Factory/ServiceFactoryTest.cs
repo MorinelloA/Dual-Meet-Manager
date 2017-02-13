@@ -1,5 +1,6 @@
 ﻿using DualMeetManager.Service;
 using DualMeetManager.Service.DataEntry;
+using DualMeetManager.Service.Factory;
 using DualMeetManager.Service.Printout;
 using DualMeetManager.Service.Saving;
 using DualMeetManager.Service.Scoring;
@@ -10,7 +11,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DualMeetManager.Tests.Service
+namespace DualMeetManager.Tests.Service.Factory
 {
     [TestFixture]
     public class ServiceFactoryTest

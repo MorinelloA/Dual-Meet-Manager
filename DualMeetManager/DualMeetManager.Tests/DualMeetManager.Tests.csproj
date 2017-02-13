@@ -60,7 +60,7 @@
     <Compile Include="Service\DataEntry\DataEntrySvcHybridImplTest.cs" />
     <Compile Include="Service\DataEntry\DataEntrySvcImplTest.cs" />
     <Compile Include="Service\DataEntry\DataEntrySvcStaticImplTest.cs" />
-    <Compile Include="Service\ServiceFactoryTest.cs" />
+    <Compile Include="Service\Factory\ServiceFactoryTest.cs" />
     <Compile Include="Service\Saving\SavingJsonSvcImplTest.cs" />
     <Compile Include="Service\Scoring\ScoringServiceImplRunningEventTest.cs" />
   </ItemGroup>

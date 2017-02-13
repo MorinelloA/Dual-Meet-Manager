@@ -40,6 +40,7 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,6 +52,11 @@
     <Compile Include="Business\Exceptions\InvalidPerformanceException.cs" />
     <Compile Include="Business\Exceptions\MeetNotFoundException.cs" />
     <Compile Include="Business\Exceptions\TeamNotFoundException.cs" />
+    <Compile Include="Business\Managers\EventMgr.cs" />
+    <Compile Include="Business\Managers\Manager.cs" />
+    <Compile Include="Business\Managers\MeetMgr.cs" />
+    <Compile Include="Business\Managers\PrintoutMgr.cs" />
+    <Compile Include="Business\Managers\ScoringMgr.cs" />
     <Compile Include="Domain\Meet.cs" />
     <Compile Include="Domain\Performance.cs" />
     <Compile Include="Domain\Scoring\EventPoints.cs" />
@@ -64,7 +70,7 @@
     <Compile Include="Service\DataEntry\DataEntrySvcImpl.cs" />
     <Compile Include="Service\DataEntry\DataEntrySvcStaticImpl.cs" />
     <Compile Include="Service\DataEntry\IDataEntrySvc.cs" />
-    <Compile Include="Service\ServiceFactory.cs" />
+    <Compile Include="Service\Factory\ServiceFactory.cs" />
     <Compile Include="Service\IService.cs" />
     <Compile Include="Service\Printout\IPrintoutDocSvc.cs" />
     <Compile Include="Service\Printout\IPrintoutPDFSvc.cs" />
