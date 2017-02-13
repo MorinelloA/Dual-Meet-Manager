@@ -16,7 +16,7 @@ namespace DualMeetManager.Tests.Service.Factory
     [TestFixture]
     public class ServiceFactoryTest
     {
-        [Test, Order(1)]
+        [Test]
         public void TestServiceFactoryDataEntrySvc()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);

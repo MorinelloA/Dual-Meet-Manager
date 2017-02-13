@@ -48,6 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Business\EventMgrTest.cs" />
+    <Compile Include="Business\MeetMgrTest.cs" />
+    <Compile Include="Business\PrintoutMgrTest.cs" />
+    <Compile Include="Business\ScoringMgrTest.cs" />
     <Compile Include="Domain\MeetTest.cs" />
     <Compile Include="Domain\PerformanceTest.cs" />
     <Compile Include="Domain\Scoring\EventPointsTest.cs" />

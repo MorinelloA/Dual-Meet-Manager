@@ -1,4 +1,5 @@
 ﻿using DualMeetManager.Business.Exceptions;
+using DualMeetManager.Domain;
 using DualMeetManager.Service.DataEntry;
 using System;
 using System.Collections.Generic;
@@ -75,6 +76,40 @@ namespace DualMeetManager.Business.Managers
                 Console.WriteLine(ipe.ToString());
                 Console.Write(ipe.StackTrace);
                 return 0m;
+            }
+        }
+
+        public Dictionary<string, List<Performance>> AddPerformanceToEvent(Dictionary<string, List<Performance>> perfList, string eventName, Performance perfToAdd)
+        {
+            try
+            {
+                Dictionary<string, List<Performance>> myDictionary;
+                IDataEntrySvc eventSvc = (IDataEntrySvc)GetService(typeof(IDataEntrySvc).Name);
+                myDictionary = eventSvc.AddPerformanceToEvent(perfList, eventName, perfToAdd);
+                return myDictionary;
+            }
+            catch (Exception e) //Implement more specific Exceptions later
+            {
+                Console.WriteLine(e.ToString());
+                Console.Write(e.StackTrace);
+                return null;
+            }
+        }
+
+        public Dictionary<string, List<Performance>> AddPerformanceToEvent(Dictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd)
+        {
+            try
+            {
+                Dictionary<string, List<Performance>> myDictionary;
+                IDataEntrySvc eventSvc = (IDataEntrySvc)GetService(typeof(IDataEntrySvc).Name);
+                myDictionary = eventSvc.AddPerformanceToEvent(perfList, eventName, perfsToAdd);
+                return myDictionary;
+            }
+            catch (Exception e) //Implement more specific Exceptions later
+            {
+                Console.WriteLine(e.ToString());
+                Console.Write(e.StackTrace);
+                return null;
             }
         }
     }
