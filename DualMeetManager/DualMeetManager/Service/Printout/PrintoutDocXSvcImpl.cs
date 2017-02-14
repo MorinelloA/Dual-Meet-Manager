@@ -127,14 +127,141 @@ namespace DualMeetManager.Service.Printout
         }
 
         /// <summary>
-        /// Implementation for creating a doc of all performances for one specific teams
+        /// Implementation for creating a doc of all performances for one specific team
         /// </summary>
         /// <param name="teamAbbr">Team to be printed</param>
         /// <param name="meetToPrint">Meet that the performances are being gathered from</param>
         /// <returns>boolean that shows whether or not the doc was created successfully or not</returns>
-        public bool CreateTeamPerfDoc(string teamAbbr, Meet meetToPrint)
+        public bool CreateTeamPerfDoc(string teamAbbr, string gender, Meet meetToPrint)
         {
-            throw new NotImplementedException();
+            Dictionary<string, List<Performance>> performances = new Dictionary<string, List<Performance>>();
+            //go thru each event in meetToPrint
+            foreach(string evt in meetToPrint.performances.Keys)
+            {
+                //go thru and add performances with the teamAbbr to the temp list
+                List<Performance> tempPerfs = new List<Performance>();
+                foreach(Performance p in meetToPrint.performances[evt])
+                {
+                    if(p.schoolName == teamAbbr)
+                    {
+                        tempPerfs.Add(p);
+                    }
+                }
+
+                //Add tempList to performances
+                if(tempPerfs != null) //Cannot add a null value to a dictionary key
+                    performances.Add(evt, tempPerfs);
+            } //The above SHOULD be complete. Still untested
+
+            string fileName = teamAbbr + meetToPrint.dateOfMeet.Month + "-" + meetToPrint.dateOfMeet.Day + "Performances.docx";
+            using (DocX document = DocX.Create(fileName))
+            {
+                document.MarginLeft = 36; //.5 Margin
+                document.MarginRight = 36;
+                document.MarginTop = 36;
+                document.MarginBottom = 36;
+
+                Paragraph pp = document.InsertParagraph();
+
+                // Append some text.
+                pp.Append(teamAbbr + " Performances\n\n").Font(new FontFamily("Arial Black"));
+
+                Paragraph[] p = new Paragraph[18];
+                Paragraph[] noPerf = new Paragraph[18];
+                Table[] perfs = new Table[18];
+
+
+                if (performances != null)
+                {
+                    string[] validEvents = {gender + " 100", gender + " 200", gender + " 400",
+                    gender + " 800", gender + " 1600", gender + " 3200", gender + " 4x100",
+                    gender + " 4x400", gender + " 4x800", gender + " LJ", gender + " TJ", gender + " HJ",
+                    gender + " PV", gender + " ShotPut", gender + " Discus", gender + " Javelin"};
+
+                    //foreach (string evt in validEvents)
+                    for(int i = 0; i < validEvents.Length; i++)
+                    {
+                        //Print event name
+                        p[i] = document.InsertParagraph();
+                        p[i].Append(validEvents[i] + ":\n");
+
+                        //Print table of performances
+                        if(!performances.ContainsKey(validEvents[i])) //If key does not exist, the team did not compete in this event
+                        {
+                            noPerf[i] = document.InsertParagraph();
+                            noPerf[i].Append("Event not competed in by this team:\n");
+                        }
+                        //Check if running or field event
+                        //Space for next 
+
+                    }
+
+                    EventMgr eMgr = new EventMgr();
+                    if (performances[0].heatNum != 0) //Running Event
+                    {
+                        // Add a Table to this document. (Rows, Columns)
+                        Table t = document.AddTable(performances.Count + 1, 5);
+                        // Specify some properties for this Table.
+                        t.Alignment = Alignment.center;
+                        t.Design = TableDesign.TableNormal;
+
+                        //t.Rows[0].Cells[0].FillColor = Color.Azure;
+                        //t.Rows[0].Cells[0].Paragraphs.First().Append("#").Font(new FontFamily("Arial Black"));
+                        t.Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[2].Paragraphs.First().Append("School").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[3].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[4].Paragraphs.First().Append("Heat").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+
+                        for (int i = 0; i < performances.Count; i++)
+                        {
+                            t.Rows[i + 1].Cells[0].Paragraphs.First().Append((i + 1).ToString());
+                            t.Rows[i + 1].Cells[1].Paragraphs.First().Append(performances[i].athleteName);
+                            t.Rows[i + 1].Cells[2].Paragraphs.First().Append(performances[i].schoolName);
+                            t.Rows[i + 1].Cells[3].Paragraphs.First().Append(eMgr.ConvertToTimedData(performances[i].performance));
+                            t.Rows[i + 1].Cells[4].Paragraphs.First().Append(performances[i].heatNum.ToString());
+                        }
+
+                        document.InsertTable(t);
+                    }
+                    else //Field Event
+                    {
+                        // Add a Table to this document. (Rows, Columns)
+                        Table t = document.AddTable(performances.Count + 1, 4);
+                        // Specify some properties for this Table.
+                        t.Alignment = Alignment.center;
+                        t.Design = TableDesign.TableNormal;
+
+                        t.Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[2].Paragraphs.First().Append("School").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[3].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+
+                        for (int i = 0; i < performances.Count; i++)
+                        {
+                            t.Rows[i + 1].Cells[0].Paragraphs.First().Append((i + 1).ToString());
+                            t.Rows[i + 1].Cells[1].Paragraphs.First().Append(performances[i].athleteName);
+                            t.Rows[i + 1].Cells[2].Paragraphs.First().Append(performances[i].schoolName);
+                            t.Rows[i + 1].Cells[3].Paragraphs.First().Append(eMgr.ConvertToLengthData(performances[i].performance));
+                        }
+
+                        document.InsertTable(t);
+                    }
+                    Paragraph pp = document.InsertParagraph();
+                    pp.Append("\n\n\nNOTE: Ties are not calculated on this sheet. #'s are only for reference").Font(new FontFamily("Arial"));
+                }
+                else //No performances
+                {
+                    p.Append("No performances for this event").Font(new FontFamily("Arial"));
+                }
+
+                // Save the document.
+                document.Save();
+                System.Diagnostics.Process.Start(fileName);
+            }
+
+            return true;
+
         }
     }
 }

@@ -20,7 +20,7 @@ namespace DualMeetManager.Service.Printout
         /// <param name="teamAbbr">Team to be printed</param>
         /// <param name="meetToPrint">Meet that the performances are being gathered from</param>
         /// <returns>boolean that shows whether or not the doc was created successfully or not</returns>
-        bool CreateTeamPerfDoc(string teamAbbr, Meet meetToPrint);
+        bool CreateTeamPerfDoc(string teamAbbr, string gender, Meet meetToPrint);
 
         /// <summary>
         /// Interface for creating a doc for all scoring information for a Meet
