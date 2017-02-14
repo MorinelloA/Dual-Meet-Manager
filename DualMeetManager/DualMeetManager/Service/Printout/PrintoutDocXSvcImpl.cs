@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using DualMeetManager.Domain;
 using DualMeetManager.Domain.Scoring;
+using Novacode;
+using System.Drawing;
 
 namespace DualMeetManager.Service.Printout
 {
@@ -21,7 +23,31 @@ namespace DualMeetManager.Service.Printout
         /// <returns>boolean that shows whether or not the doc was created successfully or not</returns>
         public bool CreateIndEventDoc(string eventName, List<Performance> performances)
         {
-            throw new NotImplementedException();
+            //using (DocX document = DocX.Create("Test.docx"))
+            using (DocX document = DocX.Create("tst.docx"))
+            {
+                document.MarginLeft = 36; //.5 Margin
+                document.MarginRight = 36;
+                document.MarginTop = 36;
+                document.MarginBottom = 36;
+                // Add a new Paragraph to the document.
+                Paragraph p = document.InsertParagraph();
+
+                // Append some text.
+                p.Append(eventName + "\n\n").Font(new FontFamily("Arial Black"));
+                int num = 1;
+                foreach (Performance i in performances)
+                {
+                    p.Append(num + " " + i.athleteName + " " + i.schoolName + " " + i.performance + "\n").Font(new FontFamily("Arial"));
+                    num++;
+                }
+
+                // Save the document.
+                document.Save();
+                System.Diagnostics.Process.Start("tst.docx");
+            }
+
+            return true;
         }
 
         /// <summary>

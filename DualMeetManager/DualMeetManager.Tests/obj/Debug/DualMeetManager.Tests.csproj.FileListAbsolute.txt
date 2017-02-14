@@ -20,3 +20,4 @@ C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManag
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\obj\Debug\DualMeetManager.Tests.csprojResolveAssemblyReference.cache
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\obj\Debug\DualMeetManager.Tests.exe
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\obj\Debug\DualMeetManager.Tests.pdb
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager.Tests\bin\Debug\DocX.dll
