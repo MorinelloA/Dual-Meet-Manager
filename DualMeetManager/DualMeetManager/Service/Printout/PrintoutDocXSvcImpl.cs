@@ -7,6 +7,7 @@ using DualMeetManager.Domain;
 using DualMeetManager.Domain.Scoring;
 using Novacode;
 using System.Drawing;
+using DualMeetManager.Business.Managers;
 
 namespace DualMeetManager.Service.Printout
 {
@@ -23,8 +24,18 @@ namespace DualMeetManager.Service.Printout
         /// <returns>boolean that shows whether or not the doc was created successfully or not</returns>
         public bool CreateIndEventDoc(string eventName, List<Performance> performances)
         {
-            //using (DocX document = DocX.Create("Test.docx"))
-            using (DocX document = DocX.Create("tst.docx"))
+            //Make sure we get a valid filename
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < eventName.Length; i++)
+            {
+                //if (!perf.All(c => char.IsDigit(c) || c == ':' || c == '.'))
+                if (char.IsLetterOrDigit(eventName[i]))
+                {
+                    sb.Append(eventName[i]);
+                }
+            }
+            string fileName = sb.ToString() + ".docx";
+            using (DocX document = DocX.Create(fileName))
             {
                 document.MarginLeft = 36; //.5 Margin
                 document.MarginRight = 36;
@@ -35,16 +46,71 @@ namespace DualMeetManager.Service.Printout
 
                 // Append some text.
                 p.Append(eventName + "\n\n").Font(new FontFamily("Arial Black"));
-                int num = 1;
-                foreach (Performance i in performances)
+
+                if (performances != null)
                 {
-                    p.Append(num + " " + i.athleteName + " " + i.schoolName + " " + i.performance + "\n").Font(new FontFamily("Arial"));
-                    num++;
+                    EventMgr eMgr = new EventMgr();
+                    if (performances[0].heatNum != 0) //Running Event
+                    {
+                        // Add a Table to this document. (Rows, Columns)
+                        Table t = document.AddTable(performances.Count + 1, 5);
+                        // Specify some properties for this Table.
+                        t.Alignment = Alignment.center;
+                        t.Design = TableDesign.TableNormal;
+
+                        //t.Rows[0].Cells[0].FillColor = Color.Azure;
+                        //t.Rows[0].Cells[0].Paragraphs.First().Append("#").Font(new FontFamily("Arial Black"));
+                        t.Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[2].Paragraphs.First().Append("School").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[3].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[4].Paragraphs.First().Append("Heat").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+
+                        for (int i = 0; i < performances.Count; i++)
+                        {
+                            t.Rows[i+1].Cells[0].Paragraphs.First().Append((i+1).ToString());
+                            t.Rows[i+1].Cells[1].Paragraphs.First().Append(performances[i].athleteName);
+                            t.Rows[i+1].Cells[2].Paragraphs.First().Append(performances[i].schoolName);
+                            t.Rows[i+1].Cells[3].Paragraphs.First().Append(eMgr.ConvertToTimedData(performances[i].performance));
+                            t.Rows[i+1].Cells[4].Paragraphs.First().Append(performances[i].heatNum.ToString());
+                        }
+
+                        document.InsertTable(t);
+                    }
+                    else //Field Event
+                    {
+                        // Add a Table to this document. (Rows, Columns)
+                        Table t = document.AddTable(performances.Count + 1, 4);
+                        // Specify some properties for this Table.
+                        t.Alignment = Alignment.center;
+                        t.Design = TableDesign.TableNormal;
+
+                        t.Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[2].Paragraphs.First().Append("School").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                        t.Rows[0].Cells[3].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+
+                        for (int i = 0; i < performances.Count; i++)
+                        {
+                            t.Rows[i + 1].Cells[0].Paragraphs.First().Append((i + 1).ToString());
+                            t.Rows[i + 1].Cells[1].Paragraphs.First().Append(performances[i].athleteName);
+                            t.Rows[i + 1].Cells[2].Paragraphs.First().Append(performances[i].schoolName);
+                            t.Rows[i + 1].Cells[3].Paragraphs.First().Append(eMgr.ConvertToLengthData(performances[i].performance));
+                        }
+
+                        document.InsertTable(t);
+                    }
+                    Paragraph pp = document.InsertParagraph();
+                    pp.Append("\n\n\nNOTE: Ties are not calculated on this sheet. #'s are only for reference").Font(new FontFamily("Arial"));
+                }
+                else //No performances
+                {
+                    p.Append("No performances for this event").Font(new FontFamily("Arial"));
                 }
 
                 // Save the document.
                 document.Save();
-                System.Diagnostics.Process.Start("tst.docx");
+                System.Diagnostics.Process.Start(fileName);
             }
 
             return true;
