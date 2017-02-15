@@ -173,95 +173,83 @@ namespace DualMeetManager.Service.Printout
 
                 if (performances != null)
                 {
+                    EventMgr eMgr = new EventMgr();
+
                     string[] validEvents = {gender + " 100", gender + " 200", gender + " 400",
                     gender + " 800", gender + " 1600", gender + " 3200", gender + " 4x100",
                     gender + " 4x400", gender + " 4x800", gender + " LJ", gender + " TJ", gender + " HJ",
                     gender + " PV", gender + " ShotPut", gender + " Discus", gender + " Javelin"};
 
                     //foreach (string evt in validEvents)
-                    for(int i = 0; i < validEvents.Length; i++)
+                    for (int i = 0; i < validEvents.Length; i++)
                     {
                         //Print event name
                         p[i] = document.InsertParagraph();
-                        p[i].Append(validEvents[i] + ":\n");
+                        p[i].Append("\n" + validEvents[i] + ":\n");
 
                         //Print table of performances
-                        if(!performances.ContainsKey(validEvents[i])) //If key does not exist, the team did not compete in this event
+                        if (!performances.ContainsKey(validEvents[i])) //If key does not exist, the team did not compete in this event
                         {
                             noPerf[i] = document.InsertParagraph();
                             noPerf[i].Append("Event not competed in by this team:\n");
                         }
                         //Check if running or field event
-                        //Space for next 
-
-                    }
-
-                    EventMgr eMgr = new EventMgr();
-                    if (performances[0].heatNum != 0) //Running Event
-                    {
-                        // Add a Table to this document. (Rows, Columns)
-                        Table t = document.AddTable(performances.Count + 1, 5);
-                        // Specify some properties for this Table.
-                        t.Alignment = Alignment.center;
-                        t.Design = TableDesign.TableNormal;
-
-                        //t.Rows[0].Cells[0].FillColor = Color.Azure;
-                        //t.Rows[0].Cells[0].Paragraphs.First().Append("#").Font(new FontFamily("Arial Black"));
-                        t.Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                        t.Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                        t.Rows[0].Cells[2].Paragraphs.First().Append("School").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                        t.Rows[0].Cells[3].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                        t.Rows[0].Cells[4].Paragraphs.First().Append("Heat").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-
-                        for (int i = 0; i < performances.Count; i++)
+                        List<Performance> tempEventList = performances[validEvents[i]]; //new List<Performance>();
+                        if (tempEventList[0].heatNum == 0) //field event
                         {
-                            t.Rows[i + 1].Cells[0].Paragraphs.First().Append((i + 1).ToString());
-                            t.Rows[i + 1].Cells[1].Paragraphs.First().Append(performances[i].athleteName);
-                            t.Rows[i + 1].Cells[2].Paragraphs.First().Append(performances[i].schoolName);
-                            t.Rows[i + 1].Cells[3].Paragraphs.First().Append(eMgr.ConvertToTimedData(performances[i].performance));
-                            t.Rows[i + 1].Cells[4].Paragraphs.First().Append(performances[i].heatNum.ToString());
+                            perfs[i] = document.AddTable(performances.Count + 1, 4);
+                            // Specify some properties for this Table.
+                            perfs[i].Alignment = Alignment.center;
+                            perfs[i].Design = TableDesign.TableNormal;
+
+                            //t.Rows[0].Cells[0].FillColor = Color.Azure;
+                            //t.Rows[0].Cells[0].Paragraphs.First().Append("#").Font(new FontFamily("Arial Black"));
+                            perfs[i].Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                            perfs[i].Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                            perfs[i].Rows[0].Cells[2].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                            perfs[i].Rows[0].Cells[3].Paragraphs.First().Append("Heat").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+
+                            for (int j = 0; j < tempEventList.Count; j++)
+                            {
+                                perfs[i].Rows[j + 1].Cells[0].Paragraphs.First().Append((j + 1).ToString());
+                                perfs[i].Rows[j + 1].Cells[1].Paragraphs.First().Append(tempEventList[j].athleteName);
+                                perfs[i].Rows[j + 1].Cells[2].Paragraphs.First().Append(eMgr.ConvertToLengthData(tempEventList[j].performance));
+                                perfs[i].Rows[j + 1].Cells[3].Paragraphs.First().Append(tempEventList[j].heatNum.ToString());
+                            }
+
+                            document.InsertTable(perfs[i]);
                         }
-
-                        document.InsertTable(t);
-                    }
-                    else //Field Event
-                    {
-                        // Add a Table to this document. (Rows, Columns)
-                        Table t = document.AddTable(performances.Count + 1, 4);
-                        // Specify some properties for this Table.
-                        t.Alignment = Alignment.center;
-                        t.Design = TableDesign.TableNormal;
-
-                        t.Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                        t.Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                        t.Rows[0].Cells[2].Paragraphs.First().Append("School").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                        t.Rows[0].Cells[3].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-
-                        for (int i = 0; i < performances.Count; i++)
+                        else // running event
                         {
-                            t.Rows[i + 1].Cells[0].Paragraphs.First().Append((i + 1).ToString());
-                            t.Rows[i + 1].Cells[1].Paragraphs.First().Append(performances[i].athleteName);
-                            t.Rows[i + 1].Cells[2].Paragraphs.First().Append(performances[i].schoolName);
-                            t.Rows[i + 1].Cells[3].Paragraphs.First().Append(eMgr.ConvertToLengthData(performances[i].performance));
+                            perfs[i] = document.AddTable(performances.Count + 1, 3);
+                            // Specify some properties for this Table.
+                            perfs[i].Alignment = Alignment.center;
+                            perfs[i].Design = TableDesign.TableNormal;
+
+                            //t.Rows[0].Cells[0].FillColor = Color.Azure;
+                            //t.Rows[0].Cells[0].Paragraphs.First().Append("#").Font(new FontFamily("Arial Black"));
+                            perfs[i].Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                            perfs[i].Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                            perfs[i].Rows[0].Cells[2].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+
+                            for (int j = 0; j < tempEventList.Count; j++)
+                            {
+                                perfs[i].Rows[j + 1].Cells[0].Paragraphs.First().Append((j + 1).ToString());
+                                perfs[i].Rows[j + 1].Cells[1].Paragraphs.First().Append(tempEventList[j].athleteName);
+                                perfs[i].Rows[j + 1].Cells[2].Paragraphs.First().Append(eMgr.ConvertToTimedData(tempEventList[j].performance));
+                            }
+
+                            document.InsertTable(perfs[i]);
                         }
-
-                        document.InsertTable(t);
+                        //Enter some blank Space for next event
+                        //Might not be needed
+                        // Save the document.
+                        document.Save();
+                        System.Diagnostics.Process.Start(fileName);
                     }
-                    Paragraph pp = document.InsertParagraph();
-                    pp.Append("\n\n\nNOTE: Ties are not calculated on this sheet. #'s are only for reference").Font(new FontFamily("Arial"));
                 }
-                else //No performances
-                {
-                    p.Append("No performances for this event").Font(new FontFamily("Arial"));
-                }
-
-                // Save the document.
-                document.Save();
-                System.Diagnostics.Process.Start(fileName);
             }
-
             return true;
-
         }
     }
 }
