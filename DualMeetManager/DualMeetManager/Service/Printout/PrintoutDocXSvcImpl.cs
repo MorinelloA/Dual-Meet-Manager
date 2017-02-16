@@ -144,6 +144,7 @@ namespace DualMeetManager.Service.Printout
                 t.SetBorder(TableBorderType.InsideH, b);
                 t.SetBorder(TableBorderType.InsideV, b);
 
+                //Align all cells to center
                 for(int aa = 0; aa < 53; aa++)
                 {
                     for(int bb = 0; bb < 12; bb++)
@@ -151,9 +152,53 @@ namespace DualMeetManager.Service.Printout
                         t.Rows[aa].Cells[bb].Paragraphs.First().Alignment = Alignment.center;
                     }
                 }
+                
+                //Shade appropriate cell grey
+                for (int bb = 0; bb <= 5; bb++)
+                {
+                    for (int aa = 1; aa <= 5; aa++)
+                    {
+                        t.Rows[aa].Cells[bb].Shading = Color.LightGray;
+                    }
+                    for (int aa = 13; aa <= 17; aa++)
+                    {
+                        t.Rows[aa].Cells[bb].Shading = Color.LightGray;
+                    }
+                    for (int aa = 25; aa <= 28; aa++)
+                    {
+                        t.Rows[aa].Cells[bb].Shading = Color.LightGray;
+                    }
+                    for (int aa = 36; aa <= 40; aa++)
+                    {
+                        t.Rows[aa].Cells[bb].Shading = Color.LightGray;
+                    }
+                    for (int aa = 48; aa <= 52; aa++)
+                    {
+                        t.Rows[aa].Cells[bb].Shading = Color.LightGray;
+                    }
+                }
+                for (int bb = 6; bb <= 11; bb++)
+                {
+                    for (int aa = 7; aa <= 11; aa++)
+                    {
+                        t.Rows[aa].Cells[bb].Shading = Color.LightGray;
+                    }
+                    for (int aa = 19; aa <= 23; aa++)
+                    {
+                        t.Rows[aa].Cells[bb].Shading = Color.LightGray;
+                    }
+                    for (int aa = 30; aa <= 34; aa++)
+                    {
+                        t.Rows[aa].Cells[bb].Shading = Color.LightGray;
+                    }
+                    for (int aa = 42; aa <= 46; aa++)
+                    {
+                        t.Rows[aa].Cells[bb].Shading = Color.LightGray;
+                    }
+                }
 
-                // Merge the cells 100 & 200 Title Cells into one new cell.
-                t.Rows[0].MergeCells(0, 5);
+                    // Merge the cells 100 & 200 Title Cells into one new cell.
+                    t.Rows[0].MergeCells(0, 5);
                 t.Rows[0].MergeCells(1, 6);
                 t.Rows[0].Cells[0].RemoveParagraphAt(0);
                 t.Rows[0].Cells[0].RemoveParagraphAt(0);
@@ -182,11 +227,45 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[1].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                 t.Rows[1].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
                 t.Rows[2].Cells[0].Paragraphs.First().Append("1");
-                t.Rows[2].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].athleteName);
-                t.Rows[2].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].schoolName);
-                t.Rows[2].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].performance);
-                t.Rows[2].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
-                t.Rows[2].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[3].Cells[0].Paragraphs.First().Append("2");
+                t.Rows[4].Cells[0].Paragraphs.First().Append("3");
+                t.Rows[5].MergeCells(0, 3);
+                t.Rows[5].Cells[0].RemoveParagraphAt(0);
+                t.Rows[5].Cells[0].RemoveParagraphAt(0);
+                t.Rows[5].Cells[0].RemoveParagraphAt(0);
+                t.Rows[5].Cells[0].Paragraphs.First().Append("Total");
+                t.Rows[5].Cells[0].Paragraphs.First().Alignment = Alignment.left;
+                if (scoreToPrint.indEvents.ContainsKey("Boy's 400"))
+                {
+                    t.Rows[2].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].athleteName);
+                    t.Rows[2].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].schoolName);
+                    t.Rows[2].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].performance);
+                    t.Rows[2].Cells[4].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].team1Pts.ToString());
+                    t.Rows[2].Cells[5].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].team2Pts.ToString());
+                    t.Rows[3].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[1].athleteName);
+                    t.Rows[3].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[1].schoolName);
+                    t.Rows[3].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[1].performance);
+                    t.Rows[3].Cells[4].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[1].team1Pts.ToString());
+                    t.Rows[3].Cells[5].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[1].team2Pts.ToString());
+                    t.Rows[4].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[2].athleteName);
+                    t.Rows[4].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[2].schoolName);
+                    t.Rows[4].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[2].performance);
+                    t.Rows[4].Cells[4].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[2].team1Pts.ToString());
+                    t.Rows[4].Cells[5].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[2].team2Pts.ToString());
+                    t.Rows[5].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].team1Total.ToString());
+                    t.Rows[5].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].team2Total.ToString());
+                }
+                else
+                {
+                    t.Rows[2].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[2].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[3].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[3].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[4].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[4].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[5].Cells[1].Paragraphs.First().Append("0");
+                    t.Rows[5].Cells[2].Paragraphs.First().Append("0");
+                }
 
                 // Merge the cells 400 & 800 Title Cells into one new cell.
                 t.Rows[6].MergeCells(0, 5);
