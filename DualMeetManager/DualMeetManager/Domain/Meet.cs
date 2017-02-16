@@ -79,11 +79,11 @@ namespace DualMeetManager.Domain
                 //Check for incorrect event name
                 //Array with valid event names
                 string[] validEvents = {"Boy's 100", "Boy's 200", "Boy's 400",
-                    "Boy's 800", "Boy's 1600", "Boy's 3200", "Boy's 4x100",
+                    "Boy's 800", "Boy's 1600", "Boy's 3200", "Boy's HH", "Boy's 300H", "Boy's 4x100",
                     "Boy's 4x400", "Boy's 4x800", "Boy's LJ", "Boy's TJ", "Boy's HJ",
                     "Boy's PV", "Boy's ShotPut", "Boy's Discus", "Boy's Javelin",
                     "Girl's 100", "Girl's 200", "Girl's 400",
-                    "Girl's 800", "Girl's 1600", "Girl's 3200", "Girl's 4x100",
+                    "Girl's 800", "Girl's 1600", "Girl's 3200", "Girl's HH", "Girl's 300H", "Girl's 4x100",
                     "Girl's 4x400", "Girl's 4x800", "Girl's LJ", "Girl's TJ", "Girl's HJ",
                     "Girl's PV", "Girl's ShotPut", "Girl's Discus", "Girl's Javelin"};
                 foreach (KeyValuePair<string, List<Performance>> i in performances)
