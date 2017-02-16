@@ -8,6 +8,7 @@ using DualMeetManager.Domain.Scoring;
 using Novacode;
 using System.Drawing;
 using DualMeetManager.Business.Managers;
+using System.Text.RegularExpressions;
 
 namespace DualMeetManager.Service.Printout
 {
@@ -123,6 +124,7 @@ namespace DualMeetManager.Service.Printout
         /// <returns>boolean that shows whether or not the doc was created successfully or not</returns>
         public bool CreateMeetResultsDoc(OverallScore scoreToPrint)
         {
+            EventMgr eMgr = new EventMgr();
             string fileName = "FullMeetTest.docx";
             using (DocX document = DocX.Create(fileName))
             {
@@ -130,11 +132,11 @@ namespace DualMeetManager.Service.Printout
                 document.MarginRight = 36;
                 document.MarginTop = 36;
                 document.MarginBottom = 36;
-                Table t = document.AddTable(52, 6);
+                Table t = document.AddTable(53, 12);
                 // Specify some properties for this Table.
                 t.Alignment = Alignment.center;
                 t.Design = TableDesign.TableNormal;
-                Border b = new Border(BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black);
+                Border b = new Border(BorderStyle.Tcbs_single, BorderSize.one, 0, Color.Black);
                 t.SetBorder(TableBorderType.Bottom, b);
                 t.SetBorder(TableBorderType.Top, b);
                 t.SetBorder(TableBorderType.Left, b);
@@ -142,13 +144,289 @@ namespace DualMeetManager.Service.Printout
                 t.SetBorder(TableBorderType.InsideH, b);
                 t.SetBorder(TableBorderType.InsideV, b);
 
-                for (int i = 0; i < 52; i++)
+                for(int aa = 0; aa < 53; aa++)
                 {
-                    for (int j = 0; j < 6; j++)
+                    for(int bb = 0; bb < 12; bb++)
                     {
-                        t.Rows[i].Cells[j].Paragraphs.First().Append("TEST");
+                        t.Rows[aa].Cells[bb].Paragraphs.First().Alignment = Alignment.center;
                     }
                 }
+
+                // Merge the cells 100 & 200 Title Cells into one new cell.
+                t.Rows[0].MergeCells(0, 5);
+                t.Rows[0].MergeCells(1, 6);
+                t.Rows[0].Cells[0].RemoveParagraphAt(0);
+                t.Rows[0].Cells[0].RemoveParagraphAt(0);
+                t.Rows[0].Cells[0].RemoveParagraphAt(0);
+                t.Rows[0].Cells[0].RemoveParagraphAt(0);
+                t.Rows[0].Cells[0].RemoveParagraphAt(0);
+                t.Rows[0].Cells[1].RemoveParagraphAt(0);
+                t.Rows[0].Cells[1].RemoveParagraphAt(0);
+                t.Rows[0].Cells[1].RemoveParagraphAt(0);
+                t.Rows[0].Cells[1].RemoveParagraphAt(0);
+                t.Rows[0].Cells[1].RemoveParagraphAt(0);
+                t.Rows[0].Cells[0].Paragraphs.First().Append("100 Meter Dash");
+                t.Rows[0].Cells[1].Paragraphs.First().Append("200 Meter Dash");
+                t.Rows[0].Cells[0].Shading = Color.Black;
+                t.Rows[0].Cells[1].Shading = Color.Black;
+                t.Rows[1].Cells[0].Paragraphs.First().Append("#");
+                t.Rows[1].Cells[1].Paragraphs.First().Append("Athlete");
+                t.Rows[1].Cells[2].Paragraphs.First().Append("School");
+                t.Rows[1].Cells[3].Paragraphs.First().Append("Time");
+                t.Rows[1].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[1].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[1].Cells[6].Paragraphs.First().Append("#");
+                t.Rows[1].Cells[7].Paragraphs.First().Append("Athlete");
+                t.Rows[1].Cells[8].Paragraphs.First().Append("School");
+                t.Rows[1].Cells[9].Paragraphs.First().Append("Time");
+                t.Rows[1].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[1].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[2].Cells[0].Paragraphs.First().Append("1");
+                t.Rows[2].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].athleteName);
+                t.Rows[2].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].schoolName);
+                t.Rows[2].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents["Boy's 100"].points[0].performance);
+                t.Rows[2].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[2].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+
+                // Merge the cells 400 & 800 Title Cells into one new cell.
+                t.Rows[6].MergeCells(0, 5);
+                t.Rows[6].MergeCells(1, 6);
+                t.Rows[6].Cells[0].RemoveParagraphAt(0);
+                t.Rows[6].Cells[0].RemoveParagraphAt(0);
+                t.Rows[6].Cells[0].RemoveParagraphAt(0);
+                t.Rows[6].Cells[0].RemoveParagraphAt(0);
+                t.Rows[6].Cells[0].RemoveParagraphAt(0);
+                t.Rows[6].Cells[1].RemoveParagraphAt(0);
+                t.Rows[6].Cells[1].RemoveParagraphAt(0);
+                t.Rows[6].Cells[1].RemoveParagraphAt(0);
+                t.Rows[6].Cells[1].RemoveParagraphAt(0);
+                t.Rows[6].Cells[1].RemoveParagraphAt(0);
+                t.Rows[6].Cells[0].Paragraphs.First().Append("400 Meter Dash");
+                t.Rows[6].Cells[1].Paragraphs.First().Append("800 Meter Dash");
+                t.Rows[6].Cells[0].Shading = Color.Black;
+                t.Rows[6].Cells[1].Shading = Color.Black;
+                t.Rows[7].Cells[0].Paragraphs.First().Append("#");
+                t.Rows[7].Cells[1].Paragraphs.First().Append("Athlete");
+                t.Rows[7].Cells[2].Paragraphs.First().Append("School");
+                t.Rows[7].Cells[3].Paragraphs.First().Append("Time");
+                t.Rows[7].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[7].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[7].Cells[6].Paragraphs.First().Append("#");
+                t.Rows[7].Cells[7].Paragraphs.First().Append("Athlete");
+                t.Rows[7].Cells[8].Paragraphs.First().Append("School");
+                t.Rows[7].Cells[9].Paragraphs.First().Append("Time");
+                t.Rows[7].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[7].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+
+                // Merge the cells 1600 & 3200 Title Cells into one new cell.
+                t.Rows[12].MergeCells(0, 5);
+                t.Rows[12].MergeCells(1, 6);
+                t.Rows[12].Cells[0].RemoveParagraphAt(0);
+                t.Rows[12].Cells[0].RemoveParagraphAt(0);
+                t.Rows[12].Cells[0].RemoveParagraphAt(0);
+                t.Rows[12].Cells[0].RemoveParagraphAt(0);
+                t.Rows[12].Cells[0].RemoveParagraphAt(0);
+                t.Rows[12].Cells[1].RemoveParagraphAt(0);
+                t.Rows[12].Cells[1].RemoveParagraphAt(0);
+                t.Rows[12].Cells[1].RemoveParagraphAt(0);
+                t.Rows[12].Cells[1].RemoveParagraphAt(0);
+                t.Rows[12].Cells[1].RemoveParagraphAt(0);
+                t.Rows[12].Cells[0].Paragraphs.First().Append("1600 Meter Dash");
+                t.Rows[12].Cells[1].Paragraphs.First().Append("3200 Meter Dash");
+                t.Rows[12].Cells[0].Shading = Color.Black;
+                t.Rows[12].Cells[1].Shading = Color.Black;
+                t.Rows[13].Cells[0].Paragraphs.First().Append("#");
+                t.Rows[13].Cells[1].Paragraphs.First().Append("Athlete");
+                t.Rows[13].Cells[2].Paragraphs.First().Append("School");
+                t.Rows[13].Cells[3].Paragraphs.First().Append("Time");
+                t.Rows[13].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[13].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[13].Cells[6].Paragraphs.First().Append("#");
+                t.Rows[13].Cells[7].Paragraphs.First().Append("Athlete");
+                t.Rows[13].Cells[8].Paragraphs.First().Append("School");
+                t.Rows[13].Cells[9].Paragraphs.First().Append("Time");
+                t.Rows[13].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[13].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+
+                // Merge the cells High Hurdle & 300H Title Cells into one new cell.
+                t.Rows[18].MergeCells(0, 5);
+                t.Rows[18].MergeCells(1, 6);
+                t.Rows[18].Cells[0].RemoveParagraphAt(0);
+                t.Rows[18].Cells[0].RemoveParagraphAt(0);
+                t.Rows[18].Cells[0].RemoveParagraphAt(0);
+                t.Rows[18].Cells[0].RemoveParagraphAt(0);
+                t.Rows[18].Cells[0].RemoveParagraphAt(0);
+                t.Rows[18].Cells[1].RemoveParagraphAt(0);
+                t.Rows[18].Cells[1].RemoveParagraphAt(0);
+                t.Rows[18].Cells[1].RemoveParagraphAt(0);
+                t.Rows[18].Cells[1].RemoveParagraphAt(0);
+                t.Rows[18].Cells[1].RemoveParagraphAt(0);
+                t.Rows[18].Cells[0].Paragraphs.First().Append("High Hurdles");
+                t.Rows[18].Cells[1].Paragraphs.First().Append("300 Meter Hurdles");
+                t.Rows[18].Cells[0].Shading = Color.Black;
+                t.Rows[18].Cells[1].Shading = Color.Black;
+                t.Rows[19].Cells[0].Paragraphs.First().Append("#");
+                t.Rows[19].Cells[1].Paragraphs.First().Append("Athlete");
+                t.Rows[19].Cells[2].Paragraphs.First().Append("School");
+                t.Rows[19].Cells[3].Paragraphs.First().Append("Time");
+                t.Rows[19].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[19].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[19].Cells[6].Paragraphs.First().Append("#");
+                t.Rows[19].Cells[7].Paragraphs.First().Append("Athlete");
+                t.Rows[19].Cells[8].Paragraphs.First().Append("School");
+                t.Rows[19].Cells[9].Paragraphs.First().Append("Time");
+                t.Rows[19].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[19].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+
+                // Merge the cells 4x100 & 4x400 Title Cells into one new cell.
+                t.Rows[24].MergeCells(0, 5);
+                t.Rows[24].MergeCells(1, 6);
+                t.Rows[24].Cells[0].RemoveParagraphAt(0);
+                t.Rows[24].Cells[0].RemoveParagraphAt(0);
+                t.Rows[24].Cells[0].RemoveParagraphAt(0);
+                t.Rows[24].Cells[0].RemoveParagraphAt(0);
+                t.Rows[24].Cells[0].RemoveParagraphAt(0);
+                t.Rows[24].Cells[1].RemoveParagraphAt(0);
+                t.Rows[24].Cells[1].RemoveParagraphAt(0);
+                t.Rows[24].Cells[1].RemoveParagraphAt(0);
+                t.Rows[24].Cells[1].RemoveParagraphAt(0);
+                t.Rows[24].Cells[1].RemoveParagraphAt(0);
+                t.Rows[24].Cells[0].Paragraphs.First().Append("4x100 Meter Relay");
+                t.Rows[24].Cells[1].Paragraphs.First().Append("4x400 Meter Relay");
+                t.Rows[24].Cells[0].Shading = Color.Black;
+                t.Rows[24].Cells[1].Shading = Color.Black;
+                t.Rows[25].Cells[0].Paragraphs.First().Append("#");
+                t.Rows[25].Cells[1].Paragraphs.First().Append("Athlete");
+                t.Rows[25].Cells[2].Paragraphs.First().Append("School");
+                t.Rows[25].Cells[3].Paragraphs.First().Append("Time");
+                t.Rows[25].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[25].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[25].Cells[6].Paragraphs.First().Append("#");
+                t.Rows[25].Cells[7].Paragraphs.First().Append("Athlete");
+                t.Rows[25].Cells[8].Paragraphs.First().Append("School");
+                t.Rows[25].Cells[9].Paragraphs.First().Append("Time");
+                t.Rows[25].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[25].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+
+                // Merge the cells 4x800 & Shotput Title Cells into one new cell.
+                t.Rows[29].MergeCells(0, 5);
+                t.Rows[29].MergeCells(1, 6);
+                t.Rows[29].Cells[0].RemoveParagraphAt(0);
+                t.Rows[29].Cells[0].RemoveParagraphAt(0);
+                t.Rows[29].Cells[0].RemoveParagraphAt(0);
+                t.Rows[29].Cells[0].RemoveParagraphAt(0);
+                t.Rows[29].Cells[0].RemoveParagraphAt(0);
+                t.Rows[29].Cells[1].RemoveParagraphAt(0);
+                t.Rows[29].Cells[1].RemoveParagraphAt(0);
+                t.Rows[29].Cells[1].RemoveParagraphAt(0);
+                t.Rows[29].Cells[1].RemoveParagraphAt(0);
+                t.Rows[29].Cells[1].RemoveParagraphAt(0);
+                t.Rows[29].Cells[0].Paragraphs.First().Append("4x800 Meter Relay");
+                t.Rows[29].Cells[1].Paragraphs.First().Append("Shotput");
+                t.Rows[29].Cells[0].Shading = Color.Black;
+                t.Rows[29].Cells[1].Shading = Color.Black;
+                t.Rows[30].Cells[0].Paragraphs.First().Append("#");
+                t.Rows[30].Cells[1].Paragraphs.First().Append("Athlete");
+                t.Rows[30].Cells[2].Paragraphs.First().Append("School");
+                t.Rows[30].Cells[3].Paragraphs.First().Append("Time");
+                t.Rows[30].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[30].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[30].Cells[6].Paragraphs.First().Append("#");
+                t.Rows[30].Cells[7].Paragraphs.First().Append("Athlete");
+                t.Rows[30].Cells[8].Paragraphs.First().Append("School");
+                t.Rows[30].Cells[9].Paragraphs.First().Append("Time");
+                t.Rows[30].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[30].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+
+                // Merge the cells Discus & Javelin Title Cells into one new cell.
+                t.Rows[35].MergeCells(0, 5);
+                t.Rows[35].MergeCells(1, 6);
+                t.Rows[35].Cells[0].RemoveParagraphAt(0);
+                t.Rows[35].Cells[0].RemoveParagraphAt(0);
+                t.Rows[35].Cells[0].RemoveParagraphAt(0);
+                t.Rows[35].Cells[0].RemoveParagraphAt(0);
+                t.Rows[35].Cells[0].RemoveParagraphAt(0);
+                t.Rows[35].Cells[1].RemoveParagraphAt(0);
+                t.Rows[35].Cells[1].RemoveParagraphAt(0);
+                t.Rows[35].Cells[1].RemoveParagraphAt(0);
+                t.Rows[35].Cells[1].RemoveParagraphAt(0);
+                t.Rows[35].Cells[1].RemoveParagraphAt(0);
+                t.Rows[35].Cells[0].Paragraphs.First().Append("Discus");
+                t.Rows[35].Cells[1].Paragraphs.First().Append("Javelin");
+                t.Rows[35].Cells[0].Shading = Color.Black;
+                t.Rows[35].Cells[1].Shading = Color.Black;
+                t.Rows[36].Cells[0].Paragraphs.First().Append("#");
+                t.Rows[36].Cells[1].Paragraphs.First().Append("Athlete");
+                t.Rows[36].Cells[2].Paragraphs.First().Append("School");
+                t.Rows[36].Cells[3].Paragraphs.First().Append("Time");
+                t.Rows[36].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[36].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[36].Cells[6].Paragraphs.First().Append("#");
+                t.Rows[36].Cells[7].Paragraphs.First().Append("Athlete");
+                t.Rows[36].Cells[8].Paragraphs.First().Append("School");
+                t.Rows[36].Cells[9].Paragraphs.First().Append("Time");
+                t.Rows[36].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[36].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+
+                // Merge the cells LJ & TJ Title Cells into one new cell.
+                t.Rows[41].MergeCells(0, 5);
+                t.Rows[41].MergeCells(1, 6);
+                t.Rows[41].Cells[0].RemoveParagraphAt(0);
+                t.Rows[41].Cells[0].RemoveParagraphAt(0);
+                t.Rows[41].Cells[0].RemoveParagraphAt(0);
+                t.Rows[41].Cells[0].RemoveParagraphAt(0);
+                t.Rows[41].Cells[0].RemoveParagraphAt(0);
+                t.Rows[41].Cells[1].RemoveParagraphAt(0);
+                t.Rows[41].Cells[1].RemoveParagraphAt(0);
+                t.Rows[41].Cells[1].RemoveParagraphAt(0);
+                t.Rows[41].Cells[1].RemoveParagraphAt(0);
+                t.Rows[41].Cells[1].RemoveParagraphAt(0);
+                t.Rows[41].Cells[0].Paragraphs.First().Append("Long Jump");
+                t.Rows[41].Cells[1].Paragraphs.First().Append("Triple Jump");
+                t.Rows[41].Cells[0].Shading = Color.Black;
+                t.Rows[41].Cells[1].Shading = Color.Black;
+                t.Rows[42].Cells[0].Paragraphs.First().Append("#");
+                t.Rows[42].Cells[1].Paragraphs.First().Append("Athlete");
+                t.Rows[42].Cells[2].Paragraphs.First().Append("School");
+                t.Rows[42].Cells[3].Paragraphs.First().Append("Time");
+                t.Rows[42].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[42].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[42].Cells[6].Paragraphs.First().Append("#");
+                t.Rows[42].Cells[7].Paragraphs.First().Append("Athlete");
+                t.Rows[42].Cells[8].Paragraphs.First().Append("School");
+                t.Rows[42].Cells[9].Paragraphs.First().Append("Time");
+                t.Rows[42].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[42].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+
+                // Merge the cells High Jump & Pole Vault Title Cells into one new cell.
+                t.Rows[47].MergeCells(0, 5);
+                t.Rows[47].MergeCells(1, 6);
+                t.Rows[47].Cells[0].RemoveParagraphAt(0);
+                t.Rows[47].Cells[0].RemoveParagraphAt(0);
+                t.Rows[47].Cells[0].RemoveParagraphAt(0);
+                t.Rows[47].Cells[0].RemoveParagraphAt(0);
+                t.Rows[47].Cells[0].RemoveParagraphAt(0);
+                t.Rows[47].Cells[1].RemoveParagraphAt(0);
+                t.Rows[47].Cells[1].RemoveParagraphAt(0);
+                t.Rows[47].Cells[1].RemoveParagraphAt(0);
+                t.Rows[47].Cells[1].RemoveParagraphAt(0);
+                t.Rows[47].Cells[1].RemoveParagraphAt(0);
+                t.Rows[47].Cells[0].Paragraphs.First().Append("High Jump");
+                t.Rows[47].Cells[1].Paragraphs.First().Append("Pole Vault");
+                t.Rows[47].Cells[0].Shading = Color.Black;
+                t.Rows[47].Cells[1].Shading = Color.Black;
+                t.Rows[48].Cells[0].Paragraphs.First().Append("#");
+                t.Rows[48].Cells[1].Paragraphs.First().Append("Athlete");
+                t.Rows[48].Cells[2].Paragraphs.First().Append("School");
+                t.Rows[48].Cells[3].Paragraphs.First().Append("Time");
+                t.Rows[48].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[48].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                t.Rows[48].Cells[6].Paragraphs.First().Append("#");
+                t.Rows[48].Cells[7].Paragraphs.First().Append("Athlete");
+                t.Rows[48].Cells[8].Paragraphs.First().Append("School");
+                t.Rows[48].Cells[9].Paragraphs.First().Append("Time");
+                t.Rows[48].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
+                t.Rows[48].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
 
                 document.InsertTable(t);
                 document.Save();
