@@ -45,10 +45,10 @@ namespace DualMeetManager.Business.Managers
                 MessageBox.Show("Printout Failed!");
         }
 
-        public void CreateTeamPerfDoc(string teamAbbr, Meet meetToPrint)
+        public void CreateTeamPerfDoc(string teamAbbr, string gender, Meet meetToPrint)
         {
             IPrintoutDocSvc printoutSvc = (IPrintoutDocSvc)GetService(typeof(IPrintoutDocSvc).Name);
-            bool didPrint = printoutSvc.CreateTeamPerfDoc(teamAbbr, meetToPrint);
+            bool didPrint = printoutSvc.CreateTeamPerfDoc(teamAbbr, gender, meetToPrint);
             if (!didPrint)
                 MessageBox.Show("Printout Failed!");
         }

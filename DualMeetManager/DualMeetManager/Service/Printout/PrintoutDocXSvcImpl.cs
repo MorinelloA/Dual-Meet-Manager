@@ -123,7 +123,38 @@ namespace DualMeetManager.Service.Printout
         /// <returns>boolean that shows whether or not the doc was created successfully or not</returns>
         public bool CreateMeetResultsDoc(OverallScore scoreToPrint)
         {
-            throw new NotImplementedException();
+            string fileName = "FullMeetTest.docx";
+            using (DocX document = DocX.Create(fileName))
+            {
+                document.MarginLeft = 36; //.5 Margin
+                document.MarginRight = 36;
+                document.MarginTop = 36;
+                document.MarginBottom = 36;
+                Table t = document.AddTable(52, 6);
+                // Specify some properties for this Table.
+                t.Alignment = Alignment.center;
+                t.Design = TableDesign.TableNormal;
+                Border b = new Border(BorderStyle.Tcbs_single, BorderSize.one, 1, Color.Black);
+                t.SetBorder(TableBorderType.Bottom, b);
+                t.SetBorder(TableBorderType.Top, b);
+                t.SetBorder(TableBorderType.Left, b);
+                t.SetBorder(TableBorderType.Right, b);
+                t.SetBorder(TableBorderType.InsideH, b);
+                t.SetBorder(TableBorderType.InsideV, b);
+
+                for (int i = 0; i < 52; i++)
+                {
+                    for (int j = 0; j < 6; j++)
+                    {
+                        t.Rows[i].Cells[j].Paragraphs.First().Append("TEST");
+                    }
+                }
+
+                document.InsertTable(t);
+                document.Save();
+                System.Diagnostics.Process.Start(fileName);
+            }
+            return true;
         }
 
         /// <summary>
@@ -185,68 +216,74 @@ namespace DualMeetManager.Service.Printout
                     {
                         //Print event name
                         p[i] = document.InsertParagraph();
-                        p[i].Append("\n" + validEvents[i] + ":\n");
+                        p[i].Append("\n\n" + validEvents[i] + ":\n").Bold();
 
                         //Print table of performances
                         if (!performances.ContainsKey(validEvents[i])) //If key does not exist, the team did not compete in this event
                         {
                             noPerf[i] = document.InsertParagraph();
-                            noPerf[i].Append("Event not competed in by this team:\n");
+                            noPerf[i].Append("Event not competed in by this team");
                         }
                         //Check if running or field event
-                        List<Performance> tempEventList = performances[validEvents[i]]; //new List<Performance>();
-                        if (tempEventList[0].heatNum == 0) //field event
+                        else
                         {
-                            perfs[i] = document.AddTable(performances.Count + 1, 4);
-                            // Specify some properties for this Table.
-                            perfs[i].Alignment = Alignment.center;
-                            perfs[i].Design = TableDesign.TableNormal;
-
-                            //t.Rows[0].Cells[0].FillColor = Color.Azure;
-                            //t.Rows[0].Cells[0].Paragraphs.First().Append("#").Font(new FontFamily("Arial Black"));
-                            perfs[i].Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                            perfs[i].Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                            perfs[i].Rows[0].Cells[2].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                            perfs[i].Rows[0].Cells[3].Paragraphs.First().Append("Heat").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-
-                            for (int j = 0; j < tempEventList.Count; j++)
+                            List<Performance> tempEventList = performances[validEvents[i]]; //new List<Performance>();
+                            if (tempEventList[0].heatNum != 0) //running event
                             {
-                                perfs[i].Rows[j + 1].Cells[0].Paragraphs.First().Append((j + 1).ToString());
-                                perfs[i].Rows[j + 1].Cells[1].Paragraphs.First().Append(tempEventList[j].athleteName);
-                                perfs[i].Rows[j + 1].Cells[2].Paragraphs.First().Append(eMgr.ConvertToLengthData(tempEventList[j].performance));
-                                perfs[i].Rows[j + 1].Cells[3].Paragraphs.First().Append(tempEventList[j].heatNum.ToString());
+                                tempEventList = tempEventList.OrderBy(o => o.performance).ToList(); //Order list by best-worst performance
+                                perfs[i] = document.AddTable(tempEventList.Count + 1, 4);
+                                // Specify some properties for this Table.
+                                perfs[i].Alignment = Alignment.center;
+                                perfs[i].Design = TableDesign.TableNormal;
+
+                                //t.Rows[0].Cells[0].FillColor = Color.Azure;
+                                //t.Rows[0].Cells[0].Paragraphs.First().Append("#").Font(new FontFamily("Arial Black"));
+                                perfs[i].Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                                perfs[i].Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                                perfs[i].Rows[0].Cells[2].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                                perfs[i].Rows[0].Cells[3].Paragraphs.First().Append("Heat").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+
+                                for (int j = 0; j < tempEventList.Count; j++)
+                                {
+                                    perfs[i].Rows[j + 1].Cells[0].Paragraphs.First().Append((j + 1).ToString());
+                                    perfs[i].Rows[j + 1].Cells[1].Paragraphs.First().Append(tempEventList[j].athleteName);
+                                    perfs[i].Rows[j + 1].Cells[2].Paragraphs.First().Append(eMgr.ConvertToLengthData(tempEventList[j].performance));
+                                    perfs[i].Rows[j + 1].Cells[3].Paragraphs.First().Append(tempEventList[j].heatNum.ToString());
+                                }
+
+                                document.InsertTable(perfs[i]);
                             }
-
-                            document.InsertTable(perfs[i]);
-                        }
-                        else // running event
-                        {
-                            perfs[i] = document.AddTable(performances.Count + 1, 3);
-                            // Specify some properties for this Table.
-                            perfs[i].Alignment = Alignment.center;
-                            perfs[i].Design = TableDesign.TableNormal;
-
-                            //t.Rows[0].Cells[0].FillColor = Color.Azure;
-                            //t.Rows[0].Cells[0].Paragraphs.First().Append("#").Font(new FontFamily("Arial Black"));
-                            perfs[i].Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                            perfs[i].Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-                            perfs[i].Rows[0].Cells[2].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
-
-                            for (int j = 0; j < tempEventList.Count; j++)
+                            else // field event
                             {
-                                perfs[i].Rows[j + 1].Cells[0].Paragraphs.First().Append((j + 1).ToString());
-                                perfs[i].Rows[j + 1].Cells[1].Paragraphs.First().Append(tempEventList[j].athleteName);
-                                perfs[i].Rows[j + 1].Cells[2].Paragraphs.First().Append(eMgr.ConvertToTimedData(tempEventList[j].performance));
-                            }
+                                tempEventList = tempEventList.OrderByDescending(o => o.performance).ToList(); //Order list by best-worst performance
+                                perfs[i] = document.AddTable(tempEventList.Count + 1, 3);
+                                // Specify some properties for this Table.
+                                perfs[i].Alignment = Alignment.center;
+                                perfs[i].Design = TableDesign.TableNormal;
 
-                            document.InsertTable(perfs[i]);
+                                //t.Rows[0].Cells[0].FillColor = Color.Azure;
+                                //t.Rows[0].Cells[0].Paragraphs.First().Append("#").Font(new FontFamily("Arial Black"));
+                                perfs[i].Rows[0].Cells[0].Paragraphs.First().Append("#").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                                perfs[i].Rows[0].Cells[1].Paragraphs.First().Append("Athlete").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+                                perfs[i].Rows[0].Cells[2].Paragraphs.First().Append("Performance").Bold().UnderlineStyle(UnderlineStyle.singleLine);
+
+                                for (int j = 0; j < tempEventList.Count; j++)
+                                {
+                                    perfs[i].Rows[j + 1].Cells[0].Paragraphs.First().Append((j + 1).ToString());
+                                    perfs[i].Rows[j + 1].Cells[1].Paragraphs.First().Append(tempEventList[j].athleteName);
+                                    perfs[i].Rows[j + 1].Cells[2].Paragraphs.First().Append(eMgr.ConvertToLengthData(tempEventList[j].performance));
+                                }
+
+                                document.InsertTable(perfs[i]);
+                            }
                         }
                         //Enter some blank Space for next event
                         //Might not be needed
-                        // Save the document.
-                        document.Save();
-                        System.Diagnostics.Process.Start(fileName);
+                        
                     }
+                    // Save the document.
+                    document.Save();
+                    System.Diagnostics.Process.Start(fileName);
                 }
             }
             return true;
