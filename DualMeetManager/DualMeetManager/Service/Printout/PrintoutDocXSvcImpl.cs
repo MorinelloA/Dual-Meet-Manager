@@ -674,7 +674,7 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[25].Cells[9].Paragraphs.First().Append("Time");
                 t.Rows[25].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                 t.Rows[25].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
-                //1600
+                //4x100
                 t.Rows[26].Cells[0].Paragraphs.First().Append("1");
                 t.Rows[27].Cells[0].Paragraphs.First().Append("2");
                 t.Rows[28].MergeCells(0, 3);
@@ -683,20 +683,20 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[28].Cells[0].RemoveParagraphAt(0);
                 t.Rows[28].Cells[0].Paragraphs.First().Append("Total");
                 t.Rows[28].Cells[0].Paragraphs.First().Alignment = Alignment.left;
-                if (scoreToPrint.indEvents.ContainsKey(gender + " 1600"))
+                if (scoreToPrint.indEvents.ContainsKey(gender + " 4x100"))
                 {
-                    t.Rows[26].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[0].athleteName);
-                    t.Rows[26].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[0].schoolName);
-                    t.Rows[26].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[0].performance);
-                    t.Rows[26].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].points[0].team1Pts));
-                    t.Rows[26].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].points[0].team2Pts));
-                    t.Rows[27].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[1].athleteName);
-                    t.Rows[27].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[1].schoolName);
-                    t.Rows[27].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[1].performance);
-                    t.Rows[27].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].points[1].team1Pts));
-                    t.Rows[27].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].points[1].team2Pts));
-                    t.Rows[28].Cells[1].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].team1Total));
-                    t.Rows[28].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].team2Total));
+                    t.Rows[26].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x100"].points[0].athleteName);
+                    t.Rows[26].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x100"].points[0].schoolName);
+                    t.Rows[26].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x100"].points[0].performance);
+                    t.Rows[26].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x100"].points[0].team1Pts));
+                    t.Rows[26].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x100"].points[0].team2Pts));
+                    t.Rows[27].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x100"].points[1].athleteName);
+                    t.Rows[27].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x100"].points[1].schoolName);
+                    t.Rows[27].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x100"].points[1].performance);
+                    t.Rows[27].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x100"].points[1].team1Pts));
+                    t.Rows[27].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x100"].points[1].team2Pts));
+                    t.Rows[28].Cells[1].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x100"].team1Total));
+                    t.Rows[28].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x100"].team2Total));
                 }
                 else
                 {
@@ -707,7 +707,7 @@ namespace DualMeetManager.Service.Printout
                     t.Rows[28].Cells[1].Paragraphs.First().Append("0");
                     t.Rows[28].Cells[2].Paragraphs.First().Append("0");
                 }
-                //3200
+                //4x400
                 t.Rows[26].Cells[6].Paragraphs.First().Append("1");
                 t.Rows[27].Cells[6].Paragraphs.First().Append("2");
                 t.Rows[28].MergeCells(3, 6);
@@ -716,21 +716,21 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[28].Cells[3].RemoveParagraphAt(0);
                 t.Rows[28].Cells[3].Paragraphs.First().Append("Total");
                 t.Rows[28].Cells[3].Paragraphs.First().Alignment = Alignment.left;
-                if (scoreToPrint.indEvents.ContainsKey(gender + " 3200"))
+                if (scoreToPrint.indEvents.ContainsKey(gender + " 4x400"))
                 {
-                    t.Rows[26].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[0].athleteName);
-                    t.Rows[26].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[0].schoolName);
-                    t.Rows[26].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[0].performance);
-                    t.Rows[26].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[0].team1Pts));
-                    t.Rows[26].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[0].team2Pts));
-                    t.Rows[27].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[1].athleteName);
-                    t.Rows[27].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[1].schoolName);
-                    t.Rows[27].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[1].performance);
-                    t.Rows[27].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[1].team1Pts));
-                    t.Rows[27].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[1].team2Pts));
-                    t.Rows[27].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[2].athleteName);
-                    t.Rows[28].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].team1Total));
-                    t.Rows[28].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].team2Total));
+                    t.Rows[26].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x400"].points[0].athleteName);
+                    t.Rows[26].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x400"].points[0].schoolName);
+                    t.Rows[26].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x400"].points[0].performance);
+                    t.Rows[26].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x400"].points[0].team1Pts));
+                    t.Rows[26].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x400"].points[0].team2Pts));
+                    t.Rows[27].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x400"].points[1].athleteName);
+                    t.Rows[27].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x400"].points[1].schoolName);
+                    t.Rows[27].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x400"].points[1].performance);
+                    t.Rows[27].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x400"].points[1].team1Pts));
+                    t.Rows[27].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x400"].points[1].team2Pts));
+                    t.Rows[27].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x400"].points[2].athleteName);
+                    t.Rows[28].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x400"].team1Total));
+                    t.Rows[28].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x400"].team2Total));
                 }
                 else
                 {
@@ -771,7 +771,7 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[30].Cells[9].Paragraphs.First().Append("Time");
                 t.Rows[30].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                 t.Rows[30].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
-                //1600
+                //4x800
                 t.Rows[31].Cells[0].Paragraphs.First().Append("1");
                 t.Rows[32].Cells[0].Paragraphs.First().Append("2");
                 //t.Rows[33].Cells[0].Paragraphs.First().Append("3");
@@ -789,20 +789,20 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[34].Cells[0].RemoveParagraphAt(0);
                 t.Rows[34].Cells[0].RemoveParagraphAt(0);
                 
-                if (scoreToPrint.indEvents.ContainsKey(gender + " 1600"))
+                if (scoreToPrint.indEvents.ContainsKey(gender + " 4x800"))
                 {
-                    t.Rows[31].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[0].athleteName);
-                    t.Rows[31].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[0].schoolName);
-                    t.Rows[31].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[0].performance);
-                    t.Rows[31].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].points[0].team1Pts));
-                    t.Rows[31].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].points[0].team2Pts));
-                    t.Rows[32].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[1].athleteName);
-                    t.Rows[32].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[1].schoolName);
-                    t.Rows[32].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 1600"].points[1].performance);
-                    t.Rows[32].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].points[1].team1Pts));
-                    t.Rows[32].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].points[1].team2Pts));
-                    t.Rows[33].Cells[1].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].team1Total));
-                    t.Rows[33].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 1600"].team2Total));
+                    t.Rows[31].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x800"].points[0].athleteName);
+                    t.Rows[31].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x800"].points[0].schoolName);
+                    t.Rows[31].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x800"].points[0].performance);
+                    t.Rows[31].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x800"].points[0].team1Pts));
+                    t.Rows[31].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x800"].points[0].team2Pts));
+                    t.Rows[32].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x800"].points[1].athleteName);
+                    t.Rows[32].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x800"].points[1].schoolName);
+                    t.Rows[32].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 4x800"].points[1].performance);
+                    t.Rows[32].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x800"].points[1].team1Pts));
+                    t.Rows[32].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x800"].points[1].team2Pts));
+                    t.Rows[33].Cells[1].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x800"].team1Total));
+                    t.Rows[33].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 4x800"].team2Total));
                 }
                 else
                 {
@@ -813,7 +813,7 @@ namespace DualMeetManager.Service.Printout
                     t.Rows[33].Cells[1].Paragraphs.First().Append("0");
                     t.Rows[33].Cells[2].Paragraphs.First().Append("0");
                 }
-                //3200
+                //ShotPut
                 t.Rows[31].Cells[6].Paragraphs.First().Append("1");
                 t.Rows[32].Cells[6].Paragraphs.First().Append("2");
                 t.Rows[33].Cells[3].Paragraphs.First().Append("3");
@@ -823,25 +823,25 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[34].Cells[1].RemoveParagraphAt(0);
                 t.Rows[34].Cells[1].Paragraphs.First().Append("Total");
                 t.Rows[34].Cells[1].Paragraphs.First().Alignment = Alignment.left;
-                if (scoreToPrint.indEvents.ContainsKey(gender + " 3200"))
+                if (scoreToPrint.indEvents.ContainsKey(gender + " ShotPut"))
                 {
-                    t.Rows[31].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[0].athleteName);
-                    t.Rows[31].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[0].schoolName);
-                    t.Rows[31].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[0].performance);
-                    t.Rows[31].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[0].team1Pts));
-                    t.Rows[31].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[0].team2Pts));
-                    t.Rows[32].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[1].athleteName);
-                    t.Rows[32].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[1].schoolName);
-                    t.Rows[32].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[1].performance);
-                    t.Rows[32].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[1].team1Pts));
-                    t.Rows[32].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[1].team2Pts));
-                    t.Rows[33].Cells[4].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[2].athleteName);
-                    t.Rows[33].Cells[5].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[2].schoolName);
-                    t.Rows[33].Cells[6].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 3200"].points[2].performance);
-                    t.Rows[33].Cells[7].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[2].team1Pts));
-                    t.Rows[33].Cells[8].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].points[2].team2Pts));
-                    t.Rows[34].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].team1Total));
-                    t.Rows[34].Cells[3].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 3200"].team2Total));
+                    t.Rows[31].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " ShotPut"].points[0].athleteName);
+                    t.Rows[31].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " ShotPut"].points[0].schoolName);
+                    t.Rows[31].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " ShotPut"].points[0].performance);
+                    t.Rows[31].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " ShotPut"].points[0].team1Pts));
+                    t.Rows[31].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " ShotPut"].points[0].team2Pts));
+                    t.Rows[32].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " ShotPut"].points[1].athleteName);
+                    t.Rows[32].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " ShotPut"].points[1].schoolName);
+                    t.Rows[32].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " ShotPut"].points[1].performance);
+                    t.Rows[32].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " ShotPut"].points[1].team1Pts));
+                    t.Rows[32].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " ShotPut"].points[1].team2Pts));
+                    t.Rows[33].Cells[4].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " ShotPut"].points[2].athleteName);
+                    t.Rows[33].Cells[5].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " ShotPut"].points[2].schoolName);
+                    t.Rows[33].Cells[6].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " ShotPut"].points[2].performance);
+                    t.Rows[33].Cells[7].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " ShotPut"].points[2].team1Pts));
+                    t.Rows[33].Cells[8].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " ShotPut"].points[2].team2Pts));
+                    t.Rows[34].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " ShotPut"].team1Total));
+                    t.Rows[34].Cells[3].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " ShotPut"].team2Total));
                 }
                 else
                 {
@@ -884,6 +884,88 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[36].Cells[9].Paragraphs.First().Append("Time");
                 t.Rows[36].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                 t.Rows[36].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                //Discus
+                t.Rows[37].Cells[0].Paragraphs.First().Append("1");
+                t.Rows[38].Cells[0].Paragraphs.First().Append("2");
+                t.Rows[39].Cells[0].Paragraphs.First().Append("3");
+                t.Rows[40].MergeCells(0, 3);
+                t.Rows[40].Cells[0].RemoveParagraphAt(0);
+                t.Rows[40].Cells[0].RemoveParagraphAt(0);
+                t.Rows[40].Cells[0].RemoveParagraphAt(0);
+                t.Rows[40].Cells[0].Paragraphs.First().Append("Total");
+                t.Rows[40].Cells[0].Paragraphs.First().Alignment = Alignment.left;
+                if (scoreToPrint.indEvents.ContainsKey(gender + " Discus"))
+                {
+                    t.Rows[37].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Discus"].points[0].athleteName);
+                    t.Rows[37].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Discus"].points[0].schoolName);
+                    t.Rows[37].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Discus"].points[0].performance);
+                    t.Rows[37].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Discus"].points[0].team1Pts));
+                    t.Rows[37].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Discus"].points[0].team2Pts));
+                    t.Rows[38].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Discus"].points[1].athleteName);
+                    t.Rows[38].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Discus"].points[1].schoolName);
+                    t.Rows[38].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Discus"].points[1].performance);
+                    t.Rows[38].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Discus"].points[1].team1Pts));
+                    t.Rows[38].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Discus"].points[1].team2Pts));
+                    t.Rows[39].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Discus"].points[2].athleteName);
+                    t.Rows[39].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Discus"].points[2].schoolName);
+                    t.Rows[39].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Discus"].points[2].performance);
+                    t.Rows[39].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Discus"].points[2].team1Pts));
+                    t.Rows[39].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Discus"].points[2].team2Pts));
+                    t.Rows[40].Cells[1].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Discus"].team1Total));
+                    t.Rows[40].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Discus"].team2Total));
+                }
+                else
+                {
+                    t.Rows[37].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[37].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[38].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[38].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[39].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[39].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[40].Cells[1].Paragraphs.First().Append("0");
+                    t.Rows[40].Cells[2].Paragraphs.First().Append("0");
+                }
+                //Javelin
+                t.Rows[37].Cells[6].Paragraphs.First().Append("1");
+                t.Rows[38].Cells[6].Paragraphs.First().Append("2");
+                t.Rows[39].Cells[6].Paragraphs.First().Append("3");
+                t.Rows[40].MergeCells(3, 6);
+                t.Rows[40].Cells[3].RemoveParagraphAt(0);
+                t.Rows[40].Cells[3].RemoveParagraphAt(0);
+                t.Rows[40].Cells[3].RemoveParagraphAt(0);
+                t.Rows[40].Cells[3].Paragraphs.First().Append("Total");
+                t.Rows[40].Cells[3].Paragraphs.First().Alignment = Alignment.left;
+                if (scoreToPrint.indEvents.ContainsKey(gender + " Javelin"))
+                {
+                    t.Rows[37].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Javelin"].points[0].athleteName);
+                    t.Rows[37].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Javelin"].points[0].schoolName);
+                    t.Rows[37].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Javelin"].points[0].performance);
+                    t.Rows[37].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Javelin"].points[0].team1Pts));
+                    t.Rows[37].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Javelin"].points[0].team2Pts));
+                    t.Rows[38].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Javelin"].points[1].athleteName);
+                    t.Rows[38].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Javelin"].points[1].schoolName);
+                    t.Rows[38].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Javelin"].points[1].performance);
+                    t.Rows[38].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Javelin"].points[1].team1Pts));
+                    t.Rows[38].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Javelin"].points[1].team2Pts));
+                    t.Rows[39].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Javelin"].points[2].athleteName);
+                    t.Rows[39].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Javelin"].points[2].schoolName);
+                    t.Rows[39].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " Javelin"].points[2].performance);
+                    t.Rows[39].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Javelin"].points[2].team1Pts));
+                    t.Rows[39].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Javelin"].points[2].team2Pts));
+                    t.Rows[40].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Javelin"].team1Total));
+                    t.Rows[40].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " Javelin"].team2Total));
+                }
+                else
+                {
+                    t.Rows[37].Cells[10].Paragraphs.First().Append("0");
+                    t.Rows[37].Cells[11].Paragraphs.First().Append("0");
+                    t.Rows[38].Cells[10].Paragraphs.First().Append("0");
+                    t.Rows[38].Cells[11].Paragraphs.First().Append("0");
+                    t.Rows[39].Cells[10].Paragraphs.First().Append("0");
+                    t.Rows[39].Cells[11].Paragraphs.First().Append("0");
+                    t.Rows[40].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[40].Cells[5].Paragraphs.First().Append("0");
+                }
 
                 // Merge the cells LJ & TJ Title Cells into one new cell.
                 t.Rows[41].MergeCells(0, 5);
@@ -914,6 +996,88 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[42].Cells[9].Paragraphs.First().Append("Time");
                 t.Rows[42].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                 t.Rows[42].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                //LJ
+                t.Rows[43].Cells[0].Paragraphs.First().Append("1");
+                t.Rows[44].Cells[0].Paragraphs.First().Append("2");
+                t.Rows[45].Cells[0].Paragraphs.First().Append("3");
+                t.Rows[46].MergeCells(0, 3);
+                t.Rows[46].Cells[0].RemoveParagraphAt(0);
+                t.Rows[46].Cells[0].RemoveParagraphAt(0);
+                t.Rows[46].Cells[0].RemoveParagraphAt(0);
+                t.Rows[46].Cells[0].Paragraphs.First().Append("Total");
+                t.Rows[46].Cells[0].Paragraphs.First().Alignment = Alignment.left;
+                if (scoreToPrint.indEvents.ContainsKey(gender + " LJ"))
+                {
+                    t.Rows[43].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " LJ"].points[0].athleteName);
+                    t.Rows[43].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " LJ"].points[0].schoolName);
+                    t.Rows[43].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " LJ"].points[0].performance);
+                    t.Rows[43].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " LJ"].points[0].team1Pts));
+                    t.Rows[43].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " LJ"].points[0].team2Pts));
+                    t.Rows[44].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " LJ"].points[1].athleteName);
+                    t.Rows[44].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " LJ"].points[1].schoolName);
+                    t.Rows[44].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " LJ"].points[1].performance);
+                    t.Rows[44].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " LJ"].points[1].team1Pts));
+                    t.Rows[44].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " LJ"].points[1].team2Pts));
+                    t.Rows[45].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " LJ"].points[2].athleteName);
+                    t.Rows[45].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " LJ"].points[2].schoolName);
+                    t.Rows[45].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " LJ"].points[2].performance);
+                    t.Rows[45].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " LJ"].points[2].team1Pts));
+                    t.Rows[45].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " LJ"].points[2].team2Pts));
+                    t.Rows[46].Cells[1].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " LJ"].team1Total));
+                    t.Rows[46].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " LJ"].team2Total));
+                }
+                else
+                {
+                    t.Rows[43].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[43].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[44].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[44].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[45].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[45].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[46].Cells[1].Paragraphs.First().Append("0");
+                    t.Rows[46].Cells[2].Paragraphs.First().Append("0");
+                }
+                //TJ
+                t.Rows[43].Cells[6].Paragraphs.First().Append("1");
+                t.Rows[44].Cells[6].Paragraphs.First().Append("2");
+                t.Rows[45].Cells[6].Paragraphs.First().Append("3");
+                t.Rows[46].MergeCells(3, 6);
+                t.Rows[46].Cells[3].RemoveParagraphAt(0);
+                t.Rows[46].Cells[3].RemoveParagraphAt(0);
+                t.Rows[46].Cells[3].RemoveParagraphAt(0);
+                t.Rows[46].Cells[3].Paragraphs.First().Append("Total");
+                t.Rows[46].Cells[3].Paragraphs.First().Alignment = Alignment.left;
+                if (scoreToPrint.indEvents.ContainsKey(gender + " TJ"))
+                {
+                    t.Rows[43].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " TJ"].points[0].athleteName);
+                    t.Rows[43].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " TJ"].points[0].schoolName);
+                    t.Rows[43].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " TJ"].points[0].performance);
+                    t.Rows[43].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " TJ"].points[0].team1Pts));
+                    t.Rows[43].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " TJ"].points[0].team2Pts));
+                    t.Rows[44].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " TJ"].points[1].athleteName);
+                    t.Rows[44].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " TJ"].points[1].schoolName);
+                    t.Rows[44].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " TJ"].points[1].performance);
+                    t.Rows[44].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " TJ"].points[1].team1Pts));
+                    t.Rows[44].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " TJ"].points[1].team2Pts));
+                    t.Rows[45].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " TJ"].points[2].athleteName);
+                    t.Rows[45].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " TJ"].points[2].schoolName);
+                    t.Rows[45].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " TJ"].points[2].performance);
+                    t.Rows[45].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " TJ"].points[2].team1Pts));
+                    t.Rows[45].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " TJ"].points[2].team2Pts));
+                    t.Rows[46].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " TJ"].team1Total));
+                    t.Rows[46].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " TJ"].team2Total));
+                }
+                else
+                {
+                    t.Rows[43].Cells[10].Paragraphs.First().Append("0");
+                    t.Rows[43].Cells[11].Paragraphs.First().Append("0");
+                    t.Rows[44].Cells[10].Paragraphs.First().Append("0");
+                    t.Rows[44].Cells[11].Paragraphs.First().Append("0");
+                    t.Rows[45].Cells[10].Paragraphs.First().Append("0");
+                    t.Rows[45].Cells[11].Paragraphs.First().Append("0");
+                    t.Rows[46].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[46].Cells[5].Paragraphs.First().Append("0");
+                }
 
                 // Merge the cells High Jump & Pole Vault Title Cells into one new cell.
                 t.Rows[47].MergeCells(0, 5);
@@ -944,6 +1108,88 @@ namespace DualMeetManager.Service.Printout
                 t.Rows[48].Cells[9].Paragraphs.First().Append("Time");
                 t.Rows[48].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                 t.Rows[48].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
+                //HJ
+                t.Rows[49].Cells[0].Paragraphs.First().Append("1");
+                t.Rows[50].Cells[0].Paragraphs.First().Append("2");
+                t.Rows[51].Cells[0].Paragraphs.First().Append("3");
+                t.Rows[52].MergeCells(0, 3);
+                t.Rows[52].Cells[0].RemoveParagraphAt(0);
+                t.Rows[52].Cells[0].RemoveParagraphAt(0);
+                t.Rows[52].Cells[0].RemoveParagraphAt(0);
+                t.Rows[52].Cells[0].Paragraphs.First().Append("Total");
+                t.Rows[52].Cells[0].Paragraphs.First().Alignment = Alignment.left;
+                if (scoreToPrint.indEvents.ContainsKey(gender + " HJ"))
+                {
+                    t.Rows[49].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " HJ"].points[0].athleteName);
+                    t.Rows[49].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " HJ"].points[0].schoolName);
+                    t.Rows[49].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " HJ"].points[0].performance);
+                    t.Rows[49].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " HJ"].points[0].team1Pts));
+                    t.Rows[49].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " HJ"].points[0].team2Pts));
+                    t.Rows[50].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " HJ"].points[1].athleteName);
+                    t.Rows[50].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " HJ"].points[1].schoolName);
+                    t.Rows[50].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " HJ"].points[1].performance);
+                    t.Rows[50].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " HJ"].points[1].team1Pts));
+                    t.Rows[50].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " HJ"].points[1].team2Pts));
+                    t.Rows[51].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " HJ"].points[2].athleteName);
+                    t.Rows[51].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " HJ"].points[2].schoolName);
+                    t.Rows[51].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " HJ"].points[2].performance);
+                    t.Rows[51].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " HJ"].points[2].team1Pts));
+                    t.Rows[51].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " HJ"].points[2].team2Pts));
+                    t.Rows[52].Cells[1].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " HJ"].team1Total));
+                    t.Rows[52].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " HJ"].team2Total));
+                }
+                else
+                {
+                    t.Rows[49].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[49].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[50].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[50].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[51].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[51].Cells[5].Paragraphs.First().Append("0");
+                    t.Rows[52].Cells[1].Paragraphs.First().Append("0");
+                    t.Rows[52].Cells[2].Paragraphs.First().Append("0");
+                }
+                //PV
+                t.Rows[49].Cells[6].Paragraphs.First().Append("1");
+                t.Rows[50].Cells[6].Paragraphs.First().Append("2");
+                t.Rows[51].Cells[6].Paragraphs.First().Append("3");
+                t.Rows[52].MergeCells(3, 6);
+                t.Rows[52].Cells[3].RemoveParagraphAt(0);
+                t.Rows[52].Cells[3].RemoveParagraphAt(0);
+                t.Rows[52].Cells[3].RemoveParagraphAt(0);
+                t.Rows[52].Cells[3].Paragraphs.First().Append("Total");
+                t.Rows[52].Cells[3].Paragraphs.First().Alignment = Alignment.left;
+                if (scoreToPrint.indEvents.ContainsKey(gender + " PV"))
+                {
+                    t.Rows[49].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " PV"].points[0].athleteName);
+                    t.Rows[49].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " PV"].points[0].schoolName);
+                    t.Rows[49].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " PV"].points[0].performance);
+                    t.Rows[49].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " PV"].points[0].team1Pts));
+                    t.Rows[49].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " PV"].points[0].team2Pts));
+                    t.Rows[50].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " PV"].points[1].athleteName);
+                    t.Rows[50].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " PV"].points[1].schoolName);
+                    t.Rows[50].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " PV"].points[1].performance);
+                    t.Rows[50].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " PV"].points[1].team1Pts));
+                    t.Rows[50].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " PV"].points[1].team2Pts));
+                    t.Rows[51].Cells[7].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " PV"].points[2].athleteName);
+                    t.Rows[51].Cells[8].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " PV"].points[2].schoolName);
+                    t.Rows[51].Cells[9].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " PV"].points[2].performance);
+                    t.Rows[51].Cells[10].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " PV"].points[2].team1Pts));
+                    t.Rows[51].Cells[11].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " PV"].points[2].team2Pts));
+                    t.Rows[52].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " PV"].team1Total));
+                    t.Rows[52].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " PV"].team2Total));
+                }
+                else
+                {
+                    t.Rows[49].Cells[10].Paragraphs.First().Append("0");
+                    t.Rows[49].Cells[11].Paragraphs.First().Append("0");
+                    t.Rows[50].Cells[10].Paragraphs.First().Append("0");
+                    t.Rows[50].Cells[11].Paragraphs.First().Append("0");
+                    t.Rows[51].Cells[10].Paragraphs.First().Append("0");
+                    t.Rows[51].Cells[11].Paragraphs.First().Append("0");
+                    t.Rows[52].Cells[4].Paragraphs.First().Append("0");
+                    t.Rows[52].Cells[5].Paragraphs.First().Append("0");
+                }
 
                 document.InsertTable(t);
                 document.Save();
