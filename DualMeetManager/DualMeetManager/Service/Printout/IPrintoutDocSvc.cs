@@ -27,6 +27,6 @@ namespace DualMeetManager.Service.Printout
         /// </summary>
         /// <param name="scoreToPrint">OverallScore information of the meet to be printed</param>
         /// <returns>boolean that shows whether or not the doc was created successfully or not</returns>
-        bool CreateMeetResultsDoc(OverallScore scoreToPrint);
+        bool CreateMeetResultsDoc(string gender, OverallScore scoreToPrint);
     }
 }
