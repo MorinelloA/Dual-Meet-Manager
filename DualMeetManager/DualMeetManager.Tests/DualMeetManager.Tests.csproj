@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F4971C1F-5E3C-4A2F-988A-9129B798DAF8}</ProjectGuid>
+    <ProjectGuid>{D4CE53A2-92A3-46FE-B508-2A936825617E}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>DualMeetManager.Tests</RootNamespace>
@@ -38,7 +38,6 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -75,14 +74,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DualMeetManager\DualMeetManager.csproj">
-      <Project>{f461d26d-56b4-4393-804f-53e2f2f059f4}</Project>
+      <Project>{23c0c88e-a669-468f-bd42-49f4a85fba91}</Project>
       <Name>DualMeetManager</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
