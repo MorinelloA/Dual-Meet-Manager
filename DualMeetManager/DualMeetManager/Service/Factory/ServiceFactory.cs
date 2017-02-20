@@ -30,6 +30,7 @@ namespace DualMeetManager.Service.Factory
             catch (Exception e)
             {
                 Console.WriteLine(name + " not loaded");
+                Console.WriteLine("Exception: " + e);
                 //throw new ServiceLoadException(name + "not loaded", e);
             }
             return (IService)obj;
