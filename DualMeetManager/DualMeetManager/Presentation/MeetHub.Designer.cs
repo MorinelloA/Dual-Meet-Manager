@@ -672,6 +672,7 @@
             this.mnuPrintoutsBoysScores.Name = "mnuPrintoutsBoysScores";
             this.mnuPrintoutsBoysScores.Size = new System.Drawing.Size(199, 22);
             this.mnuPrintoutsBoysScores.Text = "Boy\'s Team Scores";
+            this.mnuPrintoutsBoysScores.Visible = false;
             // 
             // mnuPrintoutsGirlsScores
             // 
@@ -695,6 +696,7 @@
             this.mnuPrintoutsGirlsScores.Name = "mnuPrintoutsGirlsScores";
             this.mnuPrintoutsGirlsScores.Size = new System.Drawing.Size(199, 22);
             this.mnuPrintoutsGirlsScores.Text = "Girl\'s Team Scores";
+            this.mnuPrintoutsGirlsScores.Visible = false;
             // 
             // mnuPrintoutsBoysTeamPerfs
             // 
@@ -761,96 +763,112 @@
             this.mnuPrintoutsBoysScores1vs3.Name = "mnuPrintoutsBoysScores1vs3";
             this.mnuPrintoutsBoysScores1vs3.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores1vs3.Text = "1 vs 3";
+            this.mnuPrintoutsBoysScores1vs3.Visible = false;
             // 
             // mnuPrintoutsBoysScores2vs3
             // 
             this.mnuPrintoutsBoysScores2vs3.Name = "mnuPrintoutsBoysScores2vs3";
             this.mnuPrintoutsBoysScores2vs3.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores2vs3.Text = "2 vs 3";
+            this.mnuPrintoutsBoysScores2vs3.Visible = false;
             // 
             // mnuPrintoutsBoysScores1vs4
             // 
             this.mnuPrintoutsBoysScores1vs4.Name = "mnuPrintoutsBoysScores1vs4";
             this.mnuPrintoutsBoysScores1vs4.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores1vs4.Text = "1 vs 4";
+            this.mnuPrintoutsBoysScores1vs4.Visible = false;
             // 
             // mnuPrintoutsBoysScores2vs4
             // 
             this.mnuPrintoutsBoysScores2vs4.Name = "mnuPrintoutsBoysScores2vs4";
             this.mnuPrintoutsBoysScores2vs4.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores2vs4.Text = "2 vs 4";
+            this.mnuPrintoutsBoysScores2vs4.Visible = false;
             // 
             // mnuPrintoutsBoysScores3vs4
             // 
             this.mnuPrintoutsBoysScores3vs4.Name = "mnuPrintoutsBoysScores3vs4";
             this.mnuPrintoutsBoysScores3vs4.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores3vs4.Text = "3 vs 4";
+            this.mnuPrintoutsBoysScores3vs4.Visible = false;
             // 
             // mnuPrintoutsBoysScores1vs5
             // 
             this.mnuPrintoutsBoysScores1vs5.Name = "mnuPrintoutsBoysScores1vs5";
             this.mnuPrintoutsBoysScores1vs5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores1vs5.Text = "1 vs 5";
+            this.mnuPrintoutsBoysScores1vs5.Visible = false;
             // 
             // mnuPrintoutsBoysScores2vs5
             // 
             this.mnuPrintoutsBoysScores2vs5.Name = "mnuPrintoutsBoysScores2vs5";
             this.mnuPrintoutsBoysScores2vs5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores2vs5.Text = "2 vs 5";
+            this.mnuPrintoutsBoysScores2vs5.Visible = false;
             // 
             // mnuPrintoutsBoysScores3vs5
             // 
             this.mnuPrintoutsBoysScores3vs5.Name = "mnuPrintoutsBoysScores3vs5";
             this.mnuPrintoutsBoysScores3vs5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores3vs5.Text = "3 vs 5";
+            this.mnuPrintoutsBoysScores3vs5.Visible = false;
             // 
             // mnuPrintoutsBoysScores4vs5
             // 
             this.mnuPrintoutsBoysScores4vs5.Name = "mnuPrintoutsBoysScores4vs5";
             this.mnuPrintoutsBoysScores4vs5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores4vs5.Text = "4 vs 5";
+            this.mnuPrintoutsBoysScores4vs5.Visible = false;
             // 
             // mnuPrintoutsBoysScores1vs6
             // 
             this.mnuPrintoutsBoysScores1vs6.Name = "mnuPrintoutsBoysScores1vs6";
             this.mnuPrintoutsBoysScores1vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores1vs6.Text = "1 vs 6";
+            this.mnuPrintoutsBoysScores1vs6.Visible = false;
             // 
             // mnuPrintoutsBoysScores2vs6
             // 
             this.mnuPrintoutsBoysScores2vs6.Name = "mnuPrintoutsBoysScores2vs6";
             this.mnuPrintoutsBoysScores2vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores2vs6.Text = "2 vs 6";
+            this.mnuPrintoutsBoysScores2vs6.Visible = false;
             // 
             // mnuPrintoutsBoysScores3vs6
             // 
             this.mnuPrintoutsBoysScores3vs6.Name = "mnuPrintoutsBoysScores3vs6";
             this.mnuPrintoutsBoysScores3vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores3vs6.Text = "3 vs 6";
+            this.mnuPrintoutsBoysScores3vs6.Visible = false;
             // 
             // mnuPrintoutsBoysScores4vs6
             // 
             this.mnuPrintoutsBoysScores4vs6.Name = "mnuPrintoutsBoysScores4vs6";
             this.mnuPrintoutsBoysScores4vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores4vs6.Text = "4 vs 6";
+            this.mnuPrintoutsBoysScores4vs6.Visible = false;
             // 
             // mnuPrintoutsBoysScores5vs6
             // 
             this.mnuPrintoutsBoysScores5vs6.Name = "mnuPrintoutsBoysScores5vs6";
             this.mnuPrintoutsBoysScores5vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScores5vs6.Text = "5 vs 6";
+            this.mnuPrintoutsBoysScores5vs6.Visible = false;
             // 
             // mnuPrintoutsBoysScoresAll
             // 
             this.mnuPrintoutsBoysScoresAll.Name = "mnuPrintoutsBoysScoresAll";
             this.mnuPrintoutsBoysScoresAll.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysScoresAll.Text = "All";
+            this.mnuPrintoutsBoysScoresAll.Visible = false;
             // 
             // mnuPrintoutsGirlsScoresAll
             // 
             this.mnuPrintoutsGirlsScoresAll.Name = "mnuPrintoutsGirlsScoresAll";
             this.mnuPrintoutsGirlsScoresAll.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScoresAll.Text = "All";
+            this.mnuPrintoutsGirlsScoresAll.Visible = false;
             // 
             // mnuPrintoutsGirlsScores1vs2
             // 
@@ -863,90 +881,105 @@
             this.mnuPrintoutsGirlsScores1vs3.Name = "mnuPrintoutsGirlsScores1vs3";
             this.mnuPrintoutsGirlsScores1vs3.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores1vs3.Text = "1 vs 3";
+            this.mnuPrintoutsGirlsScores1vs3.Visible = false;
             // 
             // mnuPrintoutsGirlsScores2vs3
             // 
             this.mnuPrintoutsGirlsScores2vs3.Name = "mnuPrintoutsGirlsScores2vs3";
             this.mnuPrintoutsGirlsScores2vs3.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores2vs3.Text = "2 vs 3";
+            this.mnuPrintoutsGirlsScores2vs3.Visible = false;
             // 
             // mnuPrintoutsGirlsScores1vs4
             // 
             this.mnuPrintoutsGirlsScores1vs4.Name = "mnuPrintoutsGirlsScores1vs4";
             this.mnuPrintoutsGirlsScores1vs4.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores1vs4.Text = "1 vs 4";
+            this.mnuPrintoutsGirlsScores1vs4.Visible = false;
             // 
             // mnuPrintoutsGirlsScores2vs4
             // 
             this.mnuPrintoutsGirlsScores2vs4.Name = "mnuPrintoutsGirlsScores2vs4";
             this.mnuPrintoutsGirlsScores2vs4.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores2vs4.Text = "2 vs 4";
+            this.mnuPrintoutsGirlsScores2vs4.Visible = false;
             // 
             // mnuPrintoutsGirlsScores3vs4
             // 
             this.mnuPrintoutsGirlsScores3vs4.Name = "mnuPrintoutsGirlsScores3vs4";
             this.mnuPrintoutsGirlsScores3vs4.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores3vs4.Text = "3 vs 4";
+            this.mnuPrintoutsGirlsScores3vs4.Visible = false;
             // 
             // mnuPrintoutsGirlsScores1vs5
             // 
             this.mnuPrintoutsGirlsScores1vs5.Name = "mnuPrintoutsGirlsScores1vs5";
             this.mnuPrintoutsGirlsScores1vs5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores1vs5.Text = "1 vs 5";
+            this.mnuPrintoutsGirlsScores1vs5.Visible = false;
             // 
             // mnuPrintoutsGirlsScores2vs5
             // 
             this.mnuPrintoutsGirlsScores2vs5.Name = "mnuPrintoutsGirlsScores2vs5";
             this.mnuPrintoutsGirlsScores2vs5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores2vs5.Text = "2 vs 5";
+            this.mnuPrintoutsGirlsScores2vs5.Visible = false;
             // 
             // mnuPrintoutsGirlsScores3vs5
             // 
             this.mnuPrintoutsGirlsScores3vs5.Name = "mnuPrintoutsGirlsScores3vs5";
             this.mnuPrintoutsGirlsScores3vs5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores3vs5.Text = "3 vs 5";
+            this.mnuPrintoutsGirlsScores3vs5.Visible = false;
             // 
             // mnuPrintoutsGirlsScores4vs5
             // 
             this.mnuPrintoutsGirlsScores4vs5.Name = "mnuPrintoutsGirlsScores4vs5";
             this.mnuPrintoutsGirlsScores4vs5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores4vs5.Text = "4 vs 5";
+            this.mnuPrintoutsGirlsScores4vs5.Visible = false;
             // 
             // mnuPrintoutsGirlsScores1vs6
             // 
             this.mnuPrintoutsGirlsScores1vs6.Name = "mnuPrintoutsGirlsScores1vs6";
             this.mnuPrintoutsGirlsScores1vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores1vs6.Text = "1 vs 6";
+            this.mnuPrintoutsGirlsScores1vs6.Visible = false;
             // 
             // mnuPrintoutsGirlsScores2vs6
             // 
             this.mnuPrintoutsGirlsScores2vs6.Name = "mnuPrintoutsGirlsScores2vs6";
             this.mnuPrintoutsGirlsScores2vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores2vs6.Text = "2 vs 6";
+            this.mnuPrintoutsGirlsScores2vs6.Visible = false;
             // 
             // mnuPrintoutsGirlsScores3vs6
             // 
             this.mnuPrintoutsGirlsScores3vs6.Name = "mnuPrintoutsGirlsScores3vs6";
             this.mnuPrintoutsGirlsScores3vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores3vs6.Text = "3 vs 6";
+            this.mnuPrintoutsGirlsScores3vs6.Visible = false;
             // 
             // mnuPrintoutsGirlsScores4vs6
             // 
             this.mnuPrintoutsGirlsScores4vs6.Name = "mnuPrintoutsGirlsScores4vs6";
             this.mnuPrintoutsGirlsScores4vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores4vs6.Text = "4 vs 6";
+            this.mnuPrintoutsGirlsScores4vs6.Visible = false;
             // 
             // mnuPrintoutsGirlsScores5vs6
             // 
             this.mnuPrintoutsGirlsScores5vs6.Name = "mnuPrintoutsGirlsScores5vs6";
             this.mnuPrintoutsGirlsScores5vs6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsScores5vs6.Text = "5 vs 6";
+            this.mnuPrintoutsGirlsScores5vs6.Visible = false;
             // 
             // mnuPrintoutsBoysTeamPerfsAll
             // 
             this.mnuPrintoutsBoysTeamPerfsAll.Name = "mnuPrintoutsBoysTeamPerfsAll";
             this.mnuPrintoutsBoysTeamPerfsAll.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysTeamPerfsAll.Text = "All";
+            this.mnuPrintoutsBoysTeamPerfsAll.Visible = false;
             // 
             // mnuPrintoutsBoysTeamPerfsTeam1
             // 
@@ -959,36 +992,42 @@
             this.mnuPrintoutsBoysTeamPerfsTeam2.Name = "mnuPrintoutsBoysTeamPerfsTeam2";
             this.mnuPrintoutsBoysTeamPerfsTeam2.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysTeamPerfsTeam2.Text = "Team 2";
+            this.mnuPrintoutsBoysTeamPerfsTeam2.Visible = false;
             // 
             // mnuPrintoutsBoysTeamPerfsTeam3
             // 
             this.mnuPrintoutsBoysTeamPerfsTeam3.Name = "mnuPrintoutsBoysTeamPerfsTeam3";
             this.mnuPrintoutsBoysTeamPerfsTeam3.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysTeamPerfsTeam3.Text = "Team 3";
+            this.mnuPrintoutsBoysTeamPerfsTeam3.Visible = false;
             // 
             // mnuPrintoutsBoysTeamPerfsTeam4
             // 
             this.mnuPrintoutsBoysTeamPerfsTeam4.Name = "mnuPrintoutsBoysTeamPerfsTeam4";
             this.mnuPrintoutsBoysTeamPerfsTeam4.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysTeamPerfsTeam4.Text = "Team 4";
+            this.mnuPrintoutsBoysTeamPerfsTeam4.Visible = false;
             // 
             // mnuPrintoutsBoysTeamPerfsTeam5
             // 
             this.mnuPrintoutsBoysTeamPerfsTeam5.Name = "mnuPrintoutsBoysTeamPerfsTeam5";
             this.mnuPrintoutsBoysTeamPerfsTeam5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysTeamPerfsTeam5.Text = "Team 5";
+            this.mnuPrintoutsBoysTeamPerfsTeam5.Visible = false;
             // 
             // mnuPrintoutsBoysTeamPerfsTeam6
             // 
             this.mnuPrintoutsBoysTeamPerfsTeam6.Name = "mnuPrintoutsBoysTeamPerfsTeam6";
             this.mnuPrintoutsBoysTeamPerfsTeam6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsBoysTeamPerfsTeam6.Text = "Team 6";
+            this.mnuPrintoutsBoysTeamPerfsTeam6.Visible = false;
             // 
             // mnuPrintoutsGirlsTeamPerfsAll
             // 
             this.mnuPrintoutsGirlsTeamPerfsAll.Name = "mnuPrintoutsGirlsTeamPerfsAll";
             this.mnuPrintoutsGirlsTeamPerfsAll.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsTeamPerfsAll.Text = "All";
+            this.mnuPrintoutsGirlsTeamPerfsAll.Visible = false;
             // 
             // mnuPrintoutsGirlsTeamPerfsTeam1
             // 
@@ -1001,30 +1040,35 @@
             this.mnuPrintoutsGirlsTeamPerfsTeam2.Name = "mnuPrintoutsGirlsTeamPerfsTeam2";
             this.mnuPrintoutsGirlsTeamPerfsTeam2.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsTeamPerfsTeam2.Text = "Team 2";
+            this.mnuPrintoutsGirlsTeamPerfsTeam2.Visible = false;
             // 
             // mnuPrintoutsGirlsTeamPerfsTeam3
             // 
             this.mnuPrintoutsGirlsTeamPerfsTeam3.Name = "mnuPrintoutsGirlsTeamPerfsTeam3";
             this.mnuPrintoutsGirlsTeamPerfsTeam3.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsTeamPerfsTeam3.Text = "Team 3";
+            this.mnuPrintoutsGirlsTeamPerfsTeam3.Visible = false;
             // 
             // mnuPrintoutsGirlsTeamPerfsTeam4
             // 
             this.mnuPrintoutsGirlsTeamPerfsTeam4.Name = "mnuPrintoutsGirlsTeamPerfsTeam4";
             this.mnuPrintoutsGirlsTeamPerfsTeam4.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsTeamPerfsTeam4.Text = "Team 4";
+            this.mnuPrintoutsGirlsTeamPerfsTeam4.Visible = false;
             // 
             // mnuPrintoutsGirlsTeamPerfsTeam5
             // 
             this.mnuPrintoutsGirlsTeamPerfsTeam5.Name = "mnuPrintoutsGirlsTeamPerfsTeam5";
             this.mnuPrintoutsGirlsTeamPerfsTeam5.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsTeamPerfsTeam5.Text = "Team 5";
+            this.mnuPrintoutsGirlsTeamPerfsTeam5.Visible = false;
             // 
             // mnuPrintoutsGirlsTeamPerfsTeam6
             // 
             this.mnuPrintoutsGirlsTeamPerfsTeam6.Name = "mnuPrintoutsGirlsTeamPerfsTeam6";
             this.mnuPrintoutsGirlsTeamPerfsTeam6.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsTeamPerfsTeam6.Text = "Team 6";
+            this.mnuPrintoutsGirlsTeamPerfsTeam6.Visible = false;
             // 
             // mnuPrintoutsBoysEventPerfsSprints
             // 
