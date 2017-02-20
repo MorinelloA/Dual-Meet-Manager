@@ -93,6 +93,8 @@
             this.txtGirlsTeam1Name = new System.Windows.Forms.TextBox();
             this.lblGirlsTeam1Abbr = new System.Windows.Forms.Label();
             this.lblGirlsTeam1Name = new System.Windows.Forms.Label();
+            this.mnuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grpDetails.SuspendLayout();
             this.grpBoysTeams.SuspendLayout();
@@ -126,26 +128,29 @@
             // 
             this.mnuFileNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(149, 22);
+            this.mnuFileNew.Size = new System.Drawing.Size(152, 22);
             this.mnuFileNew.Text = "New Meet";
             // 
             // mnuFileOpen
             // 
             this.mnuFileOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileOpen.Name = "mnuFileOpen";
-            this.mnuFileOpen.Size = new System.Drawing.Size(149, 22);
+            this.mnuFileOpen.Size = new System.Drawing.Size(152, 22);
             this.mnuFileOpen.Text = "Open Meet";
             // 
             // mnuFileExit
             // 
             this.mnuFileExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(149, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
             this.mnuFileExit.Text = "Exit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
             // mnuHelp
             // 
+            this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuHelpAbout,
+            this.contactUsToolStripMenuItem});
             this.mnuHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuHelp.Name = "mnuHelp";
             this.mnuHelp.Size = new System.Drawing.Size(50, 22);
@@ -764,6 +769,18 @@
             this.lblGirlsTeam1Name.TabIndex = 0;
             this.lblGirlsTeam1Name.Text = "Team #1 Name:";
             // 
+            // mnuHelpAbout
+            // 
+            this.mnuHelpAbout.Name = "mnuHelpAbout";
+            this.mnuHelpAbout.Size = new System.Drawing.Size(152, 22);
+            this.mnuHelpAbout.Text = "About";
+            // 
+            // contactUsToolStripMenuItem
+            // 
+            this.contactUsToolStripMenuItem.Name = "contactUsToolStripMenuItem";
+            this.contactUsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.contactUsToolStripMenuItem.Text = "Contact Us";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -860,6 +877,8 @@
         private System.Windows.Forms.TextBox txtGirlsTeam1Name;
         private System.Windows.Forms.Label lblGirlsTeam1Abbr;
         private System.Windows.Forms.Label lblGirlsTeam1Name;
+        private System.Windows.Forms.ToolStripMenuItem mnuHelpAbout;
+        private System.Windows.Forms.ToolStripMenuItem contactUsToolStripMenuItem;
     }
 }
 

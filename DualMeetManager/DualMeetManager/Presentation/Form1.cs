@@ -20,7 +20,7 @@ namespace DualMeetManager.Presentation
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            //mnuHelpAbout.Visible = true;
         }
 
         private void cmdCreateMeet_Click(object sender, EventArgs e)
@@ -212,6 +212,11 @@ namespace DualMeetManager.Presentation
                     {
                         MessageBox.Show("Meet created successfully");
                         //Switch forms
+                        //MeetHub(newMeet);
+                        MeetHub newForm = new MeetHub(newMeet);
+                        this.Hide();
+                        newForm.ShowDialog();
+                        this.Close();
                     }
                     else
                     {

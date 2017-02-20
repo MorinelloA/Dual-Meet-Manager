@@ -25,3 +25,4 @@ C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManag
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\nunit.framework.dll
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\Newtonsoft.Json.xml
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\nunit.framework.xml
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.Presentation.MeetHub.resources
