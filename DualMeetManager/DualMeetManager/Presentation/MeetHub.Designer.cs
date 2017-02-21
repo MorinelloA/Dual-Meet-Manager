@@ -189,6 +189,7 @@
             this.mnuPrintoutsGirlsEventPerfsThrowsShotput = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrintoutsGirlsEventPerfsThrowsDiscus = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrintoutsGirlsEventPerfsThrowsJavelin = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuFileSave = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -243,6 +244,7 @@
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFileNew,
             this.mnuFileOpen,
+            this.mnuFileSave,
             this.mnuFileExit});
             this.mnuFile.Name = "mnuFile";
             this.mnuFile.Size = new System.Drawing.Size(35, 20);
@@ -1406,6 +1408,12 @@
             this.mnuPrintoutsGirlsEventPerfsThrowsJavelin.Size = new System.Drawing.Size(152, 22);
             this.mnuPrintoutsGirlsEventPerfsThrowsJavelin.Text = "Javelin";
             // 
+            // mnuFileSave
+            // 
+            this.mnuFileSave.Name = "mnuFileSave";
+            this.mnuFileSave.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileSave.Text = "Save Meet";
+            // 
             // MeetHub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1590,5 +1598,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuPrintoutsGirlsEventPerfsThrowsShotput;
         private System.Windows.Forms.ToolStripMenuItem mnuPrintoutsGirlsEventPerfsThrowsDiscus;
         private System.Windows.Forms.ToolStripMenuItem mnuPrintoutsGirlsEventPerfsThrowsJavelin;
+        private System.Windows.Forms.ToolStripMenuItem mnuFileSave;
     }
 }

@@ -116,7 +116,92 @@ namespace DualMeetManager.Presentation
                         }
                     }
                 }
+            } // End Boy's data
+
+            //Populate Girls List
+            foreach (KeyValuePair<string, string> entry in activeMeet.schoolNames.girlSchoolNames)
+            {
+                girlsAbbrs.Add(entry.Key);
             }
+
+            mnuPrintoutsGirlsTeamPerfsTeam1.Text = girlsAbbrs[0];
+
+            if (activeMeet.schoolNames.girlSchoolNames.Count >= 2)
+            {
+                //Scores
+                mnuPrintoutsGirlsScores.Visible = true;
+                mnuPrintoutsGirlsScores1vs2.Text = girlsAbbrs[0] + " vs " + girlsAbbrs[1];
+
+                //Team Perf
+                mnuPrintoutsGirlsTeamPerfsAll.Visible = true;
+                mnuPrintoutsGirlsTeamPerfsTeam2.Visible = true;
+                mnuPrintoutsGirlsTeamPerfsTeam2.Text = girlsAbbrs[1];
+
+                if (activeMeet.schoolNames.girlSchoolNames.Count >= 3)
+                {
+                    //Scores
+                    mnuPrintoutsGirlsScoresAll.Visible = true;
+                    mnuPrintoutsGirlsScores1vs3.Visible = true;
+                    mnuPrintoutsGirlsScores1vs3.Text = girlsAbbrs[0] + " vs " + girlsAbbrs[2];
+                    mnuPrintoutsGirlsScores2vs3.Visible = true;
+                    mnuPrintoutsGirlsScores2vs3.Text = girlsAbbrs[1] + " vs " + girlsAbbrs[2];
+
+                    //Team Perf
+                    mnuPrintoutsGirlsTeamPerfsTeam3.Visible = true;
+                    mnuPrintoutsGirlsTeamPerfsTeam3.Text = girlsAbbrs[2];
+
+                    if (activeMeet.schoolNames.girlSchoolNames.Count >= 4)
+                    {
+                        //Scores
+                        mnuPrintoutsGirlsScores1vs4.Visible = true;
+                        mnuPrintoutsGirlsScores1vs4.Text = girlsAbbrs[0] + " vs " + girlsAbbrs[3];
+                        mnuPrintoutsGirlsScores2vs4.Visible = true;
+                        mnuPrintoutsGirlsScores2vs4.Text = girlsAbbrs[1] + " vs " + girlsAbbrs[3];
+                        mnuPrintoutsGirlsScores3vs4.Visible = true;
+                        mnuPrintoutsGirlsScores3vs4.Text = girlsAbbrs[2] + " vs " + girlsAbbrs[3];
+
+                        //Team Perf
+                        mnuPrintoutsGirlsTeamPerfsTeam4.Visible = true;
+                        mnuPrintoutsGirlsTeamPerfsTeam4.Text = girlsAbbrs[3];
+
+                        if (activeMeet.schoolNames.girlSchoolNames.Count >= 5)
+                        {
+                            //Scores
+                            mnuPrintoutsGirlsScores1vs5.Visible = true;
+                            mnuPrintoutsGirlsScores1vs5.Text = girlsAbbrs[0] + " vs " + girlsAbbrs[4];
+                            mnuPrintoutsGirlsScores2vs5.Visible = true;
+                            mnuPrintoutsGirlsScores2vs5.Text = girlsAbbrs[1] + " vs " + girlsAbbrs[4];
+                            mnuPrintoutsGirlsScores3vs5.Visible = true;
+                            mnuPrintoutsGirlsScores3vs5.Text = girlsAbbrs[2] + " vs " + girlsAbbrs[4];
+                            mnuPrintoutsGirlsScores4vs5.Visible = true;
+                            mnuPrintoutsGirlsScores4vs5.Text = girlsAbbrs[3] + " vs " + girlsAbbrs[4];
+
+                            //Team Perf
+                            mnuPrintoutsGirlsTeamPerfsTeam5.Visible = true;
+                            mnuPrintoutsGirlsTeamPerfsTeam5.Text = girlsAbbrs[4];
+
+                            if (activeMeet.schoolNames.girlSchoolNames.Count >= 6)
+                            {
+                                //Scores
+                                mnuPrintoutsGirlsScores1vs6.Visible = true;
+                                mnuPrintoutsGirlsScores1vs6.Text = girlsAbbrs[0] + " vs " + girlsAbbrs[5];
+                                mnuPrintoutsGirlsScores2vs6.Visible = true;
+                                mnuPrintoutsGirlsScores2vs6.Text = girlsAbbrs[1] + " vs " + girlsAbbrs[5];
+                                mnuPrintoutsGirlsScores3vs6.Visible = true;
+                                mnuPrintoutsGirlsScores3vs6.Text = girlsAbbrs[2] + " vs " + girlsAbbrs[5];
+                                mnuPrintoutsGirlsScores4vs6.Visible = true;
+                                mnuPrintoutsGirlsScores4vs6.Text = girlsAbbrs[3] + " vs " + girlsAbbrs[5];
+                                mnuPrintoutsGirlsScores5vs6.Visible = true;
+                                mnuPrintoutsGirlsScores5vs6.Text = girlsAbbrs[4] + " vs " + girlsAbbrs[5];
+
+                                //Team Perf
+                                mnuPrintoutsGirlsTeamPerfsTeam6.Visible = true;
+                                mnuPrintoutsGirlsTeamPerfsTeam6.Text = girlsAbbrs[5];
+                            }
+                        }
+                    }
+                }
+            } // End Girl's data
         }
     }
 }
