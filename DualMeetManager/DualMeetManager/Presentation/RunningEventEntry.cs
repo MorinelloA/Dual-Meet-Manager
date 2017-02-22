@@ -16,11 +16,152 @@ namespace DualMeetManager.Presentation
     public partial class RunningEventEntry : Form
     {
         int currentHeatNum = 1;
+        int numRunners = 8;
         string eventName;
         List<Performance> currentPerfs;
         List<Performance> allPerfs;
         OrderedDictionary perfs = new OrderedDictionary();
         EventMgr em = new EventMgr();
+
+        public void displayCorrectNumOfRunners()
+        {
+            //Check how many runners are in current heat
+            if (!perfs.Contains(currentHeatNum))
+            {
+                numRunners = 8;
+            }
+            else
+            {
+                List<Performance> temp = (List<Performance>)perfs[currentHeatNum];
+                if(temp.Count <= 8)
+                {
+                    numRunners = 8;
+                }
+                else if(temp.Count <= 16)
+                {
+                    numRunners = 16;
+                }
+                else
+                {
+                    numRunners = 32;
+                }
+            }
+
+            //Make visible / non visible depending on number of runners
+            if(numRunners <= 8)
+            {
+                clear9to16();
+                clear17to32();
+
+                txtName9.Visible = false;
+                cboSchool9.Visible = false;
+                txtPerf9.Visible = false;
+
+                txtName10.Visible = false;
+                cboSchool10.Visible = false;
+                txtPerf10.Visible = false;
+
+                txtName11.Visible = false;
+                cboSchool11.Visible = false;
+                txtPerf11.Visible = false;
+
+                txtName12.Visible = false;
+                cboSchool12.Visible = false;
+                txtPerf12.Visible = false;
+
+                txtName13.Visible = false;
+                cboSchool13.Visible = false;
+                txtPerf13.Visible = false;
+
+                txtName14.Visible = false;
+                cboSchool14.Visible = false;
+                txtPerf14.Visible = false;
+
+                txtName15.Visible = false;
+                cboSchool15.Visible = false;
+                txtPerf15.Visible = false;
+
+                txtName16.Visible = false;
+                cboSchool16.Visible = false;
+                txtPerf16.Visible = false;
+
+                grpHeats2.Visible = false;
+            }
+            else if (numRunners <= 16)
+            {
+                clear17to32();
+
+                txtName9.Visible = true;
+                cboSchool9.Visible = true;
+                txtPerf9.Visible = true;
+
+                txtName10.Visible = true;
+                cboSchool10.Visible = true;
+                txtPerf10.Visible = true;
+
+                txtName11.Visible = true;
+                cboSchool11.Visible = true;
+                txtPerf11.Visible = true;
+
+                txtName12.Visible = true;
+                cboSchool12.Visible = true;
+                txtPerf12.Visible = true;
+
+                txtName13.Visible = true;
+                cboSchool13.Visible = true;
+                txtPerf13.Visible = true;
+
+                txtName14.Visible = true;
+                cboSchool14.Visible = true;
+                txtPerf14.Visible = true;
+
+                txtName15.Visible = true;
+                cboSchool15.Visible = true;
+                txtPerf15.Visible = true;
+
+                txtName16.Visible = true;
+                cboSchool16.Visible = true;
+                txtPerf16.Visible = true;
+
+                grpHeats2.Visible = false;
+            }
+            else
+            {
+                txtName9.Visible = true;
+                cboSchool9.Visible = true;
+                txtPerf9.Visible = true;
+
+                txtName10.Visible = true;
+                cboSchool10.Visible = true;
+                txtPerf10.Visible = true;
+
+                txtName11.Visible = true;
+                cboSchool11.Visible = true;
+                txtPerf11.Visible = true;
+
+                txtName12.Visible = true;
+                cboSchool12.Visible = true;
+                txtPerf12.Visible = true;
+
+                txtName13.Visible = true;
+                cboSchool13.Visible = true;
+                txtPerf13.Visible = true;
+
+                txtName14.Visible = true;
+                cboSchool14.Visible = true;
+                txtPerf14.Visible = true;
+
+                txtName15.Visible = true;
+                cboSchool15.Visible = true;
+                txtPerf15.Visible = true;
+
+                txtName16.Visible = true;
+                cboSchool16.Visible = true;
+                txtPerf16.Visible = true;
+
+                grpHeats2.Visible = true;
+            }
+        }
 
         /// <summary>
         /// Default Constructor
@@ -41,10 +182,7 @@ namespace DualMeetManager.Presentation
             this.allPerfs = allPerfs;
         }
 
-        /// <summary>
-        /// Clears all data from all objects on the form
-        /// </summary>
-        public void clearForm()
+        public void clear1to8()
         {
             txtName1.Text = "";
             cboSchool1.Text = "";
@@ -77,7 +215,10 @@ namespace DualMeetManager.Presentation
             txtName8.Text = "";
             cboSchool8.Text = "";
             txtPerf8.Text = "";
+        }
 
+        public void clear9to16()
+        {
             txtName9.Text = "";
             cboSchool9.Text = "";
             txtPerf9.Text = "";
@@ -109,7 +250,10 @@ namespace DualMeetManager.Presentation
             txtName16.Text = "";
             cboSchool16.Text = "";
             txtPerf16.Text = "";
+        }
 
+        public void clear17to32()
+        {
             txtName17.Text = "";
             cboSchool17.Text = "";
             txtPerf17.Text = "";
@@ -173,6 +317,16 @@ namespace DualMeetManager.Presentation
             txtName32.Text = "";
             cboSchool32.Text = "";
             txtPerf32.Text = "";
+        }
+
+        /// <summary>
+        /// Clears all data from all objects on the form
+        /// </summary>
+        public void clearForm()
+        {
+            clear1to8();
+            clear9to16();
+            clear17to32();
         }
 
         /// <summary>
@@ -398,6 +552,7 @@ namespace DualMeetManager.Presentation
                         highestHeat = p.heatNum;
                 }
 
+                //i is equal to the heat number
                 for (int i = 1; i <= highestHeat; i++)
                 {
                     List<Performance> tempPerfs = new List<Performance>();
@@ -415,7 +570,10 @@ namespace DualMeetManager.Presentation
 
         private void RunningEventEntry_Load(object sender, EventArgs e)
         {
-
+            putPerfsIntoOrderedDictionary();
+            currentHeatNum = 1;
+            displayCorrectNumOfRunners();
+            enterDataIntoForm();
         }
 
         /// <summary>

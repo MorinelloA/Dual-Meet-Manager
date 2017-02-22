@@ -11,18 +11,3 @@ C:\Users\laptop\Documents\Visual Studio 2015\Projects\DualMeetManager\DualMeetMa
 C:\Users\laptop\Documents\Visual Studio 2015\Projects\DualMeetManager\DualMeetManager\bin\Debug\nunit.framework.xml
 C:\Users\laptop\Documents\Visual Studio 2015\Projects\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.exe
 C:\Users\laptop\Documents\Visual Studio 2015\Projects\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.pdb
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.exe.config
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.exe
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.pdb
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.csprojResolveAssemblyReference.cache
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.Presentation.Form1.resources
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.Properties.Resources.resources
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.csproj.GenerateResource.Cache
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.exe
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\DualMeetManager.pdb
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\DocX.dll
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\Newtonsoft.Json.dll
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\nunit.framework.dll
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\Newtonsoft.Json.xml
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\bin\Debug\nunit.framework.xml
-C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.Presentation.MeetHub.resources
