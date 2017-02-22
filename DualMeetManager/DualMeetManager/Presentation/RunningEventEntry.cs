@@ -23,21 +23,22 @@ namespace DualMeetManager.Presentation
         OrderedDictionary perfs = new OrderedDictionary();
         EventMgr em = new EventMgr();
 
-        public void displayCorrectNumOfRunners()
+        public void setCorrectNumRunners()
         {
             //Check how many runners are in current heat
             if (!perfs.Contains(currentHeatNum))
             {
+                //Change this code to display the correct number of runners based on what event it is
                 numRunners = 8;
             }
             else
             {
                 List<Performance> temp = (List<Performance>)perfs[currentHeatNum];
-                if(temp.Count <= 8)
+                if (temp.Count <= 8)
                 {
                     numRunners = 8;
                 }
-                else if(temp.Count <= 16)
+                else if (temp.Count <= 16)
                 {
                     numRunners = 16;
                 }
@@ -46,7 +47,13 @@ namespace DualMeetManager.Presentation
                     numRunners = 32;
                 }
             }
+        }
 
+        /// <summary>
+        /// Changes the visibility of the runner form objects based on how many there are/needed
+        /// </summary>
+        public void displayCorrectNumOfRunners()
+        {
             //Make visible / non visible depending on number of runners
             if(numRunners <= 8)
             {
@@ -334,8 +341,10 @@ namespace DualMeetManager.Presentation
         /// </summary>
         public void enterDataIntoForm()
         {
-            //Need to check that this entry exists. Otherwise it will produce an error
-            List<Performance> tempPerfs = perfs[currentHeatNum] as List<Performance>;
+            //Needs to check that this entry exists. Otherwise it will produce an error
+            List<Performance> tempPerfs = new List<Performance>();
+            if(perfs.Contains(currentHeatNum))
+                tempPerfs = perfs[currentHeatNum] as List<Performance>;
 
             if (tempPerfs.ElementAtOrDefault(0) != null)
             {
@@ -572,6 +581,7 @@ namespace DualMeetManager.Presentation
         {
             putPerfsIntoOrderedDictionary();
             currentHeatNum = 1;
+            setCorrectNumRunners();
             displayCorrectNumOfRunners();
             enterDataIntoForm();
         }
@@ -990,5 +1000,63 @@ namespace DualMeetManager.Presentation
 
         }
 
+        private void mnuNum8_Click(object sender, EventArgs e)
+        {
+            numRunners = 8;
+            displayCorrectNumOfRunners();
+        }
+
+        private void mnuNum16_Click(object sender, EventArgs e)
+        {
+            numRunners = 16;
+            displayCorrectNumOfRunners();
+        }
+
+        private void mnuNum32_Click(object sender, EventArgs e)
+        {
+            numRunners = 32;
+            displayCorrectNumOfRunners();
+        }
+
+        private void cmdPrevious_Click(object sender, EventArgs e)
+        {
+            if(currentHeatNum <= 1)
+            {
+                MessageBox.Show("Cannot go to heat below 1", "Invalid heat #");
+                currentHeatNum = 1; // This should never be needed, but here just incase of an unknown error
+            }
+            else
+            {
+                currentHeatNum--;
+                grpHeats1.Text = "Heat #" + currentHeatNum;
+                grpHeats2.Text = "Heat #" + currentHeatNum;
+                setCorrectNumRunners();
+                displayCorrectNumOfRunners();
+                enterDataIntoForm();
+            }
+        }
+
+        private void cmdNext_Click(object sender, EventArgs e)
+        {
+            if (currentHeatNum >= 10000)
+            {
+                MessageBox.Show("Cannot go to heat above 10,000", "Invalid heat #");
+                currentHeatNum = 10000; // This should never be needed, but here just incase of an unknown error
+            }
+            else
+            {
+                currentHeatNum++;
+                grpHeats1.Text = "Heat #" + currentHeatNum;
+                grpHeats2.Text = "Heat #" + currentHeatNum;
+                setCorrectNumRunners();
+                displayCorrectNumOfRunners();
+                enterDataIntoForm();
+            }
+        }
+
+        private void cmdEnterData_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not yet implemented", "Coming Soon!");
+        }
     }
 }

@@ -203,5 +203,14 @@ namespace DualMeetManager.Presentation
                 }
             } // End Girl's data
         }
+
+        private void mnuEnterBoysSprints100_Click(object sender, EventArgs e)
+        {
+            //Needs refactored to include data, if it exists
+            RunningEventEntry newForm = new RunningEventEntry("Boy's 100", null);
+            this.Hide();
+            newForm.ShowDialog();
+            //this.Close();
+        }
     }
 }

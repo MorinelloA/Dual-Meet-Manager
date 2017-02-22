@@ -381,6 +381,7 @@
             this.mnuEnterBoysSprints100.Name = "mnuEnterBoysSprints100";
             this.mnuEnterBoysSprints100.Size = new System.Drawing.Size(152, 22);
             this.mnuEnterBoysSprints100.Text = "100 Meter Dash";
+            this.mnuEnterBoysSprints100.Click += new System.EventHandler(this.mnuEnterBoysSprints100_Click);
             // 
             // mnuEnterBoysSprints200
             // 
