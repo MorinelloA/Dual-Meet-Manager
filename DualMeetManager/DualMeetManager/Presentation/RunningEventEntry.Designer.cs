@@ -1389,7 +1389,6 @@
             this.cboSchool19.Name = "cboSchool19";
             this.cboSchool19.Size = new System.Drawing.Size(95, 21);
             this.cboSchool19.TabIndex = 15;
-            this.cboSchool19.SelectedIndexChanged += new System.EventHandler(this.comboBox30_SelectedIndexChanged);
             // 
             // txtPerf19
             // 

@@ -22,29 +22,383 @@ namespace DualMeetManager.Presentation
         OrderedDictionary perfs = new OrderedDictionary();
         EventMgr em = new EventMgr();
 
+        /// <summary>
+        /// Default Constructor
+        /// </summary>
+        public RunningEventEntry()
+        {
+            InitializeComponent();
+        }
+
+        /// <summary>
+        /// Parameterized Constructor
+        /// </summary>
+        /// <param name="eventName">Name of the event being entered</param>
+        /// <param name="allPerfs">Performances for the event</param>
+        public RunningEventEntry(string eventName, List<Performance> allPerfs) : this()
+        {
+            this.eventName = eventName;
+            this.allPerfs = allPerfs;
+        }
+
+        /// <summary>
+        /// Clears all data from all objects on the form
+        /// </summary>
+        public void clearForm()
+        {
+            txtName1.Text = "";
+            cboSchool1.Text = "";
+            txtPerf1.Text = "";
+
+            txtName2.Text = "";
+            cboSchool2.Text = "";
+            txtPerf2.Text = "";
+
+            txtName3.Text = "";
+            cboSchool3.Text = "";
+            txtPerf3.Text = "";
+
+            txtName4.Text = "";
+            cboSchool4.Text = "";
+            txtPerf4.Text = "";
+
+            txtName5.Text = "";
+            cboSchool5.Text = "";
+            txtPerf5.Text = "";
+
+            txtName6.Text = "";
+            cboSchool6.Text = "";
+            txtPerf6.Text = "";
+
+            txtName7.Text = "";
+            cboSchool7.Text = "";
+            txtPerf7.Text = "";
+
+            txtName8.Text = "";
+            cboSchool8.Text = "";
+            txtPerf8.Text = "";
+
+            txtName9.Text = "";
+            cboSchool9.Text = "";
+            txtPerf9.Text = "";
+
+            txtName10.Text = "";
+            cboSchool10.Text = "";
+            txtPerf10.Text = "";
+
+            txtName11.Text = "";
+            cboSchool11.Text = "";
+            txtPerf11.Text = "";
+
+            txtName12.Text = "";
+            cboSchool12.Text = "";
+            txtPerf12.Text = "";
+
+            txtName13.Text = "";
+            cboSchool13.Text = "";
+            txtPerf13.Text = "";
+
+            txtName14.Text = "";
+            cboSchool14.Text = "";
+            txtPerf14.Text = "";
+
+            txtName15.Text = "";
+            cboSchool15.Text = "";
+            txtPerf15.Text = "";
+
+            txtName16.Text = "";
+            cboSchool16.Text = "";
+            txtPerf16.Text = "";
+
+            txtName17.Text = "";
+            cboSchool17.Text = "";
+            txtPerf17.Text = "";
+
+            txtName18.Text = "";
+            cboSchool18.Text = "";
+            txtPerf18.Text = "";
+
+            txtName19.Text = "";
+            cboSchool19.Text = "";
+            txtPerf19.Text = "";
+
+            txtName20.Text = "";
+            cboSchool20.Text = "";
+            txtPerf20.Text = "";
+
+            txtName21.Text = "";
+            cboSchool21.Text = "";
+            txtPerf21.Text = "";
+
+            txtName22.Text = "";
+            cboSchool22.Text = "";
+            txtPerf22.Text = "";
+
+            txtName23.Text = "";
+            cboSchool23.Text = "";
+            txtPerf23.Text = "";
+
+            txtName24.Text = "";
+            cboSchool24.Text = "";
+            txtPerf24.Text = "";
+
+            txtName25.Text = "";
+            cboSchool25.Text = "";
+            txtPerf25.Text = "";
+
+            txtName26.Text = "";
+            cboSchool26.Text = "";
+            txtPerf26.Text = "";
+
+            txtName27.Text = "";
+            cboSchool27.Text = "";
+            txtPerf27.Text = "";
+
+            txtName28.Text = "";
+            cboSchool28.Text = "";
+            txtPerf28.Text = "";
+
+            txtName29.Text = "";
+            cboSchool29.Text = "";
+            txtPerf29.Text = "";
+
+            txtName30.Text = "";
+            cboSchool30.Text = "";
+            txtPerf30.Text = "";
+
+            txtName31.Text = "";
+            cboSchool31.Text = "";
+            txtPerf31.Text = "";
+
+            txtName32.Text = "";
+            cboSchool32.Text = "";
+            txtPerf32.Text = "";
+        }
+
+        /// <summary>
+        /// Enters data from specific heat (int currentHeatNum) for all objects on the form
+        /// </summary>
         public void enterDataIntoForm()
         {
             //Need to check that this entry exists. Otherwise it will produce an error
             List<Performance> tempPerfs = perfs[currentHeatNum] as List<Performance>;
+
+            if (tempPerfs.ElementAtOrDefault(0) != null)
+            {
+                txtName1.Text = tempPerfs[0].athleteName;
+                cboSchool1.Text = tempPerfs[0].schoolName;
+                txtPerf1.Text = em.ConvertToTimedData(tempPerfs[0].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(1) != null)
+            {
+                txtName2.Text = tempPerfs[1].athleteName;
+                cboSchool2.Text = tempPerfs[1].schoolName;
+                txtPerf2.Text = em.ConvertToTimedData(tempPerfs[1].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(2) != null)
+            {
+                txtName3.Text = tempPerfs[2].athleteName;
+                cboSchool3.Text = tempPerfs[2].schoolName;
+                txtPerf3.Text = em.ConvertToTimedData(tempPerfs[2].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(3) != null)
+            {
+                txtName4.Text = tempPerfs[3].athleteName;
+                cboSchool4.Text = tempPerfs[3].schoolName;
+                txtPerf4.Text = em.ConvertToTimedData(tempPerfs[3].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(4) != null)
+            {
+                txtName5.Text = tempPerfs[4].athleteName;
+                cboSchool5.Text = tempPerfs[4].schoolName;
+                txtPerf5.Text = em.ConvertToTimedData(tempPerfs[4].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(5) != null)
+            {
+                txtName6.Text = tempPerfs[5].athleteName;
+                cboSchool6.Text = tempPerfs[5].schoolName;
+                txtPerf6.Text = em.ConvertToTimedData(tempPerfs[5].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(6) != null)
+            {
+                txtName7.Text = tempPerfs[6].athleteName;
+                cboSchool7.Text = tempPerfs[6].schoolName;
+                txtPerf7.Text = em.ConvertToTimedData(tempPerfs[6].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(7) != null)
+            {
+                txtName8.Text = tempPerfs[7].athleteName;
+                cboSchool8.Text = tempPerfs[7].schoolName;
+                txtPerf8.Text = em.ConvertToTimedData(tempPerfs[7].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(8) != null)
+            {
+                txtName9.Text = tempPerfs[8].athleteName;
+                cboSchool9.Text = tempPerfs[8].schoolName;
+                txtPerf9.Text = em.ConvertToTimedData(tempPerfs[8].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(9) != null)
+            {
+                txtName10.Text = tempPerfs[9].athleteName;
+                cboSchool10.Text = tempPerfs[9].schoolName;
+                txtPerf10.Text = em.ConvertToTimedData(tempPerfs[9].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(10) != null)
+            {
+                txtName11.Text = tempPerfs[10].athleteName;
+                cboSchool11.Text = tempPerfs[10].schoolName;
+                txtPerf11.Text = em.ConvertToTimedData(tempPerfs[10].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(11) != null)
+            {
+                txtName12.Text = tempPerfs[11].athleteName;
+                cboSchool12.Text = tempPerfs[11].schoolName;
+                txtPerf12.Text = em.ConvertToTimedData(tempPerfs[11].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(12) != null)
+            {
+                txtName13.Text = tempPerfs[12].athleteName;
+                cboSchool13.Text = tempPerfs[12].schoolName;
+                txtPerf13.Text = em.ConvertToTimedData(tempPerfs[12].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(13) != null)
+            {
+                txtName14.Text = tempPerfs[13].athleteName;
+                cboSchool14.Text = tempPerfs[13].schoolName;
+                txtPerf14.Text = em.ConvertToTimedData(tempPerfs[13].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(14) != null)
+            {
+                txtName15.Text = tempPerfs[14].athleteName;
+                cboSchool15.Text = tempPerfs[14].schoolName;
+                txtPerf15.Text = em.ConvertToTimedData(tempPerfs[14].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(15) != null)
+            {
+                txtName16.Text = tempPerfs[15].athleteName;
+                cboSchool16.Text = tempPerfs[15].schoolName;
+                txtPerf16.Text = em.ConvertToTimedData(tempPerfs[15].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(16) != null)
+            {
+                txtName17.Text = tempPerfs[16].athleteName;
+                cboSchool17.Text = tempPerfs[16].schoolName;
+                txtPerf17.Text = em.ConvertToTimedData(tempPerfs[16].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(17) != null)
+            {
+                txtName18.Text = tempPerfs[17].athleteName;
+                cboSchool18.Text = tempPerfs[17].schoolName;
+                txtPerf18.Text = em.ConvertToTimedData(tempPerfs[17].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(18) != null)
+            {
+                txtName19.Text = tempPerfs[18].athleteName;
+                cboSchool19.Text = tempPerfs[18].schoolName;
+                txtPerf19.Text = em.ConvertToTimedData(tempPerfs[18].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(19) != null)
+            {
+                txtName20.Text = tempPerfs[19].athleteName;
+                cboSchool20.Text = tempPerfs[19].schoolName;
+                txtPerf20.Text = em.ConvertToTimedData(tempPerfs[19].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(20) != null)
+            {
+                txtName21.Text = tempPerfs[20].athleteName;
+                cboSchool21.Text = tempPerfs[20].schoolName;
+                txtPerf21.Text = em.ConvertToTimedData(tempPerfs[20].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(21) != null)
+            {
+                txtName22.Text = tempPerfs[21].athleteName;
+                cboSchool22.Text = tempPerfs[21].schoolName;
+                txtPerf22.Text = em.ConvertToTimedData(tempPerfs[21].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(22) != null)
+            {
+                txtName23.Text = tempPerfs[22].athleteName;
+                cboSchool23.Text = tempPerfs[22].schoolName;
+                txtPerf23.Text = em.ConvertToTimedData(tempPerfs[22].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(23) != null)
+            {
+                txtName24.Text = tempPerfs[23].athleteName;
+                cboSchool24.Text = tempPerfs[23].schoolName;
+                txtPerf24.Text = em.ConvertToTimedData(tempPerfs[23].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(24) != null)
+            {
+                txtName25.Text = tempPerfs[24].athleteName;
+                cboSchool25.Text = tempPerfs[24].schoolName;
+                txtPerf25.Text = em.ConvertToTimedData(tempPerfs[24].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(25) != null)
+            {
+                txtName26.Text = tempPerfs[25].athleteName;
+                cboSchool26.Text = tempPerfs[25].schoolName;
+                txtPerf26.Text = em.ConvertToTimedData(tempPerfs[25].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(26) != null)
+            {
+                txtName27.Text = tempPerfs[26].athleteName;
+                cboSchool27.Text = tempPerfs[26].schoolName;
+                txtPerf27.Text = em.ConvertToTimedData(tempPerfs[26].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(27) != null)
+            {
+                txtName28.Text = tempPerfs[27].athleteName;
+                cboSchool28.Text = tempPerfs[27].schoolName;
+                txtPerf28.Text = em.ConvertToTimedData(tempPerfs[27].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(28) != null)
+            {
+                txtName29.Text = tempPerfs[28].athleteName;
+                cboSchool29.Text = tempPerfs[28].schoolName;
+                txtPerf29.Text = em.ConvertToTimedData(tempPerfs[28].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(29) != null)
+            {
+                txtName30.Text = tempPerfs[29].athleteName;
+                cboSchool30.Text = tempPerfs[29].schoolName;
+                txtPerf30.Text = em.ConvertToTimedData(tempPerfs[29].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(30) != null)
+            {
+                txtName31.Text = tempPerfs[30].athleteName;
+                cboSchool31.Text = tempPerfs[30].schoolName;
+                txtPerf31.Text = em.ConvertToTimedData(tempPerfs[30].performance);
+            }
+            if (tempPerfs.ElementAtOrDefault(31) != null)
+            {
+                txtName32.Text = tempPerfs[31].athleteName;
+                cboSchool32.Text = tempPerfs[31].schoolName;
+                txtPerf32.Text = em.ConvertToTimedData(tempPerfs[31].performance);
+            }
         }
 
+        /// <summary>
+        /// Puts all the Performances (allPerfs) into an Ordered Dictionary (perfs)
+        /// The key of this Dictionary is the heat Number. Value is a List of Performances for that heat
+        /// This allows us to enter and gather performances from this form alot easier, quicker, and cleaner.
+        /// </summary>
         public void putPerfsIntoOrderedDictionary()
         {
             //Clear perfs
             perfs.Clear();
 
             //Check that allPerfs is not null
-            if(allPerfs != null)
+            if (allPerfs != null)
             {
                 //Get the highest heat number
                 int highestHeat = 1;
-                foreach(Performance p in allPerfs)
+                foreach (Performance p in allPerfs)
                 {
                     if (p.heatNum > highestHeat)
                         highestHeat = p.heatNum;
                 }
 
-                for(int i = 1; i <= highestHeat; i++)
+                for (int i = 1; i <= highestHeat; i++)
                 {
                     List<Performance> tempPerfs = new List<Performance>();
                     foreach (Performance p in allPerfs)
@@ -59,24 +413,18 @@ namespace DualMeetManager.Presentation
             }
         }
 
-        public RunningEventEntry()
-        {
-            InitializeComponent();
-        }
-
-        public RunningEventEntry(string eventName, List<Performance> allPerfs) : this()
-        {
-            this.eventName = eventName;
-            this.allPerfs = allPerfs;
-        }
-
         private void RunningEventEntry_Load(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Check to make sure that the data entered into the form by the user is valid
+        /// </summary>
+        /// <returns>true if valid, false if invalid</returns>
         public bool checkData()
         {
+            //Check that athlete #1 has a value
             if (string.IsNullOrWhiteSpace(txtName1.Text))
             {
                 MessageBox.Show("Please enter a name for Athlete #1", "Invalid Data");
@@ -92,6 +440,8 @@ namespace DualMeetManager.Presentation
                 MessageBox.Show("Please enter a name for Athlete #1", "Invalid Data");
                 return false;
             }
+
+            //Check that every athlete 2-32 has either no values or all values
             if((!string.IsNullOrWhiteSpace(txtName2.Text) && string.IsNullOrWhiteSpace(cboSchool2.Text) && string.IsNullOrWhiteSpace(txtPerf2.Text)) || 
                 (string.IsNullOrWhiteSpace(txtName2.Text) && !string.IsNullOrWhiteSpace(cboSchool2.Text) && string.IsNullOrWhiteSpace(txtPerf2.Text)) ||
                 (string.IsNullOrWhiteSpace(txtName2.Text) && string.IsNullOrWhiteSpace(cboSchool2.Text) && !string.IsNullOrWhiteSpace(txtPerf2.Text)))
@@ -472,17 +822,15 @@ namespace DualMeetManager.Presentation
                 return false;
             }
 
+            //If all the above errors were ot found, return true
             return true;
         }
 
+        //Might not be nessecary
         public void formatPerformances()
         {
 
         }
 
-        private void comboBox30_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
     }
 }
