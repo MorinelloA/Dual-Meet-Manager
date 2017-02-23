@@ -229,12 +229,241 @@ namespace DualMeetManager.Presentation
             }
             this.Hide();
             newForm.ShowDialog();
-            //this.Close();
         }
 
         private void debugToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Console.WriteLine(activeMeet.ToString());
+        }
+
+        private void mnuEnterBoysSprints200_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 200"))
+            {
+                newForm = new RunningEventEntry(this, "Boy's 200", activeMeet.performances["Boy's 200"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Boy's 200", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysSprints400_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 400"))
+            {
+                newForm = new RunningEventEntry(this, "Boy's 400", activeMeet.performances["Boy's 400"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Boy's 400", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysDistance800_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 800"))
+            {
+                newForm = new RunningEventEntry(this, "Boy's 800", activeMeet.performances["Boy's 800"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Boy's 800", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysDistance1600_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 1600"))
+            {
+                newForm = new RunningEventEntry(this, "Boy's 1600", activeMeet.performances["Boy's 1600"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Boy's 1600", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysDistance3200_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 3200"))
+            {
+                newForm = new RunningEventEntry(this, "Boy's 3200", activeMeet.performances["Boy's 3200"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Boy's 3200", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void highHurdlesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's HH"))
+            {
+                newForm = new RunningEventEntry(this, "Boy's HH", activeMeet.performances["Boy's HH"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Boy's HH", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysHurdles300_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 300H"))
+            {
+                newForm = new RunningEventEntry(this, "Boy's 300H", activeMeet.performances["Boy's 300H"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Boy's 300H", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysRelays4x100_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not yet Implemented", "Coming Soon", MessageBoxButtons.OK ,MessageBoxIcon.Asterisk);
+        }
+
+        private void mnuEnterGirlsSprints100_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 100"))
+            {
+                newForm = new RunningEventEntry(this, "Girl's 100", activeMeet.performances["Girl's 100"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Girl's 100", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsSprints200_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 200"))
+            {
+                newForm = new RunningEventEntry(this, "Girl's 200", activeMeet.performances["Girl's 200"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Girl's 200", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsSprints400_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 400"))
+            {
+                newForm = new RunningEventEntry(this, "Girl's 400", activeMeet.performances["Girl's 400"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Girl's 400", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsDistance800_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 800"))
+            {
+                newForm = new RunningEventEntry(this, "Girl's 800", activeMeet.performances["Girl's 800"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Girl's 800", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsDistance1600_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 1600"))
+            {
+                newForm = new RunningEventEntry(this, "Girl's 1600", activeMeet.performances["Girl's 1600"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Girl's 1600", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsDistance3200_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 3200"))
+            {
+                newForm = new RunningEventEntry(this, "Girl's 3200", activeMeet.performances["Girl's 3200"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Girl's 3200", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsHurdlesHigh_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's HH"))
+            {
+                newForm = new RunningEventEntry(this, "Girl's HH", activeMeet.performances["Girl's HH"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Girl's HH", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsHurdles300_Click(object sender, EventArgs e)
+        {
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 300H"))
+            {
+                newForm = new RunningEventEntry(this, "Girl's 300H", activeMeet.performances["Girl's 300H"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Girl's 300H", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
         }
     }
 }

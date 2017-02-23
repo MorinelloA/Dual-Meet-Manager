@@ -636,7 +636,39 @@ namespace DualMeetManager.Presentation
 
         public void PopulateTeams()
         {
-            foreach(string s in teamNames.Keys)
+            cboSchool1.Items.Add("");
+            cboSchool2.Items.Add("");
+            cboSchool3.Items.Add("");
+            cboSchool4.Items.Add("");
+            cboSchool5.Items.Add("");
+            cboSchool6.Items.Add("");
+            cboSchool7.Items.Add("");
+            cboSchool8.Items.Add("");
+            cboSchool9.Items.Add("");
+            cboSchool10.Items.Add("");
+            cboSchool11.Items.Add("");
+            cboSchool12.Items.Add("");
+            cboSchool13.Items.Add("");
+            cboSchool14.Items.Add("");
+            cboSchool15.Items.Add("");
+            cboSchool16.Items.Add("");
+            cboSchool17.Items.Add("");
+            cboSchool18.Items.Add("");
+            cboSchool19.Items.Add("");
+            cboSchool20.Items.Add("");
+            cboSchool21.Items.Add("");
+            cboSchool22.Items.Add("");
+            cboSchool23.Items.Add("");
+            cboSchool24.Items.Add("");
+            cboSchool25.Items.Add("");
+            cboSchool26.Items.Add("");
+            cboSchool27.Items.Add("");
+            cboSchool28.Items.Add("");
+            cboSchool29.Items.Add("");
+            cboSchool30.Items.Add("");
+            cboSchool31.Items.Add("");
+            cboSchool32.Items.Add("");
+            foreach (string s in teamNames.Keys)
             {
                 cboSchool1.Items.Add(s);
                 cboSchool2.Items.Add(s);
@@ -673,10 +705,38 @@ namespace DualMeetManager.Presentation
             }
         }
 
+        public void SortDictionaryOfPerformances()
+        {
+            if (perfs != null)
+            {
+                foreach (int key in perfs.Keys)
+                {
+                    perfs[key] = perfs[key].OrderBy(o => o.performance).ToList();
+                }
+            }
+        }
+
+        public void SortListOfPerfs()
+        {
+            if(allPerfs != null && allPerfs.Count > 0)
+            {
+                allPerfs = allPerfs.OrderBy(o => o.performance).ToList();
+            }
+        }
+
         private void RunningEventEntry_Load(object sender, EventArgs e)
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            if(eventName.StartsWith("Boy"))
+            {
+                BackColor = Color.LightBlue;
+            }
+            else if(eventName.StartsWith("Girl"))
+            {
+                BackColor = Color.LightPink;
+            }
             PopulateTeams();
+            SortListOfPerfs();
             PutPerfsIntoOrderedDictionary();
             currentHeatNum = 0;
             SetCorrectNumRunners();
@@ -694,9 +754,9 @@ namespace DualMeetManager.Presentation
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             //Check that every athlete 1-32 has either no values or all values
-            if ((!string.IsNullOrWhiteSpace(txtName1.Text) && string.IsNullOrWhiteSpace(cboSchool1.Text) && string.IsNullOrWhiteSpace(txtPerf1.Text)) ||
-                (string.IsNullOrWhiteSpace(txtName1.Text) && !string.IsNullOrWhiteSpace(cboSchool1.Text) && string.IsNullOrWhiteSpace(txtPerf1.Text)) ||
-                (string.IsNullOrWhiteSpace(txtName1.Text) && string.IsNullOrWhiteSpace(cboSchool1.Text) && !string.IsNullOrWhiteSpace(txtPerf1.Text)))
+            if ((string.IsNullOrWhiteSpace(txtName1.Text) && (!string.IsNullOrWhiteSpace(cboSchool1.Text) || !string.IsNullOrWhiteSpace(txtPerf1.Text))) ||
+                (string.IsNullOrWhiteSpace(cboSchool1.Text) && (!string.IsNullOrWhiteSpace(txtName1.Text) || !string.IsNullOrWhiteSpace(txtPerf1.Text))) ||
+                (string.IsNullOrWhiteSpace(txtPerf1.Text) && (!string.IsNullOrWhiteSpace(cboSchool1.Text) || !string.IsNullOrWhiteSpace(txtName1.Text))))
             {
                 MessageBox.Show("Incomplete data for Athlete #1", "Invalid Data");
                 return false;
@@ -1245,6 +1305,44 @@ namespace DualMeetManager.Presentation
                 
             }
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+        }
+
+        private void mnuClearThis_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to clear data from this heat?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+                ClearForm();
+        }
+
+        private void mnuClearAll_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to clear data from this entire event?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                ClearForm();
+                perfs.Clear();
+            }
+        }
+
+        private void mnuClearRemove_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Are you sure you want to erase all data from this entire event?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                ClearForm();
+                perfs.Clear();
+            }
+        }
+
+        private void mnuPrintout_Click(object sender, EventArgs e)
+        {
+            if (AddHeatToDictionary())
+            {
+                PrintoutMgr pm = new PrintoutMgr();
+                TakePerfsFromOrderedDictionary();
+                SortListOfPerfs();
+                pm.CreateIndEventDoc(eventName, allPerfs);
+            }
         }
     }
 }

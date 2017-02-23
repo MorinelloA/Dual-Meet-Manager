@@ -37,7 +37,6 @@
             this.mnuClear = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuClearThis = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuClearAll = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuClearRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.grpHeats1 = new System.Windows.Forms.GroupBox();
             this.cboSchool16 = new System.Windows.Forms.ComboBox();
             this.txtPerf16 = new System.Windows.Forms.TextBox();
@@ -232,13 +231,13 @@
             this.mnuPrintout.Name = "mnuPrintout";
             this.mnuPrintout.Size = new System.Drawing.Size(57, 20);
             this.mnuPrintout.Text = "Printout";
+            this.mnuPrintout.Click += new System.EventHandler(this.mnuPrintout_Click);
             // 
             // mnuClear
             // 
             this.mnuClear.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuClearThis,
-            this.mnuClearAll,
-            this.mnuClearRemove});
+            this.mnuClearAll});
             this.mnuClear.Name = "mnuClear";
             this.mnuClear.Size = new System.Drawing.Size(44, 20);
             this.mnuClear.Text = "Clear";
@@ -246,20 +245,16 @@
             // mnuClearThis
             // 
             this.mnuClearThis.Name = "mnuClearThis";
-            this.mnuClearThis.Size = new System.Drawing.Size(151, 22);
+            this.mnuClearThis.Size = new System.Drawing.Size(152, 22);
             this.mnuClearThis.Text = "Clear this heat";
+            this.mnuClearThis.Click += new System.EventHandler(this.mnuClearThis_Click);
             // 
             // mnuClearAll
             // 
             this.mnuClearAll.Name = "mnuClearAll";
-            this.mnuClearAll.Size = new System.Drawing.Size(151, 22);
+            this.mnuClearAll.Size = new System.Drawing.Size(152, 22);
             this.mnuClearAll.Text = "Clear all heats";
-            // 
-            // mnuClearRemove
-            // 
-            this.mnuClearRemove.Name = "mnuClearRemove";
-            this.mnuClearRemove.Size = new System.Drawing.Size(151, 22);
-            this.mnuClearRemove.Text = "Remove all data";
+            this.mnuClearAll.Click += new System.EventHandler(this.mnuClearAll_Click);
             // 
             // grpHeats1
             // 
@@ -1555,6 +1550,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RunningEventEntry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Running Event Entry";
             this.Load += new System.EventHandler(this.RunningEventEntry_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -1577,7 +1573,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuClear;
         private System.Windows.Forms.ToolStripMenuItem mnuClearThis;
         private System.Windows.Forms.ToolStripMenuItem mnuClearAll;
-        private System.Windows.Forms.ToolStripMenuItem mnuClearRemove;
         private System.Windows.Forms.ToolStripMenuItem mnuPrintout;
         private System.Windows.Forms.GroupBox grpHeats1;
         private System.Windows.Forms.Button cmdPrevious;

@@ -678,7 +678,7 @@ namespace DualMeetManager.Service.Scoring
             IndEvent tempIndEvent = new IndEvent();
             RelayEvent tempRelayEvent = new RelayEvent();
 
-            string[] validIndEvents = {"100", "200", "400","800", "1600", "3200",
+            string[] validIndEvents = {"100", "200", "400", "800", "1600", "3200", "HH", "300H",
                 "LJ", "TJ", "HJ", "PV", "ShotPut", "Discus", "Javelin"};
 
             for (int i = 0; i < validIndEvents.Length; i++)

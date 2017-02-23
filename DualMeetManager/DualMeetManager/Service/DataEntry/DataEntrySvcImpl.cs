@@ -226,11 +226,13 @@ namespace DualMeetManager.Service.DataEntry
         /// <returns>Updated Dictionary</returns>
         public Dictionary<string, List<Performance>> AddPerformanceToEvent(Dictionary<string, List<Performance>> perfList, string eventName, List<Performance> perfsToAdd)
         {
+            if (perfList == null)
+                perfList = new Dictionary<string, List<Performance>>();
+
             if (perfList != null && perfList.ContainsKey(eventName))
                 perfList[eventName] = perfsToAdd;
             else
             {
-                perfList = new Dictionary<string, List<Performance>>();
                 perfList.Add(eventName, perfsToAdd);
             }
             return perfList;
