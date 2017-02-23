@@ -16,19 +16,22 @@ namespace DualMeetManager.Presentation
     public partial class RunningEventEntry : Form
     {
         MeetHub mh;
+        Dictionary<string, string> teamNames = new Dictionary<string, string>();
         int currentHeatNum = 0;
         int numRunners = 8;
         string eventName;
 
         List<Performance> allPerfs = new List<Performance>();
-        OrderedDictionary perfs = new OrderedDictionary();
+        //OrderedDictionary perfs = new OrderedDictionary
+        Dictionary<int, List<Performance>> perfs = new Dictionary<int, List<Performance>>();
         EventMgr em = new EventMgr();
 
-        public void setCorrectNumRunners()
+        public void SetCorrectNumRunners()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Check how many runners are in current heat
-            if (perfs == null || !perfs.Contains(currentHeatNum))
+            //if (perfs == null || !perfs.Contains(currentHeatNum))
+            if (perfs == null || !perfs.ContainsKey(currentHeatNum))
             {
                 //Change this code to display the correct number of runners based on what event it is
                 numRunners = 8;
@@ -59,14 +62,14 @@ namespace DualMeetManager.Presentation
         /// <summary>
         /// Changes the visibility of the runner form objects based on how many there are/needed
         /// </summary>
-        public void displayCorrectNumOfRunners()
+        public void DisplayCorrectNumOfRunners()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Make visible / non visible depending on number of runners
             if (numRunners <= 8)
             {
-                clear9to16();
-                clear17to32();
+                Clear9to16();
+                Clear17to32();
 
                 txtName9.Visible = false;
                 cboSchool9.Visible = false;
@@ -104,7 +107,7 @@ namespace DualMeetManager.Presentation
             }
             else if (numRunners <= 16)
             {
-                clear17to32();
+                Clear17to32();
 
                 txtName9.Visible = true;
                 cboSchool9.Visible = true;
@@ -194,11 +197,12 @@ namespace DualMeetManager.Presentation
         /// </summary>
         /// <param name="eventName">Name of the event being entered</param>
         /// <param name="allPerfs">Performances for the event</param>
-        public RunningEventEntry(MeetHub mh, string eventName, List<Performance> allPerfs) : this()
+        public RunningEventEntry(MeetHub mh, string eventName, List<Performance> allPerfs, Dictionary<string, string> teamNames) : this()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + "Parameterized Constructor");
             this.mh = mh;
             this.eventName = eventName;
+            this.teamNames = teamNames;
             this.allPerfs = allPerfs;
             if (allPerfs == null)
             {
@@ -214,7 +218,7 @@ namespace DualMeetManager.Presentation
             Console.WriteLine("Leaving " + GetType().Name + " - " + "Parameterized Constructor");
         }
 
-        public void clear1to8()
+        public void Clear1to8()
         {
             txtName1.Text = "";
             cboSchool1.Text = "";
@@ -249,7 +253,7 @@ namespace DualMeetManager.Presentation
             txtPerf8.Text = "";
         }
 
-        public void clear9to16()
+        public void Clear9to16()
         {
             txtName9.Text = "";
             cboSchool9.Text = "";
@@ -284,7 +288,7 @@ namespace DualMeetManager.Presentation
             txtPerf16.Text = "";
         }
 
-        public void clear17to32()
+        public void Clear17to32()
         {
             txtName17.Text = "";
             cboSchool17.Text = "";
@@ -354,26 +358,27 @@ namespace DualMeetManager.Presentation
         /// <summary>
         /// Clears all data from all objects on the form
         /// </summary>
-        public void clearForm()
+        public void ClearForm()
         {
-            clear1to8();
-            clear9to16();
-            clear17to32();
+            Clear1to8();
+            Clear9to16();
+            Clear17to32();
         }
 
         /// <summary>
         /// Enters data from specific heat (int currentHeatNum) for all objects on the form
         /// </summary>
-        public void enterDataIntoForm()
+        public void EnterDataIntoForm()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            Console.WriteLine("currentHeatNum = " + currentHeatNum);
+
+            ClearForm();
+
             //Needs to check that this entry exists. Otherwise it will produce an error
             List<Performance> tempPerfs = new List<Performance>();
-            if (perfs.Contains(currentHeatNum))
+            //if (perfs.Contains(currentHeatNum))
+            if (perfs.ContainsKey(currentHeatNum))
                 tempPerfs = perfs[currentHeatNum] as List<Performance>;
-            else
-                clearForm();
 
             if (tempPerfs.ElementAtOrDefault(0) != null)
             {
@@ -575,7 +580,7 @@ namespace DualMeetManager.Presentation
         /// The key of this Dictionary is the heat Number. Value is a List of Performances for that heat
         /// This allows us to enter and gather performances from this form alot easier, quicker, and cleaner.
         /// </summary>
-        public void putPerfsIntoOrderedDictionary()
+        public void PutPerfsIntoOrderedDictionary()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Clear perfs
@@ -609,7 +614,7 @@ namespace DualMeetManager.Presentation
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
-        public void takePerfsFromOrderedDictionary()
+        public void TakePerfsFromOrderedDictionary()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             if (allPerfs != null) allPerfs.Clear();
@@ -629,14 +634,54 @@ namespace DualMeetManager.Presentation
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
+        public void PopulateTeams()
+        {
+            foreach(string s in teamNames.Keys)
+            {
+                cboSchool1.Items.Add(s);
+                cboSchool2.Items.Add(s);
+                cboSchool3.Items.Add(s);
+                cboSchool4.Items.Add(s);
+                cboSchool5.Items.Add(s);
+                cboSchool6.Items.Add(s);
+                cboSchool7.Items.Add(s);
+                cboSchool8.Items.Add(s);
+                cboSchool9.Items.Add(s);
+                cboSchool10.Items.Add(s);
+                cboSchool11.Items.Add(s);
+                cboSchool12.Items.Add(s);
+                cboSchool13.Items.Add(s);
+                cboSchool14.Items.Add(s);
+                cboSchool15.Items.Add(s);
+                cboSchool16.Items.Add(s);
+                cboSchool17.Items.Add(s);
+                cboSchool18.Items.Add(s);
+                cboSchool19.Items.Add(s);
+                cboSchool20.Items.Add(s);
+                cboSchool21.Items.Add(s);
+                cboSchool22.Items.Add(s);
+                cboSchool23.Items.Add(s);
+                cboSchool24.Items.Add(s);
+                cboSchool25.Items.Add(s);
+                cboSchool26.Items.Add(s);
+                cboSchool27.Items.Add(s);
+                cboSchool28.Items.Add(s);
+                cboSchool29.Items.Add(s);
+                cboSchool30.Items.Add(s);
+                cboSchool31.Items.Add(s);
+                cboSchool32.Items.Add(s);
+            }
+        }
+
         private void RunningEventEntry_Load(object sender, EventArgs e)
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            putPerfsIntoOrderedDictionary();
+            PopulateTeams();
+            PutPerfsIntoOrderedDictionary();
             currentHeatNum = 0;
-            setCorrectNumRunners();
-            displayCorrectNumOfRunners();
-            enterDataIntoForm();
+            SetCorrectNumRunners();
+            DisplayCorrectNumOfRunners();
+            EnterDataIntoForm();
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
@@ -644,28 +689,19 @@ namespace DualMeetManager.Presentation
         /// Check to make sure that the data entered into the form by the user is valid
         /// </summary>
         /// <returns>true if valid, false if invalid</returns>
-        public bool checkData()
+        public bool CheckData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            //Check that athlete #1 has a value
-            if (string.IsNullOrWhiteSpace(txtName1.Text))
-            {
-                MessageBox.Show("Please enter a name for Athlete #1", "Invalid Data");
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(cboSchool1.Text))
-            {
-                MessageBox.Show("Please enter a school for Athlete #1", "Invalid Data");
-                return false;
-            }
-            if (string.IsNullOrWhiteSpace(txtPerf1.Text))
-            {
-                MessageBox.Show("Please enter a name for Athlete #1", "Invalid Data");
-                return false;
-            }
 
-            //Check that every athlete 2-32 has either no values or all values
-            if((!string.IsNullOrWhiteSpace(txtName2.Text) && string.IsNullOrWhiteSpace(cboSchool2.Text) && string.IsNullOrWhiteSpace(txtPerf2.Text)) || 
+            //Check that every athlete 1-32 has either no values or all values
+            if ((!string.IsNullOrWhiteSpace(txtName1.Text) && string.IsNullOrWhiteSpace(cboSchool1.Text) && string.IsNullOrWhiteSpace(txtPerf1.Text)) ||
+                (string.IsNullOrWhiteSpace(txtName1.Text) && !string.IsNullOrWhiteSpace(cboSchool1.Text) && string.IsNullOrWhiteSpace(txtPerf1.Text)) ||
+                (string.IsNullOrWhiteSpace(txtName1.Text) && string.IsNullOrWhiteSpace(cboSchool1.Text) && !string.IsNullOrWhiteSpace(txtPerf1.Text)))
+            {
+                MessageBox.Show("Incomplete data for Athlete #1", "Invalid Data");
+                return false;
+            }
+            if ((!string.IsNullOrWhiteSpace(txtName2.Text) && string.IsNullOrWhiteSpace(cboSchool2.Text) && string.IsNullOrWhiteSpace(txtPerf2.Text)) || 
                 (string.IsNullOrWhiteSpace(txtName2.Text) && !string.IsNullOrWhiteSpace(cboSchool2.Text) && string.IsNullOrWhiteSpace(txtPerf2.Text)) ||
                 (string.IsNullOrWhiteSpace(txtName2.Text) && string.IsNullOrWhiteSpace(cboSchool2.Text) && !string.IsNullOrWhiteSpace(txtPerf2.Text)))
             {
@@ -1050,28 +1086,22 @@ namespace DualMeetManager.Presentation
             return true;
         }
 
-        //Might not be nessecary
-        public void formatPerformances()
-        {
-
-        }
-
         private void mnuNum8_Click(object sender, EventArgs e)
         {
             numRunners = 8;
-            displayCorrectNumOfRunners();
+            DisplayCorrectNumOfRunners();
         }
 
         private void mnuNum16_Click(object sender, EventArgs e)
         {
             numRunners = 16;
-            displayCorrectNumOfRunners();
+            DisplayCorrectNumOfRunners();
         }
 
         private void mnuNum32_Click(object sender, EventArgs e)
         {
             numRunners = 32;
-            displayCorrectNumOfRunners();
+            DisplayCorrectNumOfRunners();
         }
 
         private void cmdPrevious_Click(object sender, EventArgs e)
@@ -1081,14 +1111,14 @@ namespace DualMeetManager.Presentation
                 MessageBox.Show("Cannot go to heat below 1", "Invalid heat #");
                 currentHeatNum = 0; // This should never be needed, but here just incase of an unknown error
             }
-            else if (addHeatToDictionary())
+            else if (AddHeatToDictionary())
             {
                 currentHeatNum--;
                 grpHeats1.Text = "Heat #" + (currentHeatNum + 1);
                 grpHeats2.Text = "Heat #" + (currentHeatNum + 1);
-                setCorrectNumRunners();
-                displayCorrectNumOfRunners();
-                enterDataIntoForm();
+                SetCorrectNumRunners();
+                DisplayCorrectNumOfRunners();
+                EnterDataIntoForm();
             }
         }
 
@@ -1099,21 +1129,21 @@ namespace DualMeetManager.Presentation
                 MessageBox.Show("Cannot go to heat above 10,000", "Invalid heat #");
                 currentHeatNum = 10000; // This should never be needed, but here just incase of an unknown error
             }
-            else if (addHeatToDictionary())
+            else if (AddHeatToDictionary())
             {
                 currentHeatNum++;
                 grpHeats1.Text = "Heat #" + (currentHeatNum + 1);
                 grpHeats2.Text = "Heat #" + (currentHeatNum + 1);
-                setCorrectNumRunners();
-                displayCorrectNumOfRunners();
-                enterDataIntoForm();
+                SetCorrectNumRunners();
+                DisplayCorrectNumOfRunners();
+                EnterDataIntoForm();
             }
         }
 
-        public bool addHeatToDictionary()
+        public bool AddHeatToDictionary()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            if (checkData())
+            if (CheckData())
             {
                 List<Performance> listToAdd = new List<Performance>();
 
@@ -1182,7 +1212,8 @@ namespace DualMeetManager.Presentation
                 if (!string.IsNullOrWhiteSpace(txtName32.Text))
                     listToAdd.Add(new Performance(txtName32.Text, cboSchool32.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf32.Text)));
 
-                if (perfs.Contains(currentHeatNum))
+                //if (perfs.Contains(currentHeatNum))
+                if (perfs.ContainsKey(currentHeatNum))
                     perfs[currentHeatNum] = listToAdd;
                 else
                     perfs.Add(currentHeatNum, listToAdd);
@@ -1202,9 +1233,9 @@ namespace DualMeetManager.Presentation
         private void cmdEnterData_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-            if (addHeatToDictionary())
+            if (AddHeatToDictionary())
             {
-                takePerfsFromOrderedDictionary();
+                TakePerfsFromOrderedDictionary();
                 MessageBox.Show("Data for " + eventName + " entered", "Success");
 
                 //MessageBox.Show(allPerfs.ToString());
@@ -1214,11 +1245,6 @@ namespace DualMeetManager.Presentation
                 
             }
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
-        }
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
         }
     }
 }

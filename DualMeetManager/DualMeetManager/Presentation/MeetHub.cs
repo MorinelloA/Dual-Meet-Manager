@@ -221,11 +221,11 @@ namespace DualMeetManager.Presentation
             RunningEventEntry newForm;
             if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 100"))
             {
-                newForm = new RunningEventEntry(this, "Boy's 100", activeMeet.performances["Boy's 100"]);
+                newForm = new RunningEventEntry(this, "Boy's 100", activeMeet.performances["Boy's 100"], activeMeet.schoolNames.boySchoolNames);
             }
             else
             {
-                newForm = new RunningEventEntry(this, "Boy's 100", null);
+                newForm = new RunningEventEntry(this, "Boy's 100", null, activeMeet.schoolNames.boySchoolNames);
             }
             this.Hide();
             newForm.ShowDialog();

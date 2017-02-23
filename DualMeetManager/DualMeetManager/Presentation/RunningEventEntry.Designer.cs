@@ -195,7 +195,6 @@
             this.menuStrip1.Size = new System.Drawing.Size(950, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // mnuNum
             // 
@@ -341,6 +340,7 @@
             // 
             // cboSchool16
             // 
+            this.cboSchool16.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool16.FormattingEnabled = true;
             this.cboSchool16.Location = new System.Drawing.Point(241, 431);
             this.cboSchool16.Name = "cboSchool16";
@@ -372,6 +372,7 @@
             // 
             // cboSchool15
             // 
+            this.cboSchool15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool15.FormattingEnabled = true;
             this.cboSchool15.Location = new System.Drawing.Point(241, 405);
             this.cboSchool15.Name = "cboSchool15";
@@ -403,6 +404,7 @@
             // 
             // cboSchool14
             // 
+            this.cboSchool14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool14.FormattingEnabled = true;
             this.cboSchool14.Location = new System.Drawing.Point(241, 379);
             this.cboSchool14.Name = "cboSchool14";
@@ -434,6 +436,7 @@
             // 
             // cboSchool13
             // 
+            this.cboSchool13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool13.FormattingEnabled = true;
             this.cboSchool13.Location = new System.Drawing.Point(241, 353);
             this.cboSchool13.Name = "cboSchool13";
@@ -465,6 +468,7 @@
             // 
             // cboSchool12
             // 
+            this.cboSchool12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool12.FormattingEnabled = true;
             this.cboSchool12.Location = new System.Drawing.Point(241, 327);
             this.cboSchool12.Name = "cboSchool12";
@@ -496,6 +500,7 @@
             // 
             // cboSchool11
             // 
+            this.cboSchool11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool11.FormattingEnabled = true;
             this.cboSchool11.Location = new System.Drawing.Point(241, 301);
             this.cboSchool11.Name = "cboSchool11";
@@ -527,6 +532,7 @@
             // 
             // cboSchool10
             // 
+            this.cboSchool10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool10.FormattingEnabled = true;
             this.cboSchool10.Location = new System.Drawing.Point(241, 275);
             this.cboSchool10.Name = "cboSchool10";
@@ -558,6 +564,7 @@
             // 
             // cboSchool9
             // 
+            this.cboSchool9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool9.FormattingEnabled = true;
             this.cboSchool9.Location = new System.Drawing.Point(241, 249);
             this.cboSchool9.Name = "cboSchool9";
@@ -589,6 +596,7 @@
             // 
             // cboSchool8
             // 
+            this.cboSchool8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool8.FormattingEnabled = true;
             this.cboSchool8.Location = new System.Drawing.Point(241, 223);
             this.cboSchool8.Name = "cboSchool8";
@@ -620,6 +628,7 @@
             // 
             // cboSchool7
             // 
+            this.cboSchool7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool7.FormattingEnabled = true;
             this.cboSchool7.Location = new System.Drawing.Point(241, 197);
             this.cboSchool7.Name = "cboSchool7";
@@ -651,6 +660,7 @@
             // 
             // cboSchool6
             // 
+            this.cboSchool6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool6.FormattingEnabled = true;
             this.cboSchool6.Location = new System.Drawing.Point(241, 171);
             this.cboSchool6.Name = "cboSchool6";
@@ -682,6 +692,7 @@
             // 
             // cboSchool5
             // 
+            this.cboSchool5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool5.FormattingEnabled = true;
             this.cboSchool5.Location = new System.Drawing.Point(241, 145);
             this.cboSchool5.Name = "cboSchool5";
@@ -713,6 +724,7 @@
             // 
             // cboSchool4
             // 
+            this.cboSchool4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool4.FormattingEnabled = true;
             this.cboSchool4.Location = new System.Drawing.Point(241, 119);
             this.cboSchool4.Name = "cboSchool4";
@@ -744,6 +756,7 @@
             // 
             // cboSchool3
             // 
+            this.cboSchool3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool3.FormattingEnabled = true;
             this.cboSchool3.Location = new System.Drawing.Point(241, 93);
             this.cboSchool3.Name = "cboSchool3";
@@ -775,6 +788,7 @@
             // 
             // cboSchool2
             // 
+            this.cboSchool2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool2.FormattingEnabled = true;
             this.cboSchool2.Location = new System.Drawing.Point(241, 67);
             this.cboSchool2.Name = "cboSchool2";
@@ -806,6 +820,8 @@
             // 
             // cboSchool1
             // 
+            this.cboSchool1.BackColor = System.Drawing.SystemColors.Window;
+            this.cboSchool1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool1.FormattingEnabled = true;
             this.cboSchool1.Location = new System.Drawing.Point(241, 41);
             this.cboSchool1.Name = "cboSchool1";
@@ -980,6 +996,7 @@
             // 
             // cboSchool32
             // 
+            this.cboSchool32.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool32.FormattingEnabled = true;
             this.cboSchool32.Location = new System.Drawing.Point(241, 431);
             this.cboSchool32.Name = "cboSchool32";
@@ -1011,6 +1028,7 @@
             // 
             // cboSchool31
             // 
+            this.cboSchool31.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool31.FormattingEnabled = true;
             this.cboSchool31.Location = new System.Drawing.Point(241, 405);
             this.cboSchool31.Name = "cboSchool31";
@@ -1042,6 +1060,7 @@
             // 
             // cboSchool30
             // 
+            this.cboSchool30.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool30.FormattingEnabled = true;
             this.cboSchool30.Location = new System.Drawing.Point(241, 379);
             this.cboSchool30.Name = "cboSchool30";
@@ -1073,6 +1092,7 @@
             // 
             // cboSchool29
             // 
+            this.cboSchool29.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool29.FormattingEnabled = true;
             this.cboSchool29.Location = new System.Drawing.Point(241, 353);
             this.cboSchool29.Name = "cboSchool29";
@@ -1104,6 +1124,7 @@
             // 
             // cboSchool28
             // 
+            this.cboSchool28.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool28.FormattingEnabled = true;
             this.cboSchool28.Location = new System.Drawing.Point(241, 327);
             this.cboSchool28.Name = "cboSchool28";
@@ -1135,6 +1156,7 @@
             // 
             // cboSchool27
             // 
+            this.cboSchool27.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool27.FormattingEnabled = true;
             this.cboSchool27.Location = new System.Drawing.Point(241, 301);
             this.cboSchool27.Name = "cboSchool27";
@@ -1166,6 +1188,7 @@
             // 
             // cboSchool26
             // 
+            this.cboSchool26.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool26.FormattingEnabled = true;
             this.cboSchool26.Location = new System.Drawing.Point(241, 275);
             this.cboSchool26.Name = "cboSchool26";
@@ -1197,6 +1220,7 @@
             // 
             // cboSchool25
             // 
+            this.cboSchool25.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool25.FormattingEnabled = true;
             this.cboSchool25.Location = new System.Drawing.Point(241, 249);
             this.cboSchool25.Name = "cboSchool25";
@@ -1228,6 +1252,7 @@
             // 
             // cboSchool24
             // 
+            this.cboSchool24.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool24.FormattingEnabled = true;
             this.cboSchool24.Location = new System.Drawing.Point(241, 223);
             this.cboSchool24.Name = "cboSchool24";
@@ -1259,6 +1284,7 @@
             // 
             // cboSchool23
             // 
+            this.cboSchool23.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool23.FormattingEnabled = true;
             this.cboSchool23.Location = new System.Drawing.Point(241, 197);
             this.cboSchool23.Name = "cboSchool23";
@@ -1290,6 +1316,7 @@
             // 
             // cboSchool22
             // 
+            this.cboSchool22.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool22.FormattingEnabled = true;
             this.cboSchool22.Location = new System.Drawing.Point(241, 171);
             this.cboSchool22.Name = "cboSchool22";
@@ -1321,6 +1348,7 @@
             // 
             // cboSchool21
             // 
+            this.cboSchool21.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool21.FormattingEnabled = true;
             this.cboSchool21.Location = new System.Drawing.Point(241, 145);
             this.cboSchool21.Name = "cboSchool21";
@@ -1352,6 +1380,7 @@
             // 
             // cboSchool20
             // 
+            this.cboSchool20.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool20.FormattingEnabled = true;
             this.cboSchool20.Location = new System.Drawing.Point(241, 119);
             this.cboSchool20.Name = "cboSchool20";
@@ -1383,6 +1412,7 @@
             // 
             // cboSchool19
             // 
+            this.cboSchool19.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool19.FormattingEnabled = true;
             this.cboSchool19.Location = new System.Drawing.Point(241, 93);
             this.cboSchool19.Name = "cboSchool19";
@@ -1414,6 +1444,7 @@
             // 
             // cboSchool18
             // 
+            this.cboSchool18.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool18.FormattingEnabled = true;
             this.cboSchool18.Location = new System.Drawing.Point(241, 67);
             this.cboSchool18.Name = "cboSchool18";
@@ -1445,6 +1476,7 @@
             // 
             // cboSchool17
             // 
+            this.cboSchool17.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSchool17.FormattingEnabled = true;
             this.cboSchool17.Location = new System.Drawing.Point(241, 41);
             this.cboSchool17.Name = "cboSchool17";
