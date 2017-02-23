@@ -195,6 +195,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(950, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // mnuNum
             // 
@@ -209,21 +210,21 @@
             // mnuNum8
             // 
             this.mnuNum8.Name = "mnuNum8";
-            this.mnuNum8.Size = new System.Drawing.Size(152, 22);
+            this.mnuNum8.Size = new System.Drawing.Size(86, 22);
             this.mnuNum8.Text = "8";
             this.mnuNum8.Click += new System.EventHandler(this.mnuNum8_Click);
             // 
             // mnuNum16
             // 
             this.mnuNum16.Name = "mnuNum16";
-            this.mnuNum16.Size = new System.Drawing.Size(152, 22);
+            this.mnuNum16.Size = new System.Drawing.Size(86, 22);
             this.mnuNum16.Text = "16";
             this.mnuNum16.Click += new System.EventHandler(this.mnuNum16_Click);
             // 
             // mnuNum32
             // 
             this.mnuNum32.Name = "mnuNum32";
-            this.mnuNum32.Size = new System.Drawing.Size(152, 22);
+            this.mnuNum32.Size = new System.Drawing.Size(86, 22);
             this.mnuNum32.Text = "32";
             this.mnuNum32.Click += new System.EventHandler(this.mnuNum32_Click);
             // 

@@ -229,8 +229,10 @@ namespace DualMeetManager.Service.DataEntry
             if (perfList != null && perfList.ContainsKey(eventName))
                 perfList[eventName] = perfsToAdd;
             else
+            {
                 perfList = new Dictionary<string, List<Performance>>();
                 perfList.Add(eventName, perfsToAdd);
+            }
             return perfList;
         }
 
