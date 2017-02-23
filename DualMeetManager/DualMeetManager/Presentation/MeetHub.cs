@@ -1,4 +1,5 @@
-﻿using DualMeetManager.Domain;
+﻿using DualMeetManager.Business.Managers;
+using DualMeetManager.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,23 @@ namespace DualMeetManager.Presentation
 {
     public partial class MeetHub : Form
     {
+        public void TestTest()
+        {
+            Console.WriteLine("Test is a success");
+        }
+
+        public void AddEvent(string eventName, List<Performance> perfsToAdd)
+        {
+            EventMgr em = new EventMgr();
+            activeMeet.performances = em.AddPerformanceToEvent(activeMeet.performances, eventName, perfsToAdd);
+        }
+
         public MeetHub()
         {
             InitializeComponent();
         }
 
-        Meet activeMeet;
+        Meet activeMeet = new Meet();
 
         //Generate List of Boy's team Abbrs from Dictionary
         List<string> boysAbbrs = new List<string>();
@@ -206,11 +218,23 @@ namespace DualMeetManager.Presentation
 
         private void mnuEnterBoysSprints100_Click(object sender, EventArgs e)
         {
-            //Needs refactored to include data, if it exists
-            RunningEventEntry newForm = new RunningEventEntry("Boy's 100", null);
+            RunningEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 100"))
+            {
+                newForm = new RunningEventEntry(this, "Boy's 100", activeMeet.performances["Boy's 100"]);
+            }
+            else
+            {
+                newForm = new RunningEventEntry(this, "Boy's 100", null);
+            }
             this.Hide();
             newForm.ShowDialog();
             //this.Close();
+        }
+
+        private void debugToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(activeMeet.ToString());
         }
     }
 }

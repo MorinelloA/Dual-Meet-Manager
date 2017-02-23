@@ -34,6 +34,8 @@
             this.mnuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grpDetails = new System.Windows.Forms.GroupBox();
             this.cboWeather = new System.Windows.Forms.ComboBox();
             this.dtpMeetDate = new System.Windows.Forms.DateTimePicker();
@@ -93,8 +95,6 @@
             this.txtGirlsTeam1Name = new System.Windows.Forms.TextBox();
             this.lblGirlsTeam1Abbr = new System.Windows.Forms.Label();
             this.lblGirlsTeam1Name = new System.Windows.Forms.Label();
-            this.mnuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.grpDetails.SuspendLayout();
             this.grpBoysTeams.SuspendLayout();
@@ -128,21 +128,21 @@
             // 
             this.mnuFileNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileNew.Size = new System.Drawing.Size(149, 22);
             this.mnuFileNew.Text = "New Meet";
             // 
             // mnuFileOpen
             // 
             this.mnuFileOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileOpen.Name = "mnuFileOpen";
-            this.mnuFileOpen.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileOpen.Size = new System.Drawing.Size(149, 22);
             this.mnuFileOpen.Text = "Open Meet";
             // 
             // mnuFileExit
             // 
             this.mnuFileExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(149, 22);
             this.mnuFileExit.Text = "Exit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
@@ -155,6 +155,18 @@
             this.mnuHelp.Name = "mnuHelp";
             this.mnuHelp.Size = new System.Drawing.Size(50, 22);
             this.mnuHelp.Text = "Help";
+            // 
+            // mnuHelpAbout
+            // 
+            this.mnuHelpAbout.Name = "mnuHelpAbout";
+            this.mnuHelpAbout.Size = new System.Drawing.Size(151, 22);
+            this.mnuHelpAbout.Text = "About";
+            // 
+            // contactUsToolStripMenuItem
+            // 
+            this.contactUsToolStripMenuItem.Name = "contactUsToolStripMenuItem";
+            this.contactUsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.contactUsToolStripMenuItem.Text = "Contact Us";
             // 
             // grpDetails
             // 
@@ -188,6 +200,7 @@
             this.cboWeather.Name = "cboWeather";
             this.cboWeather.Size = new System.Drawing.Size(284, 26);
             this.cboWeather.TabIndex = 5;
+            this.cboWeather.Text = "a";
             // 
             // dtpMeetDate
             // 
@@ -204,6 +217,7 @@
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(284, 24);
             this.txtLocation.TabIndex = 3;
+            this.txtLocation.Text = "a";
             // 
             // lblWeather
             // 
@@ -462,6 +476,7 @@
             this.txtBoysTeam1Abbr.Name = "txtBoysTeam1Abbr";
             this.txtBoysTeam1Abbr.Size = new System.Drawing.Size(46, 24);
             this.txtBoysTeam1Abbr.TabIndex = 3;
+            this.txtBoysTeam1Abbr.Text = "a";
             // 
             // txtBoysTeam1Name
             // 
@@ -470,6 +485,7 @@
             this.txtBoysTeam1Name.Name = "txtBoysTeam1Name";
             this.txtBoysTeam1Name.Size = new System.Drawing.Size(159, 24);
             this.txtBoysTeam1Name.TabIndex = 2;
+            this.txtBoysTeam1Name.Text = "a";
             // 
             // lblBoysTeam1Abbr
             // 
@@ -740,6 +756,7 @@
             this.txtGirlsTeam1Abbr.Name = "txtGirlsTeam1Abbr";
             this.txtGirlsTeam1Abbr.Size = new System.Drawing.Size(46, 24);
             this.txtGirlsTeam1Abbr.TabIndex = 3;
+            this.txtGirlsTeam1Abbr.Text = "a";
             // 
             // txtGirlsTeam1Name
             // 
@@ -748,6 +765,7 @@
             this.txtGirlsTeam1Name.Name = "txtGirlsTeam1Name";
             this.txtGirlsTeam1Name.Size = new System.Drawing.Size(159, 24);
             this.txtGirlsTeam1Name.TabIndex = 2;
+            this.txtGirlsTeam1Name.Text = "a";
             // 
             // lblGirlsTeam1Abbr
             // 
@@ -768,18 +786,6 @@
             this.lblGirlsTeam1Name.Size = new System.Drawing.Size(114, 18);
             this.lblGirlsTeam1Name.TabIndex = 0;
             this.lblGirlsTeam1Name.Text = "Team #1 Name:";
-            // 
-            // mnuHelpAbout
-            // 
-            this.mnuHelpAbout.Name = "mnuHelpAbout";
-            this.mnuHelpAbout.Size = new System.Drawing.Size(152, 22);
-            this.mnuHelpAbout.Text = "About";
-            // 
-            // contactUsToolStripMenuItem
-            // 
-            this.contactUsToolStripMenuItem.Name = "contactUsToolStripMenuItem";
-            this.contactUsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.contactUsToolStripMenuItem.Text = "Contact Us";
             // 
             // Form1
             // 

@@ -15,25 +15,30 @@ namespace DualMeetManager.Presentation
 {
     public partial class RunningEventEntry : Form
     {
+        MeetHub mh;
         int currentHeatNum = 1;
         int numRunners = 8;
         string eventName;
-        List<Performance> currentPerfs;
-        List<Performance> allPerfs;
+
+        List<Performance> allPerfs = new List<Performance>();
         OrderedDictionary perfs = new OrderedDictionary();
         EventMgr em = new EventMgr();
 
         public void setCorrectNumRunners()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Check how many runners are in current heat
-            if (!perfs.Contains(currentHeatNum))
+            if (perfs == null || !perfs.Contains(currentHeatNum))
             {
                 //Change this code to display the correct number of runners based on what event it is
                 numRunners = 8;
             }
             else
             {
-                List<Performance> temp = (List<Performance>)perfs[currentHeatNum];
+                Console.WriteLine("Debug, Inside else");
+                List<Performance> temp = perfs[currentHeatNum-1] as List<Performance>;
+                //List<Performance> temp = new List<Performance>();
+                Console.WriteLine("a");
                 if (temp.Count <= 8)
                 {
                     numRunners = 8;
@@ -46,7 +51,9 @@ namespace DualMeetManager.Presentation
                 {
                     numRunners = 32;
                 }
+                Console.WriteLine("b");
             }
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         /// <summary>
@@ -54,8 +61,9 @@ namespace DualMeetManager.Presentation
         /// </summary>
         public void displayCorrectNumOfRunners()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Make visible / non visible depending on number of runners
-            if(numRunners <= 8)
+            if (numRunners <= 8)
             {
                 clear9to16();
                 clear17to32();
@@ -168,6 +176,7 @@ namespace DualMeetManager.Presentation
 
                 grpHeats2.Visible = true;
             }
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         /// <summary>
@@ -175,7 +184,9 @@ namespace DualMeetManager.Presentation
         /// </summary>
         public RunningEventEntry()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + "Default Constructor");
             InitializeComponent();
+            Console.WriteLine("Leaving " + GetType().Name + " - " + "Default Constructor");
         }
 
         /// <summary>
@@ -183,10 +194,24 @@ namespace DualMeetManager.Presentation
         /// </summary>
         /// <param name="eventName">Name of the event being entered</param>
         /// <param name="allPerfs">Performances for the event</param>
-        public RunningEventEntry(string eventName, List<Performance> allPerfs) : this()
+        public RunningEventEntry(MeetHub mh, string eventName, List<Performance> allPerfs) : this()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + "Parameterized Constructor");
+            this.mh = mh;
             this.eventName = eventName;
             this.allPerfs = allPerfs;
+            if (allPerfs == null)
+            {
+                Console.WriteLine("allPerfs is equal to null");
+            }
+            else
+            {
+                foreach (Performance p in allPerfs)
+                {
+                    Console.WriteLine(p.ToString());
+                }
+            }
+            Console.WriteLine("Leaving " + GetType().Name + " - " + "Parameterized Constructor");
         }
 
         public void clear1to8()
@@ -341,6 +366,7 @@ namespace DualMeetManager.Presentation
         /// </summary>
         public void enterDataIntoForm()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Needs to check that this entry exists. Otherwise it will produce an error
             List<Performance> tempPerfs = new List<Performance>();
             if(perfs.Contains(currentHeatNum))
@@ -538,6 +564,7 @@ namespace DualMeetManager.Presentation
                 cboSchool32.Text = tempPerfs[31].schoolName;
                 txtPerf32.Text = em.ConvertToTimedData(tempPerfs[31].performance);
             }
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         /// <summary>
@@ -547,6 +574,7 @@ namespace DualMeetManager.Presentation
         /// </summary>
         public void putPerfsIntoOrderedDictionary()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Clear perfs
             perfs.Clear();
 
@@ -575,15 +603,38 @@ namespace DualMeetManager.Presentation
                 }
 
             }
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+        }
+
+        public void takePerfsFromOrderedDictionary()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            if (allPerfs != null) allPerfs.Clear();
+            else allPerfs = new List<Performance>();
+            foreach(int key in perfs.Keys)
+            {
+                //List<Performance> tempPerfs = new List<Performance>();
+                //if (perfs.Contains(currentHeatNum))
+                //    tempPerfs = perfs[currentHeatNum] as List<Performance>;
+                List<Performance> tempPerfs = new List<Performance>();
+                tempPerfs = perfs[key-1] as List<Performance>;
+                foreach(Performance p in tempPerfs)
+                {
+                    allPerfs.Add(p);
+                }
+            }
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         private void RunningEventEntry_Load(object sender, EventArgs e)
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             putPerfsIntoOrderedDictionary();
             currentHeatNum = 1;
             setCorrectNumRunners();
             displayCorrectNumOfRunners();
             enterDataIntoForm();
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         /// <summary>
@@ -592,6 +643,7 @@ namespace DualMeetManager.Presentation
         /// <returns>true if valid, false if invalid</returns>
         public bool checkData()
         {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Check that athlete #1 has a value
             if (string.IsNullOrWhiteSpace(txtName1.Text))
             {
@@ -991,6 +1043,7 @@ namespace DualMeetManager.Presentation
             }
 
             //If all the above errors were ot found, return true
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             return true;
         }
 
@@ -1025,7 +1078,7 @@ namespace DualMeetManager.Presentation
                 MessageBox.Show("Cannot go to heat below 1", "Invalid heat #");
                 currentHeatNum = 1; // This should never be needed, but here just incase of an unknown error
             }
-            else
+            else if (addHeatToDictionary())
             {
                 currentHeatNum--;
                 grpHeats1.Text = "Heat #" + currentHeatNum;
@@ -1043,7 +1096,7 @@ namespace DualMeetManager.Presentation
                 MessageBox.Show("Cannot go to heat above 10,000", "Invalid heat #");
                 currentHeatNum = 10000; // This should never be needed, but here just incase of an unknown error
             }
-            else
+            else if (addHeatToDictionary())
             {
                 currentHeatNum++;
                 grpHeats1.Text = "Heat #" + currentHeatNum;
@@ -1054,9 +1107,106 @@ namespace DualMeetManager.Presentation
             }
         }
 
+        public bool addHeatToDictionary()
+        {
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            if (checkData())
+            {
+                List<Performance> listToAdd = new List<Performance>();
+
+                if(!string.IsNullOrWhiteSpace(txtName1.Text))
+                    listToAdd.Add(new Performance(txtName1.Text, cboSchool1.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf1.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName2.Text))
+                    listToAdd.Add(new Performance(txtName2.Text, cboSchool2.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf2.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName3.Text))
+                    listToAdd.Add(new Performance(txtName3.Text, cboSchool3.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf3.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName4.Text))
+                    listToAdd.Add(new Performance(txtName4.Text, cboSchool4.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf4.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName5.Text))
+                    listToAdd.Add(new Performance(txtName5.Text, cboSchool5.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf5.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName6.Text))
+                    listToAdd.Add(new Performance(txtName6.Text, cboSchool6.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf6.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName7.Text))
+                    listToAdd.Add(new Performance(txtName7.Text, cboSchool7.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf7.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName8.Text))
+                    listToAdd.Add(new Performance(txtName8.Text, cboSchool8.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf8.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName9.Text))
+                    listToAdd.Add(new Performance(txtName9.Text, cboSchool9.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf9.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName10.Text))
+                    listToAdd.Add(new Performance(txtName10.Text, cboSchool10.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf10.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName11.Text))
+                    listToAdd.Add(new Performance(txtName11.Text, cboSchool11.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf11.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName12.Text))
+                    listToAdd.Add(new Performance(txtName12.Text, cboSchool12.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf12.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName13.Text))
+                    listToAdd.Add(new Performance(txtName13.Text, cboSchool13.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf13.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName14.Text))
+                    listToAdd.Add(new Performance(txtName14.Text, cboSchool14.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf14.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName15.Text))
+                    listToAdd.Add(new Performance(txtName15.Text, cboSchool15.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf15.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName16.Text))
+                    listToAdd.Add(new Performance(txtName16.Text, cboSchool16.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf16.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName17.Text))
+                    listToAdd.Add(new Performance(txtName17.Text, cboSchool17.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf17.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName18.Text))
+                    listToAdd.Add(new Performance(txtName18.Text, cboSchool18.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf18.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName19.Text))
+                    listToAdd.Add(new Performance(txtName19.Text, cboSchool19.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf19.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName20.Text))
+                    listToAdd.Add(new Performance(txtName20.Text, cboSchool20.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf20.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName21.Text))
+                    listToAdd.Add(new Performance(txtName21.Text, cboSchool21.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf21.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName22.Text))
+                    listToAdd.Add(new Performance(txtName22.Text, cboSchool22.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf22.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName23.Text))
+                    listToAdd.Add(new Performance(txtName23.Text, cboSchool23.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf23.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName24.Text))
+                    listToAdd.Add(new Performance(txtName24.Text, cboSchool24.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf24.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName25.Text))
+                    listToAdd.Add(new Performance(txtName25.Text, cboSchool25.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf25.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName26.Text))
+                    listToAdd.Add(new Performance(txtName26.Text, cboSchool26.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf26.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName27.Text))
+                    listToAdd.Add(new Performance(txtName27.Text, cboSchool27.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf27.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName28.Text))
+                    listToAdd.Add(new Performance(txtName28.Text, cboSchool28.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf28.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName29.Text))
+                    listToAdd.Add(new Performance(txtName29.Text, cboSchool29.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf29.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName30.Text))
+                    listToAdd.Add(new Performance(txtName30.Text, cboSchool30.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf30.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName31.Text))
+                    listToAdd.Add(new Performance(txtName31.Text, cboSchool31.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf31.Text)));
+                if (!string.IsNullOrWhiteSpace(txtName32.Text))
+                    listToAdd.Add(new Performance(txtName32.Text, cboSchool32.Text, currentHeatNum, em.ConvertFromTimedData(txtPerf32.Text)));
+
+                perfs.Add(currentHeatNum, listToAdd);
+                Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                return true;
+            }
+            else
+            {
+                Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+                return false;
+            }
+        }
+
+
+
         private void cmdEnterData_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not yet implemented", "Coming Soon!");
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            if (addHeatToDictionary())
+            {
+                takePerfsFromOrderedDictionary();
+                MessageBox.Show("Data for " + eventName + " entered", "Success");
+
+                //MessageBox.Show(allPerfs.ToString());
+                mh.AddEvent(eventName, allPerfs);
+                mh.Show();
+                this.Close();
+                
+            }
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
     }
 }
