@@ -71,113 +71,146 @@ namespace DualMeetManager.Presentation
                 Clear9to16();
                 Clear17to32();
 
+                lblPlace9.Visible = false;
                 txtName9.Visible = false;
                 cboSchool9.Visible = false;
                 txtPerf9.Visible = false;
 
+                lblPlace10.Visible = false;
                 txtName10.Visible = false;
                 cboSchool10.Visible = false;
                 txtPerf10.Visible = false;
 
+                lblPlace11.Visible = false;
                 txtName11.Visible = false;
                 cboSchool11.Visible = false;
                 txtPerf11.Visible = false;
 
+                lblPlace12.Visible = false;
                 txtName12.Visible = false;
                 cboSchool12.Visible = false;
                 txtPerf12.Visible = false;
 
+                lblPlace13.Visible = false;
                 txtName13.Visible = false;
                 cboSchool13.Visible = false;
                 txtPerf13.Visible = false;
 
+                lblPlace14.Visible = false;
                 txtName14.Visible = false;
                 cboSchool14.Visible = false;
                 txtPerf14.Visible = false;
 
+                lblPlace15.Visible = false;
                 txtName15.Visible = false;
                 cboSchool15.Visible = false;
                 txtPerf15.Visible = false;
 
+                lblPlace16.Visible = false;
                 txtName16.Visible = false;
                 cboSchool16.Visible = false;
                 txtPerf16.Visible = false;
 
                 grpHeats2.Visible = false;
+
+                this.Size = new Size(500, 375);
+                grpHeats1.Size = new Size(460, 250);
             }
             else if (numRunners <= 16)
             {
                 Clear17to32();
 
+                lblPlace9.Visible = true;
                 txtName9.Visible = true;
                 cboSchool9.Visible = true;
                 txtPerf9.Visible = true;
 
+                lblPlace10.Visible = true;
                 txtName10.Visible = true;
                 cboSchool10.Visible = true;
                 txtPerf10.Visible = true;
 
+                lblPlace11.Visible = true;
                 txtName11.Visible = true;
                 cboSchool11.Visible = true;
                 txtPerf11.Visible = true;
 
+                lblPlace12.Visible = true;
                 txtName12.Visible = true;
                 cboSchool12.Visible = true;
                 txtPerf12.Visible = true;
 
+                lblPlace13.Visible = true;
                 txtName13.Visible = true;
                 cboSchool13.Visible = true;
                 txtPerf13.Visible = true;
 
+                lblPlace14.Visible = true;
                 txtName14.Visible = true;
                 cboSchool14.Visible = true;
                 txtPerf14.Visible = true;
 
+                lblPlace15.Visible = true;
                 txtName15.Visible = true;
                 cboSchool15.Visible = true;
                 txtPerf15.Visible = true;
 
+                lblPlace16.Visible = true;
                 txtName16.Visible = true;
                 cboSchool16.Visible = true;
                 txtPerf16.Visible = true;
 
                 grpHeats2.Visible = false;
+
+                this.Size = new Size(500, 600);
+                grpHeats1.Size = new Size(460, 465);
             }
             else
             {
+                lblPlace9.Visible = true;
                 txtName9.Visible = true;
                 cboSchool9.Visible = true;
                 txtPerf9.Visible = true;
 
+                lblPlace10.Visible = true;
                 txtName10.Visible = true;
                 cboSchool10.Visible = true;
                 txtPerf10.Visible = true;
 
+                lblPlace11.Visible = true;
                 txtName11.Visible = true;
                 cboSchool11.Visible = true;
                 txtPerf11.Visible = true;
 
+                lblPlace12.Visible = true;
                 txtName12.Visible = true;
                 cboSchool12.Visible = true;
                 txtPerf12.Visible = true;
 
+                lblPlace13.Visible = true;
                 txtName13.Visible = true;
                 cboSchool13.Visible = true;
                 txtPerf13.Visible = true;
 
+                lblPlace14.Visible = true;
                 txtName14.Visible = true;
                 cboSchool14.Visible = true;
                 txtPerf14.Visible = true;
 
+                lblPlace15.Visible = true;
                 txtName15.Visible = true;
                 cboSchool15.Visible = true;
                 txtPerf15.Visible = true;
 
+                lblPlace16.Visible = true;
                 txtName16.Visible = true;
                 cboSchool16.Visible = true;
                 txtPerf16.Visible = true;
 
                 grpHeats2.Visible = true;
+
+                this.Size = new Size(1000, 600);
+                grpHeats1.Size = new Size(460, 465);
             }
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }

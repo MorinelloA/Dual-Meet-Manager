@@ -465,5 +465,11 @@ namespace DualMeetManager.Presentation
             this.Hide();
             newForm.ShowDialog();
         }
+
+        private void mnuFileSave_Click(object sender, EventArgs e)
+        {
+            MeetMgr mm = new MeetMgr();
+            mm.saveMeet("tempfilename.txt", activeMeet);
+        }
     }
 }

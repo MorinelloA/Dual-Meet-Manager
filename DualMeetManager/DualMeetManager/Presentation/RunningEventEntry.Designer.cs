@@ -41,67 +41,67 @@
             this.cboSchool16 = new System.Windows.Forms.ComboBox();
             this.txtPerf16 = new System.Windows.Forms.TextBox();
             this.txtName16 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.lblPlace16 = new System.Windows.Forms.Label();
             this.cboSchool15 = new System.Windows.Forms.ComboBox();
             this.txtPerf15 = new System.Windows.Forms.TextBox();
             this.txtName15 = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblPlace15 = new System.Windows.Forms.Label();
             this.cboSchool14 = new System.Windows.Forms.ComboBox();
             this.txtPerf14 = new System.Windows.Forms.TextBox();
             this.txtName14 = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
+            this.lblPlace14 = new System.Windows.Forms.Label();
             this.cboSchool13 = new System.Windows.Forms.ComboBox();
             this.txtPerf13 = new System.Windows.Forms.TextBox();
             this.txtName13 = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
+            this.lblPlace13 = new System.Windows.Forms.Label();
             this.cboSchool12 = new System.Windows.Forms.ComboBox();
             this.txtPerf12 = new System.Windows.Forms.TextBox();
             this.txtName12 = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
+            this.lblPlace12 = new System.Windows.Forms.Label();
             this.cboSchool11 = new System.Windows.Forms.ComboBox();
             this.txtPerf11 = new System.Windows.Forms.TextBox();
             this.txtName11 = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lblPlace11 = new System.Windows.Forms.Label();
             this.cboSchool10 = new System.Windows.Forms.ComboBox();
             this.txtPerf10 = new System.Windows.Forms.TextBox();
             this.txtName10 = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
+            this.lblPlace10 = new System.Windows.Forms.Label();
             this.cboSchool9 = new System.Windows.Forms.ComboBox();
             this.txtPerf9 = new System.Windows.Forms.TextBox();
             this.txtName9 = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
+            this.lblPlace9 = new System.Windows.Forms.Label();
             this.cboSchool8 = new System.Windows.Forms.ComboBox();
             this.txtPerf8 = new System.Windows.Forms.TextBox();
             this.txtName8 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblPlace8 = new System.Windows.Forms.Label();
             this.cboSchool7 = new System.Windows.Forms.ComboBox();
             this.txtPerf7 = new System.Windows.Forms.TextBox();
             this.txtName7 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
+            this.lblPlace7 = new System.Windows.Forms.Label();
             this.cboSchool6 = new System.Windows.Forms.ComboBox();
             this.txtPerf6 = new System.Windows.Forms.TextBox();
             this.txtName6 = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.lblPlace6 = new System.Windows.Forms.Label();
             this.cboSchool5 = new System.Windows.Forms.ComboBox();
             this.txtPerf5 = new System.Windows.Forms.TextBox();
             this.txtName5 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.lblPlace5 = new System.Windows.Forms.Label();
             this.cboSchool4 = new System.Windows.Forms.ComboBox();
             this.txtPerf4 = new System.Windows.Forms.TextBox();
             this.txtName4 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblPlace4 = new System.Windows.Forms.Label();
             this.cboSchool3 = new System.Windows.Forms.ComboBox();
             this.txtPerf3 = new System.Windows.Forms.TextBox();
             this.txtName3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblPlace3 = new System.Windows.Forms.Label();
             this.cboSchool2 = new System.Windows.Forms.ComboBox();
             this.txtPerf2 = new System.Windows.Forms.TextBox();
             this.txtName2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblPlace2 = new System.Windows.Forms.Label();
             this.cboSchool1 = new System.Windows.Forms.ComboBox();
             this.txtPerf1 = new System.Windows.Forms.TextBox();
             this.txtName1 = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblPlace1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -113,67 +113,67 @@
             this.cboSchool32 = new System.Windows.Forms.ComboBox();
             this.txtPerf32 = new System.Windows.Forms.TextBox();
             this.txtName32 = new System.Windows.Forms.TextBox();
-            this.label21 = new System.Windows.Forms.Label();
+            this.lblPlace32 = new System.Windows.Forms.Label();
             this.cboSchool31 = new System.Windows.Forms.ComboBox();
             this.txtPerf31 = new System.Windows.Forms.TextBox();
             this.txtName31 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
+            this.lblPlace31 = new System.Windows.Forms.Label();
             this.cboSchool30 = new System.Windows.Forms.ComboBox();
             this.txtPerf30 = new System.Windows.Forms.TextBox();
             this.txtName30 = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
+            this.lblPlace30 = new System.Windows.Forms.Label();
             this.cboSchool29 = new System.Windows.Forms.ComboBox();
             this.txtPerf29 = new System.Windows.Forms.TextBox();
             this.txtName29 = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
+            this.lblPlace29 = new System.Windows.Forms.Label();
             this.cboSchool28 = new System.Windows.Forms.ComboBox();
             this.txtPerf28 = new System.Windows.Forms.TextBox();
             this.txtName28 = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
+            this.lblPlace28 = new System.Windows.Forms.Label();
             this.cboSchool27 = new System.Windows.Forms.ComboBox();
             this.txtPerf27 = new System.Windows.Forms.TextBox();
             this.txtName27 = new System.Windows.Forms.TextBox();
-            this.label26 = new System.Windows.Forms.Label();
+            this.lblPlace27 = new System.Windows.Forms.Label();
             this.cboSchool26 = new System.Windows.Forms.ComboBox();
             this.txtPerf26 = new System.Windows.Forms.TextBox();
             this.txtName26 = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
+            this.lblPlace26 = new System.Windows.Forms.Label();
             this.cboSchool25 = new System.Windows.Forms.ComboBox();
             this.txtPerf25 = new System.Windows.Forms.TextBox();
             this.txtName25 = new System.Windows.Forms.TextBox();
-            this.label28 = new System.Windows.Forms.Label();
+            this.lblPlace25 = new System.Windows.Forms.Label();
             this.cboSchool24 = new System.Windows.Forms.ComboBox();
             this.txtPerf24 = new System.Windows.Forms.TextBox();
             this.txtName24 = new System.Windows.Forms.TextBox();
-            this.label29 = new System.Windows.Forms.Label();
+            this.lblPlace24 = new System.Windows.Forms.Label();
             this.cboSchool23 = new System.Windows.Forms.ComboBox();
             this.txtPerf23 = new System.Windows.Forms.TextBox();
             this.txtName23 = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
+            this.lblPlace23 = new System.Windows.Forms.Label();
             this.cboSchool22 = new System.Windows.Forms.ComboBox();
             this.txtPerf22 = new System.Windows.Forms.TextBox();
             this.txtName22 = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
+            this.lblPlace22 = new System.Windows.Forms.Label();
             this.cboSchool21 = new System.Windows.Forms.ComboBox();
             this.txtPerf21 = new System.Windows.Forms.TextBox();
             this.txtName21 = new System.Windows.Forms.TextBox();
-            this.label32 = new System.Windows.Forms.Label();
+            this.lblPlace21 = new System.Windows.Forms.Label();
             this.cboSchool20 = new System.Windows.Forms.ComboBox();
             this.txtPerf20 = new System.Windows.Forms.TextBox();
             this.txtName20 = new System.Windows.Forms.TextBox();
-            this.label33 = new System.Windows.Forms.Label();
+            this.lblPlace20 = new System.Windows.Forms.Label();
             this.cboSchool19 = new System.Windows.Forms.ComboBox();
             this.txtPerf19 = new System.Windows.Forms.TextBox();
             this.txtName19 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
+            this.lblPlace19 = new System.Windows.Forms.Label();
             this.cboSchool18 = new System.Windows.Forms.ComboBox();
             this.txtPerf18 = new System.Windows.Forms.TextBox();
             this.txtName18 = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
+            this.lblPlace18 = new System.Windows.Forms.Label();
             this.cboSchool17 = new System.Windows.Forms.ComboBox();
             this.txtPerf17 = new System.Windows.Forms.TextBox();
             this.txtName17 = new System.Windows.Forms.TextBox();
-            this.label36 = new System.Windows.Forms.Label();
+            this.lblPlace17 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
@@ -191,7 +191,7 @@
             this.mnuClear});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(950, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(994, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -208,21 +208,21 @@
             // mnuNum8
             // 
             this.mnuNum8.Name = "mnuNum8";
-            this.mnuNum8.Size = new System.Drawing.Size(86, 22);
+            this.mnuNum8.Size = new System.Drawing.Size(152, 22);
             this.mnuNum8.Text = "8";
             this.mnuNum8.Click += new System.EventHandler(this.mnuNum8_Click);
             // 
             // mnuNum16
             // 
             this.mnuNum16.Name = "mnuNum16";
-            this.mnuNum16.Size = new System.Drawing.Size(86, 22);
+            this.mnuNum16.Size = new System.Drawing.Size(152, 22);
             this.mnuNum16.Text = "16";
             this.mnuNum16.Click += new System.EventHandler(this.mnuNum16_Click);
             // 
             // mnuNum32
             // 
             this.mnuNum32.Name = "mnuNum32";
-            this.mnuNum32.Size = new System.Drawing.Size(86, 22);
+            this.mnuNum32.Size = new System.Drawing.Size(152, 22);
             this.mnuNum32.Text = "32";
             this.mnuNum32.Click += new System.EventHandler(this.mnuNum32_Click);
             // 
@@ -261,67 +261,67 @@
             this.grpHeats1.Controls.Add(this.cboSchool16);
             this.grpHeats1.Controls.Add(this.txtPerf16);
             this.grpHeats1.Controls.Add(this.txtName16);
-            this.grpHeats1.Controls.Add(this.label13);
+            this.grpHeats1.Controls.Add(this.lblPlace16);
             this.grpHeats1.Controls.Add(this.cboSchool15);
             this.grpHeats1.Controls.Add(this.txtPerf15);
             this.grpHeats1.Controls.Add(this.txtName15);
-            this.grpHeats1.Controls.Add(this.label14);
+            this.grpHeats1.Controls.Add(this.lblPlace15);
             this.grpHeats1.Controls.Add(this.cboSchool14);
             this.grpHeats1.Controls.Add(this.txtPerf14);
             this.grpHeats1.Controls.Add(this.txtName14);
-            this.grpHeats1.Controls.Add(this.label15);
+            this.grpHeats1.Controls.Add(this.lblPlace14);
             this.grpHeats1.Controls.Add(this.cboSchool13);
             this.grpHeats1.Controls.Add(this.txtPerf13);
             this.grpHeats1.Controls.Add(this.txtName13);
-            this.grpHeats1.Controls.Add(this.label16);
+            this.grpHeats1.Controls.Add(this.lblPlace13);
             this.grpHeats1.Controls.Add(this.cboSchool12);
             this.grpHeats1.Controls.Add(this.txtPerf12);
             this.grpHeats1.Controls.Add(this.txtName12);
-            this.grpHeats1.Controls.Add(this.label17);
+            this.grpHeats1.Controls.Add(this.lblPlace12);
             this.grpHeats1.Controls.Add(this.cboSchool11);
             this.grpHeats1.Controls.Add(this.txtPerf11);
             this.grpHeats1.Controls.Add(this.txtName11);
-            this.grpHeats1.Controls.Add(this.label18);
+            this.grpHeats1.Controls.Add(this.lblPlace11);
             this.grpHeats1.Controls.Add(this.cboSchool10);
             this.grpHeats1.Controls.Add(this.txtPerf10);
             this.grpHeats1.Controls.Add(this.txtName10);
-            this.grpHeats1.Controls.Add(this.label19);
+            this.grpHeats1.Controls.Add(this.lblPlace10);
             this.grpHeats1.Controls.Add(this.cboSchool9);
             this.grpHeats1.Controls.Add(this.txtPerf9);
             this.grpHeats1.Controls.Add(this.txtName9);
-            this.grpHeats1.Controls.Add(this.label20);
+            this.grpHeats1.Controls.Add(this.lblPlace9);
             this.grpHeats1.Controls.Add(this.cboSchool8);
             this.grpHeats1.Controls.Add(this.txtPerf8);
             this.grpHeats1.Controls.Add(this.txtName8);
-            this.grpHeats1.Controls.Add(this.label9);
+            this.grpHeats1.Controls.Add(this.lblPlace8);
             this.grpHeats1.Controls.Add(this.cboSchool7);
             this.grpHeats1.Controls.Add(this.txtPerf7);
             this.grpHeats1.Controls.Add(this.txtName7);
-            this.grpHeats1.Controls.Add(this.label10);
+            this.grpHeats1.Controls.Add(this.lblPlace7);
             this.grpHeats1.Controls.Add(this.cboSchool6);
             this.grpHeats1.Controls.Add(this.txtPerf6);
             this.grpHeats1.Controls.Add(this.txtName6);
-            this.grpHeats1.Controls.Add(this.label11);
+            this.grpHeats1.Controls.Add(this.lblPlace6);
             this.grpHeats1.Controls.Add(this.cboSchool5);
             this.grpHeats1.Controls.Add(this.txtPerf5);
             this.grpHeats1.Controls.Add(this.txtName5);
-            this.grpHeats1.Controls.Add(this.label12);
+            this.grpHeats1.Controls.Add(this.lblPlace5);
             this.grpHeats1.Controls.Add(this.cboSchool4);
             this.grpHeats1.Controls.Add(this.txtPerf4);
             this.grpHeats1.Controls.Add(this.txtName4);
-            this.grpHeats1.Controls.Add(this.label8);
+            this.grpHeats1.Controls.Add(this.lblPlace4);
             this.grpHeats1.Controls.Add(this.cboSchool3);
             this.grpHeats1.Controls.Add(this.txtPerf3);
             this.grpHeats1.Controls.Add(this.txtName3);
-            this.grpHeats1.Controls.Add(this.label7);
+            this.grpHeats1.Controls.Add(this.lblPlace3);
             this.grpHeats1.Controls.Add(this.cboSchool2);
             this.grpHeats1.Controls.Add(this.txtPerf2);
             this.grpHeats1.Controls.Add(this.txtName2);
-            this.grpHeats1.Controls.Add(this.label6);
+            this.grpHeats1.Controls.Add(this.lblPlace2);
             this.grpHeats1.Controls.Add(this.cboSchool1);
             this.grpHeats1.Controls.Add(this.txtPerf1);
             this.grpHeats1.Controls.Add(this.txtName1);
-            this.grpHeats1.Controls.Add(this.label5);
+            this.grpHeats1.Controls.Add(this.lblPlace1);
             this.grpHeats1.Controls.Add(this.label4);
             this.grpHeats1.Controls.Add(this.label3);
             this.grpHeats1.Controls.Add(this.label2);
@@ -356,14 +356,14 @@
             this.txtName16.Size = new System.Drawing.Size(168, 20);
             this.txtName16.TabIndex = 65;
             // 
-            // label13
+            // lblPlace16
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(17, 431);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(19, 13);
-            this.label13.TabIndex = 64;
-            this.label13.Text = "16";
+            this.lblPlace16.AutoSize = true;
+            this.lblPlace16.Location = new System.Drawing.Point(17, 431);
+            this.lblPlace16.Name = "lblPlace16";
+            this.lblPlace16.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace16.TabIndex = 64;
+            this.lblPlace16.Text = "16";
             // 
             // cboSchool15
             // 
@@ -388,14 +388,14 @@
             this.txtName15.Size = new System.Drawing.Size(168, 20);
             this.txtName15.TabIndex = 61;
             // 
-            // label14
+            // lblPlace15
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(17, 405);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(19, 13);
-            this.label14.TabIndex = 60;
-            this.label14.Text = "15";
+            this.lblPlace15.AutoSize = true;
+            this.lblPlace15.Location = new System.Drawing.Point(17, 405);
+            this.lblPlace15.Name = "lblPlace15";
+            this.lblPlace15.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace15.TabIndex = 60;
+            this.lblPlace15.Text = "15";
             // 
             // cboSchool14
             // 
@@ -420,14 +420,14 @@
             this.txtName14.Size = new System.Drawing.Size(168, 20);
             this.txtName14.TabIndex = 57;
             // 
-            // label15
+            // lblPlace14
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(17, 379);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(19, 13);
-            this.label15.TabIndex = 56;
-            this.label15.Text = "14";
+            this.lblPlace14.AutoSize = true;
+            this.lblPlace14.Location = new System.Drawing.Point(17, 379);
+            this.lblPlace14.Name = "lblPlace14";
+            this.lblPlace14.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace14.TabIndex = 56;
+            this.lblPlace14.Text = "14";
             // 
             // cboSchool13
             // 
@@ -452,14 +452,14 @@
             this.txtName13.Size = new System.Drawing.Size(168, 20);
             this.txtName13.TabIndex = 53;
             // 
-            // label16
+            // lblPlace13
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(17, 353);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(19, 13);
-            this.label16.TabIndex = 52;
-            this.label16.Text = "13";
+            this.lblPlace13.AutoSize = true;
+            this.lblPlace13.Location = new System.Drawing.Point(17, 353);
+            this.lblPlace13.Name = "lblPlace13";
+            this.lblPlace13.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace13.TabIndex = 52;
+            this.lblPlace13.Text = "13";
             // 
             // cboSchool12
             // 
@@ -484,14 +484,14 @@
             this.txtName12.Size = new System.Drawing.Size(168, 20);
             this.txtName12.TabIndex = 49;
             // 
-            // label17
+            // lblPlace12
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(17, 327);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(19, 13);
-            this.label17.TabIndex = 48;
-            this.label17.Text = "12";
+            this.lblPlace12.AutoSize = true;
+            this.lblPlace12.Location = new System.Drawing.Point(17, 327);
+            this.lblPlace12.Name = "lblPlace12";
+            this.lblPlace12.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace12.TabIndex = 48;
+            this.lblPlace12.Text = "12";
             // 
             // cboSchool11
             // 
@@ -516,14 +516,14 @@
             this.txtName11.Size = new System.Drawing.Size(168, 20);
             this.txtName11.TabIndex = 45;
             // 
-            // label18
+            // lblPlace11
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(17, 301);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(19, 13);
-            this.label18.TabIndex = 44;
-            this.label18.Text = "11";
+            this.lblPlace11.AutoSize = true;
+            this.lblPlace11.Location = new System.Drawing.Point(17, 301);
+            this.lblPlace11.Name = "lblPlace11";
+            this.lblPlace11.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace11.TabIndex = 44;
+            this.lblPlace11.Text = "11";
             // 
             // cboSchool10
             // 
@@ -548,14 +548,14 @@
             this.txtName10.Size = new System.Drawing.Size(168, 20);
             this.txtName10.TabIndex = 41;
             // 
-            // label19
+            // lblPlace10
             // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(17, 275);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(19, 13);
-            this.label19.TabIndex = 40;
-            this.label19.Text = "10";
+            this.lblPlace10.AutoSize = true;
+            this.lblPlace10.Location = new System.Drawing.Point(17, 275);
+            this.lblPlace10.Name = "lblPlace10";
+            this.lblPlace10.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace10.TabIndex = 40;
+            this.lblPlace10.Text = "10";
             // 
             // cboSchool9
             // 
@@ -580,14 +580,14 @@
             this.txtName9.Size = new System.Drawing.Size(168, 20);
             this.txtName9.TabIndex = 37;
             // 
-            // label20
+            // lblPlace9
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(17, 249);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(13, 13);
-            this.label20.TabIndex = 36;
-            this.label20.Text = "9";
+            this.lblPlace9.AutoSize = true;
+            this.lblPlace9.Location = new System.Drawing.Point(17, 249);
+            this.lblPlace9.Name = "lblPlace9";
+            this.lblPlace9.Size = new System.Drawing.Size(13, 13);
+            this.lblPlace9.TabIndex = 36;
+            this.lblPlace9.Text = "9";
             // 
             // cboSchool8
             // 
@@ -612,14 +612,14 @@
             this.txtName8.Size = new System.Drawing.Size(168, 20);
             this.txtName8.TabIndex = 33;
             // 
-            // label9
+            // lblPlace8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 223);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(13, 13);
-            this.label9.TabIndex = 32;
-            this.label9.Text = "8";
+            this.lblPlace8.AutoSize = true;
+            this.lblPlace8.Location = new System.Drawing.Point(17, 223);
+            this.lblPlace8.Name = "lblPlace8";
+            this.lblPlace8.Size = new System.Drawing.Size(13, 13);
+            this.lblPlace8.TabIndex = 32;
+            this.lblPlace8.Text = "8";
             // 
             // cboSchool7
             // 
@@ -644,14 +644,14 @@
             this.txtName7.Size = new System.Drawing.Size(168, 20);
             this.txtName7.TabIndex = 29;
             // 
-            // label10
+            // lblPlace7
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 197);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(13, 13);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "7";
+            this.lblPlace7.AutoSize = true;
+            this.lblPlace7.Location = new System.Drawing.Point(17, 197);
+            this.lblPlace7.Name = "lblPlace7";
+            this.lblPlace7.Size = new System.Drawing.Size(13, 13);
+            this.lblPlace7.TabIndex = 28;
+            this.lblPlace7.Text = "7";
             // 
             // cboSchool6
             // 
@@ -676,14 +676,14 @@
             this.txtName6.Size = new System.Drawing.Size(168, 20);
             this.txtName6.TabIndex = 25;
             // 
-            // label11
+            // lblPlace6
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 171);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(13, 13);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "6";
+            this.lblPlace6.AutoSize = true;
+            this.lblPlace6.Location = new System.Drawing.Point(17, 171);
+            this.lblPlace6.Name = "lblPlace6";
+            this.lblPlace6.Size = new System.Drawing.Size(13, 13);
+            this.lblPlace6.TabIndex = 24;
+            this.lblPlace6.Text = "6";
             // 
             // cboSchool5
             // 
@@ -708,14 +708,14 @@
             this.txtName5.Size = new System.Drawing.Size(168, 20);
             this.txtName5.TabIndex = 21;
             // 
-            // label12
+            // lblPlace5
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(17, 145);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(13, 13);
-            this.label12.TabIndex = 20;
-            this.label12.Text = "5";
+            this.lblPlace5.AutoSize = true;
+            this.lblPlace5.Location = new System.Drawing.Point(17, 145);
+            this.lblPlace5.Name = "lblPlace5";
+            this.lblPlace5.Size = new System.Drawing.Size(13, 13);
+            this.lblPlace5.TabIndex = 20;
+            this.lblPlace5.Text = "5";
             // 
             // cboSchool4
             // 
@@ -740,14 +740,14 @@
             this.txtName4.Size = new System.Drawing.Size(168, 20);
             this.txtName4.TabIndex = 17;
             // 
-            // label8
+            // lblPlace4
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 119);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(13, 13);
-            this.label8.TabIndex = 16;
-            this.label8.Text = "4";
+            this.lblPlace4.AutoSize = true;
+            this.lblPlace4.Location = new System.Drawing.Point(17, 119);
+            this.lblPlace4.Name = "lblPlace4";
+            this.lblPlace4.Size = new System.Drawing.Size(13, 13);
+            this.lblPlace4.TabIndex = 16;
+            this.lblPlace4.Text = "4";
             // 
             // cboSchool3
             // 
@@ -772,14 +772,14 @@
             this.txtName3.Size = new System.Drawing.Size(168, 20);
             this.txtName3.TabIndex = 13;
             // 
-            // label7
+            // lblPlace3
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(17, 93);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 13);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "3";
+            this.lblPlace3.AutoSize = true;
+            this.lblPlace3.Location = new System.Drawing.Point(17, 93);
+            this.lblPlace3.Name = "lblPlace3";
+            this.lblPlace3.Size = new System.Drawing.Size(13, 13);
+            this.lblPlace3.TabIndex = 12;
+            this.lblPlace3.Text = "3";
             // 
             // cboSchool2
             // 
@@ -804,14 +804,14 @@
             this.txtName2.Size = new System.Drawing.Size(168, 20);
             this.txtName2.TabIndex = 9;
             // 
-            // label6
+            // lblPlace2
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 67);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 13);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "2";
+            this.lblPlace2.AutoSize = true;
+            this.lblPlace2.Location = new System.Drawing.Point(17, 67);
+            this.lblPlace2.Name = "lblPlace2";
+            this.lblPlace2.Size = new System.Drawing.Size(13, 13);
+            this.lblPlace2.TabIndex = 8;
+            this.lblPlace2.Text = "2";
             // 
             // cboSchool1
             // 
@@ -837,14 +837,14 @@
             this.txtName1.Size = new System.Drawing.Size(168, 20);
             this.txtName1.TabIndex = 5;
             // 
-            // label5
+            // lblPlace1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(17, 41);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "1";
+            this.lblPlace1.AutoSize = true;
+            this.lblPlace1.Location = new System.Drawing.Point(17, 41);
+            this.lblPlace1.Name = "lblPlace1";
+            this.lblPlace1.Size = new System.Drawing.Size(13, 13);
+            this.lblPlace1.TabIndex = 4;
+            this.lblPlace1.Text = "1";
             // 
             // label4
             // 
@@ -917,72 +917,72 @@
             this.grpHeats2.Controls.Add(this.cboSchool32);
             this.grpHeats2.Controls.Add(this.txtPerf32);
             this.grpHeats2.Controls.Add(this.txtName32);
-            this.grpHeats2.Controls.Add(this.label21);
+            this.grpHeats2.Controls.Add(this.lblPlace32);
             this.grpHeats2.Controls.Add(this.cboSchool31);
             this.grpHeats2.Controls.Add(this.txtPerf31);
             this.grpHeats2.Controls.Add(this.txtName31);
-            this.grpHeats2.Controls.Add(this.label22);
+            this.grpHeats2.Controls.Add(this.lblPlace31);
             this.grpHeats2.Controls.Add(this.cboSchool30);
             this.grpHeats2.Controls.Add(this.txtPerf30);
             this.grpHeats2.Controls.Add(this.txtName30);
-            this.grpHeats2.Controls.Add(this.label23);
+            this.grpHeats2.Controls.Add(this.lblPlace30);
             this.grpHeats2.Controls.Add(this.cboSchool29);
             this.grpHeats2.Controls.Add(this.txtPerf29);
             this.grpHeats2.Controls.Add(this.txtName29);
-            this.grpHeats2.Controls.Add(this.label24);
+            this.grpHeats2.Controls.Add(this.lblPlace29);
             this.grpHeats2.Controls.Add(this.cboSchool28);
             this.grpHeats2.Controls.Add(this.txtPerf28);
             this.grpHeats2.Controls.Add(this.txtName28);
-            this.grpHeats2.Controls.Add(this.label25);
+            this.grpHeats2.Controls.Add(this.lblPlace28);
             this.grpHeats2.Controls.Add(this.cboSchool27);
             this.grpHeats2.Controls.Add(this.txtPerf27);
             this.grpHeats2.Controls.Add(this.txtName27);
-            this.grpHeats2.Controls.Add(this.label26);
+            this.grpHeats2.Controls.Add(this.lblPlace27);
             this.grpHeats2.Controls.Add(this.cboSchool26);
             this.grpHeats2.Controls.Add(this.txtPerf26);
             this.grpHeats2.Controls.Add(this.txtName26);
-            this.grpHeats2.Controls.Add(this.label27);
+            this.grpHeats2.Controls.Add(this.lblPlace26);
             this.grpHeats2.Controls.Add(this.cboSchool25);
             this.grpHeats2.Controls.Add(this.txtPerf25);
             this.grpHeats2.Controls.Add(this.txtName25);
-            this.grpHeats2.Controls.Add(this.label28);
+            this.grpHeats2.Controls.Add(this.lblPlace25);
             this.grpHeats2.Controls.Add(this.cboSchool24);
             this.grpHeats2.Controls.Add(this.txtPerf24);
             this.grpHeats2.Controls.Add(this.txtName24);
-            this.grpHeats2.Controls.Add(this.label29);
+            this.grpHeats2.Controls.Add(this.lblPlace24);
             this.grpHeats2.Controls.Add(this.cboSchool23);
             this.grpHeats2.Controls.Add(this.txtPerf23);
             this.grpHeats2.Controls.Add(this.txtName23);
-            this.grpHeats2.Controls.Add(this.label30);
+            this.grpHeats2.Controls.Add(this.lblPlace23);
             this.grpHeats2.Controls.Add(this.cboSchool22);
             this.grpHeats2.Controls.Add(this.txtPerf22);
             this.grpHeats2.Controls.Add(this.txtName22);
-            this.grpHeats2.Controls.Add(this.label31);
+            this.grpHeats2.Controls.Add(this.lblPlace22);
             this.grpHeats2.Controls.Add(this.cboSchool21);
             this.grpHeats2.Controls.Add(this.txtPerf21);
             this.grpHeats2.Controls.Add(this.txtName21);
-            this.grpHeats2.Controls.Add(this.label32);
+            this.grpHeats2.Controls.Add(this.lblPlace21);
             this.grpHeats2.Controls.Add(this.cboSchool20);
             this.grpHeats2.Controls.Add(this.txtPerf20);
             this.grpHeats2.Controls.Add(this.txtName20);
-            this.grpHeats2.Controls.Add(this.label33);
+            this.grpHeats2.Controls.Add(this.lblPlace20);
             this.grpHeats2.Controls.Add(this.cboSchool19);
             this.grpHeats2.Controls.Add(this.txtPerf19);
             this.grpHeats2.Controls.Add(this.txtName19);
-            this.grpHeats2.Controls.Add(this.label34);
+            this.grpHeats2.Controls.Add(this.lblPlace19);
             this.grpHeats2.Controls.Add(this.cboSchool18);
             this.grpHeats2.Controls.Add(this.txtPerf18);
             this.grpHeats2.Controls.Add(this.txtName18);
-            this.grpHeats2.Controls.Add(this.label35);
+            this.grpHeats2.Controls.Add(this.lblPlace18);
             this.grpHeats2.Controls.Add(this.cboSchool17);
             this.grpHeats2.Controls.Add(this.txtPerf17);
             this.grpHeats2.Controls.Add(this.txtName17);
-            this.grpHeats2.Controls.Add(this.label36);
+            this.grpHeats2.Controls.Add(this.lblPlace17);
             this.grpHeats2.Controls.Add(this.label37);
             this.grpHeats2.Controls.Add(this.label38);
             this.grpHeats2.Controls.Add(this.label39);
             this.grpHeats2.Controls.Add(this.label40);
-            this.grpHeats2.Location = new System.Drawing.Point(478, 94);
+            this.grpHeats2.Location = new System.Drawing.Point(519, 94);
             this.grpHeats2.Name = "grpHeats2";
             this.grpHeats2.Size = new System.Drawing.Size(460, 465);
             this.grpHeats2.TabIndex = 5;
@@ -1012,14 +1012,14 @@
             this.txtName32.Size = new System.Drawing.Size(168, 20);
             this.txtName32.TabIndex = 65;
             // 
-            // label21
+            // lblPlace32
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(17, 431);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(19, 13);
-            this.label21.TabIndex = 64;
-            this.label21.Text = "32";
+            this.lblPlace32.AutoSize = true;
+            this.lblPlace32.Location = new System.Drawing.Point(17, 431);
+            this.lblPlace32.Name = "lblPlace32";
+            this.lblPlace32.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace32.TabIndex = 64;
+            this.lblPlace32.Text = "32";
             // 
             // cboSchool31
             // 
@@ -1044,14 +1044,14 @@
             this.txtName31.Size = new System.Drawing.Size(168, 20);
             this.txtName31.TabIndex = 61;
             // 
-            // label22
+            // lblPlace31
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(17, 405);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(19, 13);
-            this.label22.TabIndex = 60;
-            this.label22.Text = "31";
+            this.lblPlace31.AutoSize = true;
+            this.lblPlace31.Location = new System.Drawing.Point(17, 405);
+            this.lblPlace31.Name = "lblPlace31";
+            this.lblPlace31.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace31.TabIndex = 60;
+            this.lblPlace31.Text = "31";
             // 
             // cboSchool30
             // 
@@ -1076,14 +1076,14 @@
             this.txtName30.Size = new System.Drawing.Size(168, 20);
             this.txtName30.TabIndex = 57;
             // 
-            // label23
+            // lblPlace30
             // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(17, 379);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(19, 13);
-            this.label23.TabIndex = 56;
-            this.label23.Text = "30";
+            this.lblPlace30.AutoSize = true;
+            this.lblPlace30.Location = new System.Drawing.Point(17, 379);
+            this.lblPlace30.Name = "lblPlace30";
+            this.lblPlace30.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace30.TabIndex = 56;
+            this.lblPlace30.Text = "30";
             // 
             // cboSchool29
             // 
@@ -1108,14 +1108,14 @@
             this.txtName29.Size = new System.Drawing.Size(168, 20);
             this.txtName29.TabIndex = 53;
             // 
-            // label24
+            // lblPlace29
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(17, 353);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(19, 13);
-            this.label24.TabIndex = 52;
-            this.label24.Text = "29";
+            this.lblPlace29.AutoSize = true;
+            this.lblPlace29.Location = new System.Drawing.Point(17, 353);
+            this.lblPlace29.Name = "lblPlace29";
+            this.lblPlace29.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace29.TabIndex = 52;
+            this.lblPlace29.Text = "29";
             // 
             // cboSchool28
             // 
@@ -1140,14 +1140,14 @@
             this.txtName28.Size = new System.Drawing.Size(168, 20);
             this.txtName28.TabIndex = 49;
             // 
-            // label25
+            // lblPlace28
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(17, 327);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(19, 13);
-            this.label25.TabIndex = 48;
-            this.label25.Text = "28";
+            this.lblPlace28.AutoSize = true;
+            this.lblPlace28.Location = new System.Drawing.Point(17, 327);
+            this.lblPlace28.Name = "lblPlace28";
+            this.lblPlace28.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace28.TabIndex = 48;
+            this.lblPlace28.Text = "28";
             // 
             // cboSchool27
             // 
@@ -1172,14 +1172,14 @@
             this.txtName27.Size = new System.Drawing.Size(168, 20);
             this.txtName27.TabIndex = 45;
             // 
-            // label26
+            // lblPlace27
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(17, 301);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(19, 13);
-            this.label26.TabIndex = 44;
-            this.label26.Text = "27";
+            this.lblPlace27.AutoSize = true;
+            this.lblPlace27.Location = new System.Drawing.Point(17, 301);
+            this.lblPlace27.Name = "lblPlace27";
+            this.lblPlace27.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace27.TabIndex = 44;
+            this.lblPlace27.Text = "27";
             // 
             // cboSchool26
             // 
@@ -1204,14 +1204,14 @@
             this.txtName26.Size = new System.Drawing.Size(168, 20);
             this.txtName26.TabIndex = 41;
             // 
-            // label27
+            // lblPlace26
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(17, 275);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(19, 13);
-            this.label27.TabIndex = 40;
-            this.label27.Text = "26";
+            this.lblPlace26.AutoSize = true;
+            this.lblPlace26.Location = new System.Drawing.Point(17, 275);
+            this.lblPlace26.Name = "lblPlace26";
+            this.lblPlace26.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace26.TabIndex = 40;
+            this.lblPlace26.Text = "26";
             // 
             // cboSchool25
             // 
@@ -1236,14 +1236,14 @@
             this.txtName25.Size = new System.Drawing.Size(168, 20);
             this.txtName25.TabIndex = 37;
             // 
-            // label28
+            // lblPlace25
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(17, 249);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(19, 13);
-            this.label28.TabIndex = 36;
-            this.label28.Text = "25";
+            this.lblPlace25.AutoSize = true;
+            this.lblPlace25.Location = new System.Drawing.Point(17, 249);
+            this.lblPlace25.Name = "lblPlace25";
+            this.lblPlace25.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace25.TabIndex = 36;
+            this.lblPlace25.Text = "25";
             // 
             // cboSchool24
             // 
@@ -1268,14 +1268,14 @@
             this.txtName24.Size = new System.Drawing.Size(168, 20);
             this.txtName24.TabIndex = 33;
             // 
-            // label29
+            // lblPlace24
             // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(17, 223);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(19, 13);
-            this.label29.TabIndex = 32;
-            this.label29.Text = "24";
+            this.lblPlace24.AutoSize = true;
+            this.lblPlace24.Location = new System.Drawing.Point(17, 223);
+            this.lblPlace24.Name = "lblPlace24";
+            this.lblPlace24.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace24.TabIndex = 32;
+            this.lblPlace24.Text = "24";
             // 
             // cboSchool23
             // 
@@ -1300,14 +1300,14 @@
             this.txtName23.Size = new System.Drawing.Size(168, 20);
             this.txtName23.TabIndex = 29;
             // 
-            // label30
+            // lblPlace23
             // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(17, 197);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(19, 13);
-            this.label30.TabIndex = 28;
-            this.label30.Text = "23";
+            this.lblPlace23.AutoSize = true;
+            this.lblPlace23.Location = new System.Drawing.Point(17, 197);
+            this.lblPlace23.Name = "lblPlace23";
+            this.lblPlace23.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace23.TabIndex = 28;
+            this.lblPlace23.Text = "23";
             // 
             // cboSchool22
             // 
@@ -1332,14 +1332,14 @@
             this.txtName22.Size = new System.Drawing.Size(168, 20);
             this.txtName22.TabIndex = 25;
             // 
-            // label31
+            // lblPlace22
             // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(17, 171);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(19, 13);
-            this.label31.TabIndex = 24;
-            this.label31.Text = "22";
+            this.lblPlace22.AutoSize = true;
+            this.lblPlace22.Location = new System.Drawing.Point(17, 171);
+            this.lblPlace22.Name = "lblPlace22";
+            this.lblPlace22.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace22.TabIndex = 24;
+            this.lblPlace22.Text = "22";
             // 
             // cboSchool21
             // 
@@ -1364,14 +1364,14 @@
             this.txtName21.Size = new System.Drawing.Size(168, 20);
             this.txtName21.TabIndex = 21;
             // 
-            // label32
+            // lblPlace21
             // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(17, 145);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(19, 13);
-            this.label32.TabIndex = 20;
-            this.label32.Text = "21";
+            this.lblPlace21.AutoSize = true;
+            this.lblPlace21.Location = new System.Drawing.Point(17, 145);
+            this.lblPlace21.Name = "lblPlace21";
+            this.lblPlace21.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace21.TabIndex = 20;
+            this.lblPlace21.Text = "21";
             // 
             // cboSchool20
             // 
@@ -1396,14 +1396,14 @@
             this.txtName20.Size = new System.Drawing.Size(168, 20);
             this.txtName20.TabIndex = 17;
             // 
-            // label33
+            // lblPlace20
             // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(17, 119);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(19, 13);
-            this.label33.TabIndex = 16;
-            this.label33.Text = "20";
+            this.lblPlace20.AutoSize = true;
+            this.lblPlace20.Location = new System.Drawing.Point(17, 119);
+            this.lblPlace20.Name = "lblPlace20";
+            this.lblPlace20.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace20.TabIndex = 16;
+            this.lblPlace20.Text = "20";
             // 
             // cboSchool19
             // 
@@ -1428,14 +1428,14 @@
             this.txtName19.Size = new System.Drawing.Size(168, 20);
             this.txtName19.TabIndex = 13;
             // 
-            // label34
+            // lblPlace19
             // 
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(17, 93);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(19, 13);
-            this.label34.TabIndex = 12;
-            this.label34.Text = "19";
+            this.lblPlace19.AutoSize = true;
+            this.lblPlace19.Location = new System.Drawing.Point(17, 93);
+            this.lblPlace19.Name = "lblPlace19";
+            this.lblPlace19.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace19.TabIndex = 12;
+            this.lblPlace19.Text = "19";
             // 
             // cboSchool18
             // 
@@ -1460,14 +1460,14 @@
             this.txtName18.Size = new System.Drawing.Size(168, 20);
             this.txtName18.TabIndex = 9;
             // 
-            // label35
+            // lblPlace18
             // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(17, 67);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(19, 13);
-            this.label35.TabIndex = 8;
-            this.label35.Text = "18";
+            this.lblPlace18.AutoSize = true;
+            this.lblPlace18.Location = new System.Drawing.Point(17, 67);
+            this.lblPlace18.Name = "lblPlace18";
+            this.lblPlace18.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace18.TabIndex = 8;
+            this.lblPlace18.Text = "18";
             // 
             // cboSchool17
             // 
@@ -1492,14 +1492,14 @@
             this.txtName17.Size = new System.Drawing.Size(168, 20);
             this.txtName17.TabIndex = 5;
             // 
-            // label36
+            // lblPlace17
             // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(17, 41);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(19, 13);
-            this.label36.TabIndex = 4;
-            this.label36.Text = "17";
+            this.lblPlace17.AutoSize = true;
+            this.lblPlace17.Location = new System.Drawing.Point(17, 41);
+            this.lblPlace17.Name = "lblPlace17";
+            this.lblPlace17.Size = new System.Drawing.Size(19, 13);
+            this.lblPlace17.TabIndex = 4;
+            this.lblPlace17.Text = "17";
             // 
             // label37
             // 
@@ -1541,13 +1541,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(950, 570);
+            this.ClientSize = new System.Drawing.Size(994, 575);
             this.Controls.Add(this.grpHeats2);
             this.Controls.Add(this.cmdEnterData);
             this.Controls.Add(this.cmdNext);
             this.Controls.Add(this.cmdPrevious);
             this.Controls.Add(this.grpHeats1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "RunningEventEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1584,134 +1585,134 @@
         private System.Windows.Forms.ComboBox cboSchool1;
         private System.Windows.Forms.TextBox txtPerf1;
         private System.Windows.Forms.TextBox txtName1;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblPlace1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ToolStripMenuItem mnuNum16;
         private System.Windows.Forms.ComboBox cboSchool8;
         private System.Windows.Forms.TextBox txtPerf8;
         private System.Windows.Forms.TextBox txtName8;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblPlace8;
         private System.Windows.Forms.ComboBox cboSchool7;
         private System.Windows.Forms.TextBox txtPerf7;
         private System.Windows.Forms.TextBox txtName7;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblPlace7;
         private System.Windows.Forms.ComboBox cboSchool6;
         private System.Windows.Forms.TextBox txtPerf6;
         private System.Windows.Forms.TextBox txtName6;
-        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label lblPlace6;
         private System.Windows.Forms.ComboBox cboSchool5;
         private System.Windows.Forms.TextBox txtPerf5;
         private System.Windows.Forms.TextBox txtName5;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblPlace5;
         private System.Windows.Forms.ComboBox cboSchool4;
         private System.Windows.Forms.TextBox txtPerf4;
         private System.Windows.Forms.TextBox txtName4;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblPlace4;
         private System.Windows.Forms.ComboBox cboSchool3;
         private System.Windows.Forms.TextBox txtPerf3;
         private System.Windows.Forms.TextBox txtName3;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblPlace3;
         private System.Windows.Forms.ComboBox cboSchool2;
         private System.Windows.Forms.TextBox txtPerf2;
         private System.Windows.Forms.TextBox txtName2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblPlace2;
         private System.Windows.Forms.ComboBox cboSchool16;
         private System.Windows.Forms.TextBox txtPerf16;
         private System.Windows.Forms.TextBox txtName16;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label lblPlace16;
         private System.Windows.Forms.ComboBox cboSchool15;
         private System.Windows.Forms.TextBox txtPerf15;
         private System.Windows.Forms.TextBox txtName15;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblPlace15;
         private System.Windows.Forms.ComboBox cboSchool14;
         private System.Windows.Forms.TextBox txtPerf14;
         private System.Windows.Forms.TextBox txtName14;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label lblPlace14;
         private System.Windows.Forms.ComboBox cboSchool13;
         private System.Windows.Forms.TextBox txtPerf13;
         private System.Windows.Forms.TextBox txtName13;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label lblPlace13;
         private System.Windows.Forms.ComboBox cboSchool12;
         private System.Windows.Forms.TextBox txtPerf12;
         private System.Windows.Forms.TextBox txtName12;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label lblPlace12;
         private System.Windows.Forms.ComboBox cboSchool11;
         private System.Windows.Forms.TextBox txtPerf11;
         private System.Windows.Forms.TextBox txtName11;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label lblPlace11;
         private System.Windows.Forms.ComboBox cboSchool10;
         private System.Windows.Forms.TextBox txtPerf10;
         private System.Windows.Forms.TextBox txtName10;
-        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label lblPlace10;
         private System.Windows.Forms.ComboBox cboSchool9;
         private System.Windows.Forms.TextBox txtPerf9;
         private System.Windows.Forms.TextBox txtName9;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label lblPlace9;
         private System.Windows.Forms.GroupBox grpHeats2;
         private System.Windows.Forms.ComboBox cboSchool32;
         private System.Windows.Forms.TextBox txtPerf32;
         private System.Windows.Forms.TextBox txtName32;
-        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label lblPlace32;
         private System.Windows.Forms.ComboBox cboSchool31;
         private System.Windows.Forms.TextBox txtPerf31;
         private System.Windows.Forms.TextBox txtName31;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblPlace31;
         private System.Windows.Forms.ComboBox cboSchool30;
         private System.Windows.Forms.TextBox txtPerf30;
         private System.Windows.Forms.TextBox txtName30;
-        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label lblPlace30;
         private System.Windows.Forms.ComboBox cboSchool29;
         private System.Windows.Forms.TextBox txtPerf29;
         private System.Windows.Forms.TextBox txtName29;
-        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label lblPlace29;
         private System.Windows.Forms.ComboBox cboSchool28;
         private System.Windows.Forms.TextBox txtPerf28;
         private System.Windows.Forms.TextBox txtName28;
-        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label lblPlace28;
         private System.Windows.Forms.ComboBox cboSchool27;
         private System.Windows.Forms.TextBox txtPerf27;
         private System.Windows.Forms.TextBox txtName27;
-        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label lblPlace27;
         private System.Windows.Forms.ComboBox cboSchool26;
         private System.Windows.Forms.TextBox txtPerf26;
         private System.Windows.Forms.TextBox txtName26;
-        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label lblPlace26;
         private System.Windows.Forms.ComboBox cboSchool25;
         private System.Windows.Forms.TextBox txtPerf25;
         private System.Windows.Forms.TextBox txtName25;
-        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label lblPlace25;
         private System.Windows.Forms.ComboBox cboSchool24;
         private System.Windows.Forms.TextBox txtPerf24;
         private System.Windows.Forms.TextBox txtName24;
-        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label lblPlace24;
         private System.Windows.Forms.ComboBox cboSchool23;
         private System.Windows.Forms.TextBox txtPerf23;
         private System.Windows.Forms.TextBox txtName23;
-        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label lblPlace23;
         private System.Windows.Forms.ComboBox cboSchool22;
         private System.Windows.Forms.TextBox txtPerf22;
         private System.Windows.Forms.TextBox txtName22;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label lblPlace22;
         private System.Windows.Forms.ComboBox cboSchool21;
         private System.Windows.Forms.TextBox txtPerf21;
         private System.Windows.Forms.TextBox txtName21;
-        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label lblPlace21;
         private System.Windows.Forms.ComboBox cboSchool20;
         private System.Windows.Forms.TextBox txtPerf20;
         private System.Windows.Forms.TextBox txtName20;
-        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label lblPlace20;
         private System.Windows.Forms.ComboBox cboSchool19;
         private System.Windows.Forms.TextBox txtPerf19;
         private System.Windows.Forms.TextBox txtName19;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lblPlace19;
         private System.Windows.Forms.ComboBox cboSchool18;
         private System.Windows.Forms.TextBox txtPerf18;
         private System.Windows.Forms.TextBox txtName18;
-        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label lblPlace18;
         private System.Windows.Forms.ComboBox cboSchool17;
         private System.Windows.Forms.TextBox txtPerf17;
         private System.Windows.Forms.TextBox txtName17;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lblPlace17;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;

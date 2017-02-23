@@ -1,4 +1,5 @@
-﻿using DualMeetManager.Domain;
+﻿using DualMeetManager.Business.Managers;
+using DualMeetManager.Domain;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -256,6 +257,21 @@ namespace DualMeetManager.Presentation
         {
             //Exit the application
             Application.Exit();
+        }
+
+        private void mnuHelpContact_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Anthony Morinello\nMorinelloA@gmail.com\nwww.github.com/MorinelloA", "Contact", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void mnuFileOpen_Click(object sender, EventArgs e)
+        {
+            if(ofdMeet.ShowDialog() == DialogResult.OK)
+            {
+                MeetMgr mm = new MeetMgr();
+                Meet newMeet = mm.openMeet(ofdMeet.FileName);
+                if(newMeet != null) MessageBox.Show(newMeet.ToString()); //Debugging line. Remove.
+            }
         }
     }
 }

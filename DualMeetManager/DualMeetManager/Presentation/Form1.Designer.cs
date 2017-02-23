@@ -30,12 +30,11 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.mnuFile = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuFileNew = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelp = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.contactUsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuHelpContact = new System.Windows.Forms.ToolStripMenuItem();
             this.grpDetails = new System.Windows.Forms.GroupBox();
             this.cboWeather = new System.Windows.Forms.ComboBox();
             this.dtpMeetDate = new System.Windows.Forms.DateTimePicker();
@@ -95,6 +94,7 @@
             this.txtGirlsTeam1Name = new System.Windows.Forms.TextBox();
             this.lblGirlsTeam1Abbr = new System.Windows.Forms.Label();
             this.lblGirlsTeam1Name = new System.Windows.Forms.Label();
+            this.ofdMeet = new System.Windows.Forms.OpenFileDialog();
             this.menuStrip1.SuspendLayout();
             this.grpDetails.SuspendLayout();
             this.grpBoysTeams.SuspendLayout();
@@ -116,7 +116,6 @@
             // mnuFile
             // 
             this.mnuFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuFileNew,
             this.mnuFileOpen,
             this.mnuFileExit});
             this.mnuFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,25 +123,19 @@
             this.mnuFile.Size = new System.Drawing.Size(43, 22);
             this.mnuFile.Text = "File";
             // 
-            // mnuFileNew
-            // 
-            this.mnuFileNew.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(149, 22);
-            this.mnuFileNew.Text = "New Meet";
-            // 
             // mnuFileOpen
             // 
             this.mnuFileOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileOpen.Name = "mnuFileOpen";
-            this.mnuFileOpen.Size = new System.Drawing.Size(149, 22);
+            this.mnuFileOpen.Size = new System.Drawing.Size(152, 22);
             this.mnuFileOpen.Text = "Open Meet";
+            this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
             // mnuFileExit
             // 
             this.mnuFileExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(149, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
             this.mnuFileExit.Text = "Exit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
@@ -150,7 +143,7 @@
             // 
             this.mnuHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuHelpAbout,
-            this.contactUsToolStripMenuItem});
+            this.mnuHelpContact});
             this.mnuHelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuHelp.Name = "mnuHelp";
             this.mnuHelp.Size = new System.Drawing.Size(50, 22);
@@ -159,14 +152,15 @@
             // mnuHelpAbout
             // 
             this.mnuHelpAbout.Name = "mnuHelpAbout";
-            this.mnuHelpAbout.Size = new System.Drawing.Size(151, 22);
+            this.mnuHelpAbout.Size = new System.Drawing.Size(152, 22);
             this.mnuHelpAbout.Text = "About";
             // 
-            // contactUsToolStripMenuItem
+            // mnuHelpContact
             // 
-            this.contactUsToolStripMenuItem.Name = "contactUsToolStripMenuItem";
-            this.contactUsToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
-            this.contactUsToolStripMenuItem.Text = "Contact Us";
+            this.mnuHelpContact.Name = "mnuHelpContact";
+            this.mnuHelpContact.Size = new System.Drawing.Size(152, 22);
+            this.mnuHelpContact.Text = "Contact Us";
+            this.mnuHelpContact.Click += new System.EventHandler(this.mnuHelpContact_Click);
             // 
             // grpDetails
             // 
@@ -787,17 +781,22 @@
             this.lblGirlsTeam1Name.TabIndex = 0;
             this.lblGirlsTeam1Name.Text = "Team #1 Name:";
             // 
+            // ofdMeet
+            // 
+            this.ofdMeet.FileName = "MeetFile";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 573);
+            this.ClientSize = new System.Drawing.Size(992, 473);
             this.Controls.Add(this.grpGirlsTeams);
             this.Controls.Add(this.cmdClear);
             this.Controls.Add(this.cmdCreateMeet);
             this.Controls.Add(this.grpBoysTeams);
             this.Controls.Add(this.grpDetails);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -820,7 +819,6 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem mnuFile;
-        private System.Windows.Forms.ToolStripMenuItem mnuFileNew;
         private System.Windows.Forms.ToolStripMenuItem mnuFileOpen;
         private System.Windows.Forms.ToolStripMenuItem mnuFileExit;
         private System.Windows.Forms.ToolStripMenuItem mnuHelp;
@@ -884,7 +882,8 @@
         private System.Windows.Forms.Label lblGirlsTeam1Abbr;
         private System.Windows.Forms.Label lblGirlsTeam1Name;
         private System.Windows.Forms.ToolStripMenuItem mnuHelpAbout;
-        private System.Windows.Forms.ToolStripMenuItem contactUsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mnuHelpContact;
+        private System.Windows.Forms.OpenFileDialog ofdMeet;
     }
 }
 

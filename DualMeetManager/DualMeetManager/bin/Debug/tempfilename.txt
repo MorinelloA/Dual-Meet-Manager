@@ -1,0 +1,23 @@
+{
+  "dateOfMeet": "2017-02-23T13:58:27.9646884-05:00",
+  "location": "a",
+  "weatherConditions": "a",
+  "schoolNames": {
+    "boySchoolNames": {
+      "a": "a"
+    },
+    "girlSchoolNames": {
+      "a": "a"
+    }
+  },
+  "performances": {
+    "Boy's 100": [
+      {
+        "athleteName": "tyut",
+        "schoolName": "a",
+        "heatNum": 1,
+        "performance": 67.0
+      }
+    ]
+  }
+}

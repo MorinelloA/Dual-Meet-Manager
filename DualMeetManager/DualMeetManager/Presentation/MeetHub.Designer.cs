@@ -203,7 +203,7 @@
             this.debugToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(543, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(542, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -233,8 +233,9 @@
             // mnuFileSave
             // 
             this.mnuFileSave.Name = "mnuFileSave";
-            this.mnuFileSave.Size = new System.Drawing.Size(127, 22);
+            this.mnuFileSave.Size = new System.Drawing.Size(152, 22);
             this.mnuFileSave.Text = "Save Meet";
+            this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
             // 
             // mnuFileExit
             // 
@@ -1444,12 +1445,13 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(543, 268);
+            this.ClientSize = new System.Drawing.Size(542, 253);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblBoysScores);
             this.Controls.Add(this.lstGirlsScores);
             this.Controls.Add(this.lstBoysScores);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MeetHub";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
