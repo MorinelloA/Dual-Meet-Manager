@@ -26,7 +26,10 @@ namespace DualMeetManager.Presentation
         Dictionary<int, List<Performance>> perfs = new Dictionary<int, List<Performance>>();
         EventMgr em = new EventMgr();
 
-        public void SetCorrectNumRunners()
+        /// <summary>
+        /// Automatically detects the correct value to set for currectNumRunners
+        /// </summary>
+        private void SetCorrectNumRunners()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Check how many runners are in current heat
@@ -62,7 +65,7 @@ namespace DualMeetManager.Presentation
         /// <summary>
         /// Changes the visibility of the runner form objects based on how many there are/needed
         /// </summary>
-        public void DisplayCorrectNumOfRunners()
+        private void DisplayCorrectNumOfRunners()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Make visible / non visible depending on number of runners
@@ -251,7 +254,10 @@ namespace DualMeetManager.Presentation
             Console.WriteLine("Leaving " + GetType().Name + " - " + "Parameterized Constructor");
         }
 
-        public void Clear1to8()
+        /// <summary>
+        /// Clears out runner information for runners 1-8
+        /// </summary>
+        private void Clear1to8()
         {
             txtName1.Text = "";
             cboSchool1.Text = "";
@@ -286,7 +292,10 @@ namespace DualMeetManager.Presentation
             txtPerf8.Text = "";
         }
 
-        public void Clear9to16()
+        /// <summary>
+        /// Clears out runner information for runners 9-16
+        /// </summary>
+        private void Clear9to16()
         {
             txtName9.Text = "";
             cboSchool9.Text = "";
@@ -321,7 +330,10 @@ namespace DualMeetManager.Presentation
             txtPerf16.Text = "";
         }
 
-        public void Clear17to32()
+        /// <summary>
+        /// Clears out runner information for runners 17-32
+        /// </summary>
+        private void Clear17to32()
         {
             txtName17.Text = "";
             cboSchool17.Text = "";
@@ -391,7 +403,7 @@ namespace DualMeetManager.Presentation
         /// <summary>
         /// Clears all data from all objects on the form
         /// </summary>
-        public void ClearForm()
+        private void ClearForm()
         {
             Clear1to8();
             Clear9to16();
@@ -401,7 +413,7 @@ namespace DualMeetManager.Presentation
         /// <summary>
         /// Enters data from specific heat (int currentHeatNum) for all objects on the form
         /// </summary>
-        public void EnterDataIntoForm()
+        private void EnterDataIntoForm()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -613,7 +625,7 @@ namespace DualMeetManager.Presentation
         /// The key of this Dictionary is the heat Number. Value is a List of Performances for that heat
         /// This allows us to enter and gather performances from this form alot easier, quicker, and cleaner.
         /// </summary>
-        public void PutPerfsIntoOrderedDictionary()
+        private void PutPerfsIntoOrderedDictionary()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             //Clear perfs
@@ -647,7 +659,10 @@ namespace DualMeetManager.Presentation
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
-        public void TakePerfsFromOrderedDictionary()
+        /// <summary>
+        /// Converts the Dictionary of Performances and puts it back into a List of Performances
+        /// </summary>
+        private void TakePerfsFromOrderedDictionary()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             if (allPerfs != null) allPerfs.Clear();
@@ -667,7 +682,10 @@ namespace DualMeetManager.Presentation
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
-        public void PopulateTeams()
+        /// <summary>
+        /// Populate all combo boxes with the team names
+        /// </summary>
+        private void PopulateTeams()
         {
             cboSchool1.Items.Add("");
             cboSchool2.Items.Add("");
@@ -738,7 +756,10 @@ namespace DualMeetManager.Presentation
             }
         }
 
-        public void SortDictionaryOfPerformances()
+        /// <summary>
+        /// Sorts the Dictionary in Ascending Order
+        /// </summary>
+        private void SortDictionaryOfPerformances()
         {
             if (perfs != null)
             {
@@ -749,7 +770,10 @@ namespace DualMeetManager.Presentation
             }
         }
 
-        public void SortListOfPerfs()
+        /// <summary>
+        /// Sorts the List of Performances in Ascendign Order
+        /// </summary>
+        private void SortListOfPerfs()
         {
             if(allPerfs != null && allPerfs.Count > 0)
             {
@@ -757,6 +781,11 @@ namespace DualMeetManager.Presentation
             }
         }
 
+        /// <summary>
+        /// Load event for the form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RunningEventEntry_Load(object sender, EventArgs e)
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -782,7 +811,7 @@ namespace DualMeetManager.Presentation
         /// Check to make sure that the data entered into the form by the user is valid
         /// </summary>
         /// <returns>true if valid, false if invalid</returns>
-        public bool CheckData()
+        private bool CheckData()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
@@ -1179,18 +1208,33 @@ namespace DualMeetManager.Presentation
             return true;
         }
 
+        /// <summary>
+        /// Click Event for mnuNum8
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnuNum8_Click(object sender, EventArgs e)
         {
             numRunners = 8;
             DisplayCorrectNumOfRunners();
         }
 
+        /// <summary>
+        /// Click Event for mnuNum16
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnuNum16_Click(object sender, EventArgs e)
         {
             numRunners = 16;
             DisplayCorrectNumOfRunners();
         }
 
+        /// <summary>
+        /// Click Event for mnuNum32
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void mnuNum32_Click(object sender, EventArgs e)
         {
             numRunners = 32;
@@ -1233,7 +1277,11 @@ namespace DualMeetManager.Presentation
             }
         }
 
-        public bool AddHeatToDictionary()
+        /// <summary>
+        /// Adds an entire heat to the Dictionary of Performances
+        /// </summary>
+        /// <returns></returns>
+        private bool AddHeatToDictionary()
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
             if (CheckData())
@@ -1321,8 +1369,11 @@ namespace DualMeetManager.Presentation
             }
         }
 
-
-
+        /// <summary>
+        /// Click event for the Enter button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cmdEnterData_Click(object sender, EventArgs e)
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
