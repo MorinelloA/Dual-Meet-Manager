@@ -1221,7 +1221,7 @@ namespace DualMeetManager.Service.Printout
                 }
 
                 //Add tempList to performances
-                if(tempPerfs != null) //Cannot add a null value to a dictionary key
+                if(tempPerfs != null && tempPerfs.Count > 0) //Cannot add a null value to a dictionary key
                     performances.Add(evt, tempPerfs);
             } //The above SHOULD be complete. Still untested
 
@@ -1288,7 +1288,7 @@ namespace DualMeetManager.Service.Printout
                                 {
                                     perfs[i].Rows[j + 1].Cells[0].Paragraphs.First().Append((j + 1).ToString());
                                     perfs[i].Rows[j + 1].Cells[1].Paragraphs.First().Append(tempEventList[j].athleteName);
-                                    perfs[i].Rows[j + 1].Cells[2].Paragraphs.First().Append(eMgr.ConvertToLengthData(tempEventList[j].performance));
+                                    perfs[i].Rows[j + 1].Cells[2].Paragraphs.First().Append(eMgr.ConvertToTimedData(tempEventList[j].performance));
                                     perfs[i].Rows[j + 1].Cells[3].Paragraphs.First().Append(tempEventList[j].heatNum.ToString());
                                 }
 

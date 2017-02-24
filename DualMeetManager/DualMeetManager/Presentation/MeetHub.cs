@@ -14,10 +14,17 @@ namespace DualMeetManager.Presentation
 {
     public partial class MeetHub : Form
     {
-        public void TestTest()
-        {
-            Console.WriteLine("Test is a success");
-        }
+        //Entire Meet
+        Meet activeMeet = new Meet();
+
+        //File Path/Name for saving the Meet
+        string file = "";
+
+        //Generate List of Boy's team Abbrs from Dictionary
+        List<string> boysAbbrs = new List<string>();
+
+        //Generate List of Girl's team Abbrs from Dictionary
+        List<string> girlsAbbrs = new List<string>();
 
         public void AddEvent(string eventName, List<Performance> perfsToAdd)
         {
@@ -29,14 +36,6 @@ namespace DualMeetManager.Presentation
         {
             InitializeComponent();
         }
-
-        Meet activeMeet = new Meet();
-
-        //Generate List of Boy's team Abbrs from Dictionary
-        List<string> boysAbbrs = new List<string>();
-
-        //Generate List of Girl's team Abbrs from Dictionary
-        List<string> girlsAbbrs = new List<string>();
 
         public MeetHub(Meet activeMeet) : this()
         {
@@ -468,8 +467,340 @@ namespace DualMeetManager.Presentation
 
         private void mnuFileSave_Click(object sender, EventArgs e)
         {
-            MeetMgr mm = new MeetMgr();
-            mm.saveMeet("tempfilename.txt", activeMeet);
+            if (string.IsNullOrEmpty(file))
+            {
+                //Get file name and path
+                if(sfdMeet.ShowDialog() == DialogResult.OK)
+                {
+                    MeetMgr mm = new MeetMgr();
+                    mm.saveMeet(file, activeMeet);
+                }
+            }
+            else
+            {
+                MeetMgr mm = new MeetMgr();
+                mm.saveMeet(file, activeMeet);
+            }
+        }
+
+        private void mnuFileOpen_Click(object sender, EventArgs e)
+        {
+            if (ofdMeet.ShowDialog() == DialogResult.OK)
+            {
+                MeetMgr mm = new MeetMgr();
+                Meet newMeet = mm.openMeet(ofdMeet.FileName);
+            }
+        }
+
+        private void mnuFileSaveAs_Click(object sender, EventArgs e)
+        {
+            //Get file name and path
+            if (sfdMeet.ShowDialog() == DialogResult.OK)
+            {
+                MeetMgr mm = new MeetMgr();
+                mm.saveMeet(file, activeMeet);
+            }
+        }
+
+        private void sfdMeet_FileOk(object sender, CancelEventArgs e)
+        {
+            file = sfdMeet.FileName;
+        }
+
+        public void SortPerfs(string eventName)
+        {
+            if (activeMeet == null || activeMeet.performances == null || !activeMeet.performances.ContainsKey(eventName))
+            {
+                Console.WriteLine("Meet information for " + eventName + " not available");
+            }
+            else
+            {
+                activeMeet.performances[eventName] = activeMeet.performances[eventName].OrderBy(o => o.performance).ToList();
+            }
+        }
+
+        private void printEvent(string eventName)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            SortPerfs(eventName);
+            if (activeMeet == null || activeMeet.performances == null || !activeMeet.performances.ContainsKey(eventName))
+            {
+                MessageBox.Show("Meet information for " + eventName + " not available", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                pm.CreateIndEventDoc(eventName, activeMeet.performances[eventName]);
+            }
+        }
+
+        private void mnuPrintoutsBoysEventPerfsSprints100_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 100");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsSprints200_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 200");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsSprints400_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 400");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsDistance800_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 800");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsDistance1600_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 1600");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsDistance3200_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 3200");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsHurdlesHigh_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's HH");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsHurdles300_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 300H");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsRelays4x100_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 4x100");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsRelays4x400_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 4x400");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsRelays4x800_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's 4x800");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsJumpsLJ_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's LJ");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsJumpsTJ_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's TJ");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsJumpsHJ_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy'S HJ");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsJumpsPV_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's PV");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsSprints100_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 100");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsSprints200_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 200");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsSprints400_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 400");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsDistance800_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 800");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsDistance1600_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 1600");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsDistance3200_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 3200");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsHurdlesHigh_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's HH");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsHurdles300_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 300H");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsRelays4x100_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 4x100");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsRelays4x400_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 4x400");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsRelays4x800_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's 4x800");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsJumpsLJ_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's LJ");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsJumpsTJ_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's TJ");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsJumpsHJ_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's HJ");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsJumpsPV_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's PV");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsThrowsShotput_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's Shotput");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsThrowsDiscus_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's Discus");
+        }
+
+        private void mnuPrintoutsBoysEventPerfsThrowsJavelin_Click(object sender, EventArgs e)
+        {
+            printEvent("Boy's Javelin");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsThrowsShotput_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's Shotput");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsThrowsDiscus_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's Discus");
+        }
+
+        private void mnuPrintoutsGirlsEventPerfsThrowsJavelin_Click(object sender, EventArgs e)
+        {
+            printEvent("Girl's Javelin");
+        }
+
+        private void mnuPrintoutsBoysTeamPerfsTeam1_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsBoysTeamPerfsTeam1.Text, "Boy's", activeMeet);
+        }
+
+        private void mnuPrintoutsBoysTeamPerfsTeam2_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsBoysTeamPerfsTeam2.Text, "Boy's", activeMeet);
+        }
+
+        private void mnuPrintoutsBoysTeamPerfsTeam3_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsBoysTeamPerfsTeam3.Text, "Boy's", activeMeet);
+        }
+
+        private void mnuPrintoutsBoysTeamPerfsTeam4_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsBoysTeamPerfsTeam4.Text, "Boy's", activeMeet);
+        }
+
+        private void mnuPrintoutsBoysTeamPerfsTeam5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsBoysTeamPerfsTeam5.Text, "Boy's", activeMeet);
+        }
+
+        private void mnuPrintoutsBoysTeamPerfsTeam6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsBoysTeamPerfsTeam6.Text, "Boy's", activeMeet);
+        }
+
+        private void mnuPrintoutsGirlsTeamPerfsTeam1_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsGirlsTeamPerfsTeam1.Text, "Girl's", activeMeet);
+        }
+
+        private void mnuPrintoutsGirlsTeamPerfsTeam2_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsGirlsTeamPerfsTeam2.Text, "Girl's", activeMeet);
+        }
+
+        private void mnuPrintoutsGirlsTeamPerfsTeam3_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsGirlsTeamPerfsTeam3.Text, "Girl's", activeMeet);
+        }
+
+        private void mnuPrintoutsGirlsTeamPerfsTeam4_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsGirlsTeamPerfsTeam4.Text, "Girl's", activeMeet);
+        }
+
+        private void mnuPrintoutsGirlsTeamPerfsTeam5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsGirlsTeamPerfsTeam5.Text, "Girl's", activeMeet);
+        }
+
+        private void mnuPrintoutsGirlsTeamPerfsTeam6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateTeamPerfDoc(mnuPrintoutsGirlsTeamPerfsTeam6.Text, "Girl's", activeMeet);
+        }
+
+        private void mnuPrintoutsBoysTeamPerfsAll_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            foreach(string teamName in activeMeet.schoolNames.boySchoolNames.Keys)
+            {
+                pm.CreateTeamPerfDoc(teamName, "Boy's", activeMeet);
+            }
+        }
+
+        private void mnuPrintoutsGirlsTeamPerfsAll_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            foreach (string teamName in activeMeet.schoolNames.girlSchoolNames.Keys)
+            {
+                pm.CreateTeamPerfDoc(teamName, "Girl's", activeMeet);
+            }
         }
     }
 }
