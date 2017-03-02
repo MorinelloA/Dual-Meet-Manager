@@ -771,7 +771,7 @@ namespace DualMeetManager.Presentation
         }
 
         /// <summary>
-        /// Sorts the List of Performances in Ascendign Order
+        /// Sorts the List of Performances in Ascending Order
         /// </summary>
         private void SortListOfPerfs()
         {
