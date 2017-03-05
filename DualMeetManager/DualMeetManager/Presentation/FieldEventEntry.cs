@@ -61,6 +61,8 @@ namespace DualMeetManager.Presentation
         private void FieldEventEntry_Load(object sender, EventArgs e)
         {
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+
+            this.Text = eventName + " Entry";
             if (eventName.StartsWith("Boy"))
             {
                 BackColor = Color.LightBlue;

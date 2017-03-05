@@ -808,11 +808,206 @@ namespace DualMeetManager.Presentation
             FieldEventEntry newForm;
             if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's LJ"))
             {
-                newForm = new FieldEventEntry(this, "Boy's LJ", activeMeet.performances["Boy's LJ"], activeMeet.schoolNames.girlSchoolNames);
+                newForm = new FieldEventEntry(this, "Boy's LJ", activeMeet.performances["Boy's LJ"], activeMeet.schoolNames.boySchoolNames);
             }
             else
             {
-                newForm = new FieldEventEntry(this, "Boy's LJ", null, activeMeet.schoolNames.girlSchoolNames);
+                newForm = new FieldEventEntry(this, "Boy's LJ", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysJumpsTJ_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's TJ"))
+            {
+                newForm = new FieldEventEntry(this, "Boy's TJ", activeMeet.performances["Boy's TJ"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Boy's TJ", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysJumpsHJ_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's HJ"))
+            {
+                newForm = new FieldEventEntry(this, "Boy's HJ", activeMeet.performances["Boy's HJ"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Boy's HJ", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysJumpsPV_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's PV"))
+            {
+                newForm = new FieldEventEntry(this, "Boy's PV", activeMeet.performances["Boy's PV"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Boy's PV", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysThrowsShotput_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's Shotput"))
+            {
+                newForm = new FieldEventEntry(this, "Boy's Shotput", activeMeet.performances["Boy's Shotput"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Boy's Shotput", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysThrowsDiscus_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's Discus"))
+            {
+                newForm = new FieldEventEntry(this, "Boy's Discus", activeMeet.performances["Boy's Discus"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Boy's Discus", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysThrowsJavelin_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's Javelin"))
+            {
+                newForm = new FieldEventEntry(this, "Boy's Javelin", activeMeet.performances["Boy's Javelin"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Boy's Javelin", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsJumpsLJ_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's LJ"))
+            {
+                newForm = new FieldEventEntry(this, "Girl's LJ", activeMeet.performances["Girl's LJ"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Girl's LJ", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsJumpsTJ_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's TJ"))
+            {
+                newForm = new FieldEventEntry(this, "Girl's TJ", activeMeet.performances["Girl's TJ"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Girl's TJ", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsJumpsHJ_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's HJ"))
+            {
+                newForm = new FieldEventEntry(this, "Girl's HJ", activeMeet.performances["Girl's HJ"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Girl's HJ", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsJumpsPV_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's PV"))
+            {
+                newForm = new FieldEventEntry(this, "Girl's PV", activeMeet.performances["Girl's PV"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Girl's PV", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsThrowsShotput_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's Shotput"))
+            {
+                newForm = new FieldEventEntry(this, "Girl's Shotput", activeMeet.performances["Girl's Shotput"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Girl's Shotput", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsThrowsDiscus_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's Discus"))
+            {
+                newForm = new FieldEventEntry(this, "Girl's Discus", activeMeet.performances["Girl's Discus"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Girl's Discus", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsThrowsJavelin_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's Javelin"))
+            {
+                newForm = new FieldEventEntry(this, "Girl's Javelin", activeMeet.performances["Girl's Javelin"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Girl's Javelin", null, activeMeet.schoolNames.girlSchoolNames);
             }
             this.Hide();
             newForm.ShowDialog();

@@ -1463,7 +1463,7 @@
             // mnuClearThis
             // 
             this.mnuClearThis.Name = "mnuClearThis";
-            this.mnuClearThis.Size = new System.Drawing.Size(152, 22);
+            this.mnuClearThis.Size = new System.Drawing.Size(146, 22);
             this.mnuClearThis.Text = "Clear this flight";
             this.mnuClearThis.Click += new System.EventHandler(this.mnuClearThis_Click);
             // 
@@ -1479,7 +1479,7 @@
             // mnuClearAll
             // 
             this.mnuClearAll.Name = "mnuClearAll";
-            this.mnuClearAll.Size = new System.Drawing.Size(152, 22);
+            this.mnuClearAll.Size = new System.Drawing.Size(146, 22);
             this.mnuClearAll.Text = "Clear all flights";
             this.mnuClearAll.Click += new System.EventHandler(this.mnuClearAll_Click);
             // 
@@ -1512,7 +1512,9 @@
             this.Controls.Add(this.cmdPrevious);
             this.Controls.Add(this.grpHeats1);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FieldEventEntry";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FieldEventEntry";
             this.Load += new System.EventHandler(this.FieldEventEntry_Load);
             this.grpHeats2.ResumeLayout(false);
