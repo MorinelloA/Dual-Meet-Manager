@@ -310,7 +310,7 @@ namespace DualMeetManager.Presentation
             newForm.ShowDialog();
         }
 
-        private void highHurdlesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void mnuEnterBoysHurdlesHigh_Click(object sender, EventArgs e)
         {
             RunningEventEntry newForm;
             if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's HH"))
@@ -801,6 +801,21 @@ namespace DualMeetManager.Presentation
             {
                 pm.CreateTeamPerfDoc(teamName, "Girl's", activeMeet);
             }
+        }
+
+        private void mnuEnterBoysJumpsLJ_Click(object sender, EventArgs e)
+        {
+            FieldEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's LJ"))
+            {
+                newForm = new FieldEventEntry(this, "Boy's LJ", activeMeet.performances["Boy's LJ"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new FieldEventEntry(this, "Boy's LJ", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
         }
     }
 }

@@ -979,7 +979,7 @@ namespace DualMeetManager.Presentation
         {
             for(int i = (flightNum * 32) + 32; i > flightNum * 32; i--)
             {
-                if(allPerfs.ElementAtOrDefault(i) != null)
+                if(allPerfs != null && allPerfs.ElementAtOrDefault(i) != null)
                 {
                     allPerfs.RemoveAt(i);
                 }
@@ -992,74 +992,75 @@ namespace DualMeetManager.Presentation
             if (CheckData())
             {
                 //Need to clear entire flight data
-                clearFlight(0);
+                clearFlight(currentHeatNum);
 
-                List<Performance> listToAdd = new List<Performance>();
+                if(allPerfs==null)
+                    allPerfs = new List<Performance>();
 
                 if (!string.IsNullOrWhiteSpace(txtName1.Text))
-                    listToAdd.Add(new Performance(txtName1.Text, cboSchool1.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf1.Text)));
+                    allPerfs.Add(new Performance(txtName1.Text, cboSchool1.Text, 0, em.ConvertFromTimedData(txtPerf1.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName2.Text))
-                    listToAdd.Add(new Performance(txtName2.Text, cboSchool2.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf2.Text)));
+                    allPerfs.Add(new Performance(txtName2.Text, cboSchool2.Text, 0, em.ConvertFromTimedData(txtPerf2.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName3.Text))
-                    listToAdd.Add(new Performance(txtName3.Text, cboSchool3.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf3.Text)));
+                    allPerfs.Add(new Performance(txtName3.Text, cboSchool3.Text, 0, em.ConvertFromTimedData(txtPerf3.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName4.Text))
-                    listToAdd.Add(new Performance(txtName4.Text, cboSchool4.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf4.Text)));
+                    allPerfs.Add(new Performance(txtName4.Text, cboSchool4.Text, 0, em.ConvertFromTimedData(txtPerf4.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName5.Text))
-                    listToAdd.Add(new Performance(txtName5.Text, cboSchool5.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf5.Text)));
+                    allPerfs.Add(new Performance(txtName5.Text, cboSchool5.Text, 0, em.ConvertFromTimedData(txtPerf5.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName6.Text))
-                    listToAdd.Add(new Performance(txtName6.Text, cboSchool6.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf6.Text)));
+                    allPerfs.Add(new Performance(txtName6.Text, cboSchool6.Text, 0, em.ConvertFromTimedData(txtPerf6.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName7.Text))
-                    listToAdd.Add(new Performance(txtName7.Text, cboSchool7.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf7.Text)));
+                    allPerfs.Add(new Performance(txtName7.Text, cboSchool7.Text, 0, em.ConvertFromTimedData(txtPerf7.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName8.Text))
-                    listToAdd.Add(new Performance(txtName8.Text, cboSchool8.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf8.Text)));
+                    allPerfs.Add(new Performance(txtName8.Text, cboSchool8.Text, 0, em.ConvertFromTimedData(txtPerf8.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName9.Text))
-                    listToAdd.Add(new Performance(txtName9.Text, cboSchool9.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf9.Text)));
+                    allPerfs.Add(new Performance(txtName9.Text, cboSchool9.Text, 0, em.ConvertFromTimedData(txtPerf9.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName10.Text))
-                    listToAdd.Add(new Performance(txtName10.Text, cboSchool10.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf10.Text)));
+                    allPerfs.Add(new Performance(txtName10.Text, cboSchool10.Text, 0, em.ConvertFromTimedData(txtPerf10.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName11.Text))
-                    listToAdd.Add(new Performance(txtName11.Text, cboSchool11.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf11.Text)));
+                    allPerfs.Add(new Performance(txtName11.Text, cboSchool11.Text, 0, em.ConvertFromTimedData(txtPerf11.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName12.Text))
-                    listToAdd.Add(new Performance(txtName12.Text, cboSchool12.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf12.Text)));
+                    allPerfs.Add(new Performance(txtName12.Text, cboSchool12.Text, 0, em.ConvertFromTimedData(txtPerf12.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName13.Text))
-                    listToAdd.Add(new Performance(txtName13.Text, cboSchool13.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf13.Text)));
+                    allPerfs.Add(new Performance(txtName13.Text, cboSchool13.Text, 0, em.ConvertFromTimedData(txtPerf13.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName14.Text))
-                    listToAdd.Add(new Performance(txtName14.Text, cboSchool14.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf14.Text)));
+                    allPerfs.Add(new Performance(txtName14.Text, cboSchool14.Text, 0, em.ConvertFromTimedData(txtPerf14.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName15.Text))
-                    listToAdd.Add(new Performance(txtName15.Text, cboSchool15.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf15.Text)));
+                    allPerfs.Add(new Performance(txtName15.Text, cboSchool15.Text, 0, em.ConvertFromTimedData(txtPerf15.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName16.Text))
-                    listToAdd.Add(new Performance(txtName16.Text, cboSchool16.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf16.Text)));
+                    allPerfs.Add(new Performance(txtName16.Text, cboSchool16.Text, 0, em.ConvertFromTimedData(txtPerf16.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName17.Text))
-                    listToAdd.Add(new Performance(txtName17.Text, cboSchool17.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf17.Text)));
+                    allPerfs.Add(new Performance(txtName17.Text, cboSchool17.Text, 0, em.ConvertFromTimedData(txtPerf17.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName18.Text))
-                    listToAdd.Add(new Performance(txtName18.Text, cboSchool18.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf18.Text)));
+                    allPerfs.Add(new Performance(txtName18.Text, cboSchool18.Text, 0, em.ConvertFromTimedData(txtPerf18.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName19.Text))
-                    listToAdd.Add(new Performance(txtName19.Text, cboSchool19.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf19.Text)));
+                    allPerfs.Add(new Performance(txtName19.Text, cboSchool19.Text, 0, em.ConvertFromTimedData(txtPerf19.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName20.Text))
-                    listToAdd.Add(new Performance(txtName20.Text, cboSchool20.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf20.Text)));
+                    allPerfs.Add(new Performance(txtName20.Text, cboSchool20.Text, 0, em.ConvertFromTimedData(txtPerf20.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName21.Text))
-                    listToAdd.Add(new Performance(txtName21.Text, cboSchool21.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf21.Text)));
+                    allPerfs.Add(new Performance(txtName21.Text, cboSchool21.Text, 0, em.ConvertFromTimedData(txtPerf21.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName22.Text))
-                    listToAdd.Add(new Performance(txtName22.Text, cboSchool22.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf22.Text)));
+                    allPerfs.Add(new Performance(txtName22.Text, cboSchool22.Text, 0, em.ConvertFromTimedData(txtPerf22.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName23.Text))
-                    listToAdd.Add(new Performance(txtName23.Text, cboSchool23.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf23.Text)));
+                    allPerfs.Add(new Performance(txtName23.Text, cboSchool23.Text, 0, em.ConvertFromTimedData(txtPerf23.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName24.Text))
-                    listToAdd.Add(new Performance(txtName24.Text, cboSchool24.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf24.Text)));
+                    allPerfs.Add(new Performance(txtName24.Text, cboSchool24.Text, 0, em.ConvertFromTimedData(txtPerf24.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName25.Text))
-                    listToAdd.Add(new Performance(txtName25.Text, cboSchool25.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf25.Text)));
+                    allPerfs.Add(new Performance(txtName25.Text, cboSchool25.Text, 0, em.ConvertFromTimedData(txtPerf25.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName26.Text))
-                    listToAdd.Add(new Performance(txtName26.Text, cboSchool26.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf26.Text)));
+                    allPerfs.Add(new Performance(txtName26.Text, cboSchool26.Text, 0, em.ConvertFromTimedData(txtPerf26.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName27.Text))
-                    listToAdd.Add(new Performance(txtName27.Text, cboSchool27.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf27.Text)));
+                    allPerfs.Add(new Performance(txtName27.Text, cboSchool27.Text, 0, em.ConvertFromTimedData(txtPerf27.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName28.Text))
-                    listToAdd.Add(new Performance(txtName28.Text, cboSchool28.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf28.Text)));
+                    allPerfs.Add(new Performance(txtName28.Text, cboSchool28.Text, 0, em.ConvertFromTimedData(txtPerf28.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName29.Text))
-                    listToAdd.Add(new Performance(txtName29.Text, cboSchool29.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf29.Text)));
+                    allPerfs.Add(new Performance(txtName29.Text, cboSchool29.Text, 0, em.ConvertFromTimedData(txtPerf29.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName30.Text))
-                    listToAdd.Add(new Performance(txtName30.Text, cboSchool30.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf30.Text)));
+                    allPerfs.Add(new Performance(txtName30.Text, cboSchool30.Text, 0, em.ConvertFromTimedData(txtPerf30.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName31.Text))
-                    listToAdd.Add(new Performance(txtName31.Text, cboSchool31.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf31.Text)));
+                    allPerfs.Add(new Performance(txtName31.Text, cboSchool31.Text, 0, em.ConvertFromTimedData(txtPerf31.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName32.Text))
-                    listToAdd.Add(new Performance(txtName32.Text, cboSchool32.Text, currentHeatNum + 1, em.ConvertFromTimedData(txtPerf32.Text)));
+                    allPerfs.Add(new Performance(txtName32.Text, cboSchool32.Text, 0, em.ConvertFromTimedData(txtPerf32.Text)));
 
                 Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return true;

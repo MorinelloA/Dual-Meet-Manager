@@ -27,3 +27,4 @@ C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManag
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.csproj.GenerateResource.Cache
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.exe
 C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.pdb
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.Presentation.FieldEventEntry.resources
