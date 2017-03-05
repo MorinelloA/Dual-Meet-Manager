@@ -17,7 +17,6 @@ namespace DualMeetManager.Presentation
         MeetHub mh;
         Dictionary<string, string> teamNames = new Dictionary<string, string>();
         int currentHeatNum = 0;
-        int numRunners = 8;
         string eventName;
 
         List<Performance> allPerfs = new List<Performance>();
@@ -231,197 +230,197 @@ namespace DualMeetManager.Presentation
 
             ClearAll();
 
-            if (allPerfs.ElementAtOrDefault(0) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 0) != null)
             {
-                txtName1.Text = allPerfs[0].athleteName;
-                cboSchool1.Text = allPerfs[0].schoolName;
-                txtPerf1.Text = em.ConvertToTimedData(allPerfs[0].performance);
+                txtName1.Text = allPerfs[(currentHeatNum * 32) + 0].athleteName;
+                cboSchool1.Text = allPerfs[(currentHeatNum * 32) + 0].schoolName;
+                txtPerf1.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 0].performance);
             }
-            if (allPerfs.ElementAtOrDefault(1) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 1) != null)
             {
-                txtName2.Text = allPerfs[1].athleteName;
-                cboSchool2.Text = allPerfs[1].schoolName;
-                txtPerf2.Text = em.ConvertToTimedData(allPerfs[1].performance);
+                txtName2.Text = allPerfs[(currentHeatNum * 32) + 1].athleteName;
+                cboSchool2.Text = allPerfs[(currentHeatNum * 32) + 1].schoolName;
+                txtPerf2.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 1].performance);
             }
-            if (allPerfs.ElementAtOrDefault(2) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 2) != null)
             {
-                txtName3.Text = allPerfs[2].athleteName;
-                cboSchool3.Text = allPerfs[2].schoolName;
-                txtPerf3.Text = em.ConvertToTimedData(allPerfs[2].performance);
+                txtName3.Text = allPerfs[(currentHeatNum * 32) + 2].athleteName;
+                cboSchool3.Text = allPerfs[(currentHeatNum * 32) + 2].schoolName;
+                txtPerf3.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 2].performance);
             }
-            if (allPerfs.ElementAtOrDefault(3) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 3) != null)
             {
-                txtName4.Text = allPerfs[3].athleteName;
-                cboSchool4.Text = allPerfs[3].schoolName;
-                txtPerf4.Text = em.ConvertToTimedData(allPerfs[3].performance);
+                txtName4.Text = allPerfs[(currentHeatNum * 32) + 3].athleteName;
+                cboSchool4.Text = allPerfs[(currentHeatNum * 32) + 3].schoolName;
+                txtPerf4.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 3].performance);
             }
-            if (allPerfs.ElementAtOrDefault(4) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 4) != null)
             {
-                txtName5.Text = allPerfs[4].athleteName;
-                cboSchool5.Text = allPerfs[4].schoolName;
-                txtPerf5.Text = em.ConvertToTimedData(allPerfs[4].performance);
+                txtName5.Text = allPerfs[(currentHeatNum * 32) + 4].athleteName;
+                cboSchool5.Text = allPerfs[(currentHeatNum * 32) + 4].schoolName;
+                txtPerf5.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 4].performance);
             }
-            if (allPerfs.ElementAtOrDefault(5) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 5) != null)
             {
-                txtName6.Text = allPerfs[5].athleteName;
-                cboSchool6.Text = allPerfs[5].schoolName;
-                txtPerf6.Text = em.ConvertToTimedData(allPerfs[5].performance);
+                txtName6.Text = allPerfs[(currentHeatNum * 32) + 5].athleteName;
+                cboSchool6.Text = allPerfs[(currentHeatNum * 32) + 5].schoolName;
+                txtPerf6.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 5].performance);
             }
-            if (allPerfs.ElementAtOrDefault(6) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 6) != null)
             {
-                txtName7.Text = allPerfs[6].athleteName;
-                cboSchool7.Text = allPerfs[6].schoolName;
-                txtPerf7.Text = em.ConvertToTimedData(allPerfs[6].performance);
+                txtName7.Text = allPerfs[(currentHeatNum * 32) + 6].athleteName;
+                cboSchool7.Text = allPerfs[(currentHeatNum * 32) + 6].schoolName;
+                txtPerf7.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 6].performance);
             }
-            if (allPerfs.ElementAtOrDefault(7) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 7) != null)
             {
-                txtName8.Text = allPerfs[7].athleteName;
-                cboSchool8.Text = allPerfs[7].schoolName;
-                txtPerf8.Text = em.ConvertToTimedData(allPerfs[7].performance);
+                txtName8.Text = allPerfs[(currentHeatNum * 32) + 7].athleteName;
+                cboSchool8.Text = allPerfs[(currentHeatNum * 32) + 7].schoolName;
+                txtPerf8.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 7].performance);
             }
-            if (allPerfs.ElementAtOrDefault(8) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 8) != null)
             {
-                txtName9.Text = allPerfs[8].athleteName;
-                cboSchool9.Text = allPerfs[8].schoolName;
-                txtPerf9.Text = em.ConvertToTimedData(allPerfs[8].performance);
+                txtName9.Text = allPerfs[(currentHeatNum * 32) + 8].athleteName;
+                cboSchool9.Text = allPerfs[(currentHeatNum * 32) + 8].schoolName;
+                txtPerf9.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 8].performance);
             }
-            if (allPerfs.ElementAtOrDefault(9) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 9) != null)
             {
-                txtName10.Text = allPerfs[9].athleteName;
-                cboSchool10.Text = allPerfs[9].schoolName;
-                txtPerf10.Text = em.ConvertToTimedData(allPerfs[9].performance);
+                txtName10.Text = allPerfs[(currentHeatNum * 32) + 9].athleteName;
+                cboSchool10.Text = allPerfs[(currentHeatNum * 32) + 9].schoolName;
+                txtPerf10.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 9].performance);
             }
-            if (allPerfs.ElementAtOrDefault(10) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 10) != null)
             {
-                txtName11.Text = allPerfs[10].athleteName;
-                cboSchool11.Text = allPerfs[10].schoolName;
-                txtPerf11.Text = em.ConvertToTimedData(allPerfs[10].performance);
+                txtName11.Text = allPerfs[(currentHeatNum * 32) + 10].athleteName;
+                cboSchool11.Text = allPerfs[(currentHeatNum * 32) + 10].schoolName;
+                txtPerf11.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 10].performance);
             }
-            if (allPerfs.ElementAtOrDefault(11) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 11) != null)
             {
-                txtName12.Text = allPerfs[11].athleteName;
-                cboSchool12.Text = allPerfs[11].schoolName;
-                txtPerf12.Text = em.ConvertToTimedData(allPerfs[11].performance);
+                txtName12.Text = allPerfs[(currentHeatNum * 32) + 11].athleteName;
+                cboSchool12.Text = allPerfs[(currentHeatNum * 32) + 11].schoolName;
+                txtPerf12.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 11].performance);
             }
-            if (allPerfs.ElementAtOrDefault(12) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 12) != null)
             {
-                txtName13.Text = allPerfs[12].athleteName;
-                cboSchool13.Text = allPerfs[12].schoolName;
-                txtPerf13.Text = em.ConvertToTimedData(allPerfs[12].performance);
+                txtName13.Text = allPerfs[(currentHeatNum * 32) + 12].athleteName;
+                cboSchool13.Text = allPerfs[(currentHeatNum * 32) + 12].schoolName;
+                txtPerf13.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 12].performance);
             }
-            if (allPerfs.ElementAtOrDefault(13) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 13) != null)
             {
-                txtName14.Text = allPerfs[13].athleteName;
-                cboSchool14.Text = allPerfs[13].schoolName;
-                txtPerf14.Text = em.ConvertToTimedData(allPerfs[13].performance);
+                txtName14.Text = allPerfs[(currentHeatNum * 32) + 13].athleteName;
+                cboSchool14.Text = allPerfs[(currentHeatNum * 32) + 13].schoolName;
+                txtPerf14.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 13].performance);
             }
-            if (allPerfs.ElementAtOrDefault(14) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 14) != null)
             {
-                txtName15.Text = allPerfs[14].athleteName;
-                cboSchool15.Text = allPerfs[14].schoolName;
-                txtPerf15.Text = em.ConvertToTimedData(allPerfs[14].performance);
+                txtName15.Text = allPerfs[(currentHeatNum * 32) + 14].athleteName;
+                cboSchool15.Text = allPerfs[(currentHeatNum * 32) + 14].schoolName;
+                txtPerf15.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 14].performance);
             }
-            if (allPerfs.ElementAtOrDefault(15) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 15) != null)
             {
-                txtName16.Text = allPerfs[15].athleteName;
-                cboSchool16.Text = allPerfs[15].schoolName;
-                txtPerf16.Text = em.ConvertToTimedData(allPerfs[15].performance);
+                txtName16.Text = allPerfs[(currentHeatNum * 32) + 15].athleteName;
+                cboSchool16.Text = allPerfs[(currentHeatNum * 32) + 15].schoolName;
+                txtPerf16.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 15].performance);
             }
-            if (allPerfs.ElementAtOrDefault(16) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 16) != null)
             {
-                txtName17.Text = allPerfs[16].athleteName;
-                cboSchool17.Text = allPerfs[16].schoolName;
-                txtPerf17.Text = em.ConvertToTimedData(allPerfs[16].performance);
+                txtName17.Text = allPerfs[(currentHeatNum * 32) + 16].athleteName;
+                cboSchool17.Text = allPerfs[(currentHeatNum * 32) + 16].schoolName;
+                txtPerf17.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 16].performance);
             }
-            if (allPerfs.ElementAtOrDefault(17) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 17) != null)
             {
-                txtName18.Text = allPerfs[17].athleteName;
-                cboSchool18.Text = allPerfs[17].schoolName;
-                txtPerf18.Text = em.ConvertToTimedData(allPerfs[17].performance);
+                txtName18.Text = allPerfs[(currentHeatNum * 32) + 17].athleteName;
+                cboSchool18.Text = allPerfs[(currentHeatNum * 32) + 17].schoolName;
+                txtPerf18.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 17].performance);
             }
-            if (allPerfs.ElementAtOrDefault(18) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 18) != null)
             {
-                txtName19.Text = allPerfs[18].athleteName;
-                cboSchool19.Text = allPerfs[18].schoolName;
-                txtPerf19.Text = em.ConvertToTimedData(allPerfs[18].performance);
+                txtName19.Text = allPerfs[(currentHeatNum * 32) + 18].athleteName;
+                cboSchool19.Text = allPerfs[(currentHeatNum * 32) + 18].schoolName;
+                txtPerf19.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 18].performance);
             }
-            if (allPerfs.ElementAtOrDefault(19) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 19) != null)
             {
-                txtName20.Text = allPerfs[19].athleteName;
-                cboSchool20.Text = allPerfs[19].schoolName;
-                txtPerf20.Text = em.ConvertToTimedData(allPerfs[19].performance);
+                txtName20.Text = allPerfs[(currentHeatNum * 32) + 19].athleteName;
+                cboSchool20.Text = allPerfs[(currentHeatNum * 32) + 19].schoolName;
+                txtPerf20.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 19].performance);
             }
-            if (allPerfs.ElementAtOrDefault(20) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 20) != null)
             {
-                txtName21.Text = allPerfs[20].athleteName;
-                cboSchool21.Text = allPerfs[20].schoolName;
-                txtPerf21.Text = em.ConvertToTimedData(allPerfs[20].performance);
+                txtName21.Text = allPerfs[(currentHeatNum * 32) + 20].athleteName;
+                cboSchool21.Text = allPerfs[(currentHeatNum * 32) + 20].schoolName;
+                txtPerf21.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 20].performance);
             }
-            if (allPerfs.ElementAtOrDefault(21) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 21) != null)
             {
-                txtName22.Text = allPerfs[21].athleteName;
-                cboSchool22.Text = allPerfs[21].schoolName;
-                txtPerf22.Text = em.ConvertToTimedData(allPerfs[21].performance);
+                txtName22.Text = allPerfs[(currentHeatNum * 32) + 21].athleteName;
+                cboSchool22.Text = allPerfs[(currentHeatNum * 32) + 21].schoolName;
+                txtPerf22.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 21].performance);
             }
-            if (allPerfs.ElementAtOrDefault(22) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 22) != null)
             {
-                txtName23.Text = allPerfs[22].athleteName;
-                cboSchool23.Text = allPerfs[22].schoolName;
-                txtPerf23.Text = em.ConvertToTimedData(allPerfs[22].performance);
+                txtName23.Text = allPerfs[(currentHeatNum * 32) + 22].athleteName;
+                cboSchool23.Text = allPerfs[(currentHeatNum * 32) + 22].schoolName;
+                txtPerf23.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 22].performance);
             }
-            if (allPerfs.ElementAtOrDefault(23) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 23) != null)
             {
-                txtName24.Text = allPerfs[23].athleteName;
-                cboSchool24.Text = allPerfs[23].schoolName;
-                txtPerf24.Text = em.ConvertToTimedData(allPerfs[23].performance);
+                txtName24.Text = allPerfs[(currentHeatNum * 32) + 23].athleteName;
+                cboSchool24.Text = allPerfs[(currentHeatNum * 32) + 23].schoolName;
+                txtPerf24.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 23].performance);
             }
-            if (allPerfs.ElementAtOrDefault(24) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 24) != null)
             {
-                txtName25.Text = allPerfs[24].athleteName;
-                cboSchool25.Text = allPerfs[24].schoolName;
-                txtPerf25.Text = em.ConvertToTimedData(allPerfs[24].performance);
+                txtName25.Text = allPerfs[(currentHeatNum * 32) + 24].athleteName;
+                cboSchool25.Text = allPerfs[(currentHeatNum * 32) + 24].schoolName;
+                txtPerf25.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 24].performance);
             }
-            if (allPerfs.ElementAtOrDefault(25) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 25) != null)
             {
-                txtName26.Text = allPerfs[25].athleteName;
-                cboSchool26.Text = allPerfs[25].schoolName;
-                txtPerf26.Text = em.ConvertToTimedData(allPerfs[25].performance);
+                txtName26.Text = allPerfs[(currentHeatNum * 32) + 25].athleteName;
+                cboSchool26.Text = allPerfs[(currentHeatNum * 32) + 25].schoolName;
+                txtPerf26.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 25].performance);
             }
-            if (allPerfs.ElementAtOrDefault(26) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 26) != null)
             {
-                txtName27.Text = allPerfs[26].athleteName;
-                cboSchool27.Text = allPerfs[26].schoolName;
-                txtPerf27.Text = em.ConvertToTimedData(allPerfs[26].performance);
+                txtName27.Text = allPerfs[(currentHeatNum * 32) + 26].athleteName;
+                cboSchool27.Text = allPerfs[(currentHeatNum * 32) + 26].schoolName;
+                txtPerf27.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 26].performance);
             }
-            if (allPerfs.ElementAtOrDefault(27) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 27) != null)
             {
-                txtName28.Text = allPerfs[27].athleteName;
-                cboSchool28.Text = allPerfs[27].schoolName;
-                txtPerf28.Text = em.ConvertToTimedData(allPerfs[27].performance);
+                txtName28.Text = allPerfs[(currentHeatNum * 32) + 27].athleteName;
+                cboSchool28.Text = allPerfs[(currentHeatNum * 32) + 27].schoolName;
+                txtPerf28.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 27].performance);
             }
-            if (allPerfs.ElementAtOrDefault(28) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 28) != null)
             {
-                txtName29.Text = allPerfs[28].athleteName;
-                cboSchool29.Text = allPerfs[28].schoolName;
-                txtPerf29.Text = em.ConvertToTimedData(allPerfs[28].performance);
+                txtName29.Text = allPerfs[(currentHeatNum * 32) + 28].athleteName;
+                cboSchool29.Text = allPerfs[(currentHeatNum * 32) + 28].schoolName;
+                txtPerf29.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 28].performance);
             }
-            if (allPerfs.ElementAtOrDefault(29) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 29) != null)
             {
-                txtName30.Text = allPerfs[29].athleteName;
-                cboSchool30.Text = allPerfs[29].schoolName;
-                txtPerf30.Text = em.ConvertToTimedData(allPerfs[29].performance);
+                txtName30.Text = allPerfs[(currentHeatNum * 32) + 29].athleteName;
+                cboSchool30.Text = allPerfs[(currentHeatNum * 32) + 29].schoolName;
+                txtPerf30.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 29].performance);
             }
-            if (allPerfs.ElementAtOrDefault(30) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 30) != null)
             {
-                txtName31.Text = allPerfs[30].athleteName;
-                cboSchool31.Text = allPerfs[30].schoolName;
-                txtPerf31.Text = em.ConvertToTimedData(allPerfs[30].performance);
+                txtName31.Text = allPerfs[(currentHeatNum * 32) + 30].athleteName;
+                cboSchool31.Text = allPerfs[(currentHeatNum * 32) + 30].schoolName;
+                txtPerf31.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 30].performance);
             }
-            if (allPerfs.ElementAtOrDefault(31) != null)
+            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 31) != null)
             {
-                txtName32.Text = allPerfs[31].athleteName;
-                cboSchool32.Text = allPerfs[31].schoolName;
-                txtPerf32.Text = em.ConvertToTimedData(allPerfs[31].performance);
+                txtName32.Text = allPerfs[(currentHeatNum * 32) + 31].athleteName;
+                cboSchool32.Text = allPerfs[(currentHeatNum * 32) + 31].schoolName;
+                txtPerf32.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 31].performance);
             }
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
@@ -735,162 +734,162 @@ namespace DualMeetManager.Presentation
             }
 
             //Check for invalid performances
-            if (!txtPerf1.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf1.Text.IndexOf(':') != txtPerf1.Text.LastIndexOf(':') || txtPerf1.Text.IndexOf('.') != txtPerf1.Text.LastIndexOf('.'))
+            if (!txtPerf1.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf1.Text.IndexOf('-') != txtPerf1.Text.LastIndexOf('-') || txtPerf1.Text.IndexOf('.') != txtPerf1.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #1 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf2.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf2.Text.IndexOf(':') != txtPerf2.Text.LastIndexOf(':') || txtPerf2.Text.IndexOf('.') != txtPerf2.Text.LastIndexOf('.'))
+            if (!txtPerf2.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf2.Text.IndexOf('-') != txtPerf2.Text.LastIndexOf('-') || txtPerf2.Text.IndexOf('.') != txtPerf2.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #2 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf3.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf3.Text.IndexOf(':') != txtPerf3.Text.LastIndexOf(':') || txtPerf3.Text.IndexOf('.') != txtPerf3.Text.LastIndexOf('.'))
+            if (!txtPerf3.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf3.Text.IndexOf('-') != txtPerf3.Text.LastIndexOf('-') || txtPerf3.Text.IndexOf('.') != txtPerf3.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #3 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf4.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf4.Text.IndexOf(':') != txtPerf4.Text.LastIndexOf(':') || txtPerf4.Text.IndexOf('.') != txtPerf4.Text.LastIndexOf('.'))
+            if (!txtPerf4.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf4.Text.IndexOf('-') != txtPerf4.Text.LastIndexOf('-') || txtPerf4.Text.IndexOf('.') != txtPerf4.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #4 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf5.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf5.Text.IndexOf(':') != txtPerf5.Text.LastIndexOf(':') || txtPerf5.Text.IndexOf('.') != txtPerf5.Text.LastIndexOf('.'))
+            if (!txtPerf5.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf5.Text.IndexOf('-') != txtPerf5.Text.LastIndexOf('-') || txtPerf5.Text.IndexOf('.') != txtPerf5.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #5 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf6.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf6.Text.IndexOf(':') != txtPerf6.Text.LastIndexOf(':') || txtPerf6.Text.IndexOf('.') != txtPerf6.Text.LastIndexOf('.'))
+            if (!txtPerf6.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf6.Text.IndexOf('-') != txtPerf6.Text.LastIndexOf('-') || txtPerf6.Text.IndexOf('.') != txtPerf6.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #6 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf7.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf7.Text.IndexOf(':') != txtPerf7.Text.LastIndexOf(':') || txtPerf7.Text.IndexOf('.') != txtPerf7.Text.LastIndexOf('.'))
+            if (!txtPerf7.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf7.Text.IndexOf('-') != txtPerf7.Text.LastIndexOf('-') || txtPerf7.Text.IndexOf('.') != txtPerf7.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #7 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf8.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf8.Text.IndexOf(':') != txtPerf8.Text.LastIndexOf(':') || txtPerf8.Text.IndexOf('.') != txtPerf8.Text.LastIndexOf('.'))
+            if (!txtPerf8.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf8.Text.IndexOf('-') != txtPerf8.Text.LastIndexOf('-') || txtPerf8.Text.IndexOf('.') != txtPerf8.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #8 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf9.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf9.Text.IndexOf(':') != txtPerf9.Text.LastIndexOf(':') || txtPerf9.Text.IndexOf('.') != txtPerf9.Text.LastIndexOf('.'))
+            if (!txtPerf9.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf9.Text.IndexOf('-') != txtPerf9.Text.LastIndexOf('-') || txtPerf9.Text.IndexOf('.') != txtPerf9.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #9 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf10.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf10.Text.IndexOf(':') != txtPerf10.Text.LastIndexOf(':') || txtPerf10.Text.IndexOf('.') != txtPerf10.Text.LastIndexOf('.'))
+            if (!txtPerf10.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf10.Text.IndexOf('-') != txtPerf10.Text.LastIndexOf('-') || txtPerf10.Text.IndexOf('.') != txtPerf10.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #10 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf11.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf11.Text.IndexOf(':') != txtPerf11.Text.LastIndexOf(':') || txtPerf11.Text.IndexOf('.') != txtPerf11.Text.LastIndexOf('.'))
+            if (!txtPerf11.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf11.Text.IndexOf('-') != txtPerf11.Text.LastIndexOf('-') || txtPerf11.Text.IndexOf('.') != txtPerf11.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #11 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf12.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf12.Text.IndexOf(':') != txtPerf12.Text.LastIndexOf(':') || txtPerf12.Text.IndexOf('.') != txtPerf12.Text.LastIndexOf('.'))
+            if (!txtPerf12.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf12.Text.IndexOf('-') != txtPerf12.Text.LastIndexOf('-') || txtPerf12.Text.IndexOf('.') != txtPerf12.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #12 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf13.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf13.Text.IndexOf(':') != txtPerf13.Text.LastIndexOf(':') || txtPerf13.Text.IndexOf('.') != txtPerf13.Text.LastIndexOf('.'))
+            if (!txtPerf13.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf13.Text.IndexOf('-') != txtPerf13.Text.LastIndexOf('-') || txtPerf13.Text.IndexOf('.') != txtPerf13.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #13 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf14.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf14.Text.IndexOf(':') != txtPerf14.Text.LastIndexOf(':') || txtPerf14.Text.IndexOf('.') != txtPerf14.Text.LastIndexOf('.'))
+            if (!txtPerf14.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf14.Text.IndexOf('-') != txtPerf14.Text.LastIndexOf('-') || txtPerf14.Text.IndexOf('.') != txtPerf14.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #14 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf15.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf15.Text.IndexOf(':') != txtPerf15.Text.LastIndexOf(':') || txtPerf15.Text.IndexOf('.') != txtPerf15.Text.LastIndexOf('.'))
+            if (!txtPerf15.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf15.Text.IndexOf('-') != txtPerf15.Text.LastIndexOf('-') || txtPerf15.Text.IndexOf('.') != txtPerf15.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #15 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf16.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf16.Text.IndexOf(':') != txtPerf16.Text.LastIndexOf(':') || txtPerf16.Text.IndexOf('.') != txtPerf16.Text.LastIndexOf('.'))
+            if (!txtPerf16.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf16.Text.IndexOf('-') != txtPerf16.Text.LastIndexOf('-') || txtPerf16.Text.IndexOf('.') != txtPerf16.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #16 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf17.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf17.Text.IndexOf(':') != txtPerf17.Text.LastIndexOf(':') || txtPerf17.Text.IndexOf('.') != txtPerf17.Text.LastIndexOf('.'))
+            if (!txtPerf17.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf17.Text.IndexOf('-') != txtPerf17.Text.LastIndexOf('-') || txtPerf17.Text.IndexOf('.') != txtPerf17.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #17 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf18.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf18.Text.IndexOf(':') != txtPerf18.Text.LastIndexOf(':') || txtPerf18.Text.IndexOf('.') != txtPerf18.Text.LastIndexOf('.'))
+            if (!txtPerf18.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf18.Text.IndexOf('-') != txtPerf18.Text.LastIndexOf('-') || txtPerf18.Text.IndexOf('.') != txtPerf18.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #18 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf19.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf19.Text.IndexOf(':') != txtPerf19.Text.LastIndexOf(':') || txtPerf19.Text.IndexOf('.') != txtPerf19.Text.LastIndexOf('.'))
+            if (!txtPerf19.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf19.Text.IndexOf('-') != txtPerf19.Text.LastIndexOf('-') || txtPerf19.Text.IndexOf('.') != txtPerf19.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #19 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf20.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf20.Text.IndexOf(':') != txtPerf20.Text.LastIndexOf(':') || txtPerf20.Text.IndexOf('.') != txtPerf20.Text.LastIndexOf('.'))
+            if (!txtPerf20.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf20.Text.IndexOf('-') != txtPerf20.Text.LastIndexOf('-') || txtPerf20.Text.IndexOf('.') != txtPerf20.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #20 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf21.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf21.Text.IndexOf(':') != txtPerf21.Text.LastIndexOf(':') || txtPerf21.Text.IndexOf('.') != txtPerf21.Text.LastIndexOf('.'))
+            if (!txtPerf21.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf21.Text.IndexOf('-') != txtPerf21.Text.LastIndexOf('-') || txtPerf21.Text.IndexOf('.') != txtPerf21.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #21 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf22.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf22.Text.IndexOf(':') != txtPerf22.Text.LastIndexOf(':') || txtPerf22.Text.IndexOf('.') != txtPerf22.Text.LastIndexOf('.'))
+            if (!txtPerf22.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf22.Text.IndexOf('-') != txtPerf22.Text.LastIndexOf('-') || txtPerf22.Text.IndexOf('.') != txtPerf22.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #22 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf23.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf23.Text.IndexOf(':') != txtPerf23.Text.LastIndexOf(':') || txtPerf23.Text.IndexOf('.') != txtPerf23.Text.LastIndexOf('.'))
+            if (!txtPerf23.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf23.Text.IndexOf('-') != txtPerf23.Text.LastIndexOf('-') || txtPerf23.Text.IndexOf('.') != txtPerf23.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #23 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf24.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf24.Text.IndexOf(':') != txtPerf24.Text.LastIndexOf(':') || txtPerf24.Text.IndexOf('.') != txtPerf24.Text.LastIndexOf('.'))
+            if (!txtPerf24.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf24.Text.IndexOf('-') != txtPerf24.Text.LastIndexOf('-') || txtPerf24.Text.IndexOf('.') != txtPerf24.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #24 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf25.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf25.Text.IndexOf(':') != txtPerf25.Text.LastIndexOf(':') || txtPerf25.Text.IndexOf('.') != txtPerf25.Text.LastIndexOf('.'))
+            if (!txtPerf25.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf25.Text.IndexOf('-') != txtPerf25.Text.LastIndexOf('-') || txtPerf25.Text.IndexOf('.') != txtPerf25.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #25 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf26.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf26.Text.IndexOf(':') != txtPerf26.Text.LastIndexOf(':') || txtPerf26.Text.IndexOf('.') != txtPerf26.Text.LastIndexOf('.'))
+            if (!txtPerf26.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf26.Text.IndexOf('-') != txtPerf26.Text.LastIndexOf('-') || txtPerf26.Text.IndexOf('.') != txtPerf26.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #26 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf27.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf27.Text.IndexOf(':') != txtPerf27.Text.LastIndexOf(':') || txtPerf27.Text.IndexOf('.') != txtPerf27.Text.LastIndexOf('.'))
+            if (!txtPerf27.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf27.Text.IndexOf('-') != txtPerf27.Text.LastIndexOf('-') || txtPerf27.Text.IndexOf('.') != txtPerf27.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #27 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf28.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf28.Text.IndexOf(':') != txtPerf28.Text.LastIndexOf(':') || txtPerf28.Text.IndexOf('.') != txtPerf28.Text.LastIndexOf('.'))
+            if (!txtPerf28.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf28.Text.IndexOf('-') != txtPerf28.Text.LastIndexOf('-') || txtPerf28.Text.IndexOf('.') != txtPerf28.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #28 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf29.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf29.Text.IndexOf(':') != txtPerf29.Text.LastIndexOf(':') || txtPerf29.Text.IndexOf('.') != txtPerf29.Text.LastIndexOf('.'))
+            if (!txtPerf29.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf29.Text.IndexOf('-') != txtPerf29.Text.LastIndexOf('-') || txtPerf29.Text.IndexOf('.') != txtPerf29.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #29 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf30.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf30.Text.IndexOf(':') != txtPerf30.Text.LastIndexOf(':') || txtPerf30.Text.IndexOf('.') != txtPerf30.Text.LastIndexOf('.'))
+            if (!txtPerf30.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf30.Text.IndexOf('-') != txtPerf30.Text.LastIndexOf('-') || txtPerf30.Text.IndexOf('.') != txtPerf30.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #30 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf31.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf31.Text.IndexOf(':') != txtPerf31.Text.LastIndexOf(':') || txtPerf31.Text.IndexOf('.') != txtPerf31.Text.LastIndexOf('.'))
+            if (!txtPerf31.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf31.Text.IndexOf('-') != txtPerf31.Text.LastIndexOf('-') || txtPerf31.Text.IndexOf('.') != txtPerf31.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #31 is invalid", "Invalid Data");
                 return false;
             }
-            if (!txtPerf32.Text.All(c => char.IsDigit(c) || c == ':' || c == '.') || txtPerf32.Text.IndexOf(':') != txtPerf32.Text.LastIndexOf(':') || txtPerf32.Text.IndexOf('.') != txtPerf32.Text.LastIndexOf('.'))
+            if (!txtPerf32.Text.All(c => char.IsDigit(c) || c == '-' || c == '.') || txtPerf32.Text.IndexOf('-') != txtPerf32.Text.LastIndexOf('-') || txtPerf32.Text.IndexOf('.') != txtPerf32.Text.LastIndexOf('.'))
             {
                 MessageBox.Show("Performance entered for Athlete #32 is invalid", "Invalid Data");
                 return false;
@@ -977,7 +976,7 @@ namespace DualMeetManager.Presentation
 
         public void clearFlight(int flightNum)
         {
-            for(int i = (flightNum * 32) + 32; i > flightNum * 32; i--)
+            for(int i = (flightNum * 32) + 32; i >= flightNum * 32; i--)
             {
                 if(allPerfs != null && allPerfs.ElementAtOrDefault(i) != null)
                 {
@@ -996,71 +995,75 @@ namespace DualMeetManager.Presentation
 
                 if(allPerfs==null)
                     allPerfs = new List<Performance>();
+                //Need to delete performances from current "Flight"
+                clearFlight(currentHeatNum);
 
                 if (!string.IsNullOrWhiteSpace(txtName1.Text))
-                    allPerfs.Add(new Performance(txtName1.Text, cboSchool1.Text, 0, em.ConvertFromTimedData(txtPerf1.Text)));
+                    allPerfs.Add(new Performance(txtName1.Text, cboSchool1.Text, 0, em.ConvertFromLengthData(txtPerf1.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName2.Text))
-                    allPerfs.Add(new Performance(txtName2.Text, cboSchool2.Text, 0, em.ConvertFromTimedData(txtPerf2.Text)));
+                    allPerfs.Add(new Performance(txtName2.Text, cboSchool2.Text, 0, em.ConvertFromLengthData(txtPerf2.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName3.Text))
-                    allPerfs.Add(new Performance(txtName3.Text, cboSchool3.Text, 0, em.ConvertFromTimedData(txtPerf3.Text)));
+                    allPerfs.Add(new Performance(txtName3.Text, cboSchool3.Text, 0, em.ConvertFromLengthData(txtPerf3.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName4.Text))
-                    allPerfs.Add(new Performance(txtName4.Text, cboSchool4.Text, 0, em.ConvertFromTimedData(txtPerf4.Text)));
+                    allPerfs.Add(new Performance(txtName4.Text, cboSchool4.Text, 0, em.ConvertFromLengthData(txtPerf4.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName5.Text))
-                    allPerfs.Add(new Performance(txtName5.Text, cboSchool5.Text, 0, em.ConvertFromTimedData(txtPerf5.Text)));
+                    allPerfs.Add(new Performance(txtName5.Text, cboSchool5.Text, 0, em.ConvertFromLengthData(txtPerf5.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName6.Text))
-                    allPerfs.Add(new Performance(txtName6.Text, cboSchool6.Text, 0, em.ConvertFromTimedData(txtPerf6.Text)));
+                    allPerfs.Add(new Performance(txtName6.Text, cboSchool6.Text, 0, em.ConvertFromLengthData(txtPerf6.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName7.Text))
-                    allPerfs.Add(new Performance(txtName7.Text, cboSchool7.Text, 0, em.ConvertFromTimedData(txtPerf7.Text)));
+                    allPerfs.Add(new Performance(txtName7.Text, cboSchool7.Text, 0, em.ConvertFromLengthData(txtPerf7.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName8.Text))
-                    allPerfs.Add(new Performance(txtName8.Text, cboSchool8.Text, 0, em.ConvertFromTimedData(txtPerf8.Text)));
+                    allPerfs.Add(new Performance(txtName8.Text, cboSchool8.Text, 0, em.ConvertFromLengthData(txtPerf8.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName9.Text))
-                    allPerfs.Add(new Performance(txtName9.Text, cboSchool9.Text, 0, em.ConvertFromTimedData(txtPerf9.Text)));
+                    allPerfs.Add(new Performance(txtName9.Text, cboSchool9.Text, 0, em.ConvertFromLengthData(txtPerf9.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName10.Text))
-                    allPerfs.Add(new Performance(txtName10.Text, cboSchool10.Text, 0, em.ConvertFromTimedData(txtPerf10.Text)));
+                    allPerfs.Add(new Performance(txtName10.Text, cboSchool10.Text, 0, em.ConvertFromLengthData(txtPerf10.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName11.Text))
-                    allPerfs.Add(new Performance(txtName11.Text, cboSchool11.Text, 0, em.ConvertFromTimedData(txtPerf11.Text)));
+                    allPerfs.Add(new Performance(txtName11.Text, cboSchool11.Text, 0, em.ConvertFromLengthData(txtPerf11.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName12.Text))
-                    allPerfs.Add(new Performance(txtName12.Text, cboSchool12.Text, 0, em.ConvertFromTimedData(txtPerf12.Text)));
+                    allPerfs.Add(new Performance(txtName12.Text, cboSchool12.Text, 0, em.ConvertFromLengthData(txtPerf12.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName13.Text))
-                    allPerfs.Add(new Performance(txtName13.Text, cboSchool13.Text, 0, em.ConvertFromTimedData(txtPerf13.Text)));
+                    allPerfs.Add(new Performance(txtName13.Text, cboSchool13.Text, 0, em.ConvertFromLengthData(txtPerf13.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName14.Text))
-                    allPerfs.Add(new Performance(txtName14.Text, cboSchool14.Text, 0, em.ConvertFromTimedData(txtPerf14.Text)));
+                    allPerfs.Add(new Performance(txtName14.Text, cboSchool14.Text, 0, em.ConvertFromLengthData(txtPerf14.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName15.Text))
-                    allPerfs.Add(new Performance(txtName15.Text, cboSchool15.Text, 0, em.ConvertFromTimedData(txtPerf15.Text)));
+                    allPerfs.Add(new Performance(txtName15.Text, cboSchool15.Text, 0, em.ConvertFromLengthData(txtPerf15.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName16.Text))
-                    allPerfs.Add(new Performance(txtName16.Text, cboSchool16.Text, 0, em.ConvertFromTimedData(txtPerf16.Text)));
+                    allPerfs.Add(new Performance(txtName16.Text, cboSchool16.Text, 0, em.ConvertFromLengthData(txtPerf16.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName17.Text))
-                    allPerfs.Add(new Performance(txtName17.Text, cboSchool17.Text, 0, em.ConvertFromTimedData(txtPerf17.Text)));
+                    allPerfs.Add(new Performance(txtName17.Text, cboSchool17.Text, 0, em.ConvertFromLengthData(txtPerf17.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName18.Text))
-                    allPerfs.Add(new Performance(txtName18.Text, cboSchool18.Text, 0, em.ConvertFromTimedData(txtPerf18.Text)));
+                    allPerfs.Add(new Performance(txtName18.Text, cboSchool18.Text, 0, em.ConvertFromLengthData(txtPerf18.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName19.Text))
-                    allPerfs.Add(new Performance(txtName19.Text, cboSchool19.Text, 0, em.ConvertFromTimedData(txtPerf19.Text)));
+                    allPerfs.Add(new Performance(txtName19.Text, cboSchool19.Text, 0, em.ConvertFromLengthData(txtPerf19.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName20.Text))
-                    allPerfs.Add(new Performance(txtName20.Text, cboSchool20.Text, 0, em.ConvertFromTimedData(txtPerf20.Text)));
+                    allPerfs.Add(new Performance(txtName20.Text, cboSchool20.Text, 0, em.ConvertFromLengthData(txtPerf20.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName21.Text))
-                    allPerfs.Add(new Performance(txtName21.Text, cboSchool21.Text, 0, em.ConvertFromTimedData(txtPerf21.Text)));
+                    allPerfs.Add(new Performance(txtName21.Text, cboSchool21.Text, 0, em.ConvertFromLengthData(txtPerf21.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName22.Text))
-                    allPerfs.Add(new Performance(txtName22.Text, cboSchool22.Text, 0, em.ConvertFromTimedData(txtPerf22.Text)));
+                    allPerfs.Add(new Performance(txtName22.Text, cboSchool22.Text, 0, em.ConvertFromLengthData(txtPerf22.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName23.Text))
-                    allPerfs.Add(new Performance(txtName23.Text, cboSchool23.Text, 0, em.ConvertFromTimedData(txtPerf23.Text)));
+                    allPerfs.Add(new Performance(txtName23.Text, cboSchool23.Text, 0, em.ConvertFromLengthData(txtPerf23.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName24.Text))
-                    allPerfs.Add(new Performance(txtName24.Text, cboSchool24.Text, 0, em.ConvertFromTimedData(txtPerf24.Text)));
+                    allPerfs.Add(new Performance(txtName24.Text, cboSchool24.Text, 0, em.ConvertFromLengthData(txtPerf24.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName25.Text))
-                    allPerfs.Add(new Performance(txtName25.Text, cboSchool25.Text, 0, em.ConvertFromTimedData(txtPerf25.Text)));
+                    allPerfs.Add(new Performance(txtName25.Text, cboSchool25.Text, 0, em.ConvertFromLengthData(txtPerf25.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName26.Text))
-                    allPerfs.Add(new Performance(txtName26.Text, cboSchool26.Text, 0, em.ConvertFromTimedData(txtPerf26.Text)));
+                    allPerfs.Add(new Performance(txtName26.Text, cboSchool26.Text, 0, em.ConvertFromLengthData(txtPerf26.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName27.Text))
-                    allPerfs.Add(new Performance(txtName27.Text, cboSchool27.Text, 0, em.ConvertFromTimedData(txtPerf27.Text)));
+                    allPerfs.Add(new Performance(txtName27.Text, cboSchool27.Text, 0, em.ConvertFromLengthData(txtPerf27.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName28.Text))
-                    allPerfs.Add(new Performance(txtName28.Text, cboSchool28.Text, 0, em.ConvertFromTimedData(txtPerf28.Text)));
+                    allPerfs.Add(new Performance(txtName28.Text, cboSchool28.Text, 0, em.ConvertFromLengthData(txtPerf28.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName29.Text))
-                    allPerfs.Add(new Performance(txtName29.Text, cboSchool29.Text, 0, em.ConvertFromTimedData(txtPerf29.Text)));
+                    allPerfs.Add(new Performance(txtName29.Text, cboSchool29.Text, 0, em.ConvertFromLengthData(txtPerf29.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName30.Text))
-                    allPerfs.Add(new Performance(txtName30.Text, cboSchool30.Text, 0, em.ConvertFromTimedData(txtPerf30.Text)));
+                    allPerfs.Add(new Performance(txtName30.Text, cboSchool30.Text, 0, em.ConvertFromLengthData(txtPerf30.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName31.Text))
-                    allPerfs.Add(new Performance(txtName31.Text, cboSchool31.Text, 0, em.ConvertFromTimedData(txtPerf31.Text)));
+                    allPerfs.Add(new Performance(txtName31.Text, cboSchool31.Text, 0, em.ConvertFromLengthData(txtPerf31.Text)));
                 if (!string.IsNullOrWhiteSpace(txtName32.Text))
-                    allPerfs.Add(new Performance(txtName32.Text, cboSchool32.Text, 0, em.ConvertFromTimedData(txtPerf32.Text)));
+                    allPerfs.Add(new Performance(txtName32.Text, cboSchool32.Text, 0, em.ConvertFromLengthData(txtPerf32.Text)));
+
+                SortListOfPerfs();
 
                 Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
                 return true;
