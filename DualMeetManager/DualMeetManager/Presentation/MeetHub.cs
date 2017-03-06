@@ -1022,5 +1022,85 @@ namespace DualMeetManager.Presentation
             this.Hide();
             newForm.ShowDialog();
         }
+
+        private void mnuEnterBoysRelays4x400_Click(object sender, EventArgs e)
+        {
+            RelayEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 4x400"))
+            {
+                newForm = new RelayEventEntry(this, "Boy's 4x400", activeMeet.performances["Boy's 4x400"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RelayEventEntry(this, "Boy's 4x400", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterBoysRelays4x800_Click(object sender, EventArgs e)
+        {
+            RelayEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 4x800"))
+            {
+                newForm = new RelayEventEntry(this, "Boy's 4x800", activeMeet.performances["Boy's 4x800"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RelayEventEntry(this, "Boy's 4x800", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirls_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuEnterGirlsRelays4x100_Click(object sender, EventArgs e)
+        {
+            RelayEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 4x100"))
+            {
+                newForm = new RelayEventEntry(this, "Girl's 4x100", activeMeet.performances["Girl's 4x100"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RelayEventEntry(this, "Girl's 4x100", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsRelays4x400_Click(object sender, EventArgs e)
+        {
+            RelayEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 4x400"))
+            {
+                newForm = new RelayEventEntry(this, "Girl's 4x400", activeMeet.performances["Girl's 4x400"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RelayEventEntry(this, "Girl's 4x400", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
+
+        private void mnuEnterGirlsRelays4x800_Click(object sender, EventArgs e)
+        {
+            RelayEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Girl's 4x800"))
+            {
+                newForm = new RelayEventEntry(this, "Girl's 4x800", activeMeet.performances["Girl's 4x800"], activeMeet.schoolNames.girlSchoolNames);
+            }
+            else
+            {
+                newForm = new RelayEventEntry(this, "Girl's 4x800", null, activeMeet.schoolNames.girlSchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
+        }
     }
 }

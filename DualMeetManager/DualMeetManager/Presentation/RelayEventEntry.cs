@@ -55,9 +55,66 @@ namespace DualMeetManager.Presentation
             if (CheckData())
             {
                 PrintoutMgr pm = new PrintoutMgr();
+                GatherPerfs();
                 SortListOfPerfs();
                 pm.CreateIndEventDoc(eventName, allPerfs);
             }
+        }
+
+        private void GatherPerfs()
+        {
+            if (allPerfs != null)
+                allPerfs.Clear();
+            else
+                allPerfs = new List<Performance>();
+
+            if (!string.IsNullOrWhiteSpace(txtName1.Text))
+                allPerfs.Add(new Performance(txtName1.Text, cboSchool1.Text, em.ConvertFromTimedData(txtPerf1.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName2.Text))
+                allPerfs.Add(new Performance(txtName2.Text, cboSchool2.Text, em.ConvertFromTimedData(txtPerf2.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName3.Text))
+                allPerfs.Add(new Performance(txtName3.Text, cboSchool3.Text, em.ConvertFromTimedData(txtPerf3.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName4.Text))
+                allPerfs.Add(new Performance(txtName4.Text, cboSchool4.Text, em.ConvertFromTimedData(txtPerf4.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName5.Text))
+                allPerfs.Add(new Performance(txtName5.Text, cboSchool5.Text, em.ConvertFromTimedData(txtPerf5.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName6.Text))
+                allPerfs.Add(new Performance(txtName6.Text, cboSchool6.Text, em.ConvertFromTimedData(txtPerf6.Text)));
+
+            if (!string.IsNullOrWhiteSpace(txtName17.Text))
+                allPerfs.Add(new Performance(txtName17.Text, cboSchool17.Text, em.ConvertFromTimedData(txtPerf17.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName18.Text))
+                allPerfs.Add(new Performance(txtName18.Text, cboSchool18.Text, em.ConvertFromTimedData(txtPerf18.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName19.Text))
+                allPerfs.Add(new Performance(txtName19.Text, cboSchool19.Text, em.ConvertFromTimedData(txtPerf19.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName20.Text))
+                allPerfs.Add(new Performance(txtName20.Text, cboSchool20.Text, em.ConvertFromTimedData(txtPerf20.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName21.Text))
+                allPerfs.Add(new Performance(txtName21.Text, cboSchool21.Text, em.ConvertFromTimedData(txtPerf21.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName22.Text))
+                allPerfs.Add(new Performance(txtName22.Text, cboSchool22.Text, em.ConvertFromTimedData(txtPerf22.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName23.Text))
+                allPerfs.Add(new Performance(txtName23.Text, cboSchool23.Text, em.ConvertFromTimedData(txtPerf23.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName24.Text))
+                allPerfs.Add(new Performance(txtName24.Text, cboSchool24.Text, em.ConvertFromTimedData(txtPerf24.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName25.Text))
+                allPerfs.Add(new Performance(txtName25.Text, cboSchool25.Text, em.ConvertFromTimedData(txtPerf25.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName26.Text))
+                allPerfs.Add(new Performance(txtName26.Text, cboSchool26.Text, em.ConvertFromTimedData(txtPerf26.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName27.Text))
+                allPerfs.Add(new Performance(txtName27.Text, cboSchool27.Text, em.ConvertFromTimedData(txtPerf27.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName28.Text))
+                allPerfs.Add(new Performance(txtName28.Text, cboSchool28.Text, em.ConvertFromTimedData(txtPerf28.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName29.Text))
+                allPerfs.Add(new Performance(txtName29.Text, cboSchool29.Text, em.ConvertFromTimedData(txtPerf29.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName30.Text))
+                allPerfs.Add(new Performance(txtName30.Text, cboSchool30.Text, em.ConvertFromTimedData(txtPerf30.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName31.Text))
+                allPerfs.Add(new Performance(txtName31.Text, cboSchool31.Text, em.ConvertFromTimedData(txtPerf31.Text)));
+            if (!string.IsNullOrWhiteSpace(txtName32.Text))
+                allPerfs.Add(new Performance(txtName32.Text, cboSchool32.Text, em.ConvertFromTimedData(txtPerf32.Text)));
+
+            SortListOfPerfs();
         }
 
         private void mnuClearThis_Click(object sender, EventArgs e)
@@ -537,33 +594,33 @@ namespace DualMeetManager.Presentation
             }
             if (scoringPerfs.ElementAtOrDefault(1) != null)
             {
-                txtName1.Text = scoringPerfs[1].athleteName;
-                cboSchool1.Text = scoringPerfs[1].schoolName;
-                txtPerf1.Text = em.ConvertToTimedData(scoringPerfs[1].performance);
+                txtName2.Text = scoringPerfs[1].athleteName;
+                cboSchool2.Text = scoringPerfs[1].schoolName;
+                txtPerf2.Text = em.ConvertToTimedData(scoringPerfs[1].performance);
             }
             if (scoringPerfs.ElementAtOrDefault(2) != null)
             {
-                txtName1.Text = scoringPerfs[2].athleteName;
-                cboSchool1.Text = scoringPerfs[2].schoolName;
-                txtPerf1.Text = em.ConvertToTimedData(scoringPerfs[2].performance);
+                txtName3.Text = scoringPerfs[2].athleteName;
+                cboSchool3.Text = scoringPerfs[2].schoolName;
+                txtPerf3.Text = em.ConvertToTimedData(scoringPerfs[2].performance);
             }
             if (scoringPerfs.ElementAtOrDefault(3) != null)
             {
-                txtName1.Text = scoringPerfs[3].athleteName;
-                cboSchool1.Text = scoringPerfs[3].schoolName;
-                txtPerf1.Text = em.ConvertToTimedData(scoringPerfs[3].performance);
+                txtName4.Text = scoringPerfs[3].athleteName;
+                cboSchool4.Text = scoringPerfs[3].schoolName;
+                txtPerf4.Text = em.ConvertToTimedData(scoringPerfs[3].performance);
             }
             if (scoringPerfs.ElementAtOrDefault(4) != null)
             {
-                txtName1.Text = scoringPerfs[4].athleteName;
-                cboSchool1.Text = scoringPerfs[4].schoolName;
-                txtPerf1.Text = em.ConvertToTimedData(scoringPerfs[4].performance);
+                txtName5.Text = scoringPerfs[4].athleteName;
+                cboSchool5.Text = scoringPerfs[4].schoolName;
+                txtPerf5.Text = em.ConvertToTimedData(scoringPerfs[4].performance);
             }
             if (scoringPerfs.ElementAtOrDefault(5) != null)
             {
-                txtName1.Text = scoringPerfs[5].athleteName;
-                cboSchool1.Text = scoringPerfs[5].schoolName;
-                txtPerf1.Text = em.ConvertToTimedData(scoringPerfs[5].performance);
+                txtName6.Text = scoringPerfs[5].athleteName;
+                cboSchool6.Text = scoringPerfs[5].schoolName;
+                txtPerf6.Text = em.ConvertToTimedData(scoringPerfs[5].performance);
             }
 
             //ADD NON SCORING PERFS HERE
@@ -717,7 +774,16 @@ namespace DualMeetManager.Presentation
 
         private void cmdEnterData_Click(object sender, EventArgs e)
         {
-
+            Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+            if (CheckData())
+            {
+                GatherPerfs();
+                MessageBox.Show("Data for " + eventName + " entered", "Success");
+                mh.AddEvent(eventName, allPerfs);
+                mh.Show();
+                this.Close();
+            }
+            Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
 
         private void mnuClear_Click(object sender, EventArgs e)
