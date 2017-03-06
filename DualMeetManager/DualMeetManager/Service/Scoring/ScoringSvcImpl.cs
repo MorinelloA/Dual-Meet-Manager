@@ -692,6 +692,17 @@ namespace DualMeetManager.Service.Scoring
             }
 
             //DO THE SAME FOR RELAY EVENTS
+            string[] validRelayEvents = {"4x100", "4x400", "4x800"};
+
+            for (int i = 0; i < validRelayEvents.Length; i++)
+            {
+                scores.indEvents.TryGetValue(gender + "'s " + validRelayEvents[i], out tempIndEvent);
+                if (!tempRelayEvent.Equals(null))
+                {
+                    totalPointsTeam1 += tempRelayEvent.team1Total;
+                    totalPointsTeam2 += tempRelayEvent.team2Total;
+                }
+            }
 
             scores.team1Points = totalPointsTeam1;
             scores.team2Points = totalPointsTeam2;

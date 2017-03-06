@@ -194,6 +194,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ofdMeet = new System.Windows.Forms.OpenFileDialog();
             this.sfdMeet = new System.Windows.Forms.SaveFileDialog();
+            this.ptsDebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -203,7 +204,8 @@
             this.mnuFile,
             this.mnuEnter,
             this.mnuPrintouts,
-            this.debugToolStripMenuItem});
+            this.debugToolStripMenuItem,
+            this.ptsDebugToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(542, 24);
@@ -1531,6 +1533,13 @@
             // 
             this.sfdMeet.FileOk += new System.ComponentModel.CancelEventHandler(this.sfdMeet_FileOk);
             // 
+            // ptsDebugToolStripMenuItem
+            // 
+            this.ptsDebugToolStripMenuItem.Name = "ptsDebugToolStripMenuItem";
+            this.ptsDebugToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.ptsDebugToolStripMenuItem.Text = "Pts Debug";
+            this.ptsDebugToolStripMenuItem.Click += new System.EventHandler(this.ptsDebugToolStripMenuItem_Click);
+            // 
             // MeetHub
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1722,5 +1731,6 @@
         private System.Windows.Forms.ToolStripMenuItem mnuFileSaveAs;
         private System.Windows.Forms.OpenFileDialog ofdMeet;
         private System.Windows.Forms.SaveFileDialog sfdMeet;
+        private System.Windows.Forms.ToolStripMenuItem ptsDebugToolStripMenuItem;
     }
 }

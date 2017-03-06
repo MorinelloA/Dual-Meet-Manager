@@ -1,5 +1,6 @@
 ﻿using DualMeetManager.Business.Managers;
 using DualMeetManager.Domain;
+using DualMeetManager.Domain.Scoring;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,9 @@ namespace DualMeetManager.Presentation
 {
     public partial class MeetHub : Form
     {
+        //Overall Scores for every dual meet taking place
+        List<OverallScore> activeScores = new List<OverallScore>();
+
         //Entire Meet
         Meet activeMeet = new Meet();
 
@@ -1101,6 +1105,11 @@ namespace DualMeetManager.Presentation
             }
             this.Hide();
             newForm.ShowDialog();
+        }
+
+        private void ptsDebugToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

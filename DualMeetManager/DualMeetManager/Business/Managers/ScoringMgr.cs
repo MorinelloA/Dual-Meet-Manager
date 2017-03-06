@@ -11,6 +11,54 @@ namespace DualMeetManager.Business.Managers
 {
     public class ScoringMgr : Manager
     {
+        public IndEvent CalculateFieldEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+        {
+            try
+            {
+                IScoringSvc scoringSvc = (IScoringSvc)GetService(typeof(IScoringSvc).Name);
+                IndEvent ie = scoringSvc.CalculateFieldEvent(team1Abbr, team2Abbr, perf);
+                return ie;
+            }
+            catch (Exception e) //Implement more specific Exceptions later
+            {
+                Console.WriteLine(e.ToString());
+                Console.Write(e.StackTrace);
+                return null;
+            }
+        }
+
+        public IndEvent CalculateRunningEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+        {
+            try
+            {
+                IScoringSvc scoringSvc = (IScoringSvc)GetService(typeof(IScoringSvc).Name);
+                IndEvent ie = scoringSvc.CalculateRunningEvent(team1Abbr, team2Abbr, perf);
+                return ie;
+            }
+            catch (Exception e) //Implement more specific Exceptions later
+            {
+                Console.WriteLine(e.ToString());
+                Console.Write(e.StackTrace);
+                return null;
+            }
+        }
+
+        public RelayEvent CalculateRelayEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+        {
+            try
+            {
+                IScoringSvc scoringSvc = (IScoringSvc)GetService(typeof(IScoringSvc).Name);
+                RelayEvent re = scoringSvc.CalculateRelayEvent(team1Abbr, team2Abbr, perf);
+                return re;
+            }
+            catch (Exception e) //Implement more specific Exceptions later
+            {
+                Console.WriteLine(e.ToString());
+                Console.Write(e.StackTrace);
+                return null;
+            }
+        }
+
         public OverallScore CalculateTotal(OverallScore scores, string gender)
         {
             try
