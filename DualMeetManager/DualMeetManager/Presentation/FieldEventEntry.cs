@@ -1076,5 +1076,10 @@ namespace DualMeetManager.Presentation
                 return false;
             }
         }
+
+        private void mnuClear_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

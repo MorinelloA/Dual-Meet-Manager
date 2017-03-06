@@ -342,7 +342,17 @@ namespace DualMeetManager.Presentation
 
         private void mnuEnterBoysRelays4x100_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not yet Implemented", "Coming Soon", MessageBoxButtons.OK ,MessageBoxIcon.Asterisk);
+            RelayEventEntry newForm;
+            if (activeMeet.performances != null && activeMeet.performances.ContainsKey("Boy's 4x100"))
+            {
+                newForm = new RelayEventEntry(this, "Boy's 4x100", activeMeet.performances["Boy's 4x100"], activeMeet.schoolNames.boySchoolNames);
+            }
+            else
+            {
+                newForm = new RelayEventEntry(this, "Boy's 4x100", null, activeMeet.schoolNames.boySchoolNames);
+            }
+            this.Hide();
+            newForm.ShowDialog();
         }
 
         private void mnuEnterGirlsSprints100_Click(object sender, EventArgs e)

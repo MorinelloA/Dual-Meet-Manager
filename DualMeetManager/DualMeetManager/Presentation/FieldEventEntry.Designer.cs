@@ -1475,6 +1475,7 @@
             this.mnuClear.Name = "mnuClear";
             this.mnuClear.Size = new System.Drawing.Size(44, 20);
             this.mnuClear.Text = "Clear";
+            this.mnuClear.Click += new System.EventHandler(this.mnuClear_Click);
             // 
             // mnuClearAll
             // 
