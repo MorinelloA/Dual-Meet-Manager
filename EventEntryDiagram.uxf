@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>5</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>175</x>
+      <y>0</y>
+      <w>145</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>_RunningEventEntry_
+--
+MeetHub mh
+Dictionary&lt;string, string&gt; teamNames
+int currentHeatNum
+int numRunners
+string eventName
+List&lt;Performance&gt; allPerfs
+Dictionary&lt;int, List&lt;Performance&gt;&gt; perfs
+EventMgr em
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>70</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Presentation Layer
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>230</y>
+      <w>70</w>
+      <h>75</h>
+    </coordinates>
+    <panel_attributes>Business Layer
+bg=magenta
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>235</y>
+      <w>260</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>_PrintoutMgr_
+--
+CreateIndEventPDF(string eventName, List&lt;Performance&gt; performances)
+CreateTeamPerfPDF(string teamAbbr, Meet meetToPrint)
+CreateMeetResultsPDF(OverallScore scoreToPrint)
+CreateIndEventDoc(string eventName, List&lt;Performance&gt; performances)
+CreateTeamPerfDoc(string teamAbbr, Meet meetToPrint)
+CreateMeetResultsDoc(OverallScore scoreToPrint)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>260</y>
+      <w>115</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>_Manager_
+--
+ServiceFactory factory
+--
+IService GetService(string name)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>75</x>
+      <y>230</y>
+      <w>220</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>_EventMgr_
+--
+ConvertToTimedData(decimal perf):string
+ConvertFromTimedData(string perf):decimal
+ConvertToLengthData(decimal perf):string
+ConvertFromLengthData(string perf):decimal
+AddPerformanceToEvent(Dictionary&lt;string, List&lt;Performance&gt;&gt; perfList, string eventName, Performance perfToAdd):Dictionary&lt;string, List&lt;Performance&gt;&gt;
+AddPerformanceToEvent(Dictionary&lt;string, List&lt;Performance&gt;&gt; perfList, string eventName, List&lt;Performance&gt; perfsToAdd):Dictionary&lt;string, List&lt;Performance&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>265</y>
+      <w>80</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>290</x>
+      <y>270</y>
+      <w>60</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+&lt;&lt;extends&gt;&gt;</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>395</x>
+      <y>290</y>
+      <w>30</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses
+</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>320</y>
+      <w>150</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_ServiceFactory_
+--
+ServiceFactory factory
+--
+GetService(string name):IService
+GetImplName(string serviceName):string</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>400</y>
+      <w>105</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>_IService_
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>395</x>
+      <y>360</y>
+      <w>30</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses
+</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLUseCase</id>
+    <coordinates>
+      <x>245</x>
+      <y>345</y>
+      <w>80</w>
+      <h>20</h>
+    </coordinates>
+    <panel_attributes>App.config
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>335</y>
+      <w>45</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.</panel_attributes>
+    <additional_attributes>10.0;30.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>170</y>
+      <w>105</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>_MeetHub_
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>465</x>
+      <y>145</y>
+      <w>85</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>150.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>565</x>
+      <y>300</y>
+      <w>30</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>395</y>
+      <w>105</w>
+      <h>55</h>
+    </coordinates>
+    <panel_attributes>_IPrintoutDocSvc_
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>615</x>
+      <y>485</y>
+      <w>250</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>_PrintoutDocXSvcImpl_
+--
+CreateIndEventDoc(string, List&lt;Performance&gt;)
+CreateMeetResultsDoc(string, OverallScore)
+CreateTeamPerfDoc(string teamAbbr, string gender, Meet meetToPrint)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>615</x>
+      <y>445</y>
+      <w>130</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+implements</panel_attributes>
+    <additional_attributes>240.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>130</x>
+      <y>385</y>
+      <w>105</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>_IDataEntrySvc_
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>430</x>
+      <y>585</y>
+      <w>265</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>_Meet_
+--
+DateTime dateOfMeet
+string location
+string weatherConditions
+Teams schoolNames
+Dictionary&lt;string, List&lt;Performance&gt;&gt; performances
+--
+Meet()
+Meet(DateTime, string, string, Teams)
+Meet(DateTime, string, string, Teams, Dictionary&lt;string, List&lt;Performance&gt;&gt;
+validate():bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>80</x>
+      <y>590</y>
+      <w>130</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>_Performance_
+--
+string athleteName
+string schoolName
+int heatNum
+decimal performance
+--
+Performance()
+Performance(string, string, decimal)
+validate():bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>110</x>
+      <y>710</y>
+      <w>220</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>_Teams_
+--
+Dictionary&lt;string, string&gt; boySchoolNames
+Dictionary&lt;string, string&gt; girlSchoolNames
+--
+Teams()
+Teams(Dictionary&lt;string, string&gt;, Dictionary&lt;string, string&gt;)
+validate():bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>920</y>
+      <w>180</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>_EventPoints_
+--
+decimal team1Pts
+decimal team2Pts
+string athleteName
+string schoolName
+string performance
+--
+EventPoints()
+EventPoints(decimal, decimal, string, string, string)
+validate():bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>825</y>
+      <w>275</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>_IndEvents_
+--
+string team1
+string team2
+EventPoints[] points
+decimal team1Total
+decimal team2Total
+--
+IndEvent()
+IndEvent(string, string)
+IndEvent(string, string, EventPoints, EventPoints, EventPoints, decimal, decimal)
+IndEvent(string, string, EventPoints[], decimal, decimal)
+validate():bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>365</x>
+      <y>690</y>
+      <w>485</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>_OverallScore_
+--
+Tuple&lt;string, string&gt; team1
+Tuple&lt;string, string&gt; team2
+decimal team1Points
+decimal team2Points
+IDictionary&lt;string, IndEvent&gt; indEvents
+IDictionary&lt;string, RelayEvent&gt; relayEvents
+--
+OverallScore()
+OverallScore(Tuple&lt;string, string&gt;, Tuple&lt;string, string&gt;, IDictionary&lt;string, IndEvent&gt;, Dictionary&lt;string, RelayEvent&gt;)
+OverallScore(Tuple&lt;string, string&gt;, Tuple&lt;string, string&gt;, IDictionary&lt;string, IndEvent&gt;, Dictionary&lt;string, RelayEvent&gt;, decimal, decimal)
+validate():bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>580</x>
+      <y>815</y>
+      <w>285</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>_RelayEvent_
+--
+string team1
+string team2
+EventPoints[] points
+decimal team1Total
+decimal team2Total
+--
+RelayEvent()
+RelayEvent(string, string, EventPoints, EventPoints, EventPoints, decimal, decimal)
+validate():bool</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>570</y>
+      <w>70</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>Domain Layer
+bg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>175</x>
+      <y>290</y>
+      <w>30</w>
+      <h>105</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;190.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>185</x>
+      <y>415</y>
+      <w>55</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+implements</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>75</x>
+      <y>470</y>
+      <w>535</w>
+      <h>65</h>
+    </coordinates>
+    <panel_attributes>_DataEntrySvcImpl_
+--
+ConvertToTimedData(decimal perf):string
+ConvertFromTimedData(string perf):decimal
+ConvertToLengthData(decimal perf):string
+ConvertFromLengthData(string perf):decimal
+AddPerformanceToEvent(Dictionary&lt;string, List&lt;Performance&gt;&gt; perfList, string eventName, Performance perfToAdd):Dictionary&lt;string, List&lt;Performance&gt;&gt;
+AddPerformanceToEvent(Dictionary&lt;string, List&lt;Performance&gt;&gt; perfList, string eventName, List&lt;Performance&gt; perfsToAdd):Dictionary&lt;string, List&lt;Performance&gt;&gt;</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>205</x>
+      <y>615</y>
+      <w>235</w>
+      <h>25</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;30.0;450.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>785</x>
+      <y>785</y>
+      <w>45</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>70.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>540</x>
+      <y>785</y>
+      <w>40</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;80.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>795</x>
+      <y>895</y>
+      <w>35</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;50.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>920</y>
+      <w>170</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>320.0;100.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>650</x>
+      <y>525</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>205</x>
+      <y>525</y>
+      <w>445</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;170.0;870.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>790</x>
+      <y>525</y>
+      <w>30</w>
+      <h>175</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;330.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>305</y>
+      <w>70</w>
+      <h>265</h>
+    </coordinates>
+    <panel_attributes>Service Layer
+bg=cyan</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>0</y>
+      <w>50</w>
+      <h>115</h>
+    </coordinates>
+    <panel_attributes>View
+bg=orange
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>235</y>
+      <w>50</w>
+      <h>765</h>
+    </coordinates>
+    <panel_attributes>Model
+bg=orange
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>870</x>
+      <y>115</y>
+      <w>50</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>Controller
+bg=blue
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>130</y>
+      <w>225</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;80.0;430.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>250</x>
+      <y>80</y>
+      <w>155</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>290.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>375</x>
+      <y>115</y>
+      <w>115</w>
+      <h>35</h>
+    </coordinates>
+    <panel_attributes>_cmdEnterData_Click_
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>0</y>
+      <w>145</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>_FieldEventEntry_
+--
+MeetHub mh
+Dictionary&lt;string, string&gt; teamNames
+int currentHeatNum
+string eventName
+List&lt;Performance&gt; allPerfs
+EventMgr em
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>545</x>
+      <y>0</y>
+      <w>145</w>
+      <h>85</h>
+    </coordinates>
+    <panel_attributes>_RelayEventEntry_
+--
+MeetHub mh
+Dictionary&lt;string, string&gt; teamNames
+string eventName
+List&lt;Performance&gt; allPerfs
+EventMgr em
+--
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>430</x>
+      <y>80</y>
+      <w>30</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>460</x>
+      <y>80</y>
+      <w>155</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;70.0;290.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>200</x>
+      <y>145</y>
+      <w>210</w>
+      <h>95</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;170.0;400.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>175</x>
+      <y>650</y>
+      <w>265</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;120.0;510.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>150</x>
+      <y>530</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
