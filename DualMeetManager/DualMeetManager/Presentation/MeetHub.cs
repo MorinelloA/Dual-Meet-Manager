@@ -37,6 +37,30 @@ namespace DualMeetManager.Presentation
             activeMeet.performances = em.AddPerformanceToEvent(activeMeet.performances, eventName, perfsToAdd);
         }
 
+        public void CalculateScoreTotals()
+        {
+            lstBoysScores.Items.Clear();
+
+            ScoringMgr sm = new ScoringMgr();
+
+            Dictionary<string, OverallScore> tempDictionary = new Dictionary<string, OverallScore>();
+
+            foreach (string s in boysActiveScores.Keys)
+            {
+                tempDictionary.Add(s, sm.CalculateTotal(boysActiveScores[s], "Boy"));
+                lstBoysScores.Items.Add(boysActiveScores[s].team1.Item2 + ": " + boysActiveScores[s].team1Points + " - " + boysActiveScores[s].team2.Item2 + ": " + boysActiveScores[s].team2Points);
+            }
+            boysActiveScores = tempDictionary;
+
+            Dictionary<string, OverallScore> tempDictionaryg = new Dictionary<string, OverallScore>();
+            foreach (string s in girlsActiveScores.Keys)
+            {
+                //girlsActiveScores[s] = sm.CalculateTotal(girlsActiveScores[s], "Girl");
+                tempDictionaryg.Add(s, sm.CalculateTotal(girlsActiveScores[s], "Girl"));
+            }
+            girlsActiveScores = tempDictionaryg;
+        }
+
         public void AddRunningEventToScores(string gender, string eventName, List<Performance> perf)
         {
             ScoringMgr sm = new ScoringMgr();
@@ -49,7 +73,7 @@ namespace DualMeetManager.Presentation
                 {
                     foreach (string t2 in activeMeet.schoolNames.boySchoolNames.Keys)
                     {
-                        if(t1!=t2)
+                        if(boysActiveScores.ContainsKey(t1 + "vs." + t2))
                         {
                             IndEvent newEventToAdd = sm.CalculateRunningEvent(t1, t2, perf);
                             boysActiveScores[t1 + "vs." + t2] = sm.AddEvent(boysActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
@@ -68,6 +92,7 @@ namespace DualMeetManager.Presentation
                 MessageBox.Show("Error Adding running event to scores");
             }
 
+            CalculateScoreTotals();
         }
 
         public MeetHub()
@@ -87,10 +112,9 @@ namespace DualMeetManager.Presentation
             {
                 foreach (string t2 in activeMeet.schoolNames.boySchoolNames.Keys)
                 {
-                    if (t1 != t2)
+                    if (t1 != t2 && !boysActiveScores.ContainsKey(t2 + "vs." + t1))
                     {
-                        //These Tuples are incorrect. Do not contain full team name
-                        boysActiveScores.Add(t1 + "vs." + t2, new OverallScore(Tuple.Create(t1, t1), Tuple.Create(t2, t2)));
+                        boysActiveScores.Add(t1 + "vs." + t2, new OverallScore(Tuple.Create(t1, activeMeet.schoolNames.boySchoolNames[t1]), Tuple.Create(t2, activeMeet.schoolNames.boySchoolNames[t2])));
                     }
                 }
             }
@@ -98,8 +122,8 @@ namespace DualMeetManager.Presentation
             {
                 foreach (string t2 in activeMeet.schoolNames.girlSchoolNames.Keys)
                 {
-                    if (t1 != t2)
-                        girlsActiveScores.Add(t1 + "vs." + t2, null);
+                    if (t1 != t2 && !girlsActiveScores.ContainsKey(t2 + "vs." + t1))
+                        girlsActiveScores.Add(t1 + "vs." + t2, new OverallScore(Tuple.Create(t1, activeMeet.schoolNames.girlSchoolNames[t1]), Tuple.Create(t2, activeMeet.schoolNames.girlSchoolNames[t2])));
                 }
             }
 
@@ -1170,6 +1194,11 @@ namespace DualMeetManager.Presentation
                 Console.WriteLine(boysActiveScores[s]);
             }
             
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
         }
     }
 }

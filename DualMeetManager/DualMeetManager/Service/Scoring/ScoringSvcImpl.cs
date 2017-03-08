@@ -706,7 +706,7 @@ namespace DualMeetManager.Service.Scoring
             for (int i = 0; i < validIndEvents.Length; i++)
             {
                 scores.indEvents.TryGetValue(gender + "'s " + validIndEvents[i], out tempIndEvent);
-                if (!tempIndEvent.Equals(null))
+                if (tempIndEvent != null)
                 {
                     totalPointsTeam1 += tempIndEvent.team1Total;
                     totalPointsTeam2 += tempIndEvent.team2Total;
@@ -719,7 +719,7 @@ namespace DualMeetManager.Service.Scoring
             for (int i = 0; i < validRelayEvents.Length; i++)
             {
                 scores.indEvents.TryGetValue(gender + "'s " + validRelayEvents[i], out tempIndEvent);
-                if (!tempRelayEvent.Equals(null))
+                if (tempRelayEvent != null)
                 {
                     totalPointsTeam1 += tempRelayEvent.team1Total;
                     totalPointsTeam2 += tempRelayEvent.team2Total;

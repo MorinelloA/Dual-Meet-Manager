@@ -188,13 +188,13 @@
             this.mnuPrintoutsGirlsEventPerfsThrowsDiscus = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrintoutsGirlsEventPerfsThrowsJavelin = new System.Windows.Forms.ToolStripMenuItem();
             this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ptsDebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lstBoysScores = new System.Windows.Forms.ListBox();
             this.lstGirlsScores = new System.Windows.Forms.ListBox();
             this.lblBoysScores = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ofdMeet = new System.Windows.Forms.OpenFileDialog();
             this.sfdMeet = new System.Windows.Forms.SaveFileDialog();
-            this.ptsDebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -211,6 +211,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(542, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // mnuFile
             // 
@@ -276,7 +277,7 @@
             this.mnuEnterBoysJumps,
             this.mnuEnterBoysThrows});
             this.mnuEnterBoys.Name = "mnuEnterBoys";
-            this.mnuEnterBoys.Size = new System.Drawing.Size(152, 22);
+            this.mnuEnterBoys.Size = new System.Drawing.Size(99, 22);
             this.mnuEnterBoys.Text = "Boy\'s";
             // 
             // mnuEnterBoysSprints
@@ -286,7 +287,7 @@
             this.mnuEnterBoysSprints200,
             this.mnuEnterBoysSprints400});
             this.mnuEnterBoysSprints.Name = "mnuEnterBoysSprints";
-            this.mnuEnterBoysSprints.Size = new System.Drawing.Size(152, 22);
+            this.mnuEnterBoysSprints.Size = new System.Drawing.Size(115, 22);
             this.mnuEnterBoysSprints.Text = "Sprints";
             // 
             // mnuEnterBoysSprints100
@@ -317,7 +318,7 @@
             this.mnuEnterBoysDistance1600,
             this.mnuEnterBoysDistance3200});
             this.mnuEnterBoysDistance.Name = "mnuEnterBoysDistance";
-            this.mnuEnterBoysDistance.Size = new System.Drawing.Size(152, 22);
+            this.mnuEnterBoysDistance.Size = new System.Drawing.Size(115, 22);
             this.mnuEnterBoysDistance.Text = "Distance";
             // 
             // mnuEnterBoysDistance800
@@ -347,7 +348,7 @@
             this.mnuEnterBoysHurdlesHigh,
             this.mnuEnterBoysHurdles300});
             this.mnuEnterBoysHurdles.Name = "mnuEnterBoysHurdles";
-            this.mnuEnterBoysHurdles.Size = new System.Drawing.Size(152, 22);
+            this.mnuEnterBoysHurdles.Size = new System.Drawing.Size(115, 22);
             this.mnuEnterBoysHurdles.Text = "Hurdles";
             // 
             // mnuEnterBoysHurdlesHigh
@@ -371,7 +372,7 @@
             this.mnuEnterBoysRelays4x400,
             this.mnuEnterBoysRelays4x800});
             this.mnuEnterBoysRelays.Name = "mnuEnterBoysRelays";
-            this.mnuEnterBoysRelays.Size = new System.Drawing.Size(152, 22);
+            this.mnuEnterBoysRelays.Size = new System.Drawing.Size(115, 22);
             this.mnuEnterBoysRelays.Text = "Relays";
             // 
             // mnuEnterBoysRelays4x100
@@ -403,7 +404,7 @@
             this.mnuEnterBoysJumpsHJ,
             this.mnuEnterBoysJumpsPV});
             this.mnuEnterBoysJumps.Name = "mnuEnterBoysJumps";
-            this.mnuEnterBoysJumps.Size = new System.Drawing.Size(152, 22);
+            this.mnuEnterBoysJumps.Size = new System.Drawing.Size(115, 22);
             this.mnuEnterBoysJumps.Text = "Jumps";
             // 
             // mnuEnterBoysJumpsLJ
@@ -441,7 +442,7 @@
             this.mnuEnterBoysThrowsDiscus,
             this.mnuEnterBoysThrowsJavelin});
             this.mnuEnterBoysThrows.Name = "mnuEnterBoysThrows";
-            this.mnuEnterBoysThrows.Size = new System.Drawing.Size(152, 22);
+            this.mnuEnterBoysThrows.Size = new System.Drawing.Size(115, 22);
             this.mnuEnterBoysThrows.Text = "Throws";
             // 
             // mnuEnterBoysThrowsShotput
@@ -475,7 +476,7 @@
             this.mnuEnterGirlsJumps,
             this.mnuEnterGirlsThrows});
             this.mnuEnterGirls.Name = "mnuEnterGirls";
-            this.mnuEnterGirls.Size = new System.Drawing.Size(152, 22);
+            this.mnuEnterGirls.Size = new System.Drawing.Size(99, 22);
             this.mnuEnterGirls.Text = "Girl\'s";
             this.mnuEnterGirls.Click += new System.EventHandler(this.mnuEnterGirls_Click);
             // 
@@ -571,7 +572,7 @@
             this.mnuEnterGirlsRelays4x400,
             this.mnuEnterGirlsRelays4x800});
             this.mnuEnterGirlsRelays.Name = "mnuEnterGirlsRelays";
-            this.mnuEnterGirlsRelays.Size = new System.Drawing.Size(152, 22);
+            this.mnuEnterGirlsRelays.Size = new System.Drawing.Size(115, 22);
             this.mnuEnterGirlsRelays.Text = "Relays";
             // 
             // mnuEnterGirlsRelays4x100
@@ -1491,6 +1492,13 @@
             this.debugToolStripMenuItem.Text = "Debug";
             this.debugToolStripMenuItem.Click += new System.EventHandler(this.debugToolStripMenuItem_Click);
             // 
+            // ptsDebugToolStripMenuItem
+            // 
+            this.ptsDebugToolStripMenuItem.Name = "ptsDebugToolStripMenuItem";
+            this.ptsDebugToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.ptsDebugToolStripMenuItem.Text = "Pts Debug";
+            this.ptsDebugToolStripMenuItem.Click += new System.EventHandler(this.ptsDebugToolStripMenuItem_Click);
+            // 
             // lstBoysScores
             // 
             this.lstBoysScores.FormattingEnabled = true;
@@ -1532,13 +1540,6 @@
             // sfdMeet
             // 
             this.sfdMeet.FileOk += new System.ComponentModel.CancelEventHandler(this.sfdMeet_FileOk);
-            // 
-            // ptsDebugToolStripMenuItem
-            // 
-            this.ptsDebugToolStripMenuItem.Name = "ptsDebugToolStripMenuItem";
-            this.ptsDebugToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.ptsDebugToolStripMenuItem.Text = "Pts Debug";
-            this.ptsDebugToolStripMenuItem.Click += new System.EventHandler(this.ptsDebugToolStripMenuItem_Click);
             // 
             // MeetHub
             // 
