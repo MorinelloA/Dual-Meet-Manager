@@ -1386,6 +1386,13 @@ namespace DualMeetManager.Presentation
 
                 //MessageBox.Show(allPerfs.ToString());
                 mh.AddEvent(eventName, allPerfs);
+                //Add Event to Scores
+                string gender = "Boy";
+                if (eventName.StartsWith("Girl"))
+                {
+                    gender = "Girl";
+                }
+                mh.AddRunningEventToScores(gender, eventName, allPerfs);
                 mh.Show();
                 this.Close();
                 

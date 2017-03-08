@@ -507,7 +507,17 @@ namespace DualMeetManager.Service.Scoring
         /// <returns>OverallScore with the event added</returns>
         public OverallScore AddEvent(OverallScore scores, string eventName, IndEvent eventToAdd)
         {
-            scores.indEvents[eventName] = eventToAdd;
+            if (scores == null)
+                scores = new OverallScore();
+
+            if (scores.indEvents == null)
+                scores.indEvents = new Dictionary<string, IndEvent>();
+
+            if (scores.indEvents != null && scores.indEvents.ContainsKey(eventName))
+                scores.indEvents[eventName] = eventToAdd;
+            else
+                scores.indEvents.Add(eventName, eventToAdd);
+
             return scores;
         }
 
@@ -520,7 +530,19 @@ namespace DualMeetManager.Service.Scoring
         /// <returns>OverallScore with the event added</returns>
         public OverallScore AddEvent(OverallScore scores, string eventName, RelayEvent eventToAdd)
         {
-            scores.relayEvents[eventName] = eventToAdd;
+            if (scores == null)
+                scores = new OverallScore();
+
+            if (scores.relayEvents == null)
+                scores.relayEvents = new Dictionary<string, RelayEvent>();
+
+            if (scores.relayEvents != null && scores.relayEvents.ContainsKey(eventName))
+                scores.relayEvents[eventName] = eventToAdd;
+            else
+            {
+                scores.relayEvents.Add(eventName, eventToAdd);
+            }
+
             return scores;
         }
 

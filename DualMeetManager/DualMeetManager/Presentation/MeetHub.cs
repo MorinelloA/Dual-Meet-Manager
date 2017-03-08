@@ -16,7 +16,8 @@ namespace DualMeetManager.Presentation
     public partial class MeetHub : Form
     {
         //Overall Scores for every dual meet taking place
-        List<OverallScore> activeScores = new List<OverallScore>();
+        Dictionary<string, OverallScore> boysActiveScores = new Dictionary<string, OverallScore>();
+        Dictionary<string, OverallScore> girlsActiveScores = new Dictionary<string, OverallScore>();
 
         //Entire Meet
         Meet activeMeet = new Meet();
@@ -36,6 +37,39 @@ namespace DualMeetManager.Presentation
             activeMeet.performances = em.AddPerformanceToEvent(activeMeet.performances, eventName, perfsToAdd);
         }
 
+        public void AddRunningEventToScores(string gender, string eventName, List<Performance> perf)
+        {
+            ScoringMgr sm = new ScoringMgr();
+            //Not completed
+            //public IndEvent CalculateFieldEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
+            //public OverallScore AddEvent(OverallScore scores, string eventName, IndEvent eventToAdd)
+            if (gender.StartsWith("Boy", StringComparison.OrdinalIgnoreCase))
+            {
+                foreach (string t1 in activeMeet.schoolNames.boySchoolNames.Keys)
+                {
+                    foreach (string t2 in activeMeet.schoolNames.boySchoolNames.Keys)
+                    {
+                        if(t1!=t2)
+                        {
+                            IndEvent newEventToAdd = sm.CalculateRunningEvent(t1, t2, perf);
+                            boysActiveScores[t1 + "vs." + t2] = sm.AddEvent(boysActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
+                        }
+                    }
+                }
+            }
+            else if (gender.StartsWith("Girl", StringComparison.OrdinalIgnoreCase))
+            {
+
+            }
+            else
+            {
+                Console.WriteLine("ERROR in AddRunningEventToScores - gender not Boy or Girl");
+                Console.WriteLine("gender = " + gender);
+                MessageBox.Show("Error Adding running event to scores");
+            }
+
+        }
+
         public MeetHub()
         {
             InitializeComponent();
@@ -48,7 +82,29 @@ namespace DualMeetManager.Presentation
 
         private void MeetHub_Load(object sender, EventArgs e)
         {
+            //Create OverallScores
+            foreach(string t1 in activeMeet.schoolNames.boySchoolNames.Keys)
+            {
+                foreach (string t2 in activeMeet.schoolNames.boySchoolNames.Keys)
+                {
+                    if (t1 != t2)
+                    {
+                        //These Tuples are incorrect. Do not contain full team name
+                        boysActiveScores.Add(t1 + "vs." + t2, new OverallScore(Tuple.Create(t1, t1), Tuple.Create(t2, t2)));
+                    }
+                }
+            }
+            foreach (string t1 in activeMeet.schoolNames.girlSchoolNames.Keys)
+            {
+                foreach (string t2 in activeMeet.schoolNames.girlSchoolNames.Keys)
+                {
+                    if (t1 != t2)
+                        girlsActiveScores.Add(t1 + "vs." + t2, null);
+                }
+            }
+
             //Populate Boys List
+
             foreach (KeyValuePair<string, string> entry in activeMeet.schoolNames.boySchoolNames)
             {
                 boysAbbrs.Add(entry.Key);
@@ -1109,6 +1165,10 @@ namespace DualMeetManager.Presentation
 
         private void ptsDebugToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (string s in boysActiveScores.Keys)
+            {
+                Console.WriteLine(boysActiveScores[s]);
+            }
             
         }
     }

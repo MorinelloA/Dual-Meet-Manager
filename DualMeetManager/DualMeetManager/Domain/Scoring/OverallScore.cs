@@ -32,6 +32,12 @@ namespace DualMeetManager.Domain.Scoring
         /// </summary>
         public OverallScore(){}
 
+        public OverallScore(Tuple<string, string> team1, Tuple<string, string> team2)
+        {
+            this.team1 = team1;
+            this.team2 = team2;
+        }
+
         /// <summary>
         /// Parameterized Constructor
         /// </summary>
@@ -94,15 +100,21 @@ namespace DualMeetManager.Domain.Scoring
             sb.Append(team1.Item2 + " - " + team1.Item1 + ": " + team1Points + Environment.NewLine);
             sb.Append(team2.Item2 + " - " + team2.Item1 + ": " + team2Points + Environment.NewLine + Environment.NewLine);
 
-            foreach (KeyValuePair<string, IndEvent> i in indEvents)
+            if (indEvents != null)
             {
-                sb.Append(i.Key.ToString() + Environment.NewLine);
-                sb.Append(i.Value.ToString() + Environment.NewLine);
+                foreach (KeyValuePair<string, IndEvent> i in indEvents)
+                {
+                    sb.Append(i.Key.ToString() + Environment.NewLine);
+                    sb.Append(i.Value.ToString() + Environment.NewLine);
+                }
             }
-            foreach (KeyValuePair<string, RelayEvent> i in relayEvents)
+            if (relayEvents != null)
             {
-                sb.Append(i.Key.ToString() + Environment.NewLine);
-                sb.Append(i.Value.ToString() + Environment.NewLine);
+                foreach (KeyValuePair<string, RelayEvent> i in relayEvents)
+                {
+                    sb.Append(i.Key.ToString() + Environment.NewLine);
+                    sb.Append(i.Value.ToString() + Environment.NewLine);
+                }
             }
             return sb.ToString();
         }
