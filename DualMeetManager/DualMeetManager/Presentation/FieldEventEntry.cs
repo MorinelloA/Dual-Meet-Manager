@@ -231,198 +231,200 @@ namespace DualMeetManager.Presentation
             Console.WriteLine("Inside " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
 
             ClearAll();
-
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 0) != null)
+            if (allPerfs != null)
             {
-                txtName1.Text = allPerfs[(currentHeatNum * 32) + 0].athleteName;
-                cboSchool1.Text = allPerfs[(currentHeatNum * 32) + 0].schoolName;
-                txtPerf1.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 0].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 1) != null)
-            {
-                txtName2.Text = allPerfs[(currentHeatNum * 32) + 1].athleteName;
-                cboSchool2.Text = allPerfs[(currentHeatNum * 32) + 1].schoolName;
-                txtPerf2.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 1].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 2) != null)
-            {
-                txtName3.Text = allPerfs[(currentHeatNum * 32) + 2].athleteName;
-                cboSchool3.Text = allPerfs[(currentHeatNum * 32) + 2].schoolName;
-                txtPerf3.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 2].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 3) != null)
-            {
-                txtName4.Text = allPerfs[(currentHeatNum * 32) + 3].athleteName;
-                cboSchool4.Text = allPerfs[(currentHeatNum * 32) + 3].schoolName;
-                txtPerf4.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 3].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 4) != null)
-            {
-                txtName5.Text = allPerfs[(currentHeatNum * 32) + 4].athleteName;
-                cboSchool5.Text = allPerfs[(currentHeatNum * 32) + 4].schoolName;
-                txtPerf5.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 4].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 5) != null)
-            {
-                txtName6.Text = allPerfs[(currentHeatNum * 32) + 5].athleteName;
-                cboSchool6.Text = allPerfs[(currentHeatNum * 32) + 5].schoolName;
-                txtPerf6.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 5].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 6) != null)
-            {
-                txtName7.Text = allPerfs[(currentHeatNum * 32) + 6].athleteName;
-                cboSchool7.Text = allPerfs[(currentHeatNum * 32) + 6].schoolName;
-                txtPerf7.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 6].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 7) != null)
-            {
-                txtName8.Text = allPerfs[(currentHeatNum * 32) + 7].athleteName;
-                cboSchool8.Text = allPerfs[(currentHeatNum * 32) + 7].schoolName;
-                txtPerf8.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 7].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 8) != null)
-            {
-                txtName9.Text = allPerfs[(currentHeatNum * 32) + 8].athleteName;
-                cboSchool9.Text = allPerfs[(currentHeatNum * 32) + 8].schoolName;
-                txtPerf9.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 8].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 9) != null)
-            {
-                txtName10.Text = allPerfs[(currentHeatNum * 32) + 9].athleteName;
-                cboSchool10.Text = allPerfs[(currentHeatNum * 32) + 9].schoolName;
-                txtPerf10.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 9].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 10) != null)
-            {
-                txtName11.Text = allPerfs[(currentHeatNum * 32) + 10].athleteName;
-                cboSchool11.Text = allPerfs[(currentHeatNum * 32) + 10].schoolName;
-                txtPerf11.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 10].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 11) != null)
-            {
-                txtName12.Text = allPerfs[(currentHeatNum * 32) + 11].athleteName;
-                cboSchool12.Text = allPerfs[(currentHeatNum * 32) + 11].schoolName;
-                txtPerf12.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 11].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 12) != null)
-            {
-                txtName13.Text = allPerfs[(currentHeatNum * 32) + 12].athleteName;
-                cboSchool13.Text = allPerfs[(currentHeatNum * 32) + 12].schoolName;
-                txtPerf13.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 12].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 13) != null)
-            {
-                txtName14.Text = allPerfs[(currentHeatNum * 32) + 13].athleteName;
-                cboSchool14.Text = allPerfs[(currentHeatNum * 32) + 13].schoolName;
-                txtPerf14.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 13].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 14) != null)
-            {
-                txtName15.Text = allPerfs[(currentHeatNum * 32) + 14].athleteName;
-                cboSchool15.Text = allPerfs[(currentHeatNum * 32) + 14].schoolName;
-                txtPerf15.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 14].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 15) != null)
-            {
-                txtName16.Text = allPerfs[(currentHeatNum * 32) + 15].athleteName;
-                cboSchool16.Text = allPerfs[(currentHeatNum * 32) + 15].schoolName;
-                txtPerf16.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 15].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 16) != null)
-            {
-                txtName17.Text = allPerfs[(currentHeatNum * 32) + 16].athleteName;
-                cboSchool17.Text = allPerfs[(currentHeatNum * 32) + 16].schoolName;
-                txtPerf17.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 16].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 17) != null)
-            {
-                txtName18.Text = allPerfs[(currentHeatNum * 32) + 17].athleteName;
-                cboSchool18.Text = allPerfs[(currentHeatNum * 32) + 17].schoolName;
-                txtPerf18.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 17].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 18) != null)
-            {
-                txtName19.Text = allPerfs[(currentHeatNum * 32) + 18].athleteName;
-                cboSchool19.Text = allPerfs[(currentHeatNum * 32) + 18].schoolName;
-                txtPerf19.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 18].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 19) != null)
-            {
-                txtName20.Text = allPerfs[(currentHeatNum * 32) + 19].athleteName;
-                cboSchool20.Text = allPerfs[(currentHeatNum * 32) + 19].schoolName;
-                txtPerf20.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 19].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 20) != null)
-            {
-                txtName21.Text = allPerfs[(currentHeatNum * 32) + 20].athleteName;
-                cboSchool21.Text = allPerfs[(currentHeatNum * 32) + 20].schoolName;
-                txtPerf21.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 20].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 21) != null)
-            {
-                txtName22.Text = allPerfs[(currentHeatNum * 32) + 21].athleteName;
-                cboSchool22.Text = allPerfs[(currentHeatNum * 32) + 21].schoolName;
-                txtPerf22.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 21].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 22) != null)
-            {
-                txtName23.Text = allPerfs[(currentHeatNum * 32) + 22].athleteName;
-                cboSchool23.Text = allPerfs[(currentHeatNum * 32) + 22].schoolName;
-                txtPerf23.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 22].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 23) != null)
-            {
-                txtName24.Text = allPerfs[(currentHeatNum * 32) + 23].athleteName;
-                cboSchool24.Text = allPerfs[(currentHeatNum * 32) + 23].schoolName;
-                txtPerf24.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 23].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 24) != null)
-            {
-                txtName25.Text = allPerfs[(currentHeatNum * 32) + 24].athleteName;
-                cboSchool25.Text = allPerfs[(currentHeatNum * 32) + 24].schoolName;
-                txtPerf25.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 24].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 25) != null)
-            {
-                txtName26.Text = allPerfs[(currentHeatNum * 32) + 25].athleteName;
-                cboSchool26.Text = allPerfs[(currentHeatNum * 32) + 25].schoolName;
-                txtPerf26.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 25].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 26) != null)
-            {
-                txtName27.Text = allPerfs[(currentHeatNum * 32) + 26].athleteName;
-                cboSchool27.Text = allPerfs[(currentHeatNum * 32) + 26].schoolName;
-                txtPerf27.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 26].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 27) != null)
-            {
-                txtName28.Text = allPerfs[(currentHeatNum * 32) + 27].athleteName;
-                cboSchool28.Text = allPerfs[(currentHeatNum * 32) + 27].schoolName;
-                txtPerf28.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 27].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 28) != null)
-            {
-                txtName29.Text = allPerfs[(currentHeatNum * 32) + 28].athleteName;
-                cboSchool29.Text = allPerfs[(currentHeatNum * 32) + 28].schoolName;
-                txtPerf29.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 28].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 29) != null)
-            {
-                txtName30.Text = allPerfs[(currentHeatNum * 32) + 29].athleteName;
-                cboSchool30.Text = allPerfs[(currentHeatNum * 32) + 29].schoolName;
-                txtPerf30.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 29].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 30) != null)
-            {
-                txtName31.Text = allPerfs[(currentHeatNum * 32) + 30].athleteName;
-                cboSchool31.Text = allPerfs[(currentHeatNum * 32) + 30].schoolName;
-                txtPerf31.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 30].performance);
-            }
-            if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 31) != null)
-            {
-                txtName32.Text = allPerfs[(currentHeatNum * 32) + 31].athleteName;
-                cboSchool32.Text = allPerfs[(currentHeatNum * 32) + 31].schoolName;
-                txtPerf32.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 31].performance);
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 0) != null)
+                {
+                    txtName1.Text = allPerfs[(currentHeatNum * 32) + 0].athleteName;
+                    cboSchool1.Text = allPerfs[(currentHeatNum * 32) + 0].schoolName;
+                    txtPerf1.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 0].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 1) != null)
+                {
+                    txtName2.Text = allPerfs[(currentHeatNum * 32) + 1].athleteName;
+                    cboSchool2.Text = allPerfs[(currentHeatNum * 32) + 1].schoolName;
+                    txtPerf2.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 1].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 2) != null)
+                {
+                    txtName3.Text = allPerfs[(currentHeatNum * 32) + 2].athleteName;
+                    cboSchool3.Text = allPerfs[(currentHeatNum * 32) + 2].schoolName;
+                    txtPerf3.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 2].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 3) != null)
+                {
+                    txtName4.Text = allPerfs[(currentHeatNum * 32) + 3].athleteName;
+                    cboSchool4.Text = allPerfs[(currentHeatNum * 32) + 3].schoolName;
+                    txtPerf4.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 3].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 4) != null)
+                {
+                    txtName5.Text = allPerfs[(currentHeatNum * 32) + 4].athleteName;
+                    cboSchool5.Text = allPerfs[(currentHeatNum * 32) + 4].schoolName;
+                    txtPerf5.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 4].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 5) != null)
+                {
+                    txtName6.Text = allPerfs[(currentHeatNum * 32) + 5].athleteName;
+                    cboSchool6.Text = allPerfs[(currentHeatNum * 32) + 5].schoolName;
+                    txtPerf6.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 5].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 6) != null)
+                {
+                    txtName7.Text = allPerfs[(currentHeatNum * 32) + 6].athleteName;
+                    cboSchool7.Text = allPerfs[(currentHeatNum * 32) + 6].schoolName;
+                    txtPerf7.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 6].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 7) != null)
+                {
+                    txtName8.Text = allPerfs[(currentHeatNum * 32) + 7].athleteName;
+                    cboSchool8.Text = allPerfs[(currentHeatNum * 32) + 7].schoolName;
+                    txtPerf8.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 7].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 8) != null)
+                {
+                    txtName9.Text = allPerfs[(currentHeatNum * 32) + 8].athleteName;
+                    cboSchool9.Text = allPerfs[(currentHeatNum * 32) + 8].schoolName;
+                    txtPerf9.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 8].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 9) != null)
+                {
+                    txtName10.Text = allPerfs[(currentHeatNum * 32) + 9].athleteName;
+                    cboSchool10.Text = allPerfs[(currentHeatNum * 32) + 9].schoolName;
+                    txtPerf10.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 9].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 10) != null)
+                {
+                    txtName11.Text = allPerfs[(currentHeatNum * 32) + 10].athleteName;
+                    cboSchool11.Text = allPerfs[(currentHeatNum * 32) + 10].schoolName;
+                    txtPerf11.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 10].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 11) != null)
+                {
+                    txtName12.Text = allPerfs[(currentHeatNum * 32) + 11].athleteName;
+                    cboSchool12.Text = allPerfs[(currentHeatNum * 32) + 11].schoolName;
+                    txtPerf12.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 11].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 12) != null)
+                {
+                    txtName13.Text = allPerfs[(currentHeatNum * 32) + 12].athleteName;
+                    cboSchool13.Text = allPerfs[(currentHeatNum * 32) + 12].schoolName;
+                    txtPerf13.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 12].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 13) != null)
+                {
+                    txtName14.Text = allPerfs[(currentHeatNum * 32) + 13].athleteName;
+                    cboSchool14.Text = allPerfs[(currentHeatNum * 32) + 13].schoolName;
+                    txtPerf14.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 13].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 14) != null)
+                {
+                    txtName15.Text = allPerfs[(currentHeatNum * 32) + 14].athleteName;
+                    cboSchool15.Text = allPerfs[(currentHeatNum * 32) + 14].schoolName;
+                    txtPerf15.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 14].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 15) != null)
+                {
+                    txtName16.Text = allPerfs[(currentHeatNum * 32) + 15].athleteName;
+                    cboSchool16.Text = allPerfs[(currentHeatNum * 32) + 15].schoolName;
+                    txtPerf16.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 15].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 16) != null)
+                {
+                    txtName17.Text = allPerfs[(currentHeatNum * 32) + 16].athleteName;
+                    cboSchool17.Text = allPerfs[(currentHeatNum * 32) + 16].schoolName;
+                    txtPerf17.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 16].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 17) != null)
+                {
+                    txtName18.Text = allPerfs[(currentHeatNum * 32) + 17].athleteName;
+                    cboSchool18.Text = allPerfs[(currentHeatNum * 32) + 17].schoolName;
+                    txtPerf18.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 17].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 18) != null)
+                {
+                    txtName19.Text = allPerfs[(currentHeatNum * 32) + 18].athleteName;
+                    cboSchool19.Text = allPerfs[(currentHeatNum * 32) + 18].schoolName;
+                    txtPerf19.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 18].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 19) != null)
+                {
+                    txtName20.Text = allPerfs[(currentHeatNum * 32) + 19].athleteName;
+                    cboSchool20.Text = allPerfs[(currentHeatNum * 32) + 19].schoolName;
+                    txtPerf20.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 19].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 20) != null)
+                {
+                    txtName21.Text = allPerfs[(currentHeatNum * 32) + 20].athleteName;
+                    cboSchool21.Text = allPerfs[(currentHeatNum * 32) + 20].schoolName;
+                    txtPerf21.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 20].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 21) != null)
+                {
+                    txtName22.Text = allPerfs[(currentHeatNum * 32) + 21].athleteName;
+                    cboSchool22.Text = allPerfs[(currentHeatNum * 32) + 21].schoolName;
+                    txtPerf22.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 21].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 22) != null)
+                {
+                    txtName23.Text = allPerfs[(currentHeatNum * 32) + 22].athleteName;
+                    cboSchool23.Text = allPerfs[(currentHeatNum * 32) + 22].schoolName;
+                    txtPerf23.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 22].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 23) != null)
+                {
+                    txtName24.Text = allPerfs[(currentHeatNum * 32) + 23].athleteName;
+                    cboSchool24.Text = allPerfs[(currentHeatNum * 32) + 23].schoolName;
+                    txtPerf24.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 23].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 24) != null)
+                {
+                    txtName25.Text = allPerfs[(currentHeatNum * 32) + 24].athleteName;
+                    cboSchool25.Text = allPerfs[(currentHeatNum * 32) + 24].schoolName;
+                    txtPerf25.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 24].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 25) != null)
+                {
+                    txtName26.Text = allPerfs[(currentHeatNum * 32) + 25].athleteName;
+                    cboSchool26.Text = allPerfs[(currentHeatNum * 32) + 25].schoolName;
+                    txtPerf26.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 25].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 26) != null)
+                {
+                    txtName27.Text = allPerfs[(currentHeatNum * 32) + 26].athleteName;
+                    cboSchool27.Text = allPerfs[(currentHeatNum * 32) + 26].schoolName;
+                    txtPerf27.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 26].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 27) != null)
+                {
+                    txtName28.Text = allPerfs[(currentHeatNum * 32) + 27].athleteName;
+                    cboSchool28.Text = allPerfs[(currentHeatNum * 32) + 27].schoolName;
+                    txtPerf28.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 27].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 28) != null)
+                {
+                    txtName29.Text = allPerfs[(currentHeatNum * 32) + 28].athleteName;
+                    cboSchool29.Text = allPerfs[(currentHeatNum * 32) + 28].schoolName;
+                    txtPerf29.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 28].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 29) != null)
+                {
+                    txtName30.Text = allPerfs[(currentHeatNum * 32) + 29].athleteName;
+                    cboSchool30.Text = allPerfs[(currentHeatNum * 32) + 29].schoolName;
+                    txtPerf30.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 29].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 30) != null)
+                {
+                    txtName31.Text = allPerfs[(currentHeatNum * 32) + 30].athleteName;
+                    cboSchool31.Text = allPerfs[(currentHeatNum * 32) + 30].schoolName;
+                    txtPerf31.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 30].performance);
+                }
+                if (allPerfs.ElementAtOrDefault((currentHeatNum * 32) + 31) != null)
+                {
+                    txtName32.Text = allPerfs[(currentHeatNum * 32) + 31].athleteName;
+                    cboSchool32.Text = allPerfs[(currentHeatNum * 32) + 31].schoolName;
+                    txtPerf32.Text = em.ConvertToLengthData(allPerfs[(currentHeatNum * 32) + 31].performance);
+                }
             }
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }
@@ -952,9 +954,14 @@ namespace DualMeetManager.Presentation
             {
                 MessageBox.Show("Data for " + eventName + " entered", "Success");
                 mh.AddEvent(eventName, allPerfs);
+                string gender = "Boy";
+                if (eventName.StartsWith("Girl"))
+                {
+                    gender = "Girl";
+                }
+                mh.AddFieldEventToScores(gender, eventName, allPerfs);
                 mh.Show();
                 this.Close();
-
             }
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
         }

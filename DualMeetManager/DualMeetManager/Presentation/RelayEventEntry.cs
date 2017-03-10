@@ -571,15 +571,18 @@ namespace DualMeetManager.Presentation
             List<Performance> scoringPerfs = new List<Performance>();
             List<Performance> nonScoringPerfs = new List<Performance>();
 
-            foreach(Performance p in allPerfs)
+            if (allPerfs != null)
             {
-                if(p.athleteName == "A Relay")
+                foreach (Performance p in allPerfs)
                 {
-                    scoringPerfs.Add(p);
-                }
-                else
-                {
-                    nonScoringPerfs.Add(p);
+                    if (p.athleteName == "A Relay")
+                    {
+                        scoringPerfs.Add(p);
+                    }
+                    else
+                    {
+                        nonScoringPerfs.Add(p);
+                    }
                 }
             }
 
@@ -777,6 +780,12 @@ namespace DualMeetManager.Presentation
                 GatherPerfs();
                 MessageBox.Show("Data for " + eventName + " entered", "Success");
                 mh.AddEvent(eventName, allPerfs);
+                string gender = "Boy";
+                if (eventName.StartsWith("Girl"))
+                {
+                    gender = "Girl";
+                }
+                mh.AddRelayEventToScores(gender, eventName, allPerfs);
                 mh.Show();
                 this.Close();
             }

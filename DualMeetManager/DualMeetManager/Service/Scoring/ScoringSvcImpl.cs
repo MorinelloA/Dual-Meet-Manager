@@ -592,7 +592,7 @@ namespace DualMeetManager.Service.Scoring
             foreach (Performance i in perf) //Iterate through entire list of performances
             {
                 //A name stands for A relays. Only A relays count towards points. B and above are scrimmage relays 
-                if ((i.schoolName == team1Abbr && i.athleteName == "A")|| (i.schoolName == team2Abbr && i.athleteName == "A")) //check if the performance is for Team 1 or 2
+                if ((i.schoolName == team1Abbr && i.athleteName == "A Relay")|| (i.schoolName == team2Abbr && i.athleteName == "A Relay")) //check if the performance is for Team 1 or 2
                 {
                     teams1and2.Add(i); //Add performance to working List
                 }
@@ -607,6 +607,8 @@ namespace DualMeetManager.Service.Scoring
             eventToReturn.team2 = team2Abbr;
 
             EventPoints[] points = new EventPoints[2];
+            points[0] = new EventPoints();
+            points[1] = new EventPoints();
 
             //Use this to convert into strings for EventPoints objects 
             DataEntrySvcImpl DESI = new DataEntrySvcImpl();
@@ -649,6 +651,7 @@ namespace DualMeetManager.Service.Scoring
 
             //Add Points data to returning object
             eventToReturn.points = points;
+                
 
             //Calculate Totals
             eventToReturn.team1Total = points[0].team1Pts + points[1].team1Pts;
@@ -705,11 +708,14 @@ namespace DualMeetManager.Service.Scoring
 
             for (int i = 0; i < validIndEvents.Length; i++)
             {
-                scores.indEvents.TryGetValue(gender + "'s " + validIndEvents[i], out tempIndEvent);
-                if (tempIndEvent != null)
+                if (scores != null && scores.indEvents != null)
                 {
-                    totalPointsTeam1 += tempIndEvent.team1Total;
-                    totalPointsTeam2 += tempIndEvent.team2Total;
+                    scores.indEvents.TryGetValue(gender + "'s " + validIndEvents[i], out tempIndEvent);
+                    if (tempIndEvent != null)
+                    {
+                        totalPointsTeam1 += tempIndEvent.team1Total;
+                        totalPointsTeam2 += tempIndEvent.team2Total;
+                    }
                 }
             }
 
@@ -718,11 +724,14 @@ namespace DualMeetManager.Service.Scoring
 
             for (int i = 0; i < validRelayEvents.Length; i++)
             {
-                scores.indEvents.TryGetValue(gender + "'s " + validRelayEvents[i], out tempIndEvent);
-                if (tempRelayEvent != null)
+                if (scores != null && scores.relayEvents != null)
                 {
-                    totalPointsTeam1 += tempRelayEvent.team1Total;
-                    totalPointsTeam2 += tempRelayEvent.team2Total;
+                    scores.relayEvents.TryGetValue(gender + "'s " + validRelayEvents[i], out tempRelayEvent);
+                    if (tempRelayEvent != null)
+                    {
+                        totalPointsTeam1 += tempRelayEvent.team1Total;
+                        totalPointsTeam2 += tempRelayEvent.team2Total;
+                    }
                 }
             }
 

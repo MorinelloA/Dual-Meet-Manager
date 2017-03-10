@@ -40,6 +40,7 @@ namespace DualMeetManager.Presentation
         public void CalculateScoreTotals()
         {
             lstBoysScores.Items.Clear();
+            lstGirlsScores.Items.Clear();
 
             ScoringMgr sm = new ScoringMgr();
 
@@ -57,16 +58,99 @@ namespace DualMeetManager.Presentation
             {
                 //girlsActiveScores[s] = sm.CalculateTotal(girlsActiveScores[s], "Girl");
                 tempDictionaryg.Add(s, sm.CalculateTotal(girlsActiveScores[s], "Girl"));
+                lstGirlsScores.Items.Add(girlsActiveScores[s].team1.Item2 + ": " + girlsActiveScores[s].team1Points + " - " + girlsActiveScores[s].team2.Item2 + ": " + girlsActiveScores[s].team2Points);
             }
             girlsActiveScores = tempDictionaryg;
+        }
+
+        public void AddRelayEventToScores(string gender, string eventName, List<Performance> perf)
+        {
+            ScoringMgr sm = new ScoringMgr();
+
+            if (gender.StartsWith("Boy", StringComparison.OrdinalIgnoreCase))
+            {
+                foreach (string t1 in activeMeet.schoolNames.boySchoolNames.Keys)
+                {
+                    foreach (string t2 in activeMeet.schoolNames.boySchoolNames.Keys)
+                    {
+                        if (boysActiveScores.ContainsKey(t1 + "vs." + t2))
+                        {
+                            RelayEvent newEventToAdd = sm.CalculateRelayEvent(t1, t2, perf);
+                            boysActiveScores[t1 + "vs." + t2] = sm.AddEvent(boysActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
+                        }
+                    }
+                }
+            }
+            else if (gender.StartsWith("Girl", StringComparison.OrdinalIgnoreCase))
+            {
+                foreach (string t1 in activeMeet.schoolNames.girlSchoolNames.Keys)
+                {
+                    foreach (string t2 in activeMeet.schoolNames.girlSchoolNames.Keys)
+                    {
+                        if (girlsActiveScores.ContainsKey(t1 + "vs." + t2))
+                        {
+                            RelayEvent newEventToAdd = sm.CalculateRelayEvent(t1, t2, perf);
+                            girlsActiveScores[t1 + "vs." + t2] = sm.AddEvent(girlsActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("ERROR in AddRelayEventToScores - gender not Boy or Girl");
+                Console.WriteLine("gender = " + gender);
+                MessageBox.Show("Error Adding running event to scores");
+            }
+
+            CalculateScoreTotals();
+        }
+
+        public void AddFieldEventToScores(string gender, string eventName, List<Performance> perf)
+        {
+            ScoringMgr sm = new ScoringMgr();
+
+            if (gender.StartsWith("Boy", StringComparison.OrdinalIgnoreCase))
+            {
+                foreach (string t1 in activeMeet.schoolNames.boySchoolNames.Keys)
+                {
+                    foreach (string t2 in activeMeet.schoolNames.boySchoolNames.Keys)
+                    {
+                        if (boysActiveScores.ContainsKey(t1 + "vs." + t2))
+                        {
+                            IndEvent newEventToAdd = sm.CalculateFieldEvent(t1, t2, perf);
+                            boysActiveScores[t1 + "vs." + t2] = sm.AddEvent(boysActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
+                        }
+                    }
+                }
+            }
+            else if (gender.StartsWith("Girl", StringComparison.OrdinalIgnoreCase))
+            {
+                foreach (string t1 in activeMeet.schoolNames.girlSchoolNames.Keys)
+                {
+                    foreach (string t2 in activeMeet.schoolNames.girlSchoolNames.Keys)
+                    {
+                        if (girlsActiveScores.ContainsKey(t1 + "vs." + t2))
+                        {
+                            IndEvent newEventToAdd = sm.CalculateFieldEvent(t1, t2, perf);
+                            girlsActiveScores[t1 + "vs." + t2] = sm.AddEvent(girlsActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
+                        }
+                    }
+                }
+            }
+            else
+            {
+                Console.WriteLine("ERROR in AddFieldEventToScores - gender not Boy or Girl");
+                Console.WriteLine("gender = " + gender);
+                MessageBox.Show("Error Adding running event to scores");
+            }
+
+            CalculateScoreTotals();
         }
 
         public void AddRunningEventToScores(string gender, string eventName, List<Performance> perf)
         {
             ScoringMgr sm = new ScoringMgr();
-            //Not completed
-            //public IndEvent CalculateFieldEvent(string team1Abbr, string team2Abbr, List<Performance> perf)
-            //public OverallScore AddEvent(OverallScore scores, string eventName, IndEvent eventToAdd)
+
             if (gender.StartsWith("Boy", StringComparison.OrdinalIgnoreCase))
             {
                 foreach (string t1 in activeMeet.schoolNames.boySchoolNames.Keys)
@@ -83,7 +167,17 @@ namespace DualMeetManager.Presentation
             }
             else if (gender.StartsWith("Girl", StringComparison.OrdinalIgnoreCase))
             {
-
+                foreach (string t1 in activeMeet.schoolNames.girlSchoolNames.Keys)
+                {
+                    foreach (string t2 in activeMeet.schoolNames.girlSchoolNames.Keys)
+                    {
+                        if (girlsActiveScores.ContainsKey(t1 + "vs." + t2))
+                        {
+                            IndEvent newEventToAdd = sm.CalculateRunningEvent(t1, t2, perf);
+                            girlsActiveScores[t1 + "vs." + t2] = sm.AddEvent(girlsActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
+                        }
+                    }
+                }
             }
             else
             {
@@ -1199,6 +1293,215 @@ namespace DualMeetManager.Presentation
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
+        }
+
+        private void mnuPrintoutsBoysScores1vs2_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[1]]);
+        }
+
+        private void mnuPrintoutsBoysScores1vs3_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[2]]);
+        }
+
+        private void mnuPrintoutsBoysScores2vs3_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[2]]);
+        }
+
+        private void mnuPrintoutsBoysScores1vs4_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[3]]);
+        }
+
+        private void mnuPrintoutsBoysScores2vs4_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[3]]);
+        }
+
+        private void mnuPrintoutsBoysScores3vs4_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[2] + "vs." + boysAbbrs[3]]);
+        }
+
+        private void mnuPrintoutsBoysScores1vs5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[4]]);
+        }
+
+        private void mnuPrintoutsBoysScores2vs5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[4]]);
+        }
+
+        private void mnuPrintoutsBoysScores3vs5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[2] + "vs." + boysAbbrs[4]]);
+        }
+
+        private void mnuPrintoutsBoysScores4vs5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[3] + "vs." + boysAbbrs[4]]);
+        }
+
+        private void mnuPrintoutsBoysScores1vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsBoysScores2vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsBoysScores3vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[2] + "vs." + boysAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsBoysScores4vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[3] + "vs." + boysAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsBoysScores5vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[4] + "vs." + boysAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsBoysScoresAll_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not yet implemented, pick individually");
+        }
+
+        private void mnuPrintoutsGirlsScores1vs2_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[1]]);
+        }
+
+        private void mnuPrintoutsGirlsScores1vs3_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[2]]);
+        }
+
+        private void mnuPrintoutsGirlsScores2vs3_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[2]]);
+        }
+
+        private void mnuPrintoutsGirlsScores1vs4_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[3]]);
+        }
+
+        private void mnuPrintoutsGirlsScores2vs4_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[3]]);
+        }
+
+        private void mnuPrintoutsGirlsScores3vs4_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[2] + "vs." + girlsAbbrs[3]]);
+        }
+
+        private void mnuPrintoutsGirlsScores1vs5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[4]]);
+        }
+
+        private void mnuPrintoutsGirlsScores2vs5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[4]]);
+        }
+
+        private void mnuPrintoutsGirlsScores3vs5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[2] + "vs." + girlsAbbrs[4]]);
+        }
+
+        private void mnuPrintoutsGirlsScores4vs5_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[3] + "vs." + girlsAbbrs[4]]);
+        }
+
+        private void mnuPrintoutsGirlsScores1vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsGirlsScores2vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsGirlsScores3vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[2] + "vs." + girlsAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsGirlsScores4vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[3] + "vs." + girlsAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsGirlsScores5vs6_Click(object sender, EventArgs e)
+        {
+            PrintoutMgr pm = new PrintoutMgr();
+            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[4] + "vs." + girlsAbbrs[5]]);
+        }
+
+        private void mnuPrintoutsGirlsScoresAll_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Not yet implemented, pick individually");
+        }
+
+        private void mnuFileNew_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to start a new Meet? Your progress will be lost", "New Meet?", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Form1 createMeet = new Form1();
+                this.Hide();
+                createMeet.ShowDialog();
+                this.Close();
+            }
+        }
+
+        private void mnuFileExit_Click(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Are you sure you want to Exit?", "Exit?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+                Application.Exit();
         }
     }
 }
