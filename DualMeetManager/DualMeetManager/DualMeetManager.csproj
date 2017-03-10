@@ -80,6 +80,12 @@
     <Compile Include="Presentation\FieldEventEntry.Designer.cs">
       <DependentUpon>FieldEventEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation\FieldEventTieBreaker.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FieldEventTieBreaker.Designer.cs">
+      <DependentUpon>FieldEventTieBreaker.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation\Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -122,6 +128,9 @@
     <Compile Include="Service\Scoring\ScoringSvcImpl.cs" />
     <EmbeddedResource Include="Presentation\FieldEventEntry.resx">
       <DependentUpon>FieldEventEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FieldEventTieBreaker.resx">
+      <DependentUpon>FieldEventTieBreaker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

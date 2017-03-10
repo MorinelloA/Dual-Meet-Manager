@@ -118,6 +118,10 @@ namespace DualMeetManager.Presentation
                         if (boysActiveScores.ContainsKey(t1 + "vs." + t2))
                         {
                             IndEvent newEventToAdd = sm.CalculateFieldEvent(t1, t2, perf);
+
+                            if (newEventToAdd == null)
+                                MessageBox.Show("Field Event Tie Breaker Form should load here");
+
                             boysActiveScores[t1 + "vs." + t2] = sm.AddEvent(boysActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
                         }
                     }

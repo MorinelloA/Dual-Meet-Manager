@@ -572,6 +572,14 @@ namespace DualMeetManager.Service.Scoring
             //
             teams1and2 = teams1and2.OrderByDescending(o => o.performance).ToList();
 
+            //Do test here to determine if possible ties. Probably need to return null for this to work, although that could give some potential problems.
+            if (teams1and2.Count >= 2 && teams1and2[0].performance == teams1and2[1].performance)
+                return null;
+            else if (teams1and2.Count >= 3 && teams1and2[1].performance == teams1and2[2].performance)
+                return null;
+            else if (teams1and2.Count >= 4 && teams1and2[2].performance == teams1and2[3].performance)
+                return null;
+
             return CalculateIndEventInOrder(team1Abbr, team2Abbr, teams1and2);
         }
 
