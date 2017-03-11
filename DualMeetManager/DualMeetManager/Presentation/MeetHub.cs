@@ -51,7 +51,7 @@ namespace DualMeetManager.Presentation
             foreach (string s in boysActiveScores.Keys)
             {
                 tempDictionary.Add(s, sm.CalculateTotal(boysActiveScores[s], "Boy"));
-                lstBoysScores.Items.Add(boysActiveScores[s].team1.Item2 + ": " + boysActiveScores[s].team1Points + " - " + boysActiveScores[s].team2.Item2 + ": " + boysActiveScores[s].team2Points);
+                lstBoysScores.Items.Add(boysActiveScores[s].team1.Item2 + ": " + boysActiveScores[s].team1Points.ToString("0.###") + " - " + boysActiveScores[s].team2.Item2 + ": " + boysActiveScores[s].team2Points.ToString("0.###"));
             }
             boysActiveScores = tempDictionary;
 
@@ -60,7 +60,7 @@ namespace DualMeetManager.Presentation
             {
                 //girlsActiveScores[s] = sm.CalculateTotal(girlsActiveScores[s], "Girl");
                 tempDictionaryg.Add(s, sm.CalculateTotal(girlsActiveScores[s], "Girl"));
-                lstGirlsScores.Items.Add(girlsActiveScores[s].team1.Item2 + ": " + girlsActiveScores[s].team1Points + " - " + girlsActiveScores[s].team2.Item2 + ": " + girlsActiveScores[s].team2Points);
+                lstGirlsScores.Items.Add(girlsActiveScores[s].team1.Item2 + ": " + girlsActiveScores[s].team1Points.ToString("0.###") + " - " + girlsActiveScores[s].team2.Item2 + ": " + girlsActiveScores[s].team2Points.ToString("0.###"));
             }
             girlsActiveScores = tempDictionaryg;
         }
@@ -125,8 +125,8 @@ namespace DualMeetManager.Presentation
                             {
                                 FieldEventTieBreaker fetb = new FieldEventTieBreaker(this, t1, t2, perf);
                                 fetb.ShowDialog();
-                                MessageBox.Show(tieBreakerEvent.ToString());
                                 newEventToAdd = tieBreakerEvent;
+                                tieBreakerEvent = null;
                             }
 
                             boysActiveScores[t1 + "vs." + t2] = sm.AddEvent(boysActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
@@ -143,6 +143,15 @@ namespace DualMeetManager.Presentation
                         if (girlsActiveScores.ContainsKey(t1 + "vs." + t2))
                         {
                             IndEvent newEventToAdd = sm.CalculateFieldEvent(t1, t2, perf);
+
+                            if (newEventToAdd == null)
+                            {
+                                FieldEventTieBreaker fetb = new FieldEventTieBreaker(this, t1, t2, perf);
+                                fetb.ShowDialog();
+                                newEventToAdd = tieBreakerEvent;
+                                tieBreakerEvent = null;
+                            }
+
                             girlsActiveScores[t1 + "vs." + t2] = sm.AddEvent(girlsActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
                         }
                     }
