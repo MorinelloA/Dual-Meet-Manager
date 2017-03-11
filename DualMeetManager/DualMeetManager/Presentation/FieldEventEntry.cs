@@ -1088,5 +1088,10 @@ namespace DualMeetManager.Presentation
         {
 
         }
+
+        private void cboSchool3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
