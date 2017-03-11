@@ -341,22 +341,464 @@ namespace DualMeetManager.Presentation
                 MessageBox.Show("3rd place cannot have a better performance than 2nd place", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
+                bool areTiesEqual = false;
                 //Cycle through here and check that all ties have the same performance
+                if (cboPlace1.Text == "1st" && newEvent.points[0].performance != lblPerformance1.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace1.Text == "2nd" && newEvent.points[1].performance != lblPerformance1.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace1.Text == "3rd" && newEvent.points[2].performance != lblPerformance1.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace2.Text == "1st" && newEvent.points[0].performance != lblPerformance2.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace2.Text == "2nd" && newEvent.points[1].performance != lblPerformance2.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace2.Text == "3rd" && newEvent.points[2].performance != lblPerformance2.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace3.Text == "1st" && newEvent.points[0].performance != lblPerformance3.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace3.Text == "2nd" && newEvent.points[1].performance != lblPerformance3.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace3.Text == "3rd" && newEvent.points[2].performance != lblPerformance3.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace4.Text == "1st" && newEvent.points[0].performance != lblPerformance4.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace4.Text == "2nd" && newEvent.points[1].performance != lblPerformance4.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace4.Text == "3rd" && newEvent.points[2].performance != lblPerformance4.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace5.Text == "1st" && newEvent.points[0].performance != lblPerformance5.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace5.Text == "2nd" && newEvent.points[1].performance != lblPerformance5.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace5.Text == "3rd" && newEvent.points[2].performance != lblPerformance5.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace6.Text == "1st" && newEvent.points[0].performance != lblPerformance6.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace6.Text == "2nd" && newEvent.points[1].performance != lblPerformance6.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace6.Text == "3rd" && newEvent.points[2].performance != lblPerformance6.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace7.Text == "1st" && newEvent.points[0].performance != lblPerformance7.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace7.Text == "2nd" && newEvent.points[1].performance != lblPerformance7.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace7.Text == "3rd" && newEvent.points[2].performance != lblPerformance7.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace8.Text == "1st" && newEvent.points[0].performance != lblPerformance8.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace8.Text == "2nd" && newEvent.points[1].performance != lblPerformance8.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace8.Text == "3rd" && newEvent.points[2].performance != lblPerformance8.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace9.Text == "1st" && newEvent.points[0].performance != lblPerformance9.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace9.Text == "2nd" && newEvent.points[1].performance != lblPerformance9.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace9.Text == "3rd" && newEvent.points[2].performance != lblPerformance9.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace10.Text == "1st" && newEvent.points[0].performance != lblPerformance10.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace10.Text == "2nd" && newEvent.points[1].performance != lblPerformance10.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace10.Text == "3rd" && newEvent.points[2].performance != lblPerformance10.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace11.Text == "1st" && newEvent.points[0].performance != lblPerformance11.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace11.Text == "2nd" && newEvent.points[1].performance != lblPerformance11.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace11.Text == "3rd" && newEvent.points[2].performance != lblPerformance11.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace12.Text == "1st" && newEvent.points[0].performance != lblPerformance12.Text)
+                    MessageBox.Show("2 or more 1st place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace12.Text == "2nd" && newEvent.points[1].performance != lblPerformance12.Text)
+                    MessageBox.Show("2 or more 2nd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else if (cboPlace12.Text == "3rd" && newEvent.points[2].performance != lblPerformance12.Text)
+                    MessageBox.Show("2 or more 3rd place performances don't match", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                    areTiesEqual = true;
 
-                if (num1sts > 1)
+                if (areTiesEqual)
                 {
-                    newEvent.points[0].athleteName = "TIE";
-                    newEvent.points[0].schoolName = "TIE";
-                }
-                if (num2nds > 1)
-                {
-                    newEvent.points[1].athleteName = "TIE";
-                    newEvent.points[1].schoolName = "TIE";
-                }
-                if (num3rds > 1)
-                {
-                    newEvent.points[2].athleteName = "TIE";
-                    newEvent.points[2].schoolName = "TIE";
+                    if (num1sts > 1)
+                    {
+                        newEvent.points[0].athleteName = "TIE";
+                        newEvent.points[0].schoolName = "TIE";
+                    }
+                    if (num2nds > 1)
+                    {
+                        newEvent.points[1].athleteName = "TIE";
+                        newEvent.points[1].schoolName = "TIE";
+                    }
+                    if (num3rds > 1)
+                    {
+                        newEvent.points[2].athleteName = "TIE";
+                        newEvent.points[2].schoolName = "TIE";
+                    }
+
+                    //Figure out how much each place is worth, due to ties
+                    decimal worthOf1st = 5m;
+                    decimal worthOf2nd = 3m;
+                    decimal worthOf3rd = 1m;
+
+                    if(num1sts == 2)
+                    {
+                        worthOf1st = 8m;
+                        worthOf2nd = 0m;
+                    }
+                    else if(num1sts >= 3)
+                    {
+                        worthOf1st = 9m;
+                        worthOf2nd = 0m;
+                        worthOf3rd = 0m;
+                    }
+
+                    if(num2nds > 1)
+                    {
+                        worthOf2nd = 4m;
+                        worthOf3rd = 0m;
+                    }
+
+                    //Cycle through and add points for each place
+                    if(cboPlace1.Text == "1st")
+                    {
+                        if (lblSchool1.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool1.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool1.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace1.Text == "2nd")
+                    {
+                        if (lblSchool1.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool1.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool1.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace1.Text == "3rd")
+                    {
+                        if (lblSchool1.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool1.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool1.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace2.Text == "1st")
+                    {
+                        if (lblSchool2.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool2.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool2.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace2.Text == "2nd")
+                    {
+                        if (lblSchool2.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool2.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool2.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace2.Text == "3rd")
+                    {
+                        if (lblSchool2.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool2.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool2.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace3.Text == "1st")
+                    {
+                        if (lblSchool3.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool3.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool3.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace3.Text == "2nd")
+                    {
+                        if (lblSchool3.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool3.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool3.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace3.Text == "3rd")
+                    {
+                        if (lblSchool3.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool3.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool3.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace4.Text == "1st")
+                    {
+                        if (lblSchool4.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool4.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool4.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace4.Text == "2nd")
+                    {
+                        if (lblSchool4.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool4.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool4.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace4.Text == "3rd")
+                    {
+                        if (lblSchool4.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool4.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool4.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace5.Text == "1st")
+                    {
+                        if (lblSchool5.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool5.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool5.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace5.Text == "2nd")
+                    {
+                        if (lblSchool5.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool5.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool5.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace5.Text == "3rd")
+                    {
+                        if (lblSchool5.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool5.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool5.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace6.Text == "1st")
+                    {
+                        if (lblSchool6.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool6.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool6.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace6.Text == "2nd")
+                    {
+                        if (lblSchool6.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool6.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool6.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace6.Text == "3rd")
+                    {
+                        if (lblSchool6.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool6.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool6.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace7.Text == "1st")
+                    {
+                        if (lblSchool7.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool7.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool7.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace7.Text == "2nd")
+                    {
+                        if (lblSchool7.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool7.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool7.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace7.Text == "3rd")
+                    {
+                        if (lblSchool7.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool7.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool7.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace8.Text == "1st")
+                    {
+                        if (lblSchool8.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool8.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool8.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace8.Text == "2nd")
+                    {
+                        if (lblSchool8.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool8.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool8.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace8.Text == "3rd")
+                    {
+                        if (lblSchool8.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool8.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool8.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace9.Text == "1st")
+                    {
+                        if (lblSchool9.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool9.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool9.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace9.Text == "2nd")
+                    {
+                        if (lblSchool9.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool9.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool9.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace9.Text == "3rd")
+                    {
+                        if (lblSchool9.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool9.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool9.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace10.Text == "1st")
+                    {
+                        if (lblSchool10.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool10.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool10.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace10.Text == "2nd")
+                    {
+                        if (lblSchool10.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool10.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool10.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace10.Text == "3rd")
+                    {
+                        if (lblSchool10.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool10.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool10.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace11.Text == "1st")
+                    {
+                        if (lblSchool11.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool11.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool11.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace11.Text == "2nd")
+                    {
+                        if (lblSchool11.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool11.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool11.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace11.Text == "3rd")
+                    {
+                        if (lblSchool11.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool11.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool11.text does not equal team 1 or 2");
+                    }
+
+                    if (cboPlace12.Text == "1st")
+                    {
+                        if (lblSchool12.Text == team1)
+                            newEvent.points[0].team1Pts += worthOf1st / num1sts;
+                        else if (lblSchool12.Text == team2)
+                            newEvent.points[0].team2Pts += worthOf1st / num1sts;
+                        else
+                            Console.WriteLine("ERROR: lblSchool12.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace12.Text == "2nd")
+                    {
+                        if (lblSchool12.Text == team1)
+                            newEvent.points[1].team1Pts += worthOf2nd / num2nds;
+                        else if (lblSchool12.Text == team2)
+                            newEvent.points[1].team2Pts += worthOf2nd / num2nds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool12.text does not equal team 1 or 2");
+                    }
+                    else if (cboPlace12.Text == "3rd")
+                    {
+                        if (lblSchool12.Text == team1)
+                            newEvent.points[2].team1Pts += worthOf3rd / num3rds;
+                        else if (lblSchool12.Text == team2)
+                            newEvent.points[2].team2Pts += worthOf3rd / num3rds;
+                        else
+                            Console.WriteLine("ERROR: lblSchool12.text does not equal team 1 or 2");
+                    }
+
+                    //Calculate Team totals
+                    newEvent.team1Total = newEvent.points[0].team1Pts + newEvent.points[1].team1Pts + newEvent.points[2].team1Pts;
+                    newEvent.team2Total = newEvent.points[0].team2Pts + newEvent.points[1].team2Pts + newEvent.points[2].team2Pts;
                 }
             }
         }
