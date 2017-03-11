@@ -49,6 +49,9 @@ namespace DualMeetManager.Service.DataEntry
         /// <remarks>Needs further error handling for null or invalid strings</remarks>
         public decimal ConvertFromTimedData(string perf)
         {
+            if (string.IsNullOrWhiteSpace(perf))
+                return 0m;
+
             try
             {
                 if (!perf.All(c => char.IsDigit(c) || c == ':' || c == '.'))
@@ -138,8 +141,11 @@ namespace DualMeetManager.Service.DataEntry
         /// <remarks>Needs further error handling for null or invalid strings</remarks>
         public decimal ConvertFromLengthData(string perf)
         {
-            //try
-            //{
+            if (string.IsNullOrWhiteSpace(perf))
+                return 0m;
+
+            try
+            {
                 if (!perf.All(c => char.IsDigit(c) || c == '-' || c == '.'))
                 {
                     throw new InvalidPerformanceException("Invalid Symbol used. Non-Digit or - found");
@@ -171,19 +177,19 @@ namespace DualMeetManager.Service.DataEntry
                 }
                 else
                     return (Math.Round(Convert.ToDecimal(perf.Substring(divider, perf.Length)), 3));
-            //}
-            /*catch (InvalidPerformanceException ipe)
+            }
+            catch (InvalidPerformanceException ipe)
             {
                 Console.WriteLine(ipe.ToString());
                 Console.Write(ipe.StackTrace);
                 return 0m;
-            }*/
-            /*catch (IndexOutOfRangeException ioore)
+            }
+            catch (IndexOutOfRangeException ioore)
             {
                 Console.WriteLine(ioore.ToString());
                 Console.Write(ioore.StackTrace);
                 return 0m;
-            }*/
+            }
         }
 
         /// <summary>

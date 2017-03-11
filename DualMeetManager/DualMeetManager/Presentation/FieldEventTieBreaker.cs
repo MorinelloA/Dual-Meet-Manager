@@ -25,9 +25,9 @@ namespace DualMeetManager.Presentation
             InitializeComponent();
         }
 
-        public FieldEventTieBreaker(string t1, string t2, List<Performance> perf) : this()
+        public FieldEventTieBreaker(MeetHub mh, string t1, string t2, List<Performance> perf) : this()
         {
-            //this.mh = mh;
+            this.mh = mh;
             team1 = t1;
             team2 = t2;
             //this.perf = perf;
@@ -799,6 +799,10 @@ namespace DualMeetManager.Presentation
                     //Calculate Team totals
                     newEvent.team1Total = newEvent.points[0].team1Pts + newEvent.points[1].team1Pts + newEvent.points[2].team1Pts;
                     newEvent.team2Total = newEvent.points[0].team2Pts + newEvent.points[1].team2Pts + newEvent.points[2].team2Pts;
+
+                    mh.tieBreakerEvent = newEvent;
+                    //MesssageBox.Show("Success");
+                    this.Close();
                 }
             }
         }

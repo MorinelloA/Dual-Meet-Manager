@@ -15,6 +15,8 @@ namespace DualMeetManager.Presentation
 {
     public partial class MeetHub : Form
     {
+        public IndEvent tieBreakerEvent = new IndEvent();
+
         //Overall Scores for every dual meet taking place
         Dictionary<string, OverallScore> boysActiveScores = new Dictionary<string, OverallScore>();
         Dictionary<string, OverallScore> girlsActiveScores = new Dictionary<string, OverallScore>();
@@ -121,10 +123,12 @@ namespace DualMeetManager.Presentation
 
                             if (newEventToAdd == null)
                             {
-                                FieldEventTieBreaker fetb = new FieldEventTieBreaker(t1, t2, perf);
+                                FieldEventTieBreaker fetb = new FieldEventTieBreaker(this, t1, t2, perf);
                                 fetb.ShowDialog();
+                                MessageBox.Show(tieBreakerEvent.ToString());
+                                newEventToAdd = tieBreakerEvent;
                             }
-                            MessageBox.Show("tester 2");
+
                             boysActiveScores[t1 + "vs." + t2] = sm.AddEvent(boysActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
                         }
                     }
