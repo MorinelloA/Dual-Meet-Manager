@@ -120,8 +120,11 @@ namespace DualMeetManager.Presentation
                             IndEvent newEventToAdd = sm.CalculateFieldEvent(t1, t2, perf);
 
                             if (newEventToAdd == null)
-                                MessageBox.Show("Field Event Tie Breaker Form should load here");
-
+                            {
+                                FieldEventTieBreaker fetb = new FieldEventTieBreaker(t1, t2, perf);
+                                fetb.ShowDialog();
+                            }
+                            MessageBox.Show("tester 2");
                             boysActiveScores[t1 + "vs." + t2] = sm.AddEvent(boysActiveScores[t1 + "vs." + t2], eventName, newEventToAdd);
                         }
                     }

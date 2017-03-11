@@ -47,3 +47,4 @@ H:\Downloads\Dual-Meet-Manager-master\Dual-Meet-Manager-master\DualMeetManager\D
 H:\Downloads\Dual-Meet-Manager-master\Dual-Meet-Manager-master\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.Presentation.RunningEventEntry.resources
 H:\Downloads\Dual-Meet-Manager-master\Dual-Meet-Manager-master\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.Properties.Resources.resources
 H:\Downloads\Dual-Meet-Manager-master\Dual-Meet-Manager-master\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.csproj.GenerateResource.Cache
+C:\Users\laptop\Documents\GitHub\Dual-Meet-Manager\DualMeetManager\DualMeetManager\obj\Debug\DualMeetManager.Presentation.FieldEventTieBreaker.resources
