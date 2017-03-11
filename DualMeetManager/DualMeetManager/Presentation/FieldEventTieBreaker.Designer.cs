@@ -631,7 +631,7 @@
             this.cboPlace16.Location = new System.Drawing.Point(421, 433);
             this.cboPlace16.Name = "cboPlace16";
             this.cboPlace16.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace16.TabIndex = 67;
+            this.cboPlace16.TabIndex = 16;
             this.cboPlace16.Visible = false;
             // 
             // cboPlace15
@@ -646,7 +646,7 @@
             this.cboPlace15.Location = new System.Drawing.Point(421, 407);
             this.cboPlace15.Name = "cboPlace15";
             this.cboPlace15.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace15.TabIndex = 63;
+            this.cboPlace15.TabIndex = 15;
             this.cboPlace15.Visible = false;
             // 
             // cboPlace14
@@ -661,7 +661,7 @@
             this.cboPlace14.Location = new System.Drawing.Point(421, 381);
             this.cboPlace14.Name = "cboPlace14";
             this.cboPlace14.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace14.TabIndex = 59;
+            this.cboPlace14.TabIndex = 14;
             this.cboPlace14.Visible = false;
             // 
             // cboPlace13
@@ -676,7 +676,7 @@
             this.cboPlace13.Location = new System.Drawing.Point(421, 355);
             this.cboPlace13.Name = "cboPlace13";
             this.cboPlace13.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace13.TabIndex = 55;
+            this.cboPlace13.TabIndex = 13;
             this.cboPlace13.Visible = false;
             // 
             // cboPlace12
@@ -691,8 +691,9 @@
             this.cboPlace12.Location = new System.Drawing.Point(421, 329);
             this.cboPlace12.Name = "cboPlace12";
             this.cboPlace12.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace12.TabIndex = 51;
+            this.cboPlace12.TabIndex = 12;
             this.cboPlace12.Visible = false;
+            this.cboPlace12.SelectedIndexChanged += new System.EventHandler(this.cboPlace12_SelectedIndexChanged);
             // 
             // cboPlace11
             // 
@@ -706,7 +707,7 @@
             this.cboPlace11.Location = new System.Drawing.Point(421, 303);
             this.cboPlace11.Name = "cboPlace11";
             this.cboPlace11.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace11.TabIndex = 47;
+            this.cboPlace11.TabIndex = 11;
             this.cboPlace11.Visible = false;
             // 
             // cboPlace10
@@ -721,7 +722,7 @@
             this.cboPlace10.Location = new System.Drawing.Point(421, 277);
             this.cboPlace10.Name = "cboPlace10";
             this.cboPlace10.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace10.TabIndex = 43;
+            this.cboPlace10.TabIndex = 10;
             this.cboPlace10.Visible = false;
             // 
             // cboPlace9
@@ -736,7 +737,7 @@
             this.cboPlace9.Location = new System.Drawing.Point(421, 251);
             this.cboPlace9.Name = "cboPlace9";
             this.cboPlace9.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace9.TabIndex = 39;
+            this.cboPlace9.TabIndex = 9;
             this.cboPlace9.Visible = false;
             // 
             // cboPlace8
@@ -751,7 +752,7 @@
             this.cboPlace8.Location = new System.Drawing.Point(421, 225);
             this.cboPlace8.Name = "cboPlace8";
             this.cboPlace8.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace8.TabIndex = 35;
+            this.cboPlace8.TabIndex = 8;
             this.cboPlace8.Visible = false;
             // 
             // cboPlace7
@@ -766,7 +767,7 @@
             this.cboPlace7.Location = new System.Drawing.Point(421, 199);
             this.cboPlace7.Name = "cboPlace7";
             this.cboPlace7.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace7.TabIndex = 31;
+            this.cboPlace7.TabIndex = 7;
             this.cboPlace7.Visible = false;
             // 
             // cboPlace6
@@ -781,7 +782,7 @@
             this.cboPlace6.Location = new System.Drawing.Point(421, 173);
             this.cboPlace6.Name = "cboPlace6";
             this.cboPlace6.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace6.TabIndex = 27;
+            this.cboPlace6.TabIndex = 6;
             this.cboPlace6.Visible = false;
             // 
             // cboPlace5
@@ -796,7 +797,7 @@
             this.cboPlace5.Location = new System.Drawing.Point(421, 147);
             this.cboPlace5.Name = "cboPlace5";
             this.cboPlace5.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace5.TabIndex = 23;
+            this.cboPlace5.TabIndex = 5;
             this.cboPlace5.Visible = false;
             // 
             // cboPlace4
@@ -811,7 +812,7 @@
             this.cboPlace4.Location = new System.Drawing.Point(421, 121);
             this.cboPlace4.Name = "cboPlace4";
             this.cboPlace4.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace4.TabIndex = 19;
+            this.cboPlace4.TabIndex = 4;
             this.cboPlace4.Visible = false;
             // 
             // cboPlace3
@@ -826,7 +827,7 @@
             this.cboPlace3.Location = new System.Drawing.Point(421, 95);
             this.cboPlace3.Name = "cboPlace3";
             this.cboPlace3.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace3.TabIndex = 15;
+            this.cboPlace3.TabIndex = 3;
             this.cboPlace3.Visible = false;
             // 
             // cboPlace2
@@ -841,7 +842,7 @@
             this.cboPlace2.Location = new System.Drawing.Point(421, 69);
             this.cboPlace2.Name = "cboPlace2";
             this.cboPlace2.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace2.TabIndex = 11;
+            this.cboPlace2.TabIndex = 2;
             this.cboPlace2.Visible = false;
             // 
             // cboPlace1
@@ -857,7 +858,7 @@
             this.cboPlace1.Location = new System.Drawing.Point(421, 43);
             this.cboPlace1.Name = "cboPlace1";
             this.cboPlace1.Size = new System.Drawing.Size(95, 21);
-            this.cboPlace1.TabIndex = 7;
+            this.cboPlace1.TabIndex = 1;
             this.cboPlace1.Visible = false;
             // 
             // label4
@@ -892,7 +893,7 @@
             this.cmdEnter.Location = new System.Drawing.Point(12, 12);
             this.cmdEnter.Name = "cmdEnter";
             this.cmdEnter.Size = new System.Drawing.Size(200, 45);
-            this.cmdEnter.TabIndex = 9;
+            this.cmdEnter.TabIndex = 17;
             this.cmdEnter.Text = "Enter Data";
             this.cmdEnter.UseVisualStyleBackColor = true;
             this.cmdEnter.Click += new System.EventHandler(this.cmdEnter_Click);

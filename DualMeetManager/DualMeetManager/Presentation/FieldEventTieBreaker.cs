@@ -807,6 +807,11 @@ namespace DualMeetManager.Presentation
             }
         }
 
+        private void cboPlace12_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void LoadPerformances()
         {
             EventMgr em = new EventMgr();
