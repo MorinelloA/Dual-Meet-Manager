@@ -127,7 +127,7 @@
             // 
             this.mnuFileOpen.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileOpen.Name = "mnuFileOpen";
-            this.mnuFileOpen.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileOpen.Size = new System.Drawing.Size(149, 22);
             this.mnuFileOpen.Text = "Open Meet";
             this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
@@ -135,7 +135,7 @@
             // 
             this.mnuFileExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(149, 22);
             this.mnuFileExit.Text = "Exit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
@@ -152,13 +152,13 @@
             // mnuHelpAbout
             // 
             this.mnuHelpAbout.Name = "mnuHelpAbout";
-            this.mnuHelpAbout.Size = new System.Drawing.Size(152, 22);
+            this.mnuHelpAbout.Size = new System.Drawing.Size(151, 22);
             this.mnuHelpAbout.Text = "About";
             // 
             // mnuHelpContact
             // 
             this.mnuHelpContact.Name = "mnuHelpContact";
-            this.mnuHelpContact.Size = new System.Drawing.Size(152, 22);
+            this.mnuHelpContact.Size = new System.Drawing.Size(151, 22);
             this.mnuHelpContact.Text = "Contact Us";
             this.mnuHelpContact.Click += new System.EventHandler(this.mnuHelpContact_Click);
             // 
@@ -193,7 +193,7 @@
             this.cboWeather.Location = new System.Drawing.Point(155, 118);
             this.cboWeather.Name = "cboWeather";
             this.cboWeather.Size = new System.Drawing.Size(284, 26);
-            this.cboWeather.TabIndex = 5;
+            this.cboWeather.TabIndex = 3;
             this.cboWeather.Text = "a";
             // 
             // dtpMeetDate
@@ -202,7 +202,7 @@
             this.dtpMeetDate.Location = new System.Drawing.Point(155, 76);
             this.dtpMeetDate.Name = "dtpMeetDate";
             this.dtpMeetDate.Size = new System.Drawing.Size(284, 24);
-            this.dtpMeetDate.TabIndex = 4;
+            this.dtpMeetDate.TabIndex = 2;
             // 
             // txtLocation
             // 
@@ -210,7 +210,7 @@
             this.txtLocation.Location = new System.Drawing.Point(155, 37);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(284, 24);
-            this.txtLocation.TabIndex = 3;
+            this.txtLocation.TabIndex = 1;
             this.txtLocation.Text = "a";
             // 
             // lblWeather
@@ -284,7 +284,7 @@
             this.txtBoysTeam6Abbr.MaxLength = 3;
             this.txtBoysTeam6Abbr.Name = "txtBoysTeam6Abbr";
             this.txtBoysTeam6Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtBoysTeam6Abbr.TabIndex = 23;
+            this.txtBoysTeam6Abbr.TabIndex = 15;
             // 
             // txtBoysTeam6Name
             // 
@@ -292,7 +292,8 @@
             this.txtBoysTeam6Name.Location = new System.Drawing.Point(126, 203);
             this.txtBoysTeam6Name.Name = "txtBoysTeam6Name";
             this.txtBoysTeam6Name.Size = new System.Drawing.Size(159, 24);
-            this.txtBoysTeam6Name.TabIndex = 22;
+            this.txtBoysTeam6Name.TabIndex = 14;
+            this.txtBoysTeam6Name.TextChanged += new System.EventHandler(this.txtBoysTeam6Name_TextChanged);
             // 
             // lblBoysTeam6Abbr
             // 
@@ -321,7 +322,7 @@
             this.txtBoysTeam5Abbr.MaxLength = 3;
             this.txtBoysTeam5Abbr.Name = "txtBoysTeam5Abbr";
             this.txtBoysTeam5Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtBoysTeam5Abbr.TabIndex = 19;
+            this.txtBoysTeam5Abbr.TabIndex = 13;
             // 
             // txtBoysTeam5Name
             // 
@@ -329,7 +330,7 @@
             this.txtBoysTeam5Name.Location = new System.Drawing.Point(126, 171);
             this.txtBoysTeam5Name.Name = "txtBoysTeam5Name";
             this.txtBoysTeam5Name.Size = new System.Drawing.Size(159, 24);
-            this.txtBoysTeam5Name.TabIndex = 18;
+            this.txtBoysTeam5Name.TabIndex = 12;
             // 
             // lblBoysTeam5Abbr
             // 
@@ -358,7 +359,7 @@
             this.txtBoysTeam4Abbr.MaxLength = 3;
             this.txtBoysTeam4Abbr.Name = "txtBoysTeam4Abbr";
             this.txtBoysTeam4Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtBoysTeam4Abbr.TabIndex = 15;
+            this.txtBoysTeam4Abbr.TabIndex = 11;
             // 
             // txtBoysTeam4Name
             // 
@@ -366,7 +367,7 @@
             this.txtBoysTeam4Name.Location = new System.Drawing.Point(126, 139);
             this.txtBoysTeam4Name.Name = "txtBoysTeam4Name";
             this.txtBoysTeam4Name.Size = new System.Drawing.Size(159, 24);
-            this.txtBoysTeam4Name.TabIndex = 14;
+            this.txtBoysTeam4Name.TabIndex = 10;
             // 
             // lblBoysTeam4Abbr
             // 
@@ -395,7 +396,7 @@
             this.txtBoysTeam3Abbr.MaxLength = 3;
             this.txtBoysTeam3Abbr.Name = "txtBoysTeam3Abbr";
             this.txtBoysTeam3Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtBoysTeam3Abbr.TabIndex = 11;
+            this.txtBoysTeam3Abbr.TabIndex = 9;
             // 
             // txtBoysTeam3Name
             // 
@@ -403,7 +404,7 @@
             this.txtBoysTeam3Name.Location = new System.Drawing.Point(126, 105);
             this.txtBoysTeam3Name.Name = "txtBoysTeam3Name";
             this.txtBoysTeam3Name.Size = new System.Drawing.Size(159, 24);
-            this.txtBoysTeam3Name.TabIndex = 10;
+            this.txtBoysTeam3Name.TabIndex = 8;
             // 
             // lblBoysTeam3Abbr
             // 
@@ -469,7 +470,7 @@
             this.txtBoysTeam1Abbr.MaxLength = 3;
             this.txtBoysTeam1Abbr.Name = "txtBoysTeam1Abbr";
             this.txtBoysTeam1Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtBoysTeam1Abbr.TabIndex = 3;
+            this.txtBoysTeam1Abbr.TabIndex = 5;
             this.txtBoysTeam1Abbr.Text = "a";
             // 
             // txtBoysTeam1Name
@@ -478,7 +479,7 @@
             this.txtBoysTeam1Name.Location = new System.Drawing.Point(126, 37);
             this.txtBoysTeam1Name.Name = "txtBoysTeam1Name";
             this.txtBoysTeam1Name.Size = new System.Drawing.Size(159, 24);
-            this.txtBoysTeam1Name.TabIndex = 2;
+            this.txtBoysTeam1Name.TabIndex = 4;
             this.txtBoysTeam1Name.Text = "a";
             // 
             // lblBoysTeam1Abbr
@@ -507,7 +508,7 @@
             this.cmdCreateMeet.Location = new System.Drawing.Point(613, 45);
             this.cmdCreateMeet.Name = "cmdCreateMeet";
             this.cmdCreateMeet.Size = new System.Drawing.Size(342, 66);
-            this.cmdCreateMeet.TabIndex = 3;
+            this.cmdCreateMeet.TabIndex = 28;
             this.cmdCreateMeet.Text = "Create Meet";
             this.cmdCreateMeet.UseVisualStyleBackColor = true;
             this.cmdCreateMeet.Click += new System.EventHandler(this.cmdCreateMeet_Click);
@@ -518,7 +519,7 @@
             this.cmdClear.Location = new System.Drawing.Point(613, 137);
             this.cmdClear.Name = "cmdClear";
             this.cmdClear.Size = new System.Drawing.Size(342, 66);
-            this.cmdClear.TabIndex = 4;
+            this.cmdClear.TabIndex = 29;
             this.cmdClear.Text = "Clear";
             this.cmdClear.UseVisualStyleBackColor = true;
             this.cmdClear.Click += new System.EventHandler(this.cmdClear_Click);
@@ -564,7 +565,7 @@
             this.txtGirlsTeam6Abbr.MaxLength = 3;
             this.txtGirlsTeam6Abbr.Name = "txtGirlsTeam6Abbr";
             this.txtGirlsTeam6Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtGirlsTeam6Abbr.TabIndex = 23;
+            this.txtGirlsTeam6Abbr.TabIndex = 27;
             // 
             // txtGirlsTeam6Name
             // 
@@ -572,7 +573,7 @@
             this.txtGirlsTeam6Name.Location = new System.Drawing.Point(126, 203);
             this.txtGirlsTeam6Name.Name = "txtGirlsTeam6Name";
             this.txtGirlsTeam6Name.Size = new System.Drawing.Size(159, 24);
-            this.txtGirlsTeam6Name.TabIndex = 22;
+            this.txtGirlsTeam6Name.TabIndex = 26;
             // 
             // lblGirlsTeam6Abbr
             // 
@@ -601,7 +602,7 @@
             this.txtGirlsTeam5Abbr.MaxLength = 3;
             this.txtGirlsTeam5Abbr.Name = "txtGirlsTeam5Abbr";
             this.txtGirlsTeam5Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtGirlsTeam5Abbr.TabIndex = 19;
+            this.txtGirlsTeam5Abbr.TabIndex = 25;
             // 
             // txtGirlsTeam5Name
             // 
@@ -609,7 +610,7 @@
             this.txtGirlsTeam5Name.Location = new System.Drawing.Point(126, 171);
             this.txtGirlsTeam5Name.Name = "txtGirlsTeam5Name";
             this.txtGirlsTeam5Name.Size = new System.Drawing.Size(159, 24);
-            this.txtGirlsTeam5Name.TabIndex = 18;
+            this.txtGirlsTeam5Name.TabIndex = 24;
             // 
             // lblGirlsTeam5Abbr
             // 
@@ -638,7 +639,7 @@
             this.txtGirlsTeam4Abbr.MaxLength = 3;
             this.txtGirlsTeam4Abbr.Name = "txtGirlsTeam4Abbr";
             this.txtGirlsTeam4Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtGirlsTeam4Abbr.TabIndex = 15;
+            this.txtGirlsTeam4Abbr.TabIndex = 23;
             // 
             // txtGirlsTeam4Name
             // 
@@ -646,7 +647,7 @@
             this.txtGirlsTeam4Name.Location = new System.Drawing.Point(126, 139);
             this.txtGirlsTeam4Name.Name = "txtGirlsTeam4Name";
             this.txtGirlsTeam4Name.Size = new System.Drawing.Size(159, 24);
-            this.txtGirlsTeam4Name.TabIndex = 14;
+            this.txtGirlsTeam4Name.TabIndex = 22;
             // 
             // lblGirlsTeam4Abbr
             // 
@@ -675,7 +676,7 @@
             this.txtGirlsTeam3Abbr.MaxLength = 3;
             this.txtGirlsTeam3Abbr.Name = "txtGirlsTeam3Abbr";
             this.txtGirlsTeam3Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtGirlsTeam3Abbr.TabIndex = 11;
+            this.txtGirlsTeam3Abbr.TabIndex = 21;
             // 
             // txtGirlsTeam3Name
             // 
@@ -683,7 +684,7 @@
             this.txtGirlsTeam3Name.Location = new System.Drawing.Point(126, 105);
             this.txtGirlsTeam3Name.Name = "txtGirlsTeam3Name";
             this.txtGirlsTeam3Name.Size = new System.Drawing.Size(159, 24);
-            this.txtGirlsTeam3Name.TabIndex = 10;
+            this.txtGirlsTeam3Name.TabIndex = 20;
             // 
             // lblGirlsTeam3Abbr
             // 
@@ -712,7 +713,7 @@
             this.txtGirlsTeam2Abbr.MaxLength = 3;
             this.txtGirlsTeam2Abbr.Name = "txtGirlsTeam2Abbr";
             this.txtGirlsTeam2Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtGirlsTeam2Abbr.TabIndex = 7;
+            this.txtGirlsTeam2Abbr.TabIndex = 19;
             // 
             // txtGirlsTeam2Name
             // 
@@ -720,7 +721,7 @@
             this.txtGirlsTeam2Name.Location = new System.Drawing.Point(126, 73);
             this.txtGirlsTeam2Name.Name = "txtGirlsTeam2Name";
             this.txtGirlsTeam2Name.Size = new System.Drawing.Size(159, 24);
-            this.txtGirlsTeam2Name.TabIndex = 6;
+            this.txtGirlsTeam2Name.TabIndex = 18;
             // 
             // lblGirlsTeam2Abbr
             // 
@@ -749,7 +750,7 @@
             this.txtGirlsTeam1Abbr.MaxLength = 3;
             this.txtGirlsTeam1Abbr.Name = "txtGirlsTeam1Abbr";
             this.txtGirlsTeam1Abbr.Size = new System.Drawing.Size(46, 24);
-            this.txtGirlsTeam1Abbr.TabIndex = 3;
+            this.txtGirlsTeam1Abbr.TabIndex = 17;
             this.txtGirlsTeam1Abbr.Text = "a";
             // 
             // txtGirlsTeam1Name
@@ -758,7 +759,7 @@
             this.txtGirlsTeam1Name.Location = new System.Drawing.Point(126, 37);
             this.txtGirlsTeam1Name.Name = "txtGirlsTeam1Name";
             this.txtGirlsTeam1Name.Size = new System.Drawing.Size(159, 24);
-            this.txtGirlsTeam1Name.TabIndex = 2;
+            this.txtGirlsTeam1Name.TabIndex = 16;
             this.txtGirlsTeam1Name.Text = "a";
             // 
             // lblGirlsTeam1Abbr

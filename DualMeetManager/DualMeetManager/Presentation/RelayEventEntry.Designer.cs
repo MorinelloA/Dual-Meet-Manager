@@ -118,21 +118,21 @@
             this.cboSchool23.Location = new System.Drawing.Point(198, 197);
             this.cboSchool23.Name = "cboSchool23";
             this.cboSchool23.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool23.TabIndex = 31;
+            this.cboSchool23.TabIndex = 32;
             // 
             // txtPerf23
             // 
             this.txtPerf23.Location = new System.Drawing.Point(303, 197);
             this.txtPerf23.Name = "txtPerf23";
             this.txtPerf23.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf23.TabIndex = 30;
+            this.txtPerf23.TabIndex = 33;
             // 
             // txtName23
             // 
             this.txtName23.Location = new System.Drawing.Point(14, 197);
             this.txtName23.Name = "txtName23";
             this.txtName23.Size = new System.Drawing.Size(168, 20);
-            this.txtName23.TabIndex = 29;
+            this.txtName23.TabIndex = 31;
             // 
             // cboSchool22
             // 
@@ -141,21 +141,21 @@
             this.cboSchool22.Location = new System.Drawing.Point(198, 171);
             this.cboSchool22.Name = "cboSchool22";
             this.cboSchool22.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool22.TabIndex = 27;
+            this.cboSchool22.TabIndex = 29;
             // 
             // txtPerf22
             // 
             this.txtPerf22.Location = new System.Drawing.Point(303, 171);
             this.txtPerf22.Name = "txtPerf22";
             this.txtPerf22.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf22.TabIndex = 26;
+            this.txtPerf22.TabIndex = 30;
             // 
             // txtName22
             // 
             this.txtName22.Location = new System.Drawing.Point(14, 171);
             this.txtName22.Name = "txtName22";
             this.txtName22.Size = new System.Drawing.Size(168, 20);
-            this.txtName22.TabIndex = 25;
+            this.txtName22.TabIndex = 28;
             // 
             // cboSchool21
             // 
@@ -164,21 +164,21 @@
             this.cboSchool21.Location = new System.Drawing.Point(198, 145);
             this.cboSchool21.Name = "cboSchool21";
             this.cboSchool21.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool21.TabIndex = 23;
+            this.cboSchool21.TabIndex = 26;
             // 
             // txtPerf21
             // 
             this.txtPerf21.Location = new System.Drawing.Point(303, 145);
             this.txtPerf21.Name = "txtPerf21";
             this.txtPerf21.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf21.TabIndex = 22;
+            this.txtPerf21.TabIndex = 27;
             // 
             // txtName21
             // 
             this.txtName21.Location = new System.Drawing.Point(14, 145);
             this.txtName21.Name = "txtName21";
             this.txtName21.Size = new System.Drawing.Size(168, 20);
-            this.txtName21.TabIndex = 21;
+            this.txtName21.TabIndex = 25;
             // 
             // cboSchool20
             // 
@@ -187,21 +187,21 @@
             this.cboSchool20.Location = new System.Drawing.Point(198, 119);
             this.cboSchool20.Name = "cboSchool20";
             this.cboSchool20.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool20.TabIndex = 19;
+            this.cboSchool20.TabIndex = 23;
             // 
             // txtPerf20
             // 
             this.txtPerf20.Location = new System.Drawing.Point(303, 119);
             this.txtPerf20.Name = "txtPerf20";
             this.txtPerf20.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf20.TabIndex = 18;
+            this.txtPerf20.TabIndex = 24;
             // 
             // txtName20
             // 
             this.txtName20.Location = new System.Drawing.Point(14, 119);
             this.txtName20.Name = "txtName20";
             this.txtName20.Size = new System.Drawing.Size(168, 20);
-            this.txtName20.TabIndex = 17;
+            this.txtName20.TabIndex = 22;
             // 
             // cboSchool19
             // 
@@ -210,21 +210,21 @@
             this.cboSchool19.Location = new System.Drawing.Point(198, 93);
             this.cboSchool19.Name = "cboSchool19";
             this.cboSchool19.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool19.TabIndex = 15;
+            this.cboSchool19.TabIndex = 20;
             // 
             // txtPerf19
             // 
             this.txtPerf19.Location = new System.Drawing.Point(303, 93);
             this.txtPerf19.Name = "txtPerf19";
             this.txtPerf19.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf19.TabIndex = 14;
+            this.txtPerf19.TabIndex = 21;
             // 
             // txtName19
             // 
             this.txtName19.Location = new System.Drawing.Point(14, 93);
             this.txtName19.Name = "txtName19";
             this.txtName19.Size = new System.Drawing.Size(168, 20);
-            this.txtName19.TabIndex = 13;
+            this.txtName19.TabIndex = 19;
             // 
             // cboSchool18
             // 
@@ -233,7 +233,7 @@
             this.cboSchool18.Location = new System.Drawing.Point(198, 67);
             this.cboSchool18.Name = "cboSchool18";
             this.cboSchool18.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool18.TabIndex = 11;
+            this.cboSchool18.TabIndex = 17;
             // 
             // txtPerf26
             // 
@@ -249,14 +249,14 @@
             this.cboSchool25.Location = new System.Drawing.Point(198, 249);
             this.cboSchool25.Name = "cboSchool25";
             this.cboSchool25.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool25.TabIndex = 39;
+            this.cboSchool25.TabIndex = 38;
             // 
             // txtPerf25
             // 
             this.txtPerf25.Location = new System.Drawing.Point(303, 249);
             this.txtPerf25.Name = "txtPerf25";
             this.txtPerf25.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf25.TabIndex = 38;
+            this.txtPerf25.TabIndex = 39;
             // 
             // txtName25
             // 
@@ -279,14 +279,14 @@
             this.txtPerf24.Location = new System.Drawing.Point(303, 223);
             this.txtPerf24.Name = "txtPerf24";
             this.txtPerf24.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf24.TabIndex = 34;
+            this.txtPerf24.TabIndex = 36;
             // 
             // txtName24
             // 
             this.txtName24.Location = new System.Drawing.Point(14, 223);
             this.txtName24.Name = "txtName24";
             this.txtName24.Size = new System.Drawing.Size(168, 20);
-            this.txtName24.TabIndex = 33;
+            this.txtName24.TabIndex = 34;
             // 
             // cboSchool6
             // 
@@ -295,7 +295,7 @@
             this.cboSchool6.Location = new System.Drawing.Point(201, 171);
             this.cboSchool6.Name = "cboSchool6";
             this.cboSchool6.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool6.TabIndex = 27;
+            this.cboSchool6.TabIndex = 11;
             this.cboSchool6.SelectedIndexChanged += new System.EventHandler(this.cboSchool6_SelectedIndexChanged);
             // 
             // txtPerf6
@@ -303,7 +303,7 @@
             this.txtPerf6.Location = new System.Drawing.Point(306, 171);
             this.txtPerf6.Name = "txtPerf6";
             this.txtPerf6.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf6.TabIndex = 26;
+            this.txtPerf6.TabIndex = 12;
             // 
             // txtName6
             // 
@@ -318,21 +318,21 @@
             this.txtName26.Location = new System.Drawing.Point(14, 275);
             this.txtName26.Name = "txtName26";
             this.txtName26.Size = new System.Drawing.Size(168, 20);
-            this.txtName26.TabIndex = 41;
+            this.txtName26.TabIndex = 40;
             // 
             // txtPerf18
             // 
             this.txtPerf18.Location = new System.Drawing.Point(303, 67);
             this.txtPerf18.Name = "txtPerf18";
             this.txtPerf18.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf18.TabIndex = 10;
+            this.txtPerf18.TabIndex = 18;
             // 
             // txtName18
             // 
             this.txtName18.Location = new System.Drawing.Point(14, 67);
             this.txtName18.Name = "txtName18";
             this.txtName18.Size = new System.Drawing.Size(168, 20);
-            this.txtName18.TabIndex = 9;
+            this.txtName18.TabIndex = 16;
             // 
             // cboSchool17
             // 
@@ -341,21 +341,21 @@
             this.cboSchool17.Location = new System.Drawing.Point(198, 41);
             this.cboSchool17.Name = "cboSchool17";
             this.cboSchool17.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool17.TabIndex = 7;
+            this.cboSchool17.TabIndex = 14;
             // 
             // txtPerf17
             // 
             this.txtPerf17.Location = new System.Drawing.Point(303, 41);
             this.txtPerf17.Name = "txtPerf17";
             this.txtPerf17.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf17.TabIndex = 6;
+            this.txtPerf17.TabIndex = 15;
             // 
             // txtName17
             // 
             this.txtName17.Location = new System.Drawing.Point(14, 41);
             this.txtName17.Name = "txtName17";
             this.txtName17.Size = new System.Drawing.Size(168, 20);
-            this.txtName17.TabIndex = 5;
+            this.txtName17.TabIndex = 13;
             // 
             // label37
             // 
@@ -382,7 +382,7 @@
             this.cboSchool5.Location = new System.Drawing.Point(201, 145);
             this.cboSchool5.Name = "cboSchool5";
             this.cboSchool5.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool5.TabIndex = 23;
+            this.cboSchool5.TabIndex = 9;
             this.cboSchool5.SelectedIndexChanged += new System.EventHandler(this.cboSchool5_SelectedIndexChanged);
             // 
             // txtPerf5
@@ -390,7 +390,7 @@
             this.txtPerf5.Location = new System.Drawing.Point(306, 145);
             this.txtPerf5.Name = "txtPerf5";
             this.txtPerf5.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf5.TabIndex = 22;
+            this.txtPerf5.TabIndex = 10;
             // 
             // txtName5
             // 
@@ -407,7 +407,7 @@
             this.cboSchool4.Location = new System.Drawing.Point(201, 119);
             this.cboSchool4.Name = "cboSchool4";
             this.cboSchool4.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool4.TabIndex = 19;
+            this.cboSchool4.TabIndex = 7;
             this.cboSchool4.SelectedIndexChanged += new System.EventHandler(this.cboSchool4_SelectedIndexChanged);
             // 
             // txtPerf4
@@ -415,7 +415,7 @@
             this.txtPerf4.Location = new System.Drawing.Point(306, 119);
             this.txtPerf4.Name = "txtPerf4";
             this.txtPerf4.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf4.TabIndex = 18;
+            this.txtPerf4.TabIndex = 8;
             // 
             // txtName4
             // 
@@ -432,7 +432,7 @@
             this.cboSchool3.Location = new System.Drawing.Point(201, 93);
             this.cboSchool3.Name = "cboSchool3";
             this.cboSchool3.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool3.TabIndex = 15;
+            this.cboSchool3.TabIndex = 5;
             this.cboSchool3.SelectedIndexChanged += new System.EventHandler(this.cboSchool3_SelectedIndexChanged);
             // 
             // txtPerf3
@@ -440,7 +440,7 @@
             this.txtPerf3.Location = new System.Drawing.Point(306, 93);
             this.txtPerf3.Name = "txtPerf3";
             this.txtPerf3.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf3.TabIndex = 14;
+            this.txtPerf3.TabIndex = 6;
             // 
             // txtName3
             // 
@@ -457,7 +457,7 @@
             this.cboSchool2.Location = new System.Drawing.Point(201, 67);
             this.cboSchool2.Name = "cboSchool2";
             this.cboSchool2.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool2.TabIndex = 11;
+            this.cboSchool2.TabIndex = 3;
             this.cboSchool2.SelectedIndexChanged += new System.EventHandler(this.cboSchool2_SelectedIndexChanged);
             // 
             // txtPerf2
@@ -465,7 +465,7 @@
             this.txtPerf2.Location = new System.Drawing.Point(306, 67);
             this.txtPerf2.Name = "txtPerf2";
             this.txtPerf2.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf2.TabIndex = 10;
+            this.txtPerf2.TabIndex = 4;
             // 
             // txtName2
             // 
@@ -483,7 +483,7 @@
             this.cboSchool1.Location = new System.Drawing.Point(201, 41);
             this.cboSchool1.Name = "cboSchool1";
             this.cboSchool1.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool1.TabIndex = 7;
+            this.cboSchool1.TabIndex = 1;
             this.cboSchool1.SelectedIndexChanged += new System.EventHandler(this.cboSchool1_SelectedIndexChanged);
             // 
             // txtPerf1
@@ -491,7 +491,7 @@
             this.txtPerf1.Location = new System.Drawing.Point(306, 41);
             this.txtPerf1.Name = "txtPerf1";
             this.txtPerf1.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf1.TabIndex = 6;
+            this.txtPerf1.TabIndex = 2;
             // 
             // txtName1
             // 
@@ -515,7 +515,7 @@
             this.txtPerf32.Location = new System.Drawing.Point(303, 431);
             this.txtPerf32.Name = "txtPerf32";
             this.txtPerf32.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf32.TabIndex = 66;
+            this.txtPerf32.TabIndex = 60;
             // 
             // grpHeats2
             // 
@@ -584,14 +584,14 @@
             this.cboSchool32.Location = new System.Drawing.Point(198, 431);
             this.cboSchool32.Name = "cboSchool32";
             this.cboSchool32.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool32.TabIndex = 67;
+            this.cboSchool32.TabIndex = 59;
             // 
             // txtName32
             // 
             this.txtName32.Location = new System.Drawing.Point(14, 431);
             this.txtName32.Name = "txtName32";
             this.txtName32.Size = new System.Drawing.Size(168, 20);
-            this.txtName32.TabIndex = 65;
+            this.txtName32.TabIndex = 58;
             // 
             // cboSchool31
             // 
@@ -600,21 +600,21 @@
             this.cboSchool31.Location = new System.Drawing.Point(198, 405);
             this.cboSchool31.Name = "cboSchool31";
             this.cboSchool31.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool31.TabIndex = 63;
+            this.cboSchool31.TabIndex = 56;
             // 
             // txtPerf31
             // 
             this.txtPerf31.Location = new System.Drawing.Point(303, 405);
             this.txtPerf31.Name = "txtPerf31";
             this.txtPerf31.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf31.TabIndex = 62;
+            this.txtPerf31.TabIndex = 57;
             // 
             // txtName31
             // 
             this.txtName31.Location = new System.Drawing.Point(14, 405);
             this.txtName31.Name = "txtName31";
             this.txtName31.Size = new System.Drawing.Size(168, 20);
-            this.txtName31.TabIndex = 61;
+            this.txtName31.TabIndex = 55;
             // 
             // cboSchool30
             // 
@@ -623,21 +623,21 @@
             this.cboSchool30.Location = new System.Drawing.Point(198, 379);
             this.cboSchool30.Name = "cboSchool30";
             this.cboSchool30.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool30.TabIndex = 59;
+            this.cboSchool30.TabIndex = 53;
             // 
             // txtPerf30
             // 
             this.txtPerf30.Location = new System.Drawing.Point(303, 379);
             this.txtPerf30.Name = "txtPerf30";
             this.txtPerf30.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf30.TabIndex = 58;
+            this.txtPerf30.TabIndex = 54;
             // 
             // txtName30
             // 
             this.txtName30.Location = new System.Drawing.Point(14, 379);
             this.txtName30.Name = "txtName30";
             this.txtName30.Size = new System.Drawing.Size(168, 20);
-            this.txtName30.TabIndex = 57;
+            this.txtName30.TabIndex = 52;
             // 
             // cboSchool29
             // 
@@ -646,21 +646,21 @@
             this.cboSchool29.Location = new System.Drawing.Point(198, 353);
             this.cboSchool29.Name = "cboSchool29";
             this.cboSchool29.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool29.TabIndex = 55;
+            this.cboSchool29.TabIndex = 50;
             // 
             // txtPerf29
             // 
             this.txtPerf29.Location = new System.Drawing.Point(303, 353);
             this.txtPerf29.Name = "txtPerf29";
             this.txtPerf29.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf29.TabIndex = 54;
+            this.txtPerf29.TabIndex = 51;
             // 
             // txtName29
             // 
             this.txtName29.Location = new System.Drawing.Point(14, 353);
             this.txtName29.Name = "txtName29";
             this.txtName29.Size = new System.Drawing.Size(168, 20);
-            this.txtName29.TabIndex = 53;
+            this.txtName29.TabIndex = 49;
             // 
             // cboSchool28
             // 
@@ -669,21 +669,21 @@
             this.cboSchool28.Location = new System.Drawing.Point(198, 327);
             this.cboSchool28.Name = "cboSchool28";
             this.cboSchool28.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool28.TabIndex = 51;
+            this.cboSchool28.TabIndex = 47;
             // 
             // txtPerf28
             // 
             this.txtPerf28.Location = new System.Drawing.Point(303, 327);
             this.txtPerf28.Name = "txtPerf28";
             this.txtPerf28.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf28.TabIndex = 50;
+            this.txtPerf28.TabIndex = 48;
             // 
             // txtName28
             // 
             this.txtName28.Location = new System.Drawing.Point(14, 327);
             this.txtName28.Name = "txtName28";
             this.txtName28.Size = new System.Drawing.Size(168, 20);
-            this.txtName28.TabIndex = 49;
+            this.txtName28.TabIndex = 46;
             // 
             // cboSchool27
             // 
@@ -692,21 +692,21 @@
             this.cboSchool27.Location = new System.Drawing.Point(198, 301);
             this.cboSchool27.Name = "cboSchool27";
             this.cboSchool27.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool27.TabIndex = 47;
+            this.cboSchool27.TabIndex = 44;
             // 
             // txtPerf27
             // 
             this.txtPerf27.Location = new System.Drawing.Point(303, 301);
             this.txtPerf27.Name = "txtPerf27";
             this.txtPerf27.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf27.TabIndex = 46;
+            this.txtPerf27.TabIndex = 45;
             // 
             // txtName27
             // 
             this.txtName27.Location = new System.Drawing.Point(14, 301);
             this.txtName27.Name = "txtName27";
             this.txtName27.Size = new System.Drawing.Size(168, 20);
-            this.txtName27.TabIndex = 45;
+            this.txtName27.TabIndex = 43;
             // 
             // cboSchool26
             // 
@@ -715,7 +715,7 @@
             this.cboSchool26.Location = new System.Drawing.Point(198, 275);
             this.cboSchool26.Name = "cboSchool26";
             this.cboSchool26.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool26.TabIndex = 43;
+            this.cboSchool26.TabIndex = 41;
             // 
             // label39
             // 
@@ -731,7 +731,7 @@
             this.cmdEnterData.Location = new System.Drawing.Point(12, 41);
             this.cmdEnterData.Name = "cmdEnterData";
             this.cmdEnterData.Size = new System.Drawing.Size(421, 54);
-            this.cmdEnterData.TabIndex = 10;
+            this.cmdEnterData.TabIndex = 61;
             this.cmdEnterData.Text = "Enter Data";
             this.cmdEnterData.UseVisualStyleBackColor = true;
             this.cmdEnterData.Click += new System.EventHandler(this.cmdEnterData_Click);

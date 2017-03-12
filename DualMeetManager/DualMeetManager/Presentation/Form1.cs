@@ -273,5 +273,10 @@ namespace DualMeetManager.Presentation
                 if(newMeet != null) MessageBox.Show(newMeet.ToString()); //Debugging line. Remove.
             }
         }
+
+        private void txtBoysTeam6Name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
