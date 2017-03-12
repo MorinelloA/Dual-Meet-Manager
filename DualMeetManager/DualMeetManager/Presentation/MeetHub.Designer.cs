@@ -187,8 +187,6 @@
             this.mnuPrintoutsGirlsEventPerfsThrowsShotput = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrintoutsGirlsEventPerfsThrowsDiscus = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuPrintoutsGirlsEventPerfsThrowsJavelin = new System.Windows.Forms.ToolStripMenuItem();
-            this.debugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ptsDebugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lstBoysScores = new System.Windows.Forms.ListBox();
             this.lstGirlsScores = new System.Windows.Forms.ListBox();
             this.lblBoysScores = new System.Windows.Forms.Label();
@@ -203,9 +201,7 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.mnuFile,
             this.mnuEnter,
-            this.mnuPrintouts,
-            this.debugToolStripMenuItem,
-            this.ptsDebugToolStripMenuItem});
+            this.mnuPrintouts});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(542, 24);
@@ -228,35 +224,35 @@
             // mnuFileNew
             // 
             this.mnuFileNew.Name = "mnuFileNew";
-            this.mnuFileNew.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileNew.Size = new System.Drawing.Size(140, 22);
             this.mnuFileNew.Text = "New Meet";
             this.mnuFileNew.Click += new System.EventHandler(this.mnuFileNew_Click);
             // 
             // mnuFileOpen
             // 
             this.mnuFileOpen.Name = "mnuFileOpen";
-            this.mnuFileOpen.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileOpen.Size = new System.Drawing.Size(140, 22);
             this.mnuFileOpen.Text = "Open Meet";
             this.mnuFileOpen.Click += new System.EventHandler(this.mnuFileOpen_Click);
             // 
             // mnuFileSave
             // 
             this.mnuFileSave.Name = "mnuFileSave";
-            this.mnuFileSave.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileSave.Size = new System.Drawing.Size(140, 22);
             this.mnuFileSave.Text = "Save Meet";
             this.mnuFileSave.Click += new System.EventHandler(this.mnuFileSave_Click);
             // 
             // mnuFileSaveAs
             // 
             this.mnuFileSaveAs.Name = "mnuFileSaveAs";
-            this.mnuFileSaveAs.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileSaveAs.Size = new System.Drawing.Size(140, 22);
             this.mnuFileSaveAs.Text = "Save Meet As";
             this.mnuFileSaveAs.Click += new System.EventHandler(this.mnuFileSaveAs_Click);
             // 
             // mnuFileExit
             // 
             this.mnuFileExit.Name = "mnuFileExit";
-            this.mnuFileExit.Size = new System.Drawing.Size(152, 22);
+            this.mnuFileExit.Size = new System.Drawing.Size(140, 22);
             this.mnuFileExit.Text = "Exit";
             this.mnuFileExit.Click += new System.EventHandler(this.mnuFileExit_Click);
             // 
@@ -680,6 +676,7 @@
             this.mnuPrintouts.Name = "mnuPrintouts";
             this.mnuPrintouts.Size = new System.Drawing.Size(62, 20);
             this.mnuPrintouts.Text = "Printouts";
+            this.mnuPrintouts.Click += new System.EventHandler(this.mnuPrintouts_Click);
             // 
             // mnuPrintoutsBoysScores
             // 
@@ -1519,20 +1516,6 @@
             this.mnuPrintoutsGirlsEventPerfsThrowsJavelin.Text = "Javelin";
             this.mnuPrintoutsGirlsEventPerfsThrowsJavelin.Click += new System.EventHandler(this.mnuPrintoutsGirlsEventPerfsThrowsJavelin_Click);
             // 
-            // debugToolStripMenuItem
-            // 
-            this.debugToolStripMenuItem.Name = "debugToolStripMenuItem";
-            this.debugToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.debugToolStripMenuItem.Text = "Debug";
-            this.debugToolStripMenuItem.Click += new System.EventHandler(this.debugToolStripMenuItem_Click);
-            // 
-            // ptsDebugToolStripMenuItem
-            // 
-            this.ptsDebugToolStripMenuItem.Name = "ptsDebugToolStripMenuItem";
-            this.ptsDebugToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.ptsDebugToolStripMenuItem.Text = "Pts Debug";
-            this.ptsDebugToolStripMenuItem.Click += new System.EventHandler(this.ptsDebugToolStripMenuItem_Click);
-            // 
             // lstBoysScores
             // 
             this.lstBoysScores.Enabled = false;
@@ -1764,10 +1747,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnuPrintoutsGirlsEventPerfsThrowsDiscus;
         private System.Windows.Forms.ToolStripMenuItem mnuPrintoutsGirlsEventPerfsThrowsJavelin;
         private System.Windows.Forms.ToolStripMenuItem mnuFileSave;
-        private System.Windows.Forms.ToolStripMenuItem debugToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuFileSaveAs;
         private System.Windows.Forms.OpenFileDialog ofdMeet;
         private System.Windows.Forms.SaveFileDialog sfdMeet;
-        private System.Windows.Forms.ToolStripMenuItem ptsDebugToolStripMenuItem;
     }
 }

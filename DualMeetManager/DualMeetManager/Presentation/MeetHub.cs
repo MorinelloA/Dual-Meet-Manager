@@ -1318,91 +1318,91 @@ namespace DualMeetManager.Presentation
         private void mnuPrintoutsBoysScores1vs2_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[1]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[1]]);
         }
 
         private void mnuPrintoutsBoysScores1vs3_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[2]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[2]]);
         }
 
         private void mnuPrintoutsBoysScores2vs3_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[2]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[2]]);
         }
 
         private void mnuPrintoutsBoysScores1vs4_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[3]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[3]]);
         }
 
         private void mnuPrintoutsBoysScores2vs4_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[3]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[3]]);
         }
 
         private void mnuPrintoutsBoysScores3vs4_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[2] + "vs." + boysAbbrs[3]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[2] + "vs." + boysAbbrs[3]]);
         }
 
         private void mnuPrintoutsBoysScores1vs5_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[4]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[4]]);
         }
 
         private void mnuPrintoutsBoysScores2vs5_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[4]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[4]]);
         }
 
         private void mnuPrintoutsBoysScores3vs5_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[2] + "vs." + boysAbbrs[4]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[2] + "vs." + boysAbbrs[4]]);
         }
 
         private void mnuPrintoutsBoysScores4vs5_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[3] + "vs." + boysAbbrs[4]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[3] + "vs." + boysAbbrs[4]]);
         }
 
         private void mnuPrintoutsBoysScores1vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[0] + "vs." + boysAbbrs[5]]);
         }
 
         private void mnuPrintoutsBoysScores2vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[1] + "vs." + boysAbbrs[5]]);
         }
 
         private void mnuPrintoutsBoysScores3vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[2] + "vs." + boysAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[2] + "vs." + boysAbbrs[5]]);
         }
 
         private void mnuPrintoutsBoysScores4vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[3] + "vs." + boysAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[3] + "vs." + boysAbbrs[5]]);
         }
 
         private void mnuPrintoutsBoysScores5vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Boy's", boysActiveScores[boysAbbrs[4] + "vs." + boysAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Boy's", activeMeet.dateOfMeet, activeMeet.location, boysActiveScores[boysAbbrs[4] + "vs." + boysAbbrs[5]]);
         }
 
         private void mnuPrintoutsBoysScoresAll_Click(object sender, EventArgs e)
@@ -1413,91 +1413,91 @@ namespace DualMeetManager.Presentation
         private void mnuPrintoutsGirlsScores1vs2_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[1]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[1]]);
         }
 
         private void mnuPrintoutsGirlsScores1vs3_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[2]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[2]]);
         }
 
         private void mnuPrintoutsGirlsScores2vs3_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[2]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[2]]);
         }
 
         private void mnuPrintoutsGirlsScores1vs4_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[3]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[3]]);
         }
 
         private void mnuPrintoutsGirlsScores2vs4_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[3]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[3]]);
         }
 
         private void mnuPrintoutsGirlsScores3vs4_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[2] + "vs." + girlsAbbrs[3]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[2] + "vs." + girlsAbbrs[3]]);
         }
 
         private void mnuPrintoutsGirlsScores1vs5_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[4]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[4]]);
         }
 
         private void mnuPrintoutsGirlsScores2vs5_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[4]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[4]]);
         }
 
         private void mnuPrintoutsGirlsScores3vs5_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[2] + "vs." + girlsAbbrs[4]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[2] + "vs." + girlsAbbrs[4]]);
         }
 
         private void mnuPrintoutsGirlsScores4vs5_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[3] + "vs." + girlsAbbrs[4]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[3] + "vs." + girlsAbbrs[4]]);
         }
 
         private void mnuPrintoutsGirlsScores1vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[0] + "vs." + girlsAbbrs[5]]);
         }
 
         private void mnuPrintoutsGirlsScores2vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[1] + "vs." + girlsAbbrs[5]]);
         }
 
         private void mnuPrintoutsGirlsScores3vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[2] + "vs." + girlsAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[2] + "vs." + girlsAbbrs[5]]);
         }
 
         private void mnuPrintoutsGirlsScores4vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[3] + "vs." + girlsAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[3] + "vs." + girlsAbbrs[5]]);
         }
 
         private void mnuPrintoutsGirlsScores5vs6_Click(object sender, EventArgs e)
         {
             PrintoutMgr pm = new PrintoutMgr();
-            pm.CreateMeetResultsDoc("Girl's", girlsActiveScores[girlsAbbrs[4] + "vs." + girlsAbbrs[5]]);
+            pm.CreateMeetResultsDoc("Girl's", activeMeet.dateOfMeet, activeMeet.location, girlsActiveScores[girlsAbbrs[4] + "vs." + girlsAbbrs[5]]);
         }
 
         private void mnuPrintoutsGirlsScoresAll_Click(object sender, EventArgs e)
@@ -1522,6 +1522,11 @@ namespace DualMeetManager.Presentation
             DialogResult result = MessageBox.Show("Are you sure you want to Exit?", "Exit?", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
             if (result == DialogResult.Yes)
                 Application.Exit();
+        }
+
+        private void mnuPrintouts_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

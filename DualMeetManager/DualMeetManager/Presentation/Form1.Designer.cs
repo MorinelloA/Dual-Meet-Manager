@@ -194,7 +194,6 @@
             this.cboWeather.Name = "cboWeather";
             this.cboWeather.Size = new System.Drawing.Size(284, 26);
             this.cboWeather.TabIndex = 3;
-            this.cboWeather.Text = "a";
             // 
             // dtpMeetDate
             // 
@@ -211,7 +210,6 @@
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(284, 24);
             this.txtLocation.TabIndex = 1;
-            this.txtLocation.Text = "a";
             // 
             // lblWeather
             // 
@@ -471,7 +469,6 @@
             this.txtBoysTeam1Abbr.Name = "txtBoysTeam1Abbr";
             this.txtBoysTeam1Abbr.Size = new System.Drawing.Size(46, 24);
             this.txtBoysTeam1Abbr.TabIndex = 5;
-            this.txtBoysTeam1Abbr.Text = "a";
             // 
             // txtBoysTeam1Name
             // 
@@ -480,7 +477,6 @@
             this.txtBoysTeam1Name.Name = "txtBoysTeam1Name";
             this.txtBoysTeam1Name.Size = new System.Drawing.Size(159, 24);
             this.txtBoysTeam1Name.TabIndex = 4;
-            this.txtBoysTeam1Name.Text = "a";
             // 
             // lblBoysTeam1Abbr
             // 
@@ -751,7 +747,6 @@
             this.txtGirlsTeam1Abbr.Name = "txtGirlsTeam1Abbr";
             this.txtGirlsTeam1Abbr.Size = new System.Drawing.Size(46, 24);
             this.txtGirlsTeam1Abbr.TabIndex = 17;
-            this.txtGirlsTeam1Abbr.Text = "a";
             // 
             // txtGirlsTeam1Name
             // 
@@ -760,7 +755,6 @@
             this.txtGirlsTeam1Name.Name = "txtGirlsTeam1Name";
             this.txtGirlsTeam1Name.Size = new System.Drawing.Size(159, 24);
             this.txtGirlsTeam1Name.TabIndex = 16;
-            this.txtGirlsTeam1Name.Text = "a";
             // 
             // lblGirlsTeam1Abbr
             // 

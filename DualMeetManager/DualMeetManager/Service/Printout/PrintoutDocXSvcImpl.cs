@@ -132,11 +132,11 @@ namespace DualMeetManager.Service.Printout
         /// </summary>
         /// <param name="scoreToPrint">OverallScore information of the meet to be printed</param>
         /// <returns>boolean that shows whether or not the doc was created successfully or not</returns>
-        public bool CreateMeetResultsDoc(string gender, OverallScore scoreToPrint)
+        public bool CreateMeetResultsDoc(string gender, DateTime dt, string location, OverallScore scoreToPrint)
         {
             //if(scoreToPrint == null || scoreToPrint.)
             EventMgr eMgr = new EventMgr();
-            string fileName = scoreToPrint.team1.Item1 + "vs" + scoreToPrint.team2.Item1 + ".docx";
+            string fileName = gender[0] + "-" + scoreToPrint.team1.Item1 + "vs" + scoreToPrint.team2.Item1 + ".docx";
             try
             {
                 using (DocX document = DocX.Create(fileName))
@@ -145,6 +145,16 @@ namespace DualMeetManager.Service.Printout
                     document.MarginRight = 36;
                     document.MarginTop = 36;
                     document.MarginBottom = 36;
+
+                    //Meet Info at top
+                    Paragraph pp = document.InsertParagraph();
+
+                    // Append some text.
+                    pp.Append(gender + " Track & Field\n").FontSize(12).Bold();
+                    pp.Append(scoreToPrint.team1.Item2 + " vs. " + scoreToPrint.team2.Item2 + "\n").FontSize(12).Bold();
+                    pp.Append(dt.ToShortDateString() + " @ " + location + "\n").FontSize(12).Bold();
+                    pp.Alignment = Alignment.center;
+
                     Table t = document.AddTable(53, 12);
                     // Specify some properties for this Table.
                     t.Alignment = Alignment.center;
@@ -251,34 +261,34 @@ namespace DualMeetManager.Service.Printout
                     t.Rows[5].Cells[0].Paragraphs.First().Alignment = Alignment.left;
                     if (scoreToPrint.indEvents != null && scoreToPrint.indEvents.ContainsKey(gender + " 100"))
                     {
-                        t.Rows[2].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[0].athleteName);
-                        t.Rows[2].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[0].schoolName);
-                        t.Rows[2].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[0].performance);
-                        t.Rows[2].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[0].team1Pts));
-                        t.Rows[2].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[0].team2Pts));
-                        t.Rows[3].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[1].athleteName);
-                        t.Rows[3].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[1].schoolName);
-                        t.Rows[3].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[1].performance);
-                        t.Rows[3].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[1].team1Pts));
-                        t.Rows[3].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[1].team2Pts));
-                        t.Rows[4].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[2].athleteName);
-                        t.Rows[4].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[2].schoolName);
-                        t.Rows[4].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[2].performance);
-                        t.Rows[4].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[2].team1Pts));
-                        t.Rows[4].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[2].team2Pts));
-                        t.Rows[5].Cells[1].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].team1Total));
-                        t.Rows[5].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].team2Total));
+                        t.Rows[2].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[0].athleteName).FontSize(8);
+                        t.Rows[2].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[0].schoolName).FontSize(8);
+                        t.Rows[2].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[0].performance).FontSize(8);
+                        t.Rows[2].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[0].team1Pts)).FontSize(8);
+                        t.Rows[2].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[0].team2Pts)).FontSize(8);
+                        t.Rows[3].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[1].athleteName).FontSize(8);
+                        t.Rows[3].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[1].schoolName).FontSize(8);
+                        t.Rows[3].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[1].performance).FontSize(8);
+                        t.Rows[3].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[1].team1Pts)).FontSize(8);
+                        t.Rows[3].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[1].team2Pts)).FontSize(8);
+                        t.Rows[4].Cells[1].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[2].athleteName).FontSize(8);
+                        t.Rows[4].Cells[2].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[2].schoolName).FontSize(8);
+                        t.Rows[4].Cells[3].Paragraphs.First().Append(scoreToPrint.indEvents[gender + " 100"].points[2].performance).FontSize(8);
+                        t.Rows[4].Cells[4].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[2].team1Pts)).FontSize(8);
+                        t.Rows[4].Cells[5].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].points[2].team2Pts)).FontSize(8);
+                        t.Rows[5].Cells[1].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].team1Total)).FontSize(8);
+                        t.Rows[5].Cells[2].Paragraphs.First().Append(string.Format("{0:0.##}", scoreToPrint.indEvents[gender + " 100"].team2Total)).FontSize(8);
                     }
                     else
                     {
-                        t.Rows[2].Cells[4].Paragraphs.First().Append("0");
-                        t.Rows[2].Cells[5].Paragraphs.First().Append("0");
-                        t.Rows[3].Cells[4].Paragraphs.First().Append("0");
-                        t.Rows[3].Cells[5].Paragraphs.First().Append("0");
-                        t.Rows[4].Cells[4].Paragraphs.First().Append("0");
-                        t.Rows[4].Cells[5].Paragraphs.First().Append("0");
-                        t.Rows[5].Cells[1].Paragraphs.First().Append("0");
-                        t.Rows[5].Cells[2].Paragraphs.First().Append("0");
+                        t.Rows[2].Cells[4].Paragraphs.First().Append("0").FontSize(8);
+                        t.Rows[2].Cells[5].Paragraphs.First().Append("0").FontSize(8);
+                        t.Rows[3].Cells[4].Paragraphs.First().Append("0").FontSize(8);
+                        t.Rows[3].Cells[5].Paragraphs.First().Append("0").FontSize(8);
+                        t.Rows[4].Cells[4].Paragraphs.First().Append("0").FontSize(8);
+                        t.Rows[4].Cells[5].Paragraphs.First().Append("0").FontSize(8);
+                        t.Rows[5].Cells[1].Paragraphs.First().Append("0").FontSize(8);
+                        t.Rows[5].Cells[2].Paragraphs.First().Append("0").FontSize(8);
                     }
                     //200
                     t.Rows[2].Cells[6].Paragraphs.First().Append("1");
@@ -1204,7 +1214,83 @@ namespace DualMeetManager.Service.Printout
                         t.Rows[52].Cells[5].Paragraphs.First().Append("0");
                     }
 
+                    //Cell Fonts
+                    int eventNames = 11;
+                    int titleRows = 10;
+                    int dataRows = 8;
+                    int scoreRows = 10;
+
+                    t.Rows[0].Cells[0].Paragraphs.First().FontSize(eventNames);
+                    t.Rows[0].Cells[1].Paragraphs.First().FontSize(eventNames);
+                    for(int i = 0; i <= 11; i++) t.Rows[1].Cells[i].Paragraphs.First().FontSize(titleRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[2].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[3].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[4].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 5; i++) t.Rows[5].Cells[i].Paragraphs.First().FontSize(scoreRows);
+                    t.Rows[6].Cells[0].Paragraphs.First().FontSize(eventNames);
+                    t.Rows[6].Cells[1].Paragraphs.First().FontSize(eventNames);
+                    for(int i = 0; i <= 11; i++) t.Rows[7].Cells[i].Paragraphs.First().FontSize(titleRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[8].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[9].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[10].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 5; i++) t.Rows[11].Cells[i].Paragraphs.First().FontSize(scoreRows);
+                    t.Rows[12].Cells[0].Paragraphs.First().FontSize(eventNames);
+                    t.Rows[12].Cells[1].Paragraphs.First().FontSize(eventNames);
+                    for(int i = 0; i <= 11; i++) t.Rows[13].Cells[i].Paragraphs.First().FontSize(titleRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[14].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[15].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[16].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 5; i++) t.Rows[17].Cells[i].Paragraphs.First().FontSize(scoreRows);
+                    t.Rows[18].Cells[0].Paragraphs.First().FontSize(eventNames);
+                    t.Rows[18].Cells[1].Paragraphs.First().FontSize(eventNames);
+                    for(int i = 0; i <= 11; i++) t.Rows[19].Cells[i].Paragraphs.First().FontSize(titleRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[20].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[21].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[22].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 5; i++) t.Rows[23].Cells[i].Paragraphs.First().FontSize(scoreRows);
+                    t.Rows[24].Cells[0].Paragraphs.First().FontSize(eventNames);
+                    t.Rows[24].Cells[1].Paragraphs.First().FontSize(eventNames);
+                    for(int i = 0; i <= 11; i++) t.Rows[25].Cells[i].Paragraphs.First().FontSize(titleRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[26].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[27].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 5; i++) t.Rows[28].Cells[i].Paragraphs.First().FontSize(scoreRows);
+                    t.Rows[29].Cells[0].Paragraphs.First().FontSize(eventNames);
+                    t.Rows[29].Cells[1].Paragraphs.First().FontSize(eventNames);
+                    for(int i = 0; i <= 11; i++) t.Rows[30].Cells[i].Paragraphs.First().FontSize(titleRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[31].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[32].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 2; i++) t.Rows[33].Cells[i].Paragraphs.First().FontSize(scoreRows);
+                    for (int i = 3; i <= 8; i++) t.Rows[33].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 3; i++) t.Rows[34].Cells[i].Paragraphs.First().FontSize(scoreRows);
+                    t.Rows[35].Cells[0].Paragraphs.First().FontSize(eventNames);
+                    t.Rows[35].Cells[1].Paragraphs.First().FontSize(eventNames);
+                    for(int i = 0; i <= 11; i++) t.Rows[36].Cells[i].Paragraphs.First().FontSize(titleRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[37].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[38].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[39].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 5; i++) t.Rows[40].Cells[i].Paragraphs.First().FontSize(scoreRows);
+                    t.Rows[41].Cells[0].Paragraphs.First().FontSize(eventNames);
+                    t.Rows[41].Cells[1].Paragraphs.First().FontSize(eventNames);
+                    for(int i = 0; i <= 11; i++) t.Rows[42].Cells[i].Paragraphs.First().FontSize(titleRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[43].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[44].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[45].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 5; i++) t.Rows[46].Cells[i].Paragraphs.First().FontSize(scoreRows);
+                    t.Rows[47].Cells[0].Paragraphs.First().FontSize(eventNames);
+                    t.Rows[47].Cells[1].Paragraphs.First().FontSize(eventNames);
+                    for(int i = 0; i <= 11; i++) t.Rows[48].Cells[i].Paragraphs.First().FontSize(titleRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[49].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[50].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 11; i++) t.Rows[51].Cells[i].Paragraphs.First().FontSize(dataRows);
+                    for (int i = 0; i <= 5; i++) t.Rows[52].Cells[i].Paragraphs.First().FontSize(scoreRows);
+
                     document.InsertTable(t);
+
+                    Paragraph ppp = document.InsertParagraph();
+                    ppp.Append("\nFinal Score:\n").FontSize(12).Bold();
+                    ppp.Append(scoreToPrint.team1.Item2 + ": " + string.Format("{0:0.##}", scoreToPrint.team1Points) + "\n").FontSize(12).Bold();
+                    ppp.Append(scoreToPrint.team2.Item2 + ": " + string.Format("{0:0.##}", scoreToPrint.team2Points) + "\n").FontSize(12).Bold();
+
                     document.Save();
                     System.Diagnostics.Process.Start(fileName);
                 }

@@ -53,10 +53,10 @@ namespace DualMeetManager.Business.Managers
                 MessageBox.Show("Printout Failed!");
         }
 
-        public void CreateMeetResultsDoc(string gender, OverallScore scoreToPrint)
+        public void CreateMeetResultsDoc(string gender, DateTime dt, string location, OverallScore scoreToPrint)
         {
             IPrintoutDocSvc printoutSvc = (IPrintoutDocSvc)GetService(typeof(IPrintoutDocSvc).Name);
-            bool didPrint = printoutSvc.CreateMeetResultsDoc(gender, scoreToPrint);
+            bool didPrint = printoutSvc.CreateMeetResultsDoc(gender, dt, location, scoreToPrint);
             if (!didPrint)
                 MessageBox.Show("Printout Failed!");
         }

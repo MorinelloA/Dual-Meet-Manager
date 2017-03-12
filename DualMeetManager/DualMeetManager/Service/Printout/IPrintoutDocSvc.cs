@@ -1,5 +1,6 @@
 ﻿using DualMeetManager.Domain;
 using DualMeetManager.Domain.Scoring;
+using System;
 using System.Collections.Generic;
 
 namespace DualMeetManager.Service.Printout
@@ -27,6 +28,6 @@ namespace DualMeetManager.Service.Printout
         /// </summary>
         /// <param name="scoreToPrint">OverallScore information of the meet to be printed</param>
         /// <returns>boolean that shows whether or not the doc was created successfully or not</returns>
-        bool CreateMeetResultsDoc(string gender, OverallScore scoreToPrint);
+        bool CreateMeetResultsDoc(string gender, DateTime dt, string location, OverallScore scoreToPrint);
     }
 }
