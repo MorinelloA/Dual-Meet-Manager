@@ -1331,7 +1331,16 @@ namespace DualMeetManager.Service.Printout
                     performances.Add(evt, tempPerfs);
             } //The above SHOULD be complete. Still untested
 
-            string fileName = teamAbbr + meetToPrint.dateOfMeet.Month + "-" + meetToPrint.dateOfMeet.Day + "Performances.docx";
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < gender.Length; i++)
+            {
+                if (char.IsLetterOrDigit(gender[i]))
+                {
+                    sb.Append(gender[i]);
+                }
+            }
+
+            string fileName = teamAbbr + "-" + sb.ToString() + "-" + meetToPrint.dateOfMeet.Month + "-" + meetToPrint.dateOfMeet.Day + "Performances.docx";
             try
             {
                 using (DocX document = DocX.Create(fileName))
