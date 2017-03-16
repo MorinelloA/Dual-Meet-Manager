@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DualMeetManager", "DualMeet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DualMeetManager.Tests", "DualMeetManager.Tests\DualMeetManager.Tests.csproj", "{D4CE53A2-92A3-46FE-B508-2A936825617E}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Setup", "Setup\Setup.vdproj", "{1729E41E-C6F1-44CF-BD0A-493400791D65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,8 @@ Global
 		{D4CE53A2-92A3-46FE-B508-2A936825617E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4CE53A2-92A3-46FE-B508-2A936825617E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4CE53A2-92A3-46FE-B508-2A936825617E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1729E41E-C6F1-44CF-BD0A-493400791D65}.Debug|Any CPU.ActiveCfg = Debug
+		{1729E41E-C6F1-44CF-BD0A-493400791D65}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

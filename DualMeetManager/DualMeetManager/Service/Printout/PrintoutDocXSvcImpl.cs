@@ -36,7 +36,8 @@ namespace DualMeetManager.Service.Printout
                     sb.Append(eventName[i]);
                 }
             }
-            string fileName = sb.ToString() + ".docx";
+            Directory.CreateDirectory("printouts\\events");
+            string fileName = "printouts\\events\\" + sb.ToString() + ".docx";
             try
             {
                 using (DocX document = DocX.Create(fileName))
@@ -136,7 +137,8 @@ namespace DualMeetManager.Service.Printout
         {
             //if(scoreToPrint == null || scoreToPrint.)
             EventMgr eMgr = new EventMgr();
-            string fileName = gender[0] + "-" + scoreToPrint.team1.Item1 + "vs" + scoreToPrint.team2.Item1 + ".docx";
+            Directory.CreateDirectory("printouts\\scores");
+            string fileName = "printouts\\scores\\" + gender[0] + "-" + scoreToPrint.team1.Item1 + "vs" + scoreToPrint.team2.Item1 + ".docx";
             try
             {
                 using (DocX document = DocX.Create(fileName))
@@ -1340,7 +1342,8 @@ namespace DualMeetManager.Service.Printout
                 }
             }
 
-            string fileName = teamAbbr + "-" + sb.ToString() + "-" + meetToPrint.dateOfMeet.Month + "-" + meetToPrint.dateOfMeet.Day + "Performances.docx";
+            Directory.CreateDirectory("printouts\\teamperfs");
+            string fileName = "printouts\\teamperfs\\" + teamAbbr + "-" + sb.ToString() + "-" + meetToPrint.dateOfMeet.Month + "-" + meetToPrint.dateOfMeet.Day + "Performances.docx";
             try
             {
                 using (DocX document = DocX.Create(fileName))

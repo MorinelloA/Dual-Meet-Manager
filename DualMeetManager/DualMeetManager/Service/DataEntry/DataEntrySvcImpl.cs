@@ -158,6 +158,10 @@ namespace DualMeetManager.Service.DataEntry
                 {
                     throw new InvalidPerformanceException("More than 1 . found");
                 }
+
+                if (!perf.Contains('-'))
+                    return Convert.ToDecimal(perf) * 12;
+
                 int divider = 0;
                 for (int x = 0; x < perf.Length; x++)
                 {
