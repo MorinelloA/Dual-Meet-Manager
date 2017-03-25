@@ -270,7 +270,10 @@ namespace DualMeetManager.Presentation
             {
                 MeetMgr mm = new MeetMgr();
                 Meet newMeet = mm.openMeet(ofdMeet.FileName);
-                if(newMeet != null) MessageBox.Show(newMeet.ToString()); //Debugging line. Remove.
+                MeetHub newForm = new MeetHub(newMeet);
+                this.Hide();
+                newForm.ShowDialog();
+                this.Close();
             }
         }
 

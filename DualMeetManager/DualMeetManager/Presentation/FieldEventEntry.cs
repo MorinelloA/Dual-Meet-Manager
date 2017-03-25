@@ -935,7 +935,7 @@ namespace DualMeetManager.Presentation
         {
             if (currentHeatNum >= 10000)
             {
-                MessageBox.Show("Cannot go to heat above 10,000", "Invalid heat #");
+                MessageBox.Show("Cannot go to a flight above 10,000", "Invalid flight #");
                 currentHeatNum = 10000; // This should never be needed, but here just incase of an unknown error
             }
             else if (AddFlightToList())
