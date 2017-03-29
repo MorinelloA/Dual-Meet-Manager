@@ -112,6 +112,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(992, 26);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // mnuFile
             // 
@@ -152,13 +153,14 @@
             // mnuHelpAbout
             // 
             this.mnuHelpAbout.Name = "mnuHelpAbout";
-            this.mnuHelpAbout.Size = new System.Drawing.Size(151, 22);
+            this.mnuHelpAbout.Size = new System.Drawing.Size(152, 22);
             this.mnuHelpAbout.Text = "About";
+            this.mnuHelpAbout.Click += new System.EventHandler(this.mnuHelpAbout_Click);
             // 
             // mnuHelpContact
             // 
             this.mnuHelpContact.Name = "mnuHelpContact";
-            this.mnuHelpContact.Size = new System.Drawing.Size(151, 22);
+            this.mnuHelpContact.Size = new System.Drawing.Size(152, 22);
             this.mnuHelpContact.Text = "Contact Us";
             this.mnuHelpContact.Click += new System.EventHandler(this.mnuHelpContact_Click);
             // 

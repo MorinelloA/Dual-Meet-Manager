@@ -219,79 +219,82 @@ namespace DualMeetManager.Presentation
             this.activeMeet = activeMeet;
             FormLoadHelper();
 
-            if (activeMeet.performances.ContainsKey("Boy's 100"))
-                AddRunningEventToScores("Boy", "Boy's 100", activeMeet.performances["Boy's 100"]);
-            if (activeMeet.performances.ContainsKey("Boy's 200"))
-                AddRunningEventToScores("Boy", "Boy's 200", activeMeet.performances["Boy's 200"]);
-            if (activeMeet.performances.ContainsKey("Boy's 400"))
-                AddRunningEventToScores("Boy", "Boy's 400", activeMeet.performances["Boy's 400"]);
-            if (activeMeet.performances.ContainsKey("Boy's 800"))
-                AddRunningEventToScores("Boy", "Boy's 800", activeMeet.performances["Boy's 800"]);
-            if (activeMeet.performances.ContainsKey("Boy's 1600"))
-                AddRunningEventToScores("Boy", "Boy's 1600", activeMeet.performances["Boy's 1600"]);
-            if (activeMeet.performances.ContainsKey("Boy's 3200"))
-                AddRunningEventToScores("Boy", "Boy's 3200", activeMeet.performances["Boy's 3200"]);
-            if (activeMeet.performances.ContainsKey("Boy's HH"))
-                AddRunningEventToScores("Boy", "Boy's HH", activeMeet.performances["Boy's HH"]);
-            if (activeMeet.performances.ContainsKey("Boy's 300H"))
-                AddRunningEventToScores("Boy", "Boy's 300H", activeMeet.performances["Boy's 300H"]);
-            if (activeMeet.performances.ContainsKey("Boy's 4x100"))
-                AddRelayEventToScores("Boy", "Boy's 4x100", activeMeet.performances["Boy's 4x100"]);
-            if (activeMeet.performances.ContainsKey("Boy's 4x400"))
-                AddRelayEventToScores("Boy", "Boy's 4x400", activeMeet.performances["Boy's 4x400"]);
-            if (activeMeet.performances.ContainsKey("Boy's 4x800"))
-                AddRelayEventToScores("Boy", "Boy's 4x800", activeMeet.performances["Boy's 4x800"]);
-            if (activeMeet.performances.ContainsKey("Boy's LJ"))
-                AddFieldEventToScores("Boy", "Boy's LJ", activeMeet.performances["Boy's LJ"]);
-            if (activeMeet.performances.ContainsKey("Boy's TJ"))
-                AddFieldEventToScores("Boy", "Boy's TJ", activeMeet.performances["Boy's TJ"]);
-            if (activeMeet.performances.ContainsKey("Boy's HJ"))
-                AddFieldEventToScores("Boy", "Boy's HJ", activeMeet.performances["Boy's HJ"]);
-            if (activeMeet.performances.ContainsKey("Boy's PV"))
-                AddFieldEventToScores("Boy", "Boy's PV", activeMeet.performances["Boy's PV"]);
-            if (activeMeet.performances.ContainsKey("Boy's Shotput"))
-                AddFieldEventToScores("Boy", "Boy's Shotput", activeMeet.performances["Boy's Shotput"]);
-            if (activeMeet.performances.ContainsKey("Boy's Discus"))
-                AddFieldEventToScores("Boy", "Boy's Discus", activeMeet.performances["Boy's Discus"]);
-            if (activeMeet.performances.ContainsKey("Boy's Javelin"))
-                AddFieldEventToScores("Boy", "Boy's Javelin", activeMeet.performances["Boy's Javelin"]);
+            if (activeMeet != null && activeMeet.performances != null)
+            {
+                if (activeMeet.performances.ContainsKey("Boy's 100"))
+                    AddRunningEventToScores("Boy", "Boy's 100", activeMeet.performances["Boy's 100"]);
+                if (activeMeet.performances.ContainsKey("Boy's 200"))
+                    AddRunningEventToScores("Boy", "Boy's 200", activeMeet.performances["Boy's 200"]);
+                if (activeMeet.performances.ContainsKey("Boy's 400"))
+                    AddRunningEventToScores("Boy", "Boy's 400", activeMeet.performances["Boy's 400"]);
+                if (activeMeet.performances.ContainsKey("Boy's 800"))
+                    AddRunningEventToScores("Boy", "Boy's 800", activeMeet.performances["Boy's 800"]);
+                if (activeMeet.performances.ContainsKey("Boy's 1600"))
+                    AddRunningEventToScores("Boy", "Boy's 1600", activeMeet.performances["Boy's 1600"]);
+                if (activeMeet.performances.ContainsKey("Boy's 3200"))
+                    AddRunningEventToScores("Boy", "Boy's 3200", activeMeet.performances["Boy's 3200"]);
+                if (activeMeet.performances.ContainsKey("Boy's HH"))
+                    AddRunningEventToScores("Boy", "Boy's HH", activeMeet.performances["Boy's HH"]);
+                if (activeMeet.performances.ContainsKey("Boy's 300H"))
+                    AddRunningEventToScores("Boy", "Boy's 300H", activeMeet.performances["Boy's 300H"]);
+                if (activeMeet.performances.ContainsKey("Boy's 4x100"))
+                    AddRelayEventToScores("Boy", "Boy's 4x100", activeMeet.performances["Boy's 4x100"]);
+                if (activeMeet.performances.ContainsKey("Boy's 4x400"))
+                    AddRelayEventToScores("Boy", "Boy's 4x400", activeMeet.performances["Boy's 4x400"]);
+                if (activeMeet.performances.ContainsKey("Boy's 4x800"))
+                    AddRelayEventToScores("Boy", "Boy's 4x800", activeMeet.performances["Boy's 4x800"]);
+                if (activeMeet.performances.ContainsKey("Boy's LJ"))
+                    AddFieldEventToScores("Boy", "Boy's LJ", activeMeet.performances["Boy's LJ"]);
+                if (activeMeet.performances.ContainsKey("Boy's TJ"))
+                    AddFieldEventToScores("Boy", "Boy's TJ", activeMeet.performances["Boy's TJ"]);
+                if (activeMeet.performances.ContainsKey("Boy's HJ"))
+                    AddFieldEventToScores("Boy", "Boy's HJ", activeMeet.performances["Boy's HJ"]);
+                if (activeMeet.performances.ContainsKey("Boy's PV"))
+                    AddFieldEventToScores("Boy", "Boy's PV", activeMeet.performances["Boy's PV"]);
+                if (activeMeet.performances.ContainsKey("Boy's Shotput"))
+                    AddFieldEventToScores("Boy", "Boy's Shotput", activeMeet.performances["Boy's Shotput"]);
+                if (activeMeet.performances.ContainsKey("Boy's Discus"))
+                    AddFieldEventToScores("Boy", "Boy's Discus", activeMeet.performances["Boy's Discus"]);
+                if (activeMeet.performances.ContainsKey("Boy's Javelin"))
+                    AddFieldEventToScores("Boy", "Boy's Javelin", activeMeet.performances["Boy's Javelin"]);
 
-            if (activeMeet.performances.ContainsKey("Girl's 100"))
-                AddRunningEventToScores("Girl", "Girl's 100", activeMeet.performances["Girl's 100"]);
-            if (activeMeet.performances.ContainsKey("Girl's 200"))
-                AddRunningEventToScores("Girl", "Girl's 200", activeMeet.performances["Girl's 200"]);
-            if (activeMeet.performances.ContainsKey("Girl's 400"))
-                AddRunningEventToScores("Girl", "Girl's 400", activeMeet.performances["Girl's 400"]);
-            if (activeMeet.performances.ContainsKey("Girl's 800"))
-                AddRunningEventToScores("Girl", "Girl's 800", activeMeet.performances["Girl's 800"]);
-            if (activeMeet.performances.ContainsKey("Girl's 1600"))
-                AddRunningEventToScores("Girl", "Girl's 1600", activeMeet.performances["Girl's 1600"]);
-            if (activeMeet.performances.ContainsKey("Girl's 3200"))
-                AddRunningEventToScores("Girl", "Girl's 3200", activeMeet.performances["Girl's 3200"]);
-            if (activeMeet.performances.ContainsKey("Girl's HH"))
-                AddRunningEventToScores("Girl", "Girl's HH", activeMeet.performances["Girl's HH"]);
-            if (activeMeet.performances.ContainsKey("Girl's 300H"))
-                AddRunningEventToScores("Girl", "Girl's 300H", activeMeet.performances["Girl's 300H"]);
-            if (activeMeet.performances.ContainsKey("Girl's 4x100"))
-                AddRelayEventToScores("Girl", "Girl's 4x100", activeMeet.performances["Girl's 4x100"]);
-            if (activeMeet.performances.ContainsKey("Girl's 4x400"))
-                AddRelayEventToScores("Girl", "Girl's 4x400", activeMeet.performances["Girl's 4x400"]);
-            if (activeMeet.performances.ContainsKey("Girl's 4x800"))
-                AddRelayEventToScores("Girl", "Girl's 4x800", activeMeet.performances["Girl's 4x800"]);
-            if (activeMeet.performances.ContainsKey("Girl's LJ"))
-                AddFieldEventToScores("Girl", "Girl's LJ", activeMeet.performances["Girl's LJ"]);
-            if (activeMeet.performances.ContainsKey("Girl's TJ"))
-                AddFieldEventToScores("Girl", "Girl's TJ", activeMeet.performances["Girl's TJ"]);
-            if (activeMeet.performances.ContainsKey("Girl's HJ"))
-                AddFieldEventToScores("Girl", "Girl's HJ", activeMeet.performances["Girl's HJ"]);
-            if (activeMeet.performances.ContainsKey("Girl's PV"))
-                AddFieldEventToScores("Girl", "Girl's PV", activeMeet.performances["Girl's PV"]);
-            if (activeMeet.performances.ContainsKey("Girl's Shotput"))
-                AddFieldEventToScores("Girl", "Girl's Shotput", activeMeet.performances["Girl's Shotput"]);
-            if (activeMeet.performances.ContainsKey("Girl's Discus"))
-                AddFieldEventToScores("Girl", "Girl's Discus", activeMeet.performances["Girl's Discus"]);
-            if (activeMeet.performances.ContainsKey("Girl's Javelin"))
-                AddFieldEventToScores("Girl", "Girl's Javelin", activeMeet.performances["Girl's Javelin"]);
+                if (activeMeet.performances.ContainsKey("Girl's 100"))
+                    AddRunningEventToScores("Girl", "Girl's 100", activeMeet.performances["Girl's 100"]);
+                if (activeMeet.performances.ContainsKey("Girl's 200"))
+                    AddRunningEventToScores("Girl", "Girl's 200", activeMeet.performances["Girl's 200"]);
+                if (activeMeet.performances.ContainsKey("Girl's 400"))
+                    AddRunningEventToScores("Girl", "Girl's 400", activeMeet.performances["Girl's 400"]);
+                if (activeMeet.performances.ContainsKey("Girl's 800"))
+                    AddRunningEventToScores("Girl", "Girl's 800", activeMeet.performances["Girl's 800"]);
+                if (activeMeet.performances.ContainsKey("Girl's 1600"))
+                    AddRunningEventToScores("Girl", "Girl's 1600", activeMeet.performances["Girl's 1600"]);
+                if (activeMeet.performances.ContainsKey("Girl's 3200"))
+                    AddRunningEventToScores("Girl", "Girl's 3200", activeMeet.performances["Girl's 3200"]);
+                if (activeMeet.performances.ContainsKey("Girl's HH"))
+                    AddRunningEventToScores("Girl", "Girl's HH", activeMeet.performances["Girl's HH"]);
+                if (activeMeet.performances.ContainsKey("Girl's 300H"))
+                    AddRunningEventToScores("Girl", "Girl's 300H", activeMeet.performances["Girl's 300H"]);
+                if (activeMeet.performances.ContainsKey("Girl's 4x100"))
+                    AddRelayEventToScores("Girl", "Girl's 4x100", activeMeet.performances["Girl's 4x100"]);
+                if (activeMeet.performances.ContainsKey("Girl's 4x400"))
+                    AddRelayEventToScores("Girl", "Girl's 4x400", activeMeet.performances["Girl's 4x400"]);
+                if (activeMeet.performances.ContainsKey("Girl's 4x800"))
+                    AddRelayEventToScores("Girl", "Girl's 4x800", activeMeet.performances["Girl's 4x800"]);
+                if (activeMeet.performances.ContainsKey("Girl's LJ"))
+                    AddFieldEventToScores("Girl", "Girl's LJ", activeMeet.performances["Girl's LJ"]);
+                if (activeMeet.performances.ContainsKey("Girl's TJ"))
+                    AddFieldEventToScores("Girl", "Girl's TJ", activeMeet.performances["Girl's TJ"]);
+                if (activeMeet.performances.ContainsKey("Girl's HJ"))
+                    AddFieldEventToScores("Girl", "Girl's HJ", activeMeet.performances["Girl's HJ"]);
+                if (activeMeet.performances.ContainsKey("Girl's PV"))
+                    AddFieldEventToScores("Girl", "Girl's PV", activeMeet.performances["Girl's PV"]);
+                if (activeMeet.performances.ContainsKey("Girl's Shotput"))
+                    AddFieldEventToScores("Girl", "Girl's Shotput", activeMeet.performances["Girl's Shotput"]);
+                if (activeMeet.performances.ContainsKey("Girl's Discus"))
+                    AddFieldEventToScores("Girl", "Girl's Discus", activeMeet.performances["Girl's Discus"]);
+                if (activeMeet.performances.ContainsKey("Girl's Javelin"))
+                    AddFieldEventToScores("Girl", "Girl's Javelin", activeMeet.performances["Girl's Javelin"]);
+            }
         }
 
         private void MeetHub_Load(object sender, EventArgs e)
@@ -306,7 +309,7 @@ namespace DualMeetManager.Presentation
             {
                 foreach (string t2 in activeMeet.schoolNames.boySchoolNames.Keys)
                 {
-                    if (t1 != t2 && !boysActiveScores.ContainsKey(t2 + "vs." + t1))
+                    if (t1 != t2 && !boysActiveScores.ContainsKey(t2 + "vs." + t1) && !boysActiveScores.ContainsKey(t1 + "vs." + t2))
                     {
                         boysActiveScores.Add(t1 + "vs." + t2, new OverallScore(Tuple.Create(t1, activeMeet.schoolNames.boySchoolNames[t1]), Tuple.Create(t2, activeMeet.schoolNames.boySchoolNames[t2])));
                     }
@@ -316,7 +319,7 @@ namespace DualMeetManager.Presentation
             {
                 foreach (string t2 in activeMeet.schoolNames.girlSchoolNames.Keys)
                 {
-                    if (t1 != t2 && !girlsActiveScores.ContainsKey(t2 + "vs." + t1))
+                    if (t1 != t2 && !girlsActiveScores.ContainsKey(t2 + "vs." + t1) && !girlsActiveScores.ContainsKey(t1 + "vs." + t2))
                         girlsActiveScores.Add(t1 + "vs." + t2, new OverallScore(Tuple.Create(t1, activeMeet.schoolNames.girlSchoolNames[t1]), Tuple.Create(t2, activeMeet.schoolNames.girlSchoolNames[t2])));
                 }
             }
@@ -777,6 +780,10 @@ namespace DualMeetManager.Presentation
             {
                 MeetMgr mm = new MeetMgr();
                 Meet newMeet = mm.openMeet(ofdMeet.FileName);
+                MeetHub newForm = new MeetHub(newMeet);
+                this.Hide();
+                newForm.ShowDialog();
+                this.Close();
             }
         }
 

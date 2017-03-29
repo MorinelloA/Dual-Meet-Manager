@@ -198,7 +198,7 @@ namespace DualMeetManager.Tests.Service.Printout
             OverallScore myOverallScore = new OverallScore(Tuple.Create("PLM", "Plum"), Tuple.Create("GWY", "Gateway"), indEvents, relayEvents);
 
             PrintoutDocXSvcImpl pdxi = new PrintoutDocXSvcImpl();
-            pdxi.CreateMeetResultsDoc("Boy's", myOverallScore);
+            pdxi.CreateMeetResultsDoc("Boy's", new DateTime(01, 01, 2000), "Anywhere", myOverallScore);
         }
     }
 }

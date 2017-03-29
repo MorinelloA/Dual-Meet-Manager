@@ -22,6 +22,8 @@ namespace DualMeetManager.Presentation
         private void Form1_Load(object sender, EventArgs e)
         {
             //mnuHelpAbout.Visible = true;
+            MessageBox.Show("This program is in Beta Test and has been lent to the Woodland Hills Track & Field Team.");
+            MessageBox.Show("Any issues/comments please e-mail Tony Morinello at MorinelloA@gmail.com.");
         }
 
         private void cmdCreateMeet_Click(object sender, EventArgs e)
@@ -278,6 +280,16 @@ namespace DualMeetManager.Presentation
         }
 
         private void txtBoysTeam6Name_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuHelpAbout_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Help Form coming soon. E-mail MorinelloA@gmail.com with questions");
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

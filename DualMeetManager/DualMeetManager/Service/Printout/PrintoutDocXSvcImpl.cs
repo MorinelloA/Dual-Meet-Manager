@@ -793,7 +793,7 @@ namespace DualMeetManager.Service.Printout
                     t.Rows[30].Cells[6].Paragraphs.First().Append("#");
                     t.Rows[30].Cells[7].Paragraphs.First().Append("Athlete");
                     t.Rows[30].Cells[8].Paragraphs.First().Append("School");
-                    t.Rows[30].Cells[9].Paragraphs.First().Append("Time");
+                    t.Rows[30].Cells[9].Paragraphs.First().Append("Distance");
                     t.Rows[30].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                     t.Rows[30].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
                     //4x800
@@ -900,13 +900,13 @@ namespace DualMeetManager.Service.Printout
                     t.Rows[36].Cells[0].Paragraphs.First().Append("#");
                     t.Rows[36].Cells[1].Paragraphs.First().Append("Athlete");
                     t.Rows[36].Cells[2].Paragraphs.First().Append("School");
-                    t.Rows[36].Cells[3].Paragraphs.First().Append("Time");
+                    t.Rows[36].Cells[3].Paragraphs.First().Append("Distance");
                     t.Rows[36].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                     t.Rows[36].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
                     t.Rows[36].Cells[6].Paragraphs.First().Append("#");
                     t.Rows[36].Cells[7].Paragraphs.First().Append("Athlete");
                     t.Rows[36].Cells[8].Paragraphs.First().Append("School");
-                    t.Rows[36].Cells[9].Paragraphs.First().Append("Time");
+                    t.Rows[36].Cells[9].Paragraphs.First().Append("Distance");
                     t.Rows[36].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                     t.Rows[36].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
                     //Discus
@@ -1012,13 +1012,13 @@ namespace DualMeetManager.Service.Printout
                     t.Rows[42].Cells[0].Paragraphs.First().Append("#");
                     t.Rows[42].Cells[1].Paragraphs.First().Append("Athlete");
                     t.Rows[42].Cells[2].Paragraphs.First().Append("School");
-                    t.Rows[42].Cells[3].Paragraphs.First().Append("Time");
+                    t.Rows[42].Cells[3].Paragraphs.First().Append("Distance");
                     t.Rows[42].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                     t.Rows[42].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
                     t.Rows[42].Cells[6].Paragraphs.First().Append("#");
                     t.Rows[42].Cells[7].Paragraphs.First().Append("Athlete");
                     t.Rows[42].Cells[8].Paragraphs.First().Append("School");
-                    t.Rows[42].Cells[9].Paragraphs.First().Append("Time");
+                    t.Rows[42].Cells[9].Paragraphs.First().Append("Distance");
                     t.Rows[42].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                     t.Rows[42].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
                     //LJ
@@ -1124,13 +1124,13 @@ namespace DualMeetManager.Service.Printout
                     t.Rows[48].Cells[0].Paragraphs.First().Append("#");
                     t.Rows[48].Cells[1].Paragraphs.First().Append("Athlete");
                     t.Rows[48].Cells[2].Paragraphs.First().Append("School");
-                    t.Rows[48].Cells[3].Paragraphs.First().Append("Time");
+                    t.Rows[48].Cells[3].Paragraphs.First().Append("Height");
                     t.Rows[48].Cells[4].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                     t.Rows[48].Cells[5].Paragraphs.First().Append(scoreToPrint.team2.Item1);
                     t.Rows[48].Cells[6].Paragraphs.First().Append("#");
                     t.Rows[48].Cells[7].Paragraphs.First().Append("Athlete");
                     t.Rows[48].Cells[8].Paragraphs.First().Append("School");
-                    t.Rows[48].Cells[9].Paragraphs.First().Append("Time");
+                    t.Rows[48].Cells[9].Paragraphs.First().Append("Height");
                     t.Rows[48].Cells[10].Paragraphs.First().Append(scoreToPrint.team1.Item1);
                     t.Rows[48].Cells[11].Paragraphs.First().Append(scoreToPrint.team2.Item1);
                     //HJ
