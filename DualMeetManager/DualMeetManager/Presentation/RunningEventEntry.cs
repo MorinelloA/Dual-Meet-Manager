@@ -20,6 +20,7 @@ namespace DualMeetManager.Presentation
         int currentHeatNum = 0;
         int numRunners = 8;
         string eventName;
+        bool clickX = true;
 
         List<Performance> allPerfs = new List<Performance>();
         //OrderedDictionary perfs = new OrderedDictionary
@@ -1393,7 +1394,8 @@ namespace DualMeetManager.Presentation
                     gender = "Girl";
                 }
                 mh.AddRunningEventToScores(gender, eventName, allPerfs);
-                mh.Show();
+                //mh.Show();
+                clickX = false;
                 this.Close();
                 
             }
@@ -1436,6 +1438,11 @@ namespace DualMeetManager.Presentation
                 SortListOfPerfs();
                 pm.CreateIndEventDoc(eventName, allPerfs);
             }
+        }
+
+        private void FormIsClosing(object sender, FormClosingEventArgs e)
+        {
+            mh.Show();
         }
     }
 }

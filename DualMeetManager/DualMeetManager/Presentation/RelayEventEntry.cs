@@ -786,7 +786,7 @@ namespace DualMeetManager.Presentation
                     gender = "Girl";
                 }
                 mh.AddRelayEventToScores(gender, eventName, allPerfs);
-                mh.Show();
+                //mh.Show();
                 this.Close();
             }
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -816,6 +816,11 @@ namespace DualMeetManager.Presentation
             SortListOfPerfs();
             EnterDataIntoForm();
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
+        }
+
+        private void FormIsClosing(object sender, FormClosingEventArgs e)
+        {
+            mh.Show();
         }
     }
 }

@@ -907,6 +907,7 @@
             this.Controls.Add(this.grpPerformances);
             this.Name = "FieldEventTieBreaker";
             this.Text = "FieldEventTieBreaker";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormIsClosing);
             this.Load += new System.EventHandler(this.FieldEventTieBreaker_Load);
             this.grpPerformances.ResumeLayout(false);
             this.grpPerformances.PerformLayout();

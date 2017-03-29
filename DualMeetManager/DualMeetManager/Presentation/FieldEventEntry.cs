@@ -960,7 +960,7 @@ namespace DualMeetManager.Presentation
                     gender = "Girl";
                 }
                 mh.AddFieldEventToScores(gender, eventName, allPerfs);
-                mh.Show();
+                //mh.Show();
                 this.Close();
             }
             Console.WriteLine("Leaving " + GetType().Name + " - " + System.Reflection.MethodBase.GetCurrentMethod().Name);
@@ -1092,6 +1092,11 @@ namespace DualMeetManager.Presentation
         private void cboSchool3_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormIsClosing(object sender, FormClosingEventArgs e)
+        {
+            mh.Show();
         }
     }
 }

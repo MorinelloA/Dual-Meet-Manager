@@ -38,21 +38,69 @@
             this.mnuClearThis = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuClearAll = new System.Windows.Forms.ToolStripMenuItem();
             this.grpHeats1 = new System.Windows.Forms.GroupBox();
+            this.cboSchool16 = new System.Windows.Forms.ComboBox();
+            this.txtPerf16 = new System.Windows.Forms.TextBox();
+            this.txtName16 = new System.Windows.Forms.TextBox();
             this.lblPlace16 = new System.Windows.Forms.Label();
+            this.cboSchool15 = new System.Windows.Forms.ComboBox();
+            this.txtPerf15 = new System.Windows.Forms.TextBox();
+            this.txtName15 = new System.Windows.Forms.TextBox();
             this.lblPlace15 = new System.Windows.Forms.Label();
+            this.cboSchool14 = new System.Windows.Forms.ComboBox();
+            this.txtPerf14 = new System.Windows.Forms.TextBox();
+            this.txtName14 = new System.Windows.Forms.TextBox();
             this.lblPlace14 = new System.Windows.Forms.Label();
+            this.cboSchool13 = new System.Windows.Forms.ComboBox();
+            this.txtPerf13 = new System.Windows.Forms.TextBox();
+            this.txtName13 = new System.Windows.Forms.TextBox();
             this.lblPlace13 = new System.Windows.Forms.Label();
+            this.cboSchool12 = new System.Windows.Forms.ComboBox();
+            this.txtPerf12 = new System.Windows.Forms.TextBox();
+            this.txtName12 = new System.Windows.Forms.TextBox();
             this.lblPlace12 = new System.Windows.Forms.Label();
+            this.cboSchool11 = new System.Windows.Forms.ComboBox();
+            this.txtPerf11 = new System.Windows.Forms.TextBox();
+            this.txtName11 = new System.Windows.Forms.TextBox();
             this.lblPlace11 = new System.Windows.Forms.Label();
+            this.cboSchool10 = new System.Windows.Forms.ComboBox();
+            this.txtPerf10 = new System.Windows.Forms.TextBox();
+            this.txtName10 = new System.Windows.Forms.TextBox();
             this.lblPlace10 = new System.Windows.Forms.Label();
+            this.cboSchool9 = new System.Windows.Forms.ComboBox();
+            this.txtPerf9 = new System.Windows.Forms.TextBox();
+            this.txtName9 = new System.Windows.Forms.TextBox();
             this.lblPlace9 = new System.Windows.Forms.Label();
+            this.cboSchool8 = new System.Windows.Forms.ComboBox();
+            this.txtPerf8 = new System.Windows.Forms.TextBox();
+            this.txtName8 = new System.Windows.Forms.TextBox();
             this.lblPlace8 = new System.Windows.Forms.Label();
+            this.cboSchool7 = new System.Windows.Forms.ComboBox();
+            this.txtPerf7 = new System.Windows.Forms.TextBox();
+            this.txtName7 = new System.Windows.Forms.TextBox();
             this.lblPlace7 = new System.Windows.Forms.Label();
+            this.cboSchool6 = new System.Windows.Forms.ComboBox();
+            this.txtPerf6 = new System.Windows.Forms.TextBox();
+            this.txtName6 = new System.Windows.Forms.TextBox();
             this.lblPlace6 = new System.Windows.Forms.Label();
+            this.cboSchool5 = new System.Windows.Forms.ComboBox();
+            this.txtPerf5 = new System.Windows.Forms.TextBox();
+            this.txtName5 = new System.Windows.Forms.TextBox();
             this.lblPlace5 = new System.Windows.Forms.Label();
+            this.cboSchool4 = new System.Windows.Forms.ComboBox();
+            this.txtPerf4 = new System.Windows.Forms.TextBox();
+            this.txtName4 = new System.Windows.Forms.TextBox();
             this.lblPlace4 = new System.Windows.Forms.Label();
+            this.cboSchool3 = new System.Windows.Forms.ComboBox();
+            this.txtPerf3 = new System.Windows.Forms.TextBox();
+            this.txtName3 = new System.Windows.Forms.TextBox();
             this.lblPlace3 = new System.Windows.Forms.Label();
+            this.cboSchool2 = new System.Windows.Forms.ComboBox();
+            this.txtPerf2 = new System.Windows.Forms.TextBox();
+            this.txtName2 = new System.Windows.Forms.TextBox();
             this.lblPlace2 = new System.Windows.Forms.Label();
+            this.cboSchool1 = new System.Windows.Forms.ComboBox();
+            this.txtPerf1 = new System.Windows.Forms.TextBox();
+            this.txtName1 = new System.Windows.Forms.TextBox();
             this.lblPlace1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -130,54 +178,6 @@
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
-            this.txtName1 = new System.Windows.Forms.TextBox();
-            this.txtPerf1 = new System.Windows.Forms.TextBox();
-            this.cboSchool1 = new System.Windows.Forms.ComboBox();
-            this.txtName2 = new System.Windows.Forms.TextBox();
-            this.txtPerf2 = new System.Windows.Forms.TextBox();
-            this.cboSchool2 = new System.Windows.Forms.ComboBox();
-            this.txtName3 = new System.Windows.Forms.TextBox();
-            this.txtPerf3 = new System.Windows.Forms.TextBox();
-            this.cboSchool3 = new System.Windows.Forms.ComboBox();
-            this.txtName4 = new System.Windows.Forms.TextBox();
-            this.txtPerf4 = new System.Windows.Forms.TextBox();
-            this.cboSchool4 = new System.Windows.Forms.ComboBox();
-            this.txtName5 = new System.Windows.Forms.TextBox();
-            this.txtPerf5 = new System.Windows.Forms.TextBox();
-            this.cboSchool5 = new System.Windows.Forms.ComboBox();
-            this.txtName6 = new System.Windows.Forms.TextBox();
-            this.txtPerf6 = new System.Windows.Forms.TextBox();
-            this.cboSchool6 = new System.Windows.Forms.ComboBox();
-            this.txtName7 = new System.Windows.Forms.TextBox();
-            this.txtPerf7 = new System.Windows.Forms.TextBox();
-            this.cboSchool7 = new System.Windows.Forms.ComboBox();
-            this.txtName8 = new System.Windows.Forms.TextBox();
-            this.txtPerf8 = new System.Windows.Forms.TextBox();
-            this.cboSchool8 = new System.Windows.Forms.ComboBox();
-            this.txtName9 = new System.Windows.Forms.TextBox();
-            this.txtPerf9 = new System.Windows.Forms.TextBox();
-            this.cboSchool9 = new System.Windows.Forms.ComboBox();
-            this.txtName10 = new System.Windows.Forms.TextBox();
-            this.txtPerf10 = new System.Windows.Forms.TextBox();
-            this.cboSchool10 = new System.Windows.Forms.ComboBox();
-            this.txtName11 = new System.Windows.Forms.TextBox();
-            this.txtPerf11 = new System.Windows.Forms.TextBox();
-            this.cboSchool11 = new System.Windows.Forms.ComboBox();
-            this.txtName12 = new System.Windows.Forms.TextBox();
-            this.txtPerf12 = new System.Windows.Forms.TextBox();
-            this.cboSchool12 = new System.Windows.Forms.ComboBox();
-            this.txtName13 = new System.Windows.Forms.TextBox();
-            this.txtPerf13 = new System.Windows.Forms.TextBox();
-            this.cboSchool13 = new System.Windows.Forms.ComboBox();
-            this.txtName14 = new System.Windows.Forms.TextBox();
-            this.txtPerf14 = new System.Windows.Forms.TextBox();
-            this.cboSchool14 = new System.Windows.Forms.ComboBox();
-            this.txtName15 = new System.Windows.Forms.TextBox();
-            this.txtPerf15 = new System.Windows.Forms.TextBox();
-            this.cboSchool15 = new System.Windows.Forms.ComboBox();
-            this.txtName16 = new System.Windows.Forms.TextBox();
-            this.txtPerf16 = new System.Windows.Forms.TextBox();
-            this.cboSchool16 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.grpHeats1.SuspendLayout();
             this.grpHeats2.SuspendLayout();
@@ -333,6 +333,29 @@
             this.grpHeats1.TabStop = false;
             this.grpHeats1.Text = "Heat #1";
             // 
+            // cboSchool16
+            // 
+            this.cboSchool16.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool16.FormattingEnabled = true;
+            this.cboSchool16.Location = new System.Drawing.Point(241, 431);
+            this.cboSchool16.Name = "cboSchool16";
+            this.cboSchool16.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool16.TabIndex = 47;
+            // 
+            // txtPerf16
+            // 
+            this.txtPerf16.Location = new System.Drawing.Point(346, 431);
+            this.txtPerf16.Name = "txtPerf16";
+            this.txtPerf16.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf16.TabIndex = 48;
+            // 
+            // txtName16
+            // 
+            this.txtName16.Location = new System.Drawing.Point(57, 431);
+            this.txtName16.Name = "txtName16";
+            this.txtName16.Size = new System.Drawing.Size(168, 20);
+            this.txtName16.TabIndex = 46;
+            // 
             // lblPlace16
             // 
             this.lblPlace16.AutoSize = true;
@@ -341,6 +364,29 @@
             this.lblPlace16.Size = new System.Drawing.Size(19, 13);
             this.lblPlace16.TabIndex = 64;
             this.lblPlace16.Text = "16";
+            // 
+            // cboSchool15
+            // 
+            this.cboSchool15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool15.FormattingEnabled = true;
+            this.cboSchool15.Location = new System.Drawing.Point(241, 405);
+            this.cboSchool15.Name = "cboSchool15";
+            this.cboSchool15.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool15.TabIndex = 44;
+            // 
+            // txtPerf15
+            // 
+            this.txtPerf15.Location = new System.Drawing.Point(346, 405);
+            this.txtPerf15.Name = "txtPerf15";
+            this.txtPerf15.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf15.TabIndex = 45;
+            // 
+            // txtName15
+            // 
+            this.txtName15.Location = new System.Drawing.Point(57, 405);
+            this.txtName15.Name = "txtName15";
+            this.txtName15.Size = new System.Drawing.Size(168, 20);
+            this.txtName15.TabIndex = 43;
             // 
             // lblPlace15
             // 
@@ -351,6 +397,29 @@
             this.lblPlace15.TabIndex = 60;
             this.lblPlace15.Text = "15";
             // 
+            // cboSchool14
+            // 
+            this.cboSchool14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool14.FormattingEnabled = true;
+            this.cboSchool14.Location = new System.Drawing.Point(241, 379);
+            this.cboSchool14.Name = "cboSchool14";
+            this.cboSchool14.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool14.TabIndex = 41;
+            // 
+            // txtPerf14
+            // 
+            this.txtPerf14.Location = new System.Drawing.Point(346, 379);
+            this.txtPerf14.Name = "txtPerf14";
+            this.txtPerf14.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf14.TabIndex = 42;
+            // 
+            // txtName14
+            // 
+            this.txtName14.Location = new System.Drawing.Point(57, 379);
+            this.txtName14.Name = "txtName14";
+            this.txtName14.Size = new System.Drawing.Size(168, 20);
+            this.txtName14.TabIndex = 40;
+            // 
             // lblPlace14
             // 
             this.lblPlace14.AutoSize = true;
@@ -359,6 +428,29 @@
             this.lblPlace14.Size = new System.Drawing.Size(19, 13);
             this.lblPlace14.TabIndex = 56;
             this.lblPlace14.Text = "14";
+            // 
+            // cboSchool13
+            // 
+            this.cboSchool13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool13.FormattingEnabled = true;
+            this.cboSchool13.Location = new System.Drawing.Point(241, 353);
+            this.cboSchool13.Name = "cboSchool13";
+            this.cboSchool13.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool13.TabIndex = 38;
+            // 
+            // txtPerf13
+            // 
+            this.txtPerf13.Location = new System.Drawing.Point(346, 353);
+            this.txtPerf13.Name = "txtPerf13";
+            this.txtPerf13.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf13.TabIndex = 39;
+            // 
+            // txtName13
+            // 
+            this.txtName13.Location = new System.Drawing.Point(57, 353);
+            this.txtName13.Name = "txtName13";
+            this.txtName13.Size = new System.Drawing.Size(168, 20);
+            this.txtName13.TabIndex = 37;
             // 
             // lblPlace13
             // 
@@ -369,6 +461,29 @@
             this.lblPlace13.TabIndex = 52;
             this.lblPlace13.Text = "13";
             // 
+            // cboSchool12
+            // 
+            this.cboSchool12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool12.FormattingEnabled = true;
+            this.cboSchool12.Location = new System.Drawing.Point(241, 327);
+            this.cboSchool12.Name = "cboSchool12";
+            this.cboSchool12.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool12.TabIndex = 35;
+            // 
+            // txtPerf12
+            // 
+            this.txtPerf12.Location = new System.Drawing.Point(346, 327);
+            this.txtPerf12.Name = "txtPerf12";
+            this.txtPerf12.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf12.TabIndex = 36;
+            // 
+            // txtName12
+            // 
+            this.txtName12.Location = new System.Drawing.Point(57, 327);
+            this.txtName12.Name = "txtName12";
+            this.txtName12.Size = new System.Drawing.Size(168, 20);
+            this.txtName12.TabIndex = 34;
+            // 
             // lblPlace12
             // 
             this.lblPlace12.AutoSize = true;
@@ -377,6 +492,29 @@
             this.lblPlace12.Size = new System.Drawing.Size(19, 13);
             this.lblPlace12.TabIndex = 48;
             this.lblPlace12.Text = "12";
+            // 
+            // cboSchool11
+            // 
+            this.cboSchool11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool11.FormattingEnabled = true;
+            this.cboSchool11.Location = new System.Drawing.Point(241, 301);
+            this.cboSchool11.Name = "cboSchool11";
+            this.cboSchool11.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool11.TabIndex = 32;
+            // 
+            // txtPerf11
+            // 
+            this.txtPerf11.Location = new System.Drawing.Point(346, 301);
+            this.txtPerf11.Name = "txtPerf11";
+            this.txtPerf11.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf11.TabIndex = 33;
+            // 
+            // txtName11
+            // 
+            this.txtName11.Location = new System.Drawing.Point(57, 301);
+            this.txtName11.Name = "txtName11";
+            this.txtName11.Size = new System.Drawing.Size(168, 20);
+            this.txtName11.TabIndex = 31;
             // 
             // lblPlace11
             // 
@@ -387,6 +525,29 @@
             this.lblPlace11.TabIndex = 44;
             this.lblPlace11.Text = "11";
             // 
+            // cboSchool10
+            // 
+            this.cboSchool10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool10.FormattingEnabled = true;
+            this.cboSchool10.Location = new System.Drawing.Point(241, 275);
+            this.cboSchool10.Name = "cboSchool10";
+            this.cboSchool10.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool10.TabIndex = 29;
+            // 
+            // txtPerf10
+            // 
+            this.txtPerf10.Location = new System.Drawing.Point(346, 275);
+            this.txtPerf10.Name = "txtPerf10";
+            this.txtPerf10.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf10.TabIndex = 30;
+            // 
+            // txtName10
+            // 
+            this.txtName10.Location = new System.Drawing.Point(57, 275);
+            this.txtName10.Name = "txtName10";
+            this.txtName10.Size = new System.Drawing.Size(168, 20);
+            this.txtName10.TabIndex = 28;
+            // 
             // lblPlace10
             // 
             this.lblPlace10.AutoSize = true;
@@ -395,6 +556,29 @@
             this.lblPlace10.Size = new System.Drawing.Size(19, 13);
             this.lblPlace10.TabIndex = 40;
             this.lblPlace10.Text = "10";
+            // 
+            // cboSchool9
+            // 
+            this.cboSchool9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool9.FormattingEnabled = true;
+            this.cboSchool9.Location = new System.Drawing.Point(241, 249);
+            this.cboSchool9.Name = "cboSchool9";
+            this.cboSchool9.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool9.TabIndex = 26;
+            // 
+            // txtPerf9
+            // 
+            this.txtPerf9.Location = new System.Drawing.Point(346, 249);
+            this.txtPerf9.Name = "txtPerf9";
+            this.txtPerf9.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf9.TabIndex = 27;
+            // 
+            // txtName9
+            // 
+            this.txtName9.Location = new System.Drawing.Point(57, 249);
+            this.txtName9.Name = "txtName9";
+            this.txtName9.Size = new System.Drawing.Size(168, 20);
+            this.txtName9.TabIndex = 25;
             // 
             // lblPlace9
             // 
@@ -405,6 +589,29 @@
             this.lblPlace9.TabIndex = 36;
             this.lblPlace9.Text = "9";
             // 
+            // cboSchool8
+            // 
+            this.cboSchool8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool8.FormattingEnabled = true;
+            this.cboSchool8.Location = new System.Drawing.Point(241, 223);
+            this.cboSchool8.Name = "cboSchool8";
+            this.cboSchool8.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool8.TabIndex = 23;
+            // 
+            // txtPerf8
+            // 
+            this.txtPerf8.Location = new System.Drawing.Point(346, 223);
+            this.txtPerf8.Name = "txtPerf8";
+            this.txtPerf8.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf8.TabIndex = 24;
+            // 
+            // txtName8
+            // 
+            this.txtName8.Location = new System.Drawing.Point(57, 223);
+            this.txtName8.Name = "txtName8";
+            this.txtName8.Size = new System.Drawing.Size(168, 20);
+            this.txtName8.TabIndex = 22;
+            // 
             // lblPlace8
             // 
             this.lblPlace8.AutoSize = true;
@@ -413,6 +620,29 @@
             this.lblPlace8.Size = new System.Drawing.Size(13, 13);
             this.lblPlace8.TabIndex = 32;
             this.lblPlace8.Text = "8";
+            // 
+            // cboSchool7
+            // 
+            this.cboSchool7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool7.FormattingEnabled = true;
+            this.cboSchool7.Location = new System.Drawing.Point(241, 197);
+            this.cboSchool7.Name = "cboSchool7";
+            this.cboSchool7.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool7.TabIndex = 20;
+            // 
+            // txtPerf7
+            // 
+            this.txtPerf7.Location = new System.Drawing.Point(346, 197);
+            this.txtPerf7.Name = "txtPerf7";
+            this.txtPerf7.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf7.TabIndex = 21;
+            // 
+            // txtName7
+            // 
+            this.txtName7.Location = new System.Drawing.Point(57, 197);
+            this.txtName7.Name = "txtName7";
+            this.txtName7.Size = new System.Drawing.Size(168, 20);
+            this.txtName7.TabIndex = 19;
             // 
             // lblPlace7
             // 
@@ -423,6 +653,29 @@
             this.lblPlace7.TabIndex = 28;
             this.lblPlace7.Text = "7";
             // 
+            // cboSchool6
+            // 
+            this.cboSchool6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool6.FormattingEnabled = true;
+            this.cboSchool6.Location = new System.Drawing.Point(241, 171);
+            this.cboSchool6.Name = "cboSchool6";
+            this.cboSchool6.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool6.TabIndex = 17;
+            // 
+            // txtPerf6
+            // 
+            this.txtPerf6.Location = new System.Drawing.Point(346, 171);
+            this.txtPerf6.Name = "txtPerf6";
+            this.txtPerf6.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf6.TabIndex = 18;
+            // 
+            // txtName6
+            // 
+            this.txtName6.Location = new System.Drawing.Point(57, 171);
+            this.txtName6.Name = "txtName6";
+            this.txtName6.Size = new System.Drawing.Size(168, 20);
+            this.txtName6.TabIndex = 16;
+            // 
             // lblPlace6
             // 
             this.lblPlace6.AutoSize = true;
@@ -431,6 +684,29 @@
             this.lblPlace6.Size = new System.Drawing.Size(13, 13);
             this.lblPlace6.TabIndex = 24;
             this.lblPlace6.Text = "6";
+            // 
+            // cboSchool5
+            // 
+            this.cboSchool5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool5.FormattingEnabled = true;
+            this.cboSchool5.Location = new System.Drawing.Point(241, 145);
+            this.cboSchool5.Name = "cboSchool5";
+            this.cboSchool5.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool5.TabIndex = 14;
+            // 
+            // txtPerf5
+            // 
+            this.txtPerf5.Location = new System.Drawing.Point(346, 145);
+            this.txtPerf5.Name = "txtPerf5";
+            this.txtPerf5.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf5.TabIndex = 15;
+            // 
+            // txtName5
+            // 
+            this.txtName5.Location = new System.Drawing.Point(57, 145);
+            this.txtName5.Name = "txtName5";
+            this.txtName5.Size = new System.Drawing.Size(168, 20);
+            this.txtName5.TabIndex = 13;
             // 
             // lblPlace5
             // 
@@ -441,6 +717,29 @@
             this.lblPlace5.TabIndex = 20;
             this.lblPlace5.Text = "5";
             // 
+            // cboSchool4
+            // 
+            this.cboSchool4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool4.FormattingEnabled = true;
+            this.cboSchool4.Location = new System.Drawing.Point(241, 119);
+            this.cboSchool4.Name = "cboSchool4";
+            this.cboSchool4.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool4.TabIndex = 11;
+            // 
+            // txtPerf4
+            // 
+            this.txtPerf4.Location = new System.Drawing.Point(346, 119);
+            this.txtPerf4.Name = "txtPerf4";
+            this.txtPerf4.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf4.TabIndex = 12;
+            // 
+            // txtName4
+            // 
+            this.txtName4.Location = new System.Drawing.Point(57, 119);
+            this.txtName4.Name = "txtName4";
+            this.txtName4.Size = new System.Drawing.Size(168, 20);
+            this.txtName4.TabIndex = 10;
+            // 
             // lblPlace4
             // 
             this.lblPlace4.AutoSize = true;
@@ -449,6 +748,29 @@
             this.lblPlace4.Size = new System.Drawing.Size(13, 13);
             this.lblPlace4.TabIndex = 16;
             this.lblPlace4.Text = "4";
+            // 
+            // cboSchool3
+            // 
+            this.cboSchool3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool3.FormattingEnabled = true;
+            this.cboSchool3.Location = new System.Drawing.Point(241, 93);
+            this.cboSchool3.Name = "cboSchool3";
+            this.cboSchool3.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool3.TabIndex = 8;
+            // 
+            // txtPerf3
+            // 
+            this.txtPerf3.Location = new System.Drawing.Point(346, 93);
+            this.txtPerf3.Name = "txtPerf3";
+            this.txtPerf3.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf3.TabIndex = 9;
+            // 
+            // txtName3
+            // 
+            this.txtName3.Location = new System.Drawing.Point(57, 93);
+            this.txtName3.Name = "txtName3";
+            this.txtName3.Size = new System.Drawing.Size(168, 20);
+            this.txtName3.TabIndex = 7;
             // 
             // lblPlace3
             // 
@@ -459,6 +781,29 @@
             this.lblPlace3.TabIndex = 12;
             this.lblPlace3.Text = "3";
             // 
+            // cboSchool2
+            // 
+            this.cboSchool2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool2.FormattingEnabled = true;
+            this.cboSchool2.Location = new System.Drawing.Point(241, 67);
+            this.cboSchool2.Name = "cboSchool2";
+            this.cboSchool2.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool2.TabIndex = 5;
+            // 
+            // txtPerf2
+            // 
+            this.txtPerf2.Location = new System.Drawing.Point(346, 67);
+            this.txtPerf2.Name = "txtPerf2";
+            this.txtPerf2.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf2.TabIndex = 6;
+            // 
+            // txtName2
+            // 
+            this.txtName2.Location = new System.Drawing.Point(57, 67);
+            this.txtName2.Name = "txtName2";
+            this.txtName2.Size = new System.Drawing.Size(168, 20);
+            this.txtName2.TabIndex = 4;
+            // 
             // lblPlace2
             // 
             this.lblPlace2.AutoSize = true;
@@ -467,6 +812,30 @@
             this.lblPlace2.Size = new System.Drawing.Size(13, 13);
             this.lblPlace2.TabIndex = 8;
             this.lblPlace2.Text = "2";
+            // 
+            // cboSchool1
+            // 
+            this.cboSchool1.BackColor = System.Drawing.SystemColors.Window;
+            this.cboSchool1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboSchool1.FormattingEnabled = true;
+            this.cboSchool1.Location = new System.Drawing.Point(241, 41);
+            this.cboSchool1.Name = "cboSchool1";
+            this.cboSchool1.Size = new System.Drawing.Size(95, 21);
+            this.cboSchool1.TabIndex = 2;
+            // 
+            // txtPerf1
+            // 
+            this.txtPerf1.Location = new System.Drawing.Point(346, 41);
+            this.txtPerf1.Name = "txtPerf1";
+            this.txtPerf1.Size = new System.Drawing.Size(100, 20);
+            this.txtPerf1.TabIndex = 3;
+            // 
+            // txtName1
+            // 
+            this.txtName1.Location = new System.Drawing.Point(57, 41);
+            this.txtName1.Name = "txtName1";
+            this.txtName1.Size = new System.Drawing.Size(168, 20);
+            this.txtName1.TabIndex = 1;
             // 
             // lblPlace1
             // 
@@ -1168,375 +1537,6 @@
             this.label40.TabIndex = 0;
             this.label40.Text = "Place";
             // 
-            // txtName1
-            // 
-            this.txtName1.Location = new System.Drawing.Point(57, 41);
-            this.txtName1.Name = "txtName1";
-            this.txtName1.Size = new System.Drawing.Size(168, 20);
-            this.txtName1.TabIndex = 1;
-            // 
-            // txtPerf1
-            // 
-            this.txtPerf1.Location = new System.Drawing.Point(346, 41);
-            this.txtPerf1.Name = "txtPerf1";
-            this.txtPerf1.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf1.TabIndex = 3;
-            // 
-            // cboSchool1
-            // 
-            this.cboSchool1.BackColor = System.Drawing.SystemColors.Window;
-            this.cboSchool1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool1.FormattingEnabled = true;
-            this.cboSchool1.Location = new System.Drawing.Point(241, 41);
-            this.cboSchool1.Name = "cboSchool1";
-            this.cboSchool1.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool1.TabIndex = 2;
-            // 
-            // txtName2
-            // 
-            this.txtName2.Location = new System.Drawing.Point(57, 67);
-            this.txtName2.Name = "txtName2";
-            this.txtName2.Size = new System.Drawing.Size(168, 20);
-            this.txtName2.TabIndex = 4;
-            // 
-            // txtPerf2
-            // 
-            this.txtPerf2.Location = new System.Drawing.Point(346, 67);
-            this.txtPerf2.Name = "txtPerf2";
-            this.txtPerf2.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf2.TabIndex = 6;
-            // 
-            // cboSchool2
-            // 
-            this.cboSchool2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool2.FormattingEnabled = true;
-            this.cboSchool2.Location = new System.Drawing.Point(241, 67);
-            this.cboSchool2.Name = "cboSchool2";
-            this.cboSchool2.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool2.TabIndex = 5;
-            // 
-            // txtName3
-            // 
-            this.txtName3.Location = new System.Drawing.Point(57, 93);
-            this.txtName3.Name = "txtName3";
-            this.txtName3.Size = new System.Drawing.Size(168, 20);
-            this.txtName3.TabIndex = 7;
-            // 
-            // txtPerf3
-            // 
-            this.txtPerf3.Location = new System.Drawing.Point(346, 93);
-            this.txtPerf3.Name = "txtPerf3";
-            this.txtPerf3.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf3.TabIndex = 9;
-            // 
-            // cboSchool3
-            // 
-            this.cboSchool3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool3.FormattingEnabled = true;
-            this.cboSchool3.Location = new System.Drawing.Point(241, 93);
-            this.cboSchool3.Name = "cboSchool3";
-            this.cboSchool3.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool3.TabIndex = 8;
-            // 
-            // txtName4
-            // 
-            this.txtName4.Location = new System.Drawing.Point(57, 119);
-            this.txtName4.Name = "txtName4";
-            this.txtName4.Size = new System.Drawing.Size(168, 20);
-            this.txtName4.TabIndex = 10;
-            // 
-            // txtPerf4
-            // 
-            this.txtPerf4.Location = new System.Drawing.Point(346, 119);
-            this.txtPerf4.Name = "txtPerf4";
-            this.txtPerf4.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf4.TabIndex = 12;
-            // 
-            // cboSchool4
-            // 
-            this.cboSchool4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool4.FormattingEnabled = true;
-            this.cboSchool4.Location = new System.Drawing.Point(241, 119);
-            this.cboSchool4.Name = "cboSchool4";
-            this.cboSchool4.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool4.TabIndex = 11;
-            // 
-            // txtName5
-            // 
-            this.txtName5.Location = new System.Drawing.Point(57, 145);
-            this.txtName5.Name = "txtName5";
-            this.txtName5.Size = new System.Drawing.Size(168, 20);
-            this.txtName5.TabIndex = 13;
-            // 
-            // txtPerf5
-            // 
-            this.txtPerf5.Location = new System.Drawing.Point(346, 145);
-            this.txtPerf5.Name = "txtPerf5";
-            this.txtPerf5.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf5.TabIndex = 15;
-            // 
-            // cboSchool5
-            // 
-            this.cboSchool5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool5.FormattingEnabled = true;
-            this.cboSchool5.Location = new System.Drawing.Point(241, 145);
-            this.cboSchool5.Name = "cboSchool5";
-            this.cboSchool5.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool5.TabIndex = 14;
-            // 
-            // txtName6
-            // 
-            this.txtName6.Location = new System.Drawing.Point(57, 171);
-            this.txtName6.Name = "txtName6";
-            this.txtName6.Size = new System.Drawing.Size(168, 20);
-            this.txtName6.TabIndex = 16;
-            // 
-            // txtPerf6
-            // 
-            this.txtPerf6.Location = new System.Drawing.Point(346, 171);
-            this.txtPerf6.Name = "txtPerf6";
-            this.txtPerf6.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf6.TabIndex = 18;
-            // 
-            // cboSchool6
-            // 
-            this.cboSchool6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool6.FormattingEnabled = true;
-            this.cboSchool6.Location = new System.Drawing.Point(241, 171);
-            this.cboSchool6.Name = "cboSchool6";
-            this.cboSchool6.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool6.TabIndex = 17;
-            // 
-            // txtName7
-            // 
-            this.txtName7.Location = new System.Drawing.Point(57, 197);
-            this.txtName7.Name = "txtName7";
-            this.txtName7.Size = new System.Drawing.Size(168, 20);
-            this.txtName7.TabIndex = 19;
-            // 
-            // txtPerf7
-            // 
-            this.txtPerf7.Location = new System.Drawing.Point(346, 197);
-            this.txtPerf7.Name = "txtPerf7";
-            this.txtPerf7.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf7.TabIndex = 21;
-            // 
-            // cboSchool7
-            // 
-            this.cboSchool7.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool7.FormattingEnabled = true;
-            this.cboSchool7.Location = new System.Drawing.Point(241, 197);
-            this.cboSchool7.Name = "cboSchool7";
-            this.cboSchool7.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool7.TabIndex = 20;
-            // 
-            // txtName8
-            // 
-            this.txtName8.Location = new System.Drawing.Point(57, 223);
-            this.txtName8.Name = "txtName8";
-            this.txtName8.Size = new System.Drawing.Size(168, 20);
-            this.txtName8.TabIndex = 22;
-            // 
-            // txtPerf8
-            // 
-            this.txtPerf8.Location = new System.Drawing.Point(346, 223);
-            this.txtPerf8.Name = "txtPerf8";
-            this.txtPerf8.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf8.TabIndex = 24;
-            // 
-            // cboSchool8
-            // 
-            this.cboSchool8.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool8.FormattingEnabled = true;
-            this.cboSchool8.Location = new System.Drawing.Point(241, 223);
-            this.cboSchool8.Name = "cboSchool8";
-            this.cboSchool8.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool8.TabIndex = 23;
-            // 
-            // txtName9
-            // 
-            this.txtName9.Location = new System.Drawing.Point(57, 249);
-            this.txtName9.Name = "txtName9";
-            this.txtName9.Size = new System.Drawing.Size(168, 20);
-            this.txtName9.TabIndex = 25;
-            // 
-            // txtPerf9
-            // 
-            this.txtPerf9.Location = new System.Drawing.Point(346, 249);
-            this.txtPerf9.Name = "txtPerf9";
-            this.txtPerf9.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf9.TabIndex = 27;
-            // 
-            // cboSchool9
-            // 
-            this.cboSchool9.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool9.FormattingEnabled = true;
-            this.cboSchool9.Location = new System.Drawing.Point(241, 249);
-            this.cboSchool9.Name = "cboSchool9";
-            this.cboSchool9.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool9.TabIndex = 26;
-            // 
-            // txtName10
-            // 
-            this.txtName10.Location = new System.Drawing.Point(57, 275);
-            this.txtName10.Name = "txtName10";
-            this.txtName10.Size = new System.Drawing.Size(168, 20);
-            this.txtName10.TabIndex = 28;
-            // 
-            // txtPerf10
-            // 
-            this.txtPerf10.Location = new System.Drawing.Point(346, 275);
-            this.txtPerf10.Name = "txtPerf10";
-            this.txtPerf10.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf10.TabIndex = 30;
-            // 
-            // cboSchool10
-            // 
-            this.cboSchool10.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool10.FormattingEnabled = true;
-            this.cboSchool10.Location = new System.Drawing.Point(241, 275);
-            this.cboSchool10.Name = "cboSchool10";
-            this.cboSchool10.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool10.TabIndex = 29;
-            // 
-            // txtName11
-            // 
-            this.txtName11.Location = new System.Drawing.Point(57, 301);
-            this.txtName11.Name = "txtName11";
-            this.txtName11.Size = new System.Drawing.Size(168, 20);
-            this.txtName11.TabIndex = 31;
-            // 
-            // txtPerf11
-            // 
-            this.txtPerf11.Location = new System.Drawing.Point(346, 301);
-            this.txtPerf11.Name = "txtPerf11";
-            this.txtPerf11.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf11.TabIndex = 33;
-            // 
-            // cboSchool11
-            // 
-            this.cboSchool11.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool11.FormattingEnabled = true;
-            this.cboSchool11.Location = new System.Drawing.Point(241, 301);
-            this.cboSchool11.Name = "cboSchool11";
-            this.cboSchool11.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool11.TabIndex = 32;
-            // 
-            // txtName12
-            // 
-            this.txtName12.Location = new System.Drawing.Point(57, 327);
-            this.txtName12.Name = "txtName12";
-            this.txtName12.Size = new System.Drawing.Size(168, 20);
-            this.txtName12.TabIndex = 34;
-            // 
-            // txtPerf12
-            // 
-            this.txtPerf12.Location = new System.Drawing.Point(346, 327);
-            this.txtPerf12.Name = "txtPerf12";
-            this.txtPerf12.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf12.TabIndex = 36;
-            // 
-            // cboSchool12
-            // 
-            this.cboSchool12.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool12.FormattingEnabled = true;
-            this.cboSchool12.Location = new System.Drawing.Point(241, 327);
-            this.cboSchool12.Name = "cboSchool12";
-            this.cboSchool12.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool12.TabIndex = 35;
-            // 
-            // txtName13
-            // 
-            this.txtName13.Location = new System.Drawing.Point(57, 353);
-            this.txtName13.Name = "txtName13";
-            this.txtName13.Size = new System.Drawing.Size(168, 20);
-            this.txtName13.TabIndex = 37;
-            // 
-            // txtPerf13
-            // 
-            this.txtPerf13.Location = new System.Drawing.Point(346, 353);
-            this.txtPerf13.Name = "txtPerf13";
-            this.txtPerf13.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf13.TabIndex = 39;
-            // 
-            // cboSchool13
-            // 
-            this.cboSchool13.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool13.FormattingEnabled = true;
-            this.cboSchool13.Location = new System.Drawing.Point(241, 353);
-            this.cboSchool13.Name = "cboSchool13";
-            this.cboSchool13.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool13.TabIndex = 38;
-            // 
-            // txtName14
-            // 
-            this.txtName14.Location = new System.Drawing.Point(57, 379);
-            this.txtName14.Name = "txtName14";
-            this.txtName14.Size = new System.Drawing.Size(168, 20);
-            this.txtName14.TabIndex = 40;
-            // 
-            // txtPerf14
-            // 
-            this.txtPerf14.Location = new System.Drawing.Point(346, 379);
-            this.txtPerf14.Name = "txtPerf14";
-            this.txtPerf14.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf14.TabIndex = 42;
-            // 
-            // cboSchool14
-            // 
-            this.cboSchool14.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool14.FormattingEnabled = true;
-            this.cboSchool14.Location = new System.Drawing.Point(241, 379);
-            this.cboSchool14.Name = "cboSchool14";
-            this.cboSchool14.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool14.TabIndex = 41;
-            // 
-            // txtName15
-            // 
-            this.txtName15.Location = new System.Drawing.Point(57, 405);
-            this.txtName15.Name = "txtName15";
-            this.txtName15.Size = new System.Drawing.Size(168, 20);
-            this.txtName15.TabIndex = 43;
-            // 
-            // txtPerf15
-            // 
-            this.txtPerf15.Location = new System.Drawing.Point(346, 405);
-            this.txtPerf15.Name = "txtPerf15";
-            this.txtPerf15.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf15.TabIndex = 45;
-            // 
-            // cboSchool15
-            // 
-            this.cboSchool15.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool15.FormattingEnabled = true;
-            this.cboSchool15.Location = new System.Drawing.Point(241, 405);
-            this.cboSchool15.Name = "cboSchool15";
-            this.cboSchool15.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool15.TabIndex = 44;
-            // 
-            // txtName16
-            // 
-            this.txtName16.Location = new System.Drawing.Point(57, 431);
-            this.txtName16.Name = "txtName16";
-            this.txtName16.Size = new System.Drawing.Size(168, 20);
-            this.txtName16.TabIndex = 46;
-            // 
-            // txtPerf16
-            // 
-            this.txtPerf16.Location = new System.Drawing.Point(346, 431);
-            this.txtPerf16.Name = "txtPerf16";
-            this.txtPerf16.Size = new System.Drawing.Size(100, 20);
-            this.txtPerf16.TabIndex = 48;
-            // 
-            // cboSchool16
-            // 
-            this.cboSchool16.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboSchool16.FormattingEnabled = true;
-            this.cboSchool16.Location = new System.Drawing.Point(241, 431);
-            this.cboSchool16.Name = "cboSchool16";
-            this.cboSchool16.Size = new System.Drawing.Size(95, 21);
-            this.cboSchool16.TabIndex = 47;
-            // 
             // RunningEventEntry
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1553,6 +1553,7 @@
             this.Name = "RunningEventEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Running Event Entry";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormIsClosing);
             this.Load += new System.EventHandler(this.RunningEventEntry_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

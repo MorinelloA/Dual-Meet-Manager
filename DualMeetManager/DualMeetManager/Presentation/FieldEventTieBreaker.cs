@@ -19,6 +19,7 @@ namespace DualMeetManager.Presentation
         MeetHub mh;
         string team1, team2;
         List<Performance> perf = new List<Performance>();
+        bool exitNatural = false;
 
         public FieldEventTieBreaker()
         {
@@ -802,6 +803,7 @@ namespace DualMeetManager.Presentation
 
                     mh.tieBreakerEvent = newEvent;
                     //MesssageBox.Show("Success");
+                    exitNatural = true;
                     this.Close();
                 }
             }
@@ -810,6 +812,14 @@ namespace DualMeetManager.Presentation
         private void cboPlace12_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormIsClosing(object sender, FormClosingEventArgs e)
+        {
+            if(!exitNatural)
+            {
+                MessageBox.Show("This window was closed prematurley. Tie info were not entered properly. Please reenter this event to ensure points are calculated correctly.");
+            }
         }
 
         private void LoadPerformances()

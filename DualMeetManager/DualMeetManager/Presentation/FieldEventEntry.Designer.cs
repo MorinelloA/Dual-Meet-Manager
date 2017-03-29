@@ -1518,6 +1518,7 @@
             this.Name = "FieldEventEntry";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FieldEventEntry";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormIsClosing);
             this.Load += new System.EventHandler(this.FieldEventEntry_Load);
             this.grpHeats2.ResumeLayout(false);
             this.grpHeats2.PerformLayout();
