@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -1613,6 +1614,15 @@ namespace DualMeetManager.Presentation
 
         private void mnuPrintouts_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void tmrSaveBackup_Tick(object sender, EventArgs e)
+        {
+            Directory.CreateDirectory("backups");
+            string backupFileName = "backups\\" + DateTime.Now.ToString("yyyyMMdd");
+            MeetMgr mm = new MeetMgr();
+            mm.saveMeet(backupFileName, activeMeet);
 
         }
     }

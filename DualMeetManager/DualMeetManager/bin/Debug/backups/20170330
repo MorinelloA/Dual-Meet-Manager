@@ -1,0 +1,15 @@
+{
+  "dateOfMeet": "2017-03-30T14:16:08.8899314-04:00",
+  "location": "a",
+  "weatherConditions": "a",
+  "schoolNames": {
+    "boySchoolNames": {
+      "a": "a",
+      "b": "b"
+    },
+    "girlSchoolNames": {
+      "c": "c"
+    }
+  },
+  "performances": null
+}

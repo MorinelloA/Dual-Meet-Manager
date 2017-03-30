@@ -30,14 +30,17 @@ namespace DualMeetManager.Business.Managers
         {
             ISavingSvc saveSvc = (ISavingSvc)GetService(typeof(ISavingSvc).Name);
             bool didSave = saveSvc.saveMeet(filePath, meetToSave);
+
             if (!didSave)
             {
-                MessageBox.Show("Meet did NOT save!");
+                if (!filePath.StartsWith("backups\\"))
+                    MessageBox.Show("Meet did NOT save!");
                 return false;
             }
             else
             {
-                MessageBox.Show("Meet saved correctly at: " + filePath);
+                if (!filePath.StartsWith("backups\\"))
+                    MessageBox.Show("Meet saved correctly at: " + filePath);
                 return true;
             }
         }
