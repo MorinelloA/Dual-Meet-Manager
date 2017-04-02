@@ -266,6 +266,7 @@
             this.mnuEnter.Name = "mnuEnter";
             this.mnuEnter.Size = new System.Drawing.Size(71, 20);
             this.mnuEnter.Text = "Enter Data";
+            this.mnuEnter.Click += new System.EventHandler(this.mnuEnter_Click);
             // 
             // mnuEnterBoys
             // 
@@ -707,7 +708,7 @@
             // mnuPrintoutsBoysScoresAll
             // 
             this.mnuPrintoutsBoysScoresAll.Name = "mnuPrintoutsBoysScoresAll";
-            this.mnuPrintoutsBoysScoresAll.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScoresAll.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScoresAll.Text = "All";
             this.mnuPrintoutsBoysScoresAll.Visible = false;
             this.mnuPrintoutsBoysScoresAll.Click += new System.EventHandler(this.mnuPrintoutsBoysScoresAll_Click);
@@ -715,14 +716,14 @@
             // mnuPrintoutsBoysScores1vs2
             // 
             this.mnuPrintoutsBoysScores1vs2.Name = "mnuPrintoutsBoysScores1vs2";
-            this.mnuPrintoutsBoysScores1vs2.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores1vs2.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores1vs2.Text = "1 vs 2";
             this.mnuPrintoutsBoysScores1vs2.Click += new System.EventHandler(this.mnuPrintoutsBoysScores1vs2_Click);
             // 
             // mnuPrintoutsBoysScores1vs3
             // 
             this.mnuPrintoutsBoysScores1vs3.Name = "mnuPrintoutsBoysScores1vs3";
-            this.mnuPrintoutsBoysScores1vs3.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores1vs3.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores1vs3.Text = "1 vs 3";
             this.mnuPrintoutsBoysScores1vs3.Visible = false;
             this.mnuPrintoutsBoysScores1vs3.Click += new System.EventHandler(this.mnuPrintoutsBoysScores1vs3_Click);
@@ -730,7 +731,7 @@
             // mnuPrintoutsBoysScores2vs3
             // 
             this.mnuPrintoutsBoysScores2vs3.Name = "mnuPrintoutsBoysScores2vs3";
-            this.mnuPrintoutsBoysScores2vs3.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores2vs3.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores2vs3.Text = "2 vs 3";
             this.mnuPrintoutsBoysScores2vs3.Visible = false;
             this.mnuPrintoutsBoysScores2vs3.Click += new System.EventHandler(this.mnuPrintoutsBoysScores2vs3_Click);
@@ -738,7 +739,7 @@
             // mnuPrintoutsBoysScores1vs4
             // 
             this.mnuPrintoutsBoysScores1vs4.Name = "mnuPrintoutsBoysScores1vs4";
-            this.mnuPrintoutsBoysScores1vs4.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores1vs4.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores1vs4.Text = "1 vs 4";
             this.mnuPrintoutsBoysScores1vs4.Visible = false;
             this.mnuPrintoutsBoysScores1vs4.Click += new System.EventHandler(this.mnuPrintoutsBoysScores1vs4_Click);
@@ -746,7 +747,7 @@
             // mnuPrintoutsBoysScores2vs4
             // 
             this.mnuPrintoutsBoysScores2vs4.Name = "mnuPrintoutsBoysScores2vs4";
-            this.mnuPrintoutsBoysScores2vs4.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores2vs4.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores2vs4.Text = "2 vs 4";
             this.mnuPrintoutsBoysScores2vs4.Visible = false;
             this.mnuPrintoutsBoysScores2vs4.Click += new System.EventHandler(this.mnuPrintoutsBoysScores2vs4_Click);
@@ -754,7 +755,7 @@
             // mnuPrintoutsBoysScores3vs4
             // 
             this.mnuPrintoutsBoysScores3vs4.Name = "mnuPrintoutsBoysScores3vs4";
-            this.mnuPrintoutsBoysScores3vs4.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores3vs4.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores3vs4.Text = "3 vs 4";
             this.mnuPrintoutsBoysScores3vs4.Visible = false;
             this.mnuPrintoutsBoysScores3vs4.Click += new System.EventHandler(this.mnuPrintoutsBoysScores3vs4_Click);
@@ -762,7 +763,7 @@
             // mnuPrintoutsBoysScores1vs5
             // 
             this.mnuPrintoutsBoysScores1vs5.Name = "mnuPrintoutsBoysScores1vs5";
-            this.mnuPrintoutsBoysScores1vs5.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores1vs5.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores1vs5.Text = "1 vs 5";
             this.mnuPrintoutsBoysScores1vs5.Visible = false;
             this.mnuPrintoutsBoysScores1vs5.Click += new System.EventHandler(this.mnuPrintoutsBoysScores1vs5_Click);
@@ -770,7 +771,7 @@
             // mnuPrintoutsBoysScores2vs5
             // 
             this.mnuPrintoutsBoysScores2vs5.Name = "mnuPrintoutsBoysScores2vs5";
-            this.mnuPrintoutsBoysScores2vs5.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores2vs5.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores2vs5.Text = "2 vs 5";
             this.mnuPrintoutsBoysScores2vs5.Visible = false;
             this.mnuPrintoutsBoysScores2vs5.Click += new System.EventHandler(this.mnuPrintoutsBoysScores2vs5_Click);
@@ -778,7 +779,7 @@
             // mnuPrintoutsBoysScores3vs5
             // 
             this.mnuPrintoutsBoysScores3vs5.Name = "mnuPrintoutsBoysScores3vs5";
-            this.mnuPrintoutsBoysScores3vs5.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores3vs5.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores3vs5.Text = "3 vs 5";
             this.mnuPrintoutsBoysScores3vs5.Visible = false;
             this.mnuPrintoutsBoysScores3vs5.Click += new System.EventHandler(this.mnuPrintoutsBoysScores3vs5_Click);
@@ -786,7 +787,7 @@
             // mnuPrintoutsBoysScores4vs5
             // 
             this.mnuPrintoutsBoysScores4vs5.Name = "mnuPrintoutsBoysScores4vs5";
-            this.mnuPrintoutsBoysScores4vs5.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores4vs5.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores4vs5.Text = "4 vs 5";
             this.mnuPrintoutsBoysScores4vs5.Visible = false;
             this.mnuPrintoutsBoysScores4vs5.Click += new System.EventHandler(this.mnuPrintoutsBoysScores4vs5_Click);
@@ -794,7 +795,7 @@
             // mnuPrintoutsBoysScores1vs6
             // 
             this.mnuPrintoutsBoysScores1vs6.Name = "mnuPrintoutsBoysScores1vs6";
-            this.mnuPrintoutsBoysScores1vs6.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores1vs6.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores1vs6.Text = "1 vs 6";
             this.mnuPrintoutsBoysScores1vs6.Visible = false;
             this.mnuPrintoutsBoysScores1vs6.Click += new System.EventHandler(this.mnuPrintoutsBoysScores1vs6_Click);
@@ -802,7 +803,7 @@
             // mnuPrintoutsBoysScores2vs6
             // 
             this.mnuPrintoutsBoysScores2vs6.Name = "mnuPrintoutsBoysScores2vs6";
-            this.mnuPrintoutsBoysScores2vs6.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores2vs6.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores2vs6.Text = "2 vs 6";
             this.mnuPrintoutsBoysScores2vs6.Visible = false;
             this.mnuPrintoutsBoysScores2vs6.Click += new System.EventHandler(this.mnuPrintoutsBoysScores2vs6_Click);
@@ -810,7 +811,7 @@
             // mnuPrintoutsBoysScores3vs6
             // 
             this.mnuPrintoutsBoysScores3vs6.Name = "mnuPrintoutsBoysScores3vs6";
-            this.mnuPrintoutsBoysScores3vs6.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores3vs6.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores3vs6.Text = "3 vs 6";
             this.mnuPrintoutsBoysScores3vs6.Visible = false;
             this.mnuPrintoutsBoysScores3vs6.Click += new System.EventHandler(this.mnuPrintoutsBoysScores3vs6_Click);
@@ -818,7 +819,7 @@
             // mnuPrintoutsBoysScores4vs6
             // 
             this.mnuPrintoutsBoysScores4vs6.Name = "mnuPrintoutsBoysScores4vs6";
-            this.mnuPrintoutsBoysScores4vs6.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores4vs6.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores4vs6.Text = "4 vs 6";
             this.mnuPrintoutsBoysScores4vs6.Visible = false;
             this.mnuPrintoutsBoysScores4vs6.Click += new System.EventHandler(this.mnuPrintoutsBoysScores4vs6_Click);
@@ -826,7 +827,7 @@
             // mnuPrintoutsBoysScores5vs6
             // 
             this.mnuPrintoutsBoysScores5vs6.Name = "mnuPrintoutsBoysScores5vs6";
-            this.mnuPrintoutsBoysScores5vs6.Size = new System.Drawing.Size(152, 22);
+            this.mnuPrintoutsBoysScores5vs6.Size = new System.Drawing.Size(103, 22);
             this.mnuPrintoutsBoysScores5vs6.Text = "5 vs 6";
             this.mnuPrintoutsBoysScores5vs6.Visible = false;
             this.mnuPrintoutsBoysScores5vs6.Click += new System.EventHandler(this.mnuPrintoutsBoysScores5vs6_Click);

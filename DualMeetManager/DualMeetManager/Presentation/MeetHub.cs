@@ -811,7 +811,10 @@ namespace DualMeetManager.Presentation
             }
             else
             {
-                activeMeet.performances[eventName] = activeMeet.performances[eventName].OrderBy(o => o.performance).ToList();
+                if(eventName.Contains("LJ") || eventName.Contains("TJ") || eventName.Contains("HJ") || eventName.Contains("PV") || eventName.Contains("Shotput") || eventName.Contains("Discus")|| eventName.Contains("Javelin"))
+                    activeMeet.performances[eventName] = activeMeet.performances[eventName].OrderByDescending(o => o.performance).ToList();
+                else
+                    activeMeet.performances[eventName] = activeMeet.performances[eventName].OrderBy(o => o.performance).ToList();
             }
         }
 
@@ -1623,6 +1626,11 @@ namespace DualMeetManager.Presentation
             string backupFileName = "backups\\" + DateTime.Now.ToString("yyyyMMdd");
             MeetMgr mm = new MeetMgr();
             mm.saveMeet(backupFileName, activeMeet);
+
+        }
+
+        private void mnuEnter_Click(object sender, EventArgs e)
+        {
 
         }
     }
