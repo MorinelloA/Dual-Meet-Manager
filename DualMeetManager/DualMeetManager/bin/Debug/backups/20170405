@@ -1,22 +1,23 @@
 {
-  "dateOfMeet": "2017-04-05T07:38:09.6503311-04:00",
-  "location": "WH",
-  "weatherConditions": "Hot",
+  "dateOfMeet": "2017-04-05T08:59:13.5258312-04:00",
+  "location": "loc",
+  "weatherConditions": "wea",
   "schoolNames": {
     "boySchoolNames": {
       "wh": "wh"
     },
     "girlSchoolNames": {
-      "wh": "wh"
+      "wh": "wh",
+      "cd": "cd"
     }
   },
   "performances": {
     "Boy's 100": [
       {
-        "athleteName": "kjh",
+        "athleteName": "as",
         "schoolName": "wh",
         "heatNum": 1,
-        "performance": 5.0
+        "performance": 61.0
       }
     ]
   }
