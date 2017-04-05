@@ -1,0 +1,23 @@
+{
+  "dateOfMeet": "2017-04-05T07:38:09.6503311-04:00",
+  "location": "WH",
+  "weatherConditions": "Hot",
+  "schoolNames": {
+    "boySchoolNames": {
+      "wh": "wh"
+    },
+    "girlSchoolNames": {
+      "wh": "wh"
+    }
+  },
+  "performances": {
+    "Boy's 100": [
+      {
+        "athleteName": "kjh",
+        "schoolName": "wh",
+        "heatNum": 1,
+        "performance": 5.0
+      }
+    ]
+  }
+}

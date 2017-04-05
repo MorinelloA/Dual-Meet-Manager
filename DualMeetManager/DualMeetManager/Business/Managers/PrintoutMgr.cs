@@ -79,17 +79,24 @@ namespace DualMeetManager.Business.Managers
 
         public void CreateTeamPerfDoc(string teamAbbr, string gender, Meet meetToPrint)
         {
-            try
+            if (meetToPrint == null)
             {
-                IPrintoutDocSvc printoutSvc = (IPrintoutDocSvc)GetService(typeof(IPrintoutDocSvc).Name);
-                bool didPrint = printoutSvc.CreateTeamPerfDoc(teamAbbr, gender, meetToPrint);
-                if (!didPrint)
-                    MessageBox.Show("Printout Failed!");
+                MessageBox.Show("Meet has no data to print");
             }
-            catch (Exception e)
+            else
             {
-                Console.WriteLine("Exception in PrintoutMgr: CreateTeamPerfDoc: " + e);
-                MessageBox.Show("Printout Failed!");
+                try
+                {
+                    IPrintoutDocSvc printoutSvc = (IPrintoutDocSvc)GetService(typeof(IPrintoutDocSvc).Name);
+                    bool didPrint = printoutSvc.CreateTeamPerfDoc(teamAbbr, gender, meetToPrint);
+                    if (!didPrint)
+                        MessageBox.Show("Printout Failed!");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine("Exception in PrintoutMgr: CreateTeamPerfDoc: " + e);
+                    MessageBox.Show("Printout Failed!");
+                }
             }
         }
 

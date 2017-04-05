@@ -1316,22 +1316,25 @@ namespace DualMeetManager.Service.Printout
         {
             Dictionary<string, List<Performance>> performances = new Dictionary<string, List<Performance>>();
             //go thru each event in meetToPrint
-            foreach(string evt in meetToPrint.performances.Keys)
+            if (meetToPrint != null && meetToPrint.performances != null)
             {
-                //go thru and add performances with the teamAbbr to the temp list
-                List<Performance> tempPerfs = new List<Performance>();
-                foreach(Performance p in meetToPrint.performances[evt])
+                foreach (string evt in meetToPrint.performances.Keys)
                 {
-                    if(p.schoolName == teamAbbr)
+                    //go thru and add performances with the teamAbbr to the temp list
+                    List<Performance> tempPerfs = new List<Performance>();
+                    foreach (Performance p in meetToPrint.performances[evt])
                     {
-                        tempPerfs.Add(p);
+                        if (p.schoolName == teamAbbr)
+                        {
+                            tempPerfs.Add(p);
+                        }
                     }
-                }
 
-                //Add tempList to performances
-                if(tempPerfs != null && tempPerfs.Count > 0) //Cannot add a null value to a dictionary key
-                    performances.Add(evt, tempPerfs);
-            } //The above SHOULD be complete. Still untested
+                    //Add tempList to performances
+                    if (tempPerfs != null && tempPerfs.Count > 0) //Cannot add a null value to a dictionary key
+                        performances.Add(evt, tempPerfs);
+                }
+            }
 
             StringBuilder sb = new StringBuilder();
             for (int i = 0; i < gender.Length; i++)
