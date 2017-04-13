@@ -1193,7 +1193,7 @@ namespace DualMeetManager.Service.Scoring
             RelayEvent tempRelayEvent = new RelayEvent();
 
             string[] validIndEvents = {"100", "200", "400", "800", "1600", "3200", "HH", "300H",
-                "LJ", "TJ", "HJ", "PV", "ShotPut", "Discus", "Javelin"};
+                "LJ", "TJ", "HJ", "PV", "Shotput", "Discus", "Javelin"};
 
             for (int i = 0; i < validIndEvents.Length; i++)
             {

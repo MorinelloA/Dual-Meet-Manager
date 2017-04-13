@@ -22,7 +22,7 @@ namespace DualMeetManager.Presentation
         private void Form1_Load(object sender, EventArgs e)
         {
             //mnuHelpAbout.Visible = true;
-            MessageBox.Show("This program is in Beta Test and has been lent to the Gateway High School Track & Field Team.");
+            MessageBox.Show("This program is in Beta Test and has been lent to the Woodland Hills High School Track & Field Team.");
             MessageBox.Show("Any issues/comments please e-mail Tony Morinello at MorinelloA@gmail.com.");
         }
 
